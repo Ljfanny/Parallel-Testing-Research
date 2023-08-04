@@ -1,0 +1,5 @@
+{'org.activiti.engine.test.api.task.TaskServiceTest#testGetVariableByHistoricActivityInstance': 0.21666666666666667,
+ 'org.activiti.engine.test.bpmn.async.AsyncExclusiveJobsTest#testExclusiveJobs': 0.0034482758620689724,
+ 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncCallActivity': 0.0034482758620689724,
+ 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncServiceNoListeners': 0.0034482758620689724,
+ 'org.activiti.engine.test.history.HistoricVariableInstanceTest#testHistoricVariableQueryByTaskIds': 0.09999999999999998}

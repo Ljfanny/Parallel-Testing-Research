@@ -1,0 +1,2 @@
+{'org.activiti.engine.test.api.task.TaskServiceTest#testGetVariableByHistoricActivityInstance': '26CPU2Mem4GB.sh',
+ 'org.activiti.engine.test.history.HistoricVariableInstanceTest#testHistoricVariableQueryByTaskIds': '26CPU2Mem4GB.sh'}

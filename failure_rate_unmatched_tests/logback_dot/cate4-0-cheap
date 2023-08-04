@@ -1,0 +1,2 @@
+{'ch.qos.logback.core.AsyncAppenderBaseTest#workerShouldStopEvenIfInterruptExceptionConsumedWithinSubappender': '24CPU1Mem4GB.sh',
+ 'ch.qos.logback.core.rolling.TimeBasedRollingTest#withMissingTargetDirWithCompression': '24CPU1Mem4GB.sh'}

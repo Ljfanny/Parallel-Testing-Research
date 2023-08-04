@@ -1,0 +1,13 @@
+{'com.squareup.okhttp.internal.http.URLConnectionTest#connectViaHttpProxyToHttpsUsingBadProxyAndHttpResponseCache': '01noThrottling.sh',
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithChunkedRequestForLargeRequest': '26CPU2Mem4GB.sh',
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithChunkedRequestForSmallRequest': '01noThrottling.sh',
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithFixedLengthRequestForLargeRequest': '26CPU2Mem4GB.sh',
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithFixedLengthRequestForSmallRequest': '01noThrottling.sh',
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#serverShutdownOutput': '01noThrottling.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#headersOnlyStreamIsClosedAfterReplyHeaders': '26CPU2Mem4GB.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#peerHttp2ServerZerosCompressionTable': '01noThrottling.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#pushPromiseStream': '26CPU2Mem4GB.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#readSendsWindowUpdate': '01noThrottling.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#readSendsWindowUpdateHttp2': '01noThrottling.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#remoteSendsDataAfterInFinished': '26CPU2Mem4GB.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#serverClosesClientInputStream': '01noThrottling.sh'}

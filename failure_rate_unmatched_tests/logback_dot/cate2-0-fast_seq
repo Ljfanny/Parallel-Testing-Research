@@ -1,0 +1,6 @@
+{'ch.qos.logback.classic.joran.JoranConfiguratorTest#levelChangePropagator1': '01noThrottling.sh',
+ 'ch.qos.logback.core.AsyncAppenderBaseTest#lossyAppenderShouldOnlyLooseCertainEvents': '01noThrottling.sh',
+ 'ch.qos.logback.core.AsyncAppenderBaseTest#workerShouldStopEvenIfInterruptExceptionConsumedWithinSubappender': '01noThrottling.sh',
+ 'ch.qos.logback.core.rolling.TimeBasedRollingTest#withMissingTargetDirWithCompression': '01noThrottling.sh',
+ 'ch.qos.logback.core.rolling.TimeBasedRollingTest#withMissingTargetDirWithZipCompression': '01noThrottling.sh',
+ 'ch.qos.logback.core.rolling.TimeBasedRollingWithArchiveRemoval_Test#dailyRolloverWithInactivity10': '01noThrottling.sh'}

@@ -1,0 +1,10 @@
+{'22CPU05Mem2GB.sh': [],
+ '26CPU2Mem4GB.sh': ['cn.hutool.cron.demo.CronTest#addAndRemoveTest',
+                     'cn.hutool.cron.demo.CronTest#customCronTest',
+                     'cn.hutool.cron.demo.CronTest#cronTest',
+                     'cn.hutool.cron.test.CronTest#CronPatternTest',
+                     'cn.hutool.cron.test.CronTest#quartzPatternTest',
+                     'cn.hutool.cron.test.CronTest#matchAllTest',
+                     'cn.hutool.cron.test.CronTest#quartzRangePatternTest'],
+ '28CPU2Mem16GB.sh': [],
+ '29CPU4Mem8GB.sh': []}

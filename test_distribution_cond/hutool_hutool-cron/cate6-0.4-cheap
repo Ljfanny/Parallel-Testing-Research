@@ -1,0 +1,12 @@
+{'19CPU010Mem1GB.sh': [],
+ '22CPU05Mem2GB.sh:v0': [],
+ '22CPU05Mem2GB.sh:v1': [],
+ '23CPU05Mem4GB.sh': [],
+ '25CPU1Mem8GB.sh': [],
+ '26CPU2Mem4GB.sh': ['cn.hutool.cron.demo.CronTest#addAndRemoveTest',
+                     'cn.hutool.cron.demo.CronTest#customCronTest',
+                     'cn.hutool.cron.demo.CronTest#cronTest',
+                     'cn.hutool.cron.test.CronTest#CronPatternTest',
+                     'cn.hutool.cron.test.CronTest#quartzPatternTest',
+                     'cn.hutool.cron.test.CronTest#matchAllTest',
+                     'cn.hutool.cron.test.CronTest#quartzRangePatternTest']}

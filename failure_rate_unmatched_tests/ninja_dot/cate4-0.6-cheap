@@ -1,0 +1,2 @@
+{'controllers.ApiControllerDocTest#testGetAndPostArticleViaJson': '26CPU2Mem4GB.sh',
+ 'controllers.ApplicationControllerTest#testThatSetupInitializationCreatesTheTestUsers': '22CPU05Mem2GB.sh'}

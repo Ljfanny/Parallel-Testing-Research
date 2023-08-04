@@ -1,0 +1,11 @@
+{'com.squareup.okhttp.internal.http.URLConnectionTest#connectViaHttpProxyToHttpsUsingBadProxyAndHttpResponseCache': '24CPU1Mem4GB.sh',
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithChunkedRequestForLargeRequest': '25CPU1Mem8GB.sh',
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithChunkedRequestForSmallRequest': '25CPU1Mem8GB.sh',
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithFixedLengthRequestForSmallRequest': '25CPU1Mem8GB.sh',
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#serverShutdownOutput': '25CPU1Mem8GB.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#headersOnlyStreamIsClosedAfterReplyHeaders': '22CPU05Mem2GB.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#peerHttp2ServerZerosCompressionTable': '22CPU05Mem2GB.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#pushPromiseStream': '24CPU1Mem4GB.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#readSendsWindowUpdate': '25CPU1Mem8GB.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#readSendsWindowUpdateHttp2': '24CPU1Mem4GB.sh',
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#serverClosesClientInputStream': '22CPU05Mem2GB.sh'}

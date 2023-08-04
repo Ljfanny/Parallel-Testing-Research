@@ -1,0 +1,3 @@
+{'org.activiti.engine.test.api.task.TaskServiceTest#testGetVariableByHistoricActivityInstance': '29CPU4Mem8GB.sh',
+ 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncServiceSubProcessTimer': '28CPU2Mem16GB.sh',
+ 'org.activiti.engine.test.history.HistoricVariableInstanceTest#testHistoricVariableQueryByTaskIds': '29CPU4Mem8GB.sh'}

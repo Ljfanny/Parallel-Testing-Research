@@ -1,0 +1,5 @@
+{'01noThrottling.sh': ['com.espertech.esper.example.rfidassetzone.TestLRMovingSimMain#testSim',
+                       'com.espertech.esper.example.rfidassetzone.TestAssetZoneMoveStmt#testStmt'],
+ '20CPU010Mem2GB.sh': [],
+ '24CPU1Mem4GB.sh': [],
+ '26CPU2Mem4GB.sh': []}

@@ -1,0 +1,4 @@
+{'timely.store.iterators.TimeSeriesGroupingIteratorTest#testAdditionalTimeSeries': '01noThrottling.sh',
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testManySparseTimeSeries': '01noThrottling.sh',
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testMultipleTimeSeriesMovingAverage': '29CPU4Mem8GB.sh',
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testTimeSeriesDropOff': '01noThrottling.sh'}

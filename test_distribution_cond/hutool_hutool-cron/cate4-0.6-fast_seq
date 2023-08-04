@@ -1,0 +1,7 @@
+{'01noThrottling.sh': ['cn.hutool.cron.test.CronTest#CronPatternTest'],
+ '26CPU2Mem4GB.sh': ['cn.hutool.cron.demo.CronTest#customCronTest',
+                     'cn.hutool.cron.demo.CronTest#cronTest',
+                     'cn.hutool.cron.test.CronTest#quartzPatternTest',
+                     'cn.hutool.cron.test.CronTest#matchAllTest'],
+ '27CPU2Mem8GB.sh': ['cn.hutool.cron.demo.CronTest#addAndRemoveTest'],
+ '28CPU2Mem16GB.sh': ['cn.hutool.cron.test.CronTest#quartzRangePatternTest']}

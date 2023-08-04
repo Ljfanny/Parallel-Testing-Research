@@ -1,0 +1,4 @@
+{'timely.store.iterators.TimeSeriesGroupingIteratorTest#testAdditionalTimeSeries': '24CPU1Mem4GB.sh',
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testManySparseTimeSeries': '26CPU2Mem4GB.sh',
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testMultipleTimeSeriesMovingAverage': '26CPU2Mem4GB.sh',
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testTimeSeriesDropOff': '26CPU2Mem4GB.sh'}
