@@ -1,5 +1,4 @@
-{'01noThrottling.sh': [],
- '19CPU010Mem1GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#appendMappedQueryParamsWithExistingQueryStart',
+{'19CPU010Mem1GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#appendMappedQueryParamsWithExistingQueryStart',
                        'com.github.kevinsawicki.http.HttpRequestTest#appendWithVarargsQueryParamsWithExistingParams',
                        'com.github.kevinsawicki.http.HttpRequestTest#singleVerifier',
                        'com.github.kevinsawicki.http.HttpRequestTest#appendWithNullMappedQueryParamValues'],
@@ -161,4 +160,5 @@
                      'com.github.kevinsawicki.http.HttpRequestTest#contentEncodingHeader',
                      'com.github.kevinsawicki.http.HttpRequestTest#acceptJson'],
  '28CPU2Mem16GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#httpTrust',
-                      'com.github.kevinsawicki.http.HttpRequestTest#getUrlEncodedWithSpace']}
+                      'com.github.kevinsawicki.http.HttpRequestTest#getUrlEncodedWithSpace'],
+ '29CPU4Mem8GB.sh': []}

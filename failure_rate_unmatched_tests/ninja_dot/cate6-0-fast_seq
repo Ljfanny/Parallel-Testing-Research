@@ -1,3 +1,3 @@
-{'controllers.ApiControllerDocTest#testGetAndPostArticleViaJson': '27CPU2Mem8GB.sh',
- 'controllers.ApplicationControllerTest#testThatHomepageWorks': '26CPU2Mem4GB.sh',
- 'controllers.ApplicationControllerTest#testThatSetupInitializationCreatesTheTestUsers': '26CPU2Mem4GB.sh'}
+{'controllers.ApiControllerDocTest#testGetAndPostArticleViaJson': 0.9,
+ 'controllers.ApplicationControllerTest#testThatHomepageWorks': 0.013333333333333308,
+ 'controllers.ApplicationControllerTest#testThatSetupInitializationCreatesTheTestUsers': 0.9}

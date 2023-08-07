@@ -10,15 +10,15 @@ from pprint import pprint, pformat
 
 random.seed(0)
 
-dir_path = 'raft-csvs/'
+dir_path = '../raft-csvs/'
 res_path = 'preprocessed_data_results/'
 idx_tst_path = 'index_test_map/'
 np_path = 'np_solver_arr/'
 distributed_cond_path = 'test_distribution_cond/'
 unmatched_path = 'failure_rate_unmatched_tests/'
 proj_names = [
-    # 'activiti_dot',
-    # 'assertj-core_dot',
+    'activiti_dot',
+    'assertj-core_dot',
     'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
     'commons-exec_dot',
     'db-scheduler_dot',
@@ -489,7 +489,7 @@ if __name__ == '__main__':
     num_of_machines = [2, 4, 6, 8, 10, 12]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
     # chp_or_fst = {'fast_para': [0, 1]}
-    chp_or_fst = {'cheap': [1, 0], 'fast_seq': [0, 1], 'fast_para': [0, 1]}
+    chp_or_fst = {'cheap': [1, 0], 'fast_seq': [0, 1]}
     a = 1
     b = 0
     avail_configs = [
@@ -562,5 +562,5 @@ if __name__ == '__main__':
                     print('------------------------------------   ' + cate + '   ------------------------------------')
                     ga.print_best()
                     ga.rec_best(proj_name, cate)
-        csv_name = 'ext_dat_comp/' + proj_name + '.csv'
+        csv_name = 'ext_dat_z3/' + proj_name + '.csv'
         ext_dat_df.to_csv(csv_name, sep=',', index=False, header=True)

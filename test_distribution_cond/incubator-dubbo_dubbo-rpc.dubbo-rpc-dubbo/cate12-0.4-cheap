@@ -1,5 +1,4 @@
-{'01noThrottling.sh:v0': [],
- '01noThrottling.sh:v1': [],
+{'01noThrottling.sh': [],
  '19CPU010Mem1GB.sh': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testListClient',
                        'org.apache.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClientTest#test_counter_error',
                        'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#TestCallbackMultiInstans',
@@ -27,6 +26,7 @@
                       'org.apache.dubbo.rpc.protocol.dubbo.FutureFilterTest#testSyncCallback',
                       'org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandlerTest#testChangeCancel',
                       'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeDefaultSService'],
+ '23CPU05Mem4GB.sh': [],
  '24CPU1Mem4GB.sh': ['org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky2',
                      'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testDubboProtocol',
                      'org.apache.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClientTest#test_not_share_connect',
@@ -36,7 +36,6 @@
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.ListTelnetHandlerTest#testListDetail',
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.CurrentTelnetHandlerTest#testService',
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandlerTest#testChangeMessageNull'],
- '25CPU1Mem8GB.sh': [],
  '26CPU2Mem4GB.sh': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testErrorMessage',
                      'org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky1',
                      'org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky3',
@@ -68,5 +67,6 @@
  '27CPU2Mem8GB.sh': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testListAllPort',
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.CurrentTelnetHandlerTest#testMessageError',
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testMessageNull'],
- '29CPU4Mem8GB.sh:v0': [],
- '29CPU4Mem8GB.sh:v1': []}
+ '28CPU2Mem16GB.sh': [],
+ '29CPU4Mem8GB.sh:v1': [],
+ '29CPU4Mem8GB.sh:v2': []}

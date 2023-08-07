@@ -78,4 +78,4 @@
  '27CPU2Mem8GB.sh': ['retrofit2.adapter.rxjava.ObservableThrowingTest#bodyThrowingInOnNextDeliveredToError',
                      'retrofit2.adapter.rxjava.ObservableThrowingTest#responseThrowingInOnCompleteDeliveredToPlugin',
                      'retrofit2.adapter.rxjava.SingleThrowingTest#bodyThrowingInOnErrorDeliveredToPlugin'],
- '29CPU4Mem8GB.sh': []}
+ '28CPU2Mem16GB.sh': []}

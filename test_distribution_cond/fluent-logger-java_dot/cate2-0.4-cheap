@@ -1,5 +1,5 @@
-{'19CPU010Mem1GB.sh:v0': ['org.fluentd.logger.sender.TestRawSocketSender#testReconnectAfterBufferFull'],
- '19CPU010Mem1GB.sh:v1': ['org.fluentd.logger.sender.TestNullSender#testNormal',
+{'19CPU010Mem1GB.sh:v1': ['org.fluentd.logger.sender.TestRawSocketSender#testReconnectAfterBufferFull'],
+ '19CPU010Mem1GB.sh:v2': ['org.fluentd.logger.sender.TestNullSender#testNormal',
                           'org.fluentd.logger.TestFluentLogFactory#testGetLogger',
                           'org.fluentd.logger.sender.TestRawSocketSender#testTimeout',
                           'org.fluentd.logger.sender.TestRawSocketSender#testBufferOverflow',

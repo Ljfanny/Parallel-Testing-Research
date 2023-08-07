@@ -1,4 +1,4 @@
-{'23CPU05Mem4GB.sh': [],
+{'25CPU1Mem8GB.sh': [],
  '26CPU2Mem4GB.sh': ['cn.hutool.cron.demo.CronTest#addAndRemoveTest',
                      'cn.hutool.cron.demo.CronTest#customCronTest',
                      'cn.hutool.cron.demo.CronTest#cronTest',

@@ -1,2 +1,2 @@
-{'ch.qos.logback.core.AsyncAppenderBaseTest#workerShouldStopEvenIfInterruptExceptionConsumedWithinSubappender': '26CPU2Mem4GB.sh',
- 'ch.qos.logback.core.rolling.TimeBasedRollingTest#withMissingTargetDirWithZipCompression': '26CPU2Mem4GB.sh'}
+{'ch.qos.logback.core.AsyncAppenderBaseTest#workerShouldStopEvenIfInterruptExceptionConsumedWithinSubappender': 0.00666666666666671,
+ 'ch.qos.logback.core.rolling.TimeBasedRollingTest#withMissingTargetDirWithZipCompression': 0.010000000000000009}

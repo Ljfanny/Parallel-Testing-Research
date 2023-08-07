@@ -29,7 +29,7 @@
                        'com.github.kevinsawicki.http.HttpRequestTest#basicProxyAuthentication',
                        'com.github.kevinsawicki.http.HttpRequestTest#getError',
                        'com.github.kevinsawicki.http.HttpRequestTest#getParameters'],
- '20CPU010Mem2GB.sh': [],
+ '19CPU010Mem1GB.sh': [],
  '24CPU1Mem4GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#appendArrayQueryParams'],
  '25CPU1Mem8GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#appendMappedQueryParamsWithExistingParams',
                      'com.github.kevinsawicki.http.HttpRequestTest#appendEmptyMappedQueryParams'],

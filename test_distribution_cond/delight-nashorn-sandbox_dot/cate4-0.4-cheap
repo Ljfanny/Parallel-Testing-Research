@@ -1,5 +1,5 @@
-{'22CPU05Mem2GB.sh:v0': [],
- '22CPU05Mem2GB.sh:v1': ['delight.nashornsandbox.TestMemoryLimit#test'],
+{'22CPU05Mem2GB.sh': ['delight.nashornsandbox.TestMemoryLimit#test',
+                      'delight.nashornsandbox.TestLimitCPU#test_only_while_good_script'],
  '24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
                      'delight.nashornsandbox.TestExit#testQuitWithScriptContext',
                      'delight.nashornsandbox.TestLimitCPU#test_while_plus_iteration_bad_script'],
@@ -76,4 +76,5 @@
                      'delight.nashornsandbox.TestLimitCPU#testCpuLmitInInvocable',
                      'delight.nashornsandbox.TestLimitCPU#test_only_while',
                      'delight.nashornsandbox.TestLimitCPU#test_nice_script',
-                     'delight.nashornsandbox.TestLimitCPU#test']}
+                     'delight.nashornsandbox.TestLimitCPU#test'],
+ '28CPU2Mem16GB.sh': []}

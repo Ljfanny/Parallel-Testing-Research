@@ -1,5 +1,5 @@
-{'com.github.kagkarlsson.scheduler.SchedulerClientTest#client_should_be_able_to_fetch_executions_for_task': '26CPU2Mem4GB.sh',
- 'com.github.kagkarlsson.scheduler.SchedulerClientTest#client_should_be_able_to_schedule_executions': '26CPU2Mem4GB.sh',
- 'com.github.kagkarlsson.scheduler.SchedulerClientTest#should_be_able_to_schedule_other_executions_from_an_executionhandler': '26CPU2Mem4GB.sh',
- 'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_compatibility': '19CPU010Mem1GB.sh',
- 'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_jdbc_repository_compatibility_with_data': '26CPU2Mem4GB.sh'}
+{'com.github.kagkarlsson.scheduler.SchedulerClientTest#client_should_be_able_to_fetch_executions_for_task': 0.00666666666666671,
+ 'com.github.kagkarlsson.scheduler.SchedulerClientTest#client_should_be_able_to_schedule_executions': 0.00666666666666671,
+ 'com.github.kagkarlsson.scheduler.SchedulerClientTest#should_be_able_to_schedule_other_executions_from_an_executionhandler': 0.00666666666666671,
+ 'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_compatibility': 0.11258278145695366,
+ 'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_jdbc_repository_compatibility_with_data': 0.00666666666666671}

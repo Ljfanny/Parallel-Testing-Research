@@ -1,2 +1,2 @@
-{'org.apache.http.pool.TestConnPool#testLeaseTimeout': '26CPU2Mem4GB.sh',
- 'org.apache.http.pool.TestConnPool#testStatefulConnectionRedistributionOnPerRouteMaxLimit': '26CPU2Mem4GB.sh'}
+{'org.apache.http.pool.TestConnPool#testLeaseTimeout': 0.017241379310344862,
+ 'org.apache.http.pool.TestConnPool#testStatefulConnectionRedistributionOnPerRouteMaxLimit': 0.0034482758620689724}

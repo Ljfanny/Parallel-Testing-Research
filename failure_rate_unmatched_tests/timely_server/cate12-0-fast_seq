@@ -1,4 +1,4 @@
-{'timely.store.iterators.TimeSeriesGroupingIteratorTest#testAdditionalTimeSeries': '01noThrottling.sh',
- 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testManySparseTimeSeries': '01noThrottling.sh',
- 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testMultipleTimeSeriesMovingAverage': '29CPU4Mem8GB.sh',
- 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testTimeSeriesDropOff': '01noThrottling.sh'}
+{'timely.store.iterators.TimeSeriesGroupingIteratorTest#testAdditionalTimeSeries': 0.013333333333333308,
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testManySparseTimeSeries': 0.026666666666666616,
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testMultipleTimeSeriesMovingAverage': 0.0033333333333332993,
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testTimeSeriesDropOff': 0.026666666666666616}

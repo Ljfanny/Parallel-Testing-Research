@@ -1,5 +1,5 @@
-{'01noThrottling.sh': [],
- '19CPU010Mem1GB.sh': [],
+{'01noThrottling.sh:v1': [],
+ '01noThrottling.sh:v2': [],
  '22CPU05Mem2GB.sh': ['delight.nashornsandbox.TestMemoryLimit#test',
                       'delight.nashornsandbox.TestLimitCPU#test_only_while_good_script'],
  '24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
@@ -79,4 +79,4 @@
                      'delight.nashornsandbox.TestLimitCPU#test_only_while',
                      'delight.nashornsandbox.TestLimitCPU#test_nice_script',
                      'delight.nashornsandbox.TestLimitCPU#test'],
- '28CPU2Mem16GB.sh': []}
+ '27CPU2Mem8GB.sh': []}

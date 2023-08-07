@@ -9,7 +9,6 @@
                       'retrofit2.adapter.rxjava.ObservableThrowingSafeSubscriberTest#bodyThrowingInOnCompleteDeliveredToPlugin',
                       'retrofit2.adapter.rxjava.ObservableTest#resultRespectsBackpressure',
                       'retrofit2.adapter.rxjava.CompletableThrowingSafeSubscriberTest#bodyThrowingInOnErrorDeliveredToPlugin'],
- '23CPU05Mem4GB.sh': [],
  '24CPU1Mem4GB.sh': ['retrofit2.adapter.rxjava.ObservableThrowingTest#resultThrowingInOnCompletedDeliveredToPlugin',
                      'retrofit2.adapter.rxjava.CompletableWithSchedulerTest#completableUsesScheduler',
                      'retrofit2.adapter.rxjava.ObservableThrowingSafeSubscriberTest#responseThrowingInOnNextDeliveredToError',
@@ -78,4 +77,5 @@
                      'retrofit2.adapter.rxjava.CompletableThrowingSafeSubscriberTest#throwingInOnCompleteDeliveredToPlugin'],
  '27CPU2Mem8GB.sh': ['retrofit2.adapter.rxjava.ObservableThrowingTest#bodyThrowingInOnNextDeliveredToError',
                      'retrofit2.adapter.rxjava.ObservableThrowingTest#responseThrowingInOnCompleteDeliveredToPlugin',
-                     'retrofit2.adapter.rxjava.SingleThrowingTest#bodyThrowingInOnErrorDeliveredToPlugin']}
+                     'retrofit2.adapter.rxjava.SingleThrowingTest#bodyThrowingInOnErrorDeliveredToPlugin'],
+ '28CPU2Mem16GB.sh': []}
