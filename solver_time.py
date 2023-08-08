@@ -25,11 +25,12 @@ class OptTimeSolver:
 
         res_tsts = [[False for _ in range(self.mach_num)] for _ in range(self.tst_num)]
         res_mach_tms = [0 for _ in range(self.mach_num)]
-        opt.set(timeout = self.timeout)
-        if opt.check() == sat:
-            print('最优解！')
-        else:
-            print('求解超时...')
+        opt.set(timeout=self.timeout)
+        opt.check()
+        # if opt.check() == sat:
+        #     print('最优解！')
+        # else:
+        #     print('求解超时...')
         model = opt.model()
         for j in range(self.mach_num):
             res_mach_tms[j] = model[mach_tms[j]]
