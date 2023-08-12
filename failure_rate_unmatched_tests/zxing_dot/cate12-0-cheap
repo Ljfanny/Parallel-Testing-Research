@@ -1,2 +1,2 @@
-{'com.google.zxing.aztec.encoder.EncoderTest#testAztecWriter': 0.05517241379310345,
- 'com.google.zxing.pdf417.decoder.ec.ErrorCorrectionTestCase#testTooManyErrors': 0.04482758620689653}
+{'com.google.zxing.aztec.encoder.EncoderTest#testAztecWriter': 0.03448275862068961,
+ 'com.google.zxing.pdf417.decoder.ec.ErrorCorrectionTestCase#testTooManyErrors': 0.02758620689655178}

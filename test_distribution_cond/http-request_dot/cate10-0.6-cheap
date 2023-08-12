@@ -2,6 +2,7 @@
                        'com.github.kevinsawicki.http.HttpRequestTest#appendWithVarargsQueryParamsWithExistingParams',
                        'com.github.kevinsawicki.http.HttpRequestTest#singleVerifier',
                        'com.github.kevinsawicki.http.HttpRequestTest#appendWithNullMappedQueryParamValues'],
+ '20CPU010Mem2GB.sh': [],
  '21CPU025Mem2GB.sh': ['com.github.kevinsawicki.http.EncodeTest#encodeMalformedUri',
                        'com.github.kevinsawicki.http.EncodeTest#encode'],
  '22CPU05Mem2GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#appendOddNumberOfParams',
@@ -160,5 +161,4 @@
                      'com.github.kevinsawicki.http.HttpRequestTest#contentEncodingHeader',
                      'com.github.kevinsawicki.http.HttpRequestTest#acceptJson'],
  '28CPU2Mem16GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#httpTrust',
-                      'com.github.kevinsawicki.http.HttpRequestTest#getUrlEncodedWithSpace'],
- '29CPU4Mem8GB.sh': []}
+                      'com.github.kevinsawicki.http.HttpRequestTest#getUrlEncodedWithSpace']}

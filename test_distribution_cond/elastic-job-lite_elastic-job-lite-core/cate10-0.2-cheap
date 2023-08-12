@@ -7,6 +7,7 @@
                        'io.elasticjob.lite.event.JobEventBusTest#assertPost',
                        'io.elasticjob.lite.util.concurrent.ExecutorServiceObjectTest#assertCreateExecutorService',
                        'io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterInitFailureTest#assertInitFailure'],
+ '20CPU010Mem2GB.sh': [],
  '21CPU025Mem2GB.sh': ['io.elasticjob.lite.executor.type.ScriptJobExecutorTest#assertExecuteSuccessForSingleShardingItems',
                        'io.elasticjob.lite.config.JobCoreConfigurationTest#assertBuildWhenTotalSHardingCountIsNegative',
                        'io.elasticjob.lite.api.strategy.JobShardingStrategyFactoryTest#assertGetStrategyFailureWhenNotStrategyClass',
@@ -499,5 +500,4 @@
                      'io.elasticjob.lite.util.json.JobConfigurationGsonTypeAdapterTest#assertFromSimpleJobJson',
                      'io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertReplaceJobNode',
                      'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsServerPath'],
- '28CPU2Mem16GB.sh': ['io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsNotFailover'],
- '29CPU4Mem8GB.sh': []}
+ '28CPU2Mem16GB.sh': ['io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsNotFailover']}

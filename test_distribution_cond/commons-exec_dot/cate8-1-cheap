@@ -50,6 +50,4 @@
  '25CPU1Mem8GB.sh': ['org.apache.commons.exec.CommandLineTest#testAddArgumentWithBothQuotes',
                      'org.apache.commons.exec.DefaultExecutorTest#testExecuteWithArg'],
  '26CPU2Mem4GB.sh:v1': [],
- '26CPU2Mem4GB.sh:v2': ['org.apache.commons.exec.CommandLineTest#testAddArgumentsWithQuotesAndSpaces',
-                        'org.apache.commons.exec.DefaultExecutorTest#testExecuteWithEnv',
-                        'org.apache.commons.exec.DefaultExecutorTest#testExecuteWithWorkingDirectory']}
+ '26CPU2Mem4GB.sh:v2': []}

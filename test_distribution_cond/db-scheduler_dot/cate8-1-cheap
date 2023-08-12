@@ -1,9 +1,11 @@
-{'19CPU010Mem1GB.sh': ['com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_compatibility',
+{'01noThrottling.sh': [],
+ '19CPU010Mem1GB.sh': ['com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_compatibility',
                        'com.github.kagkarlsson.scheduler.WaiterTest#should_wait_at_least_duration',
                        'com.github.kagkarlsson.scheduler.WaiterTest#should_wait_until_woken',
                        'com.github.kagkarlsson.scheduler.WaiterTest#should_wait_for_duration_even_if_prematurely_notified'],
- '22CPU05Mem2GB.sh:v1': [],
- '22CPU05Mem2GB.sh:v2': ['com.github.kagkarlsson.scheduler.RunUntilShutdownTest#should_wait_on_ok_execution'],
+ '21CPU025Mem2GB.sh': [],
+ '22CPU05Mem2GB.sh': ['com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_jdbc_repository_compatibility_with_data',
+                      'com.github.kagkarlsson.scheduler.RunUntilShutdownTest#should_wait_on_ok_execution'],
  '23CPU05Mem4GB.sh': ['com.github.kagkarlsson.scheduler.ScheduledExecutionTest#test_data_class_type_not_equals'],
  '26CPU2Mem4GB.sh': ['com.github.kagkarlsson.scheduler.ExecutionTest#test_equals',
                      'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_jdbc_repository_compatibility_set_data',
@@ -23,5 +25,4 @@
                      'com.github.kagkarlsson.scheduler.compatibility.MssqlCompatibilityTest#com.github.kagkarlsson.scheduler.compatibility.MssqlCompatibilityTest',
                      'com.github.kagkarlsson.scheduler.StringUtilsTest#test_truncate',
                      'com.github.kagkarlsson.scheduler.compatibility.MysqlCompatibilityTest#com.github.kagkarlsson.scheduler.compatibility.MysqlCompatibilityTest'],
- '28CPU2Mem16GB.sh': [],
- '29CPU4Mem8GB.sh': []}
+ '28CPU2Mem16GB.sh': []}

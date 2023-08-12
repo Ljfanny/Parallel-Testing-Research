@@ -1,4 +1,0 @@
-{'com.squareup.okhttp.internal.http.URLConnectionTest#connectViaHttpProxyToHttpsUsingBadProxyAndHttpResponseCache': 0.45238095238095233,
- 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#readSendsWindowUpdate': 0.45999999999999996,
- 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#readSendsWindowUpdateHttp2': 0.45999999999999996,
- 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#serverClosesClientInputStream': 0.41428571428571426}

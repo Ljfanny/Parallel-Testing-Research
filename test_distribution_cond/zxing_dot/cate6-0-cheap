@@ -252,7 +252,6 @@
                      'com.google.zxing.qrcode.decoder.DecodedBitStreamParserTestCase#testHanzi',
                      'com.google.zxing.client.result.EmailAddressParsedResultTestCase#testEmailAddress',
                      'com.google.zxing.client.result.EmailAddressParsedResultTestCase#testEmailDocomo',
-                     'com.google.zxing.pdf417.decoder.ec.ErrorCorrectionTestCase#testTooManyErrors',
                      'com.google.zxing.pdf417.decoder.ec.ErrorCorrectionTestCase#testNoError',
                      'com.google.zxing.oned.rss.expanded.RSSExpandedImage2stringTestCase#testDecodeRow2string_1',
                      'com.google.zxing.oned.rss.expanded.RSSExpandedImage2stringTestCase#testDecodeRow2string_4',
@@ -318,7 +317,6 @@
                      'com.google.zxing.aztec.encoder.EncoderTest#testEncodeDecode10',
                      'com.google.zxing.aztec.encoder.EncoderTest#testEncodeDecode23',
                      'com.google.zxing.aztec.encoder.EncoderTest#testEncodeDecode31',
-                     'com.google.zxing.aztec.encoder.EncoderTest#testAztecWriter',
                      'com.google.zxing.aztec.encoder.EncoderTest#testEncodeDecode1',
                      'com.google.zxing.aztec.encoder.EncoderTest#testGenerateModeMessage',
                      'com.google.zxing.pdf417.detector.DetectorTest#testRotate180',
@@ -342,4 +340,6 @@
                      'com.google.zxing.qrcode.encoder.EncoderTestCase#testGetNumDataBytesAndNumECBytesForBlockID',
                      'com.google.zxing.qrcode.encoder.EncoderTestCase#testChooseMode',
                      'com.google.zxing.qrcode.encoder.QRCodeTestCase#test',
-                     'com.google.zxing.client.result.TelParsedResultTestCase#testTel']}
+                     'com.google.zxing.aztec.encoder.EncoderTest#testAztecWriter',
+                     'com.google.zxing.client.result.TelParsedResultTestCase#testTel',
+                     'com.google.zxing.pdf417.decoder.ec.ErrorCorrectionTestCase#testTooManyErrors']}

@@ -440,12 +440,8 @@
                      'org.activiti.editor.language.xml.MapExceptionConverterTest#testMapExceptionWithNoExceptionClass',
                      'org.activiti.editor.language.xml.SubProcessConverterNoDITest#convertModelToXML',
                      'org.activiti.editor.language.xml.CommaSplitterTest#testOManyComaInExpression'],
- '25CPU1Mem8GB.sh': ['org.activiti.standalone.calendar.DurationHelperTest#shouldNotExceedNumber',
-                     'org.activiti.examples.runtime.StandardAgendaFailingTest#org.activiti.examples.runtime.StandardAgendaFailingTest',
-                     'org.activiti.engine.test.jobexecutor.AsyncExecutorTest#testAsyncScriptExecutionOnTwoEngines',
-                     'org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest#org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest',
-                     'org.activiti.editor.language.xml.MessageConverterTest#convertXMLToModel',
-                     'org.activiti.editor.language.xml.MapExceptionConverterTest#testMapExceptionWithInvalidHasChildren'],
+ '25CPU1Mem8GB.sh:v1': [],
+ '25CPU1Mem8GB.sh:v2': [],
  '26CPU2Mem4GB.sh': ['org.activiti.spring.security.policies.SecurityPoliciesProcessDefinitionRestrictionApplierTest#denyAllShouldAddUnmatchableFilter',
                      'org.activiti.spring.security.policies.SecurityPoliciesProcessDefinitionRestrictionApplierTest#restrictToKeysAddFilterOnGivenKeys',
                      'org.activiti.spring.security.policies.SecurityPoliciesProcessInstanceRestrictionApplierTest#denyAllShouldAddUnmatchableFilter',
@@ -2044,5 +2040,4 @@
                      'org.activiti.editor.language.xml.SubProcessConverterTest#convertModelToXML',
                      'org.activiti.editor.language.xml.TimerDefinitionConverterTest#convertXMLToModel',
                      'org.activiti.editor.language.xml.UserTaskConverterTest#convertXMLToModel',
-                     'org.activiti.editor.language.xml.CommaSplitterTest#testManyCommas'],
- '28CPU2Mem16GB.sh': []}
+                     'org.activiti.editor.language.xml.CommaSplitterTest#testManyCommas']}

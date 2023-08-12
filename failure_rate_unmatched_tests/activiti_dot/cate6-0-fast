@@ -1,0 +1,4 @@
+{'org.activiti.engine.test.api.task.TaskServiceTest#testGetVariableByHistoricActivityInstance': 0.21999999999999997,
+ 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncServiceSubProcessTimer': 0.0033333333333332993,
+ 'org.activiti.engine.test.history.HistoricVariableInstanceTest#testHistoricVariableQueryByTaskIds': 0.1233333333333333,
+ 'org.activiti.engine.test.jobexecutor.AsyncExecutorTest#testAsyncExecutorDisabledOnOneEngine': 0.0033333333333332993}

@@ -1,12 +1,6 @@
 {'01noThrottling.sh': ['uk.co.flax.luwak.TestMonitorErrorHandling#testMonitorQueryNullValues'],
- '19CPU010Mem1GB.sh': ['uk.co.flax.luwak.matchers.TestPartitionMatcher#testParallelSlowLog',
-                       'uk.co.flax.luwak.TestSlowLog#testSlowLog',
-                       'uk.co.flax.luwak.util.TestSpanRewriter#testConstantScoreQuery',
-                       'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#testMatchAllDocsMustWithKeywordNot',
-                       'uk.co.flax.luwak.TestCachePurging#testBackgroundPurges',
-                       'uk.co.flax.luwak.matchers.TestParallelMatcher#testParallelSlowLog'],
- '20CPU010Mem2GB.sh:v1': [],
- '20CPU010Mem2GB.sh:v2': [],
+ '19CPU010Mem1GB.sh:v1': [],
+ '19CPU010Mem1GB.sh:v2': [],
  '21CPU025Mem2GB.sh': ['uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanBoost'],
  '22CPU05Mem2GB.sh': ['uk.co.flax.luwak.presearcher.TestMatchAllPresearcher#testMatchAllQueryHandling',
                       'uk.co.flax.luwak.TestConcurrentQueryLoader#testLoading',
@@ -201,4 +195,5 @@
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#testFilteringOnMatchAllQueries',
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#filtersOnNumericTermQueries',
                      'uk.co.flax.luwak.testutils.TestCollectionUtils#testPartitions'],
- '28CPU2Mem16GB.sh': ['uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery']}
+ '28CPU2Mem16GB.sh': ['uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery'],
+ '29CPU4Mem8GB.sh': []}

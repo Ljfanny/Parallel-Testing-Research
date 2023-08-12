@@ -1,0 +1,28 @@
+config,tablename,description,CPUS,MEMORY RAM,READ/WRITE IOPS,READ/WRITE Kbps,NIC_DOWNLOAD Kbps,NIC_UPLOAD Kbps,source,throttledVars
+01noThrottling.sh,Baseline (None),Without Throttling,4,16,,,,,exploratory,0
+02CPUThrottling.sh,C,CPU 0.1,0.1,16,,,,,exploratory,1
+03MemThrottling.sh,M,RAM 500M ,4,0.5,,,,,exploratory,1
+04BlkioThrottling.sh,D,READ/WRITE IOPS 50 and READ/WRITE BPS 100kb,4,16,50,100,,,exploratory,1
+05NetThrottling.sh,N,DOWNLOAD 1500 UPLOAD 512 ,4,16,,,1500,512,exploratory,1
+06CPU_Mem_Throttling.sh,"C, M",CPU 0.1 and RAM 500M ,0.1,0.5,,,,,exploratory,2
+07CPU_Net_Throttling.sh,"C, N",CPU 0.1 and DOWNLOAD 1500 UPLOAD 512 ,0.1,16,,,1500,512,exploratory,2
+08Mem_Net_Throttling.sh,"M, N",RAM 500M and DOWNLOAD 1500 UPLOAD 512 ,4,0.5,,,1500,512,exploratory,2
+09Blkio_CPU_Throttling.sh,"D, C",CPU 0.1 and READ/WRITE IOPS 50 and READ/WRITE BPS 100kb,0.1,16,50,100,,,exploratory,2
+10Blkio_Mem_Throttling.sh,"D, M",RAM 500M READ/WRITE IOPS 50 and READ/WRITE BPS 100kb,4,0.5,50,100,,,exploratory,2
+11Blkio_Net_Throttling.sh,"D, N",READ/WRITE IOPS 50 and READ/WRITE BPS 100kb and DOWNLOAD 1500 UPLOAD 512 ,4,16,50,100,1500,512,exploratory,2
+12CPU_Mem_Net_Throttling.sh,"C, M, N",CPU 0.1 and RAM 500M and DOWNLOAD 1500 UPLOAD 512 ,0.1,0.5,,,1500,512,exploratory,3
+13Blkio_CPU_Mem_Throttling.sh,"D, C, M",CPU 0.1 and RAM 500M and READ/WRITE IOPS 50 and READ/WRITE BPS 100kb,0.1,0.5,50,100,,,exploratory,3
+14Blkio_CPU_Net_Throttling.sh,"D, C, N",CPU 0.1 and READ/WRITE IOPS 50 and READ/WRITE BPS 100kb and DOWNLOAD 1500 UPLOAD 512 ,0.1,16,50,100,1500,512,exploratory,3
+15Blkio_Mem_Net_Throttling.sh,"D, M, N",RAM 500M and READ/WRITE IOPS 50 and READ/WRITE BPS 100kb,,0.5,50,100,,,exploratory,3
+16fullThrottling.sh,"C, D, M, N",CPU 0.1 and RAM 500M and READ/WRITE IOPS 50 and READ/WRITE BPS 100kb and DOWNLOAD 1500 UPLOAD 512 ,0.1,0.5,50,100,1500,512,exploratory,4
+19CPU010Mem1GB.sh,CPU 0.1 and RAM 1GB ,CPU 0.1 and RAM 1GB ,0.1,1,,,,,fargate,2
+20CPU010Mem2GB.sh,CPU 0.1 and RAM 2GB ,CPU 0.1 and RAM 2GB ,0.1,2,,,,,fargate,2
+21CPU025Mem2GB.sh,CPU 0.25 and RAM 2GB ,CPU 0.25 and RAM 2GB ,0.25,2,,,,,fargate,2
+22CPU05Mem2GB.sh,CPU 0.5 and RAM 2GB,CPU 0.5 and RAM 2GB,0.5,2,,,,,fargate,2
+23CPU05Mem4GB.sh,CPU 0.5 and RAM 4GB,CPU 0.5 and RAM 4GB,0.5,4,,,,,fargate,2
+24CPU1Mem4GB.sh,CPU 1 and RAM 4GB,CPU 1 and RAM 4GB,1,4,,,,,fargate,2
+25CPU1Mem8GB.sh,CPU 1 and RAM 8GB,CPU 1 and RAM 8GB,1,8,,,,,fargate,2
+26CPU2Mem4GB.sh,CPU 2 and RAM 4GB,CPU 2 and RAM 4GB,2,4,,,,,fargate,2
+27CPU2Mem8GB.sh,CPU 2 and RAM 8GB,CPU 2 and RAM 8GB,2,8,,,,,fargate,2
+28CPU2Mem16GB.sh,CPU 2 and RAM 16GB,CPU 2 and RAM 16GB,2,16,,,,,fargate,1
+29CPU4Mem8GB.sh,CPU 4 and RAM 8GB,CPU 4 and RAM 8GB,4,8,,,,,fargate,1
