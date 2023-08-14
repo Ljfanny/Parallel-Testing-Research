@@ -1,6 +1,6 @@
-{'19CPU010Mem1GB.sh': [],
- '21CPU025Mem2GB.sh': [],
- '23CPU05Mem4GB.sh': [],
+{'01noThrottling.sh': ['org.wso2.carbon.apimgt.throttling.siddhi.extension.ThrottleTimeBatchWindowTestCase#throttleTimeWindowBatchTest2'],
+ '24CPU1Mem4GB.sh:v1': [],
+ '24CPU1Mem4GB.sh:v2': [],
  '27CPU2Mem8GB.sh': [],
- '28CPU2Mem16GB.sh': ['org.wso2.carbon.apimgt.throttling.siddhi.extension.ThrottleTimeBatchWindowTestCase#throttleTimeWindowBatchTest2'],
+ '28CPU2Mem16GB.sh': [],
  '29CPU4Mem8GB.sh': ['org.wso2.carbon.apimgt.throttling.siddhi.extension.ThrottleTimeBatchWindowTestCase#throttleTimeWindowBatchTest1']}

@@ -1,0 +1,6 @@
+{'org.apache.http.nio.protocol.TestAsyncNHttpHandlers#testHttpHeads': 0.0034482758620689724,
+ 'org.apache.http.nio.protocol.TestAsyncNHttpHandlers#testHttpPostsChunked': 0.0034482758620689724,
+ 'org.apache.http.nio.protocol.TestAsyncNHttpHandlers#testHttpPostsWithExpectContinue': 0.0034482758620689724,
+ 'org.apache.http.nio.protocol.TestThrottlingNHttpHandlers#testInputThrottling': 0.0034482758620689724,
+ 'org.apache.http.pool.TestConnPool#testLeaseTimeout': 0.02758620689655178,
+ 'org.apache.http.pool.TestConnPool#testStatefulConnectionRedistributionOnPerRouteMaxLimit': 0.04137931034482756}

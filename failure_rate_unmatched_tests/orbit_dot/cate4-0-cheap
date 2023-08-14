@@ -1,2 +1,5 @@
-{'com.ea.orbit.actors.test.StatelessActorTest#statelessTest': 0.05666666666666664,
- 'com.ea.orbit.actors.test.TimerTest#timerTest': 0.00666666666666671}
+{'com.ea.orbit.actors.test.DeactivationTest#statelessWorkerDeactivationTest': 0.0033333333333332993,
+ 'com.ea.orbit.actors.test.LifeCycleTest#deactivationTest': 0.0033333333333332993,
+ 'com.ea.orbit.actors.test.ReminderTest#persistedTimerTest': 0.08666666666666667,
+ 'com.ea.orbit.actors.test.StatelessActorTest#statelessTest': 0.043333333333333335,
+ 'com.ea.orbit.actors.test.TimerTest#timerTest': 0.3466666666666667}

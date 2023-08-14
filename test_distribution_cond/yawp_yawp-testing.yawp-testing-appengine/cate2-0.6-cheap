@@ -1,2 +1,2 @@
-{'24CPU1Mem4GB.sh': [],
- '26CPU2Mem4GB.sh': ['io.yawp.testing.appengine.pipes.flow.FlowDropsTest#testFlowDropsToSameSink']}
+{'22CPU05Mem2GB.sh:v1': [],
+ '22CPU05Mem2GB.sh:v2': ['io.yawp.testing.appengine.pipes.flow.FlowDropsTest#testFlowDropsToSameSink']}

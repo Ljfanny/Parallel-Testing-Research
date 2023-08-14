@@ -1,5 +1,5 @@
 {'com.github.kagkarlsson.scheduler.SchedulerClientTest#client_should_be_able_to_fetch_executions_for_task': 0.0033333333333332993,
  'com.github.kagkarlsson.scheduler.SchedulerClientTest#client_should_be_able_to_schedule_executions': 0.0033333333333332993,
  'com.github.kagkarlsson.scheduler.SchedulerClientTest#should_be_able_to_schedule_other_executions_from_an_executionhandler': 0.0033333333333332993,
- 'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_compatibility': 0.013333333333333308,
+ 'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_compatibility': 0.0033333333333332993,
  'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_jdbc_repository_compatibility_with_data': 0.0033333333333332993}

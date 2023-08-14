@@ -1,3 +1,3 @@
 {'controllers.ApiControllerDocTest#testGetAndPostArticleViaJson': 0.9,
- 'controllers.ApplicationControllerTest#testThatHomepageWorks': 0.013333333333333308,
+ 'controllers.ApplicationControllerTest#testThatHomepageWorks': 0.023333333333333317,
  'controllers.ApplicationControllerTest#testThatSetupInitializationCreatesTheTestUsers': 0.9}

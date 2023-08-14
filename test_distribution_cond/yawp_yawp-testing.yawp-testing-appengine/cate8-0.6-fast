@@ -1,8 +1,8 @@
-{'01noThrottling.sh': ['io.yawp.testing.appengine.pipes.flow.FlowDropsTest#testFlowDropsToSameSink'],
- '19CPU010Mem1GB.sh:v1': [],
- '19CPU010Mem1GB.sh:v2': [],
- '21CPU025Mem2GB.sh': [],
+{'01noThrottling.sh:v1': [],
+ '01noThrottling.sh:v2': [],
  '26CPU2Mem4GB.sh:v1': [],
  '26CPU2Mem4GB.sh:v2': [],
- '27CPU2Mem8GB.sh': [],
- '29CPU4Mem8GB.sh': []}
+ '27CPU2Mem8GB.sh:v1': [],
+ '27CPU2Mem8GB.sh:v2': [],
+ '29CPU4Mem8GB.sh:v1': [],
+ '29CPU4Mem8GB.sh:v2': ['io.yawp.testing.appengine.pipes.flow.FlowDropsTest#testFlowDropsToSameSink']}

@@ -1,7 +1,7 @@
 import os
 import random
-import pandas as pd
 import copy
+import pandas as pd
 from pprint import pprint, pformat
 from preproc import preproc, conf_prc_map
 from proc_maven_log import read_setup_time_map
@@ -20,7 +20,7 @@ proj_names = [
     'elastic-job-lite_elastic-job-lite-core',
     'esper_examples.rfidassetzone',
     'fastjson_dot',
-    'fluent-logger-java_dot',
+    # 'fluent-logger-java_dot': setup time < 0?
     'handlebars.java_dot',
     'hbase_dot',
     'http-request_dot',
@@ -61,6 +61,7 @@ def analysis_machs(machs: list, setup_tm_dict: dict):
     mach_test_dict = {}
     mach_time_dict = {}
     multi_dict = {}
+    conf_machs_map = {k: [] for k in list(set(machs))}
     bool_arr = [False for _ in range(confs_num)]
     num_arr = [0 for _ in range(confs_num)]
     idx_arr = []
@@ -69,7 +70,6 @@ def analysis_machs(machs: list, setup_tm_dict: dict):
         num_arr[idx] += 1
         idx_arr.append(idx)
         if num_arr[idx] > 1: bool_arr[idx] = True
-    rec_num_arr = copy.deepcopy(num_arr)
     for i, idx in enumerate(idx_arr):
         cur_mach = mach_arr[i]
         setup_tm = setup_tm_dict[cur_mach]
@@ -78,15 +78,16 @@ def analysis_machs(machs: list, setup_tm_dict: dict):
             num_arr[idx] -= 1
             if cur_mach not in multi_dict.keys(): multi_dict[cur_mach] = []
             mach_arr[i] = cur_mach + ':' + versions[num_arr[idx]]
+            conf_machs_map[cur_mach].append(mach_arr[i])
             cur_mach = mach_arr[i]
         mach_test_dict[cur_mach] = []
         mach_time_dict[cur_mach] = setup_tm
         price += prc
-    return price, mach_arr, rec_num_arr, mach_test_dict, mach_time_dict, multi_dict
+    return price, mach_arr, mach_test_dict, mach_time_dict, multi_dict, conf_machs_map
 
 
 def get_fst_alloc(machs: list, fr: float, avg_tm_dict: dict, setup_tm_dict: dict):
-    price, mach_arr, _, mach_test_dict, mach_time_dict, _ = analysis_machs(machs, setup_tm_dict)
+    price, mach_arr, mach_test_dict, mach_time_dict, _, _ = analysis_machs(machs, setup_tm_dict)
     unmatched_fr_test = {}
     confs = set(machs)
     min_fr = 100
@@ -131,7 +132,7 @@ def get_fst_alloc(machs: list, fr: float, avg_tm_dict: dict, setup_tm_dict: dict
 
 
 def get_chp_alloc(machs: list, fr: float, avg_tm_dict: dict, setup_tm_dict: dict):
-    price, mach_arr, num_arr, mach_test_dict, mach_time_dict, multi_dict = analysis_machs(machs, setup_tm_dict)
+    price, mach_arr, mach_test_dict, mach_time_dict, multi_dict, conf_machs_map = analysis_machs(machs, setup_tm_dict)
     unmatched_fr_test = {}
     confs = set(machs)
     min_fr = 100
@@ -147,9 +148,8 @@ def get_chp_alloc(machs: list, fr: float, avg_tm_dict: dict, setup_tm_dict: dict
             cur_fr = item[failure_rate_idx]
             if thrott_conf not in confs or cur_fr > fr:
                 continue
-            cost = item[price_idx]
-            if cost < mini:
-                mini = cost
+            if item[price_idx] < mini:
+                mini = item[price_idx]
                 mini_conf = thrott_conf
                 mini_price = item[price_idx]
                 mini_time = item[avg_time_idx]
@@ -182,23 +182,17 @@ def get_chp_alloc(machs: list, fr: float, avg_tm_dict: dict, setup_tm_dict: dict
             multi_dict[mini_conf].append([tst, mini_time])
         price += mini_price
     for key, val in multi_dict.items():
-        if len(val) == 0: continue
-        conf_idx = conf_idx_map[key]
-        num = num_arr[conf_idx]
-        avg = sum(list(zip(*val))[-1]) / num
-        sort_time_list = sorted(val, key=lambda x: x[1], reverse=True)
-        i = 0
-        idx = num - 1
-        while idx >= 0 and i < len(val):
-            conf_ver = key + ':' + versions[idx]
-            tst = sort_time_list[i][0]
-            tm = sort_time_list[i][1]
-            if mach_time_dict[conf_ver] + tm <= avg:
-                mach_time_dict[conf_ver] += tm
-                mach_test_dict[conf_ver].append(tst)
-                i += 1
-            else:
-                idx -= 1
+        for tup in val:
+            tst = tup[0]
+            tm = tup[1]
+            min_para_time = float('inf')
+            min_mac = ''
+            for mac in conf_machs_map[key]:
+                if mach_time_dict[mac] + tm < min_para_time:
+                    min_para_time = mach_time_dict[mac] + tm
+                    min_mac = mac
+            mach_time_dict[min_mac] += tm
+            mach_test_dict[min_mac].append(tst)
     time_parallel = max(mach_time_dict.values())
     time_seq = sum(mach_time_dict.values())
     return time_seq, time_parallel, price, min_fr, max_fr, mach_test_dict, unmatched_fr_test
@@ -279,7 +273,7 @@ class GA:
     def mutation(self, children):
         chd_num = len(children)
         for i in range(chd_num):
-            mut_chance = True if random.random() < float(1) / len(children[i]) else False
+            mut_chance = True if random.random() < float(1) / len(children[i])else False
             if mut_chance:
                 pos = random.randint(0, self.gene_length - 1)
                 children[i][pos] = random.choice(self.avail_confs)
@@ -287,10 +281,13 @@ class GA:
 
     def run(self):
         for i in range(self.max_iter):
-            parents = self.selection()
-            children = self.crossover(parents)
-            self.mutation(children)
-            self.population = parents + children
+            if self.gene_length > 1:
+                parents = self.selection()
+                children = self.crossover(parents)
+                self.mutation(children)
+                self.population = parents + children
+            else:
+                self.mutation(self.population)
 
     def print_best(self):
         pop = sorted(self.population, key=lambda ind: self.memo[self.chg(ind)].score)
@@ -315,7 +312,8 @@ class GA:
         conf_num_map = {}
         for cf in confs:
             conf_num_map[cf] = num_arr[conf_idx_map[cf]]
-        ext_dat_df.loc[len(ext_dat_df.index)] = [proj_name, cate, len(confs), conf_num_map, ind.time_seq, ind.time_parallel,
+        ext_dat_df.loc[len(ext_dat_df.index)] = [proj_name, cate, len(confs), conf_num_map,
+                                                 ind.time_seq, ind.time_parallel,
                                                  ind.price, ind.min_fr, ind.max_fr]
         dis_folder = distributed_cond_path + proj_name
         if not os.path.exists(dis_folder):
@@ -350,7 +348,7 @@ class GA:
 
 
 if __name__ == '__main__':
-    num_of_machines = [2, 4, 6, 8, 10, 12]
+    num_of_machines = [1, 2, 4, 6, 8, 10, 12]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
     chp_or_fst = ['cheap', 'fast']
     avail_confs = [
@@ -365,8 +363,7 @@ if __name__ == '__main__':
         '27CPU2Mem8GB.sh',
         '28CPU2Mem16GB.sh',
         '29CPU4Mem8GB.sh',
-        '01noThrottling.sh'
-    ]
+        '01noThrottling.sh']
     for i in range(confs_num):
         conf_idx_map[avail_confs[i]] = i
     for proj_name in proj_names:
@@ -383,15 +380,17 @@ if __name__ == '__main__':
                                   )
         avg_tm_dict = preproc(proj_name)
         setup_tm_dict = read_setup_time_map(proj_name)
-        for mach in num_of_machines:
+        for mach_num in num_of_machines:
             for pct in pct_of_failure_rate:
                 for modu in chp_or_fst:
-                    ga = GA(fr=pct, modu=modu, avail_confs=avail_confs,
-                            avg_tm_dict=avg_tm_dict, setup_tm_dict=setup_tm_dict,
-                            pop_size=100, gene_length=mach, max_iter=100)
+                    ga = GA(fr=pct, modu=modu,
+                            avail_confs=avail_confs,
+                            avg_tm_dict=avg_tm_dict,
+                            setup_tm_dict=setup_tm_dict,
+                            pop_size=100, gene_length=mach_num, max_iter=100)
                     ga.init_pop()
                     ga.run()
-                    cate = str(mach) + '-' + str(pct) + '-' + modu
+                    cate = str(mach_num) + '-' + str(pct) + '-' + modu
                     print('------------------------------------   ' + cate + '   ------------------------------------')
                     ga.print_best()
                     ga.rec_best(proj_name, cate)

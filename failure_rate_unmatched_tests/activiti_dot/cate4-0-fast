@@ -1,14 +1,6 @@
-{'org.activiti.engine.test.api.task.TaskServiceTest#testGetVariableByHistoricActivityInstance': 0.30000000000000004,
- 'org.activiti.engine.test.bpmn.async.AsyncExclusiveJobsTest#testExclusiveJobs': 0.0033333333333332993,
- 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncCallActivity': 0.0033333333333332993,
- 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncServiceListeners': 0.0033333333333332993,
+{'org.activiti.engine.test.api.task.TaskServiceTest#testGetVariableByHistoricActivityInstance': 0.2766666666666666,
  'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncServiceMultiInstance': 0.0033333333333332993,
- 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncServiceSubProcess': 0.0033333333333332993,
- 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncServiceSubProcessTimer': 0.013333333333333308,
- 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncTask': 0.013333333333333308,
- 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncUserTask': 0.0033333333333332993,
+ 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncServiceSubProcessTimer': 0.00666666666666671,
+ 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncTask': 0.010000000000000009,
  'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testBasicAsyncCallActivity': 0.0033333333333332993,
- 'org.activiti.engine.test.bpmn.event.message.MessageIntermediateEventTest#testAsyncTriggeredMessageEvent': 0.0033333333333332993,
- 'org.activiti.engine.test.bpmn.event.timer.BoundaryTimerNonInterruptingEventTest#testJoin': 0.00666666666666671,
- 'org.activiti.engine.test.history.HistoricVariableInstanceTest#testHistoricVariableQueryByTaskIds': 0.1333333333333333,
- 'org.activiti.engine.test.jobexecutor.AsyncExecutorTest#testAsyncExecutorDisabledOnOneEngine': 0.0033333333333332993}
+ 'org.activiti.engine.test.history.HistoricVariableInstanceTest#testHistoricVariableQueryByTaskIds': 0.10999999999999999}

@@ -1,8 +1,8 @@
-{'01noThrottling.sh:v1': [],
- '01noThrottling.sh:v2': [],
- '20CPU010Mem2GB.sh': [],
- '23CPU05Mem4GB.sh': [],
- '24CPU1Mem4GB.sh': [],
- '26CPU2Mem4GB.sh': ['io.yawp.testing.appengine.pipes.flow.FlowDropsTest#testFlowDropsToSameSink'],
- '28CPU2Mem16GB.sh': [],
- '29CPU4Mem8GB.sh': []}
+{'22CPU05Mem2GB.sh:v1': [],
+ '22CPU05Mem2GB.sh:v2': [],
+ '22CPU05Mem2GB.sh:v3': [],
+ '22CPU05Mem2GB.sh:v4': [],
+ '22CPU05Mem2GB.sh:v5': [],
+ '22CPU05Mem2GB.sh:v6': [],
+ '22CPU05Mem2GB.sh:v7': [],
+ '22CPU05Mem2GB.sh:v8': ['io.yawp.testing.appengine.pipes.flow.FlowDropsTest#testFlowDropsToSameSink']}

@@ -1,1 +1,2 @@
-{'org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testHeartbeat': 0.0034482758620689724}
+{'org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testHeartbeat': 0.0034482758620689724,
+ 'org.apache.dubbo.remoting.transport.netty.NettyClientToServerTest#testFuture': 0.07241379310344831}

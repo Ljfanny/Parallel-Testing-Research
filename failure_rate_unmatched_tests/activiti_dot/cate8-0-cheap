@@ -1,2 +1,3 @@
-{'org.activiti.engine.test.api.task.TaskServiceTest#testGetVariableByHistoricActivityInstance': 0.16296296296296298,
- 'org.activiti.engine.test.history.HistoricVariableInstanceTest#testHistoricVariableQueryByTaskIds': 0.04814814814814816}
+{'org.activiti.engine.test.api.task.TaskServiceTest#testGetVariableByHistoricActivityInstance': 0.19999999999999996,
+ 'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testAsyncServiceSubProcessTimer': 0.0033333333333332993,
+ 'org.activiti.engine.test.history.HistoricVariableInstanceTest#testHistoricVariableQueryByTaskIds': 0.096551724137931}

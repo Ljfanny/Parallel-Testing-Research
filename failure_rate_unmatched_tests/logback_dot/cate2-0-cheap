@@ -1,4 +1,3 @@
 {'ch.qos.logback.core.AsyncAppenderBaseTest#workerShouldStopEvenIfInterruptExceptionConsumedWithinSubappender': 0.00666666666666671,
  'ch.qos.logback.core.rolling.TimeBasedRollingTest#withMissingTargetDirWithCompression': 0.0033333333333332993,
- 'ch.qos.logback.core.rolling.TimeBasedRollingTest#withMissingTargetDirWithZipCompression': 0.010000000000000009,
- 'ch.qos.logback.core.rolling.TimeBasedRollingWithArchiveRemoval_Test#dailyRolloverWithInactivity10': 0.0033333333333332993}
+ 'ch.qos.logback.core.rolling.TimeBasedRollingTest#withMissingTargetDirWithZipCompression': 0.010000000000000009}
