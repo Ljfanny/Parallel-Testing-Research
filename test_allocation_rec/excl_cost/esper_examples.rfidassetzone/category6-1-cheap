@@ -1,0 +1,6 @@
+{'19CPU010Mem1GB.sh': ['com.espertech.esper.example.rfidassetzone.TestLRMovingSimMain#testSim'],
+ '21CPU025Mem2GB.sh': [],
+ '22CPU05Mem2GB.sh': [],
+ '23CPU05Mem4GB.sh': [],
+ '26CPU2Mem4GB.sh': ['com.espertech.esper.example.rfidassetzone.TestAssetZoneMoveStmt#testStmt'],
+ '28CPU2Mem16GB.sh': []}

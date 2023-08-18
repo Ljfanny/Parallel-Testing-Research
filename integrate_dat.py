@@ -35,7 +35,8 @@ dfs = [pd.DataFrame(None,
                              'fastest_runtime_saving'])
        for _ in range(6)]
 fr_idx_map = {0: 0, 0.2: 1, 0.4: 2, 0.6: 3, 0.8: 4, 1: 5}
-baseline_path = '[ignore]baseline_dat/'
+modu = 'excl_cost'
+baseline_path = f'baseline_dat/{modu}/'
 col_name = 'machine_list_or_failure_rate_or_cheap_or_fast_category'
 
 
@@ -49,8 +50,8 @@ def get_baseline(modu: str, proj: str, mach_num: int, fr: float):
 
 
 if __name__ == '__main__':
-    res_path = '[ignore]ext_dat/'
-    resu = '[ignore]integration_dat.xlsx'
+    res_path = f'ext_dat/{modu}/'
+    resu = f'integration_dat_{modu}.xlsx'
     filenames = os.listdir(res_path)
     for f in filenames:
         proj_name = f[:f.index('csv')-1]

@@ -259,7 +259,7 @@ class Individual:
         print('Failure rate unmatched tests: ')
         pprint(self.unmatched_fr_test)
 
-    def record_ind(self, prefix, proj, cg, df):
+    def record_ind(self, subdir, proj, cg, df):
         num_tup = mapping(self.machs)
         confs = set(self.machs)
         conf_num_map = {idx_conf_map[k]: num_tup[k] for k in confs}
@@ -272,7 +272,7 @@ class Individual:
                                  self.price,
                                  self.min_fr,
                                  self.max_fr]
-        dis_folder = prefix + tst_alloc_rec_path + proj
+        dis_folder = tst_alloc_rec_path + subdir + '/' + proj
         if not os.path.exists(dis_folder):
             os.makedirs(dis_folder)
         temp_dict = {idx_conf_map[k[0]] if k[1] == -1
@@ -280,7 +280,7 @@ class Individual:
         with open(dis_folder + '/category' + cg, 'w') as f:
             f.write(pformat(temp_dict))
         f.close()
-        unmatched_folder = prefix + unmatched_path + proj
+        unmatched_folder = unmatched_path + subdir + '/' + proj
         if not os.path.exists(unmatched_folder):
             os.makedirs(unmatched_folder)
         with open(unmatched_folder + '/category' + cg, 'w') as f:
@@ -402,8 +402,11 @@ if __name__ == '__main__':
     chp_or_fst = ['cheap', 'fast']
 
     whether_to_ignore_setup_cost = True
-    modus = {True: '[ignore]', False: '[non-ignore]'}
-    pref = modus[whether_to_ignore_setup_cost]
+    modus = {True: 'excl_cost', False: 'incl_cost'}
+    sub = modus[whether_to_ignore_setup_cost]
+    dat_df_csv_path = baseline_path + sub
+    if not os.path.exists(dat_df_csv_path):
+        os.mkdir(dat_df_csv_path)
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
                                   columns=['project',
@@ -416,7 +419,7 @@ if __name__ == '__main__':
                                            'min_failure_rate',
                                            'max_failure_rate']
                                   )
-        dat_df_csv = pref + baseline_path + proj_name + '.csv'
+        dat_df_csv = dat_df_csv_path + '/' + proj_name + '.csv'
         whether_baseline_exist = os.path.exists(dat_df_csv)
         dat_df = pd.DataFrame(None,
                               columns=['project',
@@ -443,13 +446,15 @@ if __name__ == '__main__':
                             max_iter=100)
                     ga.init_pop()
                     if not whether_baseline_exist:
-                        record_baseline('[baseline-' + pref[1:], proj_name, dat_df, ga)
+                        record_baseline('baseline_' + sub, proj_name, dat_df, ga)
                     ga.run()
                     category = str(mach_num) + '-' + str(pct) + '-' + cho
                     print('-------------------------------   ' + category + '   -------------------------------')
                     ga.print_best()
-                    ga.record_best(pref, proj_name, category)
-        csv_name = pref + resu_path + proj_name + '.csv'
+                    ga.record_best(sub, proj_name, category)
+        if not os.path.exists(resu_path + sub):
+            os.mkdir(resu_path + sub)
+        csv_name = resu_path + sub + '/' + proj_name + '.csv'
         ext_dat_df.to_csv(csv_name, sep=',', index=False, header=True)
         if not whether_baseline_exist:
             dat_df.to_csv(dat_df_csv, sep=',', index=False, header=True)

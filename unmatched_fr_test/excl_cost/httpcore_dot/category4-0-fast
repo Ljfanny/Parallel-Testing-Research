@@ -1,0 +1,2 @@
+{'org.apache.http.pool.TestConnPool#testLeaseTimeout': 0.024137931034482807,
+ 'org.apache.http.pool.TestConnPool#testStatefulConnectionRedistributionOnPerRouteMaxLimit': 0.010344827586206917}
