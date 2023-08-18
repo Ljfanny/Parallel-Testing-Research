@@ -1,0 +1,37 @@
+project,machine_list_or_failure_rate_or_cheap_or_fast_category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate
+noxy_noxy-discovery-zookeeper,1-0-cheap,1,{'26CPU2Mem4GB.sh': 1},19.223946666666688,19.223946666666688,0.0425129633159389,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-0-fast,1,{'01noThrottling.sh': 1},17.135453333333334,17.135453333333334,0.0894795093355333,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-0.2-cheap,1,{'26CPU2Mem4GB.sh': 1},19.223946666666688,19.223946666666688,0.0425129633159389,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-0.2-fast,1,{'01noThrottling.sh': 1},17.135453333333334,17.135453333333334,0.0894795093355333,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-0.4-cheap,1,{'26CPU2Mem4GB.sh': 1},19.223946666666688,19.223946666666688,0.0425129633159389,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-0.4-fast,1,{'01noThrottling.sh': 1},17.135453333333334,17.135453333333334,0.0894795093355333,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-0.6-cheap,1,{'26CPU2Mem4GB.sh': 1},19.223946666666688,19.223946666666688,0.0425129633159389,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-0.6-fast,1,{'01noThrottling.sh': 1},17.135453333333334,17.135453333333334,0.0894795093355333,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-0.8-cheap,1,{'26CPU2Mem4GB.sh': 1},19.223946666666688,19.223946666666688,0.0425129633159389,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-0.8-fast,1,{'01noThrottling.sh': 1},17.135453333333334,17.135453333333334,0.0894795093355333,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-1-cheap,1,{'26CPU2Mem4GB.sh': 1},19.223946666666688,19.223946666666688,0.0425129633159389,0.0,0.0
+noxy_noxy-discovery-zookeeper,1-1-fast,1,{'01noThrottling.sh': 1},17.135453333333334,17.135453333333334,0.0894795093355333,0.0,0.0
+noxy_noxy-discovery-zookeeper,2-0-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",64.2520642937854,47.17919096045204,0.0387135768174469,0.0,0.0
+noxy_noxy-discovery-zookeeper,2-0-fast,2,"{'01noThrottling.sh': 1, '22CPU05Mem2GB.sh': 1}",24.450740000000025,14.965653333333332,0.0787378017196499,0.0,0.0
+noxy_noxy-discovery-zookeeper,2-0.2-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",64.2520642937854,47.17919096045204,0.0387135768174469,0.0,0.0166666666666667
+noxy_noxy-discovery-zookeeper,2-0.2-fast,2,"{'01noThrottling.sh': 1, '22CPU05Mem2GB.sh': 1}",24.450740000000025,14.965653333333332,0.0787378017196499,0.0,0.0
+noxy_noxy-discovery-zookeeper,2-0.4-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",64.2520642937854,47.17919096045204,0.0387135768174469,0.0,0.0166666666666667
+noxy_noxy-discovery-zookeeper,2-0.4-fast,2,"{'01noThrottling.sh': 1, '22CPU05Mem2GB.sh': 1}",24.450740000000025,14.965653333333332,0.0787378017196499,0.0,0.0
+noxy_noxy-discovery-zookeeper,2-0.6-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",64.2520642937854,47.17919096045204,0.0387135768174469,0.0,0.0166666666666667
+noxy_noxy-discovery-zookeeper,2-0.6-fast,2,"{'01noThrottling.sh': 1, '22CPU05Mem2GB.sh': 1}",24.450740000000025,14.965653333333332,0.0787378017196499,0.0,0.0
+noxy_noxy-discovery-zookeeper,2-0.8-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",64.2520642937854,47.17919096045204,0.0387135768174469,0.0,0.0166666666666667
+noxy_noxy-discovery-zookeeper,2-0.8-fast,2,"{'01noThrottling.sh': 1, '22CPU05Mem2GB.sh': 1}",24.450740000000025,14.965653333333332,0.0787378017196499,0.0,0.0
+noxy_noxy-discovery-zookeeper,2-1-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",64.2520642937854,47.17919096045204,0.0387135768174469,0.0,0.0166666666666667
+noxy_noxy-discovery-zookeeper,2-1-fast,2,"{'01noThrottling.sh': 1, '22CPU05Mem2GB.sh': 1}",24.450740000000025,14.965653333333332,0.0787378017196499,0.0,0.0
+noxy_noxy-discovery-zookeeper,4-0-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 3}",68.26897762711877,47.17919096045204,0.03874662931932477,0.0,0.0
+noxy_noxy-discovery-zookeeper,4-0-fast,4,"{'01noThrottling.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1}",45.681816666666776,14.965653333333332,0.07906998640469443,0.0,0.0
+noxy_noxy-discovery-zookeeper,4-0.2-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 3}",68.26897762711877,47.17919096045204,0.03874662931932477,0.0,0.01666666666666672
+noxy_noxy-discovery-zookeeper,4-0.2-fast,4,"{'01noThrottling.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1}",45.681816666666776,14.965653333333332,0.07906998640469443,0.0,0.0
+noxy_noxy-discovery-zookeeper,4-0.4-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 3}",68.26897762711877,47.17919096045204,0.03874662931932477,0.0,0.01666666666666672
+noxy_noxy-discovery-zookeeper,4-0.4-fast,4,"{'01noThrottling.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1}",45.681816666666776,14.965653333333332,0.07906998640469443,0.0,0.0
+noxy_noxy-discovery-zookeeper,4-0.6-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 3}",68.26897762711877,47.17919096045204,0.03874662931932477,0.0,0.01666666666666672
+noxy_noxy-discovery-zookeeper,4-0.6-fast,4,"{'01noThrottling.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1}",45.681816666666776,14.965653333333332,0.07906998640469443,0.0,0.0
+noxy_noxy-discovery-zookeeper,4-0.8-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 3}",68.26897762711877,47.17919096045204,0.03874662931932477,0.0,0.01666666666666672
+noxy_noxy-discovery-zookeeper,4-0.8-fast,4,"{'01noThrottling.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1}",45.681816666666776,14.965653333333332,0.07906998640469443,0.0,0.0
+noxy_noxy-discovery-zookeeper,4-1-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 3}",68.26897762711877,47.17919096045204,0.03874662931932477,0.0,0.01666666666666672
+noxy_noxy-discovery-zookeeper,4-1-fast,4,"{'01noThrottling.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1}",45.681816666666776,14.965653333333332,0.07906998640469443,0.0,0.0

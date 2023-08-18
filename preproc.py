@@ -3,9 +3,7 @@ import json
 import pandas as pd
 
 dir_path = '../raft-csvs/'
-res_path = 'preprocessed_data_results/'
-idx_tst_path = 'index_test_map/'
-np_path = 'np_solver_arr/'
+res_path = 'preproc_csvs/'
 err_dat = 'error_tests.csv'
 conf_prc_map = {}
 

@@ -1,0 +1,2 @@
+{'org.fluentd.logger.TestFluentLogger#testInMultiThreading': 0.06999999999999995,
+ 'org.fluentd.logger.sender.TestRawSocketSender#testReconnectAfterBufferFull': 0.41000000000000003}

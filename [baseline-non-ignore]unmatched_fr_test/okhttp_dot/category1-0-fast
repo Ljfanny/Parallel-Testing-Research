@@ -1,0 +1,13 @@
+{'com.squareup.okhttp.internal.http.URLConnectionTest#connectViaHttpProxyToHttpsUsingBadProxyAndHttpResponseCache': 0.33999999999999997,
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithChunkedRequestForLargeRequest': 0.09999999999999998,
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithChunkedRequestForSmallRequest': 0.040000000000000036,
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithFixedLengthRequestForLargeRequest': 0.040000000000000036,
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#postFailsWithFixedLengthRequestForSmallRequest': 0.07999999999999996,
+ 'com.squareup.okhttp.internal.http.URLConnectionTest#serverShutdownOutput': 0.040000000000000036,
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#headersOnlyStreamIsClosedAfterReplyHeaders': 0.31999999999999995,
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#peerHttp2ServerZerosCompressionTable': 0.06000000000000005,
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#pushPromiseStream': 0.36,
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#readSendsWindowUpdate': 0.45999999999999996,
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#readSendsWindowUpdateHttp2': 0.45999999999999996,
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#remoteSendsDataAfterInFinished': 0.020000000000000018,
+ 'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#serverClosesClientInputStream': 0.26}

@@ -1,0 +1,5 @@
+{'ch.qos.logback.classic.joran.JoranConfiguratorTest#levelChangePropagator1': 0.024137931034482807,
+ 'ch.qos.logback.classic.spi.PackagingDataCalculatorTest#perfTest': 0.10689655172413792,
+ 'ch.qos.logback.core.AsyncAppenderBaseTest#workerShouldStopEvenIfInterruptExceptionConsumedWithinSubappender': 0.0034482758620689724,
+ 'ch.qos.logback.core.recovery.RecoveryCoordinatorTest#actualTime': 0.0034482758620689724,
+ 'ch.qos.logback.core.rolling.TimeBasedRollingTest#withMissingTargetDirWithCompression': 0.0034482758620689724}

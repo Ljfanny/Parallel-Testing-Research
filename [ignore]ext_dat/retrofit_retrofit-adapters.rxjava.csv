@@ -1,0 +1,85 @@
+project,machine_list_or_failure_rate_or_cheap_or_fast_category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate
+retrofit_retrofit-adapters.rxjava,1-0-cheap,1,{'22CPU05Mem2GB.sh': 1},4.054513333333327,4.054513333333327,0.002952699334999996,0.0,0
+retrofit_retrofit-adapters.rxjava,1-0-fast,1,{'01noThrottling.sh': 1},2.49027,2.49027,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,1-0.2-cheap,1,{'22CPU05Mem2GB.sh': 1},4.054513333333327,4.054513333333327,0.002952699334999996,0.0,0
+retrofit_retrofit-adapters.rxjava,1-0.2-fast,1,{'01noThrottling.sh': 1},2.49027,2.49027,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,1-0.4-cheap,1,{'22CPU05Mem2GB.sh': 1},4.054513333333327,4.054513333333327,0.002952699334999996,0.0,0
+retrofit_retrofit-adapters.rxjava,1-0.4-fast,1,{'01noThrottling.sh': 1},2.49027,2.49027,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,1-0.6-cheap,1,{'22CPU05Mem2GB.sh': 1},4.054513333333327,4.054513333333327,0.002952699334999996,0.0,0
+retrofit_retrofit-adapters.rxjava,1-0.6-fast,1,{'01noThrottling.sh': 1},2.49027,2.49027,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,1-0.8-cheap,1,{'22CPU05Mem2GB.sh': 1},4.054513333333327,4.054513333333327,0.002952699334999996,0.0,0
+retrofit_retrofit-adapters.rxjava,1-0.8-fast,1,{'01noThrottling.sh': 1},2.49027,2.49027,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,1-1-cheap,1,{'22CPU05Mem2GB.sh': 1},4.054513333333327,4.054513333333327,0.002952699334999996,0.0,0
+retrofit_retrofit-adapters.rxjava,1-1-fast,1,{'01noThrottling.sh': 1},2.49027,2.49027,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.8614799999999994,2.38193,0.0016895124622499976,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0-fast,1,{'01noThrottling.sh': 2},2.490269999999996,1.2453966666666643,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0.2-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.8614799999999994,2.38193,0.0016895124622499976,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0.2-fast,1,{'01noThrottling.sh': 2},2.490269999999996,1.2453966666666643,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0.4-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.8614799999999994,2.38193,0.0016895124622499976,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0.4-fast,1,{'01noThrottling.sh': 2},2.490269999999996,1.2453966666666643,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0.6-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.8614799999999994,2.38193,0.0016895124622499976,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0.6-fast,1,{'01noThrottling.sh': 2},2.490269999999996,1.2453966666666643,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0.8-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.8614799999999994,2.38193,0.0016895124622499976,0.0,0
+retrofit_retrofit-adapters.rxjava,2-0.8-fast,1,{'01noThrottling.sh': 2},2.490269999999996,1.2453966666666643,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,2-1-cheap,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.8614799999999994,2.38193,0.0016895124622499976,0.0,0
+retrofit_retrofit-adapters.rxjava,2-1-fast,1,{'01noThrottling.sh': 2},2.490269999999996,1.2453966666666643,0.014508313019999983,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0-cheap,4,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.886546666666666,2.260396666666667,0.0015869200222499982,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0-fast,3,"{'27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '26CPU2Mem4GB.sh': 2}",2.5152733333333304,1.0097799999999981,0.008001931873333324,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0.2-cheap,4,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.886546666666666,2.260396666666667,0.0015869200222499982,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0.2-fast,2,"{'27CPU2Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 3}",2.515076666666663,1.0097799999999981,0.006657313961666657,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0.4-cheap,4,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.886546666666666,2.260396666666667,0.0015869200222499982,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0.4-fast,2,"{'27CPU2Mem8GB.sh': 2, '26CPU2Mem4GB.sh': 2}",2.5155433333333286,1.0097799999999981,0.007106630089999988,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0.6-cheap,4,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.886546666666666,2.260396666666667,0.0015869200222499982,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0.6-fast,3,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 2}",2.515496666666664,1.0097799999999981,0.009147084203333322,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0.8-cheap,4,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.8865466666666655,2.260396666666667,0.0015869200222499982,0.0,0
+retrofit_retrofit-adapters.rxjava,4-0.8-fast,3,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 2}",2.515496666666664,1.0097799999999981,0.009147084203333322,0.0,0
+retrofit_retrofit-adapters.rxjava,4-1-cheap,4,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2.8865466666666655,2.260396666666667,0.0015869200222499982,0.0,0
+retrofit_retrofit-adapters.rxjava,4-1-fast,2,"{'27CPU2Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 3}",2.515076666666663,1.0097799999999981,0.006657313961666657,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0-cheap,6,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",2.848796666666666,2.260396666666667,0.001581157408083331,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0-fast,1,{'26CPU2Mem4GB.sh': 6},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0.2-cheap,6,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",2.848796666666666,2.260396666666667,0.001581157408083331,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0.2-fast,1,{'26CPU2Mem4GB.sh': 6},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0.4-cheap,6,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",2.848796666666666,2.260396666666667,0.001581157408083331,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0.4-fast,1,{'26CPU2Mem4GB.sh': 6},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0.6-cheap,6,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",2.8487966666666655,2.260396666666667,0.001581157408083331,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0.6-fast,1,{'26CPU2Mem4GB.sh': 6},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0.8-cheap,6,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",2.8487966666666655,2.260396666666667,0.001581157408083331,0.0,0
+retrofit_retrofit-adapters.rxjava,6-0.8-fast,1,{'26CPU2Mem4GB.sh': 6},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,6-1-cheap,6,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",2.8487966666666655,2.260396666666667,0.001581157408083331,0.0,0
+retrofit_retrofit-adapters.rxjava,6-1-fast,1,{'26CPU2Mem4GB.sh': 6},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0-cheap,8,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0-fast,1,{'26CPU2Mem4GB.sh': 8},2.51498333333333,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0.2-cheap,7,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 2, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0.2-fast,1,{'26CPU2Mem4GB.sh': 8},2.51498333333333,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0.4-cheap,8,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0.4-fast,1,{'26CPU2Mem4GB.sh': 8},2.51498333333333,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0.6-cheap,7,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 2, '27CPU2Mem8GB.sh': 1}",2.8491666666666653,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0.6-fast,1,{'26CPU2Mem4GB.sh': 8},2.51498333333333,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0.8-cheap,8,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,8-0.8-fast,1,{'26CPU2Mem4GB.sh': 8},2.51498333333333,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,8-1-cheap,8,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,8-1-fast,1,{'26CPU2Mem4GB.sh': 8},2.51498333333333,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0-cheap,8,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 2, '26CPU2Mem4GB.sh': 2, '27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0-fast,1,{'26CPU2Mem4GB.sh': 10},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0.2-cheap,8,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 2, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 2, '27CPU2Mem8GB.sh': 1}",2.8491666666666653,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0.2-fast,1,{'26CPU2Mem4GB.sh': 10},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0.4-cheap,8,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 2, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 2}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0.4-fast,1,{'26CPU2Mem4GB.sh': 10},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0.6-cheap,9,"{'19CPU010Mem1GB.sh': 2, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1}",2.8491666666666657,1.1957733333333336,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0.6-fast,1,{'26CPU2Mem4GB.sh': 10},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0.8-cheap,9,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 2, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,10-0.8-fast,1,{'26CPU2Mem4GB.sh': 10},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,10-1-cheap,8,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 2, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 2, '01noThrottling.sh': 1}",2.849166666666666,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,10-1-fast,1,{'26CPU2Mem4GB.sh': 10},2.5149833333333294,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0-cheap,10,"{'19CPU010Mem1GB.sh': 1, '20CPU010Mem2GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 3, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1}",2.849166666666666,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0-fast,1,{'26CPU2Mem4GB.sh': 12},2.514983333333329,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0.2-cheap,10,"{'19CPU010Mem1GB.sh': 1, '20CPU010Mem2GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 2, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 2, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0.2-fast,1,{'26CPU2Mem4GB.sh': 12},2.514983333333329,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0.4-cheap,9,"{'19CPU010Mem1GB.sh': 1, '20CPU010Mem2GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 2, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 2, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 2}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0.4-fast,1,{'26CPU2Mem4GB.sh': 12},2.514983333333329,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0.6-cheap,11,"{'19CPU010Mem1GB.sh': 1, '20CPU010Mem2GB.sh': 2, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '01noThrottling.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0.6-fast,1,{'26CPU2Mem4GB.sh': 12},2.514983333333329,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0.8-cheap,9,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 4, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 1}",2.8491666666666657,2.260396666666667,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,12-0.8-fast,1,{'26CPU2Mem4GB.sh': 12},2.514983333333329,1.0077766666666657,0.006208236358333325,0.0,0
+retrofit_retrofit-adapters.rxjava,12-1-cheap,7,"{'19CPU010Mem1GB.sh': 3, '21CPU025Mem2GB.sh': 2, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 3, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",2.849166666666666,1.1957733333333336,0.0015808884172499977,0.0,0
+retrofit_retrofit-adapters.rxjava,12-1-fast,1,{'26CPU2Mem4GB.sh': 12},2.514983333333329,1.0077766666666657,0.006208236358333325,0.0,0
