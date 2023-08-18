@@ -65,5 +65,5 @@ if __name__ == '__main__':
                     print('-------------------------------   ' + category + '   -------------------------------')
                     mini_ind = temp_rec_dict[mini_tup]
                     mini_ind.print_ind()
-                    mini_ind.record_ind(proj_name, category, df, '-brute-force/')
+                    mini_ind.record_ind('brute_force', proj_name, category, df)
         df.to_csv(csv_name, sep=',', index=False, header=True)
