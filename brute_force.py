@@ -33,13 +33,14 @@ if __name__ == '__main__':
         avg_tm_dict = preproc(proj_name)
         setup_tm_dict = load_setup_time_map(proj_name, False)
         for mach_num in num_of_machine:
-            combs = list(combinations(range(mach_num * confs_num), mach_num))
             for pct in pct_of_failure_rate:
                 for cho in chp_or_fst:
                     temp_rec_dict = {}
+                    combs = combinations(range(mach_num * confs_num), mach_num)
                     mini = float('inf')
                     mini_tup = ()
-                    t1 = time.time()
+                    tt = 0
+                    st = time.time()
                     for comb in combs:
                         arr = [i % confs_num for i in comb]
                         tup = mapping(arr)
@@ -58,10 +59,11 @@ if __name__ == '__main__':
                         if ind.score < mini:
                             mini = ind.score
                             mini_tup = tup
-                        if time.time() - t1 >= 1800:
+                        tt = time.time() - st
+                        if tt >= 1800:
                             break
                     category = str(mach_num) + '-' + str(pct) + '-' + cho
-                    print(f'[INFO] Total time: {time.time() - t1}')
+                    print(f'[INFO] Total time: {tt}')
                     print('-------------------------------   ' + category + '   -------------------------------')
                     mini_ind = temp_rec_dict[mini_tup]
                     mini_ind.print_ind()
