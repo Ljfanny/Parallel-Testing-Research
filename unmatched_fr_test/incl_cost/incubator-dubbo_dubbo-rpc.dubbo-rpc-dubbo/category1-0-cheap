@@ -1,0 +1,9 @@
+{'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testPerm': 0.0034482758620689724,
+ 'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#TestCallbackMultiInstans': 0.010344827586206917,
+ 'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#TestCallbackNormal': 0.03448275862068961,
+ 'org.apache.dubbo.rpc.protocol.dubbo.MultiThreadTest#testDubboMultiThreadInvoke': 0.04482758620689653,
+ 'org.apache.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClientTest#test_counter_error': 0.0034482758620689724,
+ 'org.apache.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClientTest#test_not_share_connect': 0.0034482758620689724,
+ 'org.apache.dubbo.rpc.protocol.dubbo.RpcFilterTest#testRpcFilter': 0.05862068965517242,
+ 'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeDefaultSService': 0.0034482758620689724,
+ 'org.apache.dubbo.rpc.protocol.dubbo.telnet.ListTelnetHandlerTest#testListService': 0.0034482758620689724}

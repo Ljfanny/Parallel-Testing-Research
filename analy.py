@@ -401,7 +401,7 @@ if __name__ == '__main__':
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
     chp_or_fst = ['cheap', 'fast']
 
-    whether_to_ignore_setup_cost = True
+    whether_to_ignore_setup_cost = False
     modus = {True: 'excl_cost', False: 'incl_cost'}
     sub = modus[whether_to_ignore_setup_cost]
     dat_df_csv_path = baseline_path + sub
@@ -449,7 +449,7 @@ if __name__ == '__main__':
                         record_baseline('baseline_' + sub, proj_name, dat_df, ga)
                     ga.run()
                     category = str(mach_num) + '-' + str(pct) + '-' + cho
-                    print('-------------------------------   ' + category + '   -------------------------------')
+                    print('-------------------------------   ' + proj_name + '-' + category + '   -------------------------------')
                     ga.print_best()
                     ga.record_best(sub, proj_name, category)
         if not os.path.exists(resu_path + sub):

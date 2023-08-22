@@ -35,7 +35,7 @@ dfs = [pd.DataFrame(None,
                              'fastest_runtime_saving'])
        for _ in range(6)]
 fr_idx_map = {0: 0, 0.2: 1, 0.4: 2, 0.6: 3, 0.8: 4, 1: 5}
-modu = 'excl_cost'
+modu = 'incl_cost'
 baseline_path = f'baseline_dat/{modu}/'
 col_name = 'machine_list_or_failure_rate_or_cheap_or_fast_category'
 

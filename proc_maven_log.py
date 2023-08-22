@@ -60,7 +60,7 @@ def load_tst_tm(proj_name):
             tmp_dict = json.load(f)
         avg_tm_dict = {tuple(eval(k)): v for k, v in tmp_dict.items()}
     else:
-        print('[ERROR] {} does not exist.'.format(preproc_file))
+        print('[ERROR] {} does not exist'.format(preproc_file))
         return conf_tst_tm_dict
     for key, val in avg_tm_dict.items():
         for itm in val:

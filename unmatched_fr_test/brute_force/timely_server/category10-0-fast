@@ -1,0 +1,4 @@
+{'timely.store.iterators.TimeSeriesGroupingIteratorTest#testAdditionalTimeSeries': 0.0033333333333332993,
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testManySparseTimeSeries': 0.00666666666666671,
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testMultipleTimeSeriesMovingAverage': 0.00666666666666671,
+ 'timely.store.iterators.TimeSeriesGroupingIteratorTest#testTimeSeriesDropOff': 0.00666666666666671}
