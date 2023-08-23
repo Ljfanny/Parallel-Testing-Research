@@ -35,8 +35,8 @@ dfs = [pd.DataFrame(None,
                              'fastest_runtime_saving'])
        for _ in range(6)]
 fr_idx_map = {0: 0, 0.2: 1, 0.4: 2, 0.6: 3, 0.8: 4, 1: 5}
-modu = 'incl_cost'
-baseline_path = f'baseline_dat/{modu}/'
+choice = 'excl_cost'
+baseline_path = f'baseline_dat/{choice}/'
 col_name = 'machine_list_or_failure_rate_or_cheap_or_fast_category'
 
 
@@ -50,8 +50,8 @@ def get_baseline(modu: str, proj: str, mach_num: int, fr: float):
 
 
 if __name__ == '__main__':
-    res_path = f'ext_dat/{modu}/'
-    resu = f'integration_dat_{modu}.xlsx'
+    res_path = f'ext_dat/{choice}/'
+    resu = f'integration_dat_{choice}.xlsx'
     filenames = os.listdir(res_path)
     for f in filenames:
         proj_name = f[:f.index('csv')-1]
@@ -93,14 +93,14 @@ if __name__ == '__main__':
                                              chp_cate,
                                              chp_bl,
                                              chp_bl_price,
-                                             '{:.2%}'.format(chp_price / chp_bl_price),
+                                             '{:.2%}'.format(1 - chp_price / chp_bl_price),
                                              fst_price,
                                              fst_time,
                                              fst_conf,
                                              fst_cate,
                                              fst_bl,
                                              fst_bl_time,
-                                             '{:.2%}'.format(fst_time / fst_bl_time)]
+                                             '{:.2%}'.format(1 - fst_time / fst_bl_time)]
     writer = pd.ExcelWriter(resu)
     for i, df in enumerate(dfs):
         df.to_excel(writer, sheet_name=sheets_name[i])
