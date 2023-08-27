@@ -10,7 +10,7 @@ from preproc import preproc
 
 
 if __name__ == '__main__':
-    bf_dat_path = 'brute_force_dat/'
+    bf_dat_path = 'bruteforce_dat/'
     idx_conf_map = {k: v for k, v in enumerate(avail_confs)}
     num_of_machine = [1, 2, 4, 6, 8, 10, 12]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -68,5 +68,5 @@ if __name__ == '__main__':
                     print(f'[INFO] Total time: {tt} s')
                     mini_ind = temp_rec_dict[mini_tup]
                     mini_ind.print_ind()
-                    mini_ind.record_ind('brute_force', proj_name, category, df)
+                    mini_ind.record_ind('bruteforce', proj_name, category, df)
         df.to_csv(csv_name, sep=',', index=False, header=True)

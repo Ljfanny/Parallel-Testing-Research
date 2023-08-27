@@ -1,68 +1,66 @@
 import os
-import copy
 from ast import literal_eval
-
 import pandas as pd
 
+choice = 0
 category_idx = 0
 conf_idx = 2
 para_time_idx = 4
 price_idx = 5
-sheets_name = [
-    'table-of-proj-for-0',
-    'table-of-proj-for-0.2',
-    'table-of-proj-for-0.4',
-    'table-of-proj-for-0.6',
-    'table-of-proj-for-0.8',
-    'table-of-proj-for-1'
-]
+csv_names = [
+    'table-of-proj-for-0.csv',
+    'table-of-proj-for-0.2.csv',
+    'table-of-proj-for-0.4.csv',
+    'table-of-proj-for-0.6.csv',
+    'table-of-proj-for-0.8.csv',
+    'table-of-proj-for-1.csv']
 frs = [0, 0.2, 0.4, 0.6, 0.8, 1]
 dfs = [pd.DataFrame(None,
-                    columns=['project_fr',
-                             'cheapest_conf',
+                    columns=['project',
+                             'cheapest_category',
+                             'cheapest_confs',
                              'cheapest_price',
                              'cheapest_runtime',
-                             'cheapest_category',
-                             'cheapest_baseline_conf',
+                             'cheapest_baseline_confs',
                              'cheapest_baseline_price',
                              'cheapest_baseline_runtime',
                              'cheapest_price_saving',
-                             'cheapest_runtime_saving',
-                             'fastest_conf',
+                             'cheapest_runtime_rate',
+                             'fastest_category',
+                             'fastest_confs',
                              'fastest_price',
                              'fastest_runtime',
-                             'fastest_category',
-                             'fastest_baseline_conf',
+                             'fastest_baseline_confs',
                              'fastest_baseline_price',
                              'fastest_baseline_runtime',
-                             'fastest_price_saving',
+                             'fastest_price_rate',
                              'fastest_runtime_saving'])
        for _ in range(6)]
 fr_idx_map = {0: 0, 0.2: 1, 0.4: 2, 0.6: 3, 0.8: 4, 1: 5}
-choice = 'incl_cost'
-baseline_path = f'baseline_dat/{choice}/'
-col_name = 'machine_list_or_failure_rate_or_cheap_or_fast_category'
+bl_paths = ['baseline_dat/incl_cost/', 'baseline_dat/incl_cost/', 'baseline_dat/excl_cost/']
+dat_paths = ['bruteforce_dat/', 'ext_dat/incl_cost/', 'ext_dat/excl_cost/']
+outputs = ['integration_dat_bruteforce/', 'integration_dat_incl_cost/', 'integration_dat_excl_cost/']
+alter_conf = '27CPU2Mem8GB.sh'
 
 
 def get_baseline(proj: str, mach_num: int, fr: float):
-    baseline = baseline_path + proj + '.csv'
+    baseline = bl_paths[choice] + proj + '.csv'
     dat = pd.read_csv(baseline)
     cond = str(mach_num) + '-' + str(fr) + '-'
-    filter_dat = copy.deepcopy(dat.loc[dat[col_name].str.contains(cond)])
-    filter_dat.sort_values(by='max_failure_rate', inplace=True)
+    filter_dat = dat.loc[dat['machine_list_or_failure_rate_or_cheap_or_fast_category'].str.contains(cond) &
+                         dat['confs'].str.contains(alter_conf)]
+    # filter_dat.sort_values(by='max_failure_rate', inplace=True)
     # conf, price, runtime
-    return filter_dat.iloc[0, 3], filter_dat.iloc[0, 6], filter_dat.iloc[0, 5]
+    return filter_dat.iloc[0, 3], filter_dat.iloc[0, 5], filter_dat.iloc[0, 6]
 
 
 if __name__ == '__main__':
-    res_path = f'brute_force_dat/'
-    resu = f'integration_dat_brute_force.xlsx'
-    # res_path = f'ext_dat/{choice}/'
-    # resu = f'integration_dat_{choice}.xlsx'
-    filenames = os.listdir(res_path)
+    dat_path = dat_paths[choice]
+    output = outputs[choice]
+    filenames = os.listdir(dat_path)
     for f in filenames:
         proj_name = f[:f.index('csv')-1]
-        df = pd.read_csv(res_path + f)
+        df = pd.read_csv(dat_path + f)
         arr = df.iloc[:, 1:].values
         fr_cond_arr = [[] for _ in range(6)]
         for itm in arr:
@@ -91,28 +89,26 @@ if __name__ == '__main__':
                         fst_price = itm[price_idx]
                         fst_conf = itm[conf_idx]
                         fst_cate = itm[category_idx]
-            chp_bl, chp_bl_price, chp_bl_time = get_baseline(proj_name, sum(literal_eval(chp_conf).values()), frs[i])
-            fst_bl, fst_bl_price, fst_bl_time = get_baseline(proj_name, sum(literal_eval(fst_conf).values()), frs[i])
-            dfs[i].loc[len(dfs[i].index)] = [proj_name + '-' + str(frs[i]),
+            chp_bl, chp_bl_time, chp_bl_price = get_baseline(proj_name, sum(literal_eval(chp_conf).values()), frs[i])
+            fst_bl, fst_bl_time, fst_bl_price = get_baseline(proj_name, sum(literal_eval(fst_conf).values()), frs[i])
+            dfs[i].loc[len(dfs[i].index)] = [proj_name,
+                                             chp_cate,
                                              chp_conf,
                                              chp_price,
                                              chp_time,
-                                             chp_cate,
                                              chp_bl,
                                              chp_bl_price,
                                              chp_bl_time,
-                                             1 - chp_price / chp_bl_price,
-                                             1 - chp_time / chp_bl_time,
+                                             1 - chp_price/chp_bl_price,
+                                             chp_time/chp_bl_time,
+                                             fst_cate,
                                              fst_conf,
                                              fst_price,
                                              fst_time,
-                                             fst_cate,
                                              fst_bl,
                                              fst_bl_price,
                                              fst_bl_time,
-                                             1 - fst_price / fst_bl_price,
-                                             1 - fst_time / fst_bl_time]
-    writer = pd.ExcelWriter(resu)
+                                             fst_price/fst_bl_price,
+                                             1 - fst_time/fst_bl_time]
     for i, df in enumerate(dfs):
-        df.to_excel(writer, sheet_name=sheets_name[i])
-    writer.save()
+        df.to_csv(output + csv_names[i], sep=',', index=False, header=True)
