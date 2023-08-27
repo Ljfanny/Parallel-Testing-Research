@@ -64,7 +64,7 @@ if __name__ == '__main__':
                         if tt >= 1800:
                             break
                     category = str(mach_num) + '-' + str(pct) + '-' + cho
-                    print('-------------------------------   ' + proj_name + '-' + category + '   -------------------------------')
+                    print('--------------------   ' + proj_name + '-' + category + '   --------------------')
                     print(f'[INFO] Total time: {tt} s')
                     mini_ind = temp_rec_dict[mini_tup]
                     mini_ind.print_ind()

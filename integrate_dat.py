@@ -19,39 +19,46 @@ sheets_name = [
 frs = [0, 0.2, 0.4, 0.6, 0.8, 1]
 dfs = [pd.DataFrame(None,
                     columns=['project_fr',
+                             'cheapest_conf',
                              'cheapest_price',
                              'cheapest_runtime',
-                             'cheapest_conf',
                              'cheapest_category',
                              'cheapest_baseline_conf',
-                             'cheapest_price_baseline',
+                             'cheapest_baseline_price',
+                             'cheapest_baseline_runtime',
                              'cheapest_price_saving',
+                             'cheapest_runtime_saving',
+                             'fastest_conf',
                              'fastest_price',
                              'fastest_runtime',
-                             'fastest_conf',
                              'fastest_category',
                              'fastest_baseline_conf',
-                             'fastest_runtime_baseline',
+                             'fastest_baseline_price',
+                             'fastest_baseline_runtime',
+                             'fastest_price_saving',
                              'fastest_runtime_saving'])
        for _ in range(6)]
 fr_idx_map = {0: 0, 0.2: 1, 0.4: 2, 0.6: 3, 0.8: 4, 1: 5}
-choice = 'excl_cost'
+choice = 'incl_cost'
 baseline_path = f'baseline_dat/{choice}/'
 col_name = 'machine_list_or_failure_rate_or_cheap_or_fast_category'
 
 
-def get_baseline(modu: str, proj: str, mach_num: int, fr: float):
+def get_baseline(proj: str, mach_num: int, fr: float):
     baseline = baseline_path + proj + '.csv'
     dat = pd.read_csv(baseline)
     cond = str(mach_num) + '-' + str(fr) + '-'
     filter_dat = copy.deepcopy(dat.loc[dat[col_name].str.contains(cond)])
     filter_dat.sort_values(by='max_failure_rate', inplace=True)
-    return filter_dat.iloc[0, 3], filter_dat.iloc[0, 6] if modu == 'cheap' else filter_dat.iloc[0, 5]
+    # conf, price, runtime
+    return filter_dat.iloc[0, 3], filter_dat.iloc[0, 6], filter_dat.iloc[0, 5]
 
 
 if __name__ == '__main__':
-    res_path = f'ext_dat/{choice}/'
-    resu = f'integration_dat_{choice}.xlsx'
+    res_path = f'brute_force_dat/'
+    resu = f'integration_dat_brute_force.xlsx'
+    # res_path = f'ext_dat/{choice}/'
+    # resu = f'integration_dat_{choice}.xlsx'
     filenames = os.listdir(res_path)
     for f in filenames:
         proj_name = f[:f.index('csv')-1]
@@ -84,23 +91,27 @@ if __name__ == '__main__':
                         fst_price = itm[price_idx]
                         fst_conf = itm[conf_idx]
                         fst_cate = itm[category_idx]
-            chp_bl, chp_bl_price = get_baseline('cheap', proj_name, sum(literal_eval(chp_conf).values()), frs[i])
-            fst_bl, fst_bl_time = get_baseline('fast', proj_name, sum(literal_eval(fst_conf).values()), frs[i])
+            chp_bl, chp_bl_price, chp_bl_time = get_baseline(proj_name, sum(literal_eval(chp_conf).values()), frs[i])
+            fst_bl, fst_bl_price, fst_bl_time = get_baseline(proj_name, sum(literal_eval(fst_conf).values()), frs[i])
             dfs[i].loc[len(dfs[i].index)] = [proj_name + '-' + str(frs[i]),
+                                             chp_conf,
                                              chp_price,
                                              chp_time,
-                                             chp_conf,
                                              chp_cate,
                                              chp_bl,
                                              chp_bl_price,
-                                             '{:.2%}'.format(1 - chp_price / chp_bl_price),
+                                             chp_bl_time,
+                                             1 - chp_price / chp_bl_price,
+                                             1 - chp_time / chp_bl_time,
+                                             fst_conf,
                                              fst_price,
                                              fst_time,
-                                             fst_conf,
                                              fst_cate,
                                              fst_bl,
+                                             fst_bl_price,
                                              fst_bl_time,
-                                             '{:.2%}'.format(1 - fst_time / fst_bl_time)]
+                                             1 - fst_price / fst_bl_price,
+                                             1 - fst_time / fst_bl_time]
     writer = pd.ExcelWriter(resu)
     for i, df in enumerate(dfs):
         df.to_excel(writer, sheet_name=sheets_name[i])

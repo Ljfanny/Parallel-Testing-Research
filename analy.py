@@ -449,7 +449,7 @@ if __name__ == '__main__':
                         record_baseline('baseline_' + sub, proj_name, dat_df, ga)
                     ga.run()
                     category = str(mach_num) + '-' + str(pct) + '-' + cho
-                    print('-------------------------------   ' + proj_name + '-' + category + '   -------------------------------')
+                    print('--------------------   ' + proj_name + '-' + category + '   --------------------')
                     ga.print_best()
                     ga.record_best(sub, proj_name, category)
         if not os.path.exists(resu_path + sub):
