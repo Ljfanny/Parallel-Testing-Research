@@ -455,6 +455,6 @@ if __name__ == '__main__':
         if not os.path.exists(resu_path + sub):
             os.mkdir(resu_path + sub)
         csv_name = resu_path + sub + '/' + proj_name + '.csv'
-        ext_dat_df.to_csv(csv_name, sep=',', index=False, header=True)
+        ext_dat_df.to_csv(csv_name, sep=',', header=True, index=False)
         if not whether_baseline_exist:
-            dat_df.to_csv(dat_df_csv, sep=',', index=False, header=True)
+            dat_df.to_csv(dat_df_csv, sep=',', header=True, index=False)

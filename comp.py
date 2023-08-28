@@ -1,5 +1,4 @@
 import os
-
 import pandas as pd
 
 
@@ -46,9 +45,8 @@ def comp_ga_bf():
                 bf_itm[price_idx],
                 bf_itm[max_fr_idx],
                 ga_itm[runtime_idx] / bf_itm[runtime_idx],
-                ga_itm[price_idx] / bf_itm[price_idx]
-            ]
-    comp_df.to_csv('comparison.csv', sep=',', index=False, header=True)
+                ga_itm[price_idx] / bf_itm[price_idx]]
+    comp_df.to_csv('comparison.csv', sep=',', float_format='%.2f', header=True, index=False)
 
 
 def comp(a: str, b: str):
@@ -59,12 +57,12 @@ def comp(a: str, b: str):
     chp_idx = 0
     fst_idx = 1
 
-    fr_idx = 4
+    name_fr_idx = 2
     proj_idx = 0
     chp_category_idx = 1
     chp_confs_idx = 2
-    fst_category_idx = 10
-    fst_confs_idx = 11
+    fst_category_idx = 15
+    fst_confs_idx = 16
     comp_dfs = [pd.DataFrame(None, columns=['project_fr',
                                             f'{a}_category',
                                             f'{a}_confs',
@@ -76,7 +74,7 @@ def comp(a: str, b: str):
     a_csvs = sorted(os.listdir(a_path))
     b_csvs = sorted(os.listdir(b_path))
     for i in range(len(a_csvs)):
-        fr = a_csvs[i].replace('.csv','').split('-')[fr_idx]
+        fr = a_csvs[i].replace('.csv', '').split('_')[name_fr_idx]
         a_df = pd.read_csv(a_path + a_csvs[i])
         b_df = pd.read_csv(b_path + b_csvs[i])
         for j in range(len(a_df)):
@@ -96,10 +94,11 @@ def comp(a: str, b: str):
                 b_itm[fst_category_idx],
                 b_itm[fst_confs_idx]
             ]
-    comp_dfs[chp_idx].to_csv(csv_names[chp_idx], sep=',', index=False, header=True)
-    comp_dfs[fst_idx].to_csv(csv_names[fst_idx], sep=',', index=False, header=True)
+    comp_dfs[chp_idx].to_csv(csv_names[chp_idx], sep=',', float_format='%.2f', header=True, index=False)
+    comp_dfs[fst_idx].to_csv(csv_names[fst_idx], sep=',', float_format='%.2f', header=True, index=False)
 
 
 if __name__ == '__main__':
+    comp_ga_bf()
     comp('incl', 'excl')
     comp('bruteforce', 'ga')
