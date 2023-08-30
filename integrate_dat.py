@@ -30,13 +30,13 @@ def record_df(df, proj_name, chp, chp_gh, chp_smt, fst, fst_gh, fst_smt):
         chp_gh[price_idx],
         chp_gh[max_fr_idx],
         chp_time / chp_gh[time_idx],
-        1 - chp_price / chp_gh[price_idx],
+        chp_price / chp_gh[price_idx],
         chp_smt[confs_idx],
         chp_smt[time_idx],
         chp_smt[price_idx],
         chp_smt[max_fr_idx],
         chp_time / chp_smt[time_idx],
-        1 - chp_price / chp_smt[price_idx],
+        chp_price / chp_smt[price_idx],
         fst[category_idx],
         fst[confs_idx],
         fst_time,
@@ -46,13 +46,13 @@ def record_df(df, proj_name, chp, chp_gh, chp_smt, fst, fst_gh, fst_smt):
         fst_gh[time_idx],
         fst_gh[price_idx],
         fst_gh[max_fr_idx],
-        1 - fst_time / fst_gh[time_idx],
+        fst_time / fst_gh[time_idx],
         fst_price / fst_gh[price_idx],
         fst_smt[confs_idx],
         fst_smt[time_idx],
         fst_smt[price_idx],
         fst_smt[max_fr_idx],
-        1 - fst_time / fst_smt[time_idx],
+        fst_time / fst_smt[time_idx],
         fst_price / fst_smt[price_idx]
     ]
 
@@ -90,13 +90,13 @@ def consider_fr(choice: int):
                                        'cheapest_github_caliber_price',
                                        'cheapest_github_caliber_max_failure_rate',
                                        'cheapest_github_caliber_runtime_rate',
-                                       'cheapest_github_caliber_price_saving',
+                                       'cheapest_github_caliber_price_rate',
                                        'cheapest_smart_baseline_confs',
                                        'cheapest_smart_baseline_runtime',
                                        'cheapest_smart_baseline_price',
                                        'cheapest_smart_baseline_max_failure_rate',
                                        'cheapest_smart_baseline_runtime_rate',
-                                       'cheapest_smart_baseline_price_saving',
+                                       'cheapest_smart_baseline_price_rate',
                                        'fastest_category',
                                        'fastest_confs',
                                        'fastest_runtime',
@@ -107,13 +107,13 @@ def consider_fr(choice: int):
                                        'fastest_github_caliber_price',
                                        'fastest_github_caliber_max_failure_rate',
                                        'fastest_github_caliber_runtime_rate',
-                                       'fastest_github_caliber_price_saving',
+                                       'fastest_github_caliber_price_rate',
                                        'fastest_smart_baseline_confs',
                                        'fastest_smart_baseline_runtime',
                                        'fastest_smart_baseline_price',
                                        'fastest_smart_baseline_max_failure_rate',
                                        'fastest_smart_baseline_runtime_rate',
-                                       'fastest_smart_baseline_price_saving']) for _ in range(6)]
+                                       'fastest_smart_baseline_price_rate']) for _ in range(6)]
     fr_idx_map = {0: 0, 0.2: 1, 0.4: 2, 0.6: 3, 0.8: 4, 1: 5}
     dat_path = dat_paths[choice]
     output = outputs[choice]
@@ -149,7 +149,7 @@ def consider_fr(choice: int):
             fst_gh, fst_smt = get_contrast(choice, proj_name, sum(literal_eval(fst[confs_idx]).values()), True, frs[i])
             record_df(dfs[i], proj_name, chp, chp_gh, chp_smt, fst, fst_gh, fst_smt)
     for i, df in enumerate(dfs):
-        df.to_csv(output + csv_names[i], sep=',', float_format='%.2f', header=True, index=False)
+        df.to_csv(output + csv_names[i], sep=',', header=True, index=False)
 
 
 # only consider GA method
@@ -219,7 +219,7 @@ def ignore_fr():
         chp_gh, chp_smt = get_contrast(1, proj_name, sum(literal_eval(chp[confs_idx]).values()))
         fst_gh, fst_smt = get_contrast(1, proj_name, sum(literal_eval(fst[confs_idx]).values()))
         record_df(df, proj_name, chp, chp_gh, chp_smt, fst, fst_gh, fst_smt)
-    df.to_csv('integration_dat_ga.csv', sep=',', float_format='%.2f', header=True, index=False)
+    df.to_csv('integration_dat_ga.csv', sep=',', header=True, index=False)
 
 
 if __name__ == '__main__':
@@ -227,4 +227,4 @@ if __name__ == '__main__':
     consider_fr(modus['bruteforce'])
     consider_fr(modus['incl'])
     consider_fr(modus['excl'])
-    ignore_fr()
+    # ignore_fr()
