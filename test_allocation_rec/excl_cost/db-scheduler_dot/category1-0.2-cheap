@@ -1,4 +1,4 @@
-{'19CPU010Mem1GB.sh': ['com.github.kagkarlsson.scheduler.ExecutionTest#test_equals',
+{'21CPU025Mem2GB.sh': ['com.github.kagkarlsson.scheduler.ExecutionTest#test_equals',
                        'com.github.kagkarlsson.scheduler.compatibility.OracleCompatibilityTest#com.github.kagkarlsson.scheduler.compatibility.OracleCompatibilityTest',
                        'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_jdbc_repository_compatibility_set_data',
                        'com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_jdbc_repository_compatibility',

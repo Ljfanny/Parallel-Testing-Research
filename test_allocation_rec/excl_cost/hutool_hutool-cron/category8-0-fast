@@ -1,8 +1,10 @@
-{'01noThrottling.sh:v0': [],
- '01noThrottling.sh:v1': ['cn.hutool.cron.test.CronTest#quartzRangePatternTest'],
- '01noThrottling.sh:v2': ['cn.hutool.cron.test.CronTest#matchAllTest'],
- '01noThrottling.sh:v3': ['cn.hutool.cron.test.CronTest#quartzPatternTest'],
- '01noThrottling.sh:v4': ['cn.hutool.cron.test.CronTest#CronPatternTest'],
- '01noThrottling.sh:v5': ['cn.hutool.cron.demo.CronTest#cronTest'],
- '01noThrottling.sh:v6': ['cn.hutool.cron.demo.CronTest#customCronTest'],
- '01noThrottling.sh:v7': ['cn.hutool.cron.demo.CronTest#addAndRemoveTest']}
+{'01noThrottling.sh': ['cn.hutool.cron.test.CronTest#CronPatternTest'],
+ '19CPU010Mem1GB.sh': [],
+ '22CPU05Mem2GB.sh': [],
+ '24CPU1Mem4GB.sh': [],
+ '26CPU2Mem4GB.sh:v0': ['cn.hutool.cron.demo.CronTest#cronTest'],
+ '26CPU2Mem4GB.sh:v1': ['cn.hutool.cron.demo.CronTest#customCronTest',
+                        'cn.hutool.cron.test.CronTest#quartzRangePatternTest'],
+ '27CPU2Mem8GB.sh': ['cn.hutool.cron.demo.CronTest#addAndRemoveTest',
+                     'cn.hutool.cron.test.CronTest#matchAllTest'],
+ '29CPU4Mem8GB.sh': ['cn.hutool.cron.test.CronTest#quartzPatternTest']}

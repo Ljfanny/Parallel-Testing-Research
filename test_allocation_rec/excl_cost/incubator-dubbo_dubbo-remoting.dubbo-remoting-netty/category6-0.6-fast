@@ -1,4 +1,6 @@
-{'21CPU025Mem2GB.sh:v0': ['org.apache.dubbo.remoting.transport.netty.ClientsTest#testGetTransportNull',
+{'01noThrottling.sh': ['org.apache.dubbo.remoting.transport.netty.ClientReconnectTest#testReconnect',
+                       'org.apache.dubbo.remoting.transport.netty.ThreadNameTest#testThreadName'],
+ '21CPU025Mem2GB.sh:v0': ['org.apache.dubbo.remoting.transport.netty.ClientsTest#testGetTransportNull',
                           'org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testHeartbeat'],
  '21CPU025Mem2GB.sh:v1': ['org.apache.dubbo.remoting.transport.netty.ClientsTest#testGetTransport3',
                           'org.apache.dubbo.remoting.transport.netty.NettyStringTest#testHandler',
@@ -7,8 +9,6 @@
                           'org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testServerHeartbeat'],
  '21CPU025Mem2GB.sh:v3': ['org.apache.dubbo.remoting.transport.netty.ClientsTest#testGetTransportEmpty',
                           'org.apache.dubbo.remoting.transport.netty.NettyClientToServerTest#testFuture'],
- '27CPU2Mem8GB.sh': ['org.apache.dubbo.remoting.transport.netty.ClientReconnectTest#testReconnect',
-                     'org.apache.dubbo.remoting.transport.netty.ThreadNameTest#testThreadName'],
- '28CPU2Mem16GB.sh': ['org.apache.dubbo.remoting.transport.netty.ClientReconnectTest#testReconnectWarnLog',
-                      'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testServerClose',
-                      'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testClientClose']}
+ '27CPU2Mem8GB.sh': ['org.apache.dubbo.remoting.transport.netty.ClientReconnectTest#testReconnectWarnLog',
+                     'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testServerClose',
+                     'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testClientClose']}

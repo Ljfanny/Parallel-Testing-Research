@@ -1,4 +1,0 @@
-{'org.apache.http.nio.protocol.TestAsyncNHttpHandlers#testHttpPostsWithExpectContinue': 0.0034482758620689724,
- 'org.apache.http.nio.protocol.TestAsyncNHttpHandlers#testNoServiceHandler': 0.0034482758620689724,
- 'org.apache.http.pool.TestConnPool#testLeaseTimeout': 0.024137931034482807,
- 'org.apache.http.pool.TestConnPool#testStatefulConnectionRedistributionOnPerRouteMaxLimit': 0.051724137931034475}

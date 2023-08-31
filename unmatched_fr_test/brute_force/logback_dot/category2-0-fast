@@ -1,3 +1,0 @@
-{'ch.qos.logback.classic.spi.PackagingDataCalculatorTest#perfTest': 0.10344827586206895,
- 'ch.qos.logback.core.AsyncAppenderBaseTest#workerShouldStopEvenIfInterruptExceptionConsumedWithinSubappender': 0.0034482758620689724,
- 'ch.qos.logback.core.recovery.RecoveryCoordinatorTest#actualTime': 0.0034482758620689724}

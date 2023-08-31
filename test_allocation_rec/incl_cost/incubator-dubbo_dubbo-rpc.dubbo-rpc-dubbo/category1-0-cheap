@@ -1,4 +1,4 @@
-{'19CPU010Mem1GB.sh': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testErrorMessage',
+{'21CPU025Mem2GB.sh': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testErrorMessage',
                        'org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testListAllPort',
                        'org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testListClient',
                        'org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testListDetail',

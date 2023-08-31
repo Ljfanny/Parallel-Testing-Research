@@ -1,4 +1,4 @@
-{'19CPU010Mem1GB.sh': ['ch.qos.logback.core.rolling.RollingFileAppenderTest#testPrudentModeLogicalImplications',
+{'21CPU025Mem2GB.sh': ['ch.qos.logback.core.rolling.RollingFileAppenderTest#testPrudentModeLogicalImplications',
                        'ch.qos.logback.core.rolling.RollingFileAppenderTest#testFilePropertyAfterRollingPolicy',
                        'ch.qos.logback.core.rolling.RollingFileAppenderTest#testPrudentModeLogicalImplicationsOnCompression',
                        'ch.qos.logback.core.rolling.RollingFileAppenderTest#testFileShouldNotMatchFileNamePattern',

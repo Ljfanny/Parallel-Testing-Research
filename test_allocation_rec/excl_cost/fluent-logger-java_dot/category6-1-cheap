@@ -18,4 +18,4 @@
                       'org.fluentd.logger.TestFluentLogFactory#testGetLogger',
                       'org.fluentd.logger.sender.TestRawSocketSender#testTimeout'],
  '23CPU05Mem4GB.sh': [],
- '28CPU2Mem16GB.sh': []}
+ '27CPU2Mem8GB.sh': []}

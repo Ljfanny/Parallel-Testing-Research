@@ -4,6 +4,7 @@
                        'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#testMatchAllDocsMustWithKeywordNot',
                        'uk.co.flax.luwak.TestCachePurging#testBackgroundPurges',
                        'uk.co.flax.luwak.matchers.TestParallelMatcher#testParallelSlowLog'],
+ '21CPU025Mem2GB.sh': ['uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanBoost'],
  '22CPU05Mem2GB.sh': ['uk.co.flax.luwak.presearcher.TestMatchAllPresearcher#testMatchAllQueryHandling',
                       'uk.co.flax.luwak.TestConcurrentQueryLoader#testLoading',
                       'uk.co.flax.luwak.TestConcurrentQueryLoader#testErrorHandling',
@@ -134,7 +135,6 @@
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanPayloadCheckQuery',
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testOrderedNearExtractor',
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanPositionQuery',
-                     'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanBoost',
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanWithin',
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanMultiTerms',
                      'uk.co.flax.luwak.analysis.TestSuffixingNGramTokenizer#testRepeatedInfixesAreNotEmitted',
@@ -189,6 +189,7 @@
                      'uk.co.flax.luwak.TestQueryDecomposer#testSingleValuedConjunctWithExclusions',
                      'uk.co.flax.luwak.analysis.TestSuffixingNGramTokenizer#testRepeatedSuffixesAreNotEmitted',
                      'uk.co.flax.luwak.analysis.TestSuffixingNGramTokenizer#testTokensAreSuffixed',
+                     'uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery',
                      'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#testMatchAllDocsMustWithKeywordShouldAndKeywordNot',
                      'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#allDisjunctionClausesOfAConjunctionAreExtracted',
                      'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#conjunctionsOutweighDisjunctions',
@@ -198,5 +199,4 @@
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#testBatchFiltering',
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#testFilteringOnMatchAllQueries',
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#filtersOnNumericTermQueries',
-                     'uk.co.flax.luwak.testutils.TestCollectionUtils#testPartitions'],
- '28CPU2Mem16GB.sh': ['uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery']}
+                     'uk.co.flax.luwak.testutils.TestCollectionUtils#testPartitions']}

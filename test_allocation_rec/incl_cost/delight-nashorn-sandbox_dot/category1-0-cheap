@@ -1,4 +1,4 @@
-{'26CPU2Mem4GB.sh': ['delight.nashornsandbox.TestInaccessible#test_file',
+{'29CPU4Mem8GB.sh': ['delight.nashornsandbox.TestInaccessible#test_file',
                      'delight.nashornsandbox.TestInaccessible#test_system_exit',
                      'delight.nashornsandbox.TestIssue57#testMapReduce',
                      'delight.nashornsandbox.TestExceptions#test_with_line_number',

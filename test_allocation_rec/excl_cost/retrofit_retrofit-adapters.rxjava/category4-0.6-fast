@@ -1,4 +1,5 @@
-{'26CPU2Mem4GB.sh:v0': ['retrofit2.adapter.rxjava.ObservableWithSchedulerTest#responseUsesScheduler',
+{'26CPU2Mem4GB.sh:v0': ['retrofit2.adapter.rxjava.AsyncTest#success'],
+ '26CPU2Mem4GB.sh:v1': ['retrofit2.adapter.rxjava.ObservableWithSchedulerTest#responseUsesScheduler',
                         'retrofit2.adapter.rxjava.AsyncTest#throwingInOnCompleteDeliveredToPlugin',
                         'retrofit2.adapter.rxjava.SingleTest#resultFailure',
                         'retrofit2.adapter.rxjava.SingleTest#bodySuccess404',
@@ -32,7 +33,7 @@
                         'retrofit2.adapter.rxjava.CompletableThrowingSafeSubscriberTest#bodyThrowingInOnErrorDeliveredToPlugin',
                         'retrofit2.adapter.rxjava.CancelDisposeTest#cancelDoesNotDispose',
                         'retrofit2.adapter.rxjava.CompletableThrowingTest#bodyThrowingInOnErrorDeliveredToPlugin'],
- '26CPU2Mem4GB.sh:v1': ['retrofit2.adapter.rxjava.ObservableWithSchedulerTest#bodyUsesScheduler',
+ '26CPU2Mem4GB.sh:v2': ['retrofit2.adapter.rxjava.ObservableWithSchedulerTest#bodyUsesScheduler',
                         'retrofit2.adapter.rxjava.AsyncTest#bodyThrowingInOnSafeSubscriberErrorDeliveredToPlugin',
                         'retrofit2.adapter.rxjava.AsyncTest#bodyThrowingInOnErrorDeliveredToPlugin',
                         'retrofit2.adapter.rxjava.SingleTest#bodySuccess200',
@@ -75,6 +76,5 @@
                         'retrofit2.adapter.rxjava.SingleWithSchedulerTest#responseUsesScheduler',
                         'retrofit2.adapter.rxjava.CancelDisposeTest#disposeCancelsCall',
                         'retrofit2.adapter.rxjava.CompletableThrowingTest#throwingInOnCompleteDeliveredToPlugin'],
- '27CPU2Mem8GB.sh:v0': ['retrofit2.adapter.rxjava.AsyncTest#success'],
- '27CPU2Mem8GB.sh:v1': ['retrofit2.adapter.rxjava.ObservableWithSchedulerTest#resultUsesScheduler',
-                        'retrofit2.adapter.rxjava.AsyncTest#failure']}
+ '27CPU2Mem8GB.sh': ['retrofit2.adapter.rxjava.ObservableWithSchedulerTest#resultUsesScheduler',
+                     'retrofit2.adapter.rxjava.AsyncTest#failure']}

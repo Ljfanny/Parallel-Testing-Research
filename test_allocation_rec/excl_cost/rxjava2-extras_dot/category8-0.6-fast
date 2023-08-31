@@ -1,5 +1,5 @@
-{'24CPU1Mem4GB.sh': ['com.github.davidmoten.rx2.buffertofile.SerializersTest#isUtilityClass',
-                     'com.github.davidmoten.rx2.FlowablesTest#testCache'],
+{'01noThrottling.sh': ['com.github.davidmoten.rx2.buffertofile.SerializersTest#isUtilityClass',
+                       'com.github.davidmoten.rx2.FlowablesTest#testCache'],
  '25CPU1Mem8GB.sh': ['com.github.davidmoten.rx2.ActionsTest#testIsUtility',
                      'com.github.davidmoten.rx2.BiPredicatesTest#testAlwaysFalse',
                      'com.github.davidmoten.rx2.util.PairTest#testHashCode',

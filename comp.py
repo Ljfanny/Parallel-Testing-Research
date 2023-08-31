@@ -14,8 +14,8 @@ def comp_ga_bf():
                                     'BF_runtime',
                                     'BF_price',
                                     'BF_max_failure_rate',
-                                    'runtime_rate(GA/BF)',
-                                    'price_rate(GA/BF)'])
+                                    'runtime_rate',
+                                    'price_rate'])
     confs_idx = 3
     runtime_idx = 5
     price_idx = 6

@@ -1,5 +1,6 @@
 import os
 from ast import literal_eval
+import numpy as np
 import pandas as pd
 
 category_idx = 0
@@ -13,7 +14,26 @@ dat_paths = ['bruteforce_dat/', 'ext_dat/incl_cost/', 'ext_dat/excl_cost/']
 outputs = ['integration_dat_bruteforce/', 'integration_dat_incl_cost/', 'integration_dat_excl_cost/']
 
 
-def record_df(df, proj_name, chp, chp_gh, chp_smt, fst, fst_gh, fst_smt):
+def record_df(df,
+              proj_name,
+              chp=None,
+              chp_gh=None,
+              chp_smt=None,
+              fst=None,
+              fst_gh=None,
+              fst_smt=None):
+    if chp is None or fst is None:
+        df.loc[len(df.index)] = [
+            proj_name,
+            np.nan, np.nan, np.nan, np.nan, np.nan,
+            np.nan, np.nan, np.nan, np.nan, np.nan,
+            np.nan, np.nan, np.nan, np.nan, np.nan,
+            np.nan, np.nan, np.nan, np.nan, np.nan,
+            np.nan, np.nan, np.nan, np.nan, np.nan,
+            np.nan, np.nan, np.nan, np.nan, np.nan,
+            np.nan, np.nan, np.nan, np.nan
+        ]
+        return
     chp_time = chp[time_idx]
     chp_price = chp[price_idx]
     fst_time = fst[time_idx]
@@ -57,7 +77,11 @@ def record_df(df, proj_name, chp, chp_gh, chp_smt, fst, fst_gh, fst_smt):
     ]
 
 
-def get_contrast(choice: int, proj: str, mach_num: int, is_fr=False, fr=None):
+def get_contrast(choice,
+                 proj,
+                 mach_num,
+                 is_fr=False,
+                 fr=None):
     baseline = bl_paths[choice] + proj + '.csv'
     dat = pd.read_csv(baseline)
     cond = str(mach_num) + '-'
@@ -124,15 +148,21 @@ def consider_fr(choice: int):
         arr = dat.iloc[:, 1:].values
         fr_cond_arr = [[] for _ in range(6)]
         for itm in arr:
-            idx = fr_idx_map[float(itm[0].split('-')[1])]
+            if np.isnan(itm[max_fr_idx]):
+                continue
+            idx = fr_idx_map[float(itm[category_idx].split('-')[1])]
             fr_cond_arr[idx].append(itm)
         for i, fr_cond in enumerate(fr_cond_arr):
             chp = None
             fst = None
+            if len(fr_cond) == 0:
+                record_df(dfs[i],
+                          proj_name)
+                continue
             chp_sort = sorted(fr_cond, key=lambda x: x[price_idx])
             fst_sort = sorted(fr_cond, key=lambda x: x[time_idx])
-            fst_time = fst_sort[0][time_idx]
             chp_price = chp_sort[0][price_idx]
+            fst_time = fst_sort[0][time_idx]
             chp_time = float('inf')
             fst_price = float('inf')
             for itm in chp_sort:
@@ -145,50 +175,65 @@ def consider_fr(choice: int):
                     if fst_price > itm[price_idx]:
                         fst = itm
                         fst_price = itm[price_idx]
-            chp_gh, chp_smt = get_contrast(choice, proj_name, sum(literal_eval(chp[confs_idx]).values()), True, frs[i])
-            fst_gh, fst_smt = get_contrast(choice, proj_name, sum(literal_eval(fst[confs_idx]).values()), True, frs[i])
-            record_df(dfs[i], proj_name, chp, chp_gh, chp_smt, fst, fst_gh, fst_smt)
+            chp_gh, chp_smt = get_contrast(choice,
+                                           proj_name,
+                                           sum(literal_eval(chp[confs_idx]).values()),
+                                           True,
+                                           frs[i])
+            fst_gh, fst_smt = get_contrast(choice,
+                                           proj_name,
+                                           sum(literal_eval(fst[confs_idx]).values()),
+                                           True,
+                                           frs[i])
+            record_df(dfs[i],
+                      proj_name,
+                      chp,
+                      chp_gh,
+                      chp_smt,
+                      fst,
+                      fst_gh,
+                      fst_smt)
     for i, df in enumerate(dfs):
         df.to_csv(output + csv_names[i], sep=',', header=True, index=False)
 
 
-# only consider GA method
+# failure rate = 1
 def ignore_fr():
     df = pd.DataFrame(None, columns=['project',
-                                       'cheapest_category',
-                                       'cheapest_confs',
-                                       'cheapest_runtime',
-                                       'cheapest_price',
-                                       'cheapest_max_failure_rate',
-                                       'cheapest_github_caliber_confs',
-                                       'cheapest_github_caliber_runtime',
-                                       'cheapest_github_caliber_price',
-                                       'cheapest_github_caliber_max_failure_rate',
-                                       'cheapest_github_caliber_runtime_rate',
-                                       'cheapest_github_caliber_price_saving',
-                                       'cheapest_smart_baseline_confs',
-                                       'cheapest_smart_baseline_runtime',
-                                       'cheapest_smart_baseline_price',
-                                       'cheapest_smart_baseline_max_failure_rate',
-                                       'cheapest_smart_baseline_runtime_rate',
-                                       'cheapest_smart_baseline_price_saving',
-                                       'fastest_category',
-                                       'fastest_confs',
-                                       'fastest_runtime',
-                                       'fastest_price',
-                                       'fastest_max_failure_rate',
-                                       'fastest_github_caliber_confs',
-                                       'fastest_github_caliber_runtime',
-                                       'fastest_github_caliber_price',
-                                       'fastest_github_caliber_max_failure_rate',
-                                       'fastest_github_caliber_runtime_rate',
-                                       'fastest_github_caliber_price_saving',
-                                       'fastest_smart_baseline_confs',
-                                       'fastest_smart_baseline_runtime',
-                                       'fastest_smart_baseline_price',
-                                       'fastest_smart_baseline_max_failure_rate',
-                                       'fastest_smart_baseline_runtime_rate',
-                                       'fastest_smart_baseline_price_saving'])
+                                     'cheapest_category',
+                                     'cheapest_confs',
+                                     'cheapest_runtime',
+                                     'cheapest_price',
+                                     'cheapest_max_failure_rate',
+                                     'cheapest_github_caliber_confs',
+                                     'cheapest_github_caliber_runtime',
+                                     'cheapest_github_caliber_price',
+                                     'cheapest_github_caliber_max_failure_rate',
+                                     'cheapest_github_caliber_runtime_rate',
+                                     'cheapest_github_caliber_price_saving',
+                                     'cheapest_smart_baseline_confs',
+                                     'cheapest_smart_baseline_runtime',
+                                     'cheapest_smart_baseline_price',
+                                     'cheapest_smart_baseline_max_failure_rate',
+                                     'cheapest_smart_baseline_runtime_rate',
+                                     'cheapest_smart_baseline_price_saving',
+                                     'fastest_category',
+                                     'fastest_confs',
+                                     'fastest_runtime',
+                                     'fastest_price',
+                                     'fastest_max_failure_rate',
+                                     'fastest_github_caliber_confs',
+                                     'fastest_github_caliber_runtime',
+                                     'fastest_github_caliber_price',
+                                     'fastest_github_caliber_max_failure_rate',
+                                     'fastest_github_caliber_runtime_rate',
+                                     'fastest_github_caliber_price_saving',
+                                     'fastest_smart_baseline_confs',
+                                     'fastest_smart_baseline_runtime',
+                                     'fastest_smart_baseline_price',
+                                     'fastest_smart_baseline_max_failure_rate',
+                                     'fastest_smart_baseline_runtime_rate',
+                                     'fastest_smart_baseline_price_saving'])
     dat_path = dat_paths[1]
     filenames = os.listdir(dat_path)
     for f in filenames:
@@ -224,7 +269,7 @@ def ignore_fr():
 
 if __name__ == '__main__':
     modus = {'bruteforce': 0, 'incl': 1, 'excl': 2}
-    consider_fr(modus['bruteforce'])
+    # consider_fr(modus['bruteforce'])
     consider_fr(modus['incl'])
     consider_fr(modus['excl'])
     # ignore_fr()

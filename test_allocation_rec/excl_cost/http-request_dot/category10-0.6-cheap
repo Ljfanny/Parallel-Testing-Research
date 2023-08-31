@@ -23,10 +23,10 @@
                       'com.github.kevinsawicki.http.HttpRequestTest#basicAuthentication',
                       'com.github.kevinsawicki.http.HttpRequestTest#lastModifiedHeader',
                       'com.github.kevinsawicki.http.HttpRequestTest#userAgentHeader'],
- '23CPU05Mem4GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#appendVarargsQueryParamsWithExistingQueryStart',
-                      'com.github.kevinsawicki.http.HttpRequestTest#appendEmptyVarargsQueryParams',
-                      'com.github.kevinsawicki.http.HttpRequestTest#malformedStringUrlCause',
-                      'com.github.kevinsawicki.http.HttpRequestTest#malformedStringUrl'],
+ '23CPU05Mem4GB.sh:v0': ['com.github.kevinsawicki.http.HttpRequestTest#appendEmptyVarargsQueryParams',
+                         'com.github.kevinsawicki.http.HttpRequestTest#malformedStringUrl'],
+ '23CPU05Mem4GB.sh:v1': ['com.github.kevinsawicki.http.HttpRequestTest#appendVarargsQueryParamsWithExistingQueryStart',
+                         'com.github.kevinsawicki.http.HttpRequestTest#malformedStringUrlCause'],
  '24CPU1Mem4GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#appendWithNullVaragsQueryParamValues',
                      'com.github.kevinsawicki.http.HttpRequestTest#appendArrayQueryParams',
                      'com.github.kevinsawicki.http.HttpRequestTest#sendHeadersWithoutCode',
@@ -160,5 +160,4 @@
                      'com.github.kevinsawicki.http.HttpRequestTest#contentEncodingHeader',
                      'com.github.kevinsawicki.http.HttpRequestTest#acceptJson'],
  '28CPU2Mem16GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#httpTrust',
-                      'com.github.kevinsawicki.http.HttpRequestTest#getUrlEncodedWithSpace'],
- '29CPU4Mem8GB.sh': []}
+                      'com.github.kevinsawicki.http.HttpRequestTest#getUrlEncodedWithSpace']}

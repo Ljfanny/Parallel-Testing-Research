@@ -17,4 +17,4 @@
                       'org.fluentd.logger.sender.TestNullSender#testNormal',
                       'org.fluentd.logger.sender.TestRawSocketSender#testBufferOverflow',
                       'org.fluentd.logger.sender.TestRawSocketSender#testTimeout'],
- '28CPU2Mem16GB.sh': []}
+ '27CPU2Mem8GB.sh': []}

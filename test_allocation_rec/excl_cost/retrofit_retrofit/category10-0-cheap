@@ -2,7 +2,6 @@
                        'retrofit2.ResponseTest#successWithNullHeadersThrows',
                        'retrofit2.ResponseTest#successWithStatusCode',
                        'retrofit2.ResponseTest#successWithNullRawResponseThrows'],
- '20CPU010Mem2GB.sh': [],
  '21CPU025Mem2GB.sh': ['retrofit2.CallTest#cancelRequest',
                        'retrofit2.RequestFactoryTest#headerParamToString',
                        'retrofit2.ResponseTest#errorWithSuccessRawResponseThrows',
@@ -204,7 +203,6 @@
                      'retrofit2.RequestFactoryTest#implicitMultipartForbidden',
                      'retrofit2.RequestFactoryTest#postWithUrl',
                      'retrofit2.RequestFactoryTest#formEncodedFieldList',
-                     'retrofit2.RequestFactoryTest#lackingMethod',
                      'retrofit2.RequestFactoryTest#multipartIterableRequiresName',
                      'retrofit2.RequestFactoryAndroidTest#getWithAndroidUriUrlAbsolute',
                      'retrofit2.RequestFactoryAndroidTest#getWithAndroidUriUrl',
@@ -270,7 +268,6 @@
                      'retrofit2.RequestFactoryTest#multipartPartsShouldBeInOrder',
                      'retrofit2.RequestFactoryTest#multipartFailsWithNoParts',
                      'retrofit2.RequestFactoryTest#getWithStringUrlAbsolute',
-                     'retrofit2.RequestFactoryTest#pathParamNonPathParamAndTypedBytes',
                      'retrofit2.RequestFactoryTest#bodyRequired',
                      'retrofit2.RequestFactoryTest#fieldParamMapsConvertedToNullShouldError',
                      'retrofit2.RequestFactoryTest#head',
@@ -295,4 +292,6 @@
                      'retrofit2.RetrofitTest#baseUrlRequired'],
  '28CPU2Mem16GB.sh': ['retrofit2.HttpExceptionTest#nullResponseThrows',
                       'retrofit2.RequestFactoryTest#multipartArrayRequiresName',
-                      'retrofit2.RequestFactoryTest#multipartFailsOnNonBodyMethod']}
+                      'retrofit2.RequestFactoryTest#multipartFailsOnNonBodyMethod'],
+ '29CPU4Mem8GB.sh': ['retrofit2.RequestFactoryTest#pathParamNonPathParamAndTypedBytes',
+                     'retrofit2.RequestFactoryTest#lackingMethod']}

@@ -14,7 +14,6 @@
                        'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsLocalServerPath',
                        'io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterInitFailureTest#assertInitFailure',
                        'io.elasticjob.lite.spring.job.JobSpringNamespaceWithRefTest#assertSpringJobBean'],
- '20CPU010Mem2GB.sh': ['io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterMiscellaneousTest#assertGetRawCache'],
  '21CPU025Mem2GB.sh': ['io.elasticjob.lite.executor.type.ScriptJobExecutorTest#assertExecuteSuccessForSingleShardingItems',
                        'io.elasticjob.lite.context.TaskContextTest#assertMetaInfoFromWithMetaInfo',
                        'io.elasticjob.lite.context.TaskContextTest#assertSetSlaveId',
@@ -190,6 +189,7 @@
                       'io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertReplaceJobNode',
                       'io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsFailover',
                       'io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterMiscellaneousTest#assertGetZkConfig',
+                      'io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterMiscellaneousTest#assertGetRawCache',
                       'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsServerPath',
                       'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsNotLocalServerPath',
                       'io.elasticjob.lite.internal.instance.InstanceNodeTest#assertIsLocalInstancePath',
@@ -539,7 +539,6 @@
                      'io.elasticjob.lite.internal.election.LeaderServiceTest#assertElectLeaderExecutionCallbackWithoutLeader',
                      'io.elasticjob.lite.internal.election.LeaderServiceTest#assertIsLeaderUntilBlockWithoutLeaderAndAvailableServers',
                      'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsNotStartedRootNode',
-                     'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertGetCompletedNode',
                      'io.elasticjob.lite.api.strategy.impl.AverageAllocationJobShardingStrategyTest#shardingForZeroServer',
                      'io.elasticjob.lite.internal.schedule.JobScheduleControllerTest#assertResumeJobSuccess',
                      'io.elasticjob.lite.internal.schedule.JobRegistryTest#assertShutdown',
@@ -557,4 +556,5 @@
                      'io.elasticjob.lite.internal.instance.InstanceNodeTest#assertGetLocalInstancePath',
                      'io.elasticjob.lite.lifecycle.internal.operate.JobOperateAPIImplTest#assertEnableWithServerIp'],
  '28CPU2Mem16GB.sh': ['io.elasticjob.lite.util.env.IpUtilsTest#assertGetHostName',
-                      'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath']}
+                      'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath'],
+ '29CPU4Mem8GB.sh': ['io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertGetCompletedNode']}

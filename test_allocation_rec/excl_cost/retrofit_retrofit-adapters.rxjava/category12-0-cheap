@@ -1,7 +1,8 @@
 {'01noThrottling.sh': [],
- '19CPU010Mem1GB.sh:v0': ['retrofit2.adapter.rxjava.AsyncTest#failure'],
- '19CPU010Mem1GB.sh:v1': ['retrofit2.adapter.rxjava.AsyncTest#success'],
- '20CPU010Mem2GB.sh': [],
+ '19CPU010Mem1GB.sh': ['retrofit2.adapter.rxjava.AsyncTest#success',
+                       'retrofit2.adapter.rxjava.AsyncTest#failure'],
+ '20CPU010Mem2GB.sh:v0': [],
+ '20CPU010Mem2GB.sh:v1': [],
  '21CPU025Mem2GB.sh': ['retrofit2.adapter.rxjava.RxJavaCallAdapterFactoryTest#nullSchedulerThrows'],
  '22CPU05Mem2GB.sh': ['retrofit2.adapter.rxjava.AsyncTest#throwingInOnCompleteDeliveredToPlugin',
                       'retrofit2.adapter.rxjava.AsyncTest#bodyThrowingInOnSafeSubscriberErrorDeliveredToPlugin',
@@ -80,4 +81,4 @@
  '27CPU2Mem8GB.sh': ['retrofit2.adapter.rxjava.ObservableThrowingTest#bodyThrowingInOnNextDeliveredToError',
                      'retrofit2.adapter.rxjava.ObservableThrowingTest#responseThrowingInOnCompleteDeliveredToPlugin',
                      'retrofit2.adapter.rxjava.SingleThrowingTest#bodyThrowingInOnErrorDeliveredToPlugin'],
- '29CPU4Mem8GB.sh': []}
+ '28CPU2Mem16GB.sh': []}

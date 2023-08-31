@@ -1,5 +1,4 @@
-{'01noThrottling.sh': [],
- '19CPU010Mem1GB.sh': ['com.ea.orbit.concurrent.test.TaskTest#testGetAndJoinWithWrappedForkJoinTaskAndTimeout',
+{'19CPU010Mem1GB.sh': ['com.ea.orbit.concurrent.test.TaskTest#testGetAndJoinWithWrappedForkJoinTaskAndTimeout',
                        'com.ea.orbit.actors.test.DeactivationTest#lonelyClientTest',
                        'com.ea.orbit.actors.test.ClientTest#lonelyClientTest'],
  '21CPU025Mem2GB.sh': ['com.ea.orbit.concurrent.test.TaskTest#testThenApply',
@@ -81,4 +80,5 @@
                      'com.ea.orbit.injection.DependencyRegistryTest#test'],
  '27CPU2Mem8GB.sh': ['com.ea.orbit.concurrent.test.TaskTest#testGetAndJoinWithWrappedForkJoinTask',
                      'com.ea.orbit.container.test.ContainerTest#nonSingletonTest'],
- '28CPU2Mem16GB.sh': ['com.ea.orbit.concurrent.test.TaskTest#testThenComposeNoParams']}
+ '28CPU2Mem16GB.sh': ['com.ea.orbit.concurrent.test.TaskTest#testThenComposeNoParams'],
+ '29CPU4Mem8GB.sh': []}

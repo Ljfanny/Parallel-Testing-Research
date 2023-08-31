@@ -6,9 +6,9 @@
                        'org.apache.dubbo.remoting.transport.netty.NettyStringTest#testHandler',
                        'org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testClientHeartbeat',
                        'org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testServerHeartbeat'],
- '26CPU2Mem4GB.sh': ['org.apache.dubbo.remoting.transport.netty.ClientReconnectTest#testReconnectWarnLog',
-                     'org.apache.dubbo.remoting.transport.netty.ThreadNameTest#testThreadName',
-                     'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testServerClose',
-                     'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testClientClose',
-                     'org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testHeartbeat',
-                     'org.apache.dubbo.remoting.transport.netty.NettyClientToServerTest#testFuture']}
+ '28CPU2Mem16GB.sh': ['org.apache.dubbo.remoting.transport.netty.ClientReconnectTest#testReconnectWarnLog',
+                      'org.apache.dubbo.remoting.transport.netty.ThreadNameTest#testThreadName',
+                      'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testServerClose',
+                      'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testClientClose',
+                      'org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testHeartbeat',
+                      'org.apache.dubbo.remoting.transport.netty.NettyClientToServerTest#testFuture']}

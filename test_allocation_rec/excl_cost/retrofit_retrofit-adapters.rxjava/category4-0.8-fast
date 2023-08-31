@@ -75,6 +75,6 @@
                         'retrofit2.adapter.rxjava.SingleWithSchedulerTest#responseUsesScheduler',
                         'retrofit2.adapter.rxjava.CancelDisposeTest#disposeCancelsCall',
                         'retrofit2.adapter.rxjava.CompletableThrowingTest#throwingInOnCompleteDeliveredToPlugin'],
- '27CPU2Mem8GB.sh:v0': ['retrofit2.adapter.rxjava.AsyncTest#success'],
- '27CPU2Mem8GB.sh:v1': ['retrofit2.adapter.rxjava.ObservableWithSchedulerTest#resultUsesScheduler',
-                        'retrofit2.adapter.rxjava.AsyncTest#failure']}
+ '27CPU2Mem8GB.sh': ['retrofit2.adapter.rxjava.ObservableWithSchedulerTest#resultUsesScheduler',
+                     'retrofit2.adapter.rxjava.AsyncTest#failure'],
+ '29CPU4Mem8GB.sh': ['retrofit2.adapter.rxjava.AsyncTest#success']}
