@@ -5,50 +5,9 @@ from itertools import combinations
 
 import pandas as pd
 
-from analy import sel_modu, load_setup_time_map, Individual, mapping, confs_num, avail_confs
+from analy import sel_modu, proj_names, load_setup_time_map, Individual, mapping, confs_num, avail_confs
 from preproc import preproc
 
-proj_names = [
-    # 'activiti_dot',
-    # 'assertj-core_dot',
-    # 'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
-    # 'commons-exec_dot'
-
-    # 'db-scheduler_dot',
-    # 'delight-nashorn-sandbox_dot',
-    # 'elastic-job-lite_dot',
-    # 'elastic-job-lite_elastic-job-lite-core'
-
-    # 'esper_examples.rfidassetzone',
-    # 'fastjson_dot',
-    # 'fluent-logger-java_dot',
-    # 'handlebars.java_dot'
-
-    # 'hbase_dot',
-    # 'http-request_dot',
-    # 'httpcore_dot',
-    # 'hutool_hutool-cron'
-
-    # 'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
-    # 'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
-    # 'logback_dot',
-    # 'luwak_luwak'
-
-    # 'ninja_dot',
-    # 'noxy_noxy-discovery-zookeeper',
-    # 'okhttp_dot',
-    # 'orbit_dot'
-
-    # 'retrofit_retrofit-adapters.rxjava',
-    # 'retrofit_retrofit',
-    # 'rxjava2-extras_dot',
-    # 'spring-boot_dot'
-
-    'timely_server',
-    'wro4j_wro4j-extensions',
-    'yawp_yawp-testing.yawp-testing-appengine',
-    'zxing_dot'
-]
 
 if __name__ == '__main__':
     bf_dat_path = 'bruteforce_dat/'

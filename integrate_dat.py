@@ -25,13 +25,40 @@ def record_df(df,
     if chp is None or fst is None:
         df.loc[len(df.index)] = [
             proj_name,
-            np.nan, np.nan, np.nan, np.nan, np.nan,
-            np.nan, np.nan, np.nan, np.nan, np.nan,
-            np.nan, np.nan, np.nan, np.nan, np.nan,
-            np.nan, np.nan, np.nan, np.nan, np.nan,
-            np.nan, np.nan, np.nan, np.nan, np.nan,
-            np.nan, np.nan, np.nan, np.nan, np.nan,
-            np.nan, np.nan, np.nan, np.nan
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan,
+            np.nan
         ]
         return
     chp_time = chp[time_idx]
@@ -96,12 +123,12 @@ def get_contrast(choice,
 
 def consider_fr(choice: int):
     csv_names = [
-        'table_for_0.csv',
-        'table_for_0.2.csv',
-        'table_for_0.4.csv',
-        'table_for_0.6.csv',
-        'table_for_0.8.csv',
-        'table_for_1.csv']
+        'failure_rate_0.csv',
+        'failure_rate_0.2.csv',
+        'failure_rate_0.4.csv',
+        'failure_rate_0.6.csv',
+        'failure_rate_0.8.csv',
+        'failure_rate_1.csv']
     frs = [0, 0.2, 0.4, 0.6, 0.8, 1]
     dfs = [pd.DataFrame(None, columns=['project',
                                        'cheapest_category',
@@ -197,79 +224,8 @@ def consider_fr(choice: int):
         df.to_csv(output + csv_names[i], sep=',', header=True, index=False)
 
 
-# failure rate = 1
-def ignore_fr():
-    df = pd.DataFrame(None, columns=['project',
-                                     'cheapest_category',
-                                     'cheapest_confs',
-                                     'cheapest_runtime',
-                                     'cheapest_price',
-                                     'cheapest_max_failure_rate',
-                                     'cheapest_github_caliber_confs',
-                                     'cheapest_github_caliber_runtime',
-                                     'cheapest_github_caliber_price',
-                                     'cheapest_github_caliber_max_failure_rate',
-                                     'cheapest_github_caliber_runtime_rate',
-                                     'cheapest_github_caliber_price_saving',
-                                     'cheapest_smart_baseline_confs',
-                                     'cheapest_smart_baseline_runtime',
-                                     'cheapest_smart_baseline_price',
-                                     'cheapest_smart_baseline_max_failure_rate',
-                                     'cheapest_smart_baseline_runtime_rate',
-                                     'cheapest_smart_baseline_price_saving',
-                                     'fastest_category',
-                                     'fastest_confs',
-                                     'fastest_runtime',
-                                     'fastest_price',
-                                     'fastest_max_failure_rate',
-                                     'fastest_github_caliber_confs',
-                                     'fastest_github_caliber_runtime',
-                                     'fastest_github_caliber_price',
-                                     'fastest_github_caliber_max_failure_rate',
-                                     'fastest_github_caliber_runtime_rate',
-                                     'fastest_github_caliber_price_saving',
-                                     'fastest_smart_baseline_confs',
-                                     'fastest_smart_baseline_runtime',
-                                     'fastest_smart_baseline_price',
-                                     'fastest_smart_baseline_max_failure_rate',
-                                     'fastest_smart_baseline_runtime_rate',
-                                     'fastest_smart_baseline_price_saving'])
-    dat_path = dat_paths[1]
-    filenames = os.listdir(dat_path)
-    for f in filenames:
-        proj_name = f.replace('.csv', '')
-        dat = pd.read_csv(dat_path + f).iloc[:, 1:]
-        dat.sort_values(by='time_parallel', inplace=True)
-        fst = dat.iloc[0, :]
-        fst_time = fst[time_idx]
-        fst_price = fst[price_idx]
-        for _, row in dat.iterrows():
-            if row[time_idx] == fst_time:
-                if row[price_idx] < fst_price:
-                    fst = row
-                    fst_price = row[price_idx]
-            else:
-                break
-        dat.sort_values(by='price', inplace=True)
-        chp = None
-        chp_time = float('inf')
-        chp_price = dat.iloc[0, price_idx]
-        for _, row in dat.iterrows():
-            if row[price_idx] == chp_price:
-                if row[time_idx] < chp_time:
-                    chp = row
-                    chp_time = row[time_idx]
-            else:
-                break
-        chp_gh, chp_smt = get_contrast(1, proj_name, sum(literal_eval(chp[confs_idx]).values()))
-        fst_gh, fst_smt = get_contrast(1, proj_name, sum(literal_eval(fst[confs_idx]).values()))
-        record_df(df, proj_name, chp, chp_gh, chp_smt, fst, fst_gh, fst_smt)
-    df.to_csv('integration_dat_ga.csv', sep=',', header=True, index=False)
-
-
 if __name__ == '__main__':
     modus = {'bruteforce': 0, 'incl': 1, 'excl': 2}
-    # consider_fr(modus['bruteforce'])
+    consider_fr(modus['bruteforce'])
     consider_fr(modus['incl'])
     consider_fr(modus['excl'])
-    # ignore_fr()

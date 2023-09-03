@@ -4,89 +4,136 @@ import pandas as pd
 import textwrap
 import numpy as np
 
-pareto_path = 'pareto'
-trade_off_path = 'trade_off'
+pareto_2d_path = 'pareto_2d'
+pareto_3d_path = 'pareto_3d'
 
 
-def pareto_runtime_price(dat_name: str):
+def pareto_frontier_multi(arr,
+                          major):
+    major_map = {'runtime': 0,
+                 'price': 1,
+                 'max_fr': 2}
+    col = major_map[major]
+    # Sort on first dimension
+    arr = arr[arr[:, col].argsort()[::-1]]
+    # Add first row to pareto_frontier
+    pareto_frontiers = arr[0:1, :]
+    # Test next row against the last row in pareto_frontier
+    for row in arr[1:, :]:
+        if sum([row[x] <= pareto_frontiers[-1][x] for x in range(len(row))]) == len(row):
+            # If it is better on all features add the row to pareto_frontier
+            pareto_frontiers = np.concatenate((pareto_frontiers, [row]))
+    return pareto_frontiers
+
+
+def draw_pareto_3d(modu):
+    modu_map = {'incl': 'ext_dat/incl_cost/',
+                'excl': 'ext_dat/excl_cost/',
+                'bf': 'bruteforce_dat/'}
+    dat_path = modu_map[modu]
+    runtime_idx = 5
+    price_idx = 6
+    max_fr_idx = 8
+    csvs = os.listdir(dat_path)
+    for csv in csvs:
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        ax.invert_xaxis()
+        ax.invert_yaxis()
+        ax.invert_zaxis()
+        proj_name = csv.replace('.csv', '')
+        df = pd.read_csv(dat_path + csv)
+        # (runtime, price): max failure rate
+        mp = {}
+        for _, itm in df.iterrows():
+            if np.isnan(itm[max_fr_idx]):
+                continue
+            key = (itm[runtime_idx], itm[price_idx])
+            if key not in mp.keys() or mp[key] > itm[max_fr_idx]:
+                mp[key] = itm[max_fr_idx]
+        runtime_price_tup = np.array(list(mp.keys()))
+        xyz = np.column_stack((runtime_price_tup,
+                               np.array(list(mp.values()))))
+        frontiers = pareto_frontier_multi(xyz,
+                                          'runtime')
+        x_front = frontiers[:, 0]
+        y_front = frontiers[:, 1]
+        z_front = frontiers[:, 2]
+        # comment = ''
+        for node in frontiers:
+            mp.pop((node[0], node[1]))
+            # comment = comment + f'x={node[0]}, y={node[1]}, z={node[2]}\n'
+        keys = np.array(list(mp.keys()))
+        x_non = keys[:, 0]
+        y_non = keys[:, 1]
+        z_non = np.array(list(mp.values()))
+        ax.scatter(x_non, y_non, z_non,
+                   s=75, c='royalblue')
+        ax.scatter(x_front, y_front, z_front,
+                   s=75, c='r', label='Pareto frontiers')
+        ax.set_title(textwrap.fill(proj_name),
+                     fontsize=14)
+        ax.set_xlabel('Runtime')
+        ax.set_ylabel('Price')
+        ax.set_zlabel('Max failure rate')
+        # ax.text(0, 0, 0, comment)
+        ax.legend()
+        plt.savefig(f'{pareto_3d_path}/{proj_name}.png',
+                    dpi=1000)
+        plt.close()
+
+
+def draw_pareto_2d(dat_name,
+                   fr):
+    if not os.path.exists(f'{pareto_2d_path}/failure_rate_{fr}'):
+        os.mkdir(f'{pareto_2d_path}/failure_rate_{fr}')
     proj_idx = 0
     colors = ['mediumpurple', 'thistle', 'lightsteelblue', 'darkseagreen', 'slategrey', 'darkkhaki']
     biases = {'chp': 0, 'chp_gh': 4, 'chp_smt': 10, 'fst': 17, 'fst_gh': 21, 'fst_smt': 27}
     nodes = {'chp': 'cheapest', 'chp_gh': 'cheapest_github_caliber', 'chp_smt': 'cheapest_smart_baseline',
              'fst': 'fastest', 'fst_gh': 'fastest_github_caliber', 'fst_smt': 'fastest_smart_baseline'}
-    confs_idx = 2
     runtime_idx = 3
     price_idx = 4
     max_fr_idx = 5
     dat = pd.read_csv(dat_name)
     for _, row in dat.iterrows():
         proj_name = row[proj_idx]
+        plt.title(textwrap.fill(proj_name),
+                  fontsize=14)
+        if np.isnan(row[max_fr_idx]):
+            plt.savefig(f'{pareto_2d_path}/failure_rate_{fr}/{proj_name}.png',
+                        dpi=1000)
+            plt.close()
+            continue
+        cnt = 0
+        xy_fr_map = {}
         x_runtime = []
         y_price = []
         max_frs = []
-        annotations = []
+        labels = []
         for key, bias in biases.items():
-            x_runtime.append(row[runtime_idx + bias])
-            y_price.append(row[price_idx + bias])
+            xi = row[runtime_idx + bias]
+            yi = row[price_idx + bias]
+            x_runtime.append(xi)
+            y_price.append(yi)
             max_frs.append(row[max_fr_idx + bias])
-            annotations.append(nodes[key])
-        plt.scatter(x_runtime, y_price, s=75, c=colors)
-        plt.title(textwrap.fill(proj_name), fontsize=14)
-        plt.xlabel('Runtime')
-        plt.ylabel('Price')
+            labels.append(nodes[key])
+            xy_fr_map[(xi, yi)] = cnt
+            cnt += 1
         plt.gca().invert_xaxis()
         plt.gca().invert_yaxis()
+        plt.scatter(x_runtime, y_price,
+                    s=75, c=colors)
+        plt.xlabel('Runtime')
+        plt.ylabel('Price')
         plt.legend(handles=[plt.scatter([], [], c=c) for c in colors],
-                   labels=annotations)
-        # for x, y, fr in zip(x_runtime, y_price, max_frs):
-        #     plt.text(x, y, round(fr, 2), ha='center')
-        plt.savefig(f'{pareto_path}/{proj_name}.png', dpi=1000)
-        plt.close()
-
-
-def draw_trade_off():
-    def get_x_y(df):
-        # (runtime, price): (max failure rate, confs)
-        mp = {}
-        confs_idx = 2
-        runtime_idx = 4
-        price_idx = 5
-        max_fr_idx = 7
-        for _, row in df.iterrows():
-            key = (row[runtime_idx], row[price_idx])
-            if key not in mp.keys() or row[max_fr_idx] < mp[key][0]:
-                mp[key] = (row[max_fr_idx], row[confs_idx])
-        keys = np.array(list(mp.keys()))
-        return keys[:, 0], keys[:, 1]
-
-    def draw(subplot, x, y, title):
-        colors = np.random.rand(len(x))
-        subplot.scatter(x, y, c=colors)
-        subplot.set_title(title)
-        subplot.set_xlabel('Runtime')
-        subplot.set_ylabel('Price')
-        subplot.invert_xaxis()
-        subplot.invert_yaxis()
-
-    incl_path = 'ext_dat/incl_cost/'
-    csvs = os.listdir(incl_path)
-    category_column_name = 'machine_list_or_failure_rate_or_cheap_or_fast_category'
-    for csv in csvs:
-        proj_name = csv.replace('.csv', '')
-        dat = pd.read_csv(incl_path + csv).iloc[:, 1:]
-        fig = plt.figure(figsize=(10, 4.5))
-        fig.suptitle(proj_name, fontsize=14)
-        chp_df = dat.loc[dat[category_column_name].str.contains('cheap')]
-        fst_df = dat.loc[dat[category_column_name].str.contains('fast')]
-        chp_x, chp_y = get_x_y(chp_df)
-        fst_x, fst_y = get_x_y(fst_df)
-        draw(fig.add_subplot(121), chp_x, chp_y, 'cheap')
-        draw(fig.add_subplot(122), fst_x, fst_y, 'fast')
-        plt.subplots_adjust(wspace=0.3)
-        fig.savefig(f'{trade_off_path}/{proj_name}.png', dpi=1000)
+                   labels=labels)
+        plt.savefig(f'{pareto_2d_path}/failure_rate_{fr}/{proj_name}.png',
+                    dpi=1000)
         plt.close()
 
 
 if __name__ == '__main__':
-    # pareto_runtime_price('integration_dat_ga.csv')
-    draw_trade_off()
+    # draw_pareto_2d('integration_dat_incl_cost/failure_rate_1.csv', 1)
+    # draw_pareto_2d('integration_dat_incl_cost/failure_rate_0.csv', 0)
+    draw_pareto_3d('incl')

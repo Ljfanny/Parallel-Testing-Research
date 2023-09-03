@@ -1,0 +1,193 @@
+project_fr,ga_category,ga_confs,bf_category,bf_confs
+activiti_dot-0.2,12-0.2-fast,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 11}",6-0.2-fast,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 5}"
+assertj-core_dot-0.2,12-0.2-fast,{'29CPU4Mem8GB.sh': 12},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension-0.2,2-0.2-fast,{'29CPU4Mem8GB.sh': 2},2-0.2-fast,{'29CPU4Mem8GB.sh': 2}
+commons-exec_dot-0.2,12-0.2-fast,{'01noThrottling.sh': 12},6-0.2-fast,{'01noThrottling.sh': 6}
+db-scheduler_dot-0.2,6-0.2-fast,{'29CPU4Mem8GB.sh': 6},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+delight-nashorn-sandbox_dot-0.2,12-0.2-fast,{'29CPU4Mem8GB.sh': 12},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+elastic-job-lite_dot-0.2,12-0.2-fast,{'01noThrottling.sh': 12},6-0.2-fast,{'01noThrottling.sh': 6}
+elastic-job-lite_elastic-job-lite-core-0.2,12-0.2-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 11}",6-0.2-fast,{'01noThrottling.sh': 6}
+esper_examples.rfidassetzone-0.2,2-0.2-fast,{'01noThrottling.sh': 2},2-0.2-fast,{'01noThrottling.sh': 2}
+fastjson_dot-0.2,12-0.2-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 9}",6-0.2-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+fluent-logger-java_dot-0.2,6-0.2-fast,{'29CPU4Mem8GB.sh': 6},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+handlebars.java_dot-0.2,8-0.2-fast,{'29CPU4Mem8GB.sh': 8},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+hbase_dot-0.2,,,,
+http-request_dot-0.2,12-0.2-fast,{'29CPU4Mem8GB.sh': 12},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+httpcore_dot-0.2,12-0.2-fast,{'01noThrottling.sh': 12},6-0.2-fast,{'01noThrottling.sh': 6}
+hutool_hutool-cron-0.2,4-0.2-fast,{'01noThrottling.sh': 4},4-0.2-fast,{'01noThrottling.sh': 4}
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty-0.2,12-0.2-fast,{'29CPU4Mem8GB.sh': 12},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo-0.2,12-0.2-fast,{'01noThrottling.sh': 12},6-0.2-fast,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 4, '26CPU2Mem4GB.sh': 1}"
+logback_dot-0.2,6-0.2-fast,"{'19CPU010Mem1GB.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '28CPU2Mem16GB.sh': 1}",4-0.2-fast,"{'01noThrottling.sh': 2, '24CPU1Mem4GB.sh': 2}"
+luwak_luwak-0.2,12-0.2-fast,{'29CPU4Mem8GB.sh': 12},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+ninja_dot-0.2,,,,
+noxy_noxy-discovery-zookeeper-0.2,2-0.2-fast,{'01noThrottling.sh': 2},2-0.2-fast,{'01noThrottling.sh': 2}
+okhttp_dot-0.2,,,,
+orbit_dot-0.2,12-0.2-fast,{'29CPU4Mem8GB.sh': 12},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-adapters.rxjava-0.2,6-0.2-fast,{'29CPU4Mem8GB.sh': 6},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-0.2,12-0.2-fast,{'01noThrottling.sh': 12},6-0.2-fast,{'01noThrottling.sh': 6}
+rxjava2-extras_dot-0.2,12-0.2-fast,{'29CPU4Mem8GB.sh': 12},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+spring-boot_dot-0.2,12-0.2-fast,{'29CPU4Mem8GB.sh': 12},6-0.2-fast,{'29CPU4Mem8GB.sh': 6}
+timely_server-0.2,12-0.2-fast,{'01noThrottling.sh': 12},6-0.2-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 3}"
+wro4j_wro4j-extensions-0.2,12-0.2-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-0.2-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 5}"
+yawp_yawp-testing.yawp-testing-appengine-0.2,1-0.2-fast,{'29CPU4Mem8GB.sh': 1},1-0.2-fast,{'29CPU4Mem8GB.sh': 1}
+zxing_dot-0.2,12-0.2-fast,"{'29CPU4Mem8GB.sh': 7, '01noThrottling.sh': 5}",6-0.2-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+activiti_dot-0.4,12-0.4-fast,{'01noThrottling.sh': 12},6-0.4-fast,{'01noThrottling.sh': 6}
+assertj-core_dot-0.4,12-0.4-fast,{'29CPU4Mem8GB.sh': 12},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension-0.4,2-0.4-fast,{'29CPU4Mem8GB.sh': 2},2-0.4-fast,{'29CPU4Mem8GB.sh': 2}
+commons-exec_dot-0.4,12-0.4-fast,{'01noThrottling.sh': 12},6-0.4-fast,{'01noThrottling.sh': 6}
+db-scheduler_dot-0.4,6-0.4-fast,{'29CPU4Mem8GB.sh': 6},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+delight-nashorn-sandbox_dot-0.4,12-0.4-fast,{'29CPU4Mem8GB.sh': 12},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+elastic-job-lite_dot-0.4,12-0.4-fast,{'01noThrottling.sh': 12},6-0.4-fast,{'01noThrottling.sh': 6}
+elastic-job-lite_elastic-job-lite-core-0.4,12-0.4-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 11}",6-0.4-fast,{'01noThrottling.sh': 6}
+esper_examples.rfidassetzone-0.4,2-0.4-fast,{'01noThrottling.sh': 2},2-0.4-fast,{'01noThrottling.sh': 2}
+fastjson_dot-0.4,12-0.4-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 9}",6-0.4-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+fluent-logger-java_dot-0.4,6-0.4-fast,{'29CPU4Mem8GB.sh': 6},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+handlebars.java_dot-0.4,8-0.4-fast,{'29CPU4Mem8GB.sh': 8},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+hbase_dot-0.4,,,,
+http-request_dot-0.4,12-0.4-fast,{'29CPU4Mem8GB.sh': 12},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+httpcore_dot-0.4,12-0.4-fast,{'01noThrottling.sh': 12},6-0.4-fast,{'01noThrottling.sh': 6}
+hutool_hutool-cron-0.4,4-0.4-fast,{'01noThrottling.sh': 4},4-0.4-fast,{'01noThrottling.sh': 4}
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty-0.4,12-0.4-fast,{'29CPU4Mem8GB.sh': 12},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo-0.4,12-0.4-fast,{'01noThrottling.sh': 12},6-0.4-fast,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 4, '26CPU2Mem4GB.sh': 1}"
+logback_dot-0.4,4-0.4-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1, '24CPU1Mem4GB.sh': 2}",4-0.4-fast,"{'01noThrottling.sh': 2, '24CPU1Mem4GB.sh': 2}"
+luwak_luwak-0.4,12-0.4-fast,{'29CPU4Mem8GB.sh': 12},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+ninja_dot-0.4,,,,
+noxy_noxy-discovery-zookeeper-0.4,2-0.4-fast,{'01noThrottling.sh': 2},2-0.4-fast,{'01noThrottling.sh': 2}
+okhttp_dot-0.4,4-0.4-fast,"{'01noThrottling.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1}",4-0.4-fast,"{'01noThrottling.sh': 1, '23CPU05Mem4GB.sh': 3}"
+orbit_dot-0.4,12-0.4-fast,{'29CPU4Mem8GB.sh': 12},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-adapters.rxjava-0.4,6-0.4-fast,{'29CPU4Mem8GB.sh': 6},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-0.4,12-0.4-fast,{'01noThrottling.sh': 12},6-0.4-fast,{'01noThrottling.sh': 6}
+rxjava2-extras_dot-0.4,12-0.4-fast,{'29CPU4Mem8GB.sh': 12},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+spring-boot_dot-0.4,12-0.4-fast,{'29CPU4Mem8GB.sh': 12},6-0.4-fast,{'29CPU4Mem8GB.sh': 6}
+timely_server-0.4,12-0.4-fast,{'01noThrottling.sh': 12},6-0.4-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 3}"
+wro4j_wro4j-extensions-0.4,12-0.4-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-0.4-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 5}"
+yawp_yawp-testing.yawp-testing-appengine-0.4,1-0.4-fast,{'29CPU4Mem8GB.sh': 1},1-0.4-fast,{'29CPU4Mem8GB.sh': 1}
+zxing_dot-0.4,12-0.4-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-0.4-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+activiti_dot-0.6,12-0.6-fast,{'01noThrottling.sh': 12},6-0.6-fast,{'01noThrottling.sh': 6}
+assertj-core_dot-0.6,12-0.6-fast,{'29CPU4Mem8GB.sh': 12},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension-0.6,2-0.6-fast,{'29CPU4Mem8GB.sh': 2},2-0.6-fast,{'29CPU4Mem8GB.sh': 2}
+commons-exec_dot-0.6,12-0.6-fast,{'01noThrottling.sh': 12},6-0.6-fast,{'01noThrottling.sh': 6}
+db-scheduler_dot-0.6,6-0.6-fast,{'29CPU4Mem8GB.sh': 6},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+delight-nashorn-sandbox_dot-0.6,12-0.6-fast,{'29CPU4Mem8GB.sh': 12},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+elastic-job-lite_dot-0.6,12-0.6-fast,{'01noThrottling.sh': 12},6-0.6-fast,{'01noThrottling.sh': 6}
+elastic-job-lite_elastic-job-lite-core-0.6,12-0.6-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 11}",6-0.6-fast,{'01noThrottling.sh': 6}
+esper_examples.rfidassetzone-0.6,2-0.6-fast,{'01noThrottling.sh': 2},2-0.6-fast,{'01noThrottling.sh': 2}
+fastjson_dot-0.6,12-0.6-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 9}",6-0.6-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+fluent-logger-java_dot-0.6,6-0.6-fast,{'29CPU4Mem8GB.sh': 6},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+handlebars.java_dot-0.6,8-0.6-fast,{'29CPU4Mem8GB.sh': 8},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+hbase_dot-0.6,12-0.6-fast,"{'19CPU010Mem1GB.sh': 3, '20CPU010Mem2GB.sh': 6, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 2}",6-0.6-fast,"{'20CPU010Mem2GB.sh': 5, '01noThrottling.sh': 1}"
+http-request_dot-0.6,12-0.6-fast,{'29CPU4Mem8GB.sh': 12},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+httpcore_dot-0.6,12-0.6-fast,{'01noThrottling.sh': 12},6-0.6-fast,{'01noThrottling.sh': 6}
+hutool_hutool-cron-0.6,4-0.6-fast,{'01noThrottling.sh': 4},4-0.6-fast,{'01noThrottling.sh': 4}
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty-0.6,12-0.6-fast,{'29CPU4Mem8GB.sh': 12},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo-0.6,12-0.6-fast,{'01noThrottling.sh': 12},6-0.6-fast,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 4, '26CPU2Mem4GB.sh': 1}"
+logback_dot-0.6,6-0.6-fast,"{'29CPU4Mem8GB.sh': 1, '24CPU1Mem4GB.sh': 2, '25CPU1Mem8GB.sh': 2, '26CPU2Mem4GB.sh': 1}",4-0.6-fast,"{'01noThrottling.sh': 2, '24CPU1Mem4GB.sh': 2}"
+luwak_luwak-0.6,12-0.6-fast,{'29CPU4Mem8GB.sh': 12},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+ninja_dot-0.6,,,,
+noxy_noxy-discovery-zookeeper-0.6,2-0.6-fast,{'01noThrottling.sh': 2},2-0.6-fast,{'01noThrottling.sh': 2}
+okhttp_dot-0.6,12-0.6-fast,{'01noThrottling.sh': 12},6-0.6-fast,{'01noThrottling.sh': 6}
+orbit_dot-0.6,12-0.6-fast,{'29CPU4Mem8GB.sh': 12},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-adapters.rxjava-0.6,6-0.6-fast,{'29CPU4Mem8GB.sh': 6},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-0.6,12-0.6-fast,{'01noThrottling.sh': 12},6-0.6-fast,{'01noThrottling.sh': 6}
+rxjava2-extras_dot-0.6,12-0.6-fast,{'29CPU4Mem8GB.sh': 12},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+spring-boot_dot-0.6,12-0.6-fast,{'29CPU4Mem8GB.sh': 12},6-0.6-fast,{'29CPU4Mem8GB.sh': 6}
+timely_server-0.6,12-0.6-fast,{'01noThrottling.sh': 12},6-0.6-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 3}"
+wro4j_wro4j-extensions-0.6,12-0.6-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-0.6-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 5}"
+yawp_yawp-testing.yawp-testing-appengine-0.6,1-0.6-fast,{'29CPU4Mem8GB.sh': 1},1-0.6-fast,{'29CPU4Mem8GB.sh': 1}
+zxing_dot-0.6,12-0.6-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-0.6-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+activiti_dot-0.8,12-0.8-fast,{'01noThrottling.sh': 12},6-0.8-fast,{'01noThrottling.sh': 6}
+assertj-core_dot-0.8,12-0.8-fast,{'29CPU4Mem8GB.sh': 12},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension-0.8,2-0.8-fast,{'29CPU4Mem8GB.sh': 2},2-0.8-fast,{'29CPU4Mem8GB.sh': 2}
+commons-exec_dot-0.8,12-0.8-fast,{'01noThrottling.sh': 12},6-0.8-fast,{'01noThrottling.sh': 6}
+db-scheduler_dot-0.8,6-0.8-fast,{'29CPU4Mem8GB.sh': 6},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+delight-nashorn-sandbox_dot-0.8,12-0.8-fast,{'29CPU4Mem8GB.sh': 12},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+elastic-job-lite_dot-0.8,12-0.8-fast,{'01noThrottling.sh': 12},6-0.8-fast,{'01noThrottling.sh': 6}
+elastic-job-lite_elastic-job-lite-core-0.8,12-0.8-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 11}",6-0.8-fast,{'01noThrottling.sh': 6}
+esper_examples.rfidassetzone-0.8,2-0.8-fast,{'01noThrottling.sh': 2},2-0.8-fast,{'01noThrottling.sh': 2}
+fastjson_dot-0.8,12-0.8-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 9}",6-0.8-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+fluent-logger-java_dot-0.8,6-0.8-fast,{'29CPU4Mem8GB.sh': 6},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+handlebars.java_dot-0.8,8-0.8-fast,{'29CPU4Mem8GB.sh': 8},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+hbase_dot-0.8,12-0.8-fast,{'20CPU010Mem2GB.sh': 12},6-0.8-fast,"{'19CPU010Mem1GB.sh': 3, '20CPU010Mem2GB.sh': 2, '01noThrottling.sh': 1}"
+http-request_dot-0.8,12-0.8-fast,{'29CPU4Mem8GB.sh': 12},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+httpcore_dot-0.8,12-0.8-fast,{'01noThrottling.sh': 12},6-0.8-fast,{'01noThrottling.sh': 6}
+hutool_hutool-cron-0.8,4-0.8-fast,{'01noThrottling.sh': 4},4-0.8-fast,{'01noThrottling.sh': 4}
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty-0.8,12-0.8-fast,{'29CPU4Mem8GB.sh': 12},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo-0.8,12-0.8-fast,{'01noThrottling.sh': 12},6-0.8-fast,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 4, '26CPU2Mem4GB.sh': 1}"
+logback_dot-0.8,10-0.8-fast,"{'20CPU010Mem2GB.sh': 1, '21CPU025Mem2GB.sh': 2, '23CPU05Mem4GB.sh': 3, '24CPU1Mem4GB.sh': 1, '25CPU1Mem8GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1}",4-0.8-fast,"{'01noThrottling.sh': 2, '24CPU1Mem4GB.sh': 2}"
+luwak_luwak-0.8,12-0.8-fast,{'29CPU4Mem8GB.sh': 12},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+ninja_dot-0.8,,,,
+noxy_noxy-discovery-zookeeper-0.8,2-0.8-fast,{'01noThrottling.sh': 2},2-0.8-fast,{'01noThrottling.sh': 2}
+okhttp_dot-0.8,12-0.8-fast,{'01noThrottling.sh': 12},6-0.8-fast,{'01noThrottling.sh': 6}
+orbit_dot-0.8,12-0.8-fast,{'29CPU4Mem8GB.sh': 12},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-adapters.rxjava-0.8,6-0.8-fast,{'29CPU4Mem8GB.sh': 6},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-0.8,12-0.8-fast,{'01noThrottling.sh': 12},6-0.8-fast,{'01noThrottling.sh': 6}
+rxjava2-extras_dot-0.8,12-0.8-fast,{'29CPU4Mem8GB.sh': 12},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+spring-boot_dot-0.8,12-0.8-fast,{'29CPU4Mem8GB.sh': 12},6-0.8-fast,{'29CPU4Mem8GB.sh': 6}
+timely_server-0.8,12-0.8-fast,{'01noThrottling.sh': 12},6-0.8-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 3}"
+wro4j_wro4j-extensions-0.8,12-0.8-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-0.8-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 5}"
+yawp_yawp-testing.yawp-testing-appengine-0.8,1-0.8-fast,{'29CPU4Mem8GB.sh': 1},1-0.8-fast,{'29CPU4Mem8GB.sh': 1}
+zxing_dot-0.8,12-0.8-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-0.8-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+activiti_dot-0,,,,
+assertj-core_dot-0,,,,
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension-0,2-0-fast,{'29CPU4Mem8GB.sh': 2},2-0-fast,{'29CPU4Mem8GB.sh': 2}
+commons-exec_dot-0,12-0-fast,{'01noThrottling.sh': 12},6-0-fast,{'01noThrottling.sh': 6}
+db-scheduler_dot-0,,,,
+delight-nashorn-sandbox_dot-0,12-0-fast,{'29CPU4Mem8GB.sh': 12},6-0-fast,{'29CPU4Mem8GB.sh': 6}
+elastic-job-lite_dot-0,12-0-fast,{'01noThrottling.sh': 12},6-0-fast,{'01noThrottling.sh': 6}
+elastic-job-lite_elastic-job-lite-core-0,12-0-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 11}",6-0-fast,{'01noThrottling.sh': 6}
+esper_examples.rfidassetzone-0,2-0-fast,"{'21CPU025Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1}",2-0-fast,"{'21CPU025Mem2GB.sh': 1, '01noThrottling.sh': 1}"
+fastjson_dot-0,12-0-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 9}",6-0-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+fluent-logger-java_dot-0,6-0-fast,{'29CPU4Mem8GB.sh': 6},6-0-fast,{'29CPU4Mem8GB.sh': 6}
+handlebars.java_dot-0,,,,
+hbase_dot-0,,,,
+http-request_dot-0,12-0-fast,{'29CPU4Mem8GB.sh': 12},6-0-fast,{'29CPU4Mem8GB.sh': 6}
+httpcore_dot-0,,,,
+hutool_hutool-cron-0,4-0-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 1}",4-0-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}"
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty-0,6-0-fast,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 2, '26CPU2Mem4GB.sh': 1}",6-0-fast,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 5}"
+incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo-0,12-0-fast,"{'01noThrottling.sh': 11, '26CPU2Mem4GB.sh': 1}",6-0-fast,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 4, '26CPU2Mem4GB.sh': 1}"
+logback_dot-0,,,,
+luwak_luwak-0,12-0-fast,"{'29CPU4Mem8GB.sh': 11, '01noThrottling.sh': 1}",6-0-fast,"{'29CPU4Mem8GB.sh': 5, '01noThrottling.sh': 1}"
+ninja_dot-0,,,,
+noxy_noxy-discovery-zookeeper-0,2-0-fast,{'01noThrottling.sh': 2},2-0-fast,{'01noThrottling.sh': 2}
+okhttp_dot-0,,,,
+orbit_dot-0,,,,
+retrofit_retrofit-adapters.rxjava-0,6-0-fast,{'29CPU4Mem8GB.sh': 6},6-0-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-0,12-0-fast,{'01noThrottling.sh': 12},6-0-fast,{'01noThrottling.sh': 6}
+rxjava2-extras_dot-0,12-0-fast,"{'26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 3, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 4}",6-0-fast,"{'28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 5}"
+spring-boot_dot-0,12-0-fast,"{'29CPU4Mem8GB.sh': 11, '01noThrottling.sh': 1}",6-0-fast,"{'29CPU4Mem8GB.sh': 5, '01noThrottling.sh': 1}"
+timely_server-0,,,,
+wro4j_wro4j-extensions-0,12-0-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-0-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 5}"
+yawp_yawp-testing.yawp-testing-appengine-0,,,,
+zxing_dot-0,,,,
+activiti_dot-1,12-1-fast,{'01noThrottling.sh': 12},6-1-fast,{'01noThrottling.sh': 6}
+assertj-core_dot-1,12-1-fast,{'29CPU4Mem8GB.sh': 12},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension-1,2-1-fast,{'29CPU4Mem8GB.sh': 2},2-1-fast,{'29CPU4Mem8GB.sh': 2}
+commons-exec_dot-1,12-1-fast,{'01noThrottling.sh': 12},6-1-fast,{'01noThrottling.sh': 6}
+db-scheduler_dot-1,6-1-fast,{'29CPU4Mem8GB.sh': 6},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+delight-nashorn-sandbox_dot-1,12-1-fast,{'29CPU4Mem8GB.sh': 12},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+elastic-job-lite_dot-1,12-1-fast,{'01noThrottling.sh': 12},6-1-fast,{'01noThrottling.sh': 6}
+elastic-job-lite_elastic-job-lite-core-1,12-1-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 11}",6-1-fast,{'01noThrottling.sh': 6}
+esper_examples.rfidassetzone-1,2-1-fast,{'01noThrottling.sh': 2},2-1-fast,{'01noThrottling.sh': 2}
+fastjson_dot-1,12-1-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 9}",6-1-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
+fluent-logger-java_dot-1,6-1-fast,{'29CPU4Mem8GB.sh': 6},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+handlebars.java_dot-1,8-1-fast,{'29CPU4Mem8GB.sh': 8},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+hbase_dot-1,12-1-fast,{'20CPU010Mem2GB.sh': 12},6-1-fast,"{'19CPU010Mem1GB.sh': 3, '20CPU010Mem2GB.sh': 2, '01noThrottling.sh': 1}"
+http-request_dot-1,12-1-fast,{'29CPU4Mem8GB.sh': 12},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+httpcore_dot-1,12-1-fast,{'01noThrottling.sh': 12},6-1-fast,{'01noThrottling.sh': 6}
+hutool_hutool-cron-1,4-1-fast,{'01noThrottling.sh': 4},4-1-fast,{'01noThrottling.sh': 4}
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty-1,12-1-fast,{'29CPU4Mem8GB.sh': 12},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo-1,12-1-fast,{'01noThrottling.sh': 12},6-1-fast,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 4, '26CPU2Mem4GB.sh': 1}"
+logback_dot-1,10-1-fast,"{'19CPU010Mem1GB.sh': 2, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 2, '25CPU1Mem8GB.sh': 2, '27CPU2Mem8GB.sh': 2}",4-1-fast,"{'01noThrottling.sh': 2, '24CPU1Mem4GB.sh': 2}"
+luwak_luwak-1,12-1-fast,{'29CPU4Mem8GB.sh': 12},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+ninja_dot-1,12-1-fast,{'01noThrottling.sh': 12},6-1-fast,{'01noThrottling.sh': 6}
+noxy_noxy-discovery-zookeeper-1,2-1-fast,{'01noThrottling.sh': 2},2-1-fast,{'01noThrottling.sh': 2}
+okhttp_dot-1,12-1-fast,{'01noThrottling.sh': 12},6-1-fast,{'01noThrottling.sh': 6}
+orbit_dot-1,12-1-fast,{'29CPU4Mem8GB.sh': 12},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-adapters.rxjava-1,6-1-fast,{'29CPU4Mem8GB.sh': 6},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+retrofit_retrofit-1,12-1-fast,{'01noThrottling.sh': 12},6-1-fast,{'01noThrottling.sh': 6}
+rxjava2-extras_dot-1,12-1-fast,{'29CPU4Mem8GB.sh': 12},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+spring-boot_dot-1,12-1-fast,{'29CPU4Mem8GB.sh': 12},6-1-fast,{'29CPU4Mem8GB.sh': 6}
+timely_server-1,12-1-fast,{'01noThrottling.sh': 12},6-1-fast,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 3}"
+wro4j_wro4j-extensions-1,12-1-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-1-fast,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 5}"
+yawp_yawp-testing.yawp-testing-appengine-1,1-1-fast,{'29CPU4Mem8GB.sh': 1},1-1-fast,{'29CPU4Mem8GB.sh': 1}
+zxing_dot-1,12-1-fast,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 4}",6-1-fast,"{'29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2}"
