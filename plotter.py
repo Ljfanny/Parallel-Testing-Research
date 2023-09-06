@@ -149,7 +149,7 @@ def draw_integration_2d(modu,
 
 
 def draw_integration_3d(modu):
-    modu_map = {'incl': 'integration_dat_incl_cost/',
+    modu_map = {'incl': 'integration_dat_ga/',
                 'excl': 'integration_dat_excl_cost/',
                 'bf': 'integration_dat_bruteforce/'}
     dat_path = modu_map[modu]

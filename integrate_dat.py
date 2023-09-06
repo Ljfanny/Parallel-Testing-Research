@@ -121,7 +121,8 @@ def get_contrast(choice,
     return github_caliber, filter_dat.iloc[0, :]
 
 
-def consider_fr(choice: int):
+def consider_fr(choice: int,
+                is_limit=False):
     csv_names = [
         'failure_rate_0.csv',
         'failure_rate_0.2.csv',
@@ -167,12 +168,18 @@ def consider_fr(choice: int):
                                        'fastest_smart_baseline_price_rate']) for _ in range(6)]
     fr_idx_map = {0: 0, 0.2: 1, 0.4: 2, 0.6: 3, 0.8: 4, 1: 5}
     dat_path = dat_paths[choice]
-    output = outputs[choice]
+    if is_limit:
+        output = 'integration_dat_incl_cost_limit/'
+    else:
+        output = outputs[choice]
     filenames = os.listdir(dat_path)
     for f in filenames:
         proj_name = f[:f.index('csv') - 1]
         dat = pd.read_csv(dat_path + f)
-        arr = dat.iloc[:, 1:].values
+        if is_limit:
+            arr = dat.iloc[0:48, 1:].values
+        else:
+            arr = dat.iloc[:, 1:].values
         fr_cond_arr = [[] for _ in range(6)]
         for itm in arr:
             if np.isnan(itm[max_fr_idx]):
@@ -225,7 +232,8 @@ def consider_fr(choice: int):
 
 
 if __name__ == '__main__':
-    modus = {'bruteforce': 0, 'incl': 1, 'excl': 2}
+    modus = {'bruteforce': 0, 'incl_cost': 1, 'excl': 2}
     consider_fr(modus['bruteforce'])
-    consider_fr(modus['incl'])
+    consider_fr(modus['incl_cost'])
     consider_fr(modus['excl'])
+    consider_fr(modus['incl_cost'], True)

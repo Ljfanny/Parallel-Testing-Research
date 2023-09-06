@@ -24,21 +24,21 @@ def comp_ga_bf(is_total=False):
             ga_obj[star + gap_map['price']] / bf_obj[star + gap_map['price']]
         ]
 
-    if is_total:
+    if not is_total:
         comp_dfs = [[pd.DataFrame(None, columns=['project',
-                                                'ga_confs',
-                                                'ga_runtime',
-                                                'ga_price',
-                                                'ga_max_failure_rate',
-                                                'bf_confs',
-                                                'bf_runtime',
-                                                'bf_price',
-                                                'bf_max_failure_rate',
-                                                'runtime_rate',
-                                                'price_rate']) for _ in range(2)] for _ in range(6)]
+                                                 'ga_confs',
+                                                 'ga_runtime',
+                                                 'ga_price',
+                                                 'ga_max_failure_rate',
+                                                 'bf_confs',
+                                                 'bf_runtime',
+                                                 'bf_price',
+                                                 'bf_max_failure_rate',
+                                                 'runtime_rate',
+                                                 'price_rate']) for _ in range(2)] for _ in range(6)]
         fr_idx_map = {'0': 0, '0.2': 1, '0.4': 2, '0.6': 3, '0.8': 4, '1': 5}
         chp_fst_idx_map = {'cheap': 0, 'fast': 1}
-        ga_path = 'integration_dat_incl_cost/'
+        ga_path = 'integration_dat_incl_cost_limit/'
         bf_path = 'integration_dat_bruteforce/'
         ga_csvs = os.listdir(ga_path)
         bf_csvs = os.listdir(bf_path)
@@ -121,7 +121,7 @@ def comp(a: str, b: str):
     temp = {'excl': 'excl_cost',
             'incl': 'incl_cost',
             'bf': 'bruteforce',
-            'ga': 'incl_cost'}
+            'ga': 'incl_cost_limit'}
     chp_idx = 0
     fst_idx = 1
     name_fr_idx = 2
