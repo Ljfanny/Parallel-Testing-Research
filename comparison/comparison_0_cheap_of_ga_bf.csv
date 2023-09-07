@@ -1,33 +1,33 @@
-project,ga_confs,ga_runtime,ga_price,ga_max_failure_rate,bf_confs,bf_runtime,bf_price,bf_max_failure_rate,runtime_rate,price_rate
-activiti_dot,,,,,,,,,,
-assertj-core_dot,,,,,,,,,,
-carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",129.95537710437708,0.0128839940197431,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",129.95537710437708,0.0128839940197431,0.0,1.0,1.0
-commons-exec_dot,"{'19CPU010Mem1GB.sh': 2, '22CPU05Mem2GB.sh': 1, '26CPU2Mem4GB.sh': 1}",81.0577412027491,0.0241202595882342,0.0,"{'19CPU010Mem1GB.sh': 2, '22CPU05Mem2GB.sh': 1, '26CPU2Mem4GB.sh': 1}",81.0577412027491,0.0241202595882342,0.0,1.0,1.0
-db-scheduler_dot,,,,,,,,,,
-delight-nashorn-sandbox_dot,"{'27CPU2Mem8GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 2}",11.27930769574944,0.0379508428570151,0.0,"{'27CPU2Mem8GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 2}",11.27930769574944,0.0379508428570151,0.0,1.0,1.0
-elastic-job-lite_dot,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",247.9500103448277,0.0181735257739709,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",247.9500103448277,0.0181735257739709,0.0,1.0,1.0
-elastic-job-lite_elastic-job-lite-core,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",93.94679793756968,0.0117562441519408,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",93.94679793756968,0.0117562441519408,0.0,1.0,1.0
-esper_examples.rfidassetzone,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",55.175896666666645,0.0067910030445495,0.0,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",55.175896666666645,0.0067910030445495,0.0,1.0,1.0
-fastjson_dot,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",208.14717482526547,0.046446712638084,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",208.14717482526547,0.046446712638084,0.0,1.0,1.0
-fluent-logger-java_dot,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",63.39913654091488,0.0182410956873618,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",63.39913654091488,0.0182410956873618,0.0,1.0,1.0
-handlebars.java_dot,,,,,,,,,,
-hbase_dot,,,,,,,,,,
-http-request_dot,"{'24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",3.908308695652172,0.0009402715623285,0.0,"{'24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",3.908308695652172,0.0009402715623285,0.0,1.0,1.0
-httpcore_dot,,,,,,,,,,
-hutool_hutool-cron,{'26CPU2Mem4GB.sh': 1},1.8699233333333325,0.0002824980473444,0.0,{'26CPU2Mem4GB.sh': 1},1.8699233333333325,0.0002824980473444,0.0,1.0,1.0
-incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,"{'19CPU010Mem1GB.sh': 1, '27CPU2Mem8GB.sh': 1}",1188.993517330668,0.0517507769156261,0.0,"{'19CPU010Mem1GB.sh': 1, '27CPU2Mem8GB.sh': 1}",1188.993517330668,0.0517507769156261,0.0,1.0,1.0
-incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1}",1967.098479273188,0.0442436551519811,0.0,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1}",1967.098479273188,0.0442436551519811,0.0,1.0,1.0
-logback_dot,,,,,,,,,,
-luwak_luwak,"{'21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",17.158884741453754,0.0136023388850346,0.0,"{'21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",17.158884741453754,0.0136023388850346,0.0,1.0,1.0
-ninja_dot,,,,,,,,,,
-noxy_noxy-discovery-zookeeper,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",47.17919096045204,0.0387135768174469,0.0,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",47.17919096045204,0.0387135768174469,0.0,1.0,1.0
-okhttp_dot,,,,,,,,,,
-orbit_dot,,,,,,,,,,
-retrofit_retrofit-adapters.rxjava,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",46.40236000000001,0.0016678873179352,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",46.40236000000001,0.0016678873179352,0.0,1.0,1.0
-retrofit_retrofit,"{'24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",8.017243333333328,0.0046836739054555,0.0,"{'24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",8.017243333333328,0.0046836739054555,0.0,1.0,1.0
-rxjava2-extras_dot,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1, '28CPU2Mem16GB.sh': 1}",104.809558717949,0.0350821111529191,0.0,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1, '28CPU2Mem16GB.sh': 1}",104.809558717949,0.0350821111529191,0.0,1.0,1.0
-spring-boot_dot,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",478.1297068965525,0.1342744193457916,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",478.1297068965525,0.1342744193457916,0.0,1.0,1.0
-timely_server,,,,,,,,,,
-wro4j_wro4j-extensions,"{'29CPU4Mem8GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",33.32172,0.1009046575780916,0.0,"{'29CPU4Mem8GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",33.32172,0.1009046575780916,0.0,1.0,1.0
-yawp_yawp-testing.yawp-testing-appengine,,,,,,,,,,
-zxing_dot,,,,,,,,,,
+project,ga_confs,ga_runtime,ga_price,ga_max_failure_rate,bf_confs,bf_runtime,bf_price,bf_max_failure_rate,runtime_rate,price_rate,is_the_same
+activiti_dot,,,,,,,,,,,False
+assertj-core_dot,,,,,,,,,,,False
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",129.95537710437708,0.0128839940197431,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",129.95537710437708,0.0128839940197431,0.0,1.0,1.0,True
+commons-exec_dot,"{'19CPU010Mem1GB.sh': 2, '22CPU05Mem2GB.sh': 1, '26CPU2Mem4GB.sh': 1}",81.0577412027491,0.0241202595882342,0.0,"{'19CPU010Mem1GB.sh': 2, '22CPU05Mem2GB.sh': 1, '26CPU2Mem4GB.sh': 1}",81.0577412027491,0.0241202595882342,0.0,1.0,1.0,True
+db-scheduler_dot,,,,,,,,,,,False
+delight-nashorn-sandbox_dot,"{'27CPU2Mem8GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 2}",11.27930769574944,0.0379508428570151,0.0,"{'27CPU2Mem8GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 2}",11.27930769574944,0.0379508428570151,0.0,1.0,1.0,True
+elastic-job-lite_dot,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",247.9500103448277,0.0181735257739709,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",247.9500103448277,0.0181735257739709,0.0,1.0,1.0,True
+elastic-job-lite_elastic-job-lite-core,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",93.94679793756968,0.0117562441519408,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",93.94679793756968,0.0117562441519408,0.0,1.0,1.0,True
+esper_examples.rfidassetzone,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",55.175896666666645,0.0067910030445495,0.0,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",55.175896666666645,0.0067910030445495,0.0,1.0,1.0,True
+fastjson_dot,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",208.14717482526547,0.046446712638084,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1}",208.14717482526547,0.046446712638084,0.0,1.0,1.0,True
+fluent-logger-java_dot,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",63.39913654091488,0.0182410956873618,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",63.39913654091488,0.0182410956873618,0.0,1.0,1.0,True
+handlebars.java_dot,,,,,,,,,,,False
+hbase_dot,,,,,,,,,,,False
+http-request_dot,"{'24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",3.908308695652172,0.0009402715623285,0.0,"{'24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",3.908308695652172,0.0009402715623285,0.0,1.0,1.0,True
+httpcore_dot,,,,,,,,,,,False
+hutool_hutool-cron,{'26CPU2Mem4GB.sh': 1},1.8699233333333325,0.0002824980473444,0.0,{'26CPU2Mem4GB.sh': 1},1.8699233333333325,0.0002824980473444,0.0,1.0,1.0,True
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,"{'19CPU010Mem1GB.sh': 1, '27CPU2Mem8GB.sh': 1}",1188.993517330668,0.0517507769156261,0.0,"{'19CPU010Mem1GB.sh': 1, '27CPU2Mem8GB.sh': 1}",1188.993517330668,0.0517507769156261,0.0,1.0,1.0,True
+incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1}",1967.098479273188,0.0442436551519811,0.0,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1}",1967.098479273188,0.0442436551519811,0.0,1.0,1.0,True
+logback_dot,,,,,,,,,,,False
+luwak_luwak,"{'21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",17.158884741453754,0.0136023388850346,0.0,"{'21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",17.158884741453754,0.0136023388850346,0.0,1.0,1.0,True
+ninja_dot,,,,,,,,,,,False
+noxy_noxy-discovery-zookeeper,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",47.17919096045204,0.0387135768174469,0.0,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",47.17919096045204,0.0387135768174469,0.0,1.0,1.0,True
+okhttp_dot,,,,,,,,,,,False
+orbit_dot,,,,,,,,,,,False
+retrofit_retrofit-adapters.rxjava,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",46.40236000000001,0.0016678873179352,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",46.40236000000001,0.0016678873179352,0.0,1.0,1.0,True
+retrofit_retrofit,"{'24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",8.017243333333328,0.0046836739054555,0.0,"{'24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",8.017243333333328,0.0046836739054555,0.0,1.0,1.0,True
+rxjava2-extras_dot,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1, '28CPU2Mem16GB.sh': 1}",104.809558717949,0.0350821111529191,0.0,"{'19CPU010Mem1GB.sh': 1, '21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1, '28CPU2Mem16GB.sh': 1}",104.809558717949,0.0350821111529191,0.0,1.0,1.0,True
+spring-boot_dot,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",478.1297068965525,0.1342744193457916,0.0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",478.1297068965525,0.1342744193457916,0.0,1.0,1.0,True
+timely_server,,,,,,,,,,,False
+wro4j_wro4j-extensions,"{'29CPU4Mem8GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",33.32172,0.1009046575780916,0.0,"{'29CPU4Mem8GB.sh': 1, '22CPU05Mem2GB.sh': 1, '24CPU1Mem4GB.sh': 1, '26CPU2Mem4GB.sh': 1}",33.32172,0.1009046575780916,0.0,1.0,1.0,True
+yawp_yawp-testing.yawp-testing-appengine,,,,,,,,,,,False
+zxing_dot,,,,,,,,,,,False

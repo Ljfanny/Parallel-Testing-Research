@@ -22,7 +22,7 @@ def comp_ga_bf(is_total=False):
             bf_obj[star + gap_map['max_fr']],
             ga_obj[star + gap_map['runtime']] / bf_obj[star + gap_map['runtime']],
             ga_obj[star + gap_map['price']] / bf_obj[star + gap_map['price']],
-
+            ga_obj[star + gap_map['confs']] == bf_obj[star + gap_map['confs']]
         ]
 
     if not is_total:
@@ -36,7 +36,8 @@ def comp_ga_bf(is_total=False):
                                                  'bf_price',
                                                  'bf_max_failure_rate',
                                                  'runtime_rate',
-                                                 'price_rate']) for _ in range(2)] for _ in range(6)]
+                                                 'price_rate',
+                                                 'is_the_same']) for _ in range(2)] for _ in range(6)]
         fr_idx_map = {'0': 0, '0.2': 1, '0.4': 2, '0.6': 3, '0.8': 4, '1': 5}
         chp_fst_idx_map = {'cheap': 0, 'fast': 1}
         ga_path = 'integration_dat_incl_cost_limit/'
@@ -84,26 +85,37 @@ def comp_ga_bf(is_total=False):
                                         'runtime_rate',
                                         'price_rate',
                                         'is_the_same'])
+        rec_df = pd.DataFrame(None,
+                              columns=['project',
+                                       'same_confs_number',
+                                       'total_number',
+                                       'same_rate'])
         proj_idx = 0
         category_idx = 1
         confs_idx = 3
         runtime_idx = 5
         price_idx = 6
         max_fr_idx = 8
+        record_diff_csv = 'diff_confs_case_number_ga_bf.csv'
         ga_path = 'ext_dat/incl_cost/'
         bf_path = 'bruteforce_dat/'
         ga_csvs = os.listdir(ga_path)
         bf_csvs = os.listdir(bf_path)
         csv_num = len(bf_csvs)
         for i in range(csv_num):
+            proj_name = ga_csvs[i].replace('.csv', '')
             ga = pd.read_csv(ga_path + ga_csvs[i])
             bf = pd.read_csv(bf_path + bf_csvs[i])
             cnt = len(bf)
+            same_cnt = 0
             for j in range(cnt):
                 ga_itm = ga.loc[j]
                 bf_itm = bf.loc[j]
+                is_the_same = ga_itm[confs_idx] == bf_itm[confs_idx]
+                if is_the_same:
+                    same_cnt += 1
                 comp_df.loc[len(comp_df.index)] = [
-                    ga_itm[proj_idx],
+                    proj_name,
                     ga_itm[category_idx],
                     ga_itm[confs_idx],
                     ga_itm[runtime_idx],
@@ -115,8 +127,15 @@ def comp_ga_bf(is_total=False):
                     bf_itm[max_fr_idx],
                     ga_itm[runtime_idx] / bf_itm[runtime_idx],
                     ga_itm[price_idx] / bf_itm[price_idx],
-                    ga_itm[confs_idx] == bf_itm[confs_idx]
+                    is_the_same
                 ]
+            rec_df.loc[len(rec_df.index)] = [
+                proj_name,
+                same_cnt,
+                cnt,
+                same_cnt / cnt
+            ]
+        rec_df.to_csv(f'{comp_path}/{record_diff_csv}', sep=',', header=True, index=False)
         comp_df.to_csv(f'{comp_path}/comparison_dat_of_ga_bf.csv', sep=',', header=True, index=False)
 
 
