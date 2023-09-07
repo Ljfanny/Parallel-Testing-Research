@@ -21,7 +21,8 @@ def comp_ga_bf(is_total=False):
             bf_obj[star + gap_map['price']],
             bf_obj[star + gap_map['max_fr']],
             ga_obj[star + gap_map['runtime']] / bf_obj[star + gap_map['runtime']],
-            ga_obj[star + gap_map['price']] / bf_obj[star + gap_map['price']]
+            ga_obj[star + gap_map['price']] / bf_obj[star + gap_map['price']],
+
         ]
 
     if not is_total:
@@ -81,7 +82,8 @@ def comp_ga_bf(is_total=False):
                                         'bf_price',
                                         'bf_max_failure_rate',
                                         'runtime_rate',
-                                        'price_rate'])
+                                        'price_rate',
+                                        'is_the_same'])
         proj_idx = 0
         category_idx = 1
         confs_idx = 3
@@ -112,7 +114,8 @@ def comp_ga_bf(is_total=False):
                     bf_itm[price_idx],
                     bf_itm[max_fr_idx],
                     ga_itm[runtime_idx] / bf_itm[runtime_idx],
-                    ga_itm[price_idx] / bf_itm[price_idx]
+                    ga_itm[price_idx] / bf_itm[price_idx],
+                    ga_itm[confs_idx] == bf_itm[confs_idx]
                 ]
         comp_df.to_csv(f'{comp_path}/comparison_dat_of_ga_bf.csv', sep=',', header=True, index=False)
 
@@ -167,7 +170,7 @@ def comp(a: str, b: str):
 
 
 if __name__ == '__main__':
-    comp_ga_bf()
+    # comp_ga_bf()
     comp_ga_bf(True)
-    comp('incl', 'excl')
-    comp('ga', 'bf')
+    # comp('incl', 'excl')
+    # comp('ga', 'bf')

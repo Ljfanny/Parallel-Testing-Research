@@ -31,10 +31,10 @@ def pareto_frontier_multi(dat):
     avail_dat = dat[:, :-1]
     for i in range(dat_len):
         for j in range(dat_len):
-            if all(avail_dat[j] >= avail_dat[i]) and any(avail_dat[j] > avail_dat[i]):
+            if all(avail_dat[j] <= avail_dat[i]) and any(avail_dat[j] < avail_dat[i]):
                 dominated[i] = True
                 break
-    return dat[dominated]
+    return dat[~dominated]
 
 
 def draw_pareto_3d(modu):
@@ -149,7 +149,7 @@ def draw_integration_2d(modu,
 
 
 def draw_integration_3d(modu):
-    modu_map = {'incl': 'integration_dat_ga/',
+    modu_map = {'incl': 'integration_dat_incl_cost/',
                 'excl': 'integration_dat_excl_cost/',
                 'bf': 'integration_dat_bruteforce/'}
     dat_path = modu_map[modu]
@@ -269,5 +269,5 @@ def draw_integration_3d(modu):
 if __name__ == '__main__':
     # draw_integration_2d('incl', 'integration_dat_incl_cost/failure_rate_1.csv', 1)
     # draw_integration_2d('incl', 'integration_dat_incl_cost/failure_rate_0.csv', 0)
-    # draw_pareto_3d('incl')
+    draw_pareto_3d('incl')
     draw_integration_3d('incl')
