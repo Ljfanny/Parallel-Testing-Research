@@ -55,20 +55,20 @@ def draw_pareto_3d(modu):
         proj_name = csv.replace('.csv', '')
         df = pd.read_csv(dat_path + csv)
         # (runtime, price, max failure rate)
-        tup_set = set()
+        tup_dat = []
         for _, itm in df.iterrows():
             if np.isnan(itm[max_fr_idx]):
                 continue
             tup = (itm[runtime_idx], itm[price_idx], itm[max_fr_idx])
-            tup_set.add(tup)
-        xyz = np.array(list(tup_set))
+            tup_dat.append(tup)
+        xyz = np.array(tup_dat)
         frontiers = pareto_frontier_multi(xyz)
         x_front = frontiers[:, 0]
         y_front = frontiers[:, 1]
         z_front = frontiers[:, 2]
         for node in frontiers:
-            tup_set.remove(tuple(node))
-        xyz_non = np.array(list(tup_set))
+            tup_dat.remove(tuple(node))
+        xyz_non = np.array(tup_dat)
         x_non = xyz_non[:, 0]
         y_non = xyz_non[:, 1]
         z_non = xyz_non[:, 2]
@@ -153,11 +153,26 @@ def draw_integration_3d(modu):
                 'excl': 'integration_dat_excl_cost/',
                 'bf': 'integration_dat_bruteforce/'}
     dat_path = modu_map[modu]
+    rec_degree_df = pd.DataFrame(None,
+                                 columns=[
+                                     'project',
+                                     'ga_number',
+                                     'ga_pareto_front',
+                                     'github_caliber_number',
+                                     'github_caliber_pareto_front',
+                                     'smart_baseline_number',
+                                     'smart_baseline_pareto_front',
+                                     'total_pareto_front_number',
+                                     'ga_rate',
+                                     'github_caliber_rate',
+                                     'smart_baseline_rate'
+                                 ])
     proj_idx = 0
     runtime_idx = 3
     price_idx = 4
     max_fr_idx = 5
-    dfs = [pd.read_csv(dat_path + csv) for csv in os.listdir(dat_path)]
+    csvs = os.listdir(dat_path)[1:]
+    dfs = [pd.read_csv(dat_path + csv) for csv in csvs]
     df_len = len(dfs[0])
     for i in range(df_len):
         fig = plt.figure()
@@ -166,38 +181,42 @@ def draw_integration_3d(modu):
         ax.invert_yaxis()
         ax.invert_zaxis()
         proj_name = dfs[0].iloc[i, proj_idx]
-        ga_xyz = set()
-        github_xyz = set()
-        smart_xyz = set()
+        ga_xyz = []
+        github_xyz = []
+        smart_xyz = []
         # 0: ga; 1: github; 2: smart
         for df in dfs:
             if np.isnan(df.iloc[i, max_fr_idx]):
                 continue
-            ga_xyz.add((df.iloc[i, runtime_idx],
-                        df.iloc[i, price_idx],
-                        df.iloc[i, max_fr_idx],
-                        0))
-            ga_xyz.add((df.iloc[i, runtime_idx + biases['fst']],
-                        df.iloc[i, price_idx + biases['fst']],
-                        df.iloc[i, max_fr_idx + biases['fst']],
-                        0))
-            github_xyz.add((df.iloc[i, runtime_idx + biases['chp_gh']],
-                            df.iloc[i, price_idx + biases['chp_gh']],
-                            df.iloc[i, max_fr_idx + biases['chp_gh']],
-                            1))
-            github_xyz.add((df.iloc[i, runtime_idx + biases['fst_gh']],
-                            df.iloc[i, price_idx + biases['fst_gh']],
-                            df.iloc[i, max_fr_idx + biases['fst_gh']],
-                            1))
-            smart_xyz.add((df.iloc[i, runtime_idx + biases['chp_smt']],
-                           df.iloc[i, price_idx + biases['chp_smt']],
-                           df.iloc[i, max_fr_idx + biases['chp_smt']],
-                           2))
-            smart_xyz.add((df.iloc[i, runtime_idx + biases['fst_smt']],
-                           df.iloc[i, price_idx + biases['fst_smt']],
-                           df.iloc[i, max_fr_idx + biases['fst_smt']],
-                           2))
-        xyz = list(ga_xyz) + list(github_xyz) + list(smart_xyz)
+            ga_xyz.append((df.iloc[i, runtime_idx],
+                           df.iloc[i, price_idx],
+                           df.iloc[i, max_fr_idx],
+                           0))
+            ga_xyz.append((df.iloc[i, runtime_idx + biases['fst']],
+                           df.iloc[i, price_idx + biases['fst']],
+                           df.iloc[i, max_fr_idx + biases['fst']],
+                           0))
+            if not np.isnan(df.iloc[i, max_fr_idx + biases['chp_gh']]):
+                github_xyz.append((df.iloc[i, runtime_idx + biases['chp_gh']],
+                                   df.iloc[i, price_idx + biases['chp_gh']],
+                                   df.iloc[i, max_fr_idx + biases['chp_gh']],
+                                   1))
+            if not np.isnan(df.iloc[i, max_fr_idx + biases['fst_gh']]):
+                github_xyz.append((df.iloc[i, runtime_idx + biases['fst_gh']],
+                                   df.iloc[i, price_idx + biases['fst_gh']],
+                                   df.iloc[i, max_fr_idx + biases['fst_gh']],
+                                   1))
+            if not np.isnan(df.iloc[i, max_fr_idx + biases['chp_smt']]):
+                smart_xyz.append((df.iloc[i, runtime_idx + biases['chp_smt']],
+                                  df.iloc[i, price_idx + biases['chp_smt']],
+                                  df.iloc[i, max_fr_idx + biases['chp_smt']],
+                                  2))
+            if not np.isnan(df.iloc[i, max_fr_idx + biases['fst_smt']]):
+                smart_xyz.append((df.iloc[i, runtime_idx + biases['fst_smt']],
+                                  df.iloc[i, price_idx + biases['fst_smt']],
+                                  df.iloc[i, max_fr_idx + biases['fst_smt']],
+                                  2))
+        xyz = ga_xyz + github_xyz + smart_xyz
         frontiers = pareto_frontier_multi(np.array(xyz))
         ga_frontiers = []
         github_frontiers = []
@@ -216,9 +235,23 @@ def draw_integration_3d(modu):
         ga_frontiers = np.array(ga_frontiers) if len(ga_frontiers) > 0 else np.empty((0, 4))
         github_frontiers = np.array(github_frontiers) if len(github_frontiers) > 0 else np.empty((0, 4))
         smart_frontiers = np.array(smart_frontiers) if len(smart_frontiers) > 0 else np.empty((0, 4))
-        ga_non = np.array(list(ga_xyz)) if len(ga_xyz) > 0 else np.empty((0, 4))
-        github_non = np.array(list(github_xyz)) if len(github_xyz) > 0 else np.empty((0, 4))
-        smart_non = np.array(list(smart_xyz)) if len(smart_xyz) > 0 else np.empty((0, 4))
+        ga_non = np.array(ga_xyz) if len(ga_xyz) > 0 else np.empty((0, 4))
+        github_non = np.array(github_xyz) if len(github_xyz) > 0 else np.empty((0, 4))
+        smart_non = np.array(smart_xyz) if len(smart_xyz) > 0 else np.empty((0, 4))
+        frontiers_num = len(ga_frontiers) + len(github_frontiers) + len(smart_frontiers)
+        rec_degree_df.loc[len(rec_degree_df.index)] = [
+            proj_name,
+            len(ga_non) + len(ga_frontiers),
+            len(ga_frontiers),
+            len(github_non) + len(github_frontiers),
+            len(github_frontiers),
+            len(smart_non) + len(smart_frontiers),
+            len(smart_frontiers),
+            frontiers_num,
+            len(ga_frontiers) / frontiers_num,
+            len(github_frontiers) / frontiers_num,
+            len(smart_frontiers) / frontiers_num
+        ]
         draw_scatter(ax,
                      ga_frontiers[:, 0],
                      ga_frontiers[:, 1],
@@ -264,10 +297,11 @@ def draw_integration_3d(modu):
         plt.savefig(f'{pareto_3d_best}/{proj_name}.png',
                     dpi=1000)
         plt.close()
+    rec_degree_df.to_csv(f'{pareto_3d_best}/dat_summary_result.csv', sep=',', header=True, index=False)
 
 
 if __name__ == '__main__':
     # draw_integration_2d('incl', 'integration_dat_incl_cost/failure_rate_1.csv', 1)
     # draw_integration_2d('incl', 'integration_dat_incl_cost/failure_rate_0.csv', 0)
-    draw_pareto_3d('incl')
+    # draw_pareto_3d('incl')
     draw_integration_3d('incl')

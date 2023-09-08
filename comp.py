@@ -1,4 +1,6 @@
 import os
+from ast import literal_eval
+import numpy as np
 import pandas as pd
 
 comp_path = 'comparison/'
@@ -24,6 +26,16 @@ def comp_ga_bf(is_total=False):
             ga_obj[star + gap_map['price']] / bf_obj[star + gap_map['price']],
             ga_obj[star + gap_map['confs']] == bf_obj[star + gap_map['confs']]
         ]
+
+    def cmp(d1, d2):
+        if len(d1) != len(d2):
+            return False
+        for k, v in d1.items():
+            if k not in d2:
+                return False
+            if d2[k] != v:
+                return False
+        return True
 
     if not is_total:
         comp_dfs = [[pd.DataFrame(None, columns=['project',
@@ -85,18 +97,23 @@ def comp_ga_bf(is_total=False):
                                         'runtime_rate',
                                         'price_rate',
                                         'is_the_same'])
-        rec_df = pd.DataFrame(None,
-                              columns=['project',
-                                       'same_confs_number',
-                                       'total_number',
-                                       'same_rate'])
+        rec_diff_df = pd.DataFrame(None,
+                                   columns=['project',
+                                            'same_cheap_confs_number',
+                                            'same_fast_confs_number',
+                                            'total_number',
+                                            'same_rate',
+                                            'avg_cheap_runtime_rate',
+                                            'avg_cheap_price_rate',
+                                            'avg_fast_runtime_rate',
+                                            'avg_fast_price_rate'
+                                            ])
         proj_idx = 0
         category_idx = 1
         confs_idx = 3
         runtime_idx = 5
         price_idx = 6
         max_fr_idx = 8
-        record_diff_csv = 'diff_confs_case_number_ga_bf.csv'
         ga_path = 'ext_dat/incl_cost/'
         bf_path = 'bruteforce_dat/'
         ga_csvs = os.listdir(ga_path)
@@ -107,13 +124,30 @@ def comp_ga_bf(is_total=False):
             ga = pd.read_csv(ga_path + ga_csvs[i])
             bf = pd.read_csv(bf_path + bf_csvs[i])
             cnt = len(bf)
-            same_cnt = 0
+            chp_same_cnt = 0
+            fst_same_cnt = 0
+            chp_diff_runtime_rate = 0.0
+            chp_diff_price_rate = 0.0
+            fst_diff_runtime_rate = 0.0
+            fst_diff_price_rate = 0.0
             for j in range(cnt):
                 ga_itm = ga.loc[j]
                 bf_itm = bf.loc[j]
-                is_the_same = ga_itm[confs_idx] == bf_itm[confs_idx]
-                if is_the_same:
-                    same_cnt += 1
+                is_the_same = (np.isnan(ga_itm[max_fr_idx]) and np.isnan(bf_itm[max_fr_idx])) or cmp(literal_eval(ga_itm[confs_idx]), literal_eval(bf_itm[confs_idx]))
+                runtime_rate = ga_itm[runtime_idx] / bf_itm[runtime_idx]
+                price_rate = ga_itm[price_idx] / bf_itm[price_idx]
+                if 'cheap' in ga_itm[category_idx]:
+                    if is_the_same:
+                        chp_same_cnt += 1
+                    else:
+                        chp_diff_runtime_rate += runtime_rate
+                        chp_diff_price_rate += price_rate
+                else:
+                    if is_the_same:
+                        fst_same_cnt += 1
+                    else:
+                        fst_diff_runtime_rate += runtime_rate
+                        fst_diff_price_rate += price_rate
                 comp_df.loc[len(comp_df.index)] = [
                     proj_name,
                     ga_itm[category_idx],
@@ -125,18 +159,24 @@ def comp_ga_bf(is_total=False):
                     bf_itm[runtime_idx],
                     bf_itm[price_idx],
                     bf_itm[max_fr_idx],
-                    ga_itm[runtime_idx] / bf_itm[runtime_idx],
-                    ga_itm[price_idx] / bf_itm[price_idx],
+                    runtime_rate,
+                    price_rate,
                     is_the_same
                 ]
-            rec_df.loc[len(rec_df.index)] = [
+            diff_cnt = cnt - chp_same_cnt - fst_same_cnt
+            rec_diff_df.loc[len(rec_diff_df.index)] = [
                 proj_name,
-                same_cnt,
+                chp_same_cnt,
+                fst_same_cnt,
                 cnt,
-                same_cnt / cnt
+                (chp_same_cnt + fst_same_cnt) / cnt,
+                chp_diff_runtime_rate / (24 - chp_same_cnt) if chp_same_cnt < 24 else np.nan,
+                chp_diff_price_rate / (24 - chp_same_cnt) if chp_same_cnt < 24 else np.nan,
+                fst_diff_runtime_rate / (24 - fst_same_cnt) if fst_same_cnt < 24 else np.nan,
+                fst_diff_price_rate / (24 - fst_same_cnt) if fst_same_cnt < 24 else np.nan
             ]
-        rec_df.to_csv(f'{comp_path}/{record_diff_csv}', sep=',', header=True, index=False)
-        comp_df.to_csv(f'{comp_path}/comparison_dat_of_ga_bf.csv', sep=',', header=True, index=False)
+        rec_diff_df.to_csv(f'{comp_path}diff_confs_case_number_ga_bf.csv', sep=',', header=True, index=False)
+        comp_df.to_csv(f'{comp_path}comparison_dat_of_ga_bf.csv', sep=',', header=True, index=False)
 
 
 def comp(a: str, b: str):

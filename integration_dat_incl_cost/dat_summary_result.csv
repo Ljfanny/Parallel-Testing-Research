@@ -1,0 +1,8 @@
+table_category,satis_proj_num,satis_cheapest_github_caliber_num,avg_runtime_cheapest_vs_github_caliber_rate,avg_price_cheapest_vs_github_caliber_rate,number_cases_cheapest_better_vs_github_caliber,satis_cheapest_smart_baseline_num,avg_runtime_cheapest_vs_smart_baseline_rate,avg_price_cheapest_vs_smart_baseline_rate,number_cases_cheapest_better_vs_smart_baseline,satis_fastest_github_caliber_num,avg_runtime_fastest_vs_github_caliber_rate,avg_price_fastest_vs_github_caliber_rate,number_cases_fastest_better_vs_github_caliber,satis_fastest_smart_baseline_num,avg_runtime_fastest_vs_smart_baseline_rate,avg_price_fastest_vs_smart_baseline_rate,number_cases_fastest_better_vs_smart_baseline
+failure_rate_0,19,12,4.09988798,0.295814963,12,18,2.73182281,0.363615373,18,12,0.58158106,1.075363011,12,18,0.651425199,1.2910364,15
+failure_rate_0.2,29,29,5.813693026,0.459310304,29,29,3.499939325,0.419886457,28,29,0.919675724,1.646118007,29,29,0.704771196,1.644821987,26
+failure_rate_0.4,30,29,5.619009401,0.443948882,29,29,3.382325395,0.40585329,28,29,0.888629579,1.5927437,29,29,0.680996396,1.592274654,26
+failure_rate_0.6,31,31,5.631869877,0.438434058,31,31,3.448295882,0.410046567,30,31,0.909818506,1.595272079,31,31,0.706749047,1.647348621,28
+failure_rate_0.8,31,31,5.632185999,0.438427933,31,31,3.448652466,0.410043141,30,31,0.909338768,1.594820383,31,31,0.706143272,1.647068197,28
+failure_rate_1,32,32,6.189329294,0.447689724,32,32,3.972086488,0.413099231,31,32,0.907173251,1.608304037,32,32,0.685452582,1.63974836,29
+,,,5.497662596,0.420604311,,,3.413853728,0.403757343,,,0.852702815,1.518770203,,,0.689256282,1.577049703,

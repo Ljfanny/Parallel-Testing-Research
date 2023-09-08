@@ -8,6 +8,10 @@ confs_idx = 2
 time_idx = 4
 price_idx = 5
 max_fr_idx = 7
+rec_diff_arr = np.zeros((6, 12))
+idx_proj_num_map = {i: 0 for i in range(6)}
+idx_baseline_satis_map = {i: np.zeros(4) for i in range(6)}
+frs = [0, 0.2, 0.4, 0.6, 0.8, 1]
 alter_conf = '27CPU2Mem8GB.sh'
 bl_paths = ['baseline_dat/incl_cost/', 'baseline_dat/incl_cost/', 'baseline_dat/excl_cost/']
 dat_paths = ['bruteforce_dat/', 'ext_dat/incl_cost/', 'ext_dat/excl_cost/']
@@ -15,6 +19,7 @@ outputs = ['integration_dat_bruteforce/', 'integration_dat_incl_cost/', 'integra
 
 
 def record_df(df,
+              idx,
               proj_name,
               chp=None,
               chp_gh=None,
@@ -61,10 +66,23 @@ def record_df(df,
             np.nan
         ]
         return
+    is_chp_gh = False if chp_gh[max_fr_idx] > frs[idx] else True
+    is_chp_smt = False if chp_smt[max_fr_idx] > frs[idx] else True
+    is_fst_gh = False if fst_gh[max_fr_idx] > frs[idx] else True
+    is_fst_smt = False if fst_smt[max_fr_idx] > frs[idx] else True
+    idx_proj_num_map[idx] += 1
     chp_time = chp[time_idx]
     chp_price = chp[price_idx]
     fst_time = fst[time_idx]
     fst_price = fst[price_idx]
+    chp_runtime_rate_gh = chp_time / chp_gh[time_idx] if is_chp_gh else np.nan
+    chp_price_rate_gh = chp_price / chp_gh[price_idx] if is_chp_gh else np.nan
+    chp_runtime_rate_smt = chp_time / chp_smt[time_idx] if is_chp_smt else np.nan
+    chp_price_rate_smt = chp_price / chp_smt[price_idx] if is_chp_smt else np.nan
+    fst_runtime_rate_gh = fst_time / fst_gh[time_idx] if is_fst_gh else np.nan
+    fst_price_rate_gh = fst_price / fst_gh[price_idx] if is_fst_gh else np.nan
+    fst_runtime_rate_smt = fst_time / fst_smt[time_idx] if is_fst_smt else np.nan
+    fst_price_rate_smt = fst_price / fst_smt[price_idx] if is_fst_smt else np.nan
     df.loc[len(df.index)] = [
         proj_name,
         chp[category_idx],
@@ -72,36 +90,56 @@ def record_df(df,
         chp_time,
         chp_price,
         chp[max_fr_idx],
-        chp_gh[confs_idx],
-        chp_gh[time_idx],
-        chp_gh[price_idx],
-        chp_gh[max_fr_idx],
-        chp_time / chp_gh[time_idx],
-        chp_price / chp_gh[price_idx],
-        chp_smt[confs_idx],
-        chp_smt[time_idx],
-        chp_smt[price_idx],
-        chp_smt[max_fr_idx],
-        chp_time / chp_smt[time_idx],
-        chp_price / chp_smt[price_idx],
+        chp_gh[confs_idx] if is_chp_gh else np.nan,
+        chp_gh[time_idx] if is_chp_gh else np.nan,
+        chp_gh[price_idx] if is_chp_gh else np.nan,
+        chp_gh[max_fr_idx] if is_chp_gh else np.nan,
+        chp_runtime_rate_gh,
+        chp_price_rate_gh,
+        chp_smt[confs_idx] if is_chp_smt else np.nan,
+        chp_smt[time_idx] if is_chp_smt else np.nan,
+        chp_smt[price_idx] if is_chp_smt else np.nan,
+        chp_smt[max_fr_idx] if is_chp_smt else np.nan,
+        chp_runtime_rate_smt,
+        chp_price_rate_smt,
         fst[category_idx],
         fst[confs_idx],
         fst_time,
         fst_price,
         fst[max_fr_idx],
-        fst_gh[confs_idx],
-        fst_gh[time_idx],
-        fst_gh[price_idx],
-        fst_gh[max_fr_idx],
-        fst_time / fst_gh[time_idx],
-        fst_price / fst_gh[price_idx],
-        fst_smt[confs_idx],
-        fst_smt[time_idx],
-        fst_smt[price_idx],
-        fst_smt[max_fr_idx],
-        fst_time / fst_smt[time_idx],
-        fst_price / fst_smt[price_idx]
+        fst_gh[confs_idx] if is_fst_gh else np.nan,
+        fst_gh[time_idx] if is_fst_gh else np.nan,
+        fst_gh[price_idx] if is_fst_gh else np.nan,
+        fst_gh[max_fr_idx] if is_fst_gh else np.nan,
+        fst_runtime_rate_gh,
+        fst_price_rate_gh,
+        fst_smt[confs_idx] if is_fst_smt else np.nan,
+        fst_smt[time_idx] if is_fst_smt else np.nan,
+        fst_smt[price_idx] if is_fst_smt else np.nan,
+        fst_smt[max_fr_idx] if is_fst_smt else np.nan,
+        fst_runtime_rate_smt,
+        fst_price_rate_smt
     ]
+    if is_chp_gh:
+        idx_baseline_satis_map[idx][0] += 1
+        rec_diff_arr[idx][0] += chp_runtime_rate_gh
+        rec_diff_arr[idx][1] += chp_price_rate_gh
+        rec_diff_arr[idx][2] += 0 if chp_price_rate_gh >= 1 else 1
+    if is_chp_smt:
+        idx_baseline_satis_map[idx][1] += 1
+        rec_diff_arr[idx][3] += chp_runtime_rate_smt
+        rec_diff_arr[idx][4] += chp_price_rate_smt
+        rec_diff_arr[idx][5] += 0 if chp_price_rate_smt >= 1 else 1
+    if is_fst_gh:
+        idx_baseline_satis_map[idx][2] += 1
+        rec_diff_arr[idx][6] += fst_runtime_rate_gh
+        rec_diff_arr[idx][7] += fst_price_rate_gh
+        rec_diff_arr[idx][8] += 0 if fst_runtime_rate_gh >= 1 else 1
+    if is_fst_smt:
+        idx_baseline_satis_map[idx][3] += 1
+        rec_diff_arr[idx][9] += fst_runtime_rate_smt
+        rec_diff_arr[idx][10] += fst_price_rate_smt
+        rec_diff_arr[idx][11] += 0 if fst_runtime_rate_smt >= 1 else 1
 
 
 def get_contrast(choice,
@@ -130,7 +168,6 @@ def consider_fr(choice: int,
         'failure_rate_0.6.csv',
         'failure_rate_0.8.csv',
         'failure_rate_1.csv']
-    frs = [0, 0.2, 0.4, 0.6, 0.8, 1]
     dfs = [pd.DataFrame(None, columns=['project',
                                        'cheapest_category',
                                        'cheapest_confs',
@@ -166,6 +203,27 @@ def consider_fr(choice: int,
                                        'fastest_smart_baseline_max_failure_rate',
                                        'fastest_smart_baseline_runtime_rate',
                                        'fastest_smart_baseline_price_rate']) for _ in range(6)]
+    rec_diff_df = pd.DataFrame(None,
+                               columns=[
+                                   'table_category',
+                                   'satis_proj_num',
+                                   'satis_cheapest_github_caliber_num',
+                                   'avg_runtime_cheapest_vs_github_caliber_rate',
+                                   'avg_price_cheapest_vs_github_caliber_rate',
+                                   'number_cases_cheapest_better_vs_github_caliber',
+                                   'satis_cheapest_smart_baseline_num',
+                                   'avg_runtime_cheapest_vs_smart_baseline_rate',
+                                   'avg_price_cheapest_vs_smart_baseline_rate',
+                                   'number_cases_cheapest_better_vs_smart_baseline',
+                                   'satis_fastest_github_caliber_num',
+                                   'avg_runtime_fastest_vs_github_caliber_rate',
+                                   'avg_price_fastest_vs_github_caliber_rate',
+                                   'number_cases_fastest_better_vs_github_caliber',
+                                   'satis_fastest_smart_baseline_num',
+                                   'avg_runtime_fastest_vs_smart_baseline_rate',
+                                   'avg_price_fastest_vs_smart_baseline_rate',
+                                   'number_cases_fastest_better_vs_smart_baseline'
+                               ])
     fr_idx_map = {0: 0, 0.2: 1, 0.4: 2, 0.6: 3, 0.8: 4, 1: 5}
     dat_path = dat_paths[choice]
     if is_limit:
@@ -191,6 +249,7 @@ def consider_fr(choice: int,
             fst = None
             if len(fr_cond) == 0:
                 record_df(dfs[i],
+                          i,
                           proj_name)
                 continue
             chp_sort = sorted(fr_cond, key=lambda x: x[price_idx])
@@ -220,6 +279,7 @@ def consider_fr(choice: int,
                                            True,
                                            frs[i])
             record_df(dfs[i],
+                      i,
                       proj_name,
                       chp,
                       chp_gh,
@@ -229,11 +289,33 @@ def consider_fr(choice: int,
                       fst_smt)
     for i, df in enumerate(dfs):
         df.to_csv(output + csv_names[i], sep=',', header=True, index=False)
+        proj_num = idx_proj_num_map[i]
+        rec_diff_df.loc[len(rec_diff_df.index)] = [
+            csv_names[i].replace('.csv', ''),
+            proj_num,
+            idx_baseline_satis_map[i][0],
+            rec_diff_arr[i][0] / proj_num,
+            rec_diff_arr[i][1] / proj_num,
+            rec_diff_arr[i][2],
+            idx_baseline_satis_map[i][1],
+            rec_diff_arr[i][3] / proj_num,
+            rec_diff_arr[i][4] / proj_num,
+            rec_diff_arr[i][5],
+            idx_baseline_satis_map[i][2],
+            rec_diff_arr[i][6] / proj_num,
+            rec_diff_arr[i][7] / proj_num,
+            rec_diff_arr[i][8],
+            idx_baseline_satis_map[i][3],
+            rec_diff_arr[i][9] / proj_num,
+            rec_diff_arr[i][10] / proj_num,
+            rec_diff_arr[i][11]
+        ]
+    rec_diff_df.to_csv(output + 'dat_summary_result.csv', sep=',', header=True, index=False)
 
 
 if __name__ == '__main__':
-    modus = {'bruteforce': 0, 'incl_cost': 1, 'excl': 2}
-    consider_fr(modus['bruteforce'])
-    consider_fr(modus['incl_cost'])
+    modus = {'bruteforce': 0, 'incl': 1, 'excl': 2}
+    # consider_fr(modus['bruteforce'])
+    # consider_fr(modus['incl'])
     consider_fr(modus['excl'])
-    consider_fr(modus['incl_cost'], True)
+    # consider_fr(modus['incl'], True)
