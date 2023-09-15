@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+logback_dot,1-0-cheap,,,,,,,,0.037000417709350586
+logback_dot,1-0-fast,,,,,,,,0.04079103469848633
+logback_dot,2-0-cheap,,,,,,,,0.15720868110656738
+logback_dot,2-0-fast,,,,,,,,0.18497776985168457
+logback_dot,4-0-cheap,,,,,,,,1.820817470550537
+logback_dot,4-0-fast,,,,,,,,2.3726699352264404
+logback_dot,6-0-cheap,,,,,,,,3.3988301753997803
+logback_dot,6-0-fast,,,,,,,,4.8943846225738525
+logback_dot,8-0-cheap,,,,,,,,4.829196453094482
+logback_dot,8-0-fast,,,,,,,,6.801789045333862
+logback_dot,10-0-cheap,,,,,,,,6.012250185012817
+logback_dot,10-0-fast,,,,,,,,8.523014307022095
+logback_dot,12-0-cheap,,,,,,,,6.501520872116089
+logback_dot,12-0-fast,,,,,,,,9.9694344997406

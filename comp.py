@@ -228,8 +228,43 @@ def comp(a: str, b: str):
     comp_dfs[fst_idx].to_csv(f'{comp_path}/{csv_names[fst_idx]}', sep=',', header=True, index=False)
 
 
+def comp_period():
+    ga_path = 'ext_dat/incl_cost/'
+    bf_path = 'bruteforce_dat/'
+    ga_csvs = os.listdir(ga_path)
+    bf_csvs = os.listdir(bf_path)
+    output_path = 'comparison/'
+    output_csv_name = 'comparison_period_of_ga_bf.csv'
+    df = pd.DataFrame(None,
+                      columns=[
+                          'project',
+                          'ga_period',
+                          'bf_period',
+                          'period_rate'
+                      ])
+    period_idx = 9
+    for i in range(len(ga_csvs)):
+        ga_df = pd.read_csv(f'{ga_path}{ga_csvs[i]}')
+        bf_df = pd.read_csv(f'{bf_path}{bf_csvs[i]}')
+        num = min(len(ga_df), len(bf_df))
+        proj = ga_csvs[i].replace('.csv', '')
+        ga_period = 0
+        bf_period = 0
+        for j in range(num):
+            ga_period += ga_df.iloc[j, period_idx]
+            bf_period += bf_df.iloc[j, period_idx]
+        df.loc[len(df.index)] = [
+            proj,
+            ga_period,
+            bf_period,
+            ga_period / bf_period
+        ]
+    df.to_csv(f'{output_path}{output_csv_name}', sep=',', header=True, index=False)
+
+
 if __name__ == '__main__':
     # comp_ga_bf()
-    comp_ga_bf(True)
+    # comp_ga_bf(True)
     # comp('incl', 'excl')
     # comp('ga', 'bf')
+    comp_period()

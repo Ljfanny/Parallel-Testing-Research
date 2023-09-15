@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+elastic-job-lite_elastic-job-lite-core,1-0-cheap,1,{'01noThrottling.sh': 1},22.57417666666669,22.57417666666669,0.09013243821819993,0.0,0,0.03289628028869629
+elastic-job-lite_elastic-job-lite-core,1-0-fast,1,{'01noThrottling.sh': 1},22.57417666666669,22.57417666666669,0.09013243821819993,0.0,0,0.02856278419494629
+elastic-job-lite_elastic-job-lite-core,2-0-cheap,1,{'01noThrottling.sh': 2},29.701386666666718,19.810600000000015,0.09027084863639993,0.0,0,0.10418391227722168
+elastic-job-lite_elastic-job-lite-core,2-0-fast,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",29.711076666666717,19.821970000000018,0.07891086172653326,0.0,0,0.10454773902893066
+elastic-job-lite_elastic-job-lite-core,4-0-cheap,1,{'29CPU4Mem8GB.sh': 4},44.156936666666745,18.382010000000008,0.0772850980766666,0.0,0,0.29258298873901367
+elastic-job-lite_elastic-job-lite-core,4-0-fast,2,"{'29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 2}",43.99430333333342,18.337263333333347,0.07929205570639992,0.0,0,0.2877068519592285
+elastic-job-lite_elastic-job-lite-core,6-0-cheap,1,{'29CPU4Mem8GB.sh': 6},58.45593666666679,17.92087000000001,0.07752041195333326,0.0,0,0.37938523292541504
+elastic-job-lite_elastic-job-lite-core,6-0-fast,2,"{'01noThrottling.sh': 5, '26CPU2Mem4GB.sh': 1}",58.5127666666668,17.92246333333334,0.05548701191997219,0.0,0,0.6150252819061279
+elastic-job-lite_elastic-job-lite-core,8-0-cheap,1,{'01noThrottling.sh': 8},72.46464666666685,17.634113333333346,0.09110131114559993,0.0,0,0.5062775611877441
+elastic-job-lite_elastic-job-lite-core,8-0-fast,4,"{'22CPU05Mem2GB.sh': 1, '29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 2, '26CPU2Mem4GB.sh': 1}",82.10489000000015,17.768363333333337,0.053468548623972205,0.0,0,0.8382632732391357
+elastic-job-lite_elastic-job-lite-core,10-0-cheap,1,{'29CPU4Mem8GB.sh': 10},87.05393666666689,17.528676666666676,0.0779910397066666,0.0,0,0.5178256034851074
+elastic-job-lite_elastic-job-lite-core,10-0-fast,4,"{'28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 5, '26CPU2Mem4GB.sh': 1}",87.37706666666685,17.570030000000003,0.05483945768594998,0.0,0,0.7164902687072754
+elastic-job-lite_elastic-job-lite-core,12-0-cheap,1,{'29CPU4Mem8GB.sh': 12},101.35293666666693,17.444803333333343,0.07822635358333327,0.0,0,0.5212497711181641
+elastic-job-lite_elastic-job-lite-core,12-0-fast,2,"{'29CPU4Mem8GB.sh': 11, '26CPU2Mem4GB.sh': 1}",101.6458533333336,17.46916666666667,0.05341914898230552,0.0,0,0.8326575756072998

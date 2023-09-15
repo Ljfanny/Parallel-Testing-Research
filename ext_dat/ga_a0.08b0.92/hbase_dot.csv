@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+hbase_dot,1-0-cheap,,,,,,,,0.05770611763000488
+hbase_dot,1-0-fast,,,,,,,,0.02966928482055664
+hbase_dot,2-0-cheap,,,,,,,,0.0964670181274414
+hbase_dot,2-0-fast,,,,,,,,0.11825728416442871
+hbase_dot,4-0-cheap,,,,,,,,1.0890624523162842
+hbase_dot,4-0-fast,,,,,,,,1.377234697341919
+hbase_dot,6-0-cheap,,,,,,,,1.8635444641113281
+hbase_dot,6-0-fast,,,,,,,,2.8486275672912598
+hbase_dot,8-0-cheap,,,,,,,,2.483462333679199
+hbase_dot,8-0-fast,,,,,,,,3.8628151416778564
+hbase_dot,10-0-cheap,,,,,,,,3.125365972518921
+hbase_dot,10-0-fast,,,,,,,,5.103101015090942
+hbase_dot,12-0-cheap,,,,,,,,3.5393731594085693
+hbase_dot,12-0-fast,,,,,,,,6.071330785751343

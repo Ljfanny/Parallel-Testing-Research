@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+activiti_dot,1-0-cheap,,,,,,,,0.06615948677062988
+activiti_dot,1-0-fast,,,,,,,,0.07710027694702148
+activiti_dot,2-0-cheap,,,,,,,,0.3413543701171875
+activiti_dot,2-0-fast,,,,,,,,0.43033623695373535
+activiti_dot,4-0-cheap,,,,,,,,4.6190876960754395
+activiti_dot,4-0-fast,,,,,,,,6.270188570022583
+activiti_dot,6-0-cheap,,,,,,,,9.623689413070679
+activiti_dot,6-0-fast,,,,,,,,12.434601068496704
+activiti_dot,8-0-cheap,,,,,,,,12.367815732955933
+activiti_dot,8-0-fast,,,,,,,,16.952023029327393
+activiti_dot,10-0-cheap,,,,,,,,14.975237131118774
+activiti_dot,10-0-fast,,,,,,,,20.96619176864624
+activiti_dot,12-0-cheap,,,,,,,,17.62391495704651
+activiti_dot,12-0-fast,,,,,,,,26.48827624320984

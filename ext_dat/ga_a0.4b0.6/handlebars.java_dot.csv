@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+handlebars.java_dot,1-0-cheap,,,,,,,,0.07124710083007812
+handlebars.java_dot,1-0-fast,,,,,,,,0.0771944522857666
+handlebars.java_dot,2-0-cheap,,,,,,,,0.1612091064453125
+handlebars.java_dot,2-0-fast,,,,,,,,0.20755910873413086
+handlebars.java_dot,4-0-cheap,,,,,,,,1.7882452011108398
+handlebars.java_dot,4-0-fast,,,,,,,,2.4571030139923096
+handlebars.java_dot,6-0-cheap,,,,,,,,2.605142116546631
+handlebars.java_dot,6-0-fast,,,,,,,,4.2175164222717285
+handlebars.java_dot,8-0-cheap,,,,,,,,3.8785743713378906
+handlebars.java_dot,8-0-fast,,,,,,,,6.072022199630737
+handlebars.java_dot,10-0-cheap,,,,,,,,4.5339131355285645
+handlebars.java_dot,10-0-fast,,,,,,,,6.663058042526245
+handlebars.java_dot,12-0-cheap,,,,,,,,6.470430850982666
+handlebars.java_dot,12-0-fast,,,,,,,,10.256624221801758

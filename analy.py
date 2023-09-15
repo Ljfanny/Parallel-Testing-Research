@@ -14,7 +14,7 @@ random.seed(0)
 resu_path = 'ext_dat/'
 setup_rec_path = 'setup_time_rec/'
 tst_alloc_rec_path = 'test_allocation_rec/'
-baseline_path = 'baseline_dat/'
+# baseline_path = 'baseline_dat/'
 proj_names = [
     'activiti_dot',
     'assertj-core_dot',
@@ -340,6 +340,8 @@ def mapping(machs: list):
 
 class GA:
     def __init__(self,
+                 a,
+                 b,
                  fr,
                  modu,
                  avg_tm_dict,
@@ -347,6 +349,8 @@ class GA:
                  pop_size,
                  gene_length,
                  max_iter):
+        self.a = a
+        self.b = b
         self.fr = fr
         self.modu = modu
         self.avg_tm_dict = avg_tm_dict
@@ -452,10 +456,7 @@ class GA:
                                  max_fr,
                                  mach_test_dict)
             if max_fr <= self.fr:
-                if self.modu == 'cheap':
-                    new_ind.score = price
-                else:
-                    new_ind.score = time_para
+                new_ind.score = self.a * time_para + self.b * price
             else:
                 new_ind.score = float('inf')
             self.memo[conf_tup] = new_ind
@@ -476,16 +477,20 @@ def record_baseline(subdir: str,
 
 if __name__ == '__main__':
     num_of_machine = [1, 2, 4, 6, 8, 10, 12]
-    pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    # pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    pct_of_failure_rate = [0]
     chp_or_fst = ['cheap', 'fast']
 
-    whether_to_ignore_setup_cost = True
-    modus = {True: 'excl_cost', False: 'incl_cost'}
-    sub = modus[whether_to_ignore_setup_cost]
-
-    dat_df_csv_path = baseline_path + sub
-    if not os.path.exists(dat_df_csv_path):
-        os.mkdir(dat_df_csv_path)
+    # whether_to_ignore_setup_cost = True
+    # modus = {True: 'excl_cost',
+    #          False: 'incl_cost'}
+    # sub = modus[whether_to_ignore_setup_cost]
+    a = 0.08
+    b = 0.92
+    sub = f'ga_a{a}b{b}'
+    # baseline_dat_path = baseline_path + sub
+    # if not os.path.exists(baseline_dat_path):
+    #     os.mkdir(baseline_dat_path)
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
                                   columns=['project',
@@ -499,17 +504,20 @@ if __name__ == '__main__':
                                            'max_failure_rate',
                                            'period']
                                   )
-        dat_df_csv = dat_df_csv_path + '/' + proj_name + '.csv'
-        whether_baseline_exist = os.path.exists(dat_df_csv)
-        baseline_dat_df = copy.deepcopy(ext_dat_df)
+        # baseline_df_csv = baseline_dat_path + '/' + proj_name + '.csv'
+        # whether_baseline_exist = os.path.exists(baseline_df_csv)
+        # baseline_df = copy.deepcopy(ext_dat_df)
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
-                                               whether_to_ignore_setup_cost)
+                                               False)
         for mach_num in num_of_machine:
             for pct in pct_of_failure_rate:
                 for cho in chp_or_fst:
                     t1 = time.time()
-                    ga = GA(fr=pct,
+                    # a * runtime + b * price
+                    ga = GA(a=a,
+                            b=b,
+                            fr=pct,
                             modu=cho,
                             avg_tm_dict=preproc_proj_dict,
                             setup_tm_dict=preproc_mvn_dict,
@@ -520,10 +528,11 @@ if __name__ == '__main__':
                     ga.run()
                     t2 = time.time()
                     tt = t2 - t1
-                    if not whether_baseline_exist:
-                        record_baseline('baseline_' + sub, proj_name,
-                                        baseline_dat_df,
-                                        ga)
+                    # if not whether_baseline_exist:
+                    #     record_baseline('baseline_' + sub,
+                    #                     proj_name,
+                    #                     baseline_df,
+                    #                     ga)
                     category = str(mach_num) + '-' + str(pct) + '-' + cho
                     print('--------------------   ' + proj_name + '-' + category + '   --------------------')
                     ga.print_best(tt)
@@ -535,5 +544,5 @@ if __name__ == '__main__':
             os.mkdir(resu_path + sub)
         csv_name = resu_path + sub + '/' + proj_name + '.csv'
         ext_dat_df.to_csv(csv_name, sep=',', header=True, index=False)
-        if not whether_baseline_exist:
-            baseline_dat_df.to_csv(dat_df_csv, sep=',', header=True, index=False)
+        # if not whether_baseline_exist:
+        #     baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)

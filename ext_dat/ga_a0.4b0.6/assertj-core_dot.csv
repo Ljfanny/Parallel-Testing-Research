@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+assertj-core_dot,1-0-cheap,,,,,,,,0.5989511013031006
+assertj-core_dot,1-0-fast,,,,,,,,0.3539869785308838
+assertj-core_dot,2-0-cheap,,,,,,,,1.8476383686065674
+assertj-core_dot,2-0-fast,,,,,,,,2.5643489360809326
+assertj-core_dot,4-0-cheap,,,,,,,,28.77846932411194
+assertj-core_dot,4-0-fast,,,,,,,,39.41602110862732
+assertj-core_dot,6-0-cheap,,,,,,,,51.210684299468994
+assertj-core_dot,6-0-fast,,,,,,,,64.50816535949707
+assertj-core_dot,8-0-cheap,,,,,,,,70.8562114238739
+assertj-core_dot,8-0-fast,,,,,,,,75.54718589782715
+assertj-core_dot,10-0-cheap,,,,,,,,50.2490348815918
+assertj-core_dot,10-0-fast,,,,,,,,61.360750675201416
+assertj-core_dot,12-0-cheap,,,,,,,,69.30113983154297
+assertj-core_dot,12-0-fast,,,,,,,,156.06984543800354

@@ -4,9 +4,9 @@ import pandas as pd
 import textwrap
 import numpy as np
 
-pareto_2d_path = 'pareto_integration_2d'
+pareto_2d_path = 'integration_pareto_2d'
 pareto_3d_path = 'pareto_3d'
-pareto_3d_best = 'pareto_integration_3d'
+pareto_3d_best = 'integration_pareto_3d'
 
 biases = {'chp': 0, 'chp_gh': 4, 'chp_smt': 10, 'fst': 17, 'fst_gh': 21, 'fst_smt': 27}
 
@@ -20,7 +20,7 @@ def draw_scatter(ax,
     ax.scatter(x,
                y,
                z,
-               s=50,
+               s=10,
                c=c,
                label=label)
 
@@ -137,7 +137,7 @@ def draw_integration_2d(modu,
         plt.gca().invert_yaxis()
         plt.scatter(x_runtime,
                     y_price,
-                    s=50,
+                    s=10,
                     c=colors)
         plt.xlabel('Runtime')
         plt.ylabel('Price')
@@ -300,8 +300,65 @@ def draw_integration_3d(modu):
     rec_degree_df.to_csv(f'{pareto_3d_best}/dat_summary_result.csv', sep=',', header=True, index=False)
 
 
+def draw_baseline_line_graph():
+    baseline_path = 'integration_dat_incl_cost/'
+    baseline_line_graph_path = 'baseline_line_graph/'
+    if not os.path.exists(baseline_line_graph_path):
+        os.mkdir(baseline_line_graph_path)
+    csvs = os.listdir(baseline_path)[1:]
+    dfs = [pd.read_csv(f'{baseline_path}{csv}') for csv in csvs]
+    proj_names = dfs[0].iloc[:, 0]
+    bias = 17
+    proj_idx = 0
+    chp_github_runtime_idx = 7
+    chp_github_price_idx = 8
+    chp_github_max_fr_idx = 9
+    chp_smart_runtime_idx = 13
+    chp_smart_price_idx = 14
+    chp_smart_max_fr_idx = 15
+    for i, proj in proj_names.items():
+        chp_github_tup = []
+        chp_smart_tup = []
+        fst_github_tup = []
+        fst_smart_tup = []
+        for df in dfs:
+            if not np.isnan(df.iloc[i, chp_github_max_fr_idx]):
+                chp_github_tup.append((df.iloc[i, chp_github_price_idx],
+                                       df.iloc[i, chp_github_max_fr_idx]))
+            if not np.isnan(df.iloc[i, chp_smart_max_fr_idx]):
+                chp_smart_tup.append((df.iloc[i, chp_smart_price_idx],
+                                      df.iloc[i, chp_smart_max_fr_idx]))
+            if not np.isnan(df.iloc[i, chp_github_max_fr_idx + bias]):
+                fst_github_tup.append((df.iloc[i, chp_github_runtime_idx + bias],
+                                       df.iloc[i, chp_github_max_fr_idx + bias]))
+            if not np.isnan(df.iloc[i, chp_smart_max_fr_idx + bias]):
+                fst_smart_tup.append((df.iloc[i, chp_smart_runtime_idx + bias],
+                                      df.iloc[i, chp_smart_max_fr_idx + bias]))
+        chp_github_tup = sorted(chp_github_tup, key=lambda x: x[1])
+        chp_smart_tup = sorted(chp_smart_tup, key=lambda x: x[1])
+        fst_github_tup = sorted(fst_github_tup, key=lambda x: x[1])
+        fst_smart_tup = sorted(fst_smart_tup, key=lambda x: x[1])
+        fig, ax1 = plt.subplots()
+        color = 'tab:red'
+        ax1.set_xlabel('Max failure rate')
+        ax1.set_ylabel('Github caliber price', color=color)
+        # ax1.plot(x, y1, color=color)
+        ax1.tick_params(axis='y', labelcolor=color)
+
+        ax2 = ax1.twinx()
+
+        color = 'tab:blue'
+        ax2.set_ylabel('y2', color=color)
+        # ax2.plot(x, y2, color=color)
+        ax2.tick_params(axis='y', labelcolor=color)
+
+        fig.tight_layout()
+        plt.show()
+
+
 if __name__ == '__main__':
     # draw_integration_2d('incl', 'integration_dat_incl_cost/failure_rate_1.csv', 1)
     # draw_integration_2d('incl', 'integration_dat_incl_cost/failure_rate_0.csv', 0)
     # draw_pareto_3d('incl')
-    draw_integration_3d('incl')
+    # draw_integration_3d('incl')
+    draw_baseline_line_graph()

@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+db-scheduler_dot,1-0-cheap,,,,,,,,0.04371190071105957
+db-scheduler_dot,1-0-fast,,,,,,,,0.040859222412109375
+db-scheduler_dot,2-0-cheap,,,,,,,,0.06847214698791504
+db-scheduler_dot,2-0-fast,,,,,,,,0.0715780258178711
+db-scheduler_dot,4-0-cheap,,,,,,,,0.20570850372314453
+db-scheduler_dot,4-0-fast,,,,,,,,0.27192115783691406
+db-scheduler_dot,6-0-cheap,,,,,,,,0.38071751594543457
+db-scheduler_dot,6-0-fast,,,,,,,,0.49662065505981445
+db-scheduler_dot,8-0-cheap,,,,,,,,0.461885929107666
+db-scheduler_dot,8-0-fast,,,,,,,,0.670203447341919
+db-scheduler_dot,10-0-cheap,,,,,,,,0.5547761917114258
+db-scheduler_dot,10-0-fast,,,,,,,,0.8722257614135742
+db-scheduler_dot,12-0-cheap,,,,,,,,0.6260359287261963
+db-scheduler_dot,12-0-fast,,,,,,,,0.9816510677337646

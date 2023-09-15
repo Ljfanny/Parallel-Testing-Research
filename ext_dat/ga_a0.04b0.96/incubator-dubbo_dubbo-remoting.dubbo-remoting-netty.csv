@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,1-0-cheap,1,{'27CPU2Mem8GB.sh': 1},1091.7620689655168,1091.7620689655168,0.12429057525941377,0.0,0,0.04398393630981445
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,1-0-fast,1,{'27CPU2Mem8GB.sh': 1},1091.7620689655168,1091.7620689655168,0.12429057525941377,0.0,0,0.03942370414733887
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,2-0-cheap,1,{'27CPU2Mem8GB.sh': 2},2143.010286206896,1074.8032758620689,0.13449819544882757,0.0,0,0.11135482788085938
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,2-0-fast,2,"{'27CPU2Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2143.0176249999995,1074.8106146551725,0.12286226867786353,0.0,0,0.07209205627441406
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,4-0-cheap,1,{'27CPU2Mem8GB.sh': 4},4245.506720689655,1063.2646758620688,0.15491343582765515,0.0,0,0.11907172203063965
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,4-0-fast,2,"{'27CPU2Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 3}",4245.489499137931,1063.266417241379,0.1380315670064296,0.0,0,0.1197509765625
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,6-0-cheap,1,{'27CPU2Mem8GB.sh': 6},6348.003155172413,1062.4768827586206,0.17532867620648274,0.0,0,0.13880324363708496
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,6-0-fast,3,"{'27CPU2Mem8GB.sh': 3, '29CPU4Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 2}",6346.628609649121,1061.5309551724135,0.19887205080830675,0.0,0,0.11009955406188965
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,8-0-cheap,1,{'27CPU2Mem8GB.sh': 8},8450.499589655172,1061.2632068965518,0.19574391658531032,0.0,0,0.13889765739440918
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,8-0-fast,2,"{'27CPU2Mem8GB.sh': 2, '26CPU2Mem4GB.sh': 6}",8450.458584482758,1061.2560551724137,0.17409050709452586,0.0,0,0.13836264610290527
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,10-0-cheap,1,{'27CPU2Mem8GB.sh': 10},10552.99602413793,1061.2619655172414,0.2161591569641379,0.0,0,0.15502548217773438
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,10-0-fast,3,"{'27CPU2Mem8GB.sh': 2, '23CPU05Mem4GB.sh': 3, '26CPU2Mem4GB.sh': 5}",10583.492997124427,1061.526921551724,0.17552940914405588,0.0,0,0.1945021152496338
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,12-0-cheap,1,{'27CPU2Mem8GB.sh': 12},12655.492458620687,1061.261872413793,0.23657439734296548,0.0,0,0.16279006004333496
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,12-0-fast,3,"{'27CPU2Mem8GB.sh': 2, '24CPU1Mem4GB.sh': 4, '26CPU2Mem4GB.sh': 6}",12667.074529797734,1061.2560551724137,0.19456217750903007,0.0,0,0.19629979133605957
