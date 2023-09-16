@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+ninja_dot,1-0-cheap,,,,,,,,0.027191162109375
+ninja_dot,1-0-fast,,,,,,,,0.027896404266357422
+ninja_dot,2-0-cheap,,,,,,,,0.074920654296875
+ninja_dot,2-0-fast,,,,,,,,0.08320498466491699
+ninja_dot,4-0-cheap,,,,,,,,0.6949112415313721
+ninja_dot,4-0-fast,,,,,,,,0.9012846946716309
+ninja_dot,6-0-cheap,,,,,,,,1.365295171737671
+ninja_dot,6-0-fast,,,,,,,,1.874587059020996
+ninja_dot,8-0-cheap,,,,,,,,1.8034749031066895
+ninja_dot,8-0-fast,,,,,,,,2.611812114715576
+ninja_dot,10-0-cheap,,,,,,,,2.059436321258545
+ninja_dot,10-0-fast,,,,,,,,3.3424034118652344
+ninja_dot,12-0-cheap,,,,,,,,2.5769176483154297
+ninja_dot,12-0-fast,,,,,,,,3.8500936031341553

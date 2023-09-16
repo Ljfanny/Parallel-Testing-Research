@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+httpcore_dot,1-0-cheap,,,,,,,,0.06293201446533203
+httpcore_dot,1-0-fast,,,,,,,,0.0710451602935791
+httpcore_dot,2-0-cheap,,,,,,,,0.24482226371765137
+httpcore_dot,2-0-fast,,,,,,,,0.2977898120880127
+httpcore_dot,4-0-cheap,,,,,,,,2.0328080654144287
+httpcore_dot,4-0-fast,,,,,,,,2.1302151679992676
+httpcore_dot,6-0-cheap,,,,,,,,3.2428739070892334
+httpcore_dot,6-0-fast,,,,,,,,4.5447611808776855
+httpcore_dot,8-0-cheap,,,,,,,,4.302647352218628
+httpcore_dot,8-0-fast,,,,,,,,6.557206392288208
+httpcore_dot,10-0-cheap,,,,,,,,8.735224485397339
+httpcore_dot,10-0-fast,,,,,,,,13.77939748764038
+httpcore_dot,12-0-cheap,,,,,,,,9.852077007293701
+httpcore_dot,12-0-fast,,,,,,,,16.74252724647522

@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+orbit_dot,1-0-cheap,,,,,,,,0.07133102416992188
+orbit_dot,1-0-fast,,,,,,,,0.021672487258911133
+orbit_dot,2-0-cheap,,,,,,,,0.04497504234313965
+orbit_dot,2-0-fast,,,,,,,,0.04814553260803223
+orbit_dot,4-0-cheap,,,,,,,,0.2326066493988037
+orbit_dot,4-0-fast,,,,,,,,0.2935318946838379
+orbit_dot,6-0-cheap,,,,,,,,0.41492152214050293
+orbit_dot,6-0-fast,,,,,,,,0.5516355037689209
+orbit_dot,8-0-cheap,,,,,,,,0.6028122901916504
+orbit_dot,8-0-fast,,,,,,,,0.8403706550598145
+orbit_dot,10-0-cheap,,,,,,,,0.6989381313323975
+orbit_dot,10-0-fast,,,,,,,,1.066692590713501
+orbit_dot,12-0-cheap,,,,,,,,0.8198831081390381
+orbit_dot,12-0-fast,,,,,,,,1.1996424198150635

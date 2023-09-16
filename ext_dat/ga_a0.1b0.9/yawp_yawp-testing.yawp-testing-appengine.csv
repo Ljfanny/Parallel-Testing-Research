@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+yawp_yawp-testing.yawp-testing-appengine,1-0-cheap,,,,,,,,0.022731542587280273
+yawp_yawp-testing.yawp-testing-appengine,1-0-fast,,,,,,,,0.019973278045654297
+yawp_yawp-testing.yawp-testing-appengine,2-0-cheap,,,,,,,,0.03017735481262207
+yawp_yawp-testing.yawp-testing-appengine,2-0-fast,,,,,,,,0.028554439544677734
+yawp_yawp-testing.yawp-testing-appengine,4-0-cheap,,,,,,,,0.044408321380615234
+yawp_yawp-testing.yawp-testing-appengine,4-0-fast,,,,,,,,0.04926156997680664
+yawp_yawp-testing.yawp-testing-appengine,6-0-cheap,,,,,,,,0.06389451026916504
+yawp_yawp-testing.yawp-testing-appengine,6-0-fast,,,,,,,,0.08565330505371094
+yawp_yawp-testing.yawp-testing-appengine,8-0-cheap,,,,,,,,0.0804128646850586
+yawp_yawp-testing.yawp-testing-appengine,8-0-fast,,,,,,,,0.10086846351623535
+yawp_yawp-testing.yawp-testing-appengine,10-0-cheap,,,,,,,,0.09682655334472656
+yawp_yawp-testing.yawp-testing-appengine,10-0-fast,,,,,,,,0.1233208179473877
+yawp_yawp-testing.yawp-testing-appengine,12-0-cheap,,,,,,,,0.1275947093963623
+yawp_yawp-testing.yawp-testing-appengine,12-0-fast,,,,,,,,0.1371159553527832

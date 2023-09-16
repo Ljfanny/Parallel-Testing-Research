@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+timely_server,1-0-cheap,,,,,,,,0.07149410247802734
+timely_server,1-0-fast,,,,,,,,0.04581499099731445
+timely_server,2-0-cheap,,,,,,,,0.09357905387878418
+timely_server,2-0-fast,,,,,,,,0.10887432098388672
+timely_server,4-0-cheap,,,,,,,,0.6488747596740723
+timely_server,4-0-fast,,,,,,,,0.9385855197906494
+timely_server,6-0-cheap,,,,,,,,1.230846643447876
+timely_server,6-0-fast,,,,,,,,1.8944485187530518
+timely_server,8-0-cheap,,,,,,,,1.6162033081054688
+timely_server,8-0-fast,,,,,,,,2.5499908924102783
+timely_server,10-0-cheap,,,,,,,,1.9639441967010498
+timely_server,10-0-fast,,,,,,,,3.050128936767578
+timely_server,12-0-cheap,,,,,,,,2.2036240100860596
+timely_server,12-0-fast,,,,,,,,3.8338167667388916

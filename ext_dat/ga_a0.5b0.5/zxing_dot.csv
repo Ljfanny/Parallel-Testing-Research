@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+zxing_dot,1-0-cheap,,,,,,,,0.02761244773864746
+zxing_dot,1-0-fast,,,,,,,,0.026736736297607422
+zxing_dot,2-0-cheap,,,,,,,,0.07601332664489746
+zxing_dot,2-0-fast,,,,,,,,0.09182977676391602
+zxing_dot,4-0-cheap,,,,,,,,0.7858545780181885
+zxing_dot,4-0-fast,,,,,,,,1.0549843311309814
+zxing_dot,6-0-cheap,,,,,,,,1.5174150466918945
+zxing_dot,6-0-fast,,,,,,,,2.085469961166382
+zxing_dot,8-0-cheap,,,,,,,,2.0405192375183105
+zxing_dot,8-0-fast,,,,,,,,2.8805084228515625
+zxing_dot,10-0-cheap,,,,,,,,2.3466780185699463
+zxing_dot,10-0-fast,,,,,,,,3.7698240280151367
+zxing_dot,12-0-cheap,,,,,,,,2.7800681591033936
+zxing_dot,12-0-fast,,,,,,,,4.315101385116577

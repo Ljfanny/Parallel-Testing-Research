@@ -20,7 +20,6 @@ def draw_scatter(ax,
     ax.scatter(x,
                y,
                z,
-               s=10,
                c=c,
                label=label)
 
@@ -91,7 +90,7 @@ def draw_pareto_3d(modu):
         ax.set_zlabel('Max failure rate')
         ax.legend()
         plt.savefig(f'{pareto_3d_path}/{proj_name}.png',
-                    dpi=1000)
+                    dpi=500)
         plt.close()
 
 
@@ -115,7 +114,7 @@ def draw_integration_2d(modu,
                   fontsize=14)
         if np.isnan(row[max_fr_idx]):
             plt.savefig(f'{subdir}/{proj_name}.png',
-                        dpi=1000)
+                        dpi=500)
             plt.close()
             continue
         cnt = 0
@@ -137,14 +136,13 @@ def draw_integration_2d(modu,
         plt.gca().invert_yaxis()
         plt.scatter(x_runtime,
                     y_price,
-                    s=10,
                     c=colors)
         plt.xlabel('Runtime')
         plt.ylabel('Price')
         plt.legend(handles=[plt.scatter([], [], c=c) for c in colors],
                    labels=labels)
         plt.savefig(f'{subdir}/{proj_name}.png',
-                    dpi=1000)
+                    dpi=500)
         plt.close()
 
 
@@ -295,65 +293,105 @@ def draw_integration_3d(modu):
         ax.set_zlabel('Max failure rate')
         ax.legend()
         plt.savefig(f'{pareto_3d_best}/{proj_name}.png',
-                    dpi=1000)
+                    dpi=500)
         plt.close()
     rec_degree_df.to_csv(f'{pareto_3d_best}/dat_summary_result.csv', sep=',', header=True, index=False)
 
 
-def draw_baseline_line_graph():
-    baseline_path = 'integration_dat_incl_cost/'
-    baseline_line_graph_path = 'baseline_line_graph/'
-    if not os.path.exists(baseline_line_graph_path):
-        os.mkdir(baseline_line_graph_path)
-    csvs = os.listdir(baseline_path)[1:]
-    dfs = [pd.read_csv(f'{baseline_path}{csv}') for csv in csvs]
-    proj_names = dfs[0].iloc[:, 0]
-    bias = 17
-    proj_idx = 0
-    chp_github_runtime_idx = 7
-    chp_github_price_idx = 8
-    chp_github_max_fr_idx = 9
-    chp_smart_runtime_idx = 13
-    chp_smart_price_idx = 14
-    chp_smart_max_fr_idx = 15
-    for i, proj in proj_names.items():
-        chp_github_tup = []
-        chp_smart_tup = []
-        fst_github_tup = []
-        fst_smart_tup = []
-        for df in dfs:
-            if not np.isnan(df.iloc[i, chp_github_max_fr_idx]):
-                chp_github_tup.append((df.iloc[i, chp_github_price_idx],
-                                       df.iloc[i, chp_github_max_fr_idx]))
-            if not np.isnan(df.iloc[i, chp_smart_max_fr_idx]):
-                chp_smart_tup.append((df.iloc[i, chp_smart_price_idx],
-                                      df.iloc[i, chp_smart_max_fr_idx]))
-            if not np.isnan(df.iloc[i, chp_github_max_fr_idx + bias]):
-                fst_github_tup.append((df.iloc[i, chp_github_runtime_idx + bias],
-                                       df.iloc[i, chp_github_max_fr_idx + bias]))
-            if not np.isnan(df.iloc[i, chp_smart_max_fr_idx + bias]):
-                fst_smart_tup.append((df.iloc[i, chp_smart_runtime_idx + bias],
-                                      df.iloc[i, chp_smart_max_fr_idx + bias]))
-        chp_github_tup = sorted(chp_github_tup, key=lambda x: x[1])
-        chp_smart_tup = sorted(chp_smart_tup, key=lambda x: x[1])
-        fst_github_tup = sorted(fst_github_tup, key=lambda x: x[1])
-        fst_smart_tup = sorted(fst_smart_tup, key=lambda x: x[1])
-        fig, ax1 = plt.subplots()
-        color = 'tab:red'
-        ax1.set_xlabel('Max failure rate')
-        ax1.set_ylabel('Github caliber price', color=color)
-        # ax1.plot(x, y1, color=color)
-        ax1.tick_params(axis='y', labelcolor=color)
+def draw_tread_graph():
+    def draw_subplot(ax,
+                     x,
+                     y,
+                     # y1,
+                     # y2,
+                     c,
+                     t_or_p,
+                     chp_or_fst):
+        label_map = {
+            0: 'Runtime',
+            1: 'Price'
+        }
+        title_map = {
+            0: 'For cheapest',
+            1: 'For fastest'
+        }
+        color_map = {
+            0: 'mediumseagreen',
+            1: 'cyan',
+            2: 'steelblue',
+            3: 'mediumpurple'
+        }
+        ax.plot(x, y, c=color_map[c], label=label_map[t_or_p])
+        ax.set_title(title_map[chp_or_fst])
+        ax.set_xlabel('Max failure rate')
+        ax.set_ylabel(label_map[t_or_p])
+        ax.legend()
+        # ax_twin = ax.twinx()
+        # ax_twin.plot(x, y2, label='Price', color='darkorange')
+        # ax_twin.set_ylabel('Price')
+        # ax.legend()
+        # ax_twin.legend()
 
-        ax2 = ax1.twinx()
+    ig_path = 'integration_dat_incl_cost/'
+    csvs = os.listdir(ig_path)[1:]
+    dfs = [pd.read_csv(f'{ig_path}{csv}') for csv in csvs]
+    programs = dfs[0].iloc[:, 0]
+    for i, prog in enumerate(programs):
+        chp_tup = []
+        fst_tup = []
 
-        color = 'tab:blue'
-        ax2.set_ylabel('y2', color=color)
-        # ax2.plot(x, y2, color=color)
-        ax2.tick_params(axis='y', labelcolor=color)
-
-        fig.tight_layout()
-        plt.show()
+        for j, df in enumerate(dfs):
+            row = df.iloc[i, :]
+            # runtime=3; price=4;
+            fr = float(csvs[j].replace('.csv', '').split('_')[2])
+            if np.isnan(row[3]):
+                continue
+            chp_tup.append((
+                row[3],
+                row[4],
+                fr
+            ))
+            fst_tup.append((
+                row[20],
+                row[21],
+                fr
+            ))
+        chp_tup = np.array(sorted(chp_tup, key=lambda x: x[2]))
+        fst_tup = np.array(sorted(fst_tup, key=lambda x: x[2]))
+        fig, axes = plt.subplots(2, 2)
+        # ax1 = fig.add_subplot(221)
+        # ax2 = fig.add_subplot(222)
+        # ax3 = fig.add_subplot(223)
+        # ax4 = fig.add_subplot(224)
+        draw_subplot(axes[0, 0],
+                     chp_tup[:, 2],
+                     chp_tup[:, 0],
+                     0,
+                     0,
+                     0)
+        draw_subplot(axes[0, 1],
+                     chp_tup[:, 2],
+                     chp_tup[:, 1],
+                     1,
+                     1,
+                     0)
+        draw_subplot(axes[1, 0],
+                     fst_tup[:, 2],
+                     fst_tup[:, 0],
+                     2,
+                     0,
+                     1)
+        draw_subplot(axes[1, 1],
+                     fst_tup[:, 2],
+                     fst_tup[:, 1],
+                     3,
+                     1,
+                     1)
+        fig.suptitle(textwrap.fill(prog))
+        fig.subplots_adjust(wspace=0.5, hspace=0.5)
+        plt.savefig(f'trend_plots/{prog}.png',
+                    dpi=500)
+        plt.close()
 
 
 if __name__ == '__main__':
@@ -361,4 +399,4 @@ if __name__ == '__main__':
     # draw_integration_2d('incl', 'integration_dat_incl_cost/failure_rate_0.csv', 0)
     # draw_pareto_3d('incl')
     # draw_integration_3d('incl')
-    draw_baseline_line_graph()
+    draw_tread_graph()

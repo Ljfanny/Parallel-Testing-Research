@@ -1,0 +1,15 @@
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+okhttp_dot,1-0-cheap,,,,,,,,0.06071019172668457
+okhttp_dot,1-0-fast,,,,,,,,0.0702822208404541
+okhttp_dot,2-0-cheap,,,,,,,,0.24875760078430176
+okhttp_dot,2-0-fast,,,,,,,,0.31980443000793457
+okhttp_dot,4-0-cheap,,,,,,,,3.127066135406494
+okhttp_dot,4-0-fast,,,,,,,,4.171586275100708
+okhttp_dot,6-0-cheap,,,,,,,,6.014468431472778
+okhttp_dot,6-0-fast,,,,,,,,8.828654050827026
+okhttp_dot,8-0-cheap,,,,,,,,7.918237924575806
+okhttp_dot,8-0-fast,,,,,,,,12.002918481826782
+okhttp_dot,10-0-cheap,,,,,,,,9.568875312805176
+okhttp_dot,10-0-fast,,,,,,,,15.24345326423645
+okhttp_dot,12-0-cheap,,,,,,,,11.03296947479248
+okhttp_dot,12-0-fast,,,,,,,,17.441099405288696

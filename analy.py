@@ -485,8 +485,8 @@ if __name__ == '__main__':
     # modus = {True: 'excl_cost',
     #          False: 'incl_cost'}
     # sub = modus[whether_to_ignore_setup_cost]
-    a = 0.08
-    b = 0.92
+    a = 0.03
+    b = 0.97
     sub = f'ga_a{a}b{b}'
     # baseline_dat_path = baseline_path + sub
     # if not os.path.exists(baseline_dat_path):
