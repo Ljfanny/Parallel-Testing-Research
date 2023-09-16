@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import textwrap
 import numpy as np
+from numpy import copy
 
 pareto_2d_path = 'integration_pareto_2d'
 pareto_3d_path = 'pareto_3d'
@@ -336,6 +337,9 @@ def draw_tread_graph():
     csvs = os.listdir(ig_path)[1:]
     dfs = [pd.read_csv(f'{ig_path}{csv}') for csv in csvs]
     programs = dfs[0].iloc[:, 0]
+    norm_chp_tup = []
+    norm_fst_tup = []
+    norm_fig, norm_axes = plt.subplots(2, 2)
     for i, prog in enumerate(programs):
         chp_tup = []
         fst_tup = []
@@ -358,11 +362,21 @@ def draw_tread_graph():
             ))
         chp_tup = np.array(sorted(chp_tup, key=lambda x: x[2]))
         fst_tup = np.array(sorted(fst_tup, key=lambda x: x[2]))
+        norm_chp_tup = chp_tup
+        norm_fst_tup = fst_tup
+        # norm_chp_tup = copy(chp_tup)
+        # norm_fst_tup = copy(fst_tup)
+        norm_chp_tup[:, 0] = chp_tup[:, 0] / max(chp_tup[:, 0])
+        norm_chp_tup[:, 1] = chp_tup[:, 1] / max(chp_tup[:, 1])
+        norm_fst_tup[:, 0] = fst_tup[:, 0] / max(fst_tup[:, 0])
+        norm_fst_tup[:, 1] = fst_tup[:, 1] / max(fst_tup[:, 1])
+        avg_chp_rate =
         fig, axes = plt.subplots(2, 2)
         # ax1 = fig.add_subplot(221)
         # ax2 = fig.add_subplot(222)
         # ax3 = fig.add_subplot(223)
         # ax4 = fig.add_subplot(224)
+
         draw_subplot(axes[0, 0],
                      chp_tup[:, 2],
                      chp_tup[:, 0],
@@ -387,11 +401,23 @@ def draw_tread_graph():
                      3,
                      1,
                      1)
+
+        norm_axes[0, 0].plot(norm_chp_tup[:, 2], norm_chp_tup[:, 0])
+        norm_axes[0, 1].plot(norm_chp_tup[:, 2], norm_chp_tup[:, 1])
+        norm_axes[1, 0].plot(norm_fst_tup[:, 2], norm_fst_tup[:, 0])
+        norm_axes[1, 1].plot(norm_fst_tup[:, 2], norm_fst_tup[:, 1])
+
         fig.suptitle(textwrap.fill(prog))
         fig.subplots_adjust(wspace=0.5, hspace=0.5)
         plt.savefig(f'trend_plots/{prog}.png',
                     dpi=500)
         plt.close()
+
+    norm_fig.suptitle('normalized trend')
+    norm_fig.subplots_adjust(wspace=0.5, hspace=0.5)
+    plt.savefig(f'trend_plots/unified.png',
+                dpi=500)
+    plt.close()
 
 
 if __name__ == '__main__':
