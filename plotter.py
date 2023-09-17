@@ -398,55 +398,42 @@ def draw_tread_graph():
     plt.close()
 
 
+# Focus on each project!
 def draw_int_fac_pareto2d():
     def temp(x):
         return np.array(x) if len(x) > 0 else np.empty((0, 4))
+
     int_fac_path = 'integration_ga_with_factors/'
     csvs = os.listdir(int_fac_path)
+    dfs = [pd.read_csv(f'{int_fac_path}{csv}') for csv in csvs]
     runtime_idx = 3
     price_idx = 4
     gaps = {
         'gh': 5,
         'smt': 11
     }
-    rec_df = pd.DataFrame(None,
-                          columns=[
-                              'factor_category',
-                              'ga_non_nan',
-                              'ga_pareto_front',
-                              'github_caliber_non_nan',
-                              'github_caliber_pareto_front',
-                              'smart_baseline_non_nan',
-                              'smart_baseline_pareto_front',
-                              'pareto_front_number',
-                              'ga_rate',
-                              'github_caliber_rate',
-                              'smart_baseline_rate'
-                          ])
-    for csv in csvs:
+    programs = dfs[0].iloc[:, 0]
+    for i, prog in enumerate(programs):
         fig = plt.figure()
         ax = fig.add_subplot(111)
         ax.invert_xaxis()
         ax.invert_yaxis()
-        fac = csv.replace('.csv', '')
-        df = pd.read_csv(f'{int_fac_path}{csv}')
-        ga_x = df.iloc[:, runtime_idx]
-        ga_y = df.iloc[:, price_idx]
-        gh_x = df.iloc[:, runtime_idx + gaps['gh']].dropna()
-        gh_y = df.iloc[:, price_idx + gaps['gh']].dropna()
-        smt_x = df.iloc[:, runtime_idx + gaps['smt']].dropna()
-        smt_y = df.iloc[:, price_idx + gaps['smt']].dropna()
-        max_x = max(max(ga_x), max(gh_x), max(smt_x))
-        max_y = max(max(ga_y), max(gh_y), max(smt_y))
-        ga_x = np.array(ga_x.div(max_x))
-        gh_x = np.array(gh_x.div(max_x))
-        smt_x = np.array(smt_x.div(max_x))
-        ga_y = np.array(ga_y.div(max_y))
-        gh_y = np.array(gh_y.div(max_y))
-        smt_y = np.array(smt_y.div(max_y))
-        ga = [(x, y, 0) for x, y in zip(ga_x, ga_y)]
-        gh = [(x, y, 1) for x, y in zip(gh_x, gh_y)]
-        smt = [(x, y, 2) for x, y in zip(smt_x, smt_y)]
+        ga = []
+        gh = []
+        smt = []
+        for df in dfs:
+            itm = df.iloc[i, :]
+            ga.append((itm[runtime_idx],
+                       itm[price_idx],
+                       0))
+            if not np.isnan(itm[runtime_idx + gaps['gh']]):
+                gh.append((itm[runtime_idx + gaps['gh']],
+                           itm[price_idx + gaps['gh']],
+                           1))
+            if not np.isnan(itm[runtime_idx + gaps['smt']]):
+                smt.append((itm[runtime_idx + gaps['smt']],
+                            itm[price_idx + gaps['smt']],
+                            2))
         frontiers = pareto_frontier_multi(False,
                                           np.array(ga + gh + smt))
         ga_frontiers = []
@@ -469,50 +456,42 @@ def draw_int_fac_pareto2d():
         ga_frontiers = temp(ga_frontiers)
         gh_frontiers = temp(gh_frontiers)
         smt_frontiers = temp(smt_frontiers)
-        rec_df.loc[len(rec_df.index)] = [
-            fac,
-            len(ga) + len(ga_frontiers),
-            len(ga_frontiers),
-            len(gh) + len(gh_frontiers),
-            len(gh_frontiers),
-            len(smt) + len(smt_frontiers),
-            len(smt_frontiers),
-            len(frontiers),
-            len(ga_frontiers) / len(frontiers),
-            len(gh_frontiers) / len(frontiers),
-            len(smt_frontiers) / len(frontiers)
-        ]
         ax.scatter(ga_frontiers[:, 0],
                    ga_frontiers[:, 1],
+                   alpha=0.5,
                    c='mediumpurple',
-                   label=f'GA pareto frontiers: {len(ga_frontiers)}')
+                   label=f'GA pareto frontiers: {len(np.unique(ga_frontiers))}({len(ga_frontiers)})')
         ax.scatter(ga[:, 0],
                    ga[:, 1],
+                   alpha=0.5,
                    c='thistle',
-                   label=f'GA normal: {len(ga)}')
+                   label=f'GA normal: {len(np.unique(ga))}({len(ga)})')
         ax.scatter(gh_frontiers[:, 0],
                    gh_frontiers[:, 1],
+                   alpha=0.5,
                    c='mediumseagreen',
-                   label=f'Github caliber pareto frontiers: {len(gh_frontiers)}')
+                   label=f'Github caliber pareto frontiers: {len(np.unique(gh_frontiers))}({len(gh_frontiers)})')
         ax.scatter(gh[:, 0],
                    gh[:, 1],
+                   alpha=0.5,
                    c='cyan',
-                   label=f'Github caliber normal: {len(gh)}')
+                   label=f'Github caliber normal: {len(np.unique(gh))}({len(gh)})')
         ax.scatter(smt_frontiers[:, 0],
                    smt_frontiers[:, 1],
+                   alpha=0.5,
                    c='steelblue',
-                   label=f'Smart baseline pareto frontiers: {len(smt_frontiers)}')
+                   label=f'Smart baseline pareto frontiers: {len(np.unique(smt_frontiers))}({len(smt_frontiers)})')
         ax.scatter(smt[:, 0],
                    smt[:, 1],
+                   alpha=0.5,
                    c='darkkhaki',
-                   label=f'Smart baseline normal: {len(smt)}')
-        ax.set_title(textwrap.fill(fac))
+                   label=f'Smart baseline normal: {len(np.unique(smt))}({len(smt)})')
+        ax.set_title(textwrap.fill(prog))
         ax.set_xlabel('Runtime')
         ax.set_ylabel('Price')
-        ax.legend()
-        plt.savefig(f'{int_fac_pareto2d_path}/{fac}.svg')
+        ax.legend(fontsize=5)
+        plt.savefig(f'{int_fac_pareto2d_path}/{prog}.svg')
         plt.close()
-    rec_df.to_csv(f'{int_fac_pareto2d_path}/summary_result.csv', sep=',', header=True, index=False)
 
 
 if __name__ == '__main__':
