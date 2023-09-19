@@ -1,3 +1,4 @@
+import copy
 import os
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -8,6 +9,7 @@ scatter2d_path = 'integration_ga_scatter2d'
 pareto3d_path = 'ga_pareto3d'
 int_pareto3d_path = 'integration_ga_pareto3d'
 int_fac_pareto2d_path = 'integration_ga_with_factors_pareto2d'
+int_fac_bar_path = 'integration_ga_with_factors_bi_bar'
 
 biases = {'chp': 0, 'chp_gh': 4, 'chp_smt': 10, 'fst': 17, 'fst_gh': 21, 'fst_smt': 27}
 
@@ -294,38 +296,33 @@ def draw_int_pareto3d(modu):
 def draw_tread_graph():
     def draw_subplot(ax,
                      x,
-                     y,
+                     y1,
+                     y2,
                      chp_or_fst,
-                     t_or_p,
-                     c):
-        label_map = {
-            0: 'Runtime',
-            1: 'Price'
-        }
+                     labels):
         title_map = {
             0: 'For cheapest',
             1: 'For fastest'
         }
-        color_map = {
-            0: 'mediumseagreen',
-            1: 'cyan',
-            2: 'steelblue',
-            3: 'mediumpurple'
-        }
-        ax.plot(x, y, c=color_map[c], label=label_map[t_or_p])
+        ax.plot(x, y1, 'o-', c='#5170d7', label=labels[0])
+        ax.plot(x, y2, 'o-', c='#a87dc2', label=labels[1])
         ax.set_title(title_map[chp_or_fst])
         ax.set_xlabel('Failure rate')
-        ax.set_ylabel(label_map[t_or_p])
+        ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
         ax.legend()
+
+    def normalize(dat):
+        return dat / np.nanmean(dat)
 
     ig_path = 'integration_incl_cost/'
     csvs = os.listdir(ig_path)[1:]
     dfs = [pd.read_csv(f'{ig_path}{csv}') for csv in csvs]
     programs = dfs[0].iloc[:, 0]
-    norm_fig, norm_axes = plt.subplots(2, 2)
+    norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4))
     avg_chp = []
     avg_fst = []
     for i, prog in enumerate(programs):
+        fig, axes = plt.subplots(1, 2, figsize=(10, 4))
         chp_tup = []
         fst_tup = []
         for j, df in enumerate(dfs):
@@ -344,113 +341,66 @@ def draw_tread_graph():
             ))
         chp_tup = np.array(sorted(chp_tup, key=lambda x: x[2]))
         fst_tup = np.array(sorted(fst_tup, key=lambda x: x[2]))
-        norm_chp_tup = chp_tup
-        norm_fst_tup = fst_tup
-        avg_chp.append(norm_chp_tup)
-        avg_fst.append(norm_fst_tup)
-        norm_chp_tup[:, 0] = chp_tup[:, 0] / max(chp_tup[:, 0])
-        norm_chp_tup[:, 1] = chp_tup[:, 1] / max(chp_tup[:, 1])
-        norm_fst_tup[:, 0] = fst_tup[:, 0] / max(fst_tup[:, 0])
-        norm_fst_tup[:, 1] = fst_tup[:, 1] / max(fst_tup[:, 1])
-        fig, axes = plt.subplots(2, 2)
-        # draw_subplot(axes[0, 0],
-        #              chp_tup[:, 2],
-        #              chp_tup[:, 0],
-        #              0,
-        #              0,
-        #              0)
-        # draw_subplot(axes[0, 1],
-        #              chp_tup[:, 2],
-        #              chp_tup[:, 1],
-        #              0,
-        #              1,
-        #              1)
-        # draw_subplot(axes[1, 0],
-        #              fst_tup[:, 2],
-        #              fst_tup[:, 0],
-        #              1,
-        #              0,
-        #              2)
-        # draw_subplot(axes[1, 1],
-        #              fst_tup[:, 2],
-        #              fst_tup[:, 1],
-        #              1,
-        #              1,
-        #              3)
-        # norm_axes[0, 0].plot(norm_chp_tup[:, 2], norm_chp_tup[:, 0])
-        # norm_axes[0, 1].plot(norm_chp_tup[:, 2], norm_chp_tup[:, 1])
-        # norm_axes[1, 0].plot(norm_fst_tup[:, 2], norm_fst_tup[:, 0])
-        # norm_axes[1, 1].plot(norm_fst_tup[:, 2], norm_fst_tup[:, 1])
+        avg_chp.append(chp_tup)
+        avg_fst.append(fst_tup)
+        draw_subplot(axes[0],
+                     chp_tup[:, 2],
+                     normalize(chp_tup[:, 0]),
+                     normalize(chp_tup[:, 1]),
+                     0,
+                     ['Runtime', 'Price'])
+        draw_subplot(axes[1],
+                     fst_tup[:, 2],
+                     normalize(fst_tup[:, 0]),
+                     normalize(fst_tup[:, 1]),
+                     1,
+                     ['Runtime', 'Price'])
         fig.suptitle(prog)
-        fig.subplots_adjust(wspace=0.5, hspace=0.5)
-        plt.xticks([0,0.2,0.4,0.6,0.8])
+        # fig.subplots_adjust(wspace=0.5)
         plt.savefig(f'trend_plots/{prog}.svg')
         plt.close()
 
     avg_chp = np.nanmean(np.array(avg_chp), axis=0)
     avg_fst = np.nanmean(np.array(avg_fst), axis=0)
-    # avg_fst[:, 0:1] = avg_chp[:, 0:1] / len(programs)
-
-    norm_axes[0, 0].plot(avg_chp[:, 2], avg_chp[:, 0])
-    norm_axes[0, 1].plot(avg_chp[:, 2], avg_chp[:, 1])
-    norm_axes[1, 0].plot(avg_fst[:, 2], avg_fst[:, 0])
-    norm_axes[1, 1].plot(avg_fst[:, 2], avg_fst[:, 1])
-
-    norm_axes[0, 0].set_title('For cheapest')
-    norm_axes[0, 0].set_ylabel('Normalized runtime')
-    norm_axes[0, 1].set_title('For cheapest')
-    norm_axes[0, 1].set_ylabel('Normalized price')
-    norm_axes[1, 0].set_title('For fastest')
-    norm_axes[1, 0].set_ylabel('Normalized runtime')
-    norm_axes[1, 1].set_title('For fastest')
-    norm_axes[1, 1].set_ylabel('Normalized price')
-
-    for i, j in zip([0, 0, 1, 1],
-                    [0, 1, 0, 1]):
-        norm_axes[i, j].set_xlabel('Failure rate')
-
-    norm_fig.suptitle('Normalized trend')
-    norm_fig.subplots_adjust(wspace=0.5, hspace=0.5)
+    draw_subplot(norm_axes[0],
+                 avg_chp[:, 2],
+                 normalize(avg_chp[:, 0]),
+                 normalize(avg_chp[:, 1]),
+                 0,
+                 ['Average runtime', 'Average price'])
+    draw_subplot(norm_axes[1],
+                 avg_fst[:, 2],
+                 normalize(avg_fst[:, 0]),
+                 normalize(avg_fst[:, 1]),
+                 1,
+                 ['Average runtime', 'Average price'])
+    norm_fig.suptitle('Average trend')
+    # norm_fig.subplots_adjust(wspace=0.5)
     plt.savefig(f'trend_plots/unification.svg')
     plt.close()
 
 
 # Focus on each project!
-def draw_int_fac_pareto2d():
+def draw_int_fac_graph():
+    int_fac_path = 'integration_ga_with_factors/'
+    csvs = os.listdir(int_fac_path)
+    a = np.array([float(csv.replace('.csv', '')[1: csv.index('b')]) for csv in csvs])
+    github_tradeoff = []
+    smart_tradeoff = []
+
     def temp(x):
         return np.array(x) if len(x) > 0 else np.empty((0, 4))
 
-    int_fac_path = 'integration_ga_with_factors/'
-    csvs = os.listdir(int_fac_path)
-    dfs = [pd.read_csv(f'{int_fac_path}{csv}') for csv in csvs]
-    runtime_idx = 3
-    price_idx = 4
-    gaps = {
-        'gh': 5,
-        'smt': 11
-    }
-    programs = dfs[0].iloc[:, 0]
-    for i, prog in enumerate(programs):
-        fig = plt.figure()
-        ax = fig.add_subplot(111)
+    def pareto2d(ga,
+                 gh,
+                 smt,
+                 prog):
+        gh = [t for t in gh if not np.isnan(t[0])]
+        smt = [t for t in smt if not np.isnan(t[0])]
+        fig1 = plt.figure()
+        ax = fig1.add_subplot(111)
         ax.invert_xaxis()
         ax.invert_yaxis()
-        ga = []
-        gh = []
-        smt = []
-        for df in dfs:
-            itm = df.iloc[i, :]
-            ga.append((itm[runtime_idx],
-                       itm[price_idx],
-                       0))
-            if not np.isnan(itm[runtime_idx + gaps['gh']]):
-                gh.append((itm[runtime_idx + gaps['gh']],
-                           itm[price_idx + gaps['gh']],
-                           1))
-            if not np.isnan(itm[runtime_idx + gaps['smt']]):
-                smt.append((itm[runtime_idx + gaps['smt']],
-                            itm[price_idx + gaps['smt']],
-                            2))
         frontiers = pareto_frontier_multi(False,
                                           np.array(ga + gh + smt))
         ga_frontiers = []
@@ -510,11 +460,90 @@ def draw_int_fac_pareto2d():
         plt.savefig(f'{int_fac_pareto2d_path}/{prog}.svg')
         plt.close()
 
+    def sub_bar(ax,
+                x,
+                y1,
+                y2,
+                title):
+        bar_width = 0.08
+        ax.bar(x, y1, color='#5170d7', width=bar_width)
+        ax.bar(x, y2, color='#a87dc2', width=bar_width)
+        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#ff6f52')
+        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#ff6f52')
+        ax.set_title(title)
+        ax.set_xlabel('a')
+
+    def bi_bar(ga,
+               gh,
+               smt,
+               prog):
+        ga_vs_gh = np.array([(t1[0] / t2[0], -t1[1] / t2[1]) if not np.isnan(t2[0]) else (0, 0)
+                             for t1, t2 in zip(ga, gh)])
+        ga_vs_smt = np.array([(t1[0] / t2[0], -t1[1] / t2[1]) if not np.isnan(t2[0]) else (0, 0)
+                              for t1, t2 in zip(ga, smt)])
+        github_tradeoff.append(np.add(ga_vs_gh[:, 0], ga_vs_gh[:, 1]))
+        smart_tradeoff.append(np.add(ga_vs_smt[:, 0], ga_vs_smt[:, 1]))
+        fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+        sub_bar(ax1,
+                a,
+                ga_vs_gh[:, 0],
+                ga_vs_gh[:, 1],
+                'vs GitHub caliber')
+        sub_bar(ax2,
+                a,
+                ga_vs_smt[:, 0],
+                ga_vs_smt[:, 1],
+                'vs smart baseline')
+        fig2.suptitle(prog)
+        plt.savefig(f'{int_fac_bar_path}/{prog}.svg')
+        plt.close()
+
+    dfs = [pd.read_csv(f'{int_fac_path}{csv}') for csv in csvs]
+    runtime_idx = 3
+    price_idx = 4
+    gaps = {
+        'gh': 5,
+        'smt': 11
+    }
+    programs = dfs[0].iloc[:, 0]
+    for i, proj in enumerate(programs):
+        gene = []
+        github = []
+        smart = []
+        for df in dfs:
+            itm = df.iloc[i, :]
+            gene.append((itm[runtime_idx],
+                         itm[price_idx],
+                         0))
+            github.append((itm[runtime_idx + gaps['gh']],
+                           itm[price_idx + gaps['gh']],
+                           1))
+            smart.append((itm[runtime_idx + gaps['smt']],
+                          itm[price_idx + gaps['smt']],
+                          2))
+        # pareto2d(copy.deepcopy(gene),
+        #          copy.deepcopy(github),
+        #          copy.deepcopy(smart),
+        #          proj)
+        bi_bar(gene,
+               github,
+               smart,
+               proj)
+    github_tradeoff = np.nanmean(np.array(github_tradeoff), axis=0)
+    smart_tradeoff = np.nanmean(np.array(smart_tradeoff), axis=0)
+    fig, ax = plt.subplots(figsize=(5, 4))
+    ax.plot(a, github_tradeoff, 'o-', label='vs GitHub caliber')
+    ax.plot(a, smart_tradeoff, 'o-', label='vs smart baseline')
+    ax.set_title('Average tradeoff')
+    ax.legend()
+    plt.savefig(f'{int_fac_bar_path}/avg_trend_graph.svg')
+    plt.close()
+
 
 if __name__ == '__main__':
     # draw_int_scatter2d('incl', 'integration_incl_cost/failure_rate_1.csv', 1)
     # draw_int_scatter2d('incl', 'integration_incl_cost/failure_rate_0.csv', 0)
     # draw_pareto3d('incl')
     # draw_int_pareto3d('incl')
-    draw_tread_graph()
-    # draw_int_fac_pareto2d()
+    # draw_tread_graph()
+    draw_int_fac_graph()

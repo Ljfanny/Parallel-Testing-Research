@@ -54,7 +54,7 @@ def cal_dat(proj_name: str, rec_dict: dict):
             errs.append(err)
             continue
         failure_rate = 1 - val[1] / val[0]
-        prc = conf_prc_map[key[2]] * val[2] / 3600
+        prc = conf_prc_map[key[2]] * avg_time / 3600
         if tst not in avg_tm_dict.keys():
             avg_tm_dict[tst] = [[key[2], val[0], avg_time, failure_rate, prc]]
             idx += 1
@@ -66,12 +66,12 @@ def cal_dat(proj_name: str, rec_dict: dict):
     return avg_tm_dict
 
 
-def preproc(proj_name: str):
-    preproc_file_name = res_path + proj_name
+def preproc(proj_name):
+    preproc_file_name = f'{res_path}{proj_name}'
     get_conf_prc_map()
     cnt = 1
     if os.path.exists(preproc_file_name):
-        print(proj_name + ' has already been preprocessed!')
+        print(f'{proj_name} has already been preprocessed!')
         with open(preproc_file_name, 'r') as f:
             tmp_dict = json.load(f)
         avg_tm_dict = {tuple(eval(k)): v for k, v in tmp_dict.items()}
@@ -79,8 +79,8 @@ def preproc(proj_name: str):
         rec_dict = {}
         filenames = os.listdir(dir_path)
         for f in filenames:
-            ext_dat(csv_dir=dir_path + f + '/', proj_name=proj_name, rec_dict=rec_dict)
-            print(proj_name + '#' + str(cnt) + '... ...')
+            ext_dat(csv_dir=f'{dir_path}{f}/', proj_name=proj_name, rec_dict=rec_dict)
+            print(f'{proj_name}#{cnt}... ...')
             cnt += 1
         avg_tm_dict = cal_dat(proj_name=proj_name, rec_dict=rec_dict)
         tmp_dict = {str(k): v for k, v in avg_tm_dict.items()}

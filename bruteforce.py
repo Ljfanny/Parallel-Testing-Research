@@ -1,13 +1,13 @@
 import copy
 import os
 import time
+import numpy as np
 from itertools import combinations
 
 import pandas as pd
 
-from analy import sel_modu, proj_names, load_setup_time_map, Individual, mapping, confs_num, avail_confs
+from analyze import sel_modu, proj_names, load_setup_time_map, Individual, mapping, confs_num, avail_confs
 from preproc import preproc
-
 
 if __name__ == '__main__':
     bf_dat_path = 'bruteforce_dat/'
@@ -50,18 +50,21 @@ if __name__ == '__main__':
                         tup = mapping(arr)
                         if tup in temp_rec_dict.keys():
                             continue
-                        time_seq, time_para, price, min_fr, max_fr, mach_test_dict = sel_modu(arr,
-                                                                                              pct,
-                                                                                              cho,
-                                                                                              avg_tm_dict,
-                                                                                              setup_tm_dict)
+                        score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict = sel_modu(False,
+                                                                                                     np.nan,
+                                                                                                     arr,
+                                                                                                     pct,
+                                                                                                     cho,
+                                                                                                     avg_tm_dict,
+                                                                                                     setup_tm_dict)
                         ind = Individual(copy.deepcopy(arr),
                                          time_seq,
                                          time_para,
                                          price,
                                          min_fr,
                                          max_fr,
-                                         mach_test_dict)
+                                         mach_test_dict,
+                                         score)
                         if ind.max_fr <= pct:
                             if cho == 'cheap':
                                 ind.score = price
