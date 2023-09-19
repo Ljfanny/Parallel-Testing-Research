@@ -72,6 +72,7 @@ outer_round_idx = 1
 avg_time_idx = 2
 failure_rate_idx = 3
 price_idx = 4
+whe_rec_baseline = False
 
 
 def load_setup_time_map(proj: str,
@@ -89,8 +90,6 @@ def analysis_machs(machs: list,
     mach_arr = []
     mach_test_dict = {}
     mach_time_dict = {}
-    multi_dict = {}
-    conf_machs_map = {k: [] for k in set(machs)}
     num_arr = list(mapping(machs))
     bool_arr = [False if num <= 1 else True for num in num_arr]
     for i, idx in enumerate(machs):
@@ -98,40 +97,36 @@ def analysis_machs(machs: list,
         setup_tm = setup_tm_dict[conf]
         if bool_arr[idx]:
             num_arr[idx] -= 1
-            if idx not in multi_dict.keys():
-                multi_dict[idx] = []
             cur = (idx, num_arr[idx])
             mach_arr.append(cur)
-            conf_machs_map[idx].append(num_arr[idx])
         else:
             cur = (idx, -1)
             mach_arr.append(cur)
         mach_test_dict[cur] = []
         mach_time_dict[cur] = setup_tm
-    return mach_arr, mach_test_dict, mach_time_dict, multi_dict, conf_machs_map
+    return mach_arr, mach_test_dict, mach_time_dict
 
 
 def cal_gene_score(a,
                    mach_time_dict):
     price = 0
     score = 0
+    b = 1 - a
     for mach, per_runtime in mach_time_dict.items():
         beta = conf_prc_map[idx_conf_map[mach[0]]] / 3600
         per_price = per_runtime * beta
         price += per_price
-        runtime_fac = a * beta
-        score += runtime_fac * per_runtime + (1 - runtime_fac) * per_price
+        score += a * beta * per_runtime + b * per_price
     return price, score
 
 
-def get_fst_alloc(ex_fac,
-                  a,
-                  machs: list,
-                  fr: float,
-                  avg_tm_dict: dict,
-                  setup_tm_dict: dict):
-    mach_arr, mach_test_dict, mach_time_dict, _, _ = analysis_machs(machs,
-                                                                    setup_tm_dict)
+def get_alloc(a,
+              machs: list,
+              fr: float,
+              avg_tm_dict: dict,
+              setup_tm_dict: dict):
+    mach_arr, mach_test_dict, mach_time_dict = analysis_machs(machs,
+                                                              setup_tm_dict)
     confs = set(machs)
     min_fr = 100
     max_fr = 0
@@ -145,7 +140,6 @@ def get_fst_alloc(ex_fac,
             thrott_conf = conf_idx_map[item[thrott_conf_idx]]
             if thrott_conf not in confs:
                 continue
-            # tmp_map[thrott_conf] = [item[avg_time_idx], item[price_idx], item[failure_rate_idx]]
             tmp_map[thrott_conf] = [item[avg_time_idx], item[failure_rate_idx]]
         fr_arr = list(zip(*tmp_map.values()))[-1]
         for m in mach_arr:
@@ -171,106 +165,7 @@ def get_fst_alloc(ex_fac,
     time_seq = sum(mach_time_dict.values())
     price, score = cal_gene_score(a,
                                   mach_time_dict)
-    if not ex_fac:
-        score = time_para
     return score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict
-
-
-def get_chp_alloc(ex_fac,
-                  a,
-                  machs: list,
-                  fr: float,
-                  avg_tm_dict: dict,
-                  setup_tm_dict: dict):
-    mach_arr, mach_test_dict, mach_time_dict, multi_dict, conf_machs_map = analysis_machs(machs,
-                                                                                          setup_tm_dict)
-    confs = set(machs)
-    min_fr = 100
-    max_fr = 0
-    for key, val in avg_tm_dict.items():
-        tst = f'{key[0]}#{key[1]}'
-        mini = float('inf')
-        mini_conf = -1
-        mini_time = 0
-        for item in val:
-            thrott_conf = conf_idx_map[item[thrott_conf_idx]]
-            cur_fr = item[failure_rate_idx]
-            if thrott_conf not in confs or cur_fr > fr:
-                continue
-            if item[price_idx] < mini:
-                mini = item[price_idx]
-                mini_conf = thrott_conf
-                mini_time = item[avg_time_idx]
-                if cur_fr > max_fr:
-                    max_fr = cur_fr
-                if cur_fr < min_fr:
-                    min_fr = cur_fr
-        if mini_conf == -1:
-            tmp_list = sorted(val, key=lambda x: x[failure_rate_idx])
-            i = 0
-            while True:
-                if conf_idx_map[tmp_list[i][thrott_conf_idx]] in confs:
-                    break
-                else:
-                    i += 1
-            item = tmp_list[i]
-            mini_conf = conf_idx_map[item[thrott_conf_idx]]
-            mini_time = item[avg_time_idx]
-            cur_fr = item[failure_rate_idx]
-            if cur_fr > max_fr:
-                max_fr = cur_fr
-            if cur_fr < min_fr:
-                min_fr = cur_fr
-        ky = (mini_conf, -1)
-        if ky in mach_test_dict.keys():
-            mach_test_dict[ky].append(tst)
-            mach_time_dict[ky] += mini_time
-        else:
-            multi_dict[mini_conf].append([tst, mini_time])
-    for key, val in multi_dict.items():
-        for tup in val:
-            tst = tup[0]
-            tm = tup[1]
-            min_para_time = float('inf')
-            min_ver = -1
-            for ver in conf_machs_map[key]:
-                ky = (key, ver)
-                if mach_time_dict[ky] + tm < min_para_time:
-                    min_para_time = mach_time_dict[ky] + tm
-                    min_ver = ver
-            min_mac = (key, min_ver)
-            mach_time_dict[min_mac] += tm
-            mach_test_dict[min_mac].append(tst)
-    time_para = max(mach_time_dict.values())
-    time_seq = sum(mach_time_dict.values())
-    price, score = cal_gene_score(a,
-                                  mach_time_dict)
-    if not ex_fac:
-        score = price
-    return score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict
-
-
-def sel_modu(ex_fac,
-             a,
-             machs: list,
-             fr: float,
-             modu: str,
-             avg_tm_dict: dict,
-             setup_tm_dict: dict):
-    if modu == 'cheap':
-        return get_chp_alloc(ex_fac,
-                             a,
-                             machs,
-                             fr,
-                             avg_tm_dict,
-                             setup_tm_dict)
-    else:
-        return get_fst_alloc(ex_fac,
-                             a,
-                             machs,
-                             fr,
-                             avg_tm_dict,
-                             setup_tm_dict)
 
 
 # ----------------------------------------- Genetic algorithm --------------------------------------------
@@ -364,19 +259,15 @@ def mapping(machs: list):
 
 class GA:
     def __init__(self,
-                 ex_fac,
                  a,
                  fr,
-                 modu,
                  avg_tm_dict,
                  setup_tm_dict,
                  pop_size,
                  gene_length,
                  max_iter):
-        self.ex_fac = ex_fac
         self.a = a
         self.fr = fr
-        self.modu = modu
         self.avg_tm_dict = avg_tm_dict
         self.setup_tm_dict = setup_tm_dict
         self.pop_size = pop_size
@@ -467,13 +358,11 @@ class GA:
                       machs: list):
         conf_tup = mapping(machs)
         if conf_tup not in self.memo.keys():
-            score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict = sel_modu(self.ex_fac,
-                                                                                         self.a,
-                                                                                         machs,
-                                                                                         self.fr,
-                                                                                         self.modu,
-                                                                                         self.avg_tm_dict,
-                                                                                         self.setup_tm_dict)
+            score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict = get_alloc(self.a,
+                                                                                          machs,
+                                                                                          self.fr,
+                                                                                          self.avg_tm_dict,
+                                                                                          self.setup_tm_dict)
             new_ind = Individual(copy.deepcopy(machs),
                                  time_seq,
                                  time_para,
@@ -487,28 +376,30 @@ class GA:
             self.memo[conf_tup] = new_ind
 
 
-def record_baseline(subdir: str,
-                    proj: str,
+def record_baseline(proj: str,
                     df,
                     obj):
-    cg = f'{obj.gene_length}-{obj.fr}-{obj.modu}'
+    cg = f'{obj.gene_length}-{obj.fr}'
     for i in range(confs_num):
         ind = obj.memo[mapping([i for _ in range(obj.gene_length)])]
-        ind.record_ind(subdir,
-                       proj,
-                       cg,
-                       df,
-                       np.nan)
+        df.loc[len(df.index)] = [
+            proj,
+            cg,
+            idx_conf_map[ind.machs[0]],
+            ind.time_seq,
+            ind.time_para,
+            ind.price,
+            ind.min_fr,
+            ind.max_fr
+        ]
 
 
 if __name__ == '__main__':
-    # a = np.nan
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
-    factor_a = 0.1
+    factor_a = 0
     num_of_machine = [1, 2, 4, 6, 8, 10, 12]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
-    chp_or_fst = ['cheap', 'fast']
-    sub = 'ga' if np.isnan(factor_a) else f'ga_a{factor_a}'
+    sub = f'ga_a{factor_a}'
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
                                   columns=['project',
@@ -522,47 +413,50 @@ if __name__ == '__main__':
                                            'max_failure_rate',
                                            'period']
                                   )
+        baseline_df = pd.DataFrame(None,
+                                   columns=['project',
+                                            'category',
+                                            'conf',
+                                            'time_seq',
+                                            'time_parallel',
+                                            'price',
+                                            'min_failure_rate',
+                                            'max_failure_rate']
+                                   )
         ext_dat_df['num_confs'] = ext_dat_df['num_confs'].astype(int)
         baseline_df_csv = f'{baseline_path}{proj_name}.csv'
-        whe_baseline_exist = os.path.exists(baseline_df_csv)
-        baseline_df = copy.deepcopy(ext_dat_df)
+        whe_rec_baseline = ~os.path.exists(baseline_df_csv)
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
                                                False)
         for mach_num in num_of_machine:
             for pct in pct_of_failure_rate:
-                for cho in chp_or_fst:
-                    t1 = time.time()
-                    # aβ * runtime + (1-aβ) * price
-                    ga = GA(ex_fac=False if np.isnan(factor_a) else True,
-                            a=factor_a,
-                            fr=pct,
-                            modu=cho,
-                            avg_tm_dict=preproc_proj_dict,
-                            setup_tm_dict=preproc_mvn_dict,
-                            pop_size=100,
-                            gene_length=mach_num,
-                            max_iter=100)
-                    ga.init_pop()
-                    ga.run()
-                    t2 = time.time()
-                    tt = t2 - t1
-                    category = f'{mach_num}-{pct}-{cho}'
-                    print(f'--------------------   {proj_name}-{category}   --------------------')
-                    ga.print_best(tt)
-                    ga.record_best(sub,
-                                   proj_name,
-                                   category,
-                                   tt)
-                    if whe_baseline_exist:
-                        continue
-                    record_baseline('baseline',
-                                    proj_name,
+                t1 = time.time()
+                ga = GA(a=factor_a,
+                        fr=pct,
+                        avg_tm_dict=preproc_proj_dict,
+                        setup_tm_dict=preproc_mvn_dict,
+                        pop_size=100,
+                        gene_length=mach_num,
+                        max_iter=100)
+                ga.init_pop()
+                if whe_rec_baseline:
+                    record_baseline(proj_name,
                                     baseline_df,
                                     ga)
+                ga.run()
+                t2 = time.time()
+                tt = t2 - t1
+                category = f'{mach_num}-{pct}'
+                print(f'--------------------   {proj_name}-{category}   --------------------')
+                ga.print_best(tt)
+                ga.record_best(sub,
+                               proj_name,
+                               category,
+                               tt)
         if not os.path.exists(f'{resu_path}{sub}'):
             os.mkdir(f'{resu_path}{sub}')
         csv_name = f'{resu_path}{sub}/{proj_name}.csv'
         ext_dat_df.to_csv(csv_name, sep=',', header=True, index=False)
-        if not whe_baseline_exist:
+        if whe_rec_baseline:
             baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
