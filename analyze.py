@@ -112,9 +112,9 @@ def cal_gene_score(a,
     price = 0
     score = 0
     b = 1 - a
+    beta = 0.026
     for mach, per_runtime in mach_time_dict.items():
-        beta = conf_prc_map[idx_conf_map[mach[0]]] / 3600
-        per_price = per_runtime * beta
+        per_price = per_runtime * conf_prc_map[idx_conf_map[mach[0]]] / 3600
         price += per_price
         score += a * beta * per_runtime + b * per_price
     return price, score
@@ -235,7 +235,7 @@ class Individual:
         df.loc[len(df.index)] = [
             proj,
             cg,
-            len(confs),
+            int(len(confs)),
             conf_num_map,
             self.time_seq,
             self.time_para,
@@ -379,12 +379,11 @@ class GA:
 def record_baseline(proj: str,
                     df,
                     obj):
-    cg = f'{obj.gene_length}-{obj.fr}'
     for i in range(confs_num):
         ind = obj.memo[mapping([i for _ in range(obj.gene_length)])]
         df.loc[len(df.index)] = [
             proj,
-            cg,
+            obj.gene_length,
             idx_conf_map[ind.machs[0]],
             ind.time_seq,
             ind.time_para,
@@ -399,7 +398,7 @@ if __name__ == '__main__':
     factor_a = 0
     num_of_machine = [1, 2, 4, 6, 8, 10, 12]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
-    sub = f'ga_a{factor_a}'
+    sub = f'ga_a{factor_a}_ig'
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
                                   columns=['project',
@@ -415,7 +414,7 @@ if __name__ == '__main__':
                                   )
         baseline_df = pd.DataFrame(None,
                                    columns=['project',
-                                            'category',
+                                            'num_machines',
                                             'conf',
                                             'time_seq',
                                             'time_parallel',
@@ -425,11 +424,12 @@ if __name__ == '__main__':
                                    )
         ext_dat_df['num_confs'] = ext_dat_df['num_confs'].astype(int)
         baseline_df_csv = f'{baseline_path}{proj_name}.csv'
-        whe_rec_baseline = ~os.path.exists(baseline_df_csv)
+        whe_rec_baseline = not os.path.exists(baseline_df_csv)
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
                                                False)
         for mach_num in num_of_machine:
+            is_done = False
             for pct in pct_of_failure_rate:
                 t1 = time.time()
                 ga = GA(a=factor_a,
@@ -440,23 +440,24 @@ if __name__ == '__main__':
                         gene_length=mach_num,
                         max_iter=100)
                 ga.init_pop()
-                if whe_rec_baseline:
+                if whe_rec_baseline and not is_done:
                     record_baseline(proj_name,
                                     baseline_df,
                                     ga)
-                ga.run()
+                # ga.run()
                 t2 = time.time()
                 tt = t2 - t1
                 category = f'{mach_num}-{pct}'
-                print(f'--------------------   {proj_name}-{category}   --------------------')
+                print(f'----- {proj_name}-{category} -----')
                 ga.print_best(tt)
-                ga.record_best(sub,
-                               proj_name,
-                               category,
-                               tt)
+                # ga.record_best(sub,
+                #                proj_name,
+                #                category,
+                #                tt)
+                is_done = True
         if not os.path.exists(f'{resu_path}{sub}'):
             os.mkdir(f'{resu_path}{sub}')
         csv_name = f'{resu_path}{sub}/{proj_name}.csv'
-        ext_dat_df.to_csv(csv_name, sep=',', header=True, index=False)
+        # ext_dat_df.to_csv(csv_name, sep=',', header=True, index=False)
         if whe_rec_baseline:
             baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)

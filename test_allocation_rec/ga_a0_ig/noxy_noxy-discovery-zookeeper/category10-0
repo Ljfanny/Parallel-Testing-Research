@@ -1,0 +1,10 @@
+{'21CPU025Mem2GB.sh:v0': [],
+ '21CPU025Mem2GB.sh:v1': [],
+ '21CPU025Mem2GB.sh:v2': [],
+ '21CPU025Mem2GB.sh:v3': [],
+ '21CPU025Mem2GB.sh:v4': [],
+ '21CPU025Mem2GB.sh:v5': [],
+ '21CPU025Mem2GB.sh:v6': [],
+ '21CPU025Mem2GB.sh:v7': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testMembershipJoinAndLeave'],
+ '21CPU025Mem2GB.sh:v8': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testDiscoveryListener'],
+ '26CPU2Mem4GB.sh': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testBulkClusterJoining']}
