@@ -536,6 +536,7 @@ def draw_integ_as_graph():
     panel.plot(smooth_a, smooth_gh, color='#8EA604')
     panel.plot(smooth_a, smooth_smt, color='#D76A03')
     panel.plot(a, [0 for _ in range(len(a))], 'o-', color='#354f52')
+    panel.set_xlabel(r'The parameter a')
     panel.set_title('Average tradeoff')
     panel.spines['top'].set_color('none')
     panel.spines['right'].set_color('none')
