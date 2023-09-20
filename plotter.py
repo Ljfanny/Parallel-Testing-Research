@@ -350,7 +350,9 @@ def draw_integ_as_graph():
     a[0] = 0
     a[-1] = 1
     github_reco = []
+    github_adjust = []
     smart_reco = []
+    smart_adjust = []
 
     def reds(x):
         return np.array(x) if len(x) > 0 else np.empty((0, 4))
@@ -451,6 +453,10 @@ def draw_integ_as_graph():
                               for t1, t2 in zip(ga, smt)])
         github_reco.append(ga_vs_gh)
         smart_reco.append(ga_vs_smt)
+        github_adjust.append(np.column_stack(((1 - ga_vs_gh[:, 0]),
+                                              (ga_vs_gh[:, 1] + 1))))
+        smart_adjust.append(np.column_stack(((1 - ga_vs_smt[:, 0]),
+                                             (ga_vs_smt[:, 1] + 1))))
         fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5), sharey=True, sharex=True)
         plt.subplots_adjust(wspace=0.1)
         sub_bar(ax1,
@@ -513,8 +519,8 @@ def draw_integ_as_graph():
                      proj)
     if not whe_draw_bar:
         return
-    github_tradeoff = np.nanmean(np.array(github_reco).sum(axis=2), axis=0)
-    smart_tradeoff = np.nanmean(np.array(smart_reco).sum(axis=2), axis=0)
+    github_tradeoff = np.nanmean(np.array(github_adjust).sum(axis=2), axis=0)
+    smart_tradeoff = np.nanmean(np.array(smart_adjust).sum(axis=2), axis=0)
     github_runtime = np.nanmean(np.array(github_reco), axis=0)[:, 0]
     github_price = np.nanmean(np.array(github_reco), axis=0)[:, 1]
     smart_runtime = np.nanmean(np.array(smart_reco), axis=0)[:, 0]
