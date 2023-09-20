@@ -475,8 +475,8 @@ def draw_int_fac_graph():
 
         ax.bar(x, y1, color='#507dbc', width=bar_width, edgecolor='#04080f', label='Price')
         ax.bar(x, y2, color='#bbd1ea', width=bar_width, edgecolor='#04080f', label='Runtime')
-        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#04080f')
-        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#04080f')
+        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#1d3557',markersize = 4)
+        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#1d3557',markersize = 4)
 
         ax.set_title(title, fontproperties='Times New Roman', size=12, weight='bold')
         # ax.set_ylabel('The ration compare to the baseline',fontproperties = 'Times New Roman',size = 13, weight='bold')
