@@ -6,10 +6,12 @@ import pandas as pd
 comp_path = 'contrast'
 
 
-def comp_ga_bf():
+def comp(idx):
     idx_modu_map = {
-        0: {'ga': 'ga_a0', 'bf': 'bruteforce_a0'},
-        1: {'ga': 'ga_a1', 'bf': 'bruteforce_a1'}
+        0: ['ga_a0', 'bruteforce_a0'],
+        1: ['ga_a1', 'bruteforce_a1'],
+        2: ['ga_a0', 'ga_a0_ig'],
+        3: ['ga_a1', 'ga_a1_ig']
     }
     comp_dfs = [pd.DataFrame(None,
                              columns=['project',
@@ -53,13 +55,13 @@ def comp_ga_bf():
         return ser['time_parallel'], ser['price'], ser['period']
 
     def reco_info(idx):
-        ga_subdir = idx_modu_map[idx]['ga']
-        bf_subdir = idx_modu_map[idx]['bf']
-        csvs = os.listdir(f'ext_dat/{ga_subdir}')
+        subdir1 = idx_modu_map[idx][0]
+        subdir2 = idx_modu_map[idx][0]
+        csvs = os.listdir(f'ext_dat/{subdir1}')
         for csv in csvs:
             proj_name = csv.replace('.csv', '')
-            ga = pd.read_csv(f'ext_dat/{ga_subdir}/{csv}').iloc[:24, :].dropna()
-            bf = pd.read_csv(f'ext_dat/{bf_subdir}/{csv}').dropna()
+            ga = pd.read_csv(f'ext_dat/{subdir1}/{csv}').iloc[:24, :].dropna()
+            bf = pd.read_csv(f'ext_dat/{subdir2}/{csv}').dropna()
             diff_cnt = 0
             tot_num = len(bf)
             tot_runtime_rate = 0
@@ -111,7 +113,7 @@ def comp_ga_bf():
     summary_df.to_csv(f'{comp_path}/ga_bf_summary.csv', sep=',', header=True, index=False)
 
 
-def comp(a: str, b: str):
+def comp_confs(a: str, b: str):
     id_subdir_map = {
         'ig': 'ga_ig',
         'non_ig': 'ga',
@@ -156,6 +158,6 @@ def comp(a: str, b: str):
 
 
 if __name__ == '__main__':
-    comp_ga_bf()
-    comp('non_ig', 'ig')
-    comp('ga', 'bf')
+    comp()
+    # comp_confs('non_ig', 'ig')
+    # comp_confs('ga', 'bf')
