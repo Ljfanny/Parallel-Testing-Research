@@ -305,12 +305,14 @@ def draw_tread_graph():
             0: 'For cheapest',
             1: 'For fastest'
         }
-        ax.plot(x, y1, 'o-', c='#5170d7', label=labels[0])
-        ax.plot(x, y2, 'o-', c='#a87dc2', label=labels[1])
-        ax.set_title(title_map[chp_or_fst])
-        ax.set_xlabel('Failure rate')
+        ax.plot(x, y1, 'o-', c='#84a98c', label=labels[0])
+        ax.plot(x, y2, 'o-', c='#354f52', label=labels[1])
+        ax.set_title(title_map[chp_or_fst],fontproperties='Times New Roman', size=12, weight='bold')
+        ax.set_xlabel('Failure rate',fontproperties='Times New Roman', size=12, weight='bold')
         ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
         ax.legend()
+        ax.yaxis.grid(True, linestyle='--', zorder=0)
+
 
     def normalize(dat):
         return dat / np.nanmean(dat)
@@ -319,9 +321,11 @@ def draw_tread_graph():
     csvs = os.listdir(ig_path)[1:]
     dfs = [pd.read_csv(f'{ig_path}{csv}') for csv in csvs]
     programs = dfs[0].iloc[:, 0]
-    norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4))
+    norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4),sharex=True,sharey=True)
     avg_chp = []
     avg_fst = []
+    plt.rc('font', family='Times New Roman', weight='bold')
+
     for i, prog in enumerate(programs):
         fig, axes = plt.subplots(1, 2, figsize=(10, 4))
         chp_tup = []
@@ -342,18 +346,22 @@ def draw_tread_graph():
             ))
         chp_tup = np.array(sorted(chp_tup, key=lambda x: x[2]))
         fst_tup = np.array(sorted(fst_tup, key=lambda x: x[2]))
+        chp_tup[:, 0] = chp_tup[:, 0] / max(chp_tup[:, 0])
+        chp_tup[:, 1] = chp_tup[:, 1] / max(chp_tup[:, 1])
+        fst_tup[:, 0] = fst_tup[:, 0] / max(fst_tup[:, 0])
+        fst_tup[:, 1] = fst_tup[:, 1] / max(fst_tup[:, 1])
         avg_chp.append(chp_tup)
         avg_fst.append(fst_tup)
         draw_subplot(axes[0],
                      chp_tup[:, 2],
-                     normalize(chp_tup[:, 0]),
-                     normalize(chp_tup[:, 1]),
+                     chp_tup[:, 0],
+                     chp_tup[:, 1],
                      0,
                      ['Runtime', 'Price'])
         draw_subplot(axes[1],
                      fst_tup[:, 2],
-                     normalize(fst_tup[:, 0]),
-                     normalize(fst_tup[:, 1]),
+                     fst_tup[:, 0],
+                     fst_tup[:, 1],
                      1,
                      ['Runtime', 'Price'])
         fig.suptitle(prog)
@@ -365,17 +373,19 @@ def draw_tread_graph():
     avg_fst = np.nanmean(np.array(avg_fst), axis=0)
     draw_subplot(norm_axes[0],
                  avg_chp[:, 2],
-                 normalize(avg_chp[:, 0]),
-                 normalize(avg_chp[:, 1]),
+                 avg_chp[:, 0],
+                 avg_chp[:, 1],
                  0,
                  ['Average runtime', 'Average price'])
     draw_subplot(norm_axes[1],
                  avg_fst[:, 2],
-                 normalize(avg_fst[:, 0]),
-                 normalize(avg_fst[:, 1]),
+                 avg_fst[:, 0],
+                 avg_fst[:, 1],
                  1,
                  ['Average runtime', 'Average price'])
-    norm_fig.suptitle('Average trend')
+    norm_fig.suptitle('Average trend',fontproperties='Times New Roman', size=12, weight='bold')
+
+
     # norm_fig.subplots_adjust(wspace=0.5)
     plt.savefig(f'trend_plots/unification.svg')
     plt.close()
@@ -572,5 +582,5 @@ if __name__ == '__main__':
     # draw_int_scatter2d('incl', 'integration_incl_cost/failure_rate_0.csv', 0)
     # draw_pareto3d('incl')
     # draw_int_pareto3d('incl')
-    # draw_tread_graph()
-    draw_int_fac_graph()
+    draw_tread_graph()
+    # draw_int_fac_graph()
