@@ -48,18 +48,17 @@ proj_names = [
 ]
 
 if __name__ == '__main__':
-    bf_dat_path = 'bruteforce_dat'
     idx_conf_map = {k: v for k, v in enumerate(avail_confs)}
     num_of_machine = [1, 2, 4, 6]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
     modus = [
-        ['cheap', 0],
-        ['fast', 1]
+        ['bruteforce_a0', 0],
+        ['bruteforce_a1', 1]
     ]
     for proj_name in proj_names:
         csvs = [
-            f'{bf_dat_path}/{modus[0][0]}/{proj_name}.csv',
-            f'{bf_dat_path}/{modus[1][0]}/{proj_name}.csv'
+            f'ext_dat/{modus[0][0]}/{proj_name}.csv',
+            f'ext_dat/{modus[1][0]}/{proj_name}.csv'
         ]
         dfs = [pd.DataFrame(None,
                             columns=['project',
@@ -112,10 +111,10 @@ if __name__ == '__main__':
                     t2 = time.time()
                     tt = t2 - t1
                     category = f'{mach_num}-{pct}'
-                    print(f'--------------------   {proj_name}-{category}-{modu[0]}   --------------------')
+                    print(f'--------------------   {proj_name}-{category}-{modu[0][11:]}   --------------------')
                     mini_ind = temp_rec_dict[mini_tup]
                     mini_ind.print_ind(tt)
-                    mini_ind.record_ind(f'bruteforce_{modu[0]}',
+                    mini_ind.record_ind(modu[0],
                                         proj_name,
                                         category,
                                         dfs[index],

@@ -11,10 +11,10 @@ import pandas as pd
 from preproc import preproc, conf_prc_map
 
 random.seed(0)
-resu_path = 'ext_dat/'
-setup_rec_path = 'setup_time_rec/'
-tst_alloc_rec_path = 'test_allocation_rec/'
-baseline_path = 'baseline_dat/'
+resu_path = 'ext_dat'
+setup_rec_path = 'setup_time_rec'
+tst_alloc_rec_path = 'test_allocation_rec'
+baseline_path = 'baseline_dat'
 proj_names = [
     'activiti_dot',
     'assertj-core_dot',
@@ -79,7 +79,7 @@ def load_setup_time_map(proj: str,
                         cond: bool):
     if cond:
         return {k: float(0) for k in avail_confs}
-    file = setup_rec_path + proj
+    file = f'{setup_rec_path}/{proj}'
     with open(file, 'r') as f:
         setup_time_map = json.load(f)
     return setup_time_map
@@ -210,7 +210,7 @@ class Individual:
                    cg,
                    df,
                    period):
-        dis_folder = f'{tst_alloc_rec_path}{subdir}/{proj}'
+        dis_folder = f'{tst_alloc_rec_path}/{subdir}/{proj}'
         if not os.path.exists(dis_folder):
             os.makedirs(dis_folder)
         if self.score == float('inf'):
@@ -396,9 +396,16 @@ def record_baseline(proj: str,
 if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
     factor_a = 0
+    # group index:
+    # 0 = consider setup cost; 1 = ignore setup cost
+    group_idx = 0
+    groups = [
+        ['', 'non_ig', False],
+        ['_ig', 'ig', True]
+    ]
     num_of_machine = [1, 2, 4, 6, 8, 10, 12]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
-    sub = f'ga_a{factor_a}_ig'
+    sub = f'ga_a{factor_a}{groups[group_idx][0]}'
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
                                   columns=['project',
@@ -423,11 +430,12 @@ if __name__ == '__main__':
                                             'max_failure_rate']
                                    )
         ext_dat_df['num_confs'] = ext_dat_df['num_confs'].astype(int)
-        baseline_df_csv = f'{baseline_path}{proj_name}.csv'
+        baseline_df_csv = f'{baseline_path}/{groups[group_idx][1]}/{proj_name}.csv'
         whe_rec_baseline = not os.path.exists(baseline_df_csv)
+
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
-                                               False)
+                                               groups[group_idx][2])
         for mach_num in num_of_machine:
             is_done = False
             for pct in pct_of_failure_rate:
@@ -444,20 +452,20 @@ if __name__ == '__main__':
                     record_baseline(proj_name,
                                     baseline_df,
                                     ga)
+                    is_done = True
                 # ga.run()
                 t2 = time.time()
                 tt = t2 - t1
                 category = f'{mach_num}-{pct}'
-                print(f'----- {proj_name}-{category} -----')
+                print(f'--------------------   {proj_name}-{category}   --------------------')
                 ga.print_best(tt)
                 # ga.record_best(sub,
                 #                proj_name,
                 #                category,
                 #                tt)
-                is_done = True
-        if not os.path.exists(f'{resu_path}{sub}'):
-            os.mkdir(f'{resu_path}{sub}')
-        csv_name = f'{resu_path}{sub}/{proj_name}.csv'
-        # ext_dat_df.to_csv(csv_name, sep=',', header=True, index=False)
+        resu_sub_path = f'{resu_path}/{sub}'
+        if not os.path.exists(resu_sub_path):
+            os.mkdir(resu_sub_path)
+        # ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
         if whe_rec_baseline:
             baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)

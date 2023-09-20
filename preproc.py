@@ -50,7 +50,7 @@ def cal_dat(proj_name: str, rec_dict: dict):
         if val[1] != 0:
             avg_time = val[2] / val[1]
         else:
-            err = [proj_name, key[0] + '#' + key[1], key[2] + '\n']
+            err = [proj_name, f'{key[0]}#{key[1]}', f'{key[2]}\n']
             errs.append(err)
             continue
         failure_rate = 1 - val[1] / val[0]
