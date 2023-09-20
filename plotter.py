@@ -311,6 +311,11 @@ def draw_tread_graph():
         ax.set_xlabel('Failure rate',fontproperties='Times New Roman', size=12, weight='bold')
         ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
         ax.legend()
+
+
+        ax.spines['top'].set_color('none')
+        ax.spines['right'].set_color('none')
+
         ax.yaxis.grid(True, linestyle='--', zorder=0)
 
 
@@ -489,6 +494,9 @@ def draw_int_fac_graph():
         ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#1d3557',markersize = 4)
 
         ax.set_title(title, fontproperties='Times New Roman', size=12, weight='bold')
+
+        ax.spines['top'].set_color('none')
+        ax.spines['right'].set_color('none')
         # ax.set_ylabel('The ration compare to the baseline',fontproperties = 'Times New Roman',size = 13, weight='bold')
 
     def bi_bar(ga,
@@ -532,6 +540,7 @@ def draw_int_fac_graph():
         legend.set_bbox_to_anchor((-0.05, 1.05))
 
         fig2.suptitle(prog, fontproperties='Times New Roman', size=12, weight='bold')
+
         plt.savefig(f'{int_fac_bar_path}/{prog}.svg')
         plt.close()
 
@@ -572,6 +581,9 @@ def draw_int_fac_graph():
     ax.plot(a, github_tradeoff, 'o-', label='vs GitHub caliber',color = '#8EA604')
     ax.plot(a, smart_tradeoff, 'o-', label='vs smart baseline', color = '#D76A03')
     ax.set_title('Average tradeoff')
+    ax.spines['top'].set_color('none')
+    ax.spines['right'].set_color('none')
+    ax.yaxis.grid(True, linestyle='--', zorder=0)
     ax.legend()
     plt.savefig(f'{int_fac_bar_path}/avg_trend_graph.svg')
     plt.close()
@@ -582,5 +594,5 @@ if __name__ == '__main__':
     # draw_int_scatter2d('incl', 'integration_incl_cost/failure_rate_0.csv', 0)
     # draw_pareto3d('incl')
     # draw_int_pareto3d('incl')
-    draw_tread_graph()
-    # draw_int_fac_graph()
+    # draw_tread_graph()
+    draw_int_fac_graph()
