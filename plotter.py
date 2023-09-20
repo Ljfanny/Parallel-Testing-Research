@@ -12,6 +12,7 @@ int_fac_pareto2d_path = 'integration_ga_with_factors_pareto2d'
 int_fac_bar_path = 'integration_ga_with_factors_bi_bar'
 
 biases = {'chp': 0, 'chp_gh': 4, 'chp_smt': 10, 'fst': 17, 'fst_gh': 21, 'fst_smt': 27}
+plt.rc('font', family='Times New Roman', weight='bold')
 
 
 def draw_scatter(ax, x, y, z, c, label=None):
@@ -465,13 +466,20 @@ def draw_int_fac_graph():
                 y1,
                 y2,
                 title):
-        bar_width = 0.08
-        ax.bar(x, y1, color='#5170d7', width=bar_width)
-        ax.bar(x, y2, color='#a87dc2', width=bar_width)
-        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#ff6f52')
-        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#ff6f52')
-        ax.set_title(title)
-        ax.set_xlabel('a')
+        bar_width = 0.06
+        ax.set_ylim([-1.5, 1.5])
+        ax.set_xticks((0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1), )
+
+
+        ax.yaxis.grid(True, linestyle='--',zorder=0)
+
+        ax.bar(x, y1, color='#507dbc', width=bar_width, edgecolor='#04080f', label='Price')
+        ax.bar(x, y2, color='#bbd1ea', width=bar_width, edgecolor='#04080f', label='Runtime')
+        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#04080f')
+        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#04080f')
+
+        ax.set_title(title, fontproperties='Times New Roman', size=12, weight='bold')
+        # ax.set_ylabel('The ration compare to the baseline',fontproperties = 'Times New Roman',size = 13, weight='bold')
 
     def bi_bar(ga,
                gh,
@@ -483,18 +491,37 @@ def draw_int_fac_graph():
                               for t1, t2 in zip(ga, smt)])
         github_tradeoff.append(np.add(ga_vs_gh[:, 0], ga_vs_gh[:, 1]))
         smart_tradeoff.append(np.add(ga_vs_smt[:, 0], ga_vs_smt[:, 1]))
-        fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+        fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4), sharey=True, sharex=True)
+        plt.subplots_adjust(wspace=0.1)
         sub_bar(ax1,
                 a,
                 ga_vs_gh[:, 0],
                 ga_vs_gh[:, 1],
-                'vs GitHub caliber')
+                'GitHub Caliber Baseline')
         sub_bar(ax2,
                 a,
                 ga_vs_smt[:, 0],
                 ga_vs_smt[:, 1],
-                'vs smart baseline')
-        fig2.suptitle(prog)
+                'Smart Baseline')
+
+        ax1.set_ylabel('The ratio compared to baseline', fontproperties='Times New Roman', size=12, weight='bold',
+                       rotation=90)
+        ax1.set_xlabel(r'The parameter a', fontproperties='Times New Roman', size=12, weight='bold')
+        ax1.xaxis.set_label_coords(1, -0.075)
+        # neg_ax1 = ax1.twinx()
+        # ax1.set_ylabel('Price', fontproperties='Times New Roman', size=12, weight='bold', rotation=90)
+        # ax1.yaxis.set_label_position('left')
+        #
+        # neg_ax1.set_ylabel('Runtime', fontproperties='Times New Roman', size=12, weight='bold', rotation=90)
+        # neg_ax1.yaxis.set_label_position('left')
+        #
+        # ax1.yaxis.set_label_coords(-0.1, 0.65)
+        # neg_ax1.yaxis.set_label_coords(-0.1, 0.25)
+
+        legend = ax1.legend(edgecolor='none')
+        legend.set_bbox_to_anchor((-0.05, 1.05))
+
+        fig2.suptitle(prog, fontproperties='Times New Roman', size=12, weight='bold')
         plt.savefig(f'{int_fac_bar_path}/{prog}.svg')
         plt.close()
 
