@@ -1,4 +1,4 @@
-{'29CPU4Mem8GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#getHeaders',
+{'26CPU2Mem4GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#getHeaders',
                      'com.github.kevinsawicki.http.HttpRequestTest#getWithResponseCharsetAsSecondParam',
                      'com.github.kevinsawicki.http.HttpRequestTest#appendWithNullVaragsQueryParamValues',
                      'com.github.kevinsawicki.http.HttpRequestTest#appendOddNumberOfParams',

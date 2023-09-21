@@ -10,8 +10,6 @@ import pandas as pd
 
 from preproc import preproc, conf_prc_map
 
-sche = 0
-prio = 0
 random.seed(0)
 resu_path = 'ext_dat'
 setup_rec_path = 'setup_time_rec'
@@ -250,16 +248,13 @@ def get_alloc(a,
               fr: float,
               avg_tm_dict: dict,
               setup_tm_dict: dict):
-    global sche, prio
     if random.random() <= a:
-        sche += 1
         return scheduled_algorithm(a,
                                    machs,
                                    fr,
                                    avg_tm_dict,
                                    setup_tm_dict)
     else:
-        prio += 1
         return price_priority_algorithm(a,
                                         machs,
                                         fr,
@@ -494,8 +489,8 @@ def record_baseline(proj: str,
 
 if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
-    factor_a = 0.4
-    group_ky = 'non-ig'
+    factor_a = 1
+    group_ky = 'ig'
     groups_map = {
         'non-ig': ['', 'non_ig', False],
         'ig': ['_ig', 'ig', True]
@@ -560,9 +555,6 @@ if __name__ == '__main__':
                                proj_name,
                                category,
                                tt)
-                print(sche/(sche+prio), prio/(sche+prio))
-                sche = 0
-                prio = 0
         resu_sub_path = f'{resu_path}/{sub}'
         if not os.path.exists(resu_sub_path):
             os.mkdir(resu_sub_path)

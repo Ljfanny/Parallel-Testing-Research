@@ -1,4 +1,4 @@
-{'29CPU4Mem8GB.sh': ['ro.isdc.wro.extensions.http.handler.spi.TestDefaultRequestHandlerProvider#shoudProvideAtLeastOneRequestHandler',
+{'26CPU2Mem4GB.sh': ['ro.isdc.wro.extensions.http.handler.spi.TestDefaultRequestHandlerProvider#shoudProvideAtLeastOneRequestHandler',
                      'ro.isdc.wro.extensions.http.handler.spi.TestDefaultRequestHandlerProvider#shouldNotFailWhenEachHandlerIsInvoked',
                      'ro.isdc.wro.extensions.processor.TestJsHintProcessor#canSetNullOptions',
                      'ro.isdc.wro.extensions.processor.TestJsHintProcessor#shouldSupportCorrectResourceTypes',
