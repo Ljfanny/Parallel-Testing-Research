@@ -1,7 +1,5 @@
 import copy
-import os
 import time
-import numpy as np
 from itertools import combinations
 
 import pandas as pd
@@ -17,34 +15,33 @@ proj_names = [
     # 'db-scheduler_dot',
     # 'delight-nashorn-sandbox_dot',
     # 'elastic-job-lite_dot',
-    # 'elastic-job-lite_elastic-job-lite-core'
-
+    # 'elastic-job-lite_elastic-job-lite-core',
     # 'esper_examples.rfidassetzone',
-    # 'fastjson_dot',
+    # 'fastjson_dot'
+
     # 'fluent-logger-java_dot',
     # 'handlebars.java_dot',
     # 'hbase_dot',
     # 'http-request_dot',
-    'httpcore_dot',
-    'hutool_hutool-cron'
-
+    # 'httpcore_dot',
+    # 'hutool_hutool-cron',
     # 'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
     # 'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
     # 'logback_dot',
     # 'luwak_luwak',
-    # 'ninja_dot',
-    # 'noxy_noxy-discovery-zookeeper',
-    # 'okhttp_dot',
-    # 'orbit_dot'
+    # 'ninja_dot'
 
-    # 'retrofit_retrofit-adapters.rxjava',
-    # 'retrofit_retrofit',
-    # 'rxjava2-extras_dot',
-    # 'spring-boot_dot',
-    # 'timely_server',
-    # 'wro4j_wro4j-extensions',
-    # 'yawp_yawp-testing.yawp-testing-appengine',
-    # 'zxing_dot'
+    'noxy_noxy-discovery-zookeeper',
+    'okhttp_dot',
+    'orbit_dot',
+    'retrofit_retrofit-adapters.rxjava',
+    'retrofit_retrofit',
+    'rxjava2-extras_dot',
+    'spring-boot_dot',
+    'timely_server',
+    'wro4j_wro4j-extensions',
+    'yawp_yawp-testing.yawp-testing-appengine',
+    'zxing_dot'
 ]
 
 if __name__ == '__main__':
@@ -70,6 +67,7 @@ if __name__ == '__main__':
                                      'price',
                                      'min_failure_rate',
                                      'max_failure_rate',
+                                     'score',
                                      'period']) for _ in range(2)]
         avg_tm_dict = preproc(proj_name)
         setup_tm_dict = load_setup_time_map(proj_name,

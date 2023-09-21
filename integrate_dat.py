@@ -3,6 +3,7 @@ from ast import literal_eval
 import numpy as np
 import pandas as pd
 
+beta = 25.993775 / 3600
 frs = [0, 0.2, 0.4, 0.6, 0.8, 1]
 alter_conf = '27CPU2Mem8GB.sh'
 
@@ -16,7 +17,6 @@ def record_df(df,
               fst=None,
               fst_gh=None,
               fst_smt=None):
-
     def get_info(ser):
         if ser.loc['max_failure_rate'] > frs[idx]:
             return np.nan, np.nan, np.nan
@@ -42,14 +42,14 @@ def record_df(df,
     is_chp_smt = not np.isnan(chp_smt_fr)
     is_fst_gh = not np.isnan(fst_gh_fr)
     is_fst_smt = not np.isnan(fst_smt_fr)
-    chp_gh_runtime_rate = chp_runtime/chp_gh_runtime
-    chp_gh_price_rate = chp_price/chp_gh_price
-    chp_smt_runtime_rate = chp_runtime/chp_smt_runtime
-    chp_smt_price_rate = chp_price/chp_smt_price
-    fst_gh_runtime_rate = fst_runtime/fst_gh_runtime
-    fst_gh_price_rate = fst_price/fst_gh_price
-    fst_smt_runtime_rate = fst_runtime/fst_smt_runtime
-    fst_smt_price_rate = fst_price/fst_smt_price
+    chp_gh_runtime_rate = chp_runtime / chp_gh_runtime
+    chp_gh_price_rate = chp_price / chp_gh_price
+    chp_smt_runtime_rate = chp_runtime / chp_smt_runtime
+    chp_smt_price_rate = chp_price / chp_smt_price
+    fst_gh_runtime_rate = fst_runtime / fst_gh_runtime
+    fst_gh_price_rate = fst_price / fst_gh_price
+    fst_smt_runtime_rate = fst_runtime / fst_smt_runtime
+    fst_smt_price_rate = fst_price / fst_smt_price
     df.loc[len(df.index)] = [
         proj_name,
         chp['category'],
@@ -292,7 +292,6 @@ def consider_fr(chp_dat_dir,
 def consider_ab(dat_dir,
                 baseline_subdir,
                 modu):
-    beta = 0.026
     output = f'integ_dat/{modu}.csv'
     df = pd.DataFrame(None,
                       columns=['project',
@@ -300,22 +299,27 @@ def consider_ab(dat_dir,
                                'confs',
                                'runtime',
                                'price',
-                               'score',
                                'max_failure_rate',
+                               'score',
                                'github_caliber_conf',
                                'github_caliber_runtime',
                                'github_caliber_price',
-                               'github_caliber_score',
                                'github_caliber_max_failure_rate',
+                               'github_caliber_score',
+                               'github_caliber_runtime_rate',
+                               'github_caliber_price_rate',
                                'github_caliber_score_rate',
                                'smart_baseline_conf',
                                'smart_baseline_runtime',
                                'smart_baseline_price',
-                               'smart_baseline_score',
                                'smart_baseline_max_failure_rate',
-                               'smart_baseline_score_rate'])
+                               'smart_baseline_score',
+                               'smart_baseline_runtime_rate',
+                               'smart_baseline_price_rate',
+                               'smart_baseline_score_rate'
+                               ])
     fs = os.listdir(dat_dir)
-    a = float(modu[modu.index('_')+2:])
+    a = float(modu[modu.index('_') + 2:])
     b = 1 - a
     for f in fs:
         proj_name = f.replace('.csv', '')
@@ -323,9 +327,6 @@ def consider_ab(dat_dir,
         dat = dat.loc[dat['category'].str.endswith('-0')].iloc[:, 1:].dropna()
         if dat.size == 0:
             continue
-        dat.insert(len(dat.columns),
-                   'score',
-                   pd.Series(a * beta * dat['time_parallel'] + b * dat['price']))
         dat.sort_values(by='score', inplace=True)
         itm = dat.iloc[0, :]
         gh, smt = get_contrast(baseline_subdir,
@@ -349,28 +350,33 @@ def consider_ab(dat_dir,
             itm['confs'],
             itm['time_parallel'],
             itm['price'],
-            itm['score'],
             itm['max_failure_rate'],
+            itm['score'],
             gh['conf'] if is_gh else np.nan,
             gh['time_parallel'] if is_gh else np.nan,
             gh['price'] if is_gh else np.nan,
-            gh_score,
             gh['max_failure_rate'] if is_gh else np.nan,
+            gh_score,
+            itm['time_parallel'] / gh['time_parallel'] if is_gh else np.nan,
+            itm['price'] / gh['price'] if is_gh else np.nan,
             gh_rate,
             smt['conf'] if is_smt else np.nan,
             smt['time_parallel'] if is_smt else np.nan,
             smt['price'] if is_smt else np.nan,
-            smt_score,
             smt['max_failure_rate'] if is_smt else np.nan,
+            smt_score,
+            itm['time_parallel'] / smt['time_parallel'] if is_smt else np.nan,
+            itm['price'] / smt['price'] if is_smt else np.nan,
             smt_rate
         ]
     df.to_csv(f'{output}', sep=',', header=True, index=False)
 
 
 if __name__ == '__main__':
-    aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
-    modus = [f'ga_a{a}' for a in aes]
     ex_ab = False
+    aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
+           0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
+    modus = [f'ga_a{a}' for a in aes]
     if not ex_ab:
         summary_arr = np.zeros((6, 12))
         idx_proj_num_map = {i: 0 for i in range(6)}
@@ -389,11 +395,11 @@ if __name__ == '__main__':
     #             'ext_dat/bruteforce_a1',
     #             'non_ig',
     #             'bruteforce')
-    # consider_fr('ext_dat/ga_a0_ig',
-    #             'ext_dat/ga_a1_ig',
-    #             'ig',
-    #             'ga_ig')
-    for md in modus:
-        consider_ab(f'ext_dat/{md}',
-                    'non_ig',
-                    md)
+    consider_fr('ext_dat/ga_a0_ig',
+                'ext_dat/ga_a1_ig',
+                'ig',
+                'ga_ig')
+    # for md in modus:
+    #     consider_ab(f'ext_dat/{md}',
+    #                 'non_ig',
+    #                 md)

@@ -10,13 +10,12 @@ import pandas as pd
 
 from preproc import preproc, conf_prc_map
 
-sche = 0
-prio = 0
+beta = 25.993775/3600
 random.seed(0)
 resu_path = 'ext_dat'
 setup_rec_path = 'setup_time_rec'
 tst_alloc_rec_path = 'test_allocation_rec'
-# baseline_path = 'baseline_dat'
+baseline_path = 'baseline_dat'
 proj_names = [
     'activiti_dot',
     'assertj-core_dot',
@@ -118,7 +117,6 @@ def cal_gene_score(a,
                    mach_time_dict):
     price = 0
     b = 1 - a
-    beta = 25.993775/3600
     for mach, per_runtime in mach_time_dict.items():
         per_price = per_runtime * conf_prc_map[idx_conf_map[mach[0]]] / 3600
         price += per_price
@@ -250,16 +248,13 @@ def get_alloc(a,
               fr: float,
               avg_tm_dict: dict,
               setup_tm_dict: dict):
-    global sche, prio
     if random.random() <= a:
-        sche += 1
         return scheduled_algorithm(a,
                                    machs,
                                    fr,
                                    avg_tm_dict,
                                    setup_tm_dict)
     else:
-        prio += 1
         return price_priority_algorithm(a,
                                         machs,
                                         fr,
@@ -323,6 +318,7 @@ class Individual:
                 np.nan,
                 np.nan,
                 np.nan,
+                np.nan,
                 period
             ]
             with open(f'{dis_folder}/category{cg}', 'w'):
@@ -341,6 +337,7 @@ class Individual:
             self.price,
             self.min_fr,
             self.max_fr,
+            self.score,
             period
         ]
         temp_dict = {idx_conf_map[k[0]] if k[1] == -1
@@ -488,14 +485,14 @@ def record_baseline(proj: str,
             ind.time_para,
             ind.price,
             ind.min_fr,
-            ind.max_fr
-        ]
+            ind.max_fr]
 
 
 if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
-    factor_a = 0.4
-    group_ky = 'non-ig'
+    prog_start = time.time()
+    factor_a = 1
+    group_ky = 'ig'
     groups_map = {
         'non-ig': ['', 'non_ig', False],
         'ig': ['_ig', 'ig', True]
@@ -514,27 +511,29 @@ if __name__ == '__main__':
                                            'price',
                                            'min_failure_rate',
                                            'max_failure_rate',
+                                           'score',
                                            'period']
                                   )
-        # baseline_df = pd.DataFrame(None,
-        #                            columns=['project',
-        #                                     'num_machines',
-        #                                     'conf',
-        #                                     'time_seq',
-        #                                     'time_parallel',
-        #                                     'price',
-        #                                     'min_failure_rate',
-        #                                     'max_failure_rate']
-        #                            )
+        baseline_df = pd.DataFrame(None,
+                                   columns=['project',
+                                            'num_machines',
+                                            'conf',
+                                            'time_seq',
+                                            'time_parallel',
+                                            'price',
+                                            'min_failure_rate',
+                                            'max_failure_rate'
+                                            ]
+                                   )
         ext_dat_df['num_confs'] = ext_dat_df['num_confs'].astype(int)
-        # baseline_df_csv = f'{baseline_path}/{groups_map[group_ky][1]}/{proj_name}.csv'
-        # whe_rec_baseline = not os.path.exists(baseline_df_csv)
+        baseline_df_csv = f'{baseline_path}/{groups_map[group_ky][1]}/{proj_name}.csv'
+        whe_rec_baseline = not os.path.exists(baseline_df_csv)
 
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
                                                groups_map[group_ky][2])
         for mach_num in num_of_machine:
-            # is_done = False
+            is_done = False
             for pct in pct_of_failure_rate:
                 t1 = time.time()
                 ga = GA(a=factor_a,
@@ -545,11 +544,11 @@ if __name__ == '__main__':
                         gene_length=mach_num,
                         max_iter=100)
                 ga.init_pop()
-                # if whe_rec_baseline and not is_done:
-                #     record_baseline(proj_name,
-                #                     baseline_df,
-                #                     ga)
-                #     is_done = True
+                if whe_rec_baseline and not is_done:
+                    record_baseline(proj_name,
+                                    baseline_df,
+                                    ga)
+                    is_done = True
                 ga.run()
                 t2 = time.time()
                 tt = t2 - t1
@@ -560,12 +559,12 @@ if __name__ == '__main__':
                                proj_name,
                                category,
                                tt)
-                print(sche/(sche+prio), prio/(sche+prio))
-                sche = 0
-                prio = 0
         resu_sub_path = f'{resu_path}/{sub}'
         if not os.path.exists(resu_sub_path):
             os.mkdir(resu_sub_path)
         ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
-        # if whe_rec_baseline:
-        #     baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
+        if whe_rec_baseline:
+            if not os.path.exists(f'{baseline_path}/{groups_map[group_ky][1]}'):
+                os.mkdir(f'{baseline_path}/{groups_map[group_ky][1]}')
+            baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
+    print(f'[Total time] {time.time()-prog_start} s')

@@ -1,9 +1,10 @@
 import os
+import matplotlib
 import matplotlib.pyplot as plt
-from scipy.interpolate import make_interp_spline
 import pandas as pd
 import textwrap
 import numpy as np
+matplotlib.use('TkAgg')
 
 prefixes = {
     'chp': 'cheapest',
@@ -26,8 +27,8 @@ def output_plot(ax,
     ax.set_title(textwrap.fill(proj_name))
     ax.set_xlabel('Runtime')
     ax.set_ylabel('Price')
-    ax.set_zlabel('Max failure rate')
-    ax.legend()
+    ax.set_zlabel('Max Failure Rate')
+    ax.legend(fontsize=8)
 
 
 def pareto_frontier_multi(is_avail,
@@ -60,11 +61,11 @@ def draw_integ_scatter2d(code,
     colors = ['mediumpurple', 'thistle', 'mediumseagreen', 'cyan', 'steelblue', 'darkkhaki']
     nodes = {
         'chp': 'Cheapest',
-        'chp_gh': 'Cheapest github caliber',
-        'chp_smt': 'Cheapest smart baseline',
+        'chp_gh': 'Cheapest Github Caliber',
+        'chp_smt': 'Cheapest Smart Baseline',
         'fst': 'Fastest',
-        'fst_gh': 'Fastest github caliber',
-        'fst_smt': 'Fastest smart baseline'
+        'fst_gh': 'Fastest Github Caliber',
+        'fst_smt': 'Fastest Smart Baseline'
     }
     dat = pd.read_csv(f'integ_dat/{modu}/failrate_{fr}.csv').dropna()
     for _, row in dat.iterrows():
@@ -93,7 +94,8 @@ def draw_integ_scatter2d(code,
         plt.xlabel('Runtime')
         plt.ylabel('Price')
         plt.legend(handles=[plt.scatter([], [], c=c) for c in colors],
-                   labels=labels)
+                   labels=labels,
+                   fontsize=8)
         plt.savefig(f'{subdir}/{proj_name}.svg')
         plt.close()
 
@@ -200,51 +202,42 @@ def draw_integ_pareto3d(code):
                      ga_frontiers[:, 1],
                      ga_frontiers[:, 2],
                      'mediumpurple',
-                     f'GA pareto frontiers: {len(ga_frontiers)}')
+                     f'GA Pareto Front: {len(ga_frontiers)}')
         draw_scatter(ax,
                      ga_non[:, 0],
                      ga_non[:, 1],
                      ga_non[:, 2],
                      'thistle',
-                     f'GA normal: {len(ga_non)}')
+                     f'GA Normal: {len(ga_non)}')
         draw_scatter(ax,
                      github_frontiers[:, 0],
                      github_frontiers[:, 1],
                      github_frontiers[:, 2],
                      'mediumseagreen',
-                     f'Github caliber pareto frontiers: {len(github_frontiers)}')
+                     f'Github Caliber Pareto Front: {len(github_frontiers)}')
         draw_scatter(ax,
                      github_non[:, 0],
                      github_non[:, 1],
                      github_non[:, 2],
                      'cyan',
-                     f'Github caliber normal: {len(github_non)}')
+                     f'Github Caliber Normal: {len(github_non)}')
         draw_scatter(ax,
                      smart_frontiers[:, 0],
                      smart_frontiers[:, 1],
                      smart_frontiers[:, 2],
                      'steelblue',
-                     f'Smart baseline pareto frontiers: {len(smart_frontiers)}')
+                     f'Smart Baseline Pareto Front: {len(smart_frontiers)}')
         draw_scatter(ax,
                      smart_non[:, 0],
                      smart_non[:, 1],
                      smart_non[:, 2],
                      'darkkhaki',
-                     f'Smart baseline normal: {len(smart_non)}')
+                     f'Smart Baseline Normal: {len(smart_non)}')
         output_plot(ax,
                     proj_name)
         plt.savefig(f'integ_fig/ga_pareto3d/{proj_name}.svg')
         plt.close()
     summary_df.to_csv(f'integ_fig/ga_pareto3d/summary_result.csv', sep=',', header=True, index=False)
-
-
-def smooth_xy(x, y):
-    xxyy = np.column_stack((x, y))[~np.isnan(y)]
-    xx = xxyy[:, 0]
-    yy = xxyy[:, 1]
-    x_smooth = np.linspace(np.min(xx), np.max(xx), 300)
-    y_smooth = make_interp_spline(xx, yy)(x_smooth)
-    return x_smooth, y_smooth
 
 
 def draw_tread_graph():
@@ -255,21 +248,16 @@ def draw_tread_graph():
                      chp_or_fst,
                      labels):
         title_map = {
-            0: 'For cheapest',
-            1: 'For fastest'
+            0: 'For Cheapest',
+            1: 'For Fastest'
         }
         ax.plot(x, y1, 'o-', c='#84a98c', label=labels[0])
         ax.plot(x, y2, 'o-', c='#354f52', label=labels[1])
-        # ax.scatter(x, y1, c='#84a98c')
-        # ax.scatter(x, y2, c='#354f52')
-        # smooth_x, smooth_y1 = smooth_xy(x, y1)
-        # ax.plot(smooth_x, smooth_y1, c='#84a98c', label=labels[0])
-        # smooth_x, smooth_y2 = smooth_xy(x, y2)
-        # ax.plot(smooth_x, smooth_y2, c='#354f52', label=labels[1])
         ax.set_title(title_map[chp_or_fst], size=12)
-        ax.set_xlabel('Failure rate', size=12)
+        ax.set_xlabel('Failure Rate', size=12)
+        ax.set_ylabel('Normalization Ratio', size=12)
         ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
-        ax.legend()
+        ax.legend(fontsize=8)
         ax.spines['top'].set_color('none')
         ax.spines['right'].set_color('none')
         ax.yaxis.grid(True, linestyle='--', zorder=0)
@@ -330,29 +318,25 @@ def draw_tread_graph():
                  avg_chp[:, 0],
                  avg_chp[:, 1],
                  0,
-                 ['Average runtime', 'Average price'])
+                 ['Average Runtime', 'Average Price'])
     draw_subplot(norm_axes[1],
                  avg_fst[:, 2],
                  avg_fst[:, 0],
                  avg_fst[:, 1],
                  1,
-                 ['Average runtime', 'Average price'])
-    norm_fig.suptitle('Average trend', size=12, weight='bold')
+                 ['Average Runtime', 'Average Price'])
+    norm_fig.suptitle('Average Trend', size=12, weight='bold')
     plt.savefig(f'integ_fig/ga_trend_graph/unification.svg')
     plt.close()
 
 
 # Focus on each project!
-def draw_integ_as_graph():
+def draw_integ_as_graph(is_bar=False):
     csvs = [f for f in os.listdir('integ_dat') if os.path.isfile(os.path.join('integ_dat', f))]
     a = np.array([float(csv.replace('.csv', '')[csv.index('_a') + 2:]) for csv in csvs])
     a = sorted(a)
     a[0] = 0
     a[-1] = 1
-    github_reco = []
-    github_adjust = []
-    smart_reco = []
-    smart_adjust = []
 
     def reds(x):
         return np.array(x) if len(x) > 0 else np.empty((0, 4))
@@ -361,10 +345,8 @@ def draw_integ_as_graph():
                  gh,
                  smt,
                  prog):
-        gh = [t for t in gh if not np.isnan(t[0])]
-        smt = [t for t in smt if not np.isnan(t[0])]
-        fig1 = plt.figure()
-        ax = fig1.add_subplot(111)
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
         ax.invert_xaxis()
         ax.invert_yaxis()
         frontiers = pareto_frontier_multi(False,
@@ -393,36 +375,36 @@ def draw_integ_as_graph():
                    ga_frontiers[:, 1],
                    alpha=0.5,
                    c='mediumpurple',
-                   label=f'GA pareto frontiers: {len(np.unique(ga_frontiers))}({len(ga_frontiers)})')
+                   label=f'GA Pareto Front: {len(np.unique(ga_frontiers))}({len(ga_frontiers)})')
         ax.scatter(ga[:, 0],
                    ga[:, 1],
                    alpha=0.5,
                    c='thistle',
-                   label=f'GA normal: {len(np.unique(ga))}({len(ga)})')
+                   label=f'GA Normal: {len(np.unique(ga))}({len(ga)})')
         ax.scatter(gh_frontiers[:, 0],
                    gh_frontiers[:, 1],
                    alpha=0.5,
                    c='mediumseagreen',
-                   label=f'Github caliber pareto frontiers: {len(np.unique(gh_frontiers))}({len(gh_frontiers)})')
+                   label=f'Github Caliber Pareto Front: {len(np.unique(gh_frontiers))}({len(gh_frontiers)})')
         ax.scatter(gh[:, 0],
                    gh[:, 1],
                    alpha=0.5,
                    c='cyan',
-                   label=f'Github caliber normal: {len(np.unique(gh))}({len(gh)})')
+                   label=f'Github Caliber Normal: {len(np.unique(gh))}({len(gh)})')
         ax.scatter(smt_frontiers[:, 0],
                    smt_frontiers[:, 1],
                    alpha=0.5,
                    c='steelblue',
-                   label=f'Smart baseline pareto frontiers: {len(np.unique(smt_frontiers))}({len(smt_frontiers)})')
+                   label=f'Smart Baseline Pareto Front: {len(np.unique(smt_frontiers))}({len(smt_frontiers)})')
         ax.scatter(smt[:, 0],
                    smt[:, 1],
                    alpha=0.5,
                    c='darkkhaki',
-                   label=f'Smart baseline normal: {len(np.unique(smt))}({len(smt)})')
+                   label=f'Smart Baseline Normal: {len(np.unique(smt))}({len(smt)})')
         ax.set_title(textwrap.fill(prog))
         ax.set_xlabel('Runtime')
         ax.set_ylabel('Price')
-        ax.legend(fontsize=5)
+        ax.legend(fontsize=8)
         plt.savefig(f'integ_fig/ga_as_pareto2d/{prog}.svg')
         plt.close()
 
@@ -432,7 +414,6 @@ def draw_integ_as_graph():
                 y2,
                 title):
         bar_width = 0.035
-        # ax.set_ylim([-1.5, 1.5])
         ax.set_xticks((0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1), )
         ax.yaxis.grid(True, linestyle='--', zorder=0)
         ax.bar(x, y1, color='#507dbc', width=bar_width, edgecolor='#04080f', label='Runtime')
@@ -443,126 +424,122 @@ def draw_integ_as_graph():
         ax.spines['top'].set_color('none')
         ax.spines['right'].set_color('none')
 
-    def bi_bar(ga,
-               gh,
-               smt,
-               prog):
-        ga_vs_gh = np.array([(t1[0] / t2[0], -t1[1] / t2[1]) if not np.isnan(t2[0]) else (0, 0)
-                             for t1, t2 in zip(ga, gh)])
-        ga_vs_smt = np.array([(t1[0] / t2[0], -t1[1] / t2[1]) if not np.isnan(t2[0]) else (0, 0)
-                              for t1, t2 in zip(ga, smt)])
-        github_reco.append(ga_vs_gh)
-        smart_reco.append(ga_vs_smt)
-        github_adjust.append(np.column_stack(((1 - ga_vs_gh[:, 0]),
-                                              (ga_vs_gh[:, 1] + 1))))
-        smart_adjust.append(np.column_stack(((1 - ga_vs_smt[:, 0]),
-                                             (ga_vs_smt[:, 1] + 1))))
-        fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5), sharey=True, sharex=True)
+    def bi_bar(prog,
+               gh_rts,
+               smt_rts):
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharey=True, sharex=True)
         plt.subplots_adjust(wspace=0.1)
         sub_bar(ax1,
                 a,
-                ga_vs_gh[:, 0],
-                ga_vs_gh[:, 1],
+                gh_rts[:, 0],
+                -gh_rts[:, 1],
                 'GitHub Caliber Baseline')
         sub_bar(ax2,
                 a,
-                ga_vs_smt[:, 0],
-                ga_vs_smt[:, 1],
+                smt_rts[:, 0],
+                -smt_rts[:, 1],
                 'Smart Baseline')
-
-        ax1.set_ylabel('The ratio compared to baseline', size=12, weight='bold',
-                       rotation=90)
-        ax1.set_xlabel(r'The parameter a', size=12, weight='bold')
-        ax1.xaxis.set_label_coords(1, -0.075)
-        # neg_ax1 = ax1.twinx()
-        # ax1.set_ylabel('Price', fontproperties='Times New Roman', size=12, weight='bold', rotation=90)
-        # ax1.yaxis.set_label_position('left')
-        #
-        # neg_ax1.set_ylabel('Runtime', fontproperties='Times New Roman', size=12, weight='bold', rotation=90)
-        # neg_ax1.yaxis.set_label_position('left')
-        #
-        # ax1.yaxis.set_label_coords(-0.1, 0.65)
-        # neg_ax1.yaxis.set_label_coords(-0.1, 0.25)
+        ax1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
+        ax2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
+        ax1.set_yticks([2, 1, 0, -1, -2])
+        ax1.set_yticklabels([2, 1, 0, 1, 2])
+        ax2.set_yticks([2, 1, 0, -1, -2])
+        ax2.set_yticklabels([2, 1, 0, 1, 2])
         legend = ax1.legend(edgecolor='none')
-        legend.set_bbox_to_anchor((-0.05, 1.05))
-        fig2.suptitle(prog, size=12, weight='bold')
+        ax2.set_xlabel(r'The Parameter a', size=12, weight='bold')
+        legend.set_bbox_to_anchor((0.05, 1.2))
+        fig.suptitle(prog, size=16, weight='bold')
         plt.savefig(f'integ_fig/ga_as_bi_bar/{prog}.svg')
         plt.close()
 
-    whe_draw_bar = True
+    def append_info(arr,
+                    ser,
+                    prefix,
+                    code):
+        runtime = ser[f'{prefix}_runtime']
+        price = ser[f'{prefix}_price']
+        if np.isnan(runtime):
+            return
+        arr.append((runtime, price, code))
+
     dfs = [pd.read_csv(f'integ_dat/ga_a{i}.csv') for i in a]
     programs = dfs[0].iloc[:, 0]
+    is_reco_rt = True
+    rts = []
     for i, proj in enumerate(programs):
         gene = []
         github = []
         smart = []
-        for df in dfs:
+        # (runtime_rate, price_rate)
+        github_rts = []
+        smart_rts = []
+        for j, df in enumerate(dfs):
             itm = df.iloc[i, :]
             gene.append((itm['runtime'],
                          itm['price'],
                          0))
-            github.append((itm['github_caliber_runtime'],
-                           itm['github_caliber_price'],
-                           1))
-            smart.append((itm['smart_baseline_runtime'],
-                          itm['smart_baseline_price'],
-                          2))
-        if whe_draw_bar:
-            bi_bar(gene,
-                   github,
-                   smart,
-                   proj)
+            append_info(github, itm, 'github_caliber', 1)
+            append_info(smart, itm, 'smart_baseline', 2)
+            gh_runtime_rt = itm['github_caliber_runtime_rate']
+            gh_price_rt = itm['github_caliber_price_rate']
+            smt_runtime_rt = itm['smart_baseline_runtime_rate']
+            smt_price_rt = itm['smart_baseline_price_rate']
+            github_rts.append((gh_runtime_rt, gh_price_rt))
+            smart_rts.append((smt_runtime_rt, smt_price_rt))
+            if is_reco_rt:
+                rts.append((df['github_caliber_runtime_rate'].dropna().mean(),
+                            df['github_caliber_price_rate'].dropna().mean(),
+                            df['smart_baseline_runtime_rate'].dropna().mean(),
+                            df['smart_baseline_price_rate'].dropna().mean()))
+        is_reco_rt = False
+        if is_bar:
+            bi_bar(proj,
+                   np.array(github_rts),
+                   np.array(smart_rts))
         else:
             pareto2d(gene,
                      github,
                      smart,
                      proj)
-    if not whe_draw_bar:
+    if not is_bar:
         return
-    github_tradeoff = np.nanmean(np.array(github_adjust).sum(axis=2), axis=0)
-    smart_tradeoff = np.nanmean(np.array(smart_adjust).sum(axis=2), axis=0)
-    github_runtime = np.nanmean(np.array(github_reco), axis=0)[:, 0]
-    github_price = np.nanmean(np.array(github_reco), axis=0)[:, 1]
-    smart_runtime = np.nanmean(np.array(smart_reco), axis=0)[:, 0]
-    smart_price = np.nanmean(np.array(smart_reco), axis=0)[:, 1]
-    # ----------------------tradeoff trend graph----------------------
-    fig, panel = plt.subplots(figsize=(5, 4))
-    # panel.plot(a, github_tradeoff, 'o-', label='vs GitHub caliber', color='#8EA604')
-    # panel.plot(a, smart_tradeoff, 'o-', label='vs smart baseline', color='#D76A03')
-    panel.scatter(a, github_tradeoff, label='vs GitHub caliber', color='#8EA604')
-    panel.scatter(a, smart_tradeoff, label='vs smart baseline', color='#D76A03')
-    smooth_a, smooth_gh = smooth_xy(a, github_tradeoff)
-    smooth_a, smooth_smt = smooth_xy(a, smart_tradeoff)
-    panel.plot(smooth_a, smooth_gh, color='#8EA604')
-    panel.plot(smooth_a, smooth_smt, color='#D76A03')
-    panel.plot(a, [0 for _ in range(len(a))], 'o-', color='#354f52')
-    panel.set_xlabel(r'The parameter a')
-    panel.set_title('Average tradeoff')
+    rts = np.array(rts)
+    # -------------------------------- tradeoff trend graph --------------------------------
+    figure, panel = plt.subplots(figsize=(5, 4))
+    panel.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Caliber', color='#8EA604')
+    panel.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#D76A03')
+    panel.plot(a, [1 for _ in range(len(a))], '--', color='#354f52')
+    panel.set_xlabel(r'The Parameter a')
+    panel.set_ylabel(r'Performance Increase')
+    panel.set_title('Average Tradeoff')
     panel.spines['top'].set_color('none')
     panel.spines['right'].set_color('none')
     panel.yaxis.grid(True, linestyle='--', zorder=0)
-    panel.legend()
+    panel.legend(fontsize=8)
     plt.savefig(f'integ_fig/ga_as_bi_bar/tradeoff_trend_graph.svg')
     plt.close()
-    # ----------------------mean bi bar----------------------
-    fig, (panel1, panel2) = plt.subplots(1, 2, figsize=(14, 5), sharey=True, sharex=True)
+    # --------------------------------------- mean bi bar ---------------------------------------
+    figure, (panel1, panel2) = plt.subplots(2, 1, figsize=(10, 8), sharey=True, sharex=True)
     sub_bar(panel1,
             a,
-            github_runtime,
-            github_price,
-            'Avg. vs GitHub caliber')
+            rts[:, 0],
+            -rts[:, 1],
+            'Avg. vs GitHub Caliber')
     sub_bar(panel2,
             a,
-            smart_runtime,
-            smart_price,
-            'Avg. vs smart baseline')
-    panel1.set_ylabel('The ratio compared to baseline', size=12, weight='bold',
-                      rotation=90)
-    panel1.set_xlabel(r'The parameter a', size=12, weight='bold')
-    panel1.xaxis.set_label_coords(1, -0.075)
+            rts[:, 2],
+            -rts[:, 3],
+            'Avg. vs Smart Baseline')
+    panel1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
+    panel2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
+    panel1.set_yticks([2, 1, 0, -1, -2])
+    panel1.set_yticklabels([2, 1, 0, 1, 2])
+    panel2.set_yticks([2, 1, 0, -1, -2])
+    panel2.set_yticklabels([2, 1, 0, 1, 2])
     legend = panel1.legend(edgecolor='none')
-    legend.set_bbox_to_anchor((-0.05, 1.05))
-    fig.suptitle('Average rate')
+    panel2.set_xlabel(r'The Parameter a', size=12, weight='bold')
+    legend.set_bbox_to_anchor((0.05, 1.2))
+    figure.suptitle('Average Rate', size=16, weight='bold')
     plt.savefig(f'integ_fig/ga_as_bi_bar/avg_rate_graph.svg')
     plt.close()
 
@@ -572,4 +549,4 @@ if __name__ == '__main__':
     # draw_integ_scatter2d('ga', 0)
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
-    draw_integ_as_graph()
+    draw_integ_as_graph(True)

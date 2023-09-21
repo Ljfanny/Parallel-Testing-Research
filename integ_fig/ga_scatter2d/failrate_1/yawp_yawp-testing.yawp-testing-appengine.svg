@@ -6,11 +6,11 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2023-09-20T18:36:43.975381</dc:date>
+    <dc:date>2023-09-21T23:25:29.708998</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.7.1, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.8.0, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -39,7 +39,7 @@ z
    </g>
    <g id="PathCollection_1">
     <defs>
-     <path id="C0_0_bac38b87f8" d="M 0 3 
+     <path id="C0_0_89638d10e6" d="M 0 3 
 C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
 C 2.683901 1.55874 3 0.795609 3 -0 
 C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
@@ -51,23 +51,23 @@ C -1.55874 2.683901 -0.795609 3 0 3
 z
 "/>
     </defs>
-    <g clip-path="url(#p1553a9a70d)">
-     <use xlink:href="#C0_0_bac38b87f8" x="73.832727" y="53.568" style="fill: #9370db; stroke: #9370db"/>
+    <g clip-path="url(#pa144f0d631)">
+     <use xlink:href="#C0_0_89638d10e6" x="73.832727" y="53.568" style="fill: #9370db; stroke: #9370db"/>
     </g>
-    <g clip-path="url(#p1553a9a70d)">
-     <use xlink:href="#C0_0_bac38b87f8" x="385.089133" y="138.152266" style="fill: #d8bfd8; stroke: #d8bfd8"/>
+    <g clip-path="url(#pa144f0d631)">
+     <use xlink:href="#C0_0_89638d10e6" x="385.089133" y="138.152266" style="fill: #d8bfd8; stroke: #d8bfd8"/>
     </g>
-    <g clip-path="url(#p1553a9a70d)">
-     <use xlink:href="#C0_0_bac38b87f8" x="387.307855" y="92.616651" style="fill: #3cb371; stroke: #3cb371"/>
+    <g clip-path="url(#pa144f0d631)">
+     <use xlink:href="#C0_0_89638d10e6" x="387.307855" y="92.616651" style="fill: #3cb371; stroke: #3cb371"/>
     </g>
-    <g clip-path="url(#p1553a9a70d)">
-     <use xlink:href="#C0_0_bac38b87f8" x="398.487273" y="295.488" style="fill: #00ffff; stroke: #00ffff"/>
+    <g clip-path="url(#pa144f0d631)">
+     <use xlink:href="#C0_0_89638d10e6" x="398.487273" y="295.488" style="fill: #00ffff; stroke: #00ffff"/>
     </g>
-    <g clip-path="url(#p1553a9a70d)">
-     <use xlink:href="#C0_0_bac38b87f8" x="385.089133" y="138.152266" style="fill: #4682b4; stroke: #4682b4"/>
+    <g clip-path="url(#pa144f0d631)">
+     <use xlink:href="#C0_0_89638d10e6" x="385.089133" y="138.152266" style="fill: #4682b4; stroke: #4682b4"/>
     </g>
-    <g clip-path="url(#p1553a9a70d)">
-     <use xlink:href="#C0_0_bac38b87f8" x="387.307855" y="92.616651" style="fill: #bdb76b; stroke: #bdb76b"/>
+    <g clip-path="url(#pa144f0d631)">
+     <use xlink:href="#C0_0_89638d10e6" x="387.307855" y="92.616651" style="fill: #bdb76b; stroke: #bdb76b"/>
     </g>
    </g>
    <g id="PathCollection_2"/>
@@ -80,12 +80,12 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m198089ec39" d="M 0 0 
+       <path id="m3e198b7780" d="M 0 0 
 L 0 3.5 
 " style="stroke: #000000; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m198089ec39" x="410.701351" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m3e198b7780" x="410.701351" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_1">
@@ -133,7 +133,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m198089ec39" x="361.148658" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m3e198b7780" x="361.148658" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_2">
@@ -189,7 +189,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m198089ec39" x="311.595964" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m3e198b7780" x="311.595964" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_3">
@@ -258,7 +258,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m198089ec39" x="262.043271" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m3e198b7780" x="262.043271" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_4">
@@ -311,7 +311,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m198089ec39" x="212.490578" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m3e198b7780" x="212.490578" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_5">
@@ -346,7 +346,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m198089ec39" x="162.937885" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m3e198b7780" x="162.937885" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_6">
@@ -360,7 +360,7 @@ z
     <g id="xtick_7">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#m198089ec39" x="113.385191" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m3e198b7780" x="113.385191" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_7">
@@ -374,7 +374,7 @@ z
     <g id="xtick_8">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m198089ec39" x="63.832498" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m3e198b7780" x="63.832498" y="307.584" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_8">
@@ -714,17 +714,17 @@ z
     <g id="ytick_1">
      <g id="line2d_9">
       <defs>
-       <path id="m2e1ed8db47" d="M 0 0 
+       <path id="mec9cef7745" d="M 0 0 
 L -3.5 0 
 " style="stroke: #000000; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m2e1ed8db47" x="57.6" y="63.483478" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mec9cef7745" x="57.6" y="63.483478" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_10">
-      <!-- 0.00005 -->
-      <g transform="translate(11.934375 67.263166) scale(0.1 -0.1)">
+      <!-- 0.05 -->
+      <g transform="translate(30.346875 67.263166) scale(0.1 -0.1)">
        <defs>
         <path id="Georgia-2e" d="M 1297 359 
 Q 1297 184 1170 60 
@@ -778,41 +778,35 @@ z
        <use xlink:href="#Georgia-30"/>
        <use xlink:href="#Georgia-2e" x="61.376953"/>
        <use xlink:href="#Georgia-30" x="88.330078"/>
-       <use xlink:href="#Georgia-30" x="149.707031"/>
-       <use xlink:href="#Georgia-30" x="211.083984"/>
-       <use xlink:href="#Georgia-30" x="272.460938"/>
-       <use xlink:href="#Georgia-35" x="333.837891"/>
+       <use xlink:href="#Georgia-35" x="149.707031"/>
       </g>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m2e1ed8db47" x="57.6" y="104.291484" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mec9cef7745" x="57.6" y="104.291484" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_11">
-      <!-- 0.00006 -->
-      <g transform="translate(11.557812 108.071172) scale(0.1 -0.1)">
+      <!-- 0.06 -->
+      <g transform="translate(29.970312 108.071172) scale(0.1 -0.1)">
        <use xlink:href="#Georgia-30"/>
        <use xlink:href="#Georgia-2e" x="61.376953"/>
        <use xlink:href="#Georgia-30" x="88.330078"/>
-       <use xlink:href="#Georgia-30" x="149.707031"/>
-       <use xlink:href="#Georgia-30" x="211.083984"/>
-       <use xlink:href="#Georgia-30" x="272.460938"/>
-       <use xlink:href="#Georgia-36" x="333.837891"/>
+       <use xlink:href="#Georgia-36" x="149.707031"/>
       </g>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m2e1ed8db47" x="57.6" y="145.09949" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mec9cef7745" x="57.6" y="145.09949" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_12">
-      <!-- 0.00007 -->
-      <g transform="translate(12.192187 148.879177) scale(0.1 -0.1)">
+      <!-- 0.07 -->
+      <g transform="translate(30.604688 148.879177) scale(0.1 -0.1)">
        <defs>
         <path id="Georgia-37" d="M 3216 3150 
 L 988 -1141 
@@ -833,41 +827,35 @@ z
        <use xlink:href="#Georgia-30"/>
        <use xlink:href="#Georgia-2e" x="61.376953"/>
        <use xlink:href="#Georgia-30" x="88.330078"/>
-       <use xlink:href="#Georgia-30" x="149.707031"/>
-       <use xlink:href="#Georgia-30" x="211.083984"/>
-       <use xlink:href="#Georgia-30" x="272.460938"/>
-       <use xlink:href="#Georgia-37" x="333.837891"/>
+       <use xlink:href="#Georgia-37" x="149.707031"/>
       </g>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m2e1ed8db47" x="57.6" y="185.907495" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mec9cef7745" x="57.6" y="185.907495" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_13">
-      <!-- 0.00008 -->
-      <g transform="translate(11.254687 189.687183) scale(0.1 -0.1)">
+      <!-- 0.08 -->
+      <g transform="translate(29.667188 189.687183) scale(0.1 -0.1)">
        <use xlink:href="#Georgia-30"/>
        <use xlink:href="#Georgia-2e" x="61.376953"/>
        <use xlink:href="#Georgia-30" x="88.330078"/>
-       <use xlink:href="#Georgia-30" x="149.707031"/>
-       <use xlink:href="#Georgia-30" x="211.083984"/>
-       <use xlink:href="#Georgia-30" x="272.460938"/>
-       <use xlink:href="#Georgia-38" x="333.837891"/>
+       <use xlink:href="#Georgia-38" x="149.707031"/>
       </g>
      </g>
     </g>
     <g id="ytick_5">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#m2e1ed8db47" x="57.6" y="226.715501" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mec9cef7745" x="57.6" y="226.715501" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_14">
-      <!-- 0.00009 -->
-      <g transform="translate(11.557812 230.495189) scale(0.1 -0.1)">
+      <!-- 0.09 -->
+      <g transform="translate(29.970312 230.495189) scale(0.1 -0.1)">
        <defs>
         <path id="Georgia-39" d="M 3300 1613 
 Q 3300 1069 3128 589 
@@ -906,35 +894,29 @@ z
        <use xlink:href="#Georgia-30"/>
        <use xlink:href="#Georgia-2e" x="61.376953"/>
        <use xlink:href="#Georgia-30" x="88.330078"/>
-       <use xlink:href="#Georgia-30" x="149.707031"/>
-       <use xlink:href="#Georgia-30" x="211.083984"/>
-       <use xlink:href="#Georgia-30" x="272.460938"/>
-       <use xlink:href="#Georgia-39" x="333.837891"/>
+       <use xlink:href="#Georgia-39" x="149.707031"/>
       </g>
      </g>
     </g>
     <g id="ytick_6">
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m2e1ed8db47" x="57.6" y="267.523507" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mec9cef7745" x="57.6" y="267.523507" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_15">
-      <!-- 0.00010 -->
-      <g transform="translate(12.920313 271.303194) scale(0.1 -0.1)">
+      <!-- 0.10 -->
+      <g transform="translate(31.332812 271.303194) scale(0.1 -0.1)">
        <use xlink:href="#Georgia-30"/>
        <use xlink:href="#Georgia-2e" x="61.376953"/>
-       <use xlink:href="#Georgia-30" x="88.330078"/>
-       <use xlink:href="#Georgia-30" x="149.707031"/>
-       <use xlink:href="#Georgia-30" x="211.083984"/>
-       <use xlink:href="#Georgia-31" x="272.460938"/>
-       <use xlink:href="#Georgia-30" x="315.429688"/>
+       <use xlink:href="#Georgia-31" x="88.330078"/>
+       <use xlink:href="#Georgia-30" x="131.298828"/>
       </g>
      </g>
     </g>
     <g id="text_16">
      <!-- Price -->
-     <g transform="translate(5.085937 185.778) rotate(-90) scale(0.1 -0.1)">
+     <g transform="translate(23.498438 185.778) rotate(-90) scale(0.1 -0.1)">
       <defs>
        <path id="Georgia-50" d="M 3700 3341 
 Q 3700 2994 3564 2726 
@@ -1449,21 +1431,21 @@ z
    </g>
    <g id="legend_1">
     <g id="patch_7">
-     <path d="M 64.6 302.584 
-L 203.90625 302.584 
-Q 205.90625 302.584 205.90625 300.584 
-L 205.90625 213.21525 
-Q 205.90625 211.21525 203.90625 211.21525 
-L 64.6 211.21525 
-Q 62.6 211.21525 62.6 213.21525 
-L 62.6 300.584 
-Q 62.6 302.584 64.6 302.584 
+     <path d="M 63.2 303.584 
+L 176.42625 303.584 
+Q 178.02625 303.584 178.02625 301.984 
+L 178.02625 232.089 
+Q 178.02625 230.489 176.42625 230.489 
+L 63.2 230.489 
+Q 61.6 230.489 61.6 232.089 
+L 61.6 301.984 
+Q 61.6 303.584 63.2 303.584 
 z
 " style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
     </g>
     <g id="PathCollection_8">
      <defs>
-      <path id="mc884765685" d="M 0 3 
+      <path id="m0ddd41b55d" d="M 0 3 
 C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
 C 2.683901 1.55874 3 0.795609 3 0 
 C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
@@ -1476,12 +1458,12 @@ z
 " style="stroke: #9370db"/>
      </defs>
      <g>
-      <use xlink:href="#mc884765685" x="76.6" y="220.149625" style="fill: #9370db; stroke: #9370db"/>
+      <use xlink:href="#m0ddd41b55d" x="72.8" y="237.6365" style="fill: #9370db; stroke: #9370db"/>
      </g>
     </g>
     <g id="text_18">
      <!-- Cheapest -->
-     <g transform="translate(94.6 222.774625) scale(0.1 -0.1)">
+     <g transform="translate(87.2 239.7365) scale(0.08 -0.08)">
       <defs>
        <path id="Georgia-43" d="M 2259 -103 
 Q 1863 -103 1498 53 
@@ -1582,7 +1564,7 @@ z
     </g>
     <g id="PathCollection_9">
      <defs>
-      <path id="m3f186553ec" d="M 0 3 
+      <path id="m2caa4f7ea2" d="M 0 3 
 C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
 C 2.683901 1.55874 3 0.795609 3 0 
 C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
@@ -1595,14 +1577,64 @@ z
 " style="stroke: #d8bfd8"/>
      </defs>
      <g>
-      <use xlink:href="#m3f186553ec" x="76.6" y="234.87775" style="fill: #d8bfd8; stroke: #d8bfd8"/>
+      <use xlink:href="#m2caa4f7ea2" x="72.8" y="249.419" style="fill: #d8bfd8; stroke: #d8bfd8"/>
      </g>
     </g>
     <g id="text_19">
-     <!-- Cheapest github caliber -->
-     <g transform="translate(94.6 237.50275) scale(0.1 -0.1)">
+     <!-- Cheapest Github Caliber -->
+     <g transform="translate(87.2 251.519) scale(0.08 -0.08)">
       <defs>
        <path id="Georgia-20" transform="scale(0.015625)"/>
+       <path id="Georgia-47" d="M 4597 1772 
+Q 4522 1763 4395 1742 
+Q 4269 1722 4191 1684 
+Q 4097 1638 4058 1552 
+Q 4019 1466 4019 1350 
+L 4019 1006 
+Q 4019 631 4023 500 
+Q 4028 369 4034 284 
+Q 3619 97 3206 -3 
+Q 2794 -103 2397 -103 
+Q 1972 -103 1578 56 
+Q 1184 216 891 509 
+Q 594 806 419 1231 
+Q 244 1656 244 2181 
+Q 244 2688 411 3120 
+Q 578 3553 884 3872 
+Q 1181 4184 1592 4357 
+Q 2003 4531 2472 4531 
+Q 2847 4531 3125 4440 
+Q 3403 4350 3616 4222 
+L 3744 4434 
+L 3994 4434 
+L 4022 2884 
+L 3766 2884 
+Q 3700 3141 3603 3389 
+Q 3506 3638 3353 3834 
+Q 3200 4031 2979 4148 
+Q 2759 4266 2453 4266 
+Q 2119 4266 1856 4130 
+Q 1594 3994 1400 3725 
+Q 1209 3466 1106 3078 
+Q 1003 2691 1003 2213 
+Q 1003 1791 1104 1417 
+Q 1206 1044 1400 772 
+Q 1594 494 1884 334 
+Q 2175 175 2544 175 
+Q 2819 175 3045 259 
+Q 3272 344 3366 438 
+Q 3391 600 3392 765 
+Q 3394 931 3394 1047 
+L 3394 1291 
+Q 3394 1422 3358 1523 
+Q 3322 1625 3209 1672 
+Q 3106 1719 2929 1742 
+Q 2753 1766 2653 1772 
+L 2653 2000 
+L 4597 2000 
+L 4597 1772 
+z
+" transform="scale(0.015625)"/>
        <path id="Georgia-62" d="M 3353 1544 
 Q 3353 850 2915 378 
 Q 2478 -94 1900 -94 
@@ -1676,25 +1708,25 @@ z
       <use xlink:href="#Georgia-73" x="326.611328"/>
       <use xlink:href="#Georgia-74" x="369.824219"/>
       <use xlink:href="#Georgia-20" x="404.345703"/>
-      <use xlink:href="#Georgia-67" x="428.466797"/>
-      <use xlink:href="#Georgia-69" x="479.394531"/>
-      <use xlink:href="#Georgia-74" x="508.691406"/>
-      <use xlink:href="#Georgia-68" x="543.212891"/>
-      <use xlink:href="#Georgia-75" x="601.416016"/>
-      <use xlink:href="#Georgia-62" x="658.935547"/>
-      <use xlink:href="#Georgia-20" x="714.941406"/>
-      <use xlink:href="#Georgia-63" x="739.0625"/>
-      <use xlink:href="#Georgia-61" x="784.472656"/>
-      <use xlink:href="#Georgia-6c" x="834.863281"/>
-      <use xlink:href="#Georgia-69" x="863.476562"/>
-      <use xlink:href="#Georgia-62" x="892.773438"/>
-      <use xlink:href="#Georgia-65" x="948.779297"/>
-      <use xlink:href="#Georgia-72" x="997.119141"/>
+      <use xlink:href="#Georgia-47" x="428.466797"/>
+      <use xlink:href="#Georgia-69" x="500.976562"/>
+      <use xlink:href="#Georgia-74" x="530.273438"/>
+      <use xlink:href="#Georgia-68" x="564.794922"/>
+      <use xlink:href="#Georgia-75" x="622.998047"/>
+      <use xlink:href="#Georgia-62" x="680.517578"/>
+      <use xlink:href="#Georgia-20" x="736.523438"/>
+      <use xlink:href="#Georgia-43" x="760.644531"/>
+      <use xlink:href="#Georgia-61" x="824.853516"/>
+      <use xlink:href="#Georgia-6c" x="875.244141"/>
+      <use xlink:href="#Georgia-69" x="903.857422"/>
+      <use xlink:href="#Georgia-62" x="933.154297"/>
+      <use xlink:href="#Georgia-65" x="989.160156"/>
+      <use xlink:href="#Georgia-72" x="1037.5"/>
      </g>
     </g>
     <g id="PathCollection_10">
      <defs>
-      <path id="ma7efa88fa1" d="M 0 3 
+      <path id="mcc3967e794" d="M 0 3 
 C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
 C 2.683901 1.55874 3 0.795609 3 0 
 C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
@@ -1707,12 +1739,119 @@ z
 " style="stroke: #3cb371"/>
      </defs>
      <g>
-      <use xlink:href="#ma7efa88fa1" x="76.6" y="249.605875" style="fill: #3cb371; stroke: #3cb371"/>
+      <use xlink:href="#mcc3967e794" x="72.8" y="261.2015" style="fill: #3cb371; stroke: #3cb371"/>
      </g>
     </g>
     <g id="text_20">
-     <!-- Cheapest smart baseline -->
-     <g transform="translate(94.6 252.230875) scale(0.1 -0.1)">
+     <!-- Cheapest Smart Baseline -->
+     <g transform="translate(87.2 263.3015) scale(0.08 -0.08)">
+      <defs>
+       <path id="Georgia-53" d="M 3066 2034 
+Q 3206 1878 3273 1692 
+Q 3341 1506 3341 1259 
+Q 3341 672 2906 290 
+Q 2472 -91 1828 -91 
+Q 1531 -91 1234 1 
+Q 938 94 722 225 
+L 588 -3 
+L 338 -3 
+L 294 1516 
+L 547 1516 
+Q 625 1234 729 1007 
+Q 834 781 1006 584 
+Q 1169 400 1386 290 
+Q 1603 181 1891 181 
+Q 2106 181 2267 237 
+Q 2428 294 2528 397 
+Q 2628 500 2676 639 
+Q 2725 778 2725 959 
+Q 2725 1225 2575 1454 
+Q 2425 1684 2128 1803 
+Q 1925 1884 1662 1982 
+Q 1400 2081 1209 2169 
+Q 834 2338 626 2611 
+Q 419 2884 419 3325 
+Q 419 3578 522 3797 
+Q 625 4016 816 4188 
+Q 997 4350 1244 4442 
+Q 1491 4534 1759 4534 
+Q 2066 4534 2308 4440 
+Q 2550 4347 2750 4222 
+L 2878 4434 
+L 3128 4434 
+L 3153 2963 
+L 2900 2963 
+Q 2831 3216 2745 3447 
+Q 2659 3678 2522 3866 
+Q 2388 4047 2194 4155 
+Q 2000 4263 1719 4263 
+Q 1422 4263 1212 4072 
+Q 1003 3881 1003 3606 
+Q 1003 3319 1137 3130 
+Q 1272 2941 1528 2819 
+Q 1756 2709 1976 2629 
+Q 2197 2550 2403 2459 
+Q 2591 2378 2764 2275 
+Q 2938 2172 3066 2034 
+z
+" transform="scale(0.015625)"/>
+       <path id="Georgia-42" d="M 3450 2066 
+Q 3644 1934 3772 1721 
+Q 3900 1509 3900 1206 
+Q 3900 897 3765 669 
+Q 3631 441 3416 294 
+Q 3206 150 2942 75 
+Q 2678 0 2397 0 
+L 297 0 
+L 297 222 
+Q 372 228 515 248 
+Q 659 269 722 297 
+Q 819 341 859 414 
+Q 900 488 900 603 
+L 900 3791 
+Q 900 3897 864 3978 
+Q 828 4059 722 4109 
+Q 628 4156 512 4181 
+Q 397 4206 319 4213 
+L 319 4434 
+L 2366 4434 
+Q 2603 4434 2820 4387 
+Q 3038 4341 3234 4222 
+Q 3419 4113 3537 3925 
+Q 3656 3738 3656 3469 
+Q 3656 3234 3572 3051 
+Q 3488 2869 3334 2738 
+Q 3191 2613 3005 2527 
+Q 2819 2441 2603 2394 
+L 2603 2366 
+Q 2794 2344 3030 2270 
+Q 3266 2197 3450 2066 
+z
+M 2697 2734 
+Q 2813 2869 2858 3028 
+Q 2903 3188 2903 3406 
+Q 2903 3772 2703 3980 
+Q 2503 4188 2072 4188 
+Q 1972 4188 1820 4183 
+Q 1669 4178 1566 4175 
+L 1566 2472 
+L 1963 2472 
+Q 2219 2472 2401 2537 
+Q 2584 2603 2697 2734 
+z
+M 3128 1319 
+Q 3128 1713 2864 1966 
+Q 2600 2219 2109 2219 
+Q 1909 2219 1771 2214 
+Q 1634 2209 1566 2206 
+L 1566 644 
+Q 1566 447 1725 347 
+Q 1884 247 2169 247 
+Q 2634 247 2881 519 
+Q 3128 791 3128 1319 
+z
+" transform="scale(0.015625)"/>
+      </defs>
       <use xlink:href="#Georgia-43"/>
       <use xlink:href="#Georgia-68" x="64.208984"/>
       <use xlink:href="#Georgia-65" x="122.412109"/>
@@ -1722,25 +1861,25 @@ z
       <use xlink:href="#Georgia-73" x="326.611328"/>
       <use xlink:href="#Georgia-74" x="369.824219"/>
       <use xlink:href="#Georgia-20" x="404.345703"/>
-      <use xlink:href="#Georgia-73" x="428.466797"/>
-      <use xlink:href="#Georgia-6d" x="471.679688"/>
-      <use xlink:href="#Georgia-61" x="559.765625"/>
-      <use xlink:href="#Georgia-72" x="610.15625"/>
-      <use xlink:href="#Georgia-74" x="651.123047"/>
-      <use xlink:href="#Georgia-20" x="685.644531"/>
-      <use xlink:href="#Georgia-62" x="709.765625"/>
-      <use xlink:href="#Georgia-61" x="765.771484"/>
-      <use xlink:href="#Georgia-73" x="816.162109"/>
-      <use xlink:href="#Georgia-65" x="859.375"/>
-      <use xlink:href="#Georgia-6c" x="907.714844"/>
-      <use xlink:href="#Georgia-69" x="936.328125"/>
-      <use xlink:href="#Georgia-6e" x="965.625"/>
-      <use xlink:href="#Georgia-65" x="1024.707031"/>
+      <use xlink:href="#Georgia-53" x="428.466797"/>
+      <use xlink:href="#Georgia-6d" x="484.570312"/>
+      <use xlink:href="#Georgia-61" x="572.65625"/>
+      <use xlink:href="#Georgia-72" x="623.046875"/>
+      <use xlink:href="#Georgia-74" x="664.013672"/>
+      <use xlink:href="#Georgia-20" x="698.535156"/>
+      <use xlink:href="#Georgia-42" x="722.65625"/>
+      <use xlink:href="#Georgia-61" x="788.037109"/>
+      <use xlink:href="#Georgia-73" x="838.427734"/>
+      <use xlink:href="#Georgia-65" x="881.640625"/>
+      <use xlink:href="#Georgia-6c" x="929.980469"/>
+      <use xlink:href="#Georgia-69" x="958.59375"/>
+      <use xlink:href="#Georgia-6e" x="987.890625"/>
+      <use xlink:href="#Georgia-65" x="1046.972656"/>
      </g>
     </g>
     <g id="PathCollection_11">
      <defs>
-      <path id="mdf91480e9e" d="M 0 3 
+      <path id="m4dcc7bf558" d="M 0 3 
 C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
 C 2.683901 1.55874 3 0.795609 3 0 
 C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
@@ -1753,12 +1892,12 @@ z
 " style="stroke: #00ffff"/>
      </defs>
      <g>
-      <use xlink:href="#mdf91480e9e" x="76.6" y="264.334" style="fill: #00ffff; stroke: #00ffff"/>
+      <use xlink:href="#m4dcc7bf558" x="72.8" y="272.984" style="fill: #00ffff; stroke: #00ffff"/>
      </g>
     </g>
     <g id="text_21">
      <!-- Fastest -->
-     <g transform="translate(94.6 266.959) scale(0.1 -0.1)">
+     <g transform="translate(87.2 275.084) scale(0.08 -0.08)">
       <defs>
        <path id="Georgia-46" d="M 3747 3325 
 L 3513 3325 
@@ -1815,7 +1954,7 @@ z
     </g>
     <g id="PathCollection_12">
      <defs>
-      <path id="mf983ac7251" d="M 0 3 
+      <path id="mf93adaa6ac" d="M 0 3 
 C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
 C 2.683901 1.55874 3 0.795609 3 0 
 C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
@@ -1828,12 +1967,12 @@ z
 " style="stroke: #4682b4"/>
      </defs>
      <g>
-      <use xlink:href="#mf983ac7251" x="76.6" y="279.062125" style="fill: #4682b4; stroke: #4682b4"/>
+      <use xlink:href="#mf93adaa6ac" x="72.8" y="284.7665" style="fill: #4682b4; stroke: #4682b4"/>
      </g>
     </g>
     <g id="text_22">
-     <!-- Fastest github caliber -->
-     <g transform="translate(94.6 281.687125) scale(0.1 -0.1)">
+     <!-- Fastest Github Caliber -->
+     <g transform="translate(87.2 286.8665) scale(0.08 -0.08)">
       <use xlink:href="#Georgia-46"/>
       <use xlink:href="#Georgia-61" x="59.912109"/>
       <use xlink:href="#Georgia-73" x="110.302734"/>
@@ -1842,25 +1981,25 @@ z
       <use xlink:href="#Georgia-73" x="236.376953"/>
       <use xlink:href="#Georgia-74" x="279.589844"/>
       <use xlink:href="#Georgia-20" x="314.111328"/>
-      <use xlink:href="#Georgia-67" x="338.232422"/>
-      <use xlink:href="#Georgia-69" x="389.160156"/>
-      <use xlink:href="#Georgia-74" x="418.457031"/>
-      <use xlink:href="#Georgia-68" x="452.978516"/>
-      <use xlink:href="#Georgia-75" x="511.181641"/>
-      <use xlink:href="#Georgia-62" x="568.701172"/>
-      <use xlink:href="#Georgia-20" x="624.707031"/>
-      <use xlink:href="#Georgia-63" x="648.828125"/>
-      <use xlink:href="#Georgia-61" x="694.238281"/>
-      <use xlink:href="#Georgia-6c" x="744.628906"/>
-      <use xlink:href="#Georgia-69" x="773.242188"/>
-      <use xlink:href="#Georgia-62" x="802.539062"/>
-      <use xlink:href="#Georgia-65" x="858.544922"/>
-      <use xlink:href="#Georgia-72" x="906.884766"/>
+      <use xlink:href="#Georgia-47" x="338.232422"/>
+      <use xlink:href="#Georgia-69" x="410.742188"/>
+      <use xlink:href="#Georgia-74" x="440.039062"/>
+      <use xlink:href="#Georgia-68" x="474.560547"/>
+      <use xlink:href="#Georgia-75" x="532.763672"/>
+      <use xlink:href="#Georgia-62" x="590.283203"/>
+      <use xlink:href="#Georgia-20" x="646.289062"/>
+      <use xlink:href="#Georgia-43" x="670.410156"/>
+      <use xlink:href="#Georgia-61" x="734.619141"/>
+      <use xlink:href="#Georgia-6c" x="785.009766"/>
+      <use xlink:href="#Georgia-69" x="813.623047"/>
+      <use xlink:href="#Georgia-62" x="842.919922"/>
+      <use xlink:href="#Georgia-65" x="898.925781"/>
+      <use xlink:href="#Georgia-72" x="947.265625"/>
      </g>
     </g>
     <g id="PathCollection_13">
      <defs>
-      <path id="me80d2b94df" d="M 0 3 
+      <path id="mf3d22ff23e" d="M 0 3 
 C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
 C 2.683901 1.55874 3 0.795609 3 0 
 C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
@@ -1873,12 +2012,12 @@ z
 " style="stroke: #bdb76b"/>
      </defs>
      <g>
-      <use xlink:href="#me80d2b94df" x="76.6" y="293.79025" style="fill: #bdb76b; stroke: #bdb76b"/>
+      <use xlink:href="#mf3d22ff23e" x="72.8" y="296.549" style="fill: #bdb76b; stroke: #bdb76b"/>
      </g>
     </g>
     <g id="text_23">
-     <!-- Fastest smart baseline -->
-     <g transform="translate(94.6 296.41525) scale(0.1 -0.1)">
+     <!-- Fastest Smart Baseline -->
+     <g transform="translate(87.2 298.649) scale(0.08 -0.08)">
       <use xlink:href="#Georgia-46"/>
       <use xlink:href="#Georgia-61" x="59.912109"/>
       <use xlink:href="#Georgia-73" x="110.302734"/>
@@ -1887,27 +2026,27 @@ z
       <use xlink:href="#Georgia-73" x="236.376953"/>
       <use xlink:href="#Georgia-74" x="279.589844"/>
       <use xlink:href="#Georgia-20" x="314.111328"/>
-      <use xlink:href="#Georgia-73" x="338.232422"/>
-      <use xlink:href="#Georgia-6d" x="381.445312"/>
-      <use xlink:href="#Georgia-61" x="469.53125"/>
-      <use xlink:href="#Georgia-72" x="519.921875"/>
-      <use xlink:href="#Georgia-74" x="560.888672"/>
-      <use xlink:href="#Georgia-20" x="595.410156"/>
-      <use xlink:href="#Georgia-62" x="619.53125"/>
-      <use xlink:href="#Georgia-61" x="675.537109"/>
-      <use xlink:href="#Georgia-73" x="725.927734"/>
-      <use xlink:href="#Georgia-65" x="769.140625"/>
-      <use xlink:href="#Georgia-6c" x="817.480469"/>
-      <use xlink:href="#Georgia-69" x="846.09375"/>
-      <use xlink:href="#Georgia-6e" x="875.390625"/>
-      <use xlink:href="#Georgia-65" x="934.472656"/>
+      <use xlink:href="#Georgia-53" x="338.232422"/>
+      <use xlink:href="#Georgia-6d" x="394.335938"/>
+      <use xlink:href="#Georgia-61" x="482.421875"/>
+      <use xlink:href="#Georgia-72" x="532.8125"/>
+      <use xlink:href="#Georgia-74" x="573.779297"/>
+      <use xlink:href="#Georgia-20" x="608.300781"/>
+      <use xlink:href="#Georgia-42" x="632.421875"/>
+      <use xlink:href="#Georgia-61" x="697.802734"/>
+      <use xlink:href="#Georgia-73" x="748.193359"/>
+      <use xlink:href="#Georgia-65" x="791.40625"/>
+      <use xlink:href="#Georgia-6c" x="839.746094"/>
+      <use xlink:href="#Georgia-69" x="868.359375"/>
+      <use xlink:href="#Georgia-6e" x="897.65625"/>
+      <use xlink:href="#Georgia-65" x="956.738281"/>
      </g>
     </g>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p1553a9a70d">
+  <clipPath id="pa144f0d631">
    <rect x="57.6" y="41.472" width="357.12" height="266.112"/>
   </clipPath>
  </defs>
