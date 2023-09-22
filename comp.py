@@ -6,12 +6,10 @@ import pandas as pd
 comp_path = 'contrast'
 
 
-def comp(idx):
+def comp_ga_bf():
     idx_modu_map = {
         0: ['ga_a0', 'bruteforce_a0'],
-        1: ['ga_a1', 'bruteforce_a1'],
-        2: ['ga_a0', 'ga_a0_ig'],
-        3: ['ga_a1', 'ga_a1_ig']
+        1: ['ga_a1', 'bruteforce_a1']
     }
     comp_dfs = [pd.DataFrame(None,
                              columns=['project',
@@ -28,18 +26,18 @@ def comp(idx):
                                       'bf_period',
                                       'runtime_rate',
                                       'price_rate',
-                                      'period_rate',
+                                      'period_difference_value',
                                       'difference'
                                       ]) for _ in range(2)]
-    summary_df = pd.DataFrame(None,
-                              columns=['project',
-                                       'total_num',
-                                       'avg_runtime_rate',
-                                       'avg_price_rate',
-                                       'avg_period_rate',
-                                       'different_confs_num',
-                                       'difference_rate'
-                                       ])
+    summary_dfs = [pd.DataFrame(None,
+                                columns=['project',
+                                         'total_num',
+                                         'avg_runtime_rate',
+                                         'avg_price_rate',
+                                         'sum_period_difference_value',
+                                         'different_confs_num',
+                                         'difference_rate'
+                                         ]) for _ in range(2)]
 
     def cmp(d1, d2):
         if len(d1) != len(d2):
@@ -56,7 +54,7 @@ def comp(idx):
 
     def reco_info(idx):
         subdir1 = idx_modu_map[idx][0]
-        subdir2 = idx_modu_map[idx][0]
+        subdir2 = idx_modu_map[idx][1]
         csvs = os.listdir(f'ext_dat/{subdir1}')
         for csv in csvs:
             proj_name = csv.replace('.csv', '')
@@ -66,7 +64,7 @@ def comp(idx):
             tot_num = len(bf)
             tot_runtime_rate = 0
             tot_price_rate = 0
-            tot_period_rate = 0
+            tot_period_diff = 0
             for j in range(tot_num):
                 ga_itm = ga.iloc[j, :]
                 bf_itm = bf.iloc[j, :]
@@ -75,7 +73,10 @@ def comp(idx):
                 bf_runtime, bf_price, bf_period = get_info(bf_itm)
                 runtime_rate = ga_runtime / bf_runtime
                 price_rate = ga_price / bf_price
-                period_rate = ga_period / bf_period
+                period_diff = bf_period - ga_period
+                tot_runtime_rate += runtime_rate
+                tot_price_rate += price_rate
+                tot_period_diff += period_diff
                 if diff:
                     diff_cnt += 1
                 comp_dfs[idx].loc[len(comp_dfs[idx].index)] = [
@@ -93,15 +94,15 @@ def comp(idx):
                     bf_period,
                     runtime_rate,
                     price_rate,
-                    period_rate,
+                    period_diff,
                     diff
                 ]
-            summary_df.loc[len(summary_df.index)] = [
+            summary_dfs[idx].loc[len(summary_dfs[idx].index)] = [
                 proj_name,
                 tot_num,
                 tot_runtime_rate / tot_num,
                 tot_price_rate / tot_num,
-                tot_period_rate / tot_num,
+                tot_period_diff,
                 diff_cnt,
                 diff_cnt / tot_num
             ]
@@ -110,7 +111,8 @@ def comp(idx):
     reco_info(1)
     comp_dfs[0].to_csv(f'{comp_path}/ga_bf_a0.csv', sep=',', header=True, index=False)
     comp_dfs[1].to_csv(f'{comp_path}/ga_bf_a1.csv', sep=',', header=True, index=False)
-    summary_df.to_csv(f'{comp_path}/ga_bf_summary.csv', sep=',', header=True, index=False)
+    summary_dfs[0].to_csv(f'{comp_path}/ga_bf_a0_summary.csv', sep=',', header=True, index=False)
+    summary_dfs[1].to_csv(f'{comp_path}/ga_bf_a1_summary.csv', sep=',', header=True, index=False)
 
 
 def comp_confs(a: str, b: str):
@@ -158,6 +160,6 @@ def comp_confs(a: str, b: str):
 
 
 if __name__ == '__main__':
-    comp()
+    comp_ga_bf()
     # comp_confs('non_ig', 'ig')
     # comp_confs('ga', 'bf')

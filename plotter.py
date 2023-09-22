@@ -318,13 +318,13 @@ def draw_tread_graph():
                  avg_chp[:, 0],
                  avg_chp[:, 1],
                  0,
-                 ['Average Runtime', 'Average Price'])
+                 ['Average Runtime Ratio', 'Average Price Ratio'])
     draw_subplot(norm_axes[1],
                  avg_fst[:, 2],
                  avg_fst[:, 0],
                  avg_fst[:, 1],
                  1,
-                 ['Average Runtime', 'Average Price'])
+                 ['Average Runtime Ratio', 'Average Price Ratio'])
     norm_fig.suptitle('Average Trend', size=12, weight='bold')
     plt.savefig(f'integ_fig/ga_trend_graph/unification.svg')
     plt.close()
