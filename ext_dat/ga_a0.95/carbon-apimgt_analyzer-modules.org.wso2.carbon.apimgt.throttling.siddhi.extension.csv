@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,score,period
 carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,1-0,1,{'26CPU2Mem4GB.sh': 1},27.26556,27.26556,0.22435011619999998,0.0,0,0.19824475311404166,0.09299969673156738
 carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,1-0.2,1,{'26CPU2Mem4GB.sh': 1},27.26556,27.26556,0.22435011619999998,0.0,0,0.19824475311404166,0.017852783203125
@@ -41,3 +42,48 @@ carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extensio
 carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12-0.6,4,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 2, '26CPU2Mem4GB.sh': 1}",67.78835666666656,27.26556,0.8841854163666653,0.0,0,0.5092013614495629,0.06311607360839844
 carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12-0.8,1,{'29CPU4Mem8GB.sh': 12},66.4762999999999,16.578153333333333,1.0939783103333316,0.0,0,0.5106909949002423,0.06597709655761719
 carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12-1,3,"{'29CPU4Mem8GB.sh': 7, '01noThrottling.sh': 3, '26CPU2Mem4GB.sh': 2}",67.79490666666662,17.253256666666672,0.8888458266555548,0.0,0,0.509479311482046,0.06617856025695801
+=======
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,1-0,1,{'26CPU2Mem4GB.sh': 1},27.26556,27.26556,0.22435011619999998,0.0,0,0.1613154411315918
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,1-0.2,1,{'26CPU2Mem4GB.sh': 1},27.26556,27.26556,0.22435011619999998,0.0,0,0.03295254707336426
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,1-0.4,1,{'26CPU2Mem4GB.sh': 1},27.26556,27.26556,0.22435011619999998,0.0,0,0.03210616111755371
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,1-0.6,1,{'26CPU2Mem4GB.sh': 1},27.26556,27.26556,0.22435011619999998,0.0,0,0.031932830810546875
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,1-0.8,1,{'26CPU2Mem4GB.sh': 1},27.26556,27.26556,0.22435011619999998,0.0,0,0.031242847442626953
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,1-1,1,{'26CPU2Mem4GB.sh': 1},27.26556,27.26556,0.22435011619999998,0.0,0,0.03241872787475586
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,2-0,1,{'26CPU2Mem4GB.sh': 2},31.498406666666675,17.253256666666672,0.2591793895222223,0.0,0,0.08886337280273438
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,2-0.2,2,"{'27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 1}",30.915063333333304,27.276476666666632,0.3355159414999997,0.0,0,0.050676584243774414
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,2-0.4,1,{'26CPU2Mem4GB.sh': 2},31.498406666666675,17.253256666666672,0.2591793895222223,0.0,0,0.08926010131835938
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,2-0.6,1,{'26CPU2Mem4GB.sh': 2},31.498406666666675,17.253256666666672,0.2591793895222223,0.0,0,0.08862066268920898
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,2-0.8,1,{'26CPU2Mem4GB.sh': 2},31.498406666666675,17.253256666666672,0.2591793895222223,0.0,0,0.0879828929901123
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,2-1,1,{'26CPU2Mem4GB.sh': 2},31.498406666666675,17.253256666666672,0.2591793895222223,0.0,0,0.08942031860351562
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,4-0,2,"{'01noThrottling.sh': 2, '26CPU2Mem4GB.sh': 2}",38.77558000000002,17.253256666666672,0.40050209565555583,0.0,0,0.05570483207702637
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,4-0.2,3,"{'28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 2, '26CPU2Mem4GB.sh': 1}",38.76967999999997,27.26556,0.3975810349999995,0.0,0,0.04999566078186035
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,4-0.4,1,{'29CPU4Mem8GB.sh': 4},37.469739999999966,16.578153333333333,0.6166270212666661,0.0,0,0.08757495880126953
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,4-0.6,1,{'29CPU4Mem8GB.sh': 4},37.469739999999966,16.578153333333333,0.6166270212666661,0.0,0,0.08643031120300293
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,4-0.8,3,"{'27CPU2Mem8GB.sh': 2, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",38.7799466666666,17.264513333333298,0.4363461575999993,0.0,0,0.08693385124206543
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,4-1,3,"{'29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 1, '26CPU2Mem4GB.sh': 1}",38.15578666666666,27.26556,0.4143492915333331,0.0,0,0.050759315490722656
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,6-0,2,"{'29CPU4Mem8GB.sh': 5, '26CPU2Mem4GB.sh': 1}",45.39465999999995,27.26556,0.5226946718666658,0.0,0,0.06459808349609375
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,6-0.2,1,{'29CPU4Mem8GB.sh': 6},44.72137999999995,16.578153333333333,0.7359648435333325,0.0,0,0.09239387512207031
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,6-0.4,2,"{'29CPU4Mem8GB.sh': 3, '26CPU2Mem4GB.sh': 3}",46.60871333333332,17.253256666666672,0.4730153962444441,0.0,0,0.05499982833862305
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,6-0.6,3,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 2, '26CPU2Mem4GB.sh': 1}",45.420193333333316,27.26556,0.544679555733333,0.0,0,0.05398273468017578
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,6-0.8,3,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 4, '01noThrottling.sh': 1}",45.41834333333327,27.276476666666632,0.5741915860333324,0.0,0,0.05420851707458496
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,6-1,3,"{'29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 3, '26CPU2Mem4GB.sh': 1}",45.432959999999994,27.26556,0.5556719976666666,0.0,0,0.05481910705566406
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,8-0,3,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 6, '01noThrottling.sh': 1}",52.66998333333325,27.276476666666632,0.6935294082999988,0.0,0,0.06015586853027344
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,8-0.2,1,{'29CPU4Mem8GB.sh': 8},51.97301999999993,16.578153333333333,0.8553026657999988,0.0,0,0.09357166290283203
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,8-0.4,3,"{'29CPU4Mem8GB.sh': 5, '01noThrottling.sh': 2, '26CPU2Mem4GB.sh': 1}",52.671833333333296,27.26556,0.6640173779999994,0.0,0,0.06262540817260742
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,8-0.6,3,"{'29CPU4Mem8GB.sh': 5, '01noThrottling.sh': 1, '26CPU2Mem4GB.sh': 2}",53.266093333333295,17.253256666666672,0.6281852982555549,0.0,0,0.06855010986328125
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,8-0.8,2,"{'29CPU4Mem8GB.sh': 7, '26CPU2Mem4GB.sh': 1}",52.64629999999993,27.26556,0.6420324941333322,0.0,0,0.09373331069946289
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,8-1,1,{'29CPU4Mem8GB.sh': 8},51.97301999999993,16.578153333333333,0.8553026657999988,0.0,0,0.09201622009277344
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,10-0,1,{'29CPU4Mem8GB.sh': 10},59.22465999999991,16.578153333333333,0.9746404880666651,0.0,0,0.10031604766845703
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,10-0.2,1,{'29CPU4Mem8GB.sh': 10},59.22465999999991,16.578153333333333,0.9746404880666651,0.0,0,0.09534931182861328
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,10-0.4,1,{'29CPU4Mem8GB.sh': 10},59.22465999999991,16.578153333333333,0.9746404880666651,0.0,0,0.09651422500610352
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,10-0.6,3,"{'29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 1, '26CPU2Mem4GB.sh': 1}",59.9107066666666,27.26556,0.7723627583333321,0.0,0,0.059246063232421875
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,10-0.8,1,{'29CPU4Mem8GB.sh': 10},59.22465999999991,16.578153333333333,0.9746404880666651,0.0,0,0.09485292434692383
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,10-1,1,{'29CPU4Mem8GB.sh': 10},59.22465999999991,16.578153333333333,0.9746404880666651,0.0,0,0.09669733047485352
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12-0,1,{'29CPU4Mem8GB.sh': 12},66.4762999999999,16.578153333333333,1.0939783103333316,0.0,0,0.09954476356506348
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12-0.2,2,"{'29CPU4Mem8GB.sh': 11, '26CPU2Mem4GB.sh': 1}",67.1495799999999,27.26556,0.880708138666665,0.0,0,0.09401273727416992
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12-0.4,3,"{'29CPU4Mem8GB.sh': 10, '01noThrottling.sh': 1, '26CPU2Mem4GB.sh': 1}",67.16234666666656,27.26556,0.8917005805999985,0.0,0,0.06381034851074219
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12-0.6,4,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 8, '01noThrottling.sh': 2, '26CPU2Mem4GB.sh': 1}",67.78835666666656,27.26556,0.8841854163666653,0.0,0,0.10051989555358887
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12-0.8,1,{'29CPU4Mem8GB.sh': 12},66.4762999999999,16.578153333333333,1.0939783103333316,0.0,0,0.09869790077209473
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12-1,3,"{'29CPU4Mem8GB.sh': 7, '01noThrottling.sh': 3, '26CPU2Mem4GB.sh': 2}",67.79490666666662,17.253256666666672,0.8888458266555548,0.0,0,0.10055160522460938
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

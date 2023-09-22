@@ -1,5 +1,8 @@
 {'26CPU2Mem4GB.sh': ['org.springframework.boot.dependency.tools.PropertiesFileDependenciesTests#findByArtifactIdMissing',
+<<<<<<< HEAD
                      'org.springframework.boot.dependency.tools.PropertiesFileDependenciesTests#findByArtifactAndGroupIdOnlyInEffectivePom',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.dependency.tools.PropertiesFileDependenciesTests#exludes',
                      'org.springframework.boot.dependency.tools.PropertiesFileDependenciesTests#findByArtifactAndGroupId',
                      'org.springframework.boot.dependency.tools.PropertiesFileDependenciesTests#findByArtifactAndGroupIdMissing',
@@ -46,7 +49,12 @@
                      'org.springframework.boot.loader.data.RandomAccessDataFileTests#fileExistsWithConcurrentReads',
                      'org.springframework.boot.loader.data.RandomAccessDataFileTests#concurrentReads',
                      'org.springframework.boot.loader.data.RandomAccessDataFileTests#inputStreamReadNullBytes',
+<<<<<<< HEAD
                      'org.springframework.boot.loader.data.RandomAccessDataFileTests#intputStreamReadNullBytesWithOffset',
+=======
+                     'org.springframework.boot.loader.data.RandomAccessDataFileTests#subsection',
+                     'org.springframework.boot.loader.data.RandomAccessDataFileTests#inputStreamReadBytesPastSubsection',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.loader.data.RandomAccessDataFileTests#inputStreamSkipMoreThanAvailable',
                      'org.springframework.boot.loader.data.RandomAccessDataFileTests#inputStreamReadBytes',
                      'org.springframework.boot.loader.data.RandomAccessDataFileTests#subsectionZeroLength',
@@ -112,7 +120,6 @@
                      'org.springframework.boot.context.config.RandomValuePropertySourceTests#string',
                      'org.springframework.boot.context.config.RandomValuePropertySourceTests#longValue',
                      'org.springframework.boot.context.config.RandomValuePropertySourceTests#intValue',
-                     'org.springframework.boot.context.config.RandomValuePropertySourceTests#notRandom',
                      'org.springframework.boot.BannerTests#testDefaultBanner',
                      'org.springframework.boot.BannerTests#testCustomBanner',
                      'org.springframework.boot.yaml.ArrayDocumentMatcherTests#testDoesNotMatchesIndexedArray',
@@ -158,7 +165,14 @@
                      'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#sessionTimeout',
                      'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#addNullContextCustomizersThrows',
                      'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#defaultUriEncoding',
+<<<<<<< HEAD
                      'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#basicSsl',
+=======
+                     'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#tomcatAdditionalConnectors',
+                     'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#tomcatListeners',
+                     'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#basicSsl',
+                     'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#contextRootPathMustNotBeSlash',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#documentRoot',
                      'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#mimeType',
                      'org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactoryTests#startBlocksUntilReadyToServe',
@@ -185,16 +199,27 @@
                      'org.springframework.boot.logging.logback.LevelRemappingAppenderTests#customRemaps',
                      'org.springframework.boot.logging.logback.LevelRemappingAppenderTests#useRootLoggerIfNoDestination',
                      'org.springframework.boot.logging.logback.LevelRemappingAppenderTests#defaltRemapsInfo',
+<<<<<<< HEAD
                      'org.springframework.boot.jta.bitronix.PoolingDataSourceBeanTests#doesNotSetUniqueNameIfNotNull',
                      'org.springframework.boot.jta.bitronix.PoolingDataSourceBeanTests#setDataSource',
                      'org.springframework.boot.json.SimpleJsonParserTests#testSimpleList',
                      'org.springframework.boot.json.SimpleJsonParserTests#testSimpleMap',
+=======
+                     'org.springframework.boot.jta.bitronix.PoolingDataSourceBeanTests#sensbileDefaults',
+                     'org.springframework.boot.jta.bitronix.PoolingDataSourceBeanTests#doesNotSetUniqueNameIfNotNull',
+                     'org.springframework.boot.jta.bitronix.PoolingDataSourceBeanTests#setDataSource',
+                     'org.springframework.boot.jta.bitronix.PoolingDataSourceBeanTests#setsUniqueNameIfNull',
+                     'org.springframework.boot.json.SimpleJsonParserTests#testSimpleList',
+                     'org.springframework.boot.json.SimpleJsonParserTests#testSimpleMap',
+                     'org.springframework.boot.json.SimpleJsonParserTests#testEmptyList',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.json.SimpleJsonParserTests#testListOfMaps',
                      'org.springframework.boot.json.SimpleJsonParserTests#testEmptyMap',
                      'org.springframework.boot.json.SimpleJsonParserTests#testDoubleValie',
                      'org.springframework.boot.json.SimpleJsonParserTests#testMapOfLists',
                      'org.springframework.boot.test.SpringApplicationConfigurationDefaultConfigurationTests#nestedConfigClasses',
                      'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#setUrlPatternMustNotBeNull',
+<<<<<<< HEAD
                      'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#addServletNameMustNotBeNull',
                      'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#specificName',
                      'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#createServletRegistrationBeanMustNotBeNull',
@@ -203,6 +228,25 @@
                      'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#withSpecificDispatcherTypesEnumSet',
                      'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#withSpecificDispatcherTypes',
                      'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#createServletMustNotBeNull',
+=======
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#startupWithDefaults',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#addServletNameMustNotBeNull',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#setServletRegistrationBeanReplacesValue',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#specificName',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#addServletRegistrationBeanMustNotBeNull',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#createServletRegistrationBeanMustNotBeNull',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#setServletNameMustNotBeNull',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#setFilterMustNotBeNull',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#deducedName',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#modifyInitParameters',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#addUrlPatternMustNotBeNull',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#withSpecificDispatcherTypesEnumSet',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#disable',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#withSpecificDispatcherTypes',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#createServletMustNotBeNull',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#setServletRegistrationBeanMustNotBeNull',
+                     'org.springframework.boot.context.embedded.FilterRegistrationBeanTests#startupWithSpecifiedValues',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.json.YamlJsonParserTests#testSimpleList',
                      'org.springframework.boot.json.YamlJsonParserTests#testSimpleMap',
                      'org.springframework.boot.json.YamlJsonParserTests#testEmptyList',
@@ -224,10 +268,20 @@
                      'org.springframework.boot.context.embedded.EmbeddedServletContainerMvcIntegrationTests#jetty',
                      'org.springframework.boot.context.embedded.EmbeddedServletContainerMvcIntegrationTests#advancedConfig',
                      'org.springframework.boot.logging.logback.ColorConverterTests#yellow',
+<<<<<<< HEAD
                      'org.springframework.boot.logging.logback.ColorConverterTests#cyan',
                      'org.springframework.boot.logging.logback.ColorConverterTests#highlightTrace',
                      'org.springframework.boot.logging.logback.ColorConverterTests#magenta',
                      'org.springframework.boot.logging.logback.ColorConverterTests#highlightWarn',
+=======
+                     'org.springframework.boot.logging.logback.ColorConverterTests#blue',
+                     'org.springframework.boot.logging.logback.ColorConverterTests#cyan',
+                     'org.springframework.boot.logging.logback.ColorConverterTests#highlightDebug',
+                     'org.springframework.boot.logging.logback.ColorConverterTests#highlightTrace',
+                     'org.springframework.boot.logging.logback.ColorConverterTests#magenta',
+                     'org.springframework.boot.logging.logback.ColorConverterTests#highlightWarn',
+                     'org.springframework.boot.context.embedded.ServletListenerRegistrationBeanTests#startupWithDefaults',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.context.embedded.ServletListenerRegistrationBeanTests#cannotRegisterUnsupportedType',
                      'org.springframework.boot.context.embedded.ServletListenerRegistrationBeanTests#disable',
                      'org.springframework.boot.test.SpringApplicationIntegrationTestTests#runAndTestHttpEndpoint',
@@ -264,6 +318,10 @@
                      'org.springframework.boot.context.properties.EnableConfigurationPropertiesTests#testMultipleExplicitTypes',
                      'org.springframework.boot.context.properties.EnableConfigurationPropertiesTests#testNestedSystemPropertiesBindingWithUnderscore',
                      'org.springframework.boot.context.properties.EnableConfigurationPropertiesTests#testNestedSystemPropertiesBinding',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.bind.PropertySourcesBindingTests#overridingOfPropertiesAndBindToAtValue',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.test.SpringApplicationContextLoaderTests#environmentPropertiesSeparatorInValue',
                      'org.springframework.boot.test.SpringApplicationContextLoaderTests#environmentPropertiesAppend',
                      'org.springframework.boot.test.SpringApplicationContextLoaderTests#environmentPropertiesAnotherSeparatorInValue',
@@ -272,18 +330,31 @@
                      'org.springframework.boot.bind.BindingPreparationTests#testAutoGrowNewNestedMapOfBeansWithPeriod',
                      'org.springframework.boot.bind.BindingPreparationTests#testBeanWrapperCreatesNewMaps',
                      'org.springframework.boot.bind.BindingPreparationTests#testAutoGrowNewNestedMapOfListOfString',
+                     'org.springframework.boot.bind.BindingPreparationTests#testBeanWrapperCreatesNewMapEntries',
+                     'org.springframework.boot.bind.BindingPreparationTests#testAutoGrowListOfMaps',
                      'org.springframework.boot.bind.BindingPreparationTests#testAutoGrowWithFuzzyNameUnderscores',
                      'org.springframework.boot.bind.BindingPreparationTests#testBeanWrapperLists',
                      'org.springframework.boot.bind.BindingPreparationTests#testBeanWrapperCreatesNewNestedMaps',
                      'org.springframework.boot.bind.BindingPreparationTests#testBeanWrapperCreatesNewObjects',
                      'org.springframework.boot.bind.BindingPreparationTests#testAutoGrowWithFuzzyNameCapitals',
                      'org.springframework.boot.bind.BindingPreparationTests#testAutoGrowListOfLists',
+<<<<<<< HEAD
                      'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testSize',
+=======
+                     'org.springframework.boot.bind.BindingPreparationTests#testAutoGrowNewNestedMapOfBeans',
+                     'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testCompositeValue',
+                     'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testSize',
+                     'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testPlaceholdersBindingNonEnumerable',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testPlaceholdersBinding',
                      'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testNonEnumeratedValue',
                      'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testEnumeratedValue',
                      'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testNonEnumeratedPlaceholder',
                      'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testPlaceholdersBindingWithError',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testOverriddenValue',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.bind.PropertySourcesPropertyValuesTests#testPlaceholdersErrorInNonEnumerable',
                      'org.springframework.boot.context.config.DelegatingApplicationListenerTests#orderedInitialize',
                      'org.springframework.boot.context.config.DelegatingApplicationListenerTests#emptyInitializers',
@@ -324,10 +395,21 @@
                      'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessorTests#testInitializersSeeBoundProperties',
                      'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessorTests#testValueBindingForDefaults',
                      'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessorTests#testSuccessfulValidationWithJSR303',
+<<<<<<< HEAD
                      'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testBindToNamedTarget',
                      'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testValidationErrorCanBeSuppressed',
                      'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testUnknownPropertyCausesLoadFailure',
                      'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testMissingPropertyCausesValidationError',
+=======
+                     'org.springframework.boot.bind.SimplerPropertySourcesBindingTests#overridingOfPropertiesWorksAsExpected',
+                     'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testBindToNamedTarget',
+                     'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testValidationErrorCanBeSuppressed',
+                     'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testValidPropertiesLoadsWithDash',
+                     'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testValidPropertiesLoadsWithNoErrors',
+                     'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testUnknownPropertyCausesLoadFailure',
+                     'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testMissingPropertyCausesValidationError',
+                     'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testValidPropertiesLoadsWithUpperCase',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testUnderscore',
                      'org.springframework.boot.bind.PropertiesConfigurationFactoryTests#testUnknownPropertyOkByDefault',
                      'org.springframework.boot.bind.RelaxedPropertyResolverTests#getPropertyWithType',
@@ -336,6 +418,10 @@
                      'org.springframework.boot.bind.RelaxedPropertyResolverTests#prefixed',
                      'org.springframework.boot.bind.RelaxedPropertyResolverTests#needsPropertyResolver',
                      'org.springframework.boot.bind.RelaxedPropertyResolverTests#getRequiredProperty',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.bind.RelaxedPropertyResolverTests#subProperties',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.bind.RelaxedPropertyResolverTests#getRequiredPropertyWithType',
                      'org.springframework.boot.bind.RelaxedPropertyResolverTests#getPropertyWithDefault',
                      'org.springframework.boot.bind.RelaxedPropertyResolverTests#resolverPlaceholder',
@@ -355,6 +441,11 @@
                      'org.springframework.boot.bind.PropertiesConfigurationFactoryMapTests#testBindToNamedTarget',
                      'org.springframework.boot.bind.PropertiesConfigurationFactoryMapTests#testBindFromPropertySource',
                      'org.springframework.boot.bind.PropertiesConfigurationFactoryMapTests#testValidPropertiesLoadsWithNoErrors',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.test.SpringApplicationConfigurationActiveProfileTests#profiles',
+                     'org.springframework.boot.context.embedded.MimeMappingsTests#addNew',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.context.embedded.MimeMappingsTests#getAll',
                      'org.springframework.boot.context.embedded.MimeMappingsTests#remove',
                      'org.springframework.boot.context.embedded.MimeMappingsTests#defaultsCannotBeModified',
@@ -365,6 +456,10 @@
                      'org.springframework.boot.context.embedded.MimeMappingsTests#createFromExisting',
                      'org.springframework.boot.context.embedded.MimeMappingsTests#makeUnmodifiable',
                      'org.springframework.boot.context.embedded.MimeMappingsTests#iterate',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.liquibase.LiquibaseServiceLocatorApplicationListenerTests#replacesServiceLocator',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.context.config.ConfigFileApplicationListenerTests#loadCustomResource',
                      'org.springframework.boot.context.config.ConfigFileApplicationListenerTests#specificResourceAsFile',
                      'org.springframework.boot.context.config.ConfigFileApplicationListenerTests#loadTwoPropertiesFiles',
@@ -414,8 +509,15 @@
                      'org.springframework.boot.context.config.DelegatingApplicationContextInitializerTests#notAnInitializerClass',
                      'org.springframework.boot.context.config.DelegatingApplicationContextInitializerTests#emptyInitializers',
                      'org.springframework.boot.context.config.DelegatingApplicationContextInitializerTests#noSuchInitializerClass',
+<<<<<<< HEAD
                      'org.springframework.boot.SpringApplicationTests#customResourceLoaderFromConstructor',
                      'org.springframework.boot.SpringApplicationTests#addProfiles',
+=======
+                     'org.springframework.boot.context.config.DelegatingApplicationContextInitializerTests#noInitializers',
+                     'org.springframework.boot.SpringApplicationTests#customResourceLoaderFromConstructor',
+                     'org.springframework.boot.SpringApplicationTests#addProfiles',
+                     'org.springframework.boot.SpringApplicationTests#registerShutdownHookOff',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.SpringApplicationTests#sourcesMustNotBeNull',
                      'org.springframework.boot.SpringApplicationTests#specificApplicationContextClass',
                      'org.springframework.boot.SpringApplicationTests#disableBanner',
@@ -462,7 +564,10 @@
                      'org.springframework.boot.orm.jpa.EntityScanTests#needsEntityManageFactory',
                      'org.springframework.boot.orm.jpa.EntityScanTests#valueAndBasePackagesThrows',
                      'org.springframework.boot.context.FileEncodingApplicationListenerTests#testSunnyDayMandated',
+<<<<<<< HEAD
                      'org.springframework.boot.context.FileEncodingApplicationListenerTests#testIllegalState',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.logging.log4j2.Log4J2LoggingSystemTests#testNonDefaultConfigLocation',
                      'org.springframework.boot.logging.log4j2.Log4J2LoggingSystemTests#noFile',
                      'org.springframework.boot.logging.log4j2.Log4J2LoggingSystemTests#withFile',
@@ -485,8 +590,15 @@
                      'org.springframework.boot.builder.SpringApplicationBuilderTests#parentContextWithClassLoader',
                      'org.springframework.boot.builder.SpringApplicationBuilderTests#parentContextCreationWithChildShutdown',
                      'org.springframework.boot.builder.SpringApplicationBuilderTests#parentFirstWithDifferentProfile',
+<<<<<<< HEAD
                      'org.springframework.boot.context.ContextIdApplicationContextInitializerTests#testNameAndPort',
                      'org.springframework.boot.context.ContextIdApplicationContextInitializerTests#testNameAndProfiles',
+=======
+                     'org.springframework.boot.context.ContextIdApplicationContextInitializerTests#testCloudFoundry',
+                     'org.springframework.boot.context.ContextIdApplicationContextInitializerTests#testNameAndPort',
+                     'org.springframework.boot.context.ContextIdApplicationContextInitializerTests#testNameAndProfiles',
+                     'org.springframework.boot.context.ContextIdApplicationContextInitializerTests#testDefaults',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.context.embedded.EmbeddedWebApplicationContextTests#doesNotRegistersShutdownHook',
                      'org.springframework.boot.context.embedded.EmbeddedWebApplicationContextTests#servletContextInitializerBeans',
                      'org.springframework.boot.context.embedded.EmbeddedWebApplicationContextTests#missingEmbeddedServletContainerFactory',
@@ -514,6 +626,10 @@
                      'org.springframework.boot.json.JacksonParserTests#testEmptyMap',
                      'org.springframework.boot.json.JacksonParserTests#testDoubleValie',
                      'org.springframework.boot.json.JacksonParserTests#testMapOfLists',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.ansi.AnsiOutputTests#encoding',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.env.PropertySourcesLoaderTests#fileExtensions',
                      'org.springframework.boot.ApplicationPidTests#writePid',
                      'org.springframework.boot.ApplicationPidTests#toStringWithoutPid',
@@ -530,15 +646,25 @@
                      'org.springframework.boot.context.web.ErrorPageFilterTests#notAnError',
                      'org.springframework.boot.context.web.ErrorPageFilterTests#unauthorizedWithErrorPath',
                      'org.springframework.boot.context.web.ErrorPageFilterTests#subClassExceptionError',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.context.web.ErrorPageFilterTests#statusError',
+                     'org.springframework.boot.context.web.ErrorPageFilterTests#responseUncommittedWithoutErrorPage',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.context.web.ErrorPageFilterTests#statusErrorWithCommittedResponse',
                      'org.springframework.boot.context.web.ErrorPageFilterTests#globalError',
                      'org.springframework.boot.context.web.ErrorPageFilterTests#oncePerRequest',
                      'org.springframework.boot.context.web.ErrorPageFilterTests#exceptionError',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.context.web.ErrorPageFilterTests#statusCode',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.context.web.ErrorPageFilterTests#responseIsCommitedWhenRequestIsAsyncAndExceptionIsThrown',
                      'org.springframework.boot.context.web.ErrorPageFilterTests#responseIsCommitedWhenRequestIsAsyncAndStatusIs400Plus',
                      'org.springframework.boot.context.web.ErrorPageFilterTests#responseCommitted',
                      'org.springframework.boot.context.web.ErrorPageFilterTests#responseIsNotCommitedWhenRequestIsAsync',
                      'org.springframework.boot.context.web.ErrorPageFilterTests#exceptionErrorWithCommittedResponse',
+                     'org.springframework.boot.test.SpringApplicationConfigurationMixedConfigurationTests#mixedConfigClasses',
                      'org.springframework.boot.context.embedded.XmlEmbeddedWebApplicationContextTests#createFromResource',
                      'org.springframework.boot.context.embedded.XmlEmbeddedWebApplicationContextTests#loadAndRefreshFromResource',
                      'org.springframework.boot.context.embedded.XmlEmbeddedWebApplicationContextTests#loadAndRefreshFromRelativeResourceLocation',
@@ -575,7 +701,14 @@
                      'org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactoryTests#sslNeedsClientAuthenticationFailsWithoutClientCertificate',
                      'org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactoryTests#specificContextRoot',
                      'org.springframework.boot.bind.RelaxedNamesTests#fromUnderscores',
+<<<<<<< HEAD
                      'org.springframework.boot.bind.RelaxedNamesTests#iterator',
+=======
+                     'org.springframework.boot.bind.RelaxedNamesTests#fromPeriods',
+                     'org.springframework.boot.bind.RelaxedNamesTests#fromPlain',
+                     'org.springframework.boot.bind.RelaxedNamesTests#iterator',
+                     'org.springframework.boot.bind.RelaxedNamesTests#fromCamelCase',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.cloudfoundry.VcapApplicationListenerTests#testServiceProperties',
                      'org.springframework.boot.cloudfoundry.VcapApplicationListenerTests#testApplicationUris',
                      'org.springframework.boot.cloudfoundry.VcapApplicationListenerTests#testUnparseableApplicationProperties',
@@ -583,6 +716,10 @@
                      'org.springframework.boot.cloudfoundry.VcapApplicationListenerTests#testServicePropertiesWithoutNA',
                      'org.springframework.boot.cloudfoundry.VcapApplicationListenerTests#testNullApplicationProperties',
                      'org.springframework.boot.test.ApplicationContextTestUtilsTests#closeNonClosableContext',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.test.ApplicationContextTestUtilsTests#closeContextAndParent',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.jta.atomikos.AtomikosDataSourceBeanTests#beanMethods',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindMapNestedMap',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNestedWithEnviromentStyle',
@@ -596,6 +733,10 @@
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNestedMapBracketReferenced',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testOnlyTopLevelFields',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNestedSetCommaDelimitedOnly',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testAllowedFields',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testRequiredFieldsValidation',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindMap',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindErrorNotWritableWithPrefix',
@@ -603,6 +744,10 @@
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindChars',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindErrorNotWritable',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindUnderscoreInActualPropertyName',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindHyphen',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNestedMapOfListOfBean',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNested',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNumber',
@@ -616,9 +761,19 @@
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNestedUntypedMap',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindFromEnvironmentStyleWithNestedPrefix',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testNoNestedFields',
+<<<<<<< HEAD
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindErrorTypeMismatch',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindDoubleNestedMap',
                      'org.springframework.boot.bind.RelaxedDataBinderTests#testBindOverlappingNestedMaps',
+=======
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNestedMapOfString',
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNestedReadOnlyListCommaSeparated',
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindErrorTypeMismatch',
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindDoubleNestedMap',
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindNestedListCommaDelimitedOnly',
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindOverlappingNestedMaps',
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindCaseInsensitiveEnumsWithConverter',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.test.ConfigFileApplicationContextInitializerTests#initializerPopulatesEnvironment',
                      'org.springframework.boot.jta.atomikos.AtomikosXAConnectionFactoryWrapperTests#wrap',
                      'org.springframework.boot.SimpleMainTests#mixedContext',
@@ -629,6 +784,13 @@
                      'org.springframework.boot.jta.bitronix.BitronixXAConnectionFactoryWrapperTests#wrap',
                      'org.springframework.boot.ReproTests#orderProfilesWithYamlAndNoOverride',
                      'org.springframework.boot.ReproTests#reverseOrderOfProfilesWithYaml',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.ReproTests#activeProfilesWithYamlAndCommandLineAndNoOverride',
+                     'org.springframework.boot.ReproTests#enableProfileViaApplicationProperties',
+                     'org.springframework.boot.ReproTests#orderProfilesWithYaml',
+                     'org.springframework.boot.ReproTests#activeProfilesWithYamlOnlyAndNoOverride',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.ReproTests#orderActiveProfilesWithYamlOnly',
                      'org.springframework.boot.ReproTests#commandLineBeatsProfilesWithYamlAndNoOverride',
                      'org.springframework.boot.ReproTests#commandLineBeatsProfilesWithYaml',
@@ -640,12 +802,21 @@
                      'org.springframework.boot.logging.java.JavaLoggerSystemTests#noFile',
                      'org.springframework.boot.logging.java.JavaLoggerSystemTests#withFile',
                      'org.springframework.boot.logging.java.JavaLoggerSystemTests#setLevel',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.condition.ConditionalOnNotWebApplicationTests#testNotWebApplication',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnNotWebApplicationTests#testWebApplication',
                      'org.springframework.boot.autoconfigure.jdbc.metadata.CommonsDbcpDataSourcePoolMetadataTests#getPoolUsageWithUnlimitedPool',
                      'org.springframework.boot.autoconfigure.jdbc.metadata.CommonsDbcpDataSourcePoolMetadataTests#getPoolUsageWithNoMax',
+                     'org.springframework.boot.autoconfigure.jdbc.metadata.CommonsDbcpDataSourcePoolMetadataTests#getPoolUsageWithNoCurrent',
                      'org.springframework.boot.autoconfigure.jdbc.metadata.CommonsDbcpDataSourcePoolMetadataTests#getPoolSizeOneConnection',
                      'org.springframework.boot.autoconfigure.jdbc.metadata.CommonsDbcpDataSourcePoolMetadataTests#getPoolSizeTwoConnections',
                      'org.springframework.boot.autoconfigure.jdbc.metadata.CommonsDbcpDataSourcePoolMetadataTests#getValidationQuery',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.jdbc.metadata.CommonsDbcpDataSourcePoolMetadataTests#getMinPoolSize',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.jdbc.metadata.CommonsDbcpDataSourcePoolMetadataTests#getPoolSizeNoConnection',
                      'org.springframework.boot.autoconfigure.jdbc.metadata.CommonsDbcpDataSourcePoolMetadataTests#getMaxPoolSize',
                      'org.springframework.boot.autoconfigure.web.HttpMessageConvertersTests#addNewConverters',
@@ -706,11 +877,16 @@
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testJmsTemplatePostProcessedSoThatPubSubIsTrue',
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testPubSubDisabledByDefault',
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testEnableJmsCreateDefaultContainerFactory',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testActiveMQOverriddenStandalone',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testJmsTemplateBackOffEverything',
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testDefaultJmsConfiguration',
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testPubSubDomainOverride',
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testJmsTemplateBackOff',
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testConnectionFactoryBackOff',
+                     'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testJmsMessagingTemplateBackOff',
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#enableJmsAutomatically',
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testJmsListenerContainerFactoryBackOff',
                      'org.springframework.boot.autoconfigure.jms.JmsAutoConfigurationTests#testActiveMQOverriddenPool',
@@ -775,11 +951,21 @@
                      'org.springframework.boot.autoconfigure.jms.hornetq.HornetQEmbeddedConfigurationFactoryTests#defaultDataDir',
                      'org.springframework.boot.autoconfigure.jms.hornetq.HornetQEmbeddedConfigurationFactoryTests#persistenceSetup',
                      'org.springframework.boot.autoconfigure.jms.hornetq.HornetQEmbeddedConfigurationFactoryTests#specificClusterPassoword',
+<<<<<<< HEAD
                      'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafTemplateAvailabilityProviderTests#availabilityOfTemplateThatDoesNotExist',
                      'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafTemplateAvailabilityProviderTests#availabilityOfTemplateInDefaultLocation',
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnJavaTests#doesNotMatchIfLowerIsRequired',
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnJavaTests#matchesIfVersionIsInRange',
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnJavaTests#olderThanMessage',
+=======
+                     'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafTemplateAvailabilityProviderTests#availabilityOfTemplateWithCustomPrefix',
+                     'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafTemplateAvailabilityProviderTests#availabilityOfTemplateWithCustomSuffix',
+                     'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafTemplateAvailabilityProviderTests#availabilityOfTemplateThatDoesNotExist',
+                     'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafTemplateAvailabilityProviderTests#availabilityOfTemplateInDefaultLocation',
+                     'org.springframework.boot.autoconfigure.condition.ConditionalOnJavaTests#doesNotMatchIfLowerIsRequired',
+                     'org.springframework.boot.autoconfigure.condition.ConditionalOnJavaTests#boundsTests',
+                     'org.springframework.boot.autoconfigure.condition.ConditionalOnJavaTests#matchesIfVersionIsInRange',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnJavaTests#equalOrNewerMessage',
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnJavaTests#doesNotMatchIfBetterVersionIsRequired',
                      'org.springframework.boot.autoconfigure.jersey.JerseyAutoConfigurationDefaultServletPathTests#contextLoads',
@@ -792,8 +978,16 @@
                      'org.springframework.boot.autoconfigure.mobile.DeviceResolverAutoConfigurationTests#deviceResolverHandlerInterceptorRegistered',
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnResourceTests#testResourceExists',
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnResourceTests#testResourceNotExists',
+<<<<<<< HEAD
                      'org.springframework.boot.autoconfigure.velocity.VelocityTemplateAvailabilityProviderTests#availabilityOfTemplateWithCustomLoaderPath',
                      'org.springframework.boot.autoconfigure.velocity.VelocityTemplateAvailabilityProviderTests#availabilityOfTemplateThatDoesNotExist',
+=======
+                     'org.springframework.boot.autoconfigure.velocity.VelocityTemplateAvailabilityProviderTests#availabilityOfTemplateWithCustomPrefix',
+                     'org.springframework.boot.autoconfigure.velocity.VelocityTemplateAvailabilityProviderTests#availabilityOfTemplateWithCustomSuffix',
+                     'org.springframework.boot.autoconfigure.velocity.VelocityTemplateAvailabilityProviderTests#availabilityOfTemplateWithCustomLoaderPath',
+                     'org.springframework.boot.autoconfigure.velocity.VelocityTemplateAvailabilityProviderTests#availabilityOfTemplateThatDoesNotExist',
+                     'org.springframework.boot.autoconfigure.velocity.VelocityTemplateAvailabilityProviderTests#availabilityOfTemplateInDefaultLocation',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnClassTests#testMissingOnClassCondition',
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnClassTests#testVanillaOnClassCondition',
                      'org.springframework.boot.autoconfigure.condition.ConditionalOnClassTests#testOnClassConditionWithXml',
@@ -814,8 +1008,16 @@
                      'org.springframework.boot.autoconfigure.data.solr.SolrRepositoriesAutoConfigurationTests#testNoRepositoryConfiguration',
                      'org.springframework.boot.autoconfigure.mobile.SitePreferenceAutoConfigurationTests#sitePreferenceHandlerInterceptorRegistered',
                      'org.springframework.boot.autoconfigure.mobile.SitePreferenceAutoConfigurationTests#sitePreferenceMethodArgumentResolverEnabled',
+<<<<<<< HEAD
                      'org.springframework.boot.autoconfigure.mobile.SitePreferenceAutoConfigurationTests#sitePreferenceMethodArgumentResolverDisabled',
                      'org.springframework.boot.autoconfigure.mobile.SitePreferenceAutoConfigurationTests#sitePreferenceHandlerInterceptorDisabled',
+=======
+                     'org.springframework.boot.autoconfigure.mobile.SitePreferenceAutoConfigurationTests#sitePreferenceHandlerInterceptorCreated',
+                     'org.springframework.boot.autoconfigure.mobile.SitePreferenceAutoConfigurationTests#sitePreferenceMethodArgumentResolverDisabled',
+                     'org.springframework.boot.autoconfigure.mobile.SitePreferenceAutoConfigurationTests#sitePreferenceHandlerInterceptorDisabled',
+                     'org.springframework.boot.autoconfigure.mobile.SitePreferenceAutoConfigurationTests#sitePreferenceMethodArgumentResolverCreated',
+                     'org.springframework.boot.autoconfigure.mobile.SitePreferenceAutoConfigurationTests#sitePreferenceHandlerInterceptorEnabled',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.velocity.VelocityAutoConfigurationTests#defaultViewResolution',
                      'org.springframework.boot.autoconfigure.velocity.VelocityAutoConfigurationTests#customTemplateLoaderPath',
                      'org.springframework.boot.autoconfigure.velocity.VelocityAutoConfigurationTests#renderNonWebAppTemplate',
@@ -843,6 +1045,11 @@
                      'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfigurationTests#contextAlreadyHasDispatcherServlet',
                      'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfigurationTests#contextAlreadyHasNonServlet',
                      'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfigurationTests#containerHasNoServletContext',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfigurationTests#createFromConfigClass',
+                     'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfigurationTests#customizeContainerThroughCallback',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfigurationTests#contextAlreadyHasDispatcherServletWithDefaultName',
                      'org.springframework.boot.autoconfigure.data.jpa.JpaWebAutoConfigurationTests#testDefaultRepositoryConfiguration',
                      'org.springframework.boot.autoconfigure.reactor.ReactorAutoConfigurationTests#reactorIsAvailable',
@@ -859,9 +1066,17 @@
                      'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfigurationTests#testNoDataSourceExists',
                      'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfigurationTests#testManualConfiguration',
                      'org.springframework.boot.autoconfigure.mail.MailSenderAutoConfigurationTests#mailSenderBackOff',
+<<<<<<< HEAD
                      'org.springframework.boot.autoconfigure.mail.MailSenderAutoConfigurationTests#smptHostWithSettings',
                      'org.springframework.boot.autoconfigure.mail.MailSenderAutoConfigurationTests#smtpHostSet',
                      'org.springframework.boot.autoconfigure.mail.MailSenderAutoConfigurationTests#smptHostWithJavaMailProperties',
+=======
+                     'org.springframework.boot.autoconfigure.mail.MailSenderAutoConfigurationTests#smtpHostNotSet',
+                     'org.springframework.boot.autoconfigure.mail.MailSenderAutoConfigurationTests#smptHostWithSettings',
+                     'org.springframework.boot.autoconfigure.mail.MailSenderAutoConfigurationTests#smtpHostSet',
+                     'org.springframework.boot.autoconfigure.mail.MailSenderAutoConfigurationTests#smptHostWithJavaMailProperties',
+                     'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#addressesDoubleValuedWithCredentials',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#testemptyVirtualHost',
                      'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#addressesDoubleValuedPreservesOrder',
                      'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#addressesDoubleValued',
@@ -869,12 +1084,19 @@
                      'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#testCustomVirtualHost',
                      'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#addressesSingleValuedWithCredentials',
                      'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#addressesSingleValuedWithCredentialsDefaultPort',
+<<<<<<< HEAD
                      'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#addressesSingleValued',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.jmx.JmxAutoConfigurationTests#customJmxDomain',
                      'org.springframework.boot.autoconfigure.jmx.JmxAutoConfigurationTests#testParentContext',
                      'org.springframework.boot.autoconfigure.jmx.JmxAutoConfigurationTests#testDefaultDomainConfiguredOnMBeanExport',
                      'org.springframework.boot.autoconfigure.jmx.JmxAutoConfigurationTests#testDisabledMBeanExport',
                      'org.springframework.boot.autoconfigure.jmx.JmxAutoConfigurationTests#testEnabledMBeanExport',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.jmx.JmxAutoConfigurationTests#testDefaultMBeanExport',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerTests#testDataSourceInitializedWithExplicitScript',
                      'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerTests#testTwoDataSources',
                      'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerTests#testDataSourceInitialized',
@@ -922,7 +1144,12 @@
                      'org.springframework.boot.autoconfigure.social.MultiApiAutoConfigurationTests#expectFacebookConfigurationOnly',
                      'org.springframework.boot.autoconfigure.social.MultiApiAutoConfigurationTests#expectTwitterConfigurationOnly',
                      'org.springframework.boot.autoconfigure.social.MultiApiAutoConfigurationTests#expectLinkedInConfigurationOnly',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.social.MultiApiAutoConfigurationTests#expectLinkedInAndTwitterConfigurationOnly',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.social.MultiApiAutoConfigurationTests#expectFacebookAndTwitterConfigurationOnly',
+                     'org.springframework.boot.autoconfigure.social.MultiApiAutoConfigurationTests#noSocialBeansCreatedWhenPropertiesArentSet',
                      'org.springframework.boot.autoconfigure.social.MultiApiAutoConfigurationTests#expectFacebookAndLinkedInConfigurationOnly',
                      'org.springframework.boot.autoconfigure.security.SecurityAutoConfigurationTests#testDisableBasicAuthOnApplicationPaths',
                      'org.springframework.boot.autoconfigure.security.SecurityAutoConfigurationTests#testEventPublisherInjected',
@@ -937,6 +1164,10 @@
                      'org.springframework.boot.autoconfigure.aop.AopAutoConfigurationTests#testNoAopAutoConfiguration',
                      'org.springframework.boot.autoconfigure.aop.AopAutoConfigurationTests#testAopAutoConfigurationNoProxyTargetClass',
                      'org.springframework.boot.autoconfigure.jms.activemq.ActiveMQPropertiesTests#getBrokerUrlUseExplicitBrokerUrl',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.jms.activemq.ActiveMQPropertiesTests#getBrokerUrlIsInMemoryByDefault',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.jdbc.TomcatDataSourceConfigurationTests#testDataSourceDefaultsPreserved',
                      'org.springframework.boot.autoconfigure.jdbc.TomcatDataSourceConfigurationTests#testDataSourceExists',
                      'org.springframework.boot.autoconfigure.jdbc.TomcatDataSourceConfigurationTests#testDataSourcePropertiesOverridden',
@@ -992,7 +1223,12 @@
                      'org.springframework.boot.autoconfigure.jdbc.XADataSourceAutoConfigurationTests#wrapExistingXaDataSource',
                      'org.springframework.boot.autoconfigure.jdbc.XADataSourceAutoConfigurationTests#createFromUrl',
                      'org.springframework.boot.autoconfigure.MessageSourceAutoConfigurationIntegrationTests#testMessageSourceFromPropertySourceAnnotation',
+<<<<<<< HEAD
                      'org.springframework.boot.autoconfigure.jdbc.DataSourcePropertiesTests#correctDriverClassNameFromJdbcUrlWhenDriverClassNameNotDefined',
+=======
+                     'org.springframework.boot.autoconfigure.jdbc.DataSourcePropertiesTests#driverClassNameFromDriverClassNamePropertyWhenDefined',
+                     'org.springframework.boot.autoconfigure.security.jpa.JpaUserDetailsTests#contextLoads',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.web.WebMvcAutoConfigurationTests#handerMappingsCreated',
                      'org.springframework.boot.autoconfigure.web.WebMvcAutoConfigurationTests#overrideLocale',
                      'org.springframework.boot.autoconfigure.web.WebMvcAutoConfigurationTests#resourceHandlerMappingDisabled',
@@ -1005,6 +1241,10 @@
                      'org.springframework.boot.autoconfigure.web.WebMvcAutoConfigurationTests#resourceHandlerMappingOverrideWebjars',
                      'org.springframework.boot.autoconfigure.web.WebMvcAutoConfigurationTests#resourceHandlerMappingOverrideAll',
                      'org.springframework.boot.autoconfigure.web.WebMvcAutoConfigurationTests#noDateFormat',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.freemarker.FreeMarkerTemplateAvailabilityProviderTests#availabilityOfTemplateWithCustomPrefix',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.freemarker.FreeMarkerTemplateAvailabilityProviderTests#availabilityOfTemplateWithCustomSuffix',
                      'org.springframework.boot.autoconfigure.freemarker.FreeMarkerTemplateAvailabilityProviderTests#availabilityOfTemplateWithCustomLoaderPath',
                      'org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfigurationTests#testOverrideContexts',
@@ -1031,8 +1271,17 @@
                      'org.springframework.boot.autoconfigure.cloud.CloudAutoConfigurationTests#testOrder',
                      'org.springframework.boot.autoconfigure.MessageSourceAutoConfigurationProfileTests#testMessageSourceFromPropertySourceAnnotation',
                      'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byAutoConfigureAfter',
+<<<<<<< HEAD
                      'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byAutoConfigureMixedBeforeAndAfter',
                      'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byOrderAnnotation',
+=======
+                     'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byAutoConfigureMixedBeforeAndAfterWithDifferentInputOrder',
+                     'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byAutoConfigureMixedBeforeAndAfter',
+                     'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byAutoConfigureAfterWithCycle',
+                     'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byAutoConfigureAfterDoubles',
+                     'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byOrderAnnotation',
+                     'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byAutoConfigureBefore',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.AutoConfigurationSorterTests#byAutoConfigureAfterWithMissing',
                      'org.springframework.boot.autoconfigure.AutoConfigurationReproTests#doesNotEarlyInitializeFactoryBeans',
                      'org.springframework.boot.autoconfigure.redis.RedisAutoConfigurationTests#testDefaultRedisConfiguration',
@@ -1044,6 +1293,10 @@
                      'org.springframework.boot.autoconfigure.data.mongo.MixedMongoRepositoriesAutoConfigurationTests#testMixedRepositoryConfiguration',
                      'org.springframework.boot.autoconfigure.data.mongo.MixedMongoRepositoriesAutoConfigurationTests#testJpaRepositoryConfigurationWithMongoTemplate',
                      'org.springframework.boot.autoconfigure.data.mongo.MixedMongoRepositoriesAutoConfigurationTests#testJpaRepositoryConfigurationWithMongoOverlap',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfigurationTests#noDataSource',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfigurationTests#createDataSource',
                      'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfigurationTests#overrideSchemas',
                      'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfigurationTests#overrideLocations',
@@ -1068,6 +1321,10 @@
                      'org.springframework.boot.autoconfigure.jdbc.metadata.TomcatDataSourcePoolMetadataTests#getPoolSizeTwoConnections',
                      'org.springframework.boot.autoconfigure.jdbc.metadata.TomcatDataSourcePoolMetadataTests#getValidationQuery',
                      'org.springframework.boot.autoconfigure.jdbc.metadata.TomcatDataSourcePoolMetadataTests#getMinPoolSize',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.autoconfigure.jdbc.metadata.TomcatDataSourcePoolMetadataTests#getPoolSizeNoConnection',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.jdbc.metadata.TomcatDataSourcePoolMetadataTests#getMaxPoolSize',
                      'org.springframework.boot.autoconfigure.web.ServerPropertiesTests#testServletPathAsMapping',
                      'org.springframework.boot.autoconfigure.web.ServerPropertiesTests#testCustomizeTomcatPort',
@@ -1083,7 +1340,10 @@
                      'org.springframework.boot.autoconfigure.jta.JtaAutoConfigurationTests#defaultAtomikosTransactionManagerName',
                      'org.springframework.boot.autoconfigure.jta.JtaAutoConfigurationTests#atomikosSanityCheck',
                      'org.springframework.boot.autoconfigure.jta.JtaAutoConfigurationTests#customAtomikosTransactionManagerName',
+<<<<<<< HEAD
                      'org.springframework.boot.autoconfigure.jta.JtaAutoConfigurationTests#defaultBitronixServerId',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfigurationTests#defaultViewResolution',
                      'org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfigurationTests#customTemplateLoaderPath',
                      'org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfigurationTests#includesViewResolution',
@@ -1215,6 +1475,10 @@
                      'org.springframework.boot.actuate.endpoint.mvc.JolokiaEndpointTests#endpointRegistered',
                      'org.springframework.boot.actuate.system.EmbeddedServerPortFileWriterTests#createUpperCaseManagementPortFile',
                      'org.springframework.boot.actuate.system.EmbeddedServerPortFileWriterTests#overridePortFile',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.actuate.system.EmbeddedServerPortFileWriterTests#createPortFile',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.system.EmbeddedServerPortFileWriterTests#createManagementPortFile',
                      'org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfigurationTests#notRabbitHealthIndicator',
                      'org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfigurationTests#redisHealthIndicator',
@@ -1248,6 +1512,10 @@
                      'org.springframework.boot.actuate.endpoint.VanillaPublicMetricsTests#testMetrics',
                      'org.springframework.boot.actuate.endpoint.VanillaPublicMetricsTests#testSystemMetrics',
                      'org.springframework.boot.actuate.autoconfigure.SpringApplicationHierarchyTests#testChild',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.actuate.autoconfigure.SpringApplicationHierarchyTests#testParent',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.health.RabbitHealthIndicatorTests#indicatorExists',
                      'org.springframework.boot.actuate.endpoint.BeansEndpointTests#invoke',
                      'org.springframework.boot.actuate.endpoint.BeansEndpointTests#getId',
@@ -1283,12 +1551,24 @@
                      'org.springframework.boot.actuate.autoconfigure.MetricFilterAutoConfigurationTests#recordsHttpInteractions',
                      'org.springframework.boot.actuate.endpoint.mvc.MvcEndpointsTests#picksUpEndpointDelegates',
                      'org.springframework.boot.actuate.endpoint.mvc.MvcEndpointsTests#picksUpEndpointDelegatesFromParent',
+                     'org.springframework.boot.actuate.endpoint.mvc.MvcEndpointsTests#picksUpMvcEndpoints',
                      'org.springframework.boot.actuate.autoconfigure.JolokiaAutoConfigurationTests#agentServletRegisteredWithAppContext',
                      'org.springframework.boot.actuate.autoconfigure.JolokiaAutoConfigurationTests#agentDisabled',
+<<<<<<< HEAD
                      'org.springframework.boot.actuate.trace.WebRequestTraceFilterTests#filterHasError',
                      'org.springframework.boot.actuate.health.MongoHealthIndicatorTests#mongoIsUp',
                      'org.springframework.boot.actuate.health.MongoHealthIndicatorTests#indicatorExists',
                      'org.springframework.boot.actuate.health.MongoHealthIndicatorTests#mongoIsDown',
+=======
+                     'org.springframework.boot.actuate.trace.WebRequestTraceFilterTests#filterDumpsResponse',
+                     'org.springframework.boot.actuate.trace.WebRequestTraceFilterTests#filterDumpsRequest',
+                     'org.springframework.boot.actuate.trace.WebRequestTraceFilterTests#filterHasError',
+                     'org.springframework.boot.actuate.trace.WebRequestTraceFilterTests#filterHasResponseStatus',
+                     'org.springframework.boot.actuate.health.MongoHealthIndicatorTests#mongoIsUp',
+                     'org.springframework.boot.actuate.health.MongoHealthIndicatorTests#indicatorExists',
+                     'org.springframework.boot.actuate.health.MongoHealthIndicatorTests#mongoIsDown',
+                     'org.springframework.boot.actuate.endpoint.DumpEndpointTests#invoke',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.endpoint.DumpEndpointTests#getId',
                      'org.springframework.boot.actuate.endpoint.DumpEndpointTests#idOverride',
                      'org.springframework.boot.actuate.endpoint.DumpEndpointTests#isSensitive',
@@ -1317,11 +1597,18 @@
                      'org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfigurationTests#onSamePortWithoutHeader',
                      'org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfigurationTests#specificPortsViaProperties',
                      'org.springframework.boot.actuate.endpoint.mvc.JolokiaEndpointContextPathTests#read',
+<<<<<<< HEAD
                      'org.springframework.boot.actuate.metrics.export.RichGaugeExporterTests#prefixedMetricsCopied',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpointSerializationTests#testNaming',
                      'org.springframework.boot.actuate.health.ApplicationHealthIndicatorTests#indicatesUp',
                      'org.springframework.boot.actuate.autoconfigure.TraceWebFilterAutoConfigurationTests#configureFilter',
                      'org.springframework.boot.actuate.system.ApplicationPidFileWriterTests#overridePidFile',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.actuate.system.ApplicationPidFileWriterTests#createPidFile',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.endpoint.EnvironmentEndpointTests#testKeySanitization',
                      'org.springframework.boot.actuate.endpoint.EnvironmentEndpointTests#testKeySanitizationWithCustomKeys',
                      'org.springframework.boot.actuate.endpoint.EnvironmentEndpointTests#invoke',
@@ -1349,14 +1636,28 @@
                      'org.springframework.boot.actuate.endpoint.TraceEndpointTests#isSensitiveOverride',
                      'org.springframework.boot.actuate.health.DiskSpaceHealthIndicatorTests#diskSpaceIsUp',
                      'org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpointTests#invoke',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpointTests#getId',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpointTests#idOverride',
                      'org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpointTests#isSensitive',
                      'org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpointTests#isSensitiveOverride',
                      'org.springframework.boot.actuate.autoconfigure.EndpointMvcIntegrationTests#envEndpointNotHidden',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.actuate.metrics.export.MetricCopyExporterTests#timestamp',
+                     'org.springframework.boot.actuate.health.OrderedHealthAggregatorTests#customOrder',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.health.OrderedHealthAggregatorTests#defaultOrderWithCustomStatus',
                      'org.springframework.boot.actuate.health.OrderedHealthAggregatorTests#customOrderWithCustomStatus',
                      'org.springframework.boot.actuate.health.OrderedHealthAggregatorTests#defaultOrder',
                      'org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpointTests#secureNotCached',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpointTests#unsecureCached',
+                     'org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpointTests#down',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.autoconfigure.DataSourceMetricsAutoConfigurationTests#multipleDataSourcesWithPrimary',
                      'org.springframework.boot.actuate.autoconfigure.DataSourceMetricsAutoConfigurationTests#multipleDataSources',
                      'org.springframework.boot.actuate.autoconfigure.DataSourceMetricsAutoConfigurationTests#noDataSource',
@@ -1427,7 +1728,6 @@
                      'org.springframework.boot.actuate.autoconfigure.ManagementSecurityAutoConfigurationTests#testDisableIgnoredStaticApplicationPaths',
                      'org.springframework.boot.actuate.autoconfigure.ManagementSecurityAutoConfigurationTests#testWebConfiguration',
                      'org.springframework.boot.actuate.autoconfigure.ManagementSecurityAutoConfigurationTests#testOverrideAuthenticationManager',
-                     'org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpointTests#disabled',
                      'org.springframework.boot.actuate.security.AuthenticationAuditListenerTests#testAuthenticationSuccess',
                      'org.springframework.boot.actuate.security.AuthenticationAuditListenerTests#testAuthenticationFailed',
                      'org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporterTests#testRegistrationWithDifferentDomainAndIdentity',
@@ -1437,6 +1737,11 @@
                      'org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporterTests#testRegistrationWithParentContext',
                      'org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporterTests#testRegistrationWithDifferentDomain',
                      'org.springframework.boot.actuate.metrics.export.PrefixMetricGroupExporterTests#onlyPrefixedMetricsCopied',
+<<<<<<< HEAD
+=======
+                     'org.springframework.boot.actuate.metrics.export.PrefixMetricGroupExporterTests#prefixedMetricsCopied',
+                     'org.springframework.boot.actuate.metrics.export.PrefixMetricGroupExporterTests#multiMetricGroupsCopiedAsDefault',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.metrics.util.InMemoryRepositoryTests#updateExisting',
                      'org.springframework.boot.actuate.metrics.util.InMemoryRepositoryTests#updateNonexistent',
                      'org.springframework.boot.actuate.metrics.util.InMemoryRepositoryTests#findWithPrefix',
@@ -1455,6 +1760,7 @@
                      'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingAuthIfEmpty',
                      'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingCommandRefreshInterval',
                      'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingTelnetIgnored',
+<<<<<<< HEAD
                      'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingSsh',
                      'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingCommandPathPatterns',
                      'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingDisabledCommands',
@@ -1634,6 +1940,53 @@
                      'org.springframework.boot.actuate.system.EmbeddedServerPortFileWriterTests#createPortFile',
                      'org.springframework.boot.actuate.metrics.rich.InMemoryRichGaugeRepositoryTests#writeAndRead',
                      'org.springframework.boot.actuate.autoconfigure.SpringApplicationHierarchyTests#testParent',
+=======
+                     'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingKey',
+                     'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingSsh',
+                     'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingCommandPathPatterns',
+                     'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingDisabledCommands',
+                     'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingConfigPathPatterns',
+                     'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testDefaultPasswordAutogeneratedIfUnresolovedPlaceholder'],
+ '29CPU4Mem8GB.sh': ['org.springframework.boot.dependency.tools.PropertiesFileDependenciesTests#findByArtifactAndGroupIdOnlyInEffectivePom',
+                     'org.springframework.boot.loader.data.RandomAccessDataFileTests#intputStreamReadNullBytesWithOffset',
+                     'org.springframework.boot.loader.util.SystemPropertyUtilsTests#testDefaultValue',
+                     'org.springframework.boot.context.config.RandomValuePropertySourceTests#intRange',
+                     'org.springframework.boot.context.config.RandomValuePropertySourceTests#notRandom',
+                     'org.springframework.boot.logging.logback.ColorConverterTests#red',
+                     'org.springframework.boot.logging.logback.ColorConverterTests#faint',
+                     'org.springframework.boot.logging.logback.ColorConverterTests#green',
+                     'org.springframework.boot.logging.logback.ColorConverterTests#highlightError',
+                     'org.springframework.boot.bind.PropertySourcesBindingTests#overridingOfPropertiesOrderOfAtPropertySources',
+                     'org.springframework.boot.bind.PropertySourcesBindingTests#overridingOfPropertiesOrderOfApplicationProperties',
+                     'org.springframework.boot.bind.BindingPreparationTests#testExpressionLists',
+                     'org.springframework.boot.bind.BindingPreparationTests#testAutoGrowNewNestedMapOfMaps',
+                     'org.springframework.boot.bind.RelaxedPropertyResolverTests#getPropertyWithTypeAndDefault',
+                     'org.springframework.boot.logging.log4j.Log4JLoggingSystemTests#loggingThatUsesJulIsCaptured',
+                     'org.springframework.boot.context.embedded.MimeMappingsTests#getMissing',
+                     'org.springframework.boot.context.FileEncodingApplicationListenerTests#testSunnyDayNothingMandated',
+                     'org.springframework.boot.context.FileEncodingApplicationListenerTests#testIllegalState',
+                     'org.springframework.boot.logging.log4j2.Log4J2LoggingSystemTests#loggingThatUsesJulIsCaptured',
+                     'org.springframework.boot.context.ContextIdApplicationContextInitializerTests#testExplicitName',
+                     'org.springframework.boot.bind.RelaxedNamesTests#fromCompoundCamelCase',
+                     'org.springframework.boot.bind.RelaxedNamesTests#fromEmpty',
+                     'org.springframework.boot.bind.RelaxedNamesTests#fromPrefixEndingInPeriod',
+                     'org.springframework.boot.test.ApplicationContextTestUtilsTests#closeNull',
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindWithAlias',
+                     'org.springframework.boot.bind.RelaxedDataBinderTests#testBindString',
+                     'org.springframework.boot.autoconfigure.web.DefaultErrorAttributesTests#includeTimeStamp',
+                     'org.springframework.boot.autoconfigure.condition.ConditionalOnJavaTests#olderThanMessage',
+                     'org.springframework.boot.autoconfigure.MessageSourceAutoConfigurationTests#testMessageSourceFromPropertySourceAnnotation',
+                     'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#testCustomFalsyVirtualHost',
+                     'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#testDefaultVirtualHost',
+                     'org.springframework.boot.autoconfigure.amqp.RabbitPropertiesTests#addressesSingleValued',
+                     'org.springframework.boot.autoconfigure.jms.activemq.ActiveMQPropertiesTests#getBrokerUrlWithInMemorySetToFalse',
+                     'org.springframework.boot.autoconfigure.jms.activemq.ActiveMQPropertiesTests#getExplicitBrokerUrlAlwaysWins',
+                     'org.springframework.boot.autoconfigure.batch.JobExecutionExitCodeGeneratorTests#testExitCodeForRunning',
+                     'org.springframework.boot.autoconfigure.jdbc.DataSourcePropertiesTests#correctDriverClassNameFromJdbcUrlWhenDriverClassNameNotDefined',
+                     'org.springframework.boot.autoconfigure.jta.JtaAutoConfigurationTests#defaultBitronixServerId',
+                     'org.springframework.boot.actuate.endpoint.SanitizerTests#regex',
+                     'org.springframework.boot.actuate.metrics.rich.InMemoryRichGaugeRepositoryTests#writeAndRead',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests#findAll',
                      'org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests#incrementAndGet',
                      'org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests#setIncrementAndGet',
@@ -1650,6 +2003,7 @@
                      'org.springframework.boot.actuate.metrics.repository.redis.RedisMultiMetricRepositoryTests#setAndGetMultiple[1]',
                      'org.springframework.boot.actuate.metrics.repository.redis.RedisMultiMetricRepositoryTests#setAndGet[1]',
                      'org.springframework.boot.actuate.metrics.repository.redis.RedisMultiMetricRepositoryTests#count[1]',
+<<<<<<< HEAD
                      'org.springframework.boot.actuate.endpoint.mvc.MvcEndpointsTests#picksUpMvcEndpoints',
                      'org.springframework.boot.actuate.trace.WebRequestTraceFilterTests#filterDumpsResponse',
                      'org.springframework.boot.actuate.trace.WebRequestTraceFilterTests#filterDumpsRequest',
@@ -1687,3 +2041,18 @@
                      'org.springframework.boot.actuate.metrics.util.InMemoryRepositoryTests#setAndGet',
                      'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testBindingKey',
                      'org.springframework.boot.actuate.autoconfigure.ShellPropertiesTests#testDefaultPasswordAutogeneratedIfUnresolovedPlaceholder']}
+=======
+                     'org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfigurationTests#disabled',
+                     'org.springframework.boot.actuate.metrics.export.RichGaugeExporterTests#prefixedMetricsCopied',
+                     'org.springframework.boot.actuate.metrics.export.MetricCopyExporterTests#export',
+                     'org.springframework.boot.actuate.metrics.export.MetricCopyExporterTests#ignoreTimestamp',
+                     'org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpointTests#secure',
+                     'org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpointTests#up',
+                     'org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpointTests#customMapping',
+                     'org.springframework.boot.actuate.health.HealthTests#unknownWithDetails',
+                     'org.springframework.boot.actuate.metrics.rich.MultiMetricRichGaugeReaderTests#countOne',
+                     'org.springframework.boot.actuate.metrics.rich.MultiMetricRichGaugeReaderTests#countTwo',
+                     'org.springframework.boot.actuate.autoconfigure.ManagementSecurityAutoConfigurationTests#testPathNormalization',
+                     'org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpointTests#disabled',
+                     'org.springframework.boot.actuate.metrics.export.PrefixMetricGroupExporterTests#unprefixedMetricsNotCopied']}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

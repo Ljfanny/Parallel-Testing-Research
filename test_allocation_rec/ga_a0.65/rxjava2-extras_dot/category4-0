@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 {'01noThrottling.sh': ['com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testNullSubscriber'],
  '24CPU1Mem4GB.sh': ['com.github.davidmoten.rx2.ActionsTest#testIsUtility',
+=======
+{'24CPU1Mem4GB.sh': ['com.github.davidmoten.rx2.ActionsTest#testIsUtility',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.ActionsTest#testSetToTrue',
                      'com.github.davidmoten.rx2.buffertofile.SerializersTest#isUtilityClass',
                      'com.github.davidmoten.rx2.BiPredicatesTest#isUtilityClass',
@@ -93,8 +97,11 @@
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMatchTest#testSubscribe',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMatchTest#testKeepsRequesting',
                      'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageListTest#testPutTwoAndReadMoreThanPageSize',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageListTest#testPutOneAndReadLessThanPageSize',
                      'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageListTest#testPutTwoAndReadLessThanPageSize',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.CallablesTest#testIsUtilityClass',
                      'com.github.davidmoten.rx2.ConsumersTest#testIsUtilityClass',
                      'com.github.davidmoten.rx2.ConsumersTest#testArraysNotEqualThrows',
@@ -111,7 +118,10 @@
                      'com.github.davidmoten.rx2.StringsTest#testMultibyteSpanningTwoBuffers',
                      'com.github.davidmoten.rx2.StringsTest#testConcat',
                      'com.github.davidmoten.rx2.StringsTest#testStrings',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTransformTest#testBackpressureOnErrorNoRequests',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTransformTest#testCompletesFirstLevel',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTransformTest#testMaxIterations',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableWindowMinMaxTest#testIncreasing',
@@ -194,40 +204,57 @@
                      'com.github.davidmoten.rx2.buffertofile.SerializersTest#testDataSerializerWithUnboundedCapacity',
                      'com.github.davidmoten.rx2.util.PairTest#testToString',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMapLastTest#testMapLastRequestAmount',
+<<<<<<< HEAD
                      'com.github.davidmoten.util.RingBufferTest#testEmpty',
                      'com.github.davidmoten.util.RingBufferTest#testPushTwo',
                      'com.github.davidmoten.util.RingBufferTest#testPushThreeOverflows',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableFetchPagesByRequestTest#isUtilityClass',
+=======
+                     'com.github.davidmoten.util.RingBufferTest#testPushTwo',
+                     'com.github.davidmoten.util.RingBufferTest#testPushThreeOverflows',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.internal.flowable.FlowableFetchPagesByRequestTest#testFetchCompletesIfNoneReturned',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleBlankProducesBlank',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleCancelledAfterFirstEmission',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitNormalWithPattern',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleNormal',
                      'com.github.davidmoten.rx2.StringsSplitTest#testLong',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitEmpty',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleSeparatorOnlyProducesTwoBlanks',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitLongPattern',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSeparatorOnlyProducesTwoBlanks',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleEmpty',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleError',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleNoSeparatorProducesSingle',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleEmptyItemsAtBeginningMiddleAndEndProduceBlanks',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitNoSeparatorProducesSingle',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitNormal',
+=======
+                     'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleNoSeparatorProducesSingle',
+                     'com.github.davidmoten.rx2.StringsSplitTest#testSplitNoSeparatorProducesSingle',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitBlankProducesBlank',
                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleNormalCancelled',
                      'com.github.davidmoten.rx2.flowable.SerializedTest#testSerializeAndDeserializeOfNonEmptyStream',
                      'com.github.davidmoten.rx2.flowable.SerializedTest#testSerializeAndDeserializeOfNonEmptyStreamUsingKryo',
                      'com.github.davidmoten.rx2.flowable.SerializedTest#testSerializeAndDeserializeOfPersonStreamUsingKryo',
                      'com.github.davidmoten.rx2.flowable.SerializedTest#isUtilityClass',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.flowable.SerializedTest#testSerializeAndDeserializeOfEmptyStreamUsingKryo',
                      'com.github.davidmoten.rx2.flowable.SerializedTest#testSerializeAndDeserializeOfEmptyStream',
                      'com.github.davidmoten.rx2.SchedulerHelperTest#testIsUtilityClass',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.SchedulerHelperTest#testWithCallSite',
                      'com.github.davidmoten.rx2.SchedulerHelperTest#testDispose',
                      'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageTest#testPagePrintln',
                      'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageTest#testPageSize',
                      'com.github.davidmoten.rx2.MaybesTest#isUtilityClass',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTest#testRepeatingZero',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testCancelWhileProcessingOnNext',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testAddReturnsNull',
@@ -235,6 +262,12 @@
                      'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testTwo',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testBackpressureAndCancel',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testBackpressure',
+=======
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testCancelWhileProcessingOnNext',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testAddReturnsNull',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testAddReturnsNullShouldEmitNPE',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testBackpressureAndCancel',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testRequestWhileProcessingOnNext',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testDoesNotEmitAfterErrorInOnNextIfUpstreamDoesNotHonourCancellationImmediately',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testConditionThrows',
@@ -301,7 +334,10 @@
                      'com.github.davidmoten.rx2.internal.flowable.FlowableWindowMinMaxTest#testEmpty',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableWindowMinMaxTest#testWindowSizeNegativeThrowsIAE',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableWindowMinMaxTest#testCancellation',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.internal.flowable.FlowableWindowMinMaxTest#testWindowSizeZeroThrowsIAE',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.internal.flowable.FlowableWindowMinMaxTest#testErrorPropagated',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableWindowMinMaxTest#testWindowMax',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableWindowMinMaxTest#testWindowSizeBiggerThanAvailableProducesEmptyList',
@@ -314,7 +350,10 @@
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMinRequestTest#testUnconstrainedFirstRequest',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMinRequestTest#testCancel',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMinRequestTest#testMinWhenRequestIsMaxValueAndSourceDoesNotComplete',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMinRequestTest#testConstrainedFirstRequest',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMinRequestTest#testRebatchRequestsMinLessThanMax',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableDoOnEmptyTest#testEmpty',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableDoOnEmptyTest#testBackPressure',
@@ -327,6 +366,7 @@
                      'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsOneAcrossTwoDelimiterStartsSecond',
                      'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsOneEndsWithDelimiter',
                      'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsOneAcrossTwoDelimiterMiddleSecond',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsNoneBecauseOnlyPartialMatchToDelimiter',
                      'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsTwoLongDelimiter',
                      'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsThree',
@@ -334,6 +374,12 @@
                      'com.github.davidmoten.rx2.flowable.TransformersTest#testStatisticsOnEmptyStream',
                      'com.github.davidmoten.rx2.flowable.TransformersTest#testStatisticsPairOnMultipleElements',
                      'com.github.davidmoten.rx2.flowable.TransformersTest#testIsUtilityClass',
+=======
+                     'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsTwoLongDelimiter',
+                     'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsOneAcrossThree',
+                     'com.github.davidmoten.rx2.flowable.TransformersTest#testStatisticsOnEmptyStream',
+                     'com.github.davidmoten.rx2.flowable.TransformersTest#testStatisticsPairOnMultipleElements',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.flowable.TransformersTest#testToString',
                      'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testByteArrayLengthOne',
                      'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testCancel',
@@ -356,7 +402,10 @@
                      'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testVeryManyByteArraysObservableSource',
                      'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testVeryManyIntegers',
                      'com.github.davidmoten.rx2.BytesTest#testCollectWithEmpty',
+<<<<<<< HEAD
                      'com.github.davidmoten.rx2.StateMachineTest#testIsUtilityClassCompletionAlwaysTrueHolder',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'com.github.davidmoten.rx2.StateMachineTest#testIsUtilityClass',
                      'com.github.davidmoten.rx2.BiFunctionsTest#test',
                      'com.github.davidmoten.rx2.BiFunctionsTest#testToNull',
@@ -372,19 +421,54 @@
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMergeInterleavedTest#testInterleaveOneStream',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMergeInterleavedTest#testInterleaveCompletingStreamsDifferentSize',
                      'com.github.davidmoten.rx2.internal.flowable.FlowableMergeInterleavedTest#testInterleaveInfiniteStreamWithFiniteStream'],
+<<<<<<< HEAD
  '28CPU2Mem16GB.sh': ['com.github.davidmoten.rx2.util.PairTest#testHashCodeWithNulls',
                       'com.github.davidmoten.rx2.SpecializedMspcLinkedQueueTest#com.github.davidmoten.rx2.SpecializedMspcLinkedQueueTest',
+=======
+ '27CPU2Mem8GB.sh': ['com.github.davidmoten.rx2.util.PairTest#testHashCodeWithNulls',
+                     'com.github.davidmoten.util.RingBufferTest#testEmpty',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableFetchPagesByRequestTest#isUtilityClass',
+                     'com.github.davidmoten.rx2.StringsSplitTest#testSplitEmpty',
+                     'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleError',
+                     'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleEmptyItemsAtBeginningMiddleAndEndProduceBlanks',
+                     'com.github.davidmoten.rx2.StringsSplitTest#testSplitNormal',
+                     'com.github.davidmoten.rx2.flowable.SerializedTest#testSerializeAndDeserializeOfEmptyStreamUsingKryo',
+                     'com.github.davidmoten.rx2.flowable.SerializedTest#testSerializeAndDeserializeOfEmptyStream',
+                     'com.github.davidmoten.rx2.SchedulerHelperTest#testIsUtilityClass',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTest#testRepeatingZero',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testTwo',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testBackpressure',
+                     'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageListTest#testPutOneAndReadLessThanPageSize',
+                     'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageListTest#testPutTwoAndReadEqualsPageSize',
+                     'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageListTest#testPutTwoAndReadLessThanPageSize',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTransformTest#testBackpressureOnErrorNoRequests',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableWindowMinMaxTest#testWindowSizeZeroThrowsIAE',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableMinRequestTest#testBackpressure',
+                     'com.github.davidmoten.rx2.internal.flowable.FlowableMinRequestTest#testConstrainedFirstRequest',
+                     'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsNoneBecauseOnlyPartialMatchToDelimiter',
+                     'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsThree',
+                     'com.github.davidmoten.rx2.flowable.TransformersTest#testIsUtilityClass',
+                     'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testNullSubscriber',
+                     'com.github.davidmoten.rx2.StateMachineTest#testIsUtilityClassCompletionAlwaysTrueHolder'],
+ '28CPU2Mem16GB.sh': ['com.github.davidmoten.rx2.SpecializedMspcLinkedQueueTest#com.github.davidmoten.rx2.SpecializedMspcLinkedQueueTest',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleNormalCancelledAtBegginning',
                       'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testOne',
                       'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testAddThrows',
                       'com.github.davidmoten.rx2.internal.flowable.SerializerJavaIOTest#testNoHeader',
+<<<<<<< HEAD
                       'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageListTest#testPutTwoAndReadEqualsPageSize',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'com.github.davidmoten.rx2.internal.flowable.buffertofile.PageListTest#testPutSixAndReadMultiplePages',
                       'com.github.davidmoten.rx2.StringsTest#testTrimWithNull',
                       'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTransformTest#testErrorPreChainingCausesCancel',
                       'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTransformTest#testManyAsync',
                       'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTransformTest#testMaxChainedGreaterThanZero',
+<<<<<<< HEAD
                       'com.github.davidmoten.rx2.internal.flowable.FlowableMinRequestTest#testBackpressure',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsOneAcrossTwoDelimiterEndsFirst',
                       'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testCancelObservable',
                       'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testFragmentsAsync']}

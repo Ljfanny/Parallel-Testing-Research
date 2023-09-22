@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {'21CPU025Mem2GB.sh': ['ch.qos.logback.core.rolling.RollingFileAppenderTest#testFilePropertyAfterRollingPolicy',
                        'ch.qos.logback.core.net.server.ConcurrentServerRunnerTest#testStartStop',
                        'ch.qos.logback.core.net.server.ConcurrentServerRunnerTest#testRunClientAndVisit',
@@ -29,10 +30,22 @@
                        'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testPrefixSuffixInteraction1',
                        'ch.qos.logback.core.status.StatusUtilTest#statusListShouldReturnLastResetTime',
                        'ch.qos.logback.core.appender.DummyAppenderTest#testNewAppender',
+=======
+{'19CPU010Mem1GB.sh': ['ch.qos.logback.core.net.server.ConcurrentServerRunnerTest#testStartStop',
+                       'ch.qos.logback.core.OutputStreamAppenderTest#nullFileHeader',
+                       'ch.qos.logback.core.net.AbstractSocketAppenderTest#testDispatchEvent',
+                       'ch.qos.logback.core.net.AbstractSocketAppenderTest#appenderShouldFailToStartWithUnresolvableRemoteHost',
+                       'ch.qos.logback.core.subst.TokenizerTest#colon',
+                       'ch.qos.logback.core.pattern.SpacePadderTest#lengthyPad',
+                       'ch.qos.logback.core.recovery.RecoveryCoordinatorTest#actualTime',
+                       'ch.qos.logback.core.net.DefaultSocketConnectorTest#testConnectEventually',
+                       'ch.qos.logback.core.net.DefaultSocketConnectorTest#testConnectionFails',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'ch.qos.logback.core.FileAppenderResilienceTest#smoke',
                        'ch.qos.logback.core.AsyncAppenderBaseTest#noEventLoss',
                        'ch.qos.logback.core.AsyncAppenderBaseTest#lossyAppenderShouldOnlyLooseCertainEvents',
                        'ch.qos.logback.core.AsyncAppenderBaseTest#lossyAppenderShouldBeNonLossyIfDiscardingThresholdIsZero',
+<<<<<<< HEAD
                        'ch.qos.logback.core.subst.ParserTest#defaultSeparatorOutsideOfAVariable',
                        'ch.qos.logback.core.subst.ParserTest#literal',
                        'ch.qos.logback.core.subst.ParserTest#literalWithAccolade0',
@@ -85,10 +98,23 @@
                        'ch.qos.logback.core.joran.event.SaxEventRecorderTest#bodyWithSpacesAndQuotes',
                        'ch.qos.logback.core.joran.event.SaxEventRecorderTest#test3',
                        'ch.qos.logback.core.rolling.helper.FileNamePatternTest#asRegexByDate',
+=======
+                       'ch.qos.logback.core.subst.ParserTest#literalVariableLiteral',
+                       'ch.qos.logback.core.joran.util.PropertySetterTest#testEnum',
+                       'ch.qos.logback.core.sift.AppenderTrackerTest#findingTheInexistentShouldNotBomb',
+                       'ch.qos.logback.core.sift.AppenderTrackerTest#trackerShouldHonorTimeoutParameter',
+                       'ch.qos.logback.core.pattern.parser.ParserTest#testCompositeFormatting',
+                       'ch.qos.logback.core.util.OptionHelperTest#testSubstVarsContextOnly',
+                       'ch.qos.logback.core.rolling.MultiThreadedRollingTest#multiThreadedTimedBased',
+                       'ch.qos.logback.core.rolling.MultiThreadedRollingTest#multiThreadedSizeBased',
+                       'ch.qos.logback.core.util.TimeUtilTest#testHour',
+                       'ch.qos.logback.core.net.server.SSLServerSocketAppenderBaseTest#testUsingDefaultConfig',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'ch.qos.logback.core.rolling.SizeBasedRollingTest#smoke',
                        'ch.qos.logback.core.rolling.SizeBasedRollingTest#gz',
                        'ch.qos.logback.core.rolling.SizeBasedRollingTest#zipped',
                        'ch.qos.logback.core.rolling.SizeBasedRollingTest#activeFileNameNotSet',
+<<<<<<< HEAD
                        'ch.qos.logback.core.util.LocationUtilTest#testExplicitClasspathUrlWithRootPath',
                        'ch.qos.logback.core.boolex.MatcherTest#testPartRegion',
                        'ch.qos.logback.core.spi.AppenderAttachableImplTest#testIteratorForAppenders',
@@ -160,6 +186,38 @@
                        'ch.qos.logback.classic.LoggerContextTest#testRootGetLogger',
                        'ch.qos.logback.classic.LoggerContextTest#testEmpty',
                        'ch.qos.logback.classic.gaffer.GafferConfiguratorTest#contextName',
+=======
+                       'ch.qos.logback.core.read.CyclicBufferAppenderTest#reset',
+                       'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#existingLocalPropertyShouldEvaluateToTrue',
+                       'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetNeedClientAuth',
+                       'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetExcludedAndIncludedCipherSuites',
+                       'ch.qos.logback.core.util.ContentTypeUtilTest#nullContext',
+                       'ch.qos.logback.core.util.StringCollectionUtilTest#testRemoveMatchingWithMatchingPattern',
+                       'ch.qos.logback.core.util.StringCollectionUtilTest#testRetainMatchingWithNoMatchingPattern',
+                       'ch.qos.logback.classic.jul.LevelChangePropagatorTest#gc',
+                       'ch.qos.logback.classic.net.SyslogAppenderTest#basic',
+                       'ch.qos.logback.classic.net.SyslogAppenderTest#suffixPatternWithTag',
+                       'ch.qos.logback.classic.net.SyslogAppenderTest#tException',
+                       'ch.qos.logback.classic.net.SyslogAppenderTest#large',
+                       'ch.qos.logback.classic.db.DBAppenderH2Test#emptyCallerDataShouldBeHandledGracefully',
+                       'ch.qos.logback.classic.db.DBAppenderH2Test#testContextInfo',
+                       'ch.qos.logback.classic.db.DBAppenderH2Test#withNullArgument',
+                       'ch.qos.logback.classic.issue.lbclassic135.lbclassic139.LB139_DeadlockTest#test',
+                       'ch.qos.logback.classic.TurboFilteringInLoggerTest#testIsErrorEnabledWithAcceptBlueFilter',
+                       'ch.qos.logback.classic.db.names.DefaultDBNameResolverTest#testGetLoggingEventColumnName',
+                       'ch.qos.logback.classic.db.names.DefaultDBNameResolverTest#testGetTableName',
+                       'ch.qos.logback.classic.net.server.SSLServerSocketReceiverTest#testGetServerSocketFactory',
+                       'ch.qos.logback.classic.db.DBAppenderIntegrationTest#postgres',
+                       'ch.qos.logback.classic.LoggerTest#setLevelToNull_A',
+                       'ch.qos.logback.classic.issue.lbclassic203.ConcurrentSiftingTest#concurrentAccess',
+                       'ch.qos.logback.classic.pattern.TargetLengthBasedClassNameAbbreviatorTest#testNoDot',
+                       'ch.qos.logback.classic.PatternLayoutTest#contextNameTest',
+                       'ch.qos.logback.classic.turbo.ReconfigureOnChangeTest#scan_LOGBACK_474',
+                       'ch.qos.logback.classic.boolex.OnMarkerEvaluatorTest#nullMarkerInEvent',
+                       'ch.qos.logback.classic.db.SQLBuilderTest#shouldReturnSimpleSqlInsertLoggingPropertyQuery',
+                       'ch.qos.logback.classic.db.SQLBuilderTest#shouldReturnSimpleSqlInsertLoggingEventQuery',
+                       'ch.qos.logback.classic.net.SMTPAppender_GreenTest#html',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'ch.qos.logback.classic.net.SMTPAppender_GreenTest#testMultipleTo',
                        'ch.qos.logback.classic.net.SMTPAppender_GreenTest#synchronousSmoke',
                        'ch.qos.logback.classic.net.SMTPAppender_GreenTest#asynchronousSmoke',
@@ -168,11 +226,18 @@
                        'ch.qos.logback.classic.net.SMTPAppender_GreenTest#testCustomEvaluator',
                        'ch.qos.logback.classic.net.SMTPAppender_GreenTest#testCustomBufferSize',
                        'ch.qos.logback.classic.net.SMTPAppender_GreenTest#bufferShouldBeResetBetweenMessages',
+<<<<<<< HEAD
                        'ch.qos.logback.classic.net.SocketReceiverTest#testStartNoRemoteAddress',
                        'ch.qos.logback.classic.net.SocketReceiverTest#testStartUnknownHost',
                        'ch.qos.logback.classic.net.SocketReceiverTest#testServerDropsConnection',
                        'ch.qos.logback.classic.net.SocketReceiverTest#testNoDispatchEventForDisabledLevel'],
  '24CPU1Mem4GB.sh': ['ch.qos.logback.core.rolling.RollingFileAppenderTest#testPrudentModeLogicalImplications',
+=======
+                       'ch.qos.logback.classic.net.SocketReceiverTest#testStartUnknownHost',
+                       'ch.qos.logback.classic.net.SocketReceiverTest#testNoDispatchEventForDisabledLevel'],
+ '26CPU2Mem4GB.sh': ['ch.qos.logback.core.rolling.RollingFileAppenderTest#testPrudentModeLogicalImplications',
+                     'ch.qos.logback.core.rolling.RollingFileAppenderTest#testFilePropertyAfterRollingPolicy',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.rolling.RollingFileAppenderTest#testPrudentModeLogicalImplicationsOnCompression',
                      'ch.qos.logback.core.rolling.RollingFileAppenderTest#testFileShouldNotMatchFileNamePattern',
                      'ch.qos.logback.core.rolling.RollingFileAppenderTest#testFileNameWithParenthesis',
@@ -183,10 +248,21 @@
                      'ch.qos.logback.core.rolling.RollingFileAppenderTest#testNoStart',
                      'ch.qos.logback.core.rolling.RollingFileAppenderTest#testNewAppender',
                      'ch.qos.logback.core.net.server.ConcurrentServerRunnerTest#testRunOneClient',
+<<<<<<< HEAD
                      'ch.qos.logback.core.net.server.ConcurrentServerRunnerTest#testRunManyClients',
                      'ch.qos.logback.core.OutputStreamAppenderTest#nullFileFooter',
                      'ch.qos.logback.core.OutputStreamAppenderTest#nullFileHeader',
                      'ch.qos.logback.core.OutputStreamAppenderTest#nullPresentationFooter',
+=======
+                     'ch.qos.logback.core.net.server.ConcurrentServerRunnerTest#testRunClientAndVisit',
+                     'ch.qos.logback.core.net.server.ConcurrentServerRunnerTest#testRunManyClients',
+                     'ch.qos.logback.core.OutputStreamAppenderTest#nullFileFooter',
+                     'ch.qos.logback.core.OutputStreamAppenderTest#nullPresentationHeader',
+                     'ch.qos.logback.core.OutputStreamAppenderTest#smoke',
+                     'ch.qos.logback.core.OutputStreamAppenderTest#nullPresentationFooter',
+                     'ch.qos.logback.core.net.AbstractSocketAppenderTest#appenderShouldFailToStartWithoutValidRemoteHost',
+                     'ch.qos.logback.core.net.AbstractSocketAppenderTest#appenderShouldFailToStartWithoutValidPort',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.net.AbstractSocketAppenderTest#testAppendWhenNotStarted',
                      'ch.qos.logback.core.net.AbstractSocketAppenderTest#testAppendNullEvent',
                      'ch.qos.logback.core.net.AbstractSocketAppenderTest#appenderShouldFailToStartWithNegativeQueueSize',
@@ -200,24 +276,45 @@
                      'ch.qos.logback.core.subst.TokenizerTest#simleVariable',
                      'ch.qos.logback.core.subst.TokenizerTest#mix',
                      'ch.qos.logback.core.subst.TokenizerTest#colonFollowedByDollar',
+<<<<<<< HEAD
                      'ch.qos.logback.core.subst.TokenizerTest#literalOnly',
                      'ch.qos.logback.core.subst.TokenizerTest#basicDefaultSeparator',
                      'ch.qos.logback.core.subst.TokenizerTest#literalWithAccolades',
                      'ch.qos.logback.core.subst.TokenizerTest#colon',
+=======
+                     'ch.qos.logback.core.subst.TokenizerTest#defaultSeparatorOutsideVariable',
+                     'ch.qos.logback.core.subst.TokenizerTest#literalOnly',
+                     'ch.qos.logback.core.subst.TokenizerTest#basicDefaultSeparator',
+                     'ch.qos.logback.core.subst.TokenizerTest#literalWithAccolades',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.joran.spi.ConfigurationWatchListTest#fileToURLAndBack',
                      'ch.qos.logback.core.encoder.ObjectEncodeDecodeTest#multipleBatches',
                      'ch.qos.logback.core.encoder.ObjectEncodeDecodeTest#singleBatch',
                      'ch.qos.logback.core.recovery.ResilientOutputStreamTest#verifyRecuperationAfterFailure',
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testBasic',
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testLiteralWithPercent',
+<<<<<<< HEAD
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testWindowsLikeBackSlashes',
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testSingleLiteral',
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testSimpleP',
+=======
+                     'ch.qos.logback.core.pattern.parser.TokenStreamTest#testMultipleRecursion',
+                     'ch.qos.logback.core.pattern.parser.TokenStreamTest#testEscapedParanteheses',
+                     'ch.qos.logback.core.pattern.parser.TokenStreamTest#testWindowsLikeBackSlashes',
+                     'ch.qos.logback.core.pattern.parser.TokenStreamTest#compositedKeyword',
+                     'ch.qos.logback.core.pattern.parser.TokenStreamTest#testSingleLiteral',
+                     'ch.qos.logback.core.pattern.parser.TokenStreamTest#testSimpleP',
+                     'ch.qos.logback.core.pattern.parser.TokenStreamTest#testEmptyP',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testNested',
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testEmptyP2',
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testEscape',
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testOptions',
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testSimpleP2',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.pattern.parser.TokenStreamTest#testComplexNR',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#testEmpty',
                      'ch.qos.logback.core.pattern.parser.TokenStreamTest#compositedKeywordFollowedByOptions',
                      'ch.qos.logback.core.helpers.CyclicBufferTest#smoke',
@@ -225,12 +322,21 @@
                      'ch.qos.logback.core.pattern.SpacePadderTest#nullString',
                      'ch.qos.logback.core.pattern.SpacePadderTest#longString',
                      'ch.qos.logback.core.pattern.SpacePadderTest#smoke',
+<<<<<<< HEAD
                      'ch.qos.logback.core.pattern.SpacePadderTest#lengthyPad',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.recovery.RecoveryCoordinatorTest#smoke',
                      'ch.qos.logback.core.recovery.RecoveryCoordinatorTest#longTermFailure',
                      'ch.qos.logback.core.pattern.parser.FormatInfoTest#testRightPad',
                      'ch.qos.logback.core.pattern.parser.FormatInfoTest#testEndingInDot',
+<<<<<<< HEAD
                      'ch.qos.logback.core.pattern.parser.FormatInfoTest#testMaxOnly',
+=======
+                     'ch.qos.logback.core.pattern.parser.FormatInfoTest#testBasic',
+                     'ch.qos.logback.core.pattern.parser.FormatInfoTest#testMaxOnly',
+                     'ch.qos.logback.core.pattern.parser.FormatInfoTest#testMinOnly',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.rolling.TimeBasedFileNamingAndTriggeringPolicyBaseTest#singleDate',
                      'ch.qos.logback.core.rolling.TimeBasedFileNamingAndTriggeringPolicyBaseTest#multiDate',
                      'ch.qos.logback.core.rolling.helper.RollingCalendarTest#testVaryingNumberOfDailyPeriods',
@@ -241,6 +347,11 @@
                      'ch.qos.logback.core.joran.action.IncludeActionTest#basicFile',
                      'ch.qos.logback.core.joran.action.IncludeActionTest#optionalFile',
                      'ch.qos.logback.core.joran.action.IncludeActionTest#basicResource',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.joran.action.IncludeActionTest#basicURL',
+                     'ch.qos.logback.core.joran.action.IncludeActionTest#noFileFound',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.joran.action.IncludeActionTest#withCorruptFile',
                      'ch.qos.logback.core.joran.action.IncludeActionTest#malformedURL',
                      'ch.qos.logback.core.joran.action.IncludeActionTest#unknownURL',
@@ -254,6 +365,10 @@
                      'ch.qos.logback.core.joran.conditional.IfThenElseAndIncludeCompositionTest#includeNestedWithinIf',
                      'ch.qos.logback.core.net.ssl.TrustManagerFactoryFactoryBeanTest#testExplicitProvider',
                      'ch.qos.logback.core.net.ssl.TrustManagerFactoryFactoryBeanTest#testExplicitAlgorithm',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.net.ssl.TrustManagerFactoryFactoryBeanTest#testDefaults',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.joran.TrivialConfiguratorTest#smoke',
                      'ch.qos.logback.core.joran.TrivialConfiguratorTest#inexistentFile',
                      'ch.qos.logback.core.joran.TrivialConfiguratorTest#illFormedXML',
@@ -268,11 +383,16 @@
                      'ch.qos.logback.core.joran.conditional.IfThenElseTest#useNonExistenceOfSystemPropertyToDefineAContextProperty',
                      'ch.qos.logback.core.joran.conditional.IfThenElseTest#noContextPropertyShouldBeDefinedIfSystemPropertyExists',
                      'ch.qos.logback.core.joran.conditional.IfThenElseTest#whenContextPropertyIsSet_IfThenBranchIsEvaluated_NO_ELSE_DEFINED',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.util.FileSizeTest#test',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.net.AbstractSSLSocketAppenderTest#testUsingDefaultConfig',
                      'ch.qos.logback.core.net.DefaultSocketConnectorTest#testConnect',
                      'ch.qos.logback.core.spi.AppenderAttachableImplLockTest#getAppenderBoom',
                      'ch.qos.logback.core.spi.AppenderAttachableImplLockTest#detachAppenderBoom',
                      'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#smoke',
+<<<<<<< HEAD
                      'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#smokeII',
                      'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testTail1',
                      'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testTail2',
@@ -280,6 +400,21 @@
                      'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testPrefixSuffixInteraction2',
                      'ch.qos.logback.core.status.StatusUtilTest#emptyStatusListShouldResultInNotFound',
                      'ch.qos.logback.core.status.StatusUtilTest#withoutResetsStatusUtilShouldReturnNotFound',
+=======
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testSuffix',
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testSlashSuffix',
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#smokeII',
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testTail1',
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testTail2',
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testTail3',
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testTail4',
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testDeepSuffix',
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testPrefixSuffixInteraction1',
+                     'ch.qos.logback.core.joran.spi.SimpleRuleStoreTest#testPrefixSuffixInteraction2',
+                     'ch.qos.logback.core.status.StatusUtilTest#emptyStatusListShouldResultInNotFound',
+                     'ch.qos.logback.core.status.StatusUtilTest#withoutResetsStatusUtilShouldReturnNotFound',
+                     'ch.qos.logback.core.status.StatusUtilTest#statusListShouldReturnLastResetTime',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.rolling.TimeBasedRollingWithArchiveRemoval_Test#cleanHistoryOnStart',
                      'ch.qos.logback.core.rolling.TimeBasedRollingWithArchiveRemoval_Test#dailyChronologSizeBasedRolloverWithSecondPhase',
                      'ch.qos.logback.core.rolling.TimeBasedRollingWithArchiveRemoval_Test#dailyRollover15',
@@ -294,6 +429,10 @@
                      'ch.qos.logback.core.appender.DummyAppenderTest#testBasic',
                      'ch.qos.logback.core.appender.DummyAppenderTest#testConfiguredAppender',
                      'ch.qos.logback.core.appender.DummyAppenderTest#testNoStart',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.appender.DummyAppenderTest#testNewAppender',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.FileAppenderResilienceTest#manual',
                      'ch.qos.logback.core.AsyncAppenderBaseTest#smoke',
                      'ch.qos.logback.core.AsyncAppenderBaseTest#exceptionsShouldNotCauseHalting',
@@ -302,7 +441,13 @@
                      'ch.qos.logback.core.AsyncAppenderBaseTest#invalidQueueCapacityShouldResultInNonStartedAppender',
                      'ch.qos.logback.core.helpers.FileFilterUtilTest#findHighestCounterTest',
                      'ch.qos.logback.core.subst.ParserTest#nested',
+<<<<<<< HEAD
                      'ch.qos.logback.core.subst.ParserTest#literalVariableLiteral',
+=======
+                     'ch.qos.logback.core.subst.ParserTest#defaultSeparatorOutsideOfAVariable',
+                     'ch.qos.logback.core.subst.ParserTest#literal',
+                     'ch.qos.logback.core.subst.ParserTest#literalWithAccolade0',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.subst.ParserTest#variable',
                      'ch.qos.logback.core.subst.ParserTest#literalWithAccolade1',
                      'ch.qos.logback.core.subst.ParserTest#withColon',
@@ -310,26 +455,55 @@
                      'ch.qos.logback.core.subst.ParserTest#withDefault',
                      'ch.qos.logback.core.util.StatusPrinterTest#testBasic',
                      'ch.qos.logback.core.util.StatusPrinterTest#testNested',
+<<<<<<< HEAD
                      'ch.qos.logback.core.net.server.ServerSocketAppenderBaseFunctionalTest#testLogEventClient',
+=======
+                     'ch.qos.logback.core.util.StatusPrinterTest#testWithException',
+                     'ch.qos.logback.core.net.server.ServerSocketAppenderBaseFunctionalTest#testLogEventClient',
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testComplexCollection',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.joran.util.PropertySetterTest#testPropertyCollection',
                      'ch.qos.logback.core.joran.util.PropertySetterTest#testDuration',
                      'ch.qos.logback.core.joran.util.PropertySetterTest#testgetClassNameViaImplicitRules',
                      'ch.qos.logback.core.joran.util.PropertySetterTest#testSetComplexProperty',
+<<<<<<< HEAD
                      'ch.qos.logback.core.joran.util.PropertySetterTest#testFileSize',
                      'ch.qos.logback.core.joran.util.PropertySetterTest#testFilterReply',
                      'ch.qos.logback.core.joran.util.PropertySetterTest#testgetComplexPropertyColleClassNameViaImplicitRules',
                      'ch.qos.logback.core.joran.util.PropertySetterTest#testSetProperty',
                      'ch.qos.logback.core.joran.util.PropertySetterTest#testDefaultClassAnnotationForLists',
+=======
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testSetCamelProperty',
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testFileSize',
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testFilterReply',
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testgetComplexPropertyColleClassNameViaImplicitRules',
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testDefaultClassAnnonation',
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testSetProperty',
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testDefaultClassAnnotationForLists',
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testCanAggregateComponent',
+                     'ch.qos.logback.core.joran.util.PropertySetterTest#testSetComplexWithCamelCaseName',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.joran.util.PropertySetterTest#charset',
                      'ch.qos.logback.core.joran.replay.FruitConfigurationTest#withSubst',
                      'ch.qos.logback.core.joran.replay.FruitConfigurationTest#fruit2',
                      'ch.qos.logback.core.joran.replay.FruitConfigurationTest#fruit1',
+<<<<<<< HEAD
                      'ch.qos.logback.core.subst.NodeToStringTransformerTest#LOGBACK729',
+=======
+                     'ch.qos.logback.core.LifeCycleManagerTest#testRegisterAndReset',
+                     'ch.qos.logback.core.subst.NodeToStringTransformerTest#LOGBACK729',
+                     'ch.qos.logback.core.subst.NodeToStringTransformerTest#nestedVariable',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.subst.NodeToStringTransformerTest#withDefaultValue',
                      'ch.qos.logback.core.subst.NodeToStringTransformerTest#LOGBACK744_withColon',
                      'ch.qos.logback.core.subst.NodeToStringTransformerTest#literalVariableLiteral',
                      'ch.qos.logback.core.subst.NodeToStringTransformerTest#literal',
                      'ch.qos.logback.core.subst.NodeToStringTransformerTest#variable',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.subst.NodeToStringTransformerTest#loneColonShouldReadLikeAnyOtherCharacter',
+                     'ch.qos.logback.core.subst.NodeToStringTransformerTest#defaultValueNestedAsVar',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.subst.NodeToStringTransformerTest#literalWithNestedAccolades',
                      'ch.qos.logback.core.sift.AppenderTrackerTest#smoke',
                      'ch.qos.logback.core.sift.AppenderTrackerTest#endOfLivedAppendersShouldBeRemovedAfterLingeringTimeout',
@@ -337,12 +511,20 @@
                      'ch.qos.logback.core.sift.AppenderTrackerTest#trackerShouldHonorMaxComponentsParameter',
                      'ch.qos.logback.core.sift.AppenderTrackerTest#endOfLivedAppenderShouldBeAvailableDuringLingeringPeriod',
                      'ch.qos.logback.core.util.DatePatternToRegexTest#month',
+<<<<<<< HEAD
                      'ch.qos.logback.core.util.DatePatternToRegexTest#dot',
+=======
+                     'ch.qos.logback.core.util.DatePatternToRegexTest#ISO8601',
+                     'ch.qos.logback.core.util.DatePatternToRegexTest#amPm',
+                     'ch.qos.logback.core.util.DatePatternToRegexTest#dot',
+                     'ch.qos.logback.core.util.DatePatternToRegexTest#withQuotes',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.util.DatePatternToRegexTest#timeZone',
                      'ch.qos.logback.core.util.DatePatternToRegexTest#dayInWeek',
                      'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testOK',
                      'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testPercentAsLiteral',
                      'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testEscapeClosingParentheses',
+<<<<<<< HEAD
                      'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testNullPattern',
                      'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testConverterStart',
                      'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testUnStarted',
@@ -353,12 +535,40 @@
                      'ch.qos.logback.core.pattern.parser.ParserTest#lbcore193',
                      'ch.qos.logback.core.pattern.parser.ParserTest#testOptions1',
                      'ch.qos.logback.core.pattern.parser.ParserTest#testKeyword',
+=======
+                     'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testEscapeBothParentheses',
+                     'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testStarted',
+                     'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testNullPattern',
+                     'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testConverterStart',
+                     'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testUnStarted',
+                     'ch.qos.logback.core.pattern.parser.SamplePatternLayoutTest#testEmptyPattern',
+                     'ch.qos.logback.core.joran.spi.DefaultNestedComponentRegistryTest#smoke',
+                     'ch.qos.logback.core.joran.spi.DefaultNestedComponentRegistryTest#absent',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#testBasic',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#testOptions0',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#keywordGluedToLitteral',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#testNested',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#testFormattingInfo',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#lbcore193',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#testComposite',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#testOptions1',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#testKeyword',
+                     'ch.qos.logback.core.pattern.parser.ParserTest#empty',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.net.ssl.KeyManagerFactoryFactoryBeanTest#testExplicitProvider',
                      'ch.qos.logback.core.net.ssl.KeyManagerFactoryFactoryBeanTest#testExplicitAlgorithm',
                      'ch.qos.logback.core.net.ssl.KeyManagerFactoryFactoryBeanTest#testDefaults',
                      'ch.qos.logback.core.util.OptionHelperTest#testLiteral',
+<<<<<<< HEAD
                      'ch.qos.logback.core.util.OptionHelperTest#defaultValueReferencingAVariable',
                      'ch.qos.logback.core.util.OptionHelperTest#testSubstVarsContextOnly',
+=======
+                     'ch.qos.logback.core.util.OptionHelperTest#testSubstVarsRecursive',
+                     'ch.qos.logback.core.util.OptionHelperTest#defaultValueReferencingAVariable',
+                     'ch.qos.logback.core.util.OptionHelperTest#jackrabbit_standalone',
+                     'ch.qos.logback.core.util.OptionHelperTest#testUndefinedValues',
+                     'ch.qos.logback.core.util.OptionHelperTest#testSubstVarsVariableNotClosed',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.util.OptionHelperTest#testSubstVarsSystemProperties',
                      'ch.qos.logback.core.util.OptionHelperTest#testSubstVarsWithDefault',
                      'ch.qos.logback.core.encoder.ByteArrayUtilTest#smoke',
@@ -368,7 +578,10 @@
                      'ch.qos.logback.core.util.TimeUtilTest#testWeek',
                      'ch.qos.logback.core.util.TimeUtilTest#testDay',
                      'ch.qos.logback.core.util.TimeUtilTest#testMinute',
+<<<<<<< HEAD
                      'ch.qos.logback.core.util.TimeUtilTest#testHour',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP_Test#noCompression_FileSet_WithStopStart_4',
                      'ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP_Test#withGZCompression_FileSet_NoRestart_5',
                      'ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP_Test#withGZCompression_FileBlank_NoRestart_6',
@@ -376,8 +589,18 @@
                      'ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP_Test#noCompression_FileBlank_WithStopStart_3',
                      'ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP_Test#noCompression_FileBlank_NoRestart_2',
                      'ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP_Test#noCompression_FileSet_NoRestart_1',
+<<<<<<< HEAD
                      'ch.qos.logback.core.pattern.parser.CompilerTest#testLiteral',
                      'ch.qos.logback.core.pattern.parser.CompilerTest#testCompositeFormatting',
+=======
+                     'ch.qos.logback.core.pattern.parser.CompilerTest#testBasic',
+                     'ch.qos.logback.core.pattern.parser.CompilerTest#testUnknownWord',
+                     'ch.qos.logback.core.pattern.parser.CompilerTest#testLiteral',
+                     'ch.qos.logback.core.pattern.parser.CompilerTest#testCompositeFormatting',
+                     'ch.qos.logback.core.pattern.parser.CompilerTest#testFormat',
+                     'ch.qos.logback.core.pattern.parser.CompilerTest#testWithNopEscape',
+                     'ch.qos.logback.core.pattern.parser.CompilerTest#testComposite',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.joran.event.InPlayFireTest#testBasic',
                      'ch.qos.logback.core.joran.event.InPlayFireTest#testReplay',
                      'ch.qos.logback.core.rolling.helper.CompressTest#test2',
@@ -391,22 +614,49 @@
                      'ch.qos.logback.core.joran.SkippingInInterpreterTest#testSkippingActionExInBadBegin',
                      'ch.qos.logback.core.joran.SkippingInInterpreterTest#testSkippingActionExInBadEnd',
                      'ch.qos.logback.core.joran.SkippingInInterpreterTest#testSkippingRuntimeExInBadBegin',
+<<<<<<< HEAD
                      'ch.qos.logback.core.joran.spi.ElementSelectorTest#test2',
                      'ch.qos.logback.core.joran.spi.ElementSelectorTest#test1',
                      'ch.qos.logback.core.joran.spi.ElementSelectorTest#test3',
                      'ch.qos.logback.core.joran.spi.ElementSelectorTest#testSuffix',
                      'ch.qos.logback.core.joran.spi.ElementSelectorTest#testTailMatch',
                      'ch.qos.logback.core.joran.spi.ElementSelectorTest#test6',
+=======
+                     'ch.qos.logback.core.joran.SkippingInInterpreterTest#testSkippingRuntimeExInBadEnd',
+                     'ch.qos.logback.core.joran.spi.ElementSelectorTest#test2',
+                     'ch.qos.logback.core.joran.spi.ElementSelectorTest#test1',
+                     'ch.qos.logback.core.joran.spi.ElementSelectorTest#test3',
+                     'ch.qos.logback.core.joran.spi.ElementSelectorTest#test5',
+                     'ch.qos.logback.core.joran.spi.ElementSelectorTest#testSuffix',
+                     'ch.qos.logback.core.joran.spi.ElementSelectorTest#testTailMatch',
+                     'ch.qos.logback.core.joran.spi.ElementSelectorTest#test6',
+                     'ch.qos.logback.core.joran.spi.ElementSelectorTest#test4',
+                     'ch.qos.logback.core.joran.spi.ElementSelectorTest#testPrefixMatch',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.joran.action.DefinePropertyActionTest#noName',
                      'ch.qos.logback.core.joran.action.DefinePropertyActionTest#noClass',
                      'ch.qos.logback.core.joran.action.DefinePropertyActionTest#testBadClass',
                      'ch.qos.logback.core.joran.action.DefinePropertyActionTest#good',
                      'ch.qos.logback.core.net.server.RemoteReceiverStreamClientTest#testOfferEventAndRun',
                      'ch.qos.logback.core.net.server.RemoteReceiverStreamClientTest#testOfferEventSequenceAndRun',
+<<<<<<< HEAD
                      'ch.qos.logback.core.net.server.AbstractServerSocketAppenderTest#testStopThrowsException',
                      'ch.qos.logback.core.util.FileUtilTest#checkParentCreationInquiryAndSubsequentCreation',
                      'ch.qos.logback.core.joran.event.SaxEventRecorderTest#test2',
                      'ch.qos.logback.core.joran.event.SaxEventRecorderTest#test1',
+=======
+                     'ch.qos.logback.core.net.server.AbstractServerSocketAppenderTest#testStartStop',
+                     'ch.qos.logback.core.net.server.AbstractServerSocketAppenderTest#testStopWhenNotStarted',
+                     'ch.qos.logback.core.net.server.AbstractServerSocketAppenderTest#testStartWhenAlreadyStarted',
+                     'ch.qos.logback.core.net.server.AbstractServerSocketAppenderTest#testStopThrowsException',
+                     'ch.qos.logback.core.util.FileUtilTest#checkParentCreationInquiryAndSubsequentCreation',
+                     'ch.qos.logback.core.util.FileUtilTest#checkDeeperParentCreationInquiryAndSubsequentCreation',
+                     'ch.qos.logback.core.util.FileUtilTest#basicCopyingWorks',
+                     'ch.qos.logback.core.joran.event.SaxEventRecorderTest#test2',
+                     'ch.qos.logback.core.joran.event.SaxEventRecorderTest#bodyWithSpacesAndQuotes',
+                     'ch.qos.logback.core.joran.event.SaxEventRecorderTest#test1',
+                     'ch.qos.logback.core.joran.event.SaxEventRecorderTest#test3',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.util.DurationTest#test',
                      'ch.qos.logback.core.net.ssl.KeyStoreFactoryBeanTest#testExplicitPassphrase',
                      'ch.qos.logback.core.net.ssl.KeyStoreFactoryBeanTest#testExplicitProvider',
@@ -417,12 +667,20 @@
                      'ch.qos.logback.core.rolling.helper.FileNamePatternTest#convertMultipleDates',
                      'ch.qos.logback.core.rolling.helper.FileNamePatternTest#asRegex',
                      'ch.qos.logback.core.rolling.helper.FileNamePatternTest#objectListConverter',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.rolling.helper.FileNamePatternTest#asRegexByDate',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.rolling.helper.FileNamePatternTest#flowingI',
                      'ch.qos.logback.core.rolling.helper.FileNamePatternTest#testSmoke',
                      'ch.qos.logback.core.rolling.helper.FileNamePatternTest#withBackslash',
                      'ch.qos.logback.core.util.LocationUtilTest#testExplicitClasspathUrl',
                      'ch.qos.logback.core.util.LocationUtilTest#testExplicitClasspathUrlWithLeadingSlash',
                      'ch.qos.logback.core.util.LocationUtilTest#testExplicitClasspathUrlEmptyPath',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.util.LocationUtilTest#testExplicitClasspathUrlWithRootPath',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.util.LocationUtilTest#testImplicitClasspathUrl',
                      'ch.qos.logback.core.util.LocationUtilTest#testFileUrl',
                      'ch.qos.logback.core.net.ssl.SecureRandomFactoryBeanTest#testExplicitProvider',
@@ -432,22 +690,36 @@
                      'ch.qos.logback.core.boolex.MatcherTest#testCaseInsensitive',
                      'ch.qos.logback.core.boolex.MatcherTest#testCaseSensitive',
                      'ch.qos.logback.core.boolex.MatcherTest#testFullRegion',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.boolex.MatcherTest#testPartRegion',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.pattern.parser.OptionTokenizerTest#testEmpty',
                      'ch.qos.logback.core.spi.AppenderAttachableImplTest#getGetAppender',
                      'ch.qos.logback.core.spi.AppenderAttachableImplTest#testDetachAppenderByName',
                      'ch.qos.logback.core.spi.AppenderAttachableImplTest#testDetachAppender',
                      'ch.qos.logback.core.spi.AppenderAttachableImplTest#testDetachAndStopAllAppenders',
+<<<<<<< HEAD
                      'ch.qos.logback.core.spi.AppenderAttachableImplTest#testAddAppender',
                      'ch.qos.logback.core.spi.AppenderAttachableImplTest#testIsAttached',
                      'ch.qos.logback.core.read.CyclicBufferAppenderTest#genericGet',
                      'ch.qos.logback.core.read.CyclicBufferAppenderTest#reset',
                      'ch.qos.logback.core.helpers.ThrowableToStringArrayTest#nested',
+=======
+                     'ch.qos.logback.core.spi.AppenderAttachableImplTest#testIteratorForAppenders',
+                     'ch.qos.logback.core.spi.AppenderAttachableImplTest#testAddAppender',
+                     'ch.qos.logback.core.spi.AppenderAttachableImplTest#testIsAttached',
+                     'ch.qos.logback.core.read.CyclicBufferAppenderTest#genericGet',
+                     'ch.qos.logback.core.helpers.ThrowableToStringArrayTest#nested',
+                     'ch.qos.logback.core.helpers.ThrowableToStringArrayTest#smoke',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.helpers.ThrowableToStringArrayTest#multiNested',
                      'ch.qos.logback.core.appender.FileAppenderTest#smoke',
                      'ch.qos.logback.core.appender.FileAppenderTest#testPrudentModeLogicalImplications',
                      'ch.qos.logback.core.appender.FileAppenderTest#testCreateParentFolders',
                      'ch.qos.logback.core.appender.FileAppenderTest#testConfiguredAppender',
                      'ch.qos.logback.core.appender.FileAppenderTest#testNoStart',
+<<<<<<< HEAD
                      'ch.qos.logback.core.joran.action.PropertyActionTest#noAttributes',
                      'ch.qos.logback.core.joran.action.PropertyActionTest#nameValuePair',
                      'ch.qos.logback.core.joran.action.PropertyActionTest#testLoadNotPossible',
@@ -456,14 +728,37 @@
                      'ch.qos.logback.core.joran.action.PropertyActionTest#noName',
                      'ch.qos.logback.core.joran.action.PropertyActionTest#testLoadResource',
                      'ch.qos.logback.core.joran.action.PropertyActionTest#nameValuePairWithPrerequisiteSubsitution',
+=======
+                     'ch.qos.logback.core.appender.FileAppenderTest#testNewAppender',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#noAttributes',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#nameValuePair',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#testLoadNotPossible',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#testLoadFileWithPrerequisiteSubsitution',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#testLoadResourceWithPrerequisiteSubsitution',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#testLoadFile',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#testFileNotLoaded',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#noName',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#testLoadResource',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#nameValuePairWithPrerequisiteSubsitution',
+                     'ch.qos.logback.core.joran.action.PropertyActionTest#noValue',
+                     'ch.qos.logback.core.ContextBaseTest#contextNameProperty',
+                     'ch.qos.logback.core.ContextBaseTest#idempotentNameTest',
+                     'ch.qos.logback.core.ContextBaseTest#resetTest',
+                     'ch.qos.logback.core.ContextBaseTest#renameDefault',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.ContextBaseTest#renameTest',
                      'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#isNullForExistingLocalProperty',
                      'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#inexistentPropertyShouldEvaluateToFalse',
                      'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#existingSystemPropertyShouldEvaluateToTrue',
                      'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#existingContextPropertyShouldEvaluateToTrue',
                      'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#isNullForInexistentPropertyShouldEvaluateToTrue',
+<<<<<<< HEAD
                      'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#existingLocalPropertyShouldEvaluateToTrue',
                      'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#isNullForExistingContextProperty',
+=======
+                     'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#isNullForExistingContextProperty',
+                     'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#isNullForExistingSystemProperty',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.joran.conditional.PropertyEvalScriptBuilderTest#isDefinedForInexistentPropertyShouldEvaluateToTrue',
                      'ch.qos.logback.core.rolling.TimeBasedRollingTest#noCompression_FileBlank_NoRestart_1',
                      'ch.qos.logback.core.rolling.TimeBasedRollingTest#withCompression_FileBlank_NoRestart_2',
@@ -484,11 +779,16 @@
                      'ch.qos.logback.core.spi.CyclicBufferTrackerTest#empty1',
                      'ch.qos.logback.core.spi.CyclicBufferTrackerTest#empty0',
                      'ch.qos.logback.core.spi.CyclicBufferTrackerTest#destroy',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetIncludedAndExcludedProtocols',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetExcludedCipherSuites',
                      'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetWantClientAuth',
                      'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testPassDefaultProtocols',
                      'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testPassDefaultCipherSuites',
                      'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testPassDefaultNeedClientAuth',
+<<<<<<< HEAD
                      'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetExcludedAndIncludedCipherSuites',
                      'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetIncludedProtocols',
                      'ch.qos.logback.core.util.ContentTypeUtilTest#smoke',
@@ -496,6 +796,20 @@
                      'ch.qos.logback.core.util.ContentTypeUtilTest#emptySubtype',
                      'ch.qos.logback.core.util.StringCollectionUtilTest#testRemoveMatchingWithNoPatterns',
                      'ch.qos.logback.core.util.StringCollectionUtilTest#testRetainMatchingWithNoMatchingPattern',
+=======
+                     'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testPassDefaultWantClientAuth',
+                     'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetIncludedProtocols',
+                     'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetExcludedProtocols',
+                     'ch.qos.logback.core.net.ssl.SSLParametersConfigurationTest#testSetIncludedCipherSuites',
+                     'ch.qos.logback.core.util.ContentTypeUtilTest#smoke',
+                     'ch.qos.logback.core.util.ContentTypeUtilTest#emptySubtype',
+                     'ch.qos.logback.core.util.StringCollectionUtilTest#testRemoveMatchingWithNoMatchingPattern',
+                     'ch.qos.logback.core.util.StringCollectionUtilTest#testRemoveMatchingWithNoPatterns',
+                     'ch.qos.logback.core.util.StringCollectionUtilTest#testRetainMatchingWithMatchingPattern',
+                     'ch.qos.logback.core.util.StringCollectionUtilTest#testRetainMatchingWithNoPatterns',
+                     'ch.qos.logback.core.BasicStatusManagerTest#smoke',
+                     'ch.qos.logback.core.BasicStatusManagerTest#many',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.core.rolling.RenameUtilTest#renameToNonExistingDirectory',
                      'ch.qos.logback.core.rolling.RenameUtilTest#MANUAL_renamingOnDifferentVolumesOnLinux',
                      'ch.qos.logback.core.rolling.RenameUtilTest#MANUAL_renamingOnDifferentVolumesOnWindows',
@@ -505,6 +819,10 @@
                      'ch.qos.logback.classic.jul.LevelChangePropagatorTest#smoke',
                      'ch.qos.logback.classic.jul.LevelChangePropagatorTest#root',
                      'ch.qos.logback.classic.spi.ContextListenerTest#testNotifyOnStart',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.spi.ContextListenerTest#testNotifyOnStopNotResistant',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.spi.ContextListenerTest#testNotifyOnStopResistant',
                      'ch.qos.logback.classic.spi.ContextListenerTest#testNotifyOnReset',
                      'ch.qos.logback.classic.spi.ContextListenerTest#testLevelChange',
@@ -512,7 +830,10 @@
                      'ch.qos.logback.classic.gaffer.PropertyUtilTest#smoke',
                      'ch.qos.logback.classic.gaffer.PropertyUtilTest#empty',
                      'ch.qos.logback.classic.net.SyslogAppenderTest#LBCLASSIC_50',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.net.SyslogAppenderTest#large',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.html.HTMLLayoutTest#testHeader',
                      'ch.qos.logback.classic.html.HTMLLayoutTest#testAppendThrowable',
                      'ch.qos.logback.classic.html.HTMLLayoutTest#testConversionRuleSupportInHtmlLayout',
@@ -523,7 +844,10 @@
                      'ch.qos.logback.classic.db.DBAppenderH2Test#testAppendLoggingEvent',
                      'ch.qos.logback.classic.db.DBAppenderH2Test#testAppendThrowable',
                      'ch.qos.logback.classic.db.DBAppenderH2Test#testAppendMultipleEvents',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.db.DBAppenderH2Test#withNullArgument',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.sift.SiftingAppenderTest#smoke',
                      'ch.qos.logback.classic.sift.SiftingAppenderTest#sessionFinalizationShouldCauseLingering',
                      'ch.qos.logback.classic.sift.SiftingAppenderTest#multipleNesting',
@@ -557,11 +881,20 @@
                      'ch.qos.logback.classic.pattern.ExtendedThrowableProxyConverterTest#integration',
                      'ch.qos.logback.classic.jmx.JMXConfiguratorTest#contextStop',
                      'ch.qos.logback.classic.jmx.JMXConfiguratorTest#setLoggerLevel_LBCLASSIC_79',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.jmx.JMXConfiguratorTest#getLoggerLevel_LBCLASSIC_78',
+                     'ch.qos.logback.classic.jmx.JMXConfiguratorTest#testNonRemovalOfPreviousIntanceFromTheContextListenerList',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.jmx.JMXConfiguratorTest#contextReset',
                      'ch.qos.logback.classic.net.server.ServerSocketReceiverTest#testStartStop',
                      'ch.qos.logback.classic.net.server.ServerSocketReceiverTest#testStopWhenNotStarted',
                      'ch.qos.logback.classic.net.server.ServerSocketReceiverTest#testStopThrowsException',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.TurboFilteringInLoggerTest#testIsErrorEnabledWithAcceptBlueFilter',
+=======
+                     'ch.qos.logback.classic.net.server.ServerSocketReceiverTest#testStartWhenAlreadyStarted',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.TurboFilteringInLoggerTest#testIsWarnEnabledWithYesFilter',
                      'ch.qos.logback.classic.TurboFilteringInLoggerTest#testIsDebugEnabledWithYesFilter',
                      'ch.qos.logback.classic.TurboFilteringInLoggerTest#testIsInfoEnabledWithYesFilter',
@@ -573,10 +906,16 @@
                      'ch.qos.logback.classic.TurboFilteringInLoggerTest#testIsErrorEnabledWithNoFilter',
                      'ch.qos.logback.classic.TurboFilteringInLoggerTest#testLoggingContextReset',
                      'ch.qos.logback.classic.TurboFilteringInLoggerTest#testIsErrorEnabledWithDenyBlueFilter',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.db.names.DefaultDBNameResolverTest#testGetLoggingEventColumnName',
                      'ch.qos.logback.classic.db.names.DefaultDBNameResolverTest#testGetLoggingEventExceptionColumnName',
                      'ch.qos.logback.classic.db.names.DefaultDBNameResolverTest#testGetLoggingEventPropertyColumnName',
                      'ch.qos.logback.classic.db.names.DefaultDBNameResolverTest#testGetTableName',
+=======
+                     'ch.qos.logback.classic.TurboFilteringInLoggerTest#testIsErrorEnabledWithYesFilter',
+                     'ch.qos.logback.classic.db.names.DefaultDBNameResolverTest#testGetLoggingEventExceptionColumnName',
+                     'ch.qos.logback.classic.db.names.DefaultDBNameResolverTest#testGetLoggingEventPropertyColumnName',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.turbo.LRUMessageCacheTest#testEldestEntriesRemoval',
                      'ch.qos.logback.classic.encoder.LayoutInsteadOfEncoderTest#layoutInsteadOfEncoer',
                      'ch.qos.logback.classic.spi.PackagingDataCalculatorTest#nested',
@@ -595,6 +934,10 @@
                      'ch.qos.logback.classic.db.names.SimpleDBNameResolverTest#shouldReturnTableNameWithPrefix',
                      'ch.qos.logback.classic.db.names.SimpleDBNameResolverTest#shouldReturnColumnNameWithBothPrefixAndSuffix',
                      'ch.qos.logback.classic.db.names.SimpleDBNameResolverTest#shouldReturnTableNameWithBothPrefixAndSuffix',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.db.names.SimpleDBNameResolverTest#shouldReturnTableNameWithSuffix',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.db.names.SimpleDBNameResolverTest#shouldReturnColumnNameWithSuffix',
                      'ch.qos.logback.classic.db.names.SimpleDBNameResolverTest#shouldReturnColumnNameWithPrefix',
                      'ch.qos.logback.classic.db.names.SimpleDBNameResolverTest#shouldReturnTableAndColumnNamesWithBothPrefixAndSuffix',
@@ -614,6 +957,10 @@
                      'ch.qos.logback.classic.joran.JoranConfiguratorTest#onConsoleRetro',
                      'ch.qos.logback.classic.joran.JoranConfiguratorTest#lbcore193',
                      'ch.qos.logback.classic.joran.JoranConfiguratorTest#sysProps',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.joran.JoranConfiguratorTest#additivity',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.joran.JoranConfiguratorTest#simpleList',
                      'ch.qos.logback.classic.joran.JoranConfiguratorTest#turboFilter',
                      'ch.qos.logback.classic.joran.JoranConfiguratorTest#statusListener',
@@ -624,11 +971,19 @@
                      'ch.qos.logback.classic.joran.JoranConfiguratorTest#loggerLevelSettingBySystemProperty',
                      'ch.qos.logback.classic.joran.JoranConfiguratorTest#timestamp',
                      'ch.qos.logback.classic.util.LoggerNameUtilTest#smoke0',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.util.LoggerNameUtilTest#smoke1',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.util.LoggerNameUtilTest#emptyStringShouldReturnAListContainingOneEmptyString',
                      'ch.qos.logback.classic.util.LoggerNameUtilTest#dotAtLastPositionShouldReturnAListWithAnEmptyStringAsLastElement',
                      'ch.qos.logback.classic.util.LoggerNameUtilTest#supportNestedClasses',
                      'ch.qos.logback.classic.net.JMSQueueAppenderTest#testAppendFailure',
                      'ch.qos.logback.classic.net.JMSQueueAppenderTest#testStartMinimalInfo',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.net.JMSQueueAppenderTest#testStartUserPass',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.net.JMSQueueAppenderTest#testStartFails',
                      'ch.qos.logback.classic.net.JMSQueueAppenderTest#testAppendOk',
                      'ch.qos.logback.classic.spi.CallerDataTest#testBasic',
@@ -638,9 +993,16 @@
                      'ch.qos.logback.classic.joran.conditional.ConditionalTest#conditionalConsoleApp_IF_THEN_ELSE',
                      'ch.qos.logback.classic.joran.conditional.ConditionalTest#conditionalInclusionWithExistingFile',
                      'ch.qos.logback.classic.joran.conditional.ConditionalTest#conditionalInclusionWithInexistentFile',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.db.DBAppenderIntegrationTest#oracle11g',
                      'ch.qos.logback.classic.db.DBAppenderIntegrationTest#mysql',
                      'ch.qos.logback.classic.db.DBAppenderIntegrationTest#postgres',
+=======
+                     'ch.qos.logback.classic.db.DBAppenderIntegrationTest#sqlserver',
+                     'ch.qos.logback.classic.db.DBAppenderIntegrationTest#oracle10g',
+                     'ch.qos.logback.classic.db.DBAppenderIntegrationTest#oracle11g',
+                     'ch.qos.logback.classic.db.DBAppenderIntegrationTest#mysql',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.selector.ContextJNDISelectorTest#defaultContext',
                      'ch.qos.logback.classic.selector.ContextJNDISelectorTest#testCreateContext',
                      'ch.qos.logback.classic.selector.ContextJNDISelectorTest#testGetExistingContext',
@@ -649,7 +1011,13 @@
                      'ch.qos.logback.classic.util.LogbackMDCAdapterTest#sequenceWithGet',
                      'ch.qos.logback.classic.util.LogbackMDCAdapterTest#lbclassic77Test',
                      'ch.qos.logback.classic.util.LogbackMDCAdapterTest#copyOnInheritenceTest',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.util.LogbackMDCAdapterTest#removeInexistentKey',
+=======
+                     'ch.qos.logback.classic.util.LogbackMDCAdapterTest#sequenceWithGetPropertyMap',
+                     'ch.qos.logback.classic.util.LogbackMDCAdapterTest#removeInexistentKey',
+                     'ch.qos.logback.classic.util.LogbackMDCAdapterTest#removeForNullKeyTest',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.boolex.GEventEvaluatorTest#event',
                      'ch.qos.logback.classic.boolex.GEventEvaluatorTest#marker',
                      'ch.qos.logback.classic.boolex.GEventEvaluatorTest#level',
@@ -665,11 +1033,18 @@
                      'ch.qos.logback.classic.LoggerTest#smoke',
                      'ch.qos.logback.classic.LoggerTest#testEnabledX_Warn',
                      'ch.qos.logback.classic.LoggerTest#innerClass_I',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.LoggerTest#testAdditive',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.LoggerTest#testEnabled_Debug',
                      'ch.qos.logback.classic.LoggerTest#testEnabled_All',
                      'ch.qos.logback.classic.LoggerTest#testRootLogger',
                      'ch.qos.logback.classic.LoggerTest#testEnabledX_Off',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.LoggerTest#setLevelToNull_A',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.LoggerTest#setLevelToNull_B',
                      'ch.qos.logback.classic.LoggerTest#testNoStart',
                      'ch.qos.logback.classic.LoggerTest#setRootLevelToNull',
@@ -684,6 +1059,10 @@
                      'ch.qos.logback.classic.corpusTest.TextFileUtilTest#smoke',
                      'ch.qos.logback.classic.turbo.MarkerFilterTest#testBasic',
                      'ch.qos.logback.classic.turbo.MarkerFilterTest#testNoMarker',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.turbo.MarkerFilterTest#testComposite',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.spi.LoggerComparatorTest#testSmoke',
                      'ch.qos.logback.classic.joran.EvaluatorJoranTest#testMultipleConditionsInExpression',
                      'ch.qos.logback.classic.joran.EvaluatorJoranTest#testIgnoreMarker',
@@ -693,9 +1072,17 @@
                      'ch.qos.logback.classic.rolling.TimeBasedRollingWithConfigFileTest#basic',
                      'ch.qos.logback.classic.rolling.TimeBasedRollingWithConfigFileTest#timeAndSize',
                      'ch.qos.logback.classic.control.CLCTest#test1',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.pattern.TargetLengthBasedClassNameAbbreviatorTest#testNoDot',
                      'ch.qos.logback.classic.pattern.TargetLengthBasedClassNameAbbreviatorTest#testShortName',
                      'ch.qos.logback.classic.pattern.TargetLengthBasedClassNameAbbreviatorTest#test3Dot',
+=======
+                     'ch.qos.logback.classic.control.CLCTest#testCreation',
+                     'ch.qos.logback.classic.pattern.TargetLengthBasedClassNameAbbreviatorTest#testShortName',
+                     'ch.qos.logback.classic.pattern.TargetLengthBasedClassNameAbbreviatorTest#testTwoDot',
+                     'ch.qos.logback.classic.pattern.TargetLengthBasedClassNameAbbreviatorTest#test3Dot',
+                     'ch.qos.logback.classic.pattern.TargetLengthBasedClassNameAbbreviatorTest#testXDot',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.pattern.TargetLengthBasedClassNameAbbreviatorTest#testOneDot',
                      'ch.qos.logback.classic.encoder.PatternLayoutEncoderTest#smoke',
                      'ch.qos.logback.classic.encoder.PatternLayoutEncoderTest#charset',
@@ -704,6 +1091,10 @@
                      'ch.qos.logback.classic.pattern.ConverterTest#contextNameConverter',
                      'ch.qos.logback.classic.pattern.ConverterTest#testMethodOfCaller',
                      'ch.qos.logback.classic.pattern.ConverterTest#testVeryLongLoggerName',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.pattern.ConverterTest#testLogger',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.pattern.ConverterTest#testSyslogStart',
                      'ch.qos.logback.classic.pattern.ConverterTest#testMDCConverter',
                      'ch.qos.logback.classic.pattern.ConverterTest#testLineSeparator',
@@ -714,8 +1105,15 @@
                      'ch.qos.logback.classic.pattern.ConverterTest#testCallerData',
                      'ch.qos.logback.classic.pattern.ConverterTest#testRelativeTime',
                      'ch.qos.logback.classic.pattern.ConverterTest#testMessage',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.spi.LoggingEventSerializationTest#smoke',
                      'ch.qos.logback.classic.spi.LoggingEventSerializationTest#updatedMDC',
+=======
+                     'ch.qos.logback.classic.pattern.ConverterTest#testException',
+                     'ch.qos.logback.classic.spi.LoggingEventSerializationTest#smoke',
+                     'ch.qos.logback.classic.spi.LoggingEventSerializationTest#updatedMDC',
+                     'ch.qos.logback.classic.spi.LoggingEventSerializationTest#MDC',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.spi.LoggingEventSerializationTest#_Throwable',
                      'ch.qos.logback.classic.spi.LoggingEventSerializationTest#serializeLargeArgs',
                      'ch.qos.logback.classic.spi.LoggingEventSerializationTest#extendendeThrowable',
@@ -724,11 +1122,20 @@
                      'ch.qos.logback.classic.rolling.UniqueFileTest#basic',
                      'ch.qos.logback.classic.net.SSLSocketReceiverTest#testUsingDefaultConfig',
                      'ch.qos.logback.classic.MessageFormattingTest#testNoFormatting',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.MessageFormattingTest#testFormattingTwoArg',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.MessageFormattingTest#testMessageConverter',
                      'ch.qos.logback.classic.MessageFormattingTest#testNoFormatting2',
                      'ch.qos.logback.classic.MessageFormattingTest#testFormattingOneArg',
                      'ch.qos.logback.classic.sift.MDCBasedDiscriminatorTest#smoke',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.PatternLayoutTest#contextNameTest',
+=======
+                     'ch.qos.logback.classic.sift.MDCBasedDiscriminatorTest#nullMDC',
+                     'ch.qos.logback.classic.PatternLayoutTest#cnTest',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.PatternLayoutTest#testConversionRuleSupportInPatternLayout',
                      'ch.qos.logback.classic.PatternLayoutTest#testNoExeptionHandler',
                      'ch.qos.logback.classic.PatternLayoutTest#testOK',
@@ -752,6 +1159,10 @@
                      'ch.qos.logback.classic.MDCTest#testLBCLASSIC_98',
                      'ch.qos.logback.classic.MDCTest#test',
                      'ch.qos.logback.classic.gaffer.ConfigurationDelegateTest#scan',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.gaffer.ConfigurationDelegateTest#loggerSetLevel',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.gaffer.ConfigurationDelegateTest#contextAwareMixin',
                      'ch.qos.logback.classic.gaffer.ConfigurationDelegateTest#timestampWithContextBirthAsReference',
                      'ch.qos.logback.classic.gaffer.ConfigurationDelegateTest#loggerWithoutName',
@@ -784,6 +1195,10 @@
                      'ch.qos.logback.classic.turbo.ReconfigureOnChangeTest#indirectPerfTest',
                      'ch.qos.logback.classic.turbo.ReconfigureOnChangeTest#installFilter',
                      'ch.qos.logback.classic.LoggerContextDeadlockTest#testLBCLASSIC_81',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.pattern.MarkerConverterTest#testWithOneChildMarker',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.pattern.MarkerConverterTest#testWithSeveralChildMarker',
                      'ch.qos.logback.classic.pattern.MarkerConverterTest#testWithNullMarker',
                      'ch.qos.logback.classic.pattern.MarkerConverterTest#testWithMarker',
@@ -798,6 +1213,10 @@
                      'ch.qos.logback.classic.net.JMSTopicAppenderTest#testBuildEnvPropertiesWithPkgNull',
                      'ch.qos.logback.classic.net.JMSTopicAppenderTest#testStartFails',
                      'ch.qos.logback.classic.net.JMSTopicAppenderTest#testAppendOk',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.net.server.RemoteAppenderStreamClientTest#testWithEnabledLevel',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.net.server.RemoteAppenderStreamClientTest#testWithDisabledLevel',
                      'ch.qos.logback.classic.spi.ThrowableProxyTest#nested',
                      'ch.qos.logback.classic.spi.ThrowableProxyTest#smoke',
@@ -806,8 +1225,15 @@
                      'ch.qos.logback.classic.spi.ThrowableProxyTest#suppressedWithCause',
                      'ch.qos.logback.classic.spi.ThrowableProxyTest#multiNested',
                      'ch.qos.logback.classic.boolex.OnMarkerEvaluatorTest#smoke',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.db.SQLBuilderTest#shouldReturnSimpleSqlInsertExceptionQuery',
                      'ch.qos.logback.classic.db.SQLBuilderTest#shouldReturnDefaultSqlInsertExceptionQuery',
+=======
+                     'ch.qos.logback.classic.boolex.OnMarkerEvaluatorTest#nullMarkerInEvaluator',
+                     'ch.qos.logback.classic.db.SQLBuilderTest#shouldReturnSimpleSqlInsertExceptionQuery',
+                     'ch.qos.logback.classic.db.SQLBuilderTest#shouldReturnDefaultSqlInsertExceptionQuery',
+                     'ch.qos.logback.classic.db.SQLBuilderTest#shouldReturnDefaultSqlInsertLoggingPropertyQuery',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.db.SQLBuilderTest#shouldReturnDefaultSqlInsertLoggingEventQuery',
                      'ch.qos.logback.classic.db.DBAppenderHSQLTest#testContextInfo',
                      'ch.qos.logback.classic.db.DBAppenderHSQLTest#testAppendLoggingEvent',
@@ -816,17 +1242,34 @@
                      'ch.qos.logback.classic.LoggerContextTest#testNull',
                      'ch.qos.logback.classic.LoggerContextTest#testDotDot',
                      'ch.qos.logback.classic.LoggerContextTest#concurrentModification',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.LoggerContextTest#resetTest_LBCORE_104',
                      'ch.qos.logback.classic.LoggerContextTest#testMultiLevel',
                      'ch.qos.logback.classic.LoggerContextTest#testLoggerMultipleChildren',
                      'ch.qos.logback.classic.LoggerContextTest#testLoggerXY',
                      'ch.qos.logback.classic.LoggerContextTest#levelResetTest',
                      'ch.qos.logback.classic.LoggerContextTest#resetTest',
+=======
+                     'ch.qos.logback.classic.LoggerContextTest#evaluatorMapPostReset',
+                     'ch.qos.logback.classic.LoggerContextTest#resetTest_LBCORE_104',
+                     'ch.qos.logback.classic.LoggerContextTest#turboFilterStopOnReset',
+                     'ch.qos.logback.classic.LoggerContextTest#testMultiLevel',
+                     'ch.qos.logback.classic.LoggerContextTest#testLoggerMultipleChildren',
+                     'ch.qos.logback.classic.LoggerContextTest#testLoggerXY',
+                     'ch.qos.logback.classic.LoggerContextTest#testRootGetLogger',
+                     'ch.qos.logback.classic.LoggerContextTest#levelResetTest',
+                     'ch.qos.logback.classic.LoggerContextTest#resetTest',
+                     'ch.qos.logback.classic.LoggerContextTest#testEmpty',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.LoggerContextTest#testStatusWithUnconfiguredContext',
                      'ch.qos.logback.classic.LoggerContextTest#testLoggerX',
                      'ch.qos.logback.classic.util.ContextInitializerAutoConfigTest#autoconfig',
                      'ch.qos.logback.classic.gaffer.GafferConfiguratorTest#smoke',
                      'ch.qos.logback.classic.gaffer.GafferConfiguratorTest#contextProperty',
+<<<<<<< HEAD
+=======
+                     'ch.qos.logback.classic.gaffer.GafferConfiguratorTest#contextName',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.gaffer.GafferConfiguratorTest#onTheFly',
                      'ch.qos.logback.classic.gaffer.GafferConfiguratorTest#conversionRule',
                      'ch.qos.logback.classic.gaffer.GafferConfiguratorTest#evaluatorWithMatcher',
@@ -839,7 +1282,10 @@
                      'ch.qos.logback.classic.LoggerSerializationTest#testCompatibilityWith_v1_0_12',
                      'ch.qos.logback.classic.LoggerSerializationTest#basicSerialization',
                      'ch.qos.logback.classic.LoggerSerializationTest#deepTreeSerialization',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.net.SMTPAppender_GreenTest#html',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.boolex.JaninoEventEvaluatorTest#marker',
                      'ch.qos.logback.classic.boolex.JaninoEventEvaluatorTest#testBasic',
                      'ch.qos.logback.classic.boolex.JaninoEventEvaluatorTest#testLevel',
@@ -857,7 +1303,14 @@
                      'ch.qos.logback.classic.boolex.JaninoEventEvaluatorTest#mdcAsString',
                      'ch.qos.logback.classic.boolex.JaninoEventEvaluatorTest#testtimeStamp',
                      'ch.qos.logback.classic.net.SocketReceiverTest#testStartStop',
+<<<<<<< HEAD
                      'ch.qos.logback.classic.net.SocketReceiverTest#testServerSlowToAcceptConnection',
                      'ch.qos.logback.classic.net.SocketReceiverTest#testStartNoPort',
+=======
+                     'ch.qos.logback.classic.net.SocketReceiverTest#testStartNoRemoteAddress',
+                     'ch.qos.logback.classic.net.SocketReceiverTest#testServerSlowToAcceptConnection',
+                     'ch.qos.logback.classic.net.SocketReceiverTest#testStartNoPort',
+                     'ch.qos.logback.classic.net.SocketReceiverTest#testServerDropsConnection',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ch.qos.logback.classic.net.SocketReceiverTest#testDispatchEventForEnabledLevel',
                      'ch.qos.logback.classic.corpusTest.RandomUtilTest#smoke']}

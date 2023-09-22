@@ -7,6 +7,7 @@
                        'io.elasticjob.lite.event.JobEventBusTest#assertPost',
                        'io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterInitFailureTest#assertInitFailure'],
  '20CPU010Mem2GB.sh': ['io.elasticjob.lite.util.concurrent.ExecutorServiceObjectTest#assertCreateExecutorService'],
+<<<<<<< HEAD
  '21CPU025Mem2GB.sh': ['io.elasticjob.lite.executor.type.ScriptJobExecutorTest#assertExecuteSuccessForSingleShardingItems',
                        'io.elasticjob.lite.config.JobCoreConfigurationTest#assertBuildWhenTotalSHardingCountIsNegative',
                        'io.elasticjob.lite.api.strategy.JobShardingStrategyFactoryTest#assertGetStrategyFailureWhenNotStrategyClass',
@@ -21,6 +22,22 @@
                        'io.elasticjob.lite.internal.failover.FailoverServiceTest#assertGetLocalFailoverItemsIfShutdown',
                        'io.elasticjob.lite.exception.JobConfigurationExceptionTest#assertGetCause',
                        'io.elasticjob.lite.exception.JobSystemExceptionTest#assertGetCause'],
+=======
+ '21CPU025Mem2GB.sh:v0': ['io.elasticjob.lite.config.JobCoreConfigurationTest#assertBuildWhenTotalSHardingCountIsNegative',
+                          'io.elasticjob.lite.api.strategy.JobShardingStrategyFactoryTest#assertGetStrategyFailureWhenNotStrategyClass',
+                          'io.elasticjob.lite.context.TaskContextTest#assertMetaInfoFromWithMetaInfo',
+                          'io.elasticjob.lite.context.TaskContextTest#assertMetaInfoFromWithMetaInfoWithoutShardingItems',
+                          'io.elasticjob.lite.internal.election.LeaderNodeTest#assertIsNotLeaderInstancePath',
+                          'io.elasticjob.lite.exception.ExceptionUtilTest#assertTransformWithNull',
+                          'io.elasticjob.lite.api.strategy.impl.RotateServerByNameJobShardingStrategyTest#assertSharding2',
+                          'io.elasticjob.lite.internal.schedule.JobScheduleControllerTest#assertResumeJobIfShutdown',
+                          'io.elasticjob.lite.executor.JobExecutorFactoryTest#assertGetJobExecutorForDataflowJob',
+                          'io.elasticjob.lite.internal.schedule.JobRegistryTest#assertIsNotShutdown',
+                          'io.elasticjob.lite.internal.failover.FailoverServiceTest#assertGetLocalFailoverItemsIfShutdown'],
+ '21CPU025Mem2GB.sh:v1': ['io.elasticjob.lite.executor.type.ScriptJobExecutorTest#assertExecuteSuccessForSingleShardingItems',
+                          'io.elasticjob.lite.exception.JobConfigurationExceptionTest#assertGetCause',
+                          'io.elasticjob.lite.exception.JobSystemExceptionTest#assertGetCause'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '22CPU05Mem2GB.sh:v0': ['io.elasticjob.lite.config.JobCoreConfigurationTest#assertBuildAllProperties',
                          'io.elasticjob.lite.config.JobCoreConfigurationTest#assertBuildRequiredProperties',
                          'io.elasticjob.lite.config.JobCoreConfigurationTest#assertBuildWhenOptionalParametersIsNull',
@@ -499,5 +516,9 @@
                      'io.elasticjob.lite.util.json.JobConfigurationGsonTypeAdapterTest#assertFromSimpleJobJson',
                      'io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertReplaceJobNode',
                      'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsServerPath'],
+<<<<<<< HEAD
  '28CPU2Mem16GB.sh:v0': [],
  '28CPU2Mem16GB.sh:v1': ['io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsNotFailover']}
+=======
+ '28CPU2Mem16GB.sh': ['io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsNotFailover']}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

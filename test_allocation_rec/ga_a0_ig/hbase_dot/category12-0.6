@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 {'19CPU010Mem1GB.sh': ['org.apache.hadoop.hbase.stargate.TestTableResource#testTableListPB',
+=======
+{'01noThrottling.sh': [],
+ '19CPU010Mem1GB.sh': ['org.apache.hadoop.hbase.stargate.TestTableResource#testTableListPB',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testGetTableDescriptor',
                        'org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testPut',
                        'org.apache.hadoop.hbase.stargate.TestSchemaResource#testTableCreateAndDeleteXML',
@@ -100,8 +105,13 @@
                        'org.apache.hadoop.hbase.regionserver.wal.TestHLog#testEditAdd',
                        'org.apache.hadoop.hbase.regionserver.wal.TestHLog#testAppend',
                        'org.apache.hadoop.hbase.TestInfoServers#testInfoServersAreUp'],
+<<<<<<< HEAD
  '20CPU010Mem2GB.sh': ['org.apache.hadoop.hbase.stargate.Test00MiniCluster#testStargateServlet',
                        'org.apache.hadoop.hbase.regionserver.wal.TestHLog#testFindMemstoresWithEditsOlderThan'],
+=======
+ '20CPU010Mem2GB.sh:v0': ['org.apache.hadoop.hbase.regionserver.wal.TestHLog#testFindMemstoresWithEditsOlderThan'],
+ '20CPU010Mem2GB.sh:v1': ['org.apache.hadoop.hbase.stargate.Test00MiniCluster#testStargateServlet'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '21CPU025Mem2GB.sh': ['org.apache.hadoop.hbase.stargate.TestTableResource#testTableListXML',
                        'org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testGet',
                        'org.apache.hadoop.hbase.stargate.model.TestTableListModel#testBuildModel',
@@ -189,6 +199,7 @@
                       'org.apache.hadoop.hbase.mapreduce.TestTableInputFormatScan#testScanYYXToEmpty',
                       'org.apache.hadoop.hbase.mapreduce.TestTableInputFormatScan#testScanYYYToEmpty',
                       'org.apache.hadoop.hbase.mapreduce.TestTableInputFormatScan#testScanYZYToEmpty'],
+<<<<<<< HEAD
  '23CPU05Mem4GB.sh:v0': ['org.apache.hadoop.hbase.stargate.Test00MiniCluster#testZooKeeperMiniCluster',
                          'org.apache.hadoop.hbase.TestKeyValue#testStackedUpKeyValue',
                          'org.apache.hadoop.hbase.io.hfile.TestLruBlockCache#testResizeBlockCache',
@@ -199,6 +210,18 @@
                          'org.apache.hadoop.hbase.io.hfile.TestLruBlockCache#testCacheEvictionSimple',
                          'org.apache.hadoop.hbase.regionserver.TestMemStore#testGetWithDeleteColumn',
                          'org.apache.hadoop.hbase.regionserver.TestMinorCompactingStoreScanner#testDeleteVersion'],
+=======
+ '23CPU05Mem4GB.sh': ['org.apache.hadoop.hbase.stargate.auth.TestHBCAuthenticator#testGetUserUnknown',
+                      'org.apache.hadoop.hbase.stargate.Test00MiniCluster#testZooKeeperMiniCluster',
+                      'org.apache.hadoop.hbase.TestKeyValue#testStackedUpKeyValue',
+                      'org.apache.hadoop.hbase.io.hfile.TestLruBlockCache#testCacheEvictionSimple',
+                      'org.apache.hadoop.hbase.io.hfile.TestLruBlockCache#testResizeBlockCache',
+                      'org.apache.hadoop.hbase.client.TestHTablePool#testTableWithMaxSize',
+                      'org.apache.hadoop.hbase.client.TestHTablePool#testTableWithStringName',
+                      'org.apache.hadoop.hbase.regionserver.TestMemStore#testGetWithDeleteColumn',
+                      'org.apache.hadoop.hbase.regionserver.TestMinorCompactingStoreScanner#testDeleteVersion',
+                      'org.apache.hadoop.hbase.filter.TestPageFilter#testSerialization'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '24CPU1Mem4GB.sh': ['org.apache.hadoop.hbase.stargate.model.TestRowModel#testFromXML',
                      'org.apache.hadoop.hbase.stargate.model.TestTableListModel#testFromPB',
                      'org.apache.hadoop.hbase.stargate.model.TestColumnSchemaModel#testBuildModel',
@@ -249,6 +272,7 @@
                      'org.apache.hadoop.hbase.filter.TestSingleColumnValueFilter#testStop',
                      'org.apache.hadoop.hbase.mapreduce.TestTableInputFormatScan#testScanEmptyToEmpty',
                      'org.apache.hadoop.hbase.mapreduce.TestTableInputFormatScan#testScanOBBToQPP'],
+<<<<<<< HEAD
  '25CPU1Mem8GB.sh:v0': ['org.apache.hadoop.hbase.stargate.model.TestScannerModel#testBuildModel',
                         'org.apache.hadoop.hbase.stargate.model.TestTableListModel#testFromXML',
                         'org.apache.hadoop.hbase.stargate.TestVersionResource#testGetStorageClusterVersionText',
@@ -266,6 +290,25 @@
                         'org.apache.hadoop.hbase.util.TestBytes#testNullHashCode'],
  '25CPU1Mem8GB.sh:v1': ['org.apache.hadoop.hbase.stargate.model.TestRowModel#testBuildModel',
                         'org.apache.hadoop.hbase.stargate.TestTableResource#testTableListJSON'],
+=======
+ '25CPU1Mem8GB.sh': ['org.apache.hadoop.hbase.stargate.model.TestRowModel#testBuildModel',
+                     'org.apache.hadoop.hbase.stargate.model.TestScannerModel#testBuildModel',
+                     'org.apache.hadoop.hbase.stargate.TestTableResource#testTableListJSON',
+                     'org.apache.hadoop.hbase.stargate.model.TestTableListModel#testFromXML',
+                     'org.apache.hadoop.hbase.stargate.TestVersionResource#testGetStorageClusterVersionText',
+                     'org.apache.hadoop.hbase.stargate.model.TestTableRegionModel#testFromXML',
+                     'org.apache.hadoop.hbase.stargate.model.TestStorageClusterStatusModel#testFromXML',
+                     'org.apache.hadoop.hbase.stargate.model.TestTableInfoModel#testBuildModel',
+                     'org.apache.hadoop.hbase.stargate.Test00MiniCluster#testHBaseMiniCluster',
+                     'org.apache.hadoop.hbase.stargate.auth.TestJDBCAuthenticator#testGetPlainUser',
+                     'org.apache.hadoop.hbase.filter.TestPrefixFilter#testPrefixOnRowInsideWhileMatchRow',
+                     'org.apache.hadoop.hbase.regionserver.TestMemStore#testKeepDeleteInmemstore',
+                     'org.apache.hadoop.hbase.regionserver.TestMemStore#testRetainsDeleteVersion',
+                     'org.apache.hadoop.hbase.regionserver.TestStoreScanner#testDeletedRowThenGoodRow',
+                     'org.apache.hadoop.hbase.regionserver.TestStoreScanner#testDeleteVersionMaskingMultiplePuts',
+                     'org.apache.hadoop.hbase.regionserver.TestStoreScanner#testDeleteFamily',
+                     'org.apache.hadoop.hbase.util.TestBytes#testNullHashCode'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '26CPU2Mem4GB.sh': ['org.apache.hadoop.hbase.stargate.model.TestScannerModel#testFromXML',
                      'org.apache.hadoop.hbase.stargate.TestVersionResource#testGetStorageClusterVersionXML',
                      'org.apache.hadoop.hbase.stargate.TestVersionResource#testGetStorageClusterVersionJSON',

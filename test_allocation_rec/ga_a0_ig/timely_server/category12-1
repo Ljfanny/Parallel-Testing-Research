@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {'01noThrottling.sh': [],
  '20CPU010Mem2GB.sh': [],
  '22CPU05Mem2GB.sh:v0': ['timely.api.response.timeseries.SuggestResponseTest#testSuggestResponse',
@@ -6,11 +7,21 @@
                          'timely.netty.websocket.WebSocketRequestDecoderTest#testCreateSubscriptionWithValidSessionIdAndNonAnonymousAccess'],
  '22CPU05Mem2GB.sh:v1': ['timely.netty.udp.UdpDecoderTest#testUnknownOperation',
                          'timely.netty.websocket.WebSocketRequestDecoderTest#testCreateSubscriptionWithoutSubscriptionId',
+=======
+{'21CPU025Mem2GB.sh': [],
+ '22CPU05Mem2GB.sh:v0': ['timely.sample.DownsampleTest#testCombineMissingReport',
+                         'timely.api.request.subscription.WebSocketRequestDeserializationTest#testAddDeserializationWithTimeAndTags',
+                         'timely.netty.websocket.WebSocketRequestDecoderTest#testCreateSubscriptionWithoutSubscriptionId'],
+ '22CPU05Mem2GB.sh:v1': ['timely.api.response.timeseries.SuggestResponseTest#testSuggestResponse',
+                         'timely.netty.websocket.WebSocketRequestDecoderTest#testCreateSubscriptionWithValidSessionIdAndNonAnonymousAccess'],
+ '22CPU05Mem2GB.sh:v2': ['timely.netty.udp.UdpDecoderTest#testUnknownOperation',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                          'timely.netty.http.HttpRequestDecoderTest#testVersionPost'],
  '23CPU05Mem4GB.sh': ['timely.netty.websocket.WebSocketRequestDecoderTest#testCreateSubscription',
                       'timely.store.MetricAgeOffFilterTest#testDefaultMissing',
                       'timely.store.MetricAgeOffIteratorTest#testDefault',
                       'timely.store.MetricAgeOffIteratorTest#testDefaultMissing'],
+<<<<<<< HEAD
  '24CPU1Mem4GB.sh': ['timely.sample.iterators.AggregationIteratorTest#simpleAggregatedSample',
                      'timely.netty.websocket.WebSocketRequestDecoderTest#testVersion',
                      'timely.netty.websocket.WebSocketRequestDecoderTest#testAggregrators',
@@ -24,6 +35,21 @@
                      'timely.netty.http.HttpRequestDecoderTest#testSuggestPostWithValidType',
                      'timely.netty.http.HttpRequestDecoderTest#testSuggestPostWithValidTypeAndQueryAndMax',
                      'timely.util.MessageFormatTest#testNumberFormat'],
+=======
+ '24CPU1Mem4GB.sh:v0': ['timely.netty.websocket.WebSocketRequestDecoderTest#testVersion',
+                        'timely.netty.websocket.WebSocketRequestDecoderTest#testAggregrators',
+                        'timely.store.TagMatchingTest#testRegex2',
+                        'timely.netty.http.HttpRequestDecoderTest#testLookupURIWithNoLimit',
+                        'timely.netty.http.HttpRequestDecoderTest#testLookupURIWithLimitAndTags',
+                        'timely.netty.http.HttpRequestDecoderTest#testAggregatorsURI',
+                        'timely.netty.http.HttpRequestDecoderTest#testLookupURIWithNoArgs',
+                        'timely.netty.http.HttpRequestDecoderTest#testAggregatorsPostAnonAccess',
+                        'timely.netty.http.HttpRequestDecoderTest#testSuggestPostWithValidType',
+                        'timely.netty.http.HttpRequestDecoderTest#testSuggestPostWithValidTypeAndQueryAndMax',
+                        'timely.util.MessageFormatTest#testNumberFormat'],
+ '24CPU1Mem4GB.sh:v1': ['timely.sample.iterators.AggregationIteratorTest#simpleAggregatedSample',
+                        'timely.store.iterators.TimeSeriesGroupingIteratorTest#testAdditionalTimeSeries'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '25CPU1Mem8GB.sh': ['timely.sample.DownsampleTest#testDownsampleStartCalculation',
                      'timely.auth.AuthenticationServiceTest#testX509AuthenticationLoginFailed',
                      'timely.api.request.subscription.WebSocketRequestDeserializationTest#testCreateDeserialization',
@@ -140,7 +166,14 @@
  '28CPU2Mem16GB.sh': ['timely.store.MetricAgeOffFilterTest#testAgeoffMixed',
                       'timely.api.model.MetricAdapterTest#testParse',
                       'timely.api.model.MetricAdapterTest#testParseWithEscapes'],
+<<<<<<< HEAD
  '29CPU4Mem8GB.sh:v0': ['timely.auth.AuthCacheTest#testSessionIdNull'],
  '29CPU4Mem8GB.sh:v1': ['timely.store.TagMatchingTest#testRegex1',
                         'timely.netty.http.HttpRequestDecoderTest#testAggregatorsURIWithAnonAccess',
                         'timely.api.response.timeseries.MetricsResponseTest#testGenerateHtmlWithIgnoredTags']}
+=======
+ '29CPU4Mem8GB.sh': ['timely.store.TagMatchingTest#testRegex1',
+                     'timely.auth.AuthCacheTest#testSessionIdNull',
+                     'timely.netty.http.HttpRequestDecoderTest#testAggregatorsURIWithAnonAccess',
+                     'timely.api.response.timeseries.MetricsResponseTest#testGenerateHtmlWithIgnoredTags']}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 {'19CPU010Mem1GB.sh': [],
  '24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
+=======
+{'24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'delight.nashornsandbox.TestExit#testQuitWithScriptContext',
                      'delight.nashornsandbox.TestLimitCPU#test_only_while_good_script',
                      'delight.nashornsandbox.TestLimitCPU#test_while_plus_iteration_bad_script'],
@@ -77,4 +81,9 @@
                      'delight.nashornsandbox.TestLimitCPU#test_only_while',
                      'delight.nashornsandbox.TestLimitCPU#test_nice_script',
                      'delight.nashornsandbox.TestLimitCPU#test'],
+<<<<<<< HEAD
  '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test']}
+=======
+ '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test'],
+ '28CPU2Mem16GB.sh': []}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

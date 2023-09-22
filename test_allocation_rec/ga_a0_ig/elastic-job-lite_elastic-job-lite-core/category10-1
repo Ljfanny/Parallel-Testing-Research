@@ -476,6 +476,7 @@
                      'io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertCreateJobNodeIfNotNeeded',
                      'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsNotServerPath',
                      'io.elasticjob.lite.internal.server.ServerNodeTest#assertGetServerNode'],
+<<<<<<< HEAD
  '27CPU2Mem8GB.sh': ['io.elasticjob.lite.internal.server.ServerServiceTest#assertIsEnableServer',
                      'io.elasticjob.lite.internal.server.ServerServiceTest#assertIsAvailableServer',
                      'io.elasticjob.lite.util.config.ShardingItemParametersTest#assertGetMap',
@@ -501,3 +502,29 @@
                      'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsServerPath'],
  '28CPU2Mem16GB.sh': ['io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsNotFailover'],
  '29CPU4Mem8GB.sh': []}
+=======
+ '27CPU2Mem8GB.sh:v0': ['io.elasticjob.lite.internal.server.ServerServiceTest#assertIsAvailableServer',
+                        'io.elasticjob.lite.internal.sharding.ExecutionServiceTest#assertSetMisfire',
+                        'io.elasticjob.lite.internal.sharding.ExecutionServiceTest#assertNotHaveRunningItemsWithoutMonitorExecution',
+                        'io.elasticjob.lite.internal.schedule.LiteJobFacadeTest#assertNotEligibleForJobRunningWhenUnStreamingProcess',
+                        'io.elasticjob.lite.util.env.IpUtilsTest#assertGetHostName',
+                        'io.elasticjob.lite.internal.config.ConfigurationNodeTest#assertIsConfigPath',
+                        'io.elasticjob.lite.internal.sharding.ExecutionContextServiceTest#assertGetShardingContextWhenAssignShardingItems',
+                        'io.elasticjob.lite.internal.config.LiteJobConfigurationGsonFactoryTest#assertToJsonForDataflowJob',
+                        'io.elasticjob.lite.event.rdb.JobEventRdbSearchTest#assertFindJobExecutionEventsWithErrorPageSizeAndNumber',
+                        'io.elasticjob.lite.util.json.JobConfigurationGsonTypeAdapterTest#assertFromSimpleJobJson',
+                        'io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertReplaceJobNode',
+                        'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsServerPath'],
+ '27CPU2Mem8GB.sh:v1': ['io.elasticjob.lite.internal.server.ServerServiceTest#assertIsEnableServer',
+                        'io.elasticjob.lite.util.config.ShardingItemParametersTest#assertGetMap',
+                        'io.elasticjob.lite.internal.sharding.ExecutionServiceTest#assertRegisterJobCompletedWithMonitorExecution',
+                        'io.elasticjob.lite.internal.schedule.LiteJobFacadeTest#assertClearMisfire',
+                        'io.elasticjob.lite.util.env.IpUtilsTest#assertGetIp',
+                        'io.elasticjob.lite.internal.election.LeaderServiceTest#assertIsLeader',
+                        'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath',
+                        'io.elasticjob.lite.internal.sharding.ShardingListenerManagerTest#assertShardingTotalCountChangedJobListenerWhenIsConfigPathAndCurrentShardingTotalCountIsEqualToNewShardingTotalCount',
+                        'io.elasticjob.lite.internal.sharding.MonitorExecutionListenerManagerTest#assertMonitorExecutionSettingsChangedJobListenerWhenIsFailoverPathButNotUpdate',
+                        'io.elasticjob.lite.internal.config.ConfigurationServiceTest#assertLoadFromCacheButNull',
+                        'io.elasticjob.lite.util.json.JobConfigurationGsonTypeAdapterTest#assertFromDataflowJobJson'],
+ '28CPU2Mem16GB.sh': ['io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsNotFailover']}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

@@ -1,10 +1,20 @@
+<<<<<<< HEAD
 {'01noThrottling.sh': [],
+=======
+{'01noThrottling.sh:v0': [],
+ '01noThrottling.sh:v1': [],
+ '19CPU010Mem1GB.sh': [],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
                      'delight.nashornsandbox.TestExit#testQuitWithScriptContext',
                      'delight.nashornsandbox.TestLimitCPU#test_only_while_good_script',
                      'delight.nashornsandbox.TestLimitCPU#test_while_plus_iteration_bad_script'],
+<<<<<<< HEAD
  '25CPU1Mem8GB.sh:v0': [],
  '25CPU1Mem8GB.sh:v1': [],
+=======
+ '25CPU1Mem8GB.sh': [],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '26CPU2Mem4GB.sh': ['delight.nashornsandbox.TestInaccessible#test_file',
                      'delight.nashornsandbox.TestInaccessible#test_system_exit',
                      'delight.nashornsandbox.TestIssue57#testMapReduce',
@@ -80,5 +90,9 @@
                      'delight.nashornsandbox.TestLimitCPU#test_nice_script',
                      'delight.nashornsandbox.TestLimitCPU#test'],
  '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test'],
+<<<<<<< HEAD
  '28CPU2Mem16GB.sh:v0': [],
  '28CPU2Mem16GB.sh:v1': []}
+=======
+ '29CPU4Mem8GB.sh': []}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

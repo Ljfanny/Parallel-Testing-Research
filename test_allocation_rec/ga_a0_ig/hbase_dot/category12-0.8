@@ -101,8 +101,13 @@
                        'org.apache.hadoop.hbase.regionserver.wal.TestHLog#testEditAdd',
                        'org.apache.hadoop.hbase.regionserver.wal.TestHLog#testAppend',
                        'org.apache.hadoop.hbase.TestInfoServers#testInfoServersAreUp'],
+<<<<<<< HEAD
  '20CPU010Mem2GB.sh:v0': ['org.apache.hadoop.hbase.regionserver.wal.TestHLog#testFindMemstoresWithEditsOlderThan'],
  '20CPU010Mem2GB.sh:v1': ['org.apache.hadoop.hbase.stargate.Test00MiniCluster#testStargateServlet'],
+=======
+ '20CPU010Mem2GB.sh': ['org.apache.hadoop.hbase.stargate.Test00MiniCluster#testStargateServlet',
+                       'org.apache.hadoop.hbase.regionserver.wal.TestHLog#testFindMemstoresWithEditsOlderThan'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '21CPU025Mem2GB.sh': ['org.apache.hadoop.hbase.stargate.TestTableResource#testTableListXML',
                        'org.apache.hadoop.hbase.stargate.model.TestTableListModel#testBuildModel',
                        'org.apache.hadoop.hbase.stargate.auth.TestHTableAuthenticator#testGetPlainUser',
@@ -418,6 +423,7 @@
                      'org.apache.hadoop.hbase.TestCompare#testHRegionInfo',
                      'org.apache.hadoop.hbase.regionserver.TestScanWildcardColumnTracker#testCheckColumn_EnforceVersions',
                      'org.apache.hadoop.hbase.util.TestBase64#testBase64'],
+<<<<<<< HEAD
  '27CPU2Mem8GB.sh': ['org.apache.hadoop.hbase.stargate.model.TestScannerModel#testFromPB',
                      'org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testScanner',
                      'org.apache.hadoop.hbase.stargate.model.TestVersionModel#testFromPB',
@@ -425,4 +431,13 @@
                      'org.apache.hadoop.hbase.regionserver.TestDeleteCompare#testDeleteCompare_Multiple',
                      'org.apache.hadoop.hbase.filter.TestFilterList#testMPALL',
                      'org.apache.hadoop.hbase.regionserver.TestStore#testGet_FromMemStoreOnly'],
+=======
+ '27CPU2Mem8GB.sh:v0': ['org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testScanner'],
+ '27CPU2Mem8GB.sh:v1': ['org.apache.hadoop.hbase.stargate.model.TestScannerModel#testFromPB',
+                        'org.apache.hadoop.hbase.stargate.model.TestVersionModel#testFromPB',
+                        'org.apache.hadoop.hbase.stargate.auth.TestZooKeeperAuthenticator#testGetUserUnknown',
+                        'org.apache.hadoop.hbase.regionserver.TestDeleteCompare#testDeleteCompare_Multiple',
+                        'org.apache.hadoop.hbase.filter.TestFilterList#testMPALL',
+                        'org.apache.hadoop.hbase.regionserver.TestStore#testGet_FromMemStoreOnly'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '28CPU2Mem16GB.sh': ['org.apache.hadoop.hbase.regionserver.TestMemStore#testRetainsDeleteFamily']}

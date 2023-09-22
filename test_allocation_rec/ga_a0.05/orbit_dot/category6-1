@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {'19CPU010Mem1GB.sh:v0': ['com.ea.orbit.actors.test.MessagingTest#blockingReceptionTestWithABunch'],
  '19CPU010Mem1GB.sh:v1': ['com.ea.orbit.concurrent.test.TaskTest#testAllOfVariations',
                           'com.ea.orbit.actors.test.ClientTest#lonelyClientTest'],
@@ -16,6 +17,27 @@
                        'com.ea.orbit.concurrent.test.TaskTest#testThenApplyWithVoid',
                        'com.ea.orbit.concurrent.test.TaskTest#testGetAndJoinWithWrappedForkJoinTask',
                        'com.ea.orbit.concurrent.test.TaskTest#testAnyOfVariations',
+=======
+{'19CPU010Mem1GB.sh:v0': [],
+ '19CPU010Mem1GB.sh:v1': [],
+ '19CPU010Mem1GB.sh:v2': [],
+ '19CPU010Mem1GB.sh:v3': [],
+ '19CPU010Mem1GB.sh:v4': [],
+ '21CPU025Mem2GB.sh': ['com.ea.orbit.util.test.ClassPathTest#test',
+                       'com.ea.orbit.concurrent.test.TaskTest#testThenReturnWithException',
+                       'com.ea.orbit.concurrent.test.TaskTest#testThenComposeNoParams',
+                       'com.ea.orbit.concurrent.test.TaskTest#testGetAndJoinWithWrappedForkJoinTaskAndTimeout',
+                       'com.ea.orbit.concurrent.test.TaskTest#testAllOf',
+                       'com.ea.orbit.concurrent.test.TaskTest#testThenReturn',
+                       'com.ea.orbit.concurrent.test.TaskTest#testAllOfWithError',
+                       'com.ea.orbit.concurrent.test.TaskTest#testThenApply',
+                       'com.ea.orbit.concurrent.test.TaskTest#testThenApplyWithVoid',
+                       'com.ea.orbit.concurrent.test.TaskTest#testGetAndJoinWithWrappedForkJoinTask',
+                       'com.ea.orbit.concurrent.test.TaskTest#testThenCompose',
+                       'com.ea.orbit.concurrent.test.TaskTest#testAnyOfVariations',
+                       'com.ea.orbit.concurrent.test.TaskTest#testAllOfVariations',
+                       'com.ea.orbit.actors.test.MessagingTest#blockingReceptionTestWithABunch',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'com.ea.orbit.actors.test.MessagingTest#blockingReceptionTest',
                        'com.ea.orbit.actors.test.TimerTest#timerTest',
                        'com.ea.orbit.actors.test.AsymmetricalStagesTest#asymmetricalNodeTest',
@@ -40,8 +62,15 @@
                        'com.ea.orbit.actors.test.DeactivationTest#statelessWorkerDeactivationTest',
                        'com.ea.orbit.actors.test.DeactivationTest#basicClientTest',
                        'com.ea.orbit.actors.test.DeactivationTest#ensureNoObjectsAreCreatedClientTest',
+<<<<<<< HEAD
                        'com.ea.orbit.actors.test.DeactivationTest#observerTest',
                        'com.ea.orbit.actors.test.NoIdentityTest#callIt',
+=======
+                       'com.ea.orbit.actors.test.DeactivationTest#lonelyClientTest',
+                       'com.ea.orbit.actors.test.DeactivationTest#observerTest',
+                       'com.ea.orbit.actors.test.NoIdentityTest#callIt',
+                       'com.ea.orbit.actors.test.NoIdentityTest#breakIt',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'com.ea.orbit.actors.test.NoIdentityTest#breakItAgain',
                        'com.ea.orbit.actors.test.NoIdentityTest#callIt2',
                        'com.ea.orbit.actors.test.StatelessActorTest#statelessTest',
@@ -57,6 +86,10 @@
                        'com.ea.orbit.actors.test.MessageTimeoutTest#timeoutWithTwoMessagesTest',
                        'com.ea.orbit.actors.test.ClientTest#basicClientTest',
                        'com.ea.orbit.actors.test.ClientTest#ensureNoObjectsAreCreatedClientTest',
+<<<<<<< HEAD
+=======
+                       'com.ea.orbit.actors.test.ClientTest#lonelyClientTest',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'com.ea.orbit.actors.test.ClientTest#observerTest',
                        'com.ea.orbit.actors.test.MinimalTest#ensureUniqueActivation',
                        'com.ea.orbit.actors.test.MinimalTest#singleActorMultiStageTest',
@@ -68,6 +101,10 @@
                        'com.ea.orbit.actors.samples.helloworld.HelloTcpTest#test',
                        'com.ea.orbit.tests.unit.AnnProcTest#test',
                        'com.ea.orbit.web.test.WebSocketTest#test',
+<<<<<<< HEAD
+=======
+                       'com.ea.orbit.container.test.ModuleTest#testModuleWithContainer',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'com.ea.orbit.container.test.ModuleTest#testModule',
                        'com.ea.orbit.container.test.ModuleTest#testModuleDiscovery',
                        'com.ea.orbit.container.test.AnnProcTest#test',

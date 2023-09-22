@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,score,period
 elastic-job-lite_elastic-job-lite-core,1-0,1,{'01noThrottling.sh': 1},15.446966666666654,15.446966666666654,0.2999800926666664,0.0,0,0.11153471554606473,0.05731940269470215
 elastic-job-lite_elastic-job-lite-core,1-0.2,1,{'01noThrottling.sh': 1},15.446966666666654,15.446966666666654,0.2999800926666664,0.0,0,0.11153471554606473,0.049832820892333984
@@ -41,3 +42,48 @@ elastic-job-lite_elastic-job-lite-core,12-0.4,3,"{'19CPU010Mem1GB.sh': 1, '27CPU
 elastic-job-lite_elastic-job-lite-core,12-0.6,4,"{'19CPU010Mem1GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 7}",15.346989999999998,10.072106666666665,0.10079832180444445,0.0,0,0.11081283471868054,1.4929659366607666
 elastic-job-lite_elastic-job-lite-core,12-0.8,3,"{'19CPU010Mem1GB.sh': 1, '27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 10}",15.334423333333332,10.054666666666666,0.1068994193666667,0.0,0,0.1107220971892824,1.1438877582550049
 elastic-job-lite_elastic-job-lite-core,12-1,3,"{'27CPU2Mem8GB.sh': 1, '19CPU010Mem1GB.sh': 1, '01noThrottling.sh': 10}",15.334423333333334,10.054666666666666,0.1068994193666667,0.0,0,0.11072209718928241,1.4540386199951172
+=======
+project,category,num_confs,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,period
+elastic-job-lite_elastic-job-lite-core,1-0,1,{'01noThrottling.sh': 1},15.446966666666654,15.446966666666654,0.29998009266666636,0.0,0,0.06421136856079102
+elastic-job-lite_elastic-job-lite-core,1-0.2,1,{'01noThrottling.sh': 1},15.446966666666654,15.446966666666654,0.29998009266666636,0.0,0,0.04686927795410156
+elastic-job-lite_elastic-job-lite-core,1-0.4,1,{'01noThrottling.sh': 1},15.446966666666654,15.446966666666654,0.29998009266666636,0.0,0,0.05047726631164551
+elastic-job-lite_elastic-job-lite-core,1-0.6,1,{'01noThrottling.sh': 1},15.446966666666654,15.446966666666654,0.29998009266666636,0.0,0,0.06254768371582031
+elastic-job-lite_elastic-job-lite-core,1-0.8,1,{'01noThrottling.sh': 1},15.446966666666654,15.446966666666654,0.29998009266666636,0.0,0,0.06536173820495605
+elastic-job-lite_elastic-job-lite-core,1-1,1,{'01noThrottling.sh': 1},15.446966666666654,15.446966666666654,0.29998009266666636,0.0,0,0.06943893432617188
+elastic-job-lite_elastic-job-lite-core,2-0,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",15.43802333333332,12.68544333333332,0.2622152160555553,0.0,0,0.18534445762634277
+elastic-job-lite_elastic-job-lite-core,2-0.2,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",15.43802333333332,12.68544333333332,0.2622152160555553,0.0,0,0.18320131301879883
+elastic-job-lite_elastic-job-lite-core,2-0.4,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",15.43802333333332,12.68544333333332,0.2622152160555553,0.0,0,0.1789534091949463
+elastic-job-lite_elastic-job-lite-core,2-0.6,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",15.43802333333332,12.68544333333332,0.2622152160555553,0.0,0,0.14976739883422852
+elastic-job-lite_elastic-job-lite-core,2-0.8,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",15.43802333333332,12.68544333333332,0.2622152160555553,0.0,0,0.16777420043945312
+elastic-job-lite_elastic-job-lite-core,2-1,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",15.43802333333332,12.68544333333332,0.2622152160555553,0.0,0,0.21179938316345215
+elastic-job-lite_elastic-job-lite-core,4-0,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}",15.438559999999992,11.222099999999989,0.2952124473777776,0.0,0,0.4150516986846924
+elastic-job-lite_elastic-job-lite-core,4-0.2,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}",15.438559999999992,11.222099999999989,0.2952124473777776,0.0,0,0.37285923957824707
+elastic-job-lite_elastic-job-lite-core,4-0.4,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}",15.438559999999992,11.222099999999989,0.2952124473777776,0.0,0,0.36559462547302246
+elastic-job-lite_elastic-job-lite-core,4-0.6,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}",15.438559999999992,11.222099999999989,0.2952124473777776,0.0,0,0.32974863052368164
+elastic-job-lite_elastic-job-lite-core,4-0.8,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}",15.438559999999992,11.222099999999989,0.2952124473777776,0.0,0,0.39241981506347656
+elastic-job-lite_elastic-job-lite-core,4-1,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}",15.438559999999992,11.222099999999989,0.2952124473777776,0.0,0,0.3849947452545166
+elastic-job-lite_elastic-job-lite-core,6-0,3,"{'28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 2}",15.417779999999986,10.739709999999986,0.256618131322222,0.0,0,0.7192697525024414
+elastic-job-lite_elastic-job-lite-core,6-0.2,3,"{'28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 2}",15.417779999999988,10.739709999999986,0.256618131322222,0.0,0,0.6049594879150391
+elastic-job-lite_elastic-job-lite-core,6-0.4,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 4, '26CPU2Mem4GB.sh': 1}",15.418449999999991,10.744396666666656,0.28674496854999976,0.0,0,0.6675174236297607
+elastic-job-lite_elastic-job-lite-core,6-0.6,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 4, '26CPU2Mem4GB.sh': 1}",15.418449999999991,10.744396666666656,0.28674496854999976,0.0,0,0.6617228984832764
+elastic-job-lite_elastic-job-lite-core,6-0.8,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 4, '26CPU2Mem4GB.sh': 1}",15.418449999999991,10.744396666666656,0.28674496854999976,0.0,0,0.6194825172424316
+elastic-job-lite_elastic-job-lite-core,6-1,3,"{'28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 2}",15.417779999999988,10.739709999999986,0.256618131322222,0.0,0,0.7251508235931396
+elastic-job-lite_elastic-job-lite-core,8-0,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 6, '26CPU2Mem4GB.sh': 1}",15.419846666666658,10.505079999999989,0.2890103347499997,0.0,0,0.7079024314880371
+elastic-job-lite_elastic-job-lite-core,8-0.2,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 6, '26CPU2Mem4GB.sh': 1}",15.419846666666658,10.505079999999989,0.28901033474999976,0.0,0,0.7538361549377441
+elastic-job-lite_elastic-job-lite-core,8-0.4,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 6, '26CPU2Mem4GB.sh': 1}",15.419846666666658,10.505079999999989,0.28901033474999976,0.0,0,0.8541231155395508
+elastic-job-lite_elastic-job-lite-core,8-0.6,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 6, '26CPU2Mem4GB.sh': 1}",15.419846666666658,10.505079999999989,0.28901033474999976,0.0,0,0.672595739364624
+elastic-job-lite_elastic-job-lite-core,8-0.8,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 6, '26CPU2Mem4GB.sh': 1}",15.419846666666658,10.505079999999989,0.2890103347499997,0.0,0,0.8368301391601562
+elastic-job-lite_elastic-job-lite-core,8-1,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 6, '26CPU2Mem4GB.sh': 1}",15.419846666666658,10.505079999999989,0.2890103347499997,0.0,0,0.7626454830169678
+elastic-job-lite_elastic-job-lite-core,10-0,3,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 8, '26CPU2Mem4GB.sh': 1}",15.413879999999988,10.370473333333322,0.1811775573888888,0.0,0,0.7913863658905029
+elastic-job-lite_elastic-job-lite-core,10-0.2,4,"{'27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 6}",15.407153333333321,10.372729999999988,0.28644362424444414,0.0,0,0.996490478515625
+elastic-job-lite_elastic-job-lite-core,10-0.4,3,"{'28CPU2Mem16GB.sh': 2, '29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 5}",15.40838999999999,10.370673333333322,0.287435270922222,0.0,0,0.8700933456420898
+elastic-job-lite_elastic-job-lite-core,10-0.6,4,"{'27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 6}",15.407153333333321,10.372729999999988,0.28644362424444414,0.0,0,1.0960910320281982
+elastic-job-lite_elastic-job-lite-core,10-0.8,5,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 6}",15.409663333333333,10.145596666666666,0.09817802756861112,0.0,0,0.9449338912963867
+elastic-job-lite_elastic-job-lite-core,10-1,3,"{'28CPU2Mem16GB.sh': 2, '29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 5}",15.40838999999999,10.370673333333322,0.287435270922222,0.0,0,1.0110387802124023
+elastic-job-lite_elastic-job-lite-core,12-0,3,"{'27CPU2Mem8GB.sh': 1, '19CPU010Mem1GB.sh': 1, '01noThrottling.sh': 10}",15.334423333333334,10.054666666666666,0.10689941936666666,0.0,0,1.024522066116333
+elastic-job-lite_elastic-job-lite-core,12-0.2,3,"{'19CPU010Mem1GB.sh': 1, '27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 10}",15.334423333333334,10.054666666666666,0.10689941936666668,0.0,0,0.9105942249298096
+elastic-job-lite_elastic-job-lite-core,12-0.4,3,"{'19CPU010Mem1GB.sh': 1, '27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 10}",15.334423333333332,10.054666666666666,0.10689941936666666,0.0,0,0.8061244487762451
+elastic-job-lite_elastic-job-lite-core,12-0.6,4,"{'19CPU010Mem1GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 7}",15.346989999999998,10.072106666666665,0.10079832180444445,0.0,0,0.9566235542297363
+elastic-job-lite_elastic-job-lite-core,12-0.8,3,"{'19CPU010Mem1GB.sh': 1, '27CPU2Mem8GB.sh': 1, '01noThrottling.sh': 10}",15.334423333333332,10.054666666666666,0.10689941936666668,0.0,0,0.8529677391052246
+elastic-job-lite_elastic-job-lite-core,12-1,3,"{'27CPU2Mem8GB.sh': 1, '19CPU010Mem1GB.sh': 1, '01noThrottling.sh': 10}",15.334423333333334,10.054666666666666,0.10689941936666666,0.0,0,0.9949030876159668
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

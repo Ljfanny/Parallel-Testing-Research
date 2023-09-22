@@ -1,22 +1,31 @@
+<<<<<<< HEAD
 {'19CPU010Mem1GB.sh': ['org.apache.hadoop.hbase.stargate.TestTableResource#testTableListPB',
+=======
+{'20CPU010Mem2GB.sh': ['org.apache.hadoop.hbase.stargate.TestTableResource#testTableListPB',
+                       'org.apache.hadoop.hbase.stargate.TestTableResource#testTableListXML',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testGetTableDescriptor',
                        'org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testGet',
                        'org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testPut',
                        'org.apache.hadoop.hbase.stargate.TestSchemaResource#testTableCreateAndDeleteXML',
                        'org.apache.hadoop.hbase.stargate.TestSchemaResource#testTableCreateAndDeletePB',
                        'org.apache.hadoop.hbase.stargate.auth.TestHTableAuthenticator#testGetUserUnknown',
-                       'org.apache.hadoop.hbase.stargate.auth.TestHTableAuthenticator#testGetAdminUser',
-                       'org.apache.hadoop.hbase.stargate.auth.TestHTableAuthenticator#testGetPlainUser',
-                       'org.apache.hadoop.hbase.stargate.auth.TestHTableAuthenticator#testGetDisabledUser',
                        'org.apache.hadoop.hbase.stargate.util.TestHTableTokenBucket#testTokenBucketConfig',
                        'org.apache.hadoop.hbase.stargate.util.TestHTableTokenBucket#testTokenBucket',
                        'org.apache.hadoop.hbase.stargate.TestRowResource#testSingleCellGetPutXML',
+<<<<<<< HEAD
                        'org.apache.hadoop.hbase.stargate.TestRowResource#testSingleCellGetJSON',
                        'org.apache.hadoop.hbase.stargate.TestRowResource#testDelete',
                        'org.apache.hadoop.hbase.stargate.model.TestTableInfoModel#testBuildModel',
                        'org.apache.hadoop.hbase.stargate.client.TestRemoteAdmin#testCreateTable',
                        'org.apache.hadoop.hbase.stargate.client.TestRemoteAdmin#testDeleteTable',
                        'org.apache.hadoop.hbase.stargate.auth.TestHBCAuthenticator#testGetAdminUser',
+=======
+                       'org.apache.hadoop.hbase.stargate.TestRowResource#testDelete',
+                       'org.apache.hadoop.hbase.stargate.model.TestTableRegionModel#testBuildModel',
+                       'org.apache.hadoop.hbase.stargate.client.TestRemoteAdmin#testCreateTable',
+                       'org.apache.hadoop.hbase.stargate.client.TestRemoteAdmin#testDeleteTable',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.stargate.TestScannersWithFilters#testNoFilter',
                        'org.apache.hadoop.hbase.stargate.TestScannersWithFilters#testPrefixFilter',
                        'org.apache.hadoop.hbase.stargate.TestScannersWithFilters#testPageFilter',
@@ -27,7 +36,10 @@
                        'org.apache.hadoop.hbase.stargate.TestScannersWithFilters#testSkipFilter',
                        'org.apache.hadoop.hbase.stargate.TestScannersWithFilters#testFilterList',
                        'org.apache.hadoop.hbase.stargate.TestScannersWithFilters#testFirstKeyOnlyFilter',
+<<<<<<< HEAD
                        'org.apache.hadoop.hbase.stargate.Test00MiniCluster#testZooKeeperMiniCluster',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.stargate.Test00MiniCluster#testStargateServlet',
                        'org.apache.hadoop.hbase.filter.TestPrefixFilter#testPrefixOnRowInsideWhileMatchRow',
                        'org.apache.hadoop.hbase.client.TestTimestamp#testTimestamps',
@@ -60,14 +72,20 @@
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testMaxKeyValueSize',
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testFilters',
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testSimpleMissing',
+<<<<<<< HEAD
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testSingleRowMultipleFamily',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testVersions',
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testVersionLimits',
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testDeletes',
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testMillions',
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testMultipleRegionsAndBatchPuts',
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testMultipleRowMultipleFamily',
+<<<<<<< HEAD
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testJiraTest867',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testJiraTest861',
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testJiraTest33',
                        'org.apache.hadoop.hbase.client.TestFromClientSide#testJiraTest1014',
@@ -79,8 +97,12 @@
                        'org.apache.hadoop.hbase.regionserver.wal.TestLogRolling#testLogRollOnDatanodeDeath',
                        'org.apache.hadoop.hbase.regionserver.TestStoreFile#testReference',
                        'org.apache.hadoop.hbase.regionserver.TestStoreFile#testBasicHalfMapFile',
+<<<<<<< HEAD
                        'org.apache.hadoop.hbase.regionserver.TestMemStore#testMultipleVersionsSimple',
                        'org.apache.hadoop.hbase.regionserver.TestMemStore#testGetWithDeleteColumn',
+=======
+                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testKeepDeleteInmemstore',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.regionserver.TestMemStore#testRetainsDeleteColumn',
                        'org.apache.hadoop.hbase.util.TestMergeTool#testMergeTool',
                        'org.apache.hadoop.hbase.thrift.TestThriftServer#testAll',
@@ -88,23 +110,32 @@
                        'org.apache.hadoop.hbase.client.TestGetRowVersions#testGetRowMultipleVersions',
                        'org.apache.hadoop.hbase.TestMergeTable#testMergeTable',
                        'org.apache.hadoop.hbase.client.TestScannerTimeout#test2481',
+<<<<<<< HEAD
                        'org.apache.hadoop.hbase.client.TestAdmin#testEmptyHHTableDescriptor',
                        'org.apache.hadoop.hbase.client.TestAdmin#testCreateBadTables',
                        'org.apache.hadoop.hbase.client.TestAdmin#testTableNames',
                        'org.apache.hadoop.hbase.client.TestAdmin#testHundredsOfTable',
                        'org.apache.hadoop.hbase.client.TestAdmin#testGetTableDescriptor',
+=======
+                       'org.apache.hadoop.hbase.client.TestAdmin#testCreateBadTables',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.client.TestAdmin#testDisableAndEnableTable',
                        'org.apache.hadoop.hbase.regionserver.TestStoreScanner#testWildCardTtlScan',
                        'org.apache.hadoop.hbase.TestScanMultipleVersions#testScanMultipleVersions',
                        'org.apache.hadoop.hbase.regionserver.TestExplicitColumnTracker#testGet_MultiVersion',
+<<<<<<< HEAD
                        'org.apache.hadoop.hbase.filter.TestPageFilter#testPageSize',
                        'org.apache.hadoop.hbase.mapreduce.TestHFileOutputFormat#testWritingPEData',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.mapreduce.TestTableMapReduce#testMultiRegionTable',
                        'org.apache.hadoop.hbase.regionserver.TestScanner#testFilters',
-                       'org.apache.hadoop.hbase.regionserver.TestScanner#testRaceBetweenClientAndTimeout',
                        'org.apache.hadoop.hbase.regionserver.TestScanner#testScanner',
+<<<<<<< HEAD
                        'org.apache.hadoop.hbase.regionserver.TestScanner#testScanAndSyncFlush',
                        'org.apache.hadoop.hbase.regionserver.TestScanner#testScanAndRealConcurrentFlush',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                        'org.apache.hadoop.hbase.regionserver.TestScanner#testStopRow',
                        'org.apache.hadoop.hbase.util.TestBytes#testBinarySearch',
                        'org.apache.hadoop.hbase.regionserver.TestCompaction#testMajorCompactingToNoOutput',
@@ -126,7 +157,10 @@
                       'org.apache.hadoop.hbase.stargate.model.TestScannerModel#testFromXML',
                       'org.apache.hadoop.hbase.stargate.TestTableResource#testTableListText',
                       'org.apache.hadoop.hbase.stargate.TestTableResource#testTableListJSON',
+<<<<<<< HEAD
                       'org.apache.hadoop.hbase.stargate.TestTableResource#testTableListXML',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testDelete',
                       'org.apache.hadoop.hbase.stargate.client.TestRemoteTable#testScanner',
                       'org.apache.hadoop.hbase.stargate.model.TestTableListModel#testFromPB',
@@ -134,6 +168,12 @@
                       'org.apache.hadoop.hbase.stargate.model.TestTableListModel#testFromXML',
                       'org.apache.hadoop.hbase.stargate.model.TestColumnSchemaModel#testBuildModel',
                       'org.apache.hadoop.hbase.stargate.model.TestColumnSchemaModel#testFromXML',
+<<<<<<< HEAD
+=======
+                      'org.apache.hadoop.hbase.stargate.auth.TestHTableAuthenticator#testGetAdminUser',
+                      'org.apache.hadoop.hbase.stargate.auth.TestHTableAuthenticator#testGetPlainUser',
+                      'org.apache.hadoop.hbase.stargate.auth.TestHTableAuthenticator#testGetDisabledUser',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.stargate.TestScannerResource#testSimpleScannerXML',
                       'org.apache.hadoop.hbase.stargate.TestScannerResource#testSimpleScannerPB',
                       'org.apache.hadoop.hbase.stargate.TestScannerResource#testSimpleScannerBinary',
@@ -143,6 +183,10 @@
                       'org.apache.hadoop.hbase.stargate.model.TestCellModel#testFromXML',
                       'org.apache.hadoop.hbase.stargate.TestRowResource#testSingleCellGetPutPB',
                       'org.apache.hadoop.hbase.stargate.TestRowResource#testSingleCellGetPutBinary',
+<<<<<<< HEAD
+=======
+                      'org.apache.hadoop.hbase.stargate.TestRowResource#testSingleCellGetJSON',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.stargate.TestRowResource#testURLEncodedKey',
                       'org.apache.hadoop.hbase.stargate.TestRowResource#testMultiCellGetPutXML',
                       'org.apache.hadoop.hbase.stargate.TestRowResource#testMultiCellGetPutPB',
@@ -156,7 +200,10 @@
                       'org.apache.hadoop.hbase.stargate.model.TestVersionModel#testFromPB',
                       'org.apache.hadoop.hbase.stargate.model.TestVersionModel#testBuildModel',
                       'org.apache.hadoop.hbase.stargate.model.TestVersionModel#testFromXML',
+<<<<<<< HEAD
                       'org.apache.hadoop.hbase.stargate.model.TestTableRegionModel#testBuildModel',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.stargate.model.TestTableRegionModel#testFromXML',
                       'org.apache.hadoop.hbase.stargate.model.TestStorageClusterStatusModel#testFromPB',
                       'org.apache.hadoop.hbase.stargate.model.TestStorageClusterStatusModel#testBuildModel',
@@ -164,14 +211,25 @@
                       'org.apache.hadoop.hbase.stargate.TestStatusResource#testGetClusterStatusXML',
                       'org.apache.hadoop.hbase.stargate.TestStatusResource#testGetClusterStatusPB',
                       'org.apache.hadoop.hbase.stargate.model.TestTableInfoModel#testFromPB',
+<<<<<<< HEAD
                       'org.apache.hadoop.hbase.stargate.model.TestTableInfoModel#testFromXML',
                       'org.apache.hadoop.hbase.stargate.auth.TestHBCAuthenticator#testGetUserUnknown',
+=======
+                      'org.apache.hadoop.hbase.stargate.model.TestTableInfoModel#testBuildModel',
+                      'org.apache.hadoop.hbase.stargate.model.TestTableInfoModel#testFromXML',
+                      'org.apache.hadoop.hbase.stargate.auth.TestHBCAuthenticator#testGetUserUnknown',
+                      'org.apache.hadoop.hbase.stargate.auth.TestHBCAuthenticator#testGetAdminUser',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.stargate.auth.TestHBCAuthenticator#testGetPlainUser',
                       'org.apache.hadoop.hbase.stargate.auth.TestHBCAuthenticator#testGetDisabledUser',
                       'org.apache.hadoop.hbase.stargate.model.TestCellSetModel#testFromPB',
                       'org.apache.hadoop.hbase.stargate.model.TestCellSetModel#testBuildModel',
                       'org.apache.hadoop.hbase.stargate.model.TestCellSetModel#testFromXML',
                       'org.apache.hadoop.hbase.stargate.Test00MiniCluster#testDFSMiniCluster',
+<<<<<<< HEAD
+=======
+                      'org.apache.hadoop.hbase.stargate.Test00MiniCluster#testZooKeeperMiniCluster',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.stargate.Test00MiniCluster#testHBaseMiniCluster',
                       'org.apache.hadoop.hbase.stargate.auth.TestJDBCAuthenticator#testGetUserUnknown',
                       'org.apache.hadoop.hbase.stargate.auth.TestJDBCAuthenticator#testGetAdminUser',
@@ -236,6 +294,11 @@
                       'org.apache.hadoop.hbase.client.TestFromClientSide#testDuplicateVersions',
                       'org.apache.hadoop.hbase.client.TestFromClientSide#testAddKeyValue',
                       'org.apache.hadoop.hbase.client.TestFromClientSide#testFilterAcrossMutlipleRegions',
+<<<<<<< HEAD
+=======
+                      'org.apache.hadoop.hbase.client.TestFromClientSide#testSingleRowMultipleFamily',
+                      'org.apache.hadoop.hbase.client.TestFromClientSide#testJiraTest867',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.TestSerialization#testPut',
                       'org.apache.hadoop.hbase.TestSerialization#testScan',
                       'org.apache.hadoop.hbase.TestSerialization#testCompareFilter',
@@ -264,6 +327,10 @@
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testPutSameKey',
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testScanAcrossSnapshot',
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testSnapshotting',
+<<<<<<< HEAD
+=======
+                      'org.apache.hadoop.hbase.regionserver.TestMemStore#testMultipleVersionsSimple',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testBinary',
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testGetNextRow',
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testGet_Basic_Found',
@@ -271,8 +338,13 @@
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testGet_memstoreAndSnapShot',
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testGet_SpecificTimeStamp',
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testGetWithDelete',
+<<<<<<< HEAD
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testGetWithDeleteFamily',
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testKeepDeleteInmemstore',
+=======
+                      'org.apache.hadoop.hbase.regionserver.TestMemStore#testGetWithDeleteColumn',
+                      'org.apache.hadoop.hbase.regionserver.TestMemStore#testGetWithDeleteFamily',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testRetainsDeleteVersion',
                       'org.apache.hadoop.hbase.regionserver.TestMemStore#testRetainsDeleteFamily',
                       'org.apache.hadoop.hbase.regionserver.TestDeleteCompare#testDeleteCompare_DeleteFamily',
@@ -340,11 +412,23 @@
                       'org.apache.hadoop.hbase.regionserver.TestMinorCompactingStoreScanner#testDeleteVersion',
                       'org.apache.hadoop.hbase.client.TestAdmin#testTableExist',
                       'org.apache.hadoop.hbase.client.TestAdmin#testForceSplit',
+<<<<<<< HEAD
                       'org.apache.hadoop.hbase.client.TestAdmin#testEnableDisableAddColumnDeleteColumn',
                       'org.apache.hadoop.hbase.client.TestAdmin#testTableNameClash',
                       'org.apache.hadoop.hbase.client.TestAdmin#testReadOnlyTable',
                       'org.apache.hadoop.hbase.client.TestAdmin#testTableNotFoundExceptionWithATable',
                       'org.apache.hadoop.hbase.client.TestAdmin#testTableNotFoundExceptionWithoutAnyTables',
+=======
+                      'org.apache.hadoop.hbase.client.TestAdmin#testEmptyHHTableDescriptor',
+                      'org.apache.hadoop.hbase.client.TestAdmin#testEnableDisableAddColumnDeleteColumn',
+                      'org.apache.hadoop.hbase.client.TestAdmin#testTableNameClash',
+                      'org.apache.hadoop.hbase.client.TestAdmin#testReadOnlyTable',
+                      'org.apache.hadoop.hbase.client.TestAdmin#testTableNames',
+                      'org.apache.hadoop.hbase.client.TestAdmin#testTableNotFoundExceptionWithATable',
+                      'org.apache.hadoop.hbase.client.TestAdmin#testTableNotFoundExceptionWithoutAnyTables',
+                      'org.apache.hadoop.hbase.client.TestAdmin#testHundredsOfTable',
+                      'org.apache.hadoop.hbase.client.TestAdmin#testGetTableDescriptor',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.client.TestAdmin#testCreateTableWithRegions',
                       'org.apache.hadoop.hbase.client.TestAdmin#testCreateTable',
                       'org.apache.hadoop.hbase.mapreduce.TestSimpleTotalOrderPartitioner#testSplit',
@@ -373,8 +457,18 @@
                       'org.apache.hadoop.hbase.regionserver.TestExplicitColumnTracker#testStackOverflow',
                       'org.apache.hadoop.hbase.regionserver.TestExplicitColumnTracker#testGet_SingleVersion',
                       'org.apache.hadoop.hbase.filter.TestPageFilter#testSerialization',
+<<<<<<< HEAD
                       'org.apache.hadoop.hbase.filter.TestInclusiveStopFilter#testSerialization',
                       'org.apache.hadoop.hbase.filter.TestInclusiveStopFilter#testStopRowIdentification',
+=======
+                      'org.apache.hadoop.hbase.filter.TestPageFilter#testPageSize',
+                      'org.apache.hadoop.hbase.mapreduce.TestHFileOutputFormat#testWritingPEData',
+                      'org.apache.hadoop.hbase.filter.TestInclusiveStopFilter#testSerialization',
+                      'org.apache.hadoop.hbase.filter.TestInclusiveStopFilter#testStopRowIdentification',
+                      'org.apache.hadoop.hbase.regionserver.TestScanner#testRaceBetweenClientAndTimeout',
+                      'org.apache.hadoop.hbase.regionserver.TestScanner#testScanAndSyncFlush',
+                      'org.apache.hadoop.hbase.regionserver.TestScanner#testScanAndRealConcurrentFlush',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                       'org.apache.hadoop.hbase.TestFullLogReconstruction#testReconstruction',
                       'org.apache.hadoop.hbase.regionserver.TestStore#testEmptyStoreFile',
                       'org.apache.hadoop.hbase.regionserver.TestStore#testGet_FromMemStoreOnly',

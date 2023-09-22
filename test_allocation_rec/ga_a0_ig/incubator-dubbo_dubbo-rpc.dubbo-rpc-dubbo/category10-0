@@ -9,12 +9,20 @@
                           'org.apache.dubbo.rpc.protocol.dubbo.ImplicitCallBackTest#test_Async_Future',
                           'org.apache.dubbo.rpc.protocol.dubbo.ImplicitCallBackTest#test_CloseCallback',
                           'org.apache.dubbo.rpc.protocol.dubbo.ImplicitCallBackTest#test_Sync_NoFuture'],
+<<<<<<< HEAD
  '20CPU010Mem2GB.sh': [],
  '21CPU025Mem2GB.sh': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testListDetail',
                        'org.apache.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClientTest#test_counter_error',
                        'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#TestCallbackMultiInstans',
                        'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#TestCallbackNormal',
                        'org.apache.dubbo.rpc.protocol.dubbo.MultiThreadTest#testDubboMultiThreadInvoke'],
+=======
+ '21CPU025Mem2GB.sh:v0': ['org.apache.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClientTest#test_counter_error',
+                          'org.apache.dubbo.rpc.protocol.dubbo.MultiThreadTest#testDubboMultiThreadInvoke'],
+ '21CPU025Mem2GB.sh:v1': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testListDetail',
+                          'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#TestCallbackMultiInstans',
+                          'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#TestCallbackNormal'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '22CPU05Mem2GB.sh': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testNoPort',
                       'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testDubboProtocolWithMina',
                       'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#TestCallbackConsumerLimit',
@@ -33,11 +41,27 @@
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.ListTelnetHandlerTest#testListDetail',
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.CurrentTelnetHandlerTest#testService',
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandlerTest#testChangeMessageNull'],
+<<<<<<< HEAD
  '26CPU2Mem4GB.sh:v0': ['org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky3',
                         'org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky4',
                         'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testDemoProtocol',
                         'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testNonSerializedParameter',
                         'org.apache.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClientTest#test_share_connect',
+=======
+ '26CPU2Mem4GB.sh:v0': ['org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky1',
+                        'org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky3',
+                        'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testPerm'],
+ '26CPU2Mem4GB.sh:v1': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testErrorMessage',
+                        'org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky4',
+                        'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testReturnNonSerialized',
+                        'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testDubboProtocolMultiService',
+                        'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testDemoProtocol',
+                        'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testNonSerializedParameter',
+                        'org.apache.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClientTest#test_share_connect',
+                        'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#startProvider',
+                        'org.apache.dubbo.rpc.protocol.dubbo.telnet.ListTelnetHandlerTest#testListDetailService',
+                        'org.apache.dubbo.rpc.protocol.dubbo.RpcFilterTest#testRpcFilter',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                         'org.apache.dubbo.rpc.protocol.dubbo.telnet.LogTelnetHandlerTest#testPrintLog',
                         'org.apache.dubbo.rpc.protocol.dubbo.telnet.LogTelnetHandlerTest#testChangeLogLevel',
                         'org.apache.dubbo.rpc.protocol.dubbo.telnet.CurrentTelnetHandlerTest#testSlash',
@@ -50,6 +74,7 @@
                         'org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandlerTest#testChangeName',
                         'org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandlerTest#testChangePath',
                         'org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandlerTest#testChangeCancel2',
+<<<<<<< HEAD
                         'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeByPassingNullValue'],
  '26CPU2Mem4GB.sh:v1': ['org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky1',
                         'org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest#testPerm'],
@@ -65,3 +90,12 @@
  '27CPU2Mem8GB.sh': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testListAllPort',
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.CurrentTelnetHandlerTest#testMessageError',
                      'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testMessageNull']}
+=======
+                        'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeByPassingNullValue',
+                        'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvaildMessage',
+                        'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeAutoFindMethod',
+                        'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeDefaultSService'],
+ '27CPU2Mem8GB.sh:v0': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.CurrentTelnetHandlerTest#testMessageError',
+                        'org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testMessageNull'],
+ '27CPU2Mem8GB.sh:v1': ['org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest#testListAllPort']}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

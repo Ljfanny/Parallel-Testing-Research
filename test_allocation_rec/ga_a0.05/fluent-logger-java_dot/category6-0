@@ -17,6 +17,11 @@
                       'org.fluentd.logger.sender.TestRawSocketSender#testReconnectAfterBufferFull',
                       'org.fluentd.logger.sender.TestRawSocketSender#testBufferOverflow',
                       'org.fluentd.logger.sender.TestRawSocketSender#testTimeout'],
+<<<<<<< HEAD
  '27CPU2Mem8GB.sh': [],
  '28CPU2Mem16GB.sh': [],
+=======
+ '26CPU2Mem4GB.sh:v0': [],
+ '26CPU2Mem4GB.sh:v1': [],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '29CPU4Mem8GB.sh': []}

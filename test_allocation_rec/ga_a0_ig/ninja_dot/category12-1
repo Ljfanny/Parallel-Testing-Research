@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 {'19CPU010Mem1GB.sh:v0': ['ninja.utils.CookieDataCodecTest#decode_values_of_the_previously_supported_format_with_the_new_delimiters_in_them'],
  '19CPU010Mem1GB.sh:v1': ['ninja.scheduler.SchedulerSupportTest#schedulableShouldNotBeScheduledBeforeStart'],
+=======
+{'19CPU010Mem1GB.sh': ['ninja.scheduler.SchedulerSupportTest#schedulableShouldNotBeScheduledBeforeStart',
+                       'ninja.utils.CookieDataCodecTest#decode_values_of_the_previously_supported_format_with_the_new_delimiters_in_them'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '21CPU025Mem2GB.sh': ['ninja.RouteBuilderImplTest#testRegexInRouteWorksWithoutSlashAtTheEnd',
                        'ninja.ResultsTest#testResultsStatus',
                        'ninja.ResultsTest#testResultsBadRequest',
@@ -115,6 +120,7 @@
                      'ninja.utils.NinjaModeHelperTest#testNinjaModeHelperWorksWithTestSet',
                      'ninja.utils.NinjaModeHelperTest#testNinjaModeHelperWorksWithProdSet',
                      'ninja.utils.ResultHandlerTest#testRenderPictureFromBytes'],
+<<<<<<< HEAD
  '25CPU1Mem8GB.sh': ['ninja.ResultsTest#testResultsJsonWithObjectToRender',
                      'ninja.ResultsTest#testResultsNotFound',
                      'ninja.utils.CookieDataCodecTest#decode_values_with_gibberish_in_them',
@@ -126,6 +132,19 @@
                      'ninja.ResultTest#testRedirect',
                      'ninja.utils.NinjaModeHelperTest#testNinjaModeHelperWorksWithNoModeSet',
                      'ninja.utils.DateUtilImplTest#testFormatForHttpHeaderLong'],
+=======
+ '25CPU1Mem8GB.sh:v0': ['ninja.ResultsTest#testResultsNotFound',
+                        'ninja.utils.CookieDataCodecTest#decode_values_with_gibberish_in_them',
+                        'ninja.utils.CookieDataCodecTest#bake_in_multiple_headers_and_values',
+                        'ninja.postoffice.commonsmail.CommonsMailHelperImplTest#testCreateListOfAddresses',
+                        'ninja.ResultTest#testSettingOfCharsetWorks',
+                        'ninja.ResultTest#testSetAndGetTemplate',
+                        'ninja.ResultTest#testRedirect',
+                        'ninja.utils.NinjaModeHelperTest#testNinjaModeHelperWorksWithNoModeSet',
+                        'ninja.utils.DateUtilImplTest#testFormatForHttpHeaderLong'],
+ '25CPU1Mem8GB.sh:v1': ['ninja.ResultsTest#testResultsJsonWithObjectToRender',
+                        'ninja.params.ControllerMethodInvokerTest#longParamShouldBeParsedToLong'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '26CPU2Mem4GB.sh': ['ninja.servlet.ContextImplTest#getCookieTest',
                      'ninja.servlet.ContextImplTest#testGetParameterAsInteger',
                      'ninja.servlet.ContextImplTest#testParseBodyWithUnkownContentTypeWorks',

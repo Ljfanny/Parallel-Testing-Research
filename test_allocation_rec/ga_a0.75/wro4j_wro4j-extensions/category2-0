@@ -1,18 +1,28 @@
+<<<<<<< HEAD
 {'27CPU2Mem8GB.sh': ['ro.isdc.wro.extensions.http.handler.spi.TestDefaultRequestHandlerProvider#shoudProvideAtLeastOneRequestHandler',
                      'ro.isdc.wro.extensions.http.handler.spi.TestDefaultRequestHandlerProvider#shouldNotFailWhenEachHandlerIsInvoked',
                      'ro.isdc.wro.extensions.processor.TestJsHintProcessor#canSetNullOptions',
                      'ro.isdc.wro.extensions.processor.TestJsHintProcessor#shouldSupportCorrectResourceTypes',
+=======
+{'26CPU2Mem4GB.sh': ['ro.isdc.wro.extensions.http.handler.spi.TestDefaultRequestHandlerProvider#shoudProvideAtLeastOneRequestHandler',
+                     'ro.isdc.wro.extensions.http.handler.spi.TestDefaultRequestHandlerProvider#shouldNotFailWhenEachHandlerIsInvoked',
+                     'ro.isdc.wro.extensions.processor.TestJsHintProcessor#canSetNullOptions',
+                     'ro.isdc.wro.extensions.processor.TestJsHintProcessor#shouldSupportCorrectResourceTypes',
+                     'ro.isdc.wro.extensions.processor.TestJsHintProcessor#canBeExecutedMultipleTimes',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.processor.TestJsHintProcessor#testWithOptionsSet',
                      'ro.isdc.wro.extensions.processor.TestJsHintProcessor#shouldOverrideDefaultOptions',
                      'ro.isdc.wro.extensions.processor.TestJsHintProcessor#testFromFolder',
                      'ro.isdc.wro.extensions.processor.TestHoganJsProcessor#shouldSupportCorrectResourceTypes',
                      'ro.isdc.wro.extensions.processor.TestHoganJsProcessor#testSimpleString',
                      'ro.isdc.wro.extensions.processor.TestHoganJsProcessor#shouldTransformFilesFromFolder',
+                     'ro.isdc.wro.extensions.processor.TestHoganJsProcessor#shouldBeThreadSafe',
                      'ro.isdc.wro.extensions.http.TestConfigurableWroFilter#shouldAcceptValidProcessorNameConfiguration',
                      'ro.isdc.wro.extensions.http.TestConfigurableWroFilter#shouldBeConfiguredBySpring',
                      'ro.isdc.wro.extensions.processor.TestCJsonProcessor#testUnpackFromFolder',
                      'ro.isdc.wro.extensions.processor.TestCJsonProcessor#shouldSupportCorrectResourceTypes',
                      'ro.isdc.wro.extensions.processor.TestCJsonProcessor#testPackFromFolder',
+                     'ro.isdc.wro.extensions.processor.TestCJsonProcessor#shouldBeThreadSafe',
                      'ro.isdc.wro.extensions.processor.TestUglifyJsProcessor#cannotAcceptInvalidJsonOptions',
                      'ro.isdc.wro.extensions.processor.TestUglifyJsProcessor#cannotAcceptNullOptions',
                      'ro.isdc.wro.extensions.processor.TestUglifyJsProcessor#shouldSupportCorrectResourceTypes',
@@ -21,6 +31,7 @@
                      'ro.isdc.wro.extensions.processor.TestUglifyJsProcessor#shouldUglifyFiles',
                      'ro.isdc.wro.extensions.processor.TestEmberJsProcessor#testSimpleString',
                      'ro.isdc.wro.extensions.processor.TestEmberJsProcessor#shouldTransformFilesFromFolder',
+                     'ro.isdc.wro.extensions.processor.TestEmberJsProcessor#shouldBeThreadSafe',
                      'ro.isdc.wro.extensions.model.factory.TestSmartWroModelFactory#noFactoryProvided',
                      'ro.isdc.wro.extensions.model.factory.TestSmartWroModelFactory#testDefaultInstance',
                      'ro.isdc.wro.extensions.model.factory.TestSmartWroModelFactory#shouldCreateValidModelWhenWroFileIsSet',
@@ -33,6 +44,10 @@
                      'ro.isdc.wro.extensions.model.factory.TestSmartWroModelFactory#shouldInjectInnerModelFactories',
                      'ro.isdc.wro.extensions.model.factory.TestSmartWroModelFactory#cannotCreateModelWhenNullListOfFactoriesProvided',
                      'ro.isdc.wro.extensions.processor.support.TestObjectPoolHelper#shouldUseCustomObjectPool',
+<<<<<<< HEAD
+=======
+                     'ro.isdc.wro.extensions.processor.support.TestObjectPoolHelper#cannotAcceptNullArgument',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.processor.support.TestObjectPoolHelper#shouldReuseExistingObject',
                      'ro.isdc.wro.extensions.processor.support.TestObjectPoolHelper#cannotReturnNullObjectToPool',
                      'ro.isdc.wro.extensions.processor.support.TestObjectPoolHelper#cannotSetNullObjectPool',
@@ -48,6 +63,10 @@
                      'ro.isdc.wro.extensions.processor.TestBourbonCssProcessor#shouldSupportOnlyCssResources',
                      'ro.isdc.wro.extensions.processor.TestBourbonCssProcessor#testFromFolder',
                      'ro.isdc.wro.extensions.processor.TestBourbonCssProcessor#shouldBeThreadSafe',
+<<<<<<< HEAD
+=======
+                     'ro.isdc.wro.extensions.model.factory.TestJsonModelFactory#testInvalidContent',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.model.factory.TestJsonModelFactory#createIncompleteModel',
                      'ro.isdc.wro.extensions.model.factory.TestJsonModelFactory#testInvalidStream',
                      'ro.isdc.wro.extensions.model.factory.TestJsonModelFactory#shouldBeThreadSafe',
@@ -59,6 +78,10 @@
                      'ro.isdc.wro.extensions.processor.TestDustJsProcessor#shouldSupportCorrectResourceTypes',
                      'ro.isdc.wro.extensions.processor.TestDustJsProcessor#testSimpleString',
                      'ro.isdc.wro.extensions.processor.TestDustJsProcessor#shouldTransformFilesFromFolder',
+<<<<<<< HEAD
+=======
+                     'ro.isdc.wro.extensions.processor.TestDustJsProcessor#shouldBeThreadSafe',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.processor.support.dustjs.TestDustJs#shouldCompileNullContent',
                      'ro.isdc.wro.extensions.processor.support.dustjs.TestDustJs#shouldUseConfiguredCompiler',
                      'ro.isdc.wro.extensions.processor.support.dustjs.TestDustJs#cannotCompileUsingWrongPathCompiler',
@@ -104,8 +127,15 @@
                      'ro.isdc.wro.extensions.processor.js.TestTypeScriptProcessor#shouldUseNodeProcessorWhenSupported',
                      'ro.isdc.wro.extensions.processor.js.TestTypeScriptProcessor#shouldUseFallbackProcessorWhenNodeNotSupported',
                      'ro.isdc.wro.extensions.processor.js.TestTypeScriptProcessor#shouldSupportCorrectResourceTypes',
+<<<<<<< HEAD
                      'ro.isdc.wro.extensions.processor.TestRubySassCssProcessor#shouldFailWhenInvalidSassCssIsProcessed',
                      'ro.isdc.wro.extensions.processor.TestRubySassCssProcessor#shouldTestFromFolder',
+=======
+                     'ro.isdc.wro.extensions.processor.TestRubySassCssProcessor#shouldBeThreadSafeWhenInitializingProcessor',
+                     'ro.isdc.wro.extensions.processor.TestRubySassCssProcessor#shouldFailWhenInvalidSassCssIsProcessed',
+                     'ro.isdc.wro.extensions.processor.TestRubySassCssProcessor#shouldTestFromFolder',
+                     'ro.isdc.wro.extensions.processor.TestRubySassCssProcessor#shouldBeThreadSafe',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.processor.TestRubySassCssProcessor#shouldSucceedAfterAFailure',
                      'ro.isdc.wro.extensions.processor.TestRubySassCssProcessor#executeMultipleTimesDoesntThrowOutOfMemoryException',
                      'ro.isdc.wro.extensions.processor.css.TestLessCssProcessor#shouldUseNodeProcessorWhenSupported',
@@ -137,9 +167,13 @@
                      'ro.isdc.wro.extensions.locator.TestWebjarUriLocator#cannotFindInvalidWebjar',
                      'ro.isdc.wro.extensions.locator.TestWebjarUriLocator#shouldNotAcceptUnknown',
                      'ro.isdc.wro.extensions.locator.TestWebjarUriLocator#shouldAcceptKnownUri',
+<<<<<<< HEAD
                      'ro.isdc.wro.extensions.model.factory.TestConfigurableModelFactory#shouldUseCorrectDefaultStrategy',
                      'ro.isdc.wro.extensions.model.factory.TestConfigurableModelFactory#cannotConfigureInvalidStrategy',
                      'ro.isdc.wro.extensions.model.factory.TestConfigurableModelFactory#shouldHaveMoreThanOneAvailableStrategy',
+=======
+                     'ro.isdc.wro.extensions.model.factory.TestConfigurableModelFactory#cannotConfigureInvalidStrategy',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.model.factory.TestGroovyModelFactory#testDuplicateGroupName',
                      'ro.isdc.wro.extensions.model.factory.TestGroovyModelFactory#testRecursiveGroupReference',
                      'ro.isdc.wro.extensions.model.factory.TestGroovyModelFactory#shouldSupportAbstractGroup',
@@ -150,11 +184,16 @@
                      'ro.isdc.wro.extensions.model.factory.TestGroovyModelFactory#shouldBeThreadSafe',
                      'ro.isdc.wro.extensions.model.factory.TestGroovyModelFactory#createValidModel',
                      'ro.isdc.wro.extensions.model.factory.TestGroovyModelFactory#decoratedModelShouldBeThreadSafe',
+<<<<<<< HEAD
+=======
+                     'ro.isdc.wro.extensions.manager.factory.TestBaseWroManagerFactory#shouldNotFailWhenDestroyingUninitializedFactory',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.manager.factory.TestBaseWroManagerFactory#defaultModelFactoryIsXml',
                      'ro.isdc.wro.extensions.processor.js.TestAbstractNodeWithFallbackProcessor#shouldNotFailWhenProcessorIsCreatedConcurrently',
                      'ro.isdc.wro.http.TestConfigurableWroFilterWithExtensions#extensionProcessorsShouldBeAvailable',
                      'ro.isdc.wro.model.resource.locator.factory.TestDefaultUriLocatorFactory#shouldContainWebjarLocator',
                      'ro.isdc.wro.model.resource.locator.factory.TestDefaultUriLocatorFactory#shouldHaveSeveralDefaultLocators',
+<<<<<<< HEAD
                      'ro.isdc.wro.extensions.processor.TestBeautifyJsProcessor#testFromFolder',
                      'ro.isdc.wro.extensions.processor.TestRhinoLiterateCoffeeScriptProcessor#shouldSupportCorrectResourceTypes',
                      'ro.isdc.wro.extensions.processor.TestRhinoLiterateCoffeeScriptProcessor#testLiterate',
@@ -163,14 +202,28 @@
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#splitingNullOptionProduceEmptyArray',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#shouldBuildOptionsFromCSV',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#predefOption',
+=======
+                     'ro.isdc.wro.extensions.processor.TestBeautifyJsProcessor#shouldSupportCorrectResourceTypes',
+                     'ro.isdc.wro.extensions.processor.TestBeautifyJsProcessor#testFromFolder',
+                     'ro.isdc.wro.extensions.processor.TestRhinoLiterateCoffeeScriptProcessor#shouldSupportCorrectResourceTypes',
+                     'ro.isdc.wro.extensions.processor.TestRhinoLiterateCoffeeScriptProcessor#testLiterate',
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#splitOptionsWithHiphen',
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#splitingComplexOptions',
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#splitingNullOptionProduceEmptyArray',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#splitingOneOption',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#shouldBuildOptions',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#splitingComplexOption',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#predefOptionWithManyOptions',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#shouldBuildOptionsFromNullCSV',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#cannotBuildCSVWheInvalidOptionsFormatProvided',
+<<<<<<< HEAD
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#splitingTwoOptions',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#predefOptionWithQuotes',
+=======
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#testOptionWithValue',
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#splitingTwoOptions',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#testOptionWithNoValue',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#shouldBuildOptionsFromNullArray',
                      'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#testOptionWithEmptyValue',
@@ -181,7 +234,13 @@
                      'ro.isdc.wro.extensions.processor.support.linter.TestJsLint#testSetNullOptions',
                      'ro.isdc.wro.extensions.processor.support.linter.TestJsLint#shouldValidateWithNoOptions',
                      'ro.isdc.wro.extensions.processor.support.linter.TestJsLint#testValidScript',
+<<<<<<< HEAD
                      'ro.isdc.wro.extensions.model.resource.TestConfigurableAntPathPatternsResourceAuthorizationManager#shoudAuthorizeResourceMatchingExistingPattern',
+=======
+                     'ro.isdc.wro.extensions.model.resource.TestConfigurableAntPathPatternsResourceAuthorizationManager#shoudNotAuthorizeAnyResourceByDefault',
+                     'ro.isdc.wro.extensions.model.resource.TestConfigurableAntPathPatternsResourceAuthorizationManager#shoudAuthorizeResourceMatchingExistingPattern',
+                     'ro.isdc.wro.extensions.model.resource.TestConfigurableAntPathPatternsResourceAuthorizationManager#shoudAuthorizeResourceContainingQueryStringMatchingExistingPattern',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.processor.js.TestNgMinProcessor#testFromFolder',
                      'ro.isdc.wro.extensions.processor.js.TestNgMinProcessor#shouldSupportProcessorNgMinInstalled',
                      'ro.isdc.wro.extensions.processor.js.TestNgMinProcessor#shouldProcessInvalidJsUnchanged',
@@ -196,6 +255,10 @@
                      'ro.isdc.wro.extensions.processor.TestRhinoCoffeeScriptProcessor#testExceptions',
                      'ro.isdc.wro.extensions.processor.TestRhinoCoffeeScriptProcessor#shouldSupportCorrectResourceTypes',
                      'ro.isdc.wro.extensions.processor.TestRhinoCoffeeScriptProcessor#testAdvanced',
+<<<<<<< HEAD
+=======
+                     'ro.isdc.wro.extensions.processor.TestRhinoCoffeeScriptProcessor#shouldBeThreadSafe',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.processor.TestRhinoCoffeeScriptProcessor#testSimple',
                      'ro.isdc.wro.extensions.processor.TestPathPatternProcessorDecorator#shouldNotApplyPatternsWhenIncludeMatches',
                      'ro.isdc.wro.extensions.processor.TestPathPatternProcessorDecorator#cannotProcessWithIncludeWhenResourceIsUnknown',
@@ -206,8 +269,6 @@
                      'ro.isdc.wro.extensions.processor.TestPathPatternProcessorDecorator#cannotProcessWithExcludeWhenResourceIsUnknown',
                      'ro.isdc.wro.extensions.processor.TestPathPatternProcessorDecorator#shouldApplyPatternsWhenIncludeMatches',
                      'ro.isdc.wro.extensions.processor.TestPathPatternProcessorDecorator#shouldNotApplyPatternsWhenExcludeMatches',
-                     'ro.isdc.wro.extensions.processor.TestPathPatternProcessorDecorator#cannotExcludeNullProcessor',
-                     'ro.isdc.wro.extensions.processor.TestHandlebarsJsProcessor#shouldSupportCorrectResourceTypes',
                      'ro.isdc.wro.extensions.processor.TestHandlebarsJsProcessor#testSimpleString',
                      'ro.isdc.wro.extensions.processor.TestHandlebarsJsProcessor#shouldTransformFilesFromFolder',
                      'ro.isdc.wro.extensions.processor.TestHandlebarsJsProcessor#shouldBeThreadSafe',
@@ -280,6 +341,7 @@
                      'ro.isdc.wro.extensions.processor.support.linter.TestJsHint#shouldValidateWithNoOptions',
                      'ro.isdc.wro.extensions.processor.support.linter.TestJsHint#testInvalidOptions',
                      'ro.isdc.wro.extensions.processor.support.linter.TestJsHint#shouldValidateWithEqeqeqOption'],
+<<<<<<< HEAD
  '29CPU4Mem8GB.sh': ['ro.isdc.wro.extensions.processor.TestJsHintProcessor#canBeExecutedMultipleTimes',
                      'ro.isdc.wro.extensions.processor.TestHoganJsProcessor#shouldBeThreadSafe',
                      'ro.isdc.wro.extensions.processor.TestCJsonProcessor#shouldBeThreadSafe',
@@ -305,4 +367,21 @@
                      'ro.isdc.wro.extensions.model.resource.TestConfigurableAntPathPatternsResourceAuthorizationManager#shoudAuthorizeResourceContainingQueryStringMatchingExistingPattern',
                      'ro.isdc.wro.extensions.processor.TestGoogleClosureCompressorProcessor#shouldAcceptNullExterns',
                      'ro.isdc.wro.extensions.processor.TestRhinoCoffeeScriptProcessor#shouldBeThreadSafe',
+=======
+ '29CPU4Mem8GB.sh': ['ro.isdc.wro.extensions.processor.TestUglifyJsProcessor#shouldBeThreadSafe',
+                     'ro.isdc.wro.extensions.processor.TestEmberJsProcessor#shouldSupportCorrectResourceTypes',
+                     'ro.isdc.wro.extensions.processor.TestPackerJsProcessor#shouldBeThreadSafe',
+                     'ro.isdc.wro.extensions.processor.TestRhinoLessCssProcessor#shouldBeThreadSafe',
+                     'ro.isdc.wro.extensions.processor.TestYUICssCompressorProcessor#shouldBeThreadSafe',
+                     'ro.isdc.wro.extensions.model.factory.TestConfigurableModelFactory#shouldUseCorrectDefaultStrategy',
+                     'ro.isdc.wro.extensions.model.factory.TestConfigurableModelFactory#shouldHaveMoreThanOneAvailableStrategy',
+                     'ro.isdc.wro.extensions.processor.TestBeautifyJsProcessor#shouldBeThreadSafe',
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#splitingEmptyOption',
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#shouldBuildOptionsFromCSV',
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#predefOption',
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#testOptionWithValueAndSpaces',
+                     'ro.isdc.wro.extensions.processor.support.linter.TestOptionsBuilder#predefOptionWithQuotes',
+                     'ro.isdc.wro.extensions.processor.TestPathPatternProcessorDecorator#cannotExcludeNullProcessor',
+                     'ro.isdc.wro.extensions.processor.TestHandlebarsJsProcessor#shouldSupportCorrectResourceTypes',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'ro.isdc.wro.extensions.processor.TestJsonHPackProcessor#shouldBeThreadSafe']}

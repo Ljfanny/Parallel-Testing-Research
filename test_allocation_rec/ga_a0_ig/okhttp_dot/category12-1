@@ -39,6 +39,7 @@
                        'okio.OkBufferTest#readInt',
                        'okio.OkBufferTest#fillAndDrainPool',
                        'okio.OkBufferTest#cloneMultipleSegments'],
+<<<<<<< HEAD
  '20CPU010Mem2GB.sh:v0': ['okio.ByteStringTest#ignoreUnnecessaryPadding',
                           'okio.ByteStringTest#write',
                           'okio.GzipSourceTest#gunzipThrowsIfSourceIsNotExhausted',
@@ -56,6 +57,25 @@
                           'okio.RealBufferedSourceTest#skipInsufficientData',
                           'okio.OkBufferTest#skip',
                           'okio.OkBufferTest#completeSegmentByteCountOnBufferWithFullSegments'],
+=======
+ '20CPU010Mem2GB.sh': ['com.squareup.okhttp.internal.spdy.HpackDraft05Test#readSingleByteInt',
+                       'com.squareup.okhttp.internal.spdy.HpackDraft05Test#prefixMaskMinusOne',
+                       'com.squareup.okhttp.internal.http.RouteSelectorTest#explicitDirectProxy',
+                       'okio.ByteStringTest#ignoreUnnecessaryPadding',
+                       'okio.ByteStringTest#write',
+                       'okio.GzipSourceTest#gunzipThrowsIfSourceIsNotExhausted',
+                       'okio.GzipSourceTest#gunzip_withComment',
+                       'okio.RealBufferedSinkTest#bufferedSinkFlush',
+                       'okio.RealBufferedSinkTest#bufferedSinkEmitMultipleSegments',
+                       'okio.RealBufferedSinkTest#closeEmitsBufferedBytes',
+                       'okio.RealBufferedSinkTest#outputStreamFromSink',
+                       'okio.OkBufferReadUtf8LineTest#readLines',
+                       'okio.OkBufferReadUtf8LineTest#emptyLines',
+                       'okio.RealBufferedSourceTest#skipInsufficientData',
+                       'okio.OkBufferTest#skip',
+                       'okio.OkBufferTest#readIntSplitAcrossMultipleSegments',
+                       'okio.OkBufferTest#completeSegmentByteCountOnBufferWithFullSegments'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '21CPU025Mem2GB.sh': ['com.squareup.okhttp.internal.spdy.SpdyConnectionTest#clientPingsServerHttp2',
                        'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#clientDoesNotLimitFlowControl',
                        'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#receiveGoAwayHttp2',
@@ -721,4 +741,9 @@
                       'okio.RealBufferedSourceReadUtf8LineTest#readLines',
                       'okio.RealBufferedSourceTest#requireIncludesBufferBytes',
                       'okio.OkBufferTest#toStringOnLargeBufferIncludesMd5',
+<<<<<<< HEAD
                       'okio.OkBufferTest#toStringOnEmptyBuffer']}
+=======
+                      'okio.OkBufferTest#toStringOnEmptyBuffer'],
+ '29CPU4Mem8GB.sh': []}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

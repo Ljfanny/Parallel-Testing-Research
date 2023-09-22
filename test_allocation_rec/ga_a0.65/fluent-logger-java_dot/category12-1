@@ -19,6 +19,7 @@
                      'org.fluentd.logger.sender.TestRawSocketSender#testTimeout'],
  '26CPU2Mem4GB.sh:v0': [],
  '26CPU2Mem4GB.sh:v1': [],
+<<<<<<< HEAD
  '28CPU2Mem16GB.sh': [],
  '29CPU4Mem8GB.sh:v0': [],
  '29CPU4Mem8GB.sh:v1': [],
@@ -27,3 +28,13 @@
  '29CPU4Mem8GB.sh:v4': [],
  '29CPU4Mem8GB.sh:v5': [],
  '29CPU4Mem8GB.sh:v6': []}
+=======
+ '26CPU2Mem4GB.sh:v2': [],
+ '26CPU2Mem4GB.sh:v3': [],
+ '26CPU2Mem4GB.sh:v4': [],
+ '26CPU2Mem4GB.sh:v5': [],
+ '26CPU2Mem4GB.sh:v6': [],
+ '26CPU2Mem4GB.sh:v7': [],
+ '26CPU2Mem4GB.sh:v8': [],
+ '29CPU4Mem8GB.sh': []}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

@@ -4,6 +4,10 @@
                        'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#testMatchAllDocsMustWithKeywordNot',
                        'uk.co.flax.luwak.TestCachePurging#testBackgroundPurges',
                        'uk.co.flax.luwak.matchers.TestParallelMatcher#testParallelSlowLog'],
+<<<<<<< HEAD
+=======
+ '21CPU025Mem2GB.sh': ['uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanBoost'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '22CPU05Mem2GB.sh': ['uk.co.flax.luwak.presearcher.TestMatchAllPresearcher#testMatchAllQueryHandling',
                       'uk.co.flax.luwak.TestConcurrentQueryLoader#testLoading',
                       'uk.co.flax.luwak.TestConcurrentQueryLoader#testErrorHandling',
@@ -134,7 +138,10 @@
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanPayloadCheckQuery',
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testOrderedNearExtractor',
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanPositionQuery',
+<<<<<<< HEAD
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanBoost',
+=======
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanWithin',
                      'uk.co.flax.luwak.termextractor.TestSpanExtractors#testSpanMultiTerms',
                      'uk.co.flax.luwak.analysis.TestSuffixingNGramTokenizer#testRepeatedInfixesAreNotEmitted',
@@ -189,6 +196,10 @@
                      'uk.co.flax.luwak.TestQueryDecomposer#testSingleValuedConjunctWithExclusions',
                      'uk.co.flax.luwak.analysis.TestSuffixingNGramTokenizer#testRepeatedSuffixesAreNotEmitted',
                      'uk.co.flax.luwak.analysis.TestSuffixingNGramTokenizer#testTokensAreSuffixed',
+<<<<<<< HEAD
+=======
+                     'uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery',
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
                      'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#testMatchAllDocsMustWithKeywordShouldAndKeywordNot',
                      'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#allDisjunctionClausesOfAConjunctionAreExtracted',
                      'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#conjunctionsOutweighDisjunctions',
@@ -198,5 +209,9 @@
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#testBatchFiltering',
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#testFilteringOnMatchAllQueries',
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#filtersOnNumericTermQueries',
+<<<<<<< HEAD
                      'uk.co.flax.luwak.testutils.TestCollectionUtils#testPartitions'],
  '28CPU2Mem16GB.sh': ['uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery']}
+=======
+                     'uk.co.flax.luwak.testutils.TestCollectionUtils#testPartitions']}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246

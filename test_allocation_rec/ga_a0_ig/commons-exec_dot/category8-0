@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {'19CPU010Mem1GB.sh': ['org.apache.commons.exec.environment.EnvironmentUtilTest#testToStrings',
                        'org.apache.commons.exec.DefaultExecutorTest#testExecuteWithInvalidWorkingDirectory',
                        'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsync',
@@ -7,6 +8,16 @@
                        'org.apache.commons.exec.DefaultExecutorTest#testExecuteWatchdog',
                        'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithNonExistingApplication'],
  '20CPU010Mem2GB.sh': [],
+=======
+{'19CPU010Mem1GB.sh:v0': ['org.apache.commons.exec.DefaultExecutorTest#testExecuteWithInvalidWorkingDirectory',
+                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsync',
+                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithTooLateUserTermination',
+                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithNonExistingApplication'],
+ '19CPU010Mem1GB.sh:v1': ['org.apache.commons.exec.environment.EnvironmentUtilTest#testToStrings',
+                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithError',
+                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithTimelyUserTermination',
+                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteWatchdog'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '21CPU025Mem2GB.sh': ['org.apache.commons.exec.CommandLineTest#testComplexAddArgument',
                        'org.apache.commons.exec.CommandLineTest#testComplexAddArguments1',
                        'org.apache.commons.exec.CommandLineTest#testAddArgumentWithSpace',

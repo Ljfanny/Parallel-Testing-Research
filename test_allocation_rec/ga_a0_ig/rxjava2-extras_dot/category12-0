@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {'19CPU010Mem1GB.sh:v0': ['com.github.davidmoten.rx2.FlowablesTest#isUtilityClass',
                           'com.github.davidmoten.rx2.ObservablesTest#testCache',
                           'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testNullSubscriber',
@@ -17,6 +18,28 @@
                           'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#testCancelDoesNotHaveToWaitForTimeout',
                           'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#testEarlyUnsubscribe',
                           'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#serverSocketReadsTcpPushWhenBufferIsBiggerThanInput'],
+=======
+{'01noThrottling.sh': [],
+ '19CPU010Mem1GB.sh': ['com.github.davidmoten.rx2.FlowablesTest#testCache',
+                       'com.github.davidmoten.rx2.FlowablesTest#isUtilityClass',
+                       'com.github.davidmoten.rx2.ObservablesTest#testCache',
+                       'com.github.davidmoten.rx2.RetryWhenTest#testRetryWhenMultipleRetriesWorkOnSingleDelay',
+                       'com.github.davidmoten.rx2.RetryWhenTest#testExponentialBackoff',
+                       'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testNullSubscriber',
+                       'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testVeryManyByteArrays',
+                       'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testVeryManyByteArraysObservableSource',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableStringInputStreamTest#interruptAsync',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableStringInputStreamTest#asyncCancel',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#serverSocketReadsTcpPushWhenInputIsOneCharacter',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#serverSocketReadsTcpPushWhenBufferIsSmallerThanInput',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#testAcceptSocketRejectsAlways',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#testCloserWhenThrows',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#serverSocketReadsTcpPushWhenBufferIsSameSizeAsInput',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#testCancelDoesNotHaveToWaitForTimeout',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#testEarlyUnsubscribe',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#serverSocketReadsTcpPushWhenInputIsEmpty',
+                       'com.github.davidmoten.rx2.internal.flowable.FlowableServerSocketTest#serverSocketReadsTcpPushWhenBufferIsBiggerThanInput'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '20CPU010Mem2GB.sh': ['com.github.davidmoten.rx2.SpecializedMspcLinkedQueueTest#com.github.davidmoten.rx2.SpecializedMspcLinkedQueueTest',
                        'com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleNormalCancelledAtBegginning',
                        'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTransformTest#testErrorPreChainingCausesCancel',
@@ -118,6 +141,7 @@
                       'com.github.davidmoten.rx2.PredicatesTest#testAlwaysFalse',
                       'com.github.davidmoten.rx2.internal.flowable.FlowableMergeInterleavedTest#testManySources',
                       'com.github.davidmoten.rx2.internal.flowable.FlowableMergeInterleavedTest#testInterleaveCompletingStreamsWithEmpty'],
+<<<<<<< HEAD
  '23CPU05Mem4GB.sh:v0': ['com.github.davidmoten.rx2.StringsSplitTest#testSplitNoSeparatorProducesSingle',
                          'com.github.davidmoten.rx2.internal.flowable.FlowableStateMachineTest#testRequestBatchSize1',
                          'com.github.davidmoten.rx2.internal.flowable.FlowableMaxRequestTest#checkMaxRequestThreeDownstreamRequestMaxValue',
@@ -134,6 +158,24 @@
                          'com.github.davidmoten.rx2.internal.flowable.FlowableMatchTest#testNoMatchExistsForAtLeastOneFirstLonger',
                          'com.github.davidmoten.rx2.internal.flowable.FlowableReverseTest#testIsUtilityClass',
                          'com.github.davidmoten.rx2.internal.flowable.FlowableMergeInterleavedTest#testInterleaveOneStreamEmpty'],
+=======
+ '23CPU05Mem4GB.sh': ['com.github.davidmoten.rx2.StringsSplitTest#testSplitSimpleSeparatorOnlyProducesTwoBlanks',
+                      'com.github.davidmoten.rx2.StringsSplitTest#testSplitNoSeparatorProducesSingle',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableRepeatingTest#testRepeatingZero',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableStateMachineTest#testRequestBatchSize1',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableMaxRequestTest#checkMaxRequestThreeDownstreamRequestMaxValue',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableMaxRequestTest#checkCancel',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableMaxRequestTest#checkEmptyMaxRequestOneDownstreamRequestsMaxValue',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableMatchTest#testNegativeArgumentThrowsIAE',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableMatchTest#test2',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableMatchTest#testNoMatchExistsForAtLeastOneFirstLonger',
+                      'com.github.davidmoten.rx2.StringsTest#testMalformedInTheMiddleReplace',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableReverseTest#testIsUtilityClass',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableDoOnEmptyTest#subscriberStateTest',
+                      'com.github.davidmoten.rx2.internal.flowable.DelimitedStringLinkedListTest#testFindsOneAcrossTwoDelimiterStartsSecond',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableStringInputStreamTest#simple',
+                      'com.github.davidmoten.rx2.internal.flowable.FlowableMergeInterleavedTest#testInterleaveOneStreamEmpty'],
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
  '24CPU1Mem4GB.sh': ['com.github.davidmoten.rx2.ActionsTest#testIsUtility',
                      'com.github.davidmoten.rx2.buffertofile.SerializersTest#isUtilityClass',
                      'com.github.davidmoten.rx2.BiPredicatesTest#isUtilityClass',
@@ -387,4 +429,9 @@
                       'com.github.davidmoten.rx2.internal.flowable.FlowableCollectWhileTest#testAddThrows',
                       'com.github.davidmoten.rx2.internal.flowable.SerializerJavaIOTest#testNoHeader',
                       'com.github.davidmoten.rx2.StringsTest#testTrimWithNull',
+<<<<<<< HEAD
                       'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testCancelObservable']}
+=======
+                      'com.github.davidmoten.rx2.buffertofile.FlowableOnBackpressureBufferToFileTest#testCancelObservable'],
+ '29CPU4Mem8GB.sh': []}
+>>>>>>> 6668f0b8d63500d4320a9af8132251db505fb246
