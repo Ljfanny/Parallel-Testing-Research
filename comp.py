@@ -26,7 +26,6 @@ def comp_ga_bf():
                                       'bf_period',
                                       'runtime_rate',
                                       'price_rate',
-                                      'period_difference_value',
                                       'difference'
                                       ]) for _ in range(2)]
     summary_dfs = [pd.DataFrame(None,
@@ -34,7 +33,7 @@ def comp_ga_bf():
                                          'total_num',
                                          'avg_runtime_rate',
                                          'avg_price_rate',
-                                         'sum_period_difference_value',
+                                         'sum_period_rate',
                                          'different_confs_num',
                                          'difference_rate'
                                          ]) for _ in range(2)]
@@ -64,7 +63,8 @@ def comp_ga_bf():
             tot_num = len(bf)
             tot_runtime_rate = 0
             tot_price_rate = 0
-            tot_period_diff = 0
+            ga_tot_period = 0
+            bf_tot_period = 0
             for j in range(tot_num):
                 ga_itm = ga.iloc[j, :]
                 bf_itm = bf.iloc[j, :]
@@ -73,10 +73,10 @@ def comp_ga_bf():
                 bf_runtime, bf_price, bf_period = get_info(bf_itm)
                 runtime_rate = ga_runtime / bf_runtime
                 price_rate = ga_price / bf_price
-                period_diff = bf_period - ga_period
                 tot_runtime_rate += runtime_rate
                 tot_price_rate += price_rate
-                tot_period_diff += period_diff
+                ga_tot_period += ga_period
+                bf_tot_period += bf_period
                 if diff:
                     diff_cnt += 1
                 comp_dfs[idx].loc[len(comp_dfs[idx].index)] = [
@@ -94,7 +94,6 @@ def comp_ga_bf():
                     bf_period,
                     runtime_rate,
                     price_rate,
-                    period_diff,
                     diff
                 ]
             summary_dfs[idx].loc[len(summary_dfs[idx].index)] = [
@@ -102,7 +101,7 @@ def comp_ga_bf():
                 tot_num,
                 tot_runtime_rate / tot_num,
                 tot_price_rate / tot_num,
-                tot_period_diff,
+                ga_tot_period / bf_tot_period,
                 diff_cnt,
                 diff_cnt / tot_num
             ]

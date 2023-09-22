@@ -500,6 +500,7 @@ if __name__ == '__main__':
     num_of_machine = [1, 2, 4, 6, 8, 10, 12]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
     sub = f'ga_a{factor_a}{groups_map[group_ky][0]}'
+    tot_test_num = 0
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
                                   columns=['project',
@@ -532,6 +533,7 @@ if __name__ == '__main__':
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
                                                groups_map[group_ky][2])
+        tot_test_num += len(preproc_proj_dict)
         for mach_num in num_of_machine:
             is_done = False
             for pct in pct_of_failure_rate:
@@ -568,3 +570,4 @@ if __name__ == '__main__':
                 os.mkdir(f'{baseline_path}/{groups_map[group_ky][1]}')
             baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
     print(f'[Total time] {time.time()-prog_start} s')
+    print(f'[Total test number] {tot_test_num}')
