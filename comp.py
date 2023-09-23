@@ -11,6 +11,7 @@ def comp_ga_bf():
         0: ['ga_a0', 'bruteforce_a0'],
         1: ['ga_a1', 'bruteforce_a1']
     }
+    proj_id_map = {item['project']: item['id'] for _, item in pd.read_csv('project_id.csv').iterrows()}
     comp_dfs = [pd.DataFrame(None,
                              columns=['project',
                                       'category',
@@ -38,6 +39,17 @@ def comp_ga_bf():
                                          'difference_rate'
                                          ]) for _ in range(2)]
 
+    comp_opt_df = pd.DataFrame(None,
+                               columns=[
+                                   'project_id',
+                                   'period_ga_cheap',
+                                   'period_bf_cheap',
+                                   'period_ratio_cheap',
+                                   'period_ga_fast',
+                                   'period_bf_fast',
+                                   'period_ratio_fast'
+                               ])
+
     def cmp(d1, d2):
         if len(d1) != len(d2):
             return False
@@ -51,11 +63,12 @@ def comp_ga_bf():
     def get_info(ser):
         return ser['time_parallel'], ser['price'], ser['period']
 
-    def reco_info(idx):
+    def reco_info(idx,
+                  is_fir):
         subdir1 = idx_modu_map[idx][0]
         subdir2 = idx_modu_map[idx][1]
         csvs = os.listdir(f'ext_dat/{subdir1}')
-        for csv in csvs:
+        for i, csv in enumerate(csvs):
             proj_name = csv.replace('.csv', '')
             ga = pd.read_csv(f'ext_dat/{subdir1}/{csv}').iloc[:24, :].dropna()
             bf = pd.read_csv(f'ext_dat/{subdir2}/{csv}').dropna()
@@ -105,13 +118,30 @@ def comp_ga_bf():
                 diff_cnt,
                 diff_cnt / tot_num
             ]
-
-    reco_info(0)
-    reco_info(1)
-    comp_dfs[0].to_csv(f'{comp_path}/ga_bf_a0.csv', sep=',', header=True, index=False)
-    comp_dfs[1].to_csv(f'{comp_path}/ga_bf_a1.csv', sep=',', header=True, index=False)
-    summary_dfs[0].to_csv(f'{comp_path}/ga_bf_a0_summary.csv', sep=',', header=True, index=False)
-    summary_dfs[1].to_csv(f'{comp_path}/ga_bf_a1_summary.csv', sep=',', header=True, index=False)
+            if is_fir:
+                comp_opt_df.loc[len(comp_opt_df.index)] = [
+                    proj_id_map[proj_name],
+                    ga_tot_period,
+                    bf_tot_period,
+                    ga_tot_period / bf_tot_period,
+                    0,
+                    0,
+                    0
+                ]
+            else:
+                comp_opt_df.loc[i, 'period_ga_fast'] = ga_tot_period
+                comp_opt_df.loc[i, 'period_bf_fast'] = bf_tot_period
+                comp_opt_df.loc[i, 'period_ratio_fast'] = ga_tot_period / bf_tot_period
+    reco_info(0,
+              True)
+    reco_info(1,
+              False)
+    # comp_dfs[0].to_csv(f'{comp_path}/ga_bf_a0.csv', sep=',', header=True, index=False)
+    # comp_dfs[1].to_csv(f'{comp_path}/ga_bf_a1.csv', sep=',', header=True, index=False)
+    # summary_dfs[0].to_csv(f'{comp_path}/ga_bf_a0_summary.csv', sep=',', header=True, index=False)
+    # summary_dfs[1].to_csv(f'{comp_path}/ga_bf_a1_summary.csv', sep=',', header=True, index=False)
+    comp_opt_df.to_csv(f'{comp_path}/ga_bf_period_comp_per_proj.csv', sep=',', header=True, index=False,
+                       float_format='%.2f')
 
 
 def comp_confs(a: str, b: str):

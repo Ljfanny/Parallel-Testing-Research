@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import textwrap
 import numpy as np
+
 matplotlib.use('TkAgg')
 
 prefixes = {
@@ -330,7 +331,22 @@ def draw_tread_graph():
     plt.close()
 
 
-# Focus on each project!
+def sub_bar(ax,
+            x,
+            y1,
+            y2,
+            title,
+            bar_width=0.035):
+    ax.yaxis.grid(True, linestyle='--', zorder=0)
+    ax.bar(x, y1, color='#507dbc', width=bar_width, edgecolor='#04080f', label='Runtime')
+    ax.bar(x, y2, color='#bbd1ea', width=bar_width, edgecolor='#04080f', label='Price')
+    ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#1d3557', markersize=4)
+    ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#1d3557', markersize=4)
+    ax.set_title(title, size=12, weight='bold')
+    ax.spines['top'].set_color('none')
+    ax.spines['right'].set_color('none')
+
+
 def draw_integ_as_graph(is_bar=False):
     csvs = [f for f in os.listdir('integ_dat') if os.path.isfile(os.path.join('integ_dat', f))]
     a = np.array([float(csv.replace('.csv', '')[csv.index('_a') + 2:]) for csv in csvs])
@@ -408,21 +424,19 @@ def draw_integ_as_graph(is_bar=False):
         plt.savefig(f'integ_fig/ga_as_pareto2d/{prog}.svg')
         plt.close()
 
-    def sub_bar(ax,
-                x,
-                y1,
-                y2,
-                title):
-        bar_width = 0.035
-        ax.set_xticks((0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1), )
-        ax.yaxis.grid(True, linestyle='--', zorder=0)
-        ax.bar(x, y1, color='#507dbc', width=bar_width, edgecolor='#04080f', label='Runtime')
-        ax.bar(x, y2, color='#bbd1ea', width=bar_width, edgecolor='#04080f', label='Price')
-        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#1d3557', markersize=4)
-        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#1d3557', markersize=4)
-        ax.set_title(title, size=12, weight='bold')
-        ax.spines['top'].set_color('none')
-        ax.spines['right'].set_color('none')
+    def set_parameters(ax1,
+                       ax2):
+        ax1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
+        ax2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
+        ax1.set_xticks([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+        ax2.set_xticks([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+        ax1.set_yticks([2, 1, 0, -1, -2])
+        ax1.set_yticklabels([2, 1, 0, 1, 2])
+        ax2.set_yticks([2, 1, 0, -1, -2])
+        ax2.set_yticklabels([2, 1, 0, 1, 2])
+        leg = ax1.legend(edgecolor='none')
+        ax2.set_xlabel(r'The Parameter a', size=12, weight='bold')
+        leg.set_bbox_to_anchor((0.05, 1.2))
 
     def bi_bar(prog,
                gh_rts,
@@ -439,15 +453,7 @@ def draw_integ_as_graph(is_bar=False):
                 smt_rts[:, 0],
                 -smt_rts[:, 1],
                 'Smart Baseline')
-        ax1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
-        ax2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
-        ax1.set_yticks([2, 1, 0, -1, -2])
-        ax1.set_yticklabels([2, 1, 0, 1, 2])
-        ax2.set_yticks([2, 1, 0, -1, -2])
-        ax2.set_yticklabels([2, 1, 0, 1, 2])
-        legend = ax1.legend(edgecolor='none')
-        ax2.set_xlabel(r'The Parameter a', size=12, weight='bold')
-        legend.set_bbox_to_anchor((0.05, 1.2))
+        set_parameters(ax1, ax2)
         fig.suptitle(prog, size=16, weight='bold')
         plt.savefig(f'integ_fig/ga_as_bi_bar/{prog}.svg')
         plt.close()
@@ -505,42 +511,88 @@ def draw_integ_as_graph(is_bar=False):
         return
     rts = np.array(rts)
     # -------------------------------- tradeoff trend graph --------------------------------
-    figure, panel = plt.subplots(figsize=(5, 4))
-    panel.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Caliber', color='#8EA604')
-    panel.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#D76A03')
-    panel.plot(a, [1 for _ in range(len(a))], '--', color='#354f52')
-    panel.set_xlabel(r'The Parameter a')
-    panel.set_ylabel(r'Performance Increase')
-    panel.set_title('Average Tradeoff')
-    panel.spines['top'].set_color('none')
-    panel.spines['right'].set_color('none')
-    panel.yaxis.grid(True, linestyle='--', zorder=0)
-    panel.legend(fontsize=8)
+    fig, pnl = plt.subplots(figsize=(5, 4))
+    pnl.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Caliber', color='#8EA604')
+    pnl.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#D76A03')
+    pnl.plot(a, [1 for _ in range(len(a))], '--', color='#354f52')
+    pnl.set_xlabel(r'The Parameter a')
+    pnl.set_ylabel(r'Performance Increase')
+    pnl.set_title('Average Tradeoff')
+    pnl.spines['top'].set_color('none')
+    pnl.spines['right'].set_color('none')
+    pnl.yaxis.grid(True, linestyle='--', zorder=0)
+    pnl.legend(fontsize=8)
     plt.savefig(f'integ_fig/ga_as_bi_bar/tradeoff_trend_graph.svg')
     plt.close()
     # --------------------------------------- mean bi bar ---------------------------------------
-    figure, (panel1, panel2) = plt.subplots(2, 1, figsize=(10, 8), sharey=True, sharex=True)
-    sub_bar(panel1,
+    fig, (pnl1, pnl2) = plt.subplots(2, 1, figsize=(10, 8), sharey=True, sharex=True)
+    sub_bar(pnl1,
             a,
             rts[:, 0],
             -rts[:, 1],
             'Avg. vs GitHub Caliber')
-    sub_bar(panel2,
+    sub_bar(pnl2,
             a,
             rts[:, 2],
             -rts[:, 3],
             'Avg. vs Smart Baseline')
-    panel1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
-    panel2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
-    panel1.set_yticks([2, 1, 0, -1, -2])
-    panel1.set_yticklabels([2, 1, 0, 1, 2])
-    panel2.set_yticks([2, 1, 0, -1, -2])
-    panel2.set_yticklabels([2, 1, 0, 1, 2])
-    legend = panel1.legend(edgecolor='none')
-    panel2.set_xlabel(r'The Parameter a', size=12, weight='bold')
-    legend.set_bbox_to_anchor((0.05, 1.2))
-    figure.suptitle('Average Rate', size=16, weight='bold')
+    set_parameters(pnl1, pnl2)
+    fig.suptitle('Average Rate', size=16, weight='bold')
     plt.savefig(f'integ_fig/ga_as_bi_bar/avg_rate_graph.svg')
+    plt.close()
+
+
+def draw_integ_proj_avg_rate_graph(goal_csv,
+                                   sup_title,
+                                   y1s,
+                                   y1_labels,
+                                   y2s,
+                                   y2_labels):
+    summary_per_proj_df = pd.read_csv(f'integ_dat/ga/{goal_csv}')
+    gh_runtime_rts = summary_per_proj_df['github_caliber_avg_runtime_rate']
+    gh_price_rts = summary_per_proj_df['github_caliber_avg_price_rate']
+    smt_runtime_rts = summary_per_proj_df['smart_baseline_avg_runtime_rate']
+    smt_price_rts = summary_per_proj_df['smart_baseline_avg_price_rate']
+    gh_avg_runtime = np.nanmean(gh_runtime_rts)
+    gh_avg_price = np.nanmean(gh_price_rts)
+    smt_avg_runtime = np.nanmean(smt_runtime_rts)
+    smt_avg_price = np.nanmean(smt_price_rts)
+    gh_runtime_rts.loc[len(gh_runtime_rts)] = gh_avg_runtime
+    gh_price_rts.loc[len(gh_price_rts)] = gh_avg_price
+    smt_runtime_rts.loc[len(smt_runtime_rts)] = smt_avg_runtime
+    smt_price_rts.loc[len(smt_price_rts)] = smt_avg_price
+    projs = summary_per_proj_df['project']
+    proj_id_map = {item['project']: item['id'] for _, item in pd.read_csv('project_id.csv').iterrows()}
+    x = [proj_id_map[proj] for proj in projs]
+    x.append('Tot')
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8), sharex=True)
+    sub_bar(ax1,
+            [i for i in range(len(x))],
+            gh_runtime_rts,
+            -gh_price_rts,
+            'Avg. vs GitHub Caliber',
+            0.65)
+    sub_bar(ax2,
+            [i for i in range(len(x))],
+            smt_runtime_rts,
+            -smt_price_rts,
+            'Avg. vs Smart Baseline',
+            0.65)
+    ax1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
+    ax2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
+    ax1.set_xticks([i for i in range(len(x))])
+    ax2.set_xticks([i for i in range(len(x))])
+    ax1.set_yticks(y1s)
+    ax1.set_yticklabels(y1_labels)
+    ax2.set_yticks(y2s)
+    ax2.set_yticklabels(y2_labels)
+    ax1.set_xticklabels(x)
+    ax2.set_xticklabels(x)
+    legend = ax1.legend(edgecolor='none')
+    ax2.set_xlabel(r'Project Id', size=12, weight='bold')
+    legend.set_bbox_to_anchor((0.05, 1.2))
+    fig.suptitle(sup_title, size=16, weight='bold')
+    plt.savefig(f'integ_fig/avg_rate_{goal_csv[8:-4]}_graph.svg')
     plt.close()
 
 
@@ -550,3 +602,15 @@ if __name__ == '__main__':
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
     draw_integ_as_graph(True)
+    draw_integ_proj_avg_rate_graph('summary_per_project_lower_price_goal.csv',
+                                   'Average Rate with Lower Price Goal',
+                                   [7, 6, 5, 4, 3, 2, 1, 0, -1],
+                                   [7, 6, 5, 4, 3, 2, 1, 0, 1],
+                                   [4, 3, 2, 1, 0, -1],
+                                   [4, 3, 2, 1, 0, 1])
+    draw_integ_proj_avg_rate_graph('summary_per_project_lower_runtime_goal.csv',
+                                   'Average Rate with Lower Runtime Goal',
+                                   [1, 0, -1, -2],
+                                   [1, 0, 1, 2],
+                                   [1, 0, -2, -4, -6, -8, -12],
+                                   [1, 0, 2, 4, 6, 8, 12])
