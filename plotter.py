@@ -336,12 +336,15 @@ def sub_bar(ax,
             y1,
             y2,
             title,
+            up_color='#457b9d',
+            down_color='#cee5f2',
+            bl_color='#1d3557',
             bar_width=0.035):
     ax.yaxis.grid(True, linestyle='--', zorder=0)
-    ax.bar(x, y1, color='#507dbc', width=bar_width, edgecolor='#04080f', label='Runtime')
-    ax.bar(x, y2, color='#bbd1ea', width=bar_width, edgecolor='#04080f', label='Price')
-    ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#1d3557', markersize=4)
-    ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#1d3557', markersize=4)
+    ax.bar(x, y1, color=up_color, width=bar_width, edgecolor='#04080f', label='Runtime')
+    ax.bar(x, y2, color=down_color, width=bar_width, edgecolor='#04080f', label='Price')
+    ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
+    ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
     ax.set_title(title, size=12, weight='bold')
     ax.spines['top'].set_color('none')
     ax.spines['right'].set_color('none')
@@ -511,12 +514,13 @@ def draw_integ_as_graph(is_bar=False):
         return
     rts = np.array(rts)
     # -------------------------------- tradeoff trend graph --------------------------------
-    fig, pnl = plt.subplots(figsize=(5, 4))
-    pnl.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Caliber', color='#8EA604')
-    pnl.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#D76A03')
-    pnl.plot(a, [1 for _ in range(len(a))], '--', color='#354f52')
+    fig, pnl = plt.subplots(figsize=(10, 4))
+    pnl.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Caliber', color='#b86f52', linewidth=2.5)
+    pnl.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#f78764', linewidth=2.5)
+    pnl.plot(a, [1 for _ in range(len(a))], '-.', color='#634133', linewidth=2)
     pnl.set_xlabel(r'The Parameter a')
     pnl.set_ylabel(r'Performance Increase')
+    pnl.set_xticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
     pnl.set_title('Average Tradeoff')
     pnl.spines['top'].set_color('none')
     pnl.spines['right'].set_color('none')
@@ -562,22 +566,29 @@ def draw_integ_proj_avg_rate_graph(goal_csv,
     smt_runtime_rts.loc[len(smt_runtime_rts)] = smt_avg_runtime
     smt_price_rts.loc[len(smt_price_rts)] = smt_avg_price
     projs = summary_per_proj_df['project']
-    proj_id_map = {item['project']+'_'+item['module']: item['id'] for _, item in pd.read_csv('proj_info.csv').iterrows()}
+    proj_id_map = {item['project'] + '_' + item['module']: item['id'] for _, item in
+                   pd.read_csv('proj_info.csv').iterrows()}
     x = [proj_id_map[proj] for proj in projs]
     x.append('Tot')
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8), sharex=True)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 8), sharex=True)
     sub_bar(ax1,
             [i for i in range(len(x))],
             gh_runtime_rts,
             -gh_price_rts,
             'Avg. vs GitHub Caliber',
-            0.65)
+            '#80727b',
+            '#dbd2e0',
+            '#37123c',
+            0.75)
     sub_bar(ax2,
             [i for i in range(len(x))],
             smt_runtime_rts,
             -smt_price_rts,
             'Avg. vs Smart Baseline',
-            0.65)
+            '#80727b',
+            '#dbd2e0',
+            '#37123c',
+            0.75)
     ax1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
     ax2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
     ax1.set_xticks([i for i in range(len(x))])
@@ -601,16 +612,16 @@ if __name__ == '__main__':
     # draw_integ_scatter2d('ga', 0)
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
-    # draw_integ_as_graph(True)
-    draw_integ_proj_avg_rate_graph('summary_per_project_lower_price_goal.csv',
-                                   'Average Rate with Lower Price Goal',
-                                   [7, 6, 5, 4, 3, 2, 1, 0, -1],
-                                   [7, 6, 5, 4, 3, 2, 1, 0, 1],
-                                   [4, 3, 2, 1, 0, -1],
-                                   [4, 3, 2, 1, 0, 1])
-    draw_integ_proj_avg_rate_graph('summary_per_project_lower_runtime_goal.csv',
-                                   'Average Rate with Lower Runtime Goal',
-                                   [1, 0, -1, -2],
-                                   [1, 0, 1, 2],
-                                   [1, 0, -2, -4, -6, -8, -12],
-                                   [1, 0, 2, 4, 6, 8, 12])
+    draw_integ_as_graph(True)
+    # draw_integ_proj_avg_rate_graph('summary_per_project_lower_price_goal.csv',
+    #                                'Average Rate with Lower Price Goal',
+    #                                [7, 6, 5, 4, 3, 2, 1, 0, -1],
+    #                                [7, 6, 5, 4, 3, 2, 1, 0, 1],
+    #                                [4, 3, 2, 1, 0, -1],
+    #                                [4, 3, 2, 1, 0, 1])
+    # draw_integ_proj_avg_rate_graph('summary_per_project_lower_runtime_goal.csv',
+    #                                'Average Rate with Lower Runtime Goal',
+    #                                [1, 0, -1, -2],
+    #                                [1, 0, 1, 2],
+    #                                [1, 0, -2, -4, -6, -8, -12],
+    #                                [1, 0, 2, 4, 6, 8, 12])
