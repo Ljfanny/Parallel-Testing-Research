@@ -1,4 +1,5 @@
-{'22CPU05Mem2GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
+{'01noThrottling.sh': [],
+ '22CPU05Mem2GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
                       'org.fluentd.logger.TestFluentLogger#testClose',
                       'org.fluentd.logger.TestFluentLogger#testInMultiThreading',
                       'org.fluentd.logger.TestFluentLogger#testFlushOnClose',
@@ -24,6 +25,5 @@
  '26CPU2Mem4GB.sh:v5': [],
  '26CPU2Mem4GB.sh:v6': [],
  '26CPU2Mem4GB.sh:v7': [],
- '26CPU2Mem4GB.sh:v8': [],
- '27CPU2Mem8GB.sh:v0': [],
- '27CPU2Mem8GB.sh:v1': []}
+ '28CPU2Mem16GB.sh:v0': [],
+ '28CPU2Mem16GB.sh:v1': []}

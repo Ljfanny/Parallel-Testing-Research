@@ -2,6 +2,6 @@
                      'org.wso2.carbon.apimgt.throttling.siddhi.extension.ThrottleTimeBatchWindowTestCase#throttleTimeWindowBatchTest2'],
  '26CPU2Mem4GB.sh:v0': [],
  '26CPU2Mem4GB.sh:v1': [],
- '26CPU2Mem4GB.sh:v2': [],
- '26CPU2Mem4GB.sh:v3': [],
- '26CPU2Mem4GB.sh:v4': []}
+ '27CPU2Mem8GB.sh:v0': [],
+ '27CPU2Mem8GB.sh:v1': [],
+ '27CPU2Mem8GB.sh:v2': []}

@@ -140,7 +140,7 @@ def draw_integ_pareto3d(code):
                               ])
     csvs = os.listdir(subdir)
     dfs = [pd.read_csv(f'{subdir}/{csv}')
-           for csv in csvs if csv.find('_') != -1]
+           for csv in csvs if csv.find('summary') == -1]
     proj_num = len(dfs[0])
     for i in range(proj_num):
         fig = plt.figure()
@@ -266,7 +266,7 @@ def draw_tread_graph():
     ig_path = 'integ_dat/ga'
     csvs = os.listdir(ig_path)
     dfs = [pd.read_csv(f'{ig_path}/{csv}')
-           for csv in csvs if csv.find('_') != -1]
+           for csv in csvs if csv.find('summary') == -1]
     programs = dfs[0].iloc[:, 0]
     norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4), sharex=True, sharey=True)
     avg_chp = []
@@ -562,7 +562,7 @@ def draw_integ_proj_avg_rate_graph(goal_csv,
     smt_runtime_rts.loc[len(smt_runtime_rts)] = smt_avg_runtime
     smt_price_rts.loc[len(smt_price_rts)] = smt_avg_price
     projs = summary_per_proj_df['project']
-    proj_id_map = {item['project']: item['id'] for _, item in pd.read_csv('project_id.csv').iterrows()}
+    proj_id_map = {item['project']+'_'+item['module']: item['id'] for _, item in pd.read_csv('proj_info.csv').iterrows()}
     x = [proj_id_map[proj] for proj in projs]
     x.append('Tot')
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8), sharex=True)
@@ -601,7 +601,7 @@ if __name__ == '__main__':
     # draw_integ_scatter2d('ga', 0)
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
-    draw_integ_as_graph(True)
+    # draw_integ_as_graph(True)
     draw_integ_proj_avg_rate_graph('summary_per_project_lower_price_goal.csv',
                                    'Average Rate with Lower Price Goal',
                                    [7, 6, 5, 4, 3, 2, 1, 0, -1],

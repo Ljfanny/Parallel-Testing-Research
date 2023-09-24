@@ -1,7 +1,7 @@
-{'29CPU4Mem8GB.sh:v0': ['cn.hutool.cron.test.CronTest#matchAllTest'],
- '29CPU4Mem8GB.sh:v1': ['cn.hutool.cron.test.CronTest#quartzPatternTest'],
- '29CPU4Mem8GB.sh:v2': ['cn.hutool.cron.test.CronTest#CronPatternTest'],
+{'29CPU4Mem8GB.sh:v0': ['cn.hutool.cron.test.CronTest#quartzPatternTest',
+                        'cn.hutool.cron.demo.CronTest#addAndRemoveTest'],
+ '29CPU4Mem8GB.sh:v1': ['cn.hutool.cron.demo.CronTest#customCronTest'],
+ '29CPU4Mem8GB.sh:v2': ['cn.hutool.cron.test.CronTest#matchAllTest'],
  '29CPU4Mem8GB.sh:v3': ['cn.hutool.cron.demo.CronTest#cronTest'],
- '29CPU4Mem8GB.sh:v4': ['cn.hutool.cron.demo.CronTest#customCronTest'],
- '29CPU4Mem8GB.sh:v5': ['cn.hutool.cron.demo.CronTest#addAndRemoveTest',
-                        'cn.hutool.cron.test.CronTest#quartzRangePatternTest']}
+ '29CPU4Mem8GB.sh:v4': ['cn.hutool.cron.test.CronTest#quartzRangePatternTest'],
+ '29CPU4Mem8GB.sh:v5': ['cn.hutool.cron.test.CronTest#CronPatternTest']}

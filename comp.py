@@ -11,7 +11,7 @@ def comp_ga_bf():
         0: ['ga_a0', 'bruteforce_a0'],
         1: ['ga_a1', 'bruteforce_a1']
     }
-    proj_id_map = {item['project']: item['id'] for _, item in pd.read_csv('project_id.csv').iterrows()}
+    proj_id_map = {item['project']+'_'+item['module']: item['id'] for _, item in pd.read_csv('proj_info.csv').iterrows()}
     comp_dfs = [pd.DataFrame(None,
                              columns=['project',
                                       'category',
@@ -164,7 +164,7 @@ def comp_confs(a: str, b: str):
     b_path = f'integ_dat/{id_subdir_map[b]}'
     csvs = os.listdir(a_path)
     for csv in csvs:
-        if csv.find('_') == -1:
+        if csv.find('summary') != -1:
             continue
         fr = csv.replace('.csv', '').split('_')[1]
         a_df = pd.read_csv(f'{a_path}/{csv}').dropna()
@@ -190,5 +190,5 @@ def comp_confs(a: str, b: str):
 
 if __name__ == '__main__':
     comp_ga_bf()
-    # comp_confs('non_ig', 'ig')
-    # comp_confs('ga', 'bf')
+    comp_confs('non_ig', 'ig')
+    comp_confs('ga', 'bf')

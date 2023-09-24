@@ -1,4 +1,5 @@
-{'26CPU2Mem4GB.sh': ['uk.co.flax.luwak.matchers.TestPartitionMatcher#testMatchesAreDisambiguated',
+{'01noThrottling.sh': ['uk.co.flax.luwak.TestMonitorErrorHandling#testMonitorQueryNullValues'],
+ '26CPU2Mem4GB.sh': ['uk.co.flax.luwak.matchers.TestPartitionMatcher#testMatchesAreDisambiguated',
                      'uk.co.flax.luwak.matchers.TestPartitionMatcher#testParallelSlowLog',
                      'uk.co.flax.luwak.TestMonitor#testMatcherMetadata',
                      'uk.co.flax.luwak.TestMonitor#canClearTheMonitor',
@@ -115,7 +116,6 @@
                      'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#testMatchAllDocsMustAndOtherMustWithKeywordShouldAndKeywordNot',
                      'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#disjunctionsWithPureNegativeClausesReturnANYTOKEN',
                      'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#allNestedDisjunctionClausesAreIncluded',
-                     'uk.co.flax.luwak.TestMonitorErrorHandling#testMonitorQueryNullValues',
                      'uk.co.flax.luwak.TestMonitorErrorHandling#testMonitorErrors',
                      'uk.co.flax.luwak.TestMonitorErrorHandling#testPresearcherErrors',
                      'uk.co.flax.luwak.TestQueryIndex#testSmoke',
@@ -199,5 +199,4 @@
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#filtersOnNumericTermQueries',
                      'uk.co.flax.luwak.presearcher.TestFieldFilteredMultipassPresearcher#testNonStringTermHandling',
                      'uk.co.flax.luwak.testutils.TestCollectionUtils#testPartitions'],
- '29CPU4Mem8GB.sh:v0': [],
- '29CPU4Mem8GB.sh:v1': ['uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery']}
+ '29CPU4Mem8GB.sh': ['uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery']}

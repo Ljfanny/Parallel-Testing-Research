@@ -1,4 +1,5 @@
-{'24CPU1Mem4GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
+{'01noThrottling.sh': [],
+ '24CPU1Mem4GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
                      'org.fluentd.logger.TestFluentLogger#testClose',
                      'org.fluentd.logger.TestFluentLogger#testInMultiThreading',
                      'org.fluentd.logger.TestFluentLogger#testFlushOnClose',
@@ -16,6 +17,5 @@
                      'org.fluentd.logger.sender.TestRawSocketSender#testBufferOverflow',
                      'org.fluentd.logger.sender.TestRawSocketSender#testNormal03',
                      'org.fluentd.logger.sender.TestRawSocketSender#testTimeout'],
- '26CPU2Mem4GB.sh': [],
- '27CPU2Mem8GB.sh:v0': [],
- '27CPU2Mem8GB.sh:v1': []}
+ '26CPU2Mem4GB.sh:v0': [],
+ '26CPU2Mem4GB.sh:v1': []}

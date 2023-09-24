@@ -19,5 +19,5 @@
                       'org.fluentd.logger.sender.TestRawSocketSender#testTimeout'],
  '27CPU2Mem8GB.sh:v0': [],
  '27CPU2Mem8GB.sh:v1': [],
- '28CPU2Mem16GB.sh:v0': [],
- '28CPU2Mem16GB.sh:v1': []}
+ '27CPU2Mem8GB.sh:v2': [],
+ '28CPU2Mem16GB.sh': []}

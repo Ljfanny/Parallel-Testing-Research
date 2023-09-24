@@ -1,11 +1,7 @@
 {'01noThrottling.sh:v0': [],
  '01noThrottling.sh:v1': [],
  '01noThrottling.sh:v2': [],
- '01noThrottling.sh:v3': [],
- '01noThrottling.sh:v4': [],
- '01noThrottling.sh:v5': [],
- '01noThrottling.sh:v6': [],
- '01noThrottling.sh:v7': ['uk.co.flax.luwak.TestMonitorErrorHandling#testMonitorQueryNullValues'],
+ '01noThrottling.sh:v3': ['uk.co.flax.luwak.TestMonitorErrorHandling#testMonitorQueryNullValues'],
  '26CPU2Mem4GB.sh': ['uk.co.flax.luwak.matchers.TestPartitionMatcher#testMatchesAreDisambiguated',
                      'uk.co.flax.luwak.matchers.TestPartitionMatcher#testParallelSlowLog',
                      'uk.co.flax.luwak.matchers.TestPartitionMatcher#testAllMatchesAreCollected',
@@ -205,5 +201,8 @@
                      'uk.co.flax.luwak.matchers.TestParallelMatcher#testMatchesAreDisambiguated',
                      'uk.co.flax.luwak.matchers.TestParallelMatcher#testParallelSlowLog',
                      'uk.co.flax.luwak.matchers.TestParallelMatcher#testAllMatchesAreCollected'],
- '29CPU4Mem8GB.sh': ['uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery',
-                     'uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#testMatchAllDocsMustWithKeywordNot']}
+ '29CPU4Mem8GB.sh:v0': [],
+ '29CPU4Mem8GB.sh:v1': [],
+ '29CPU4Mem8GB.sh:v2': [],
+ '29CPU4Mem8GB.sh:v3': ['uk.co.flax.luwak.TestMonitorQuerySerialization#testSimpleQuery'],
+ '29CPU4Mem8GB.sh:v4': ['uk.co.flax.luwak.termextractor.TestBooleanTermExtractor#testMatchAllDocsMustWithKeywordNot']}

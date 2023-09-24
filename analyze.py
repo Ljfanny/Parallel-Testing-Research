@@ -528,8 +528,8 @@ def org_info(avg_tm_dict):
 if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
     prog_start = time.time()
-    factor_a = 0
-    group_ky = 'non-ig'
+    factor_a = 1
+    group_ky = 'ig'
     groups_map = {
         'non-ig': ['', 'non_ig', False],
         'ig': ['_ig', 'ig', True]
@@ -552,20 +552,20 @@ if __name__ == '__main__':
                                            'score',
                                            'period']
                                   )
-        # baseline_df = pd.DataFrame(None,
-        #                            columns=['project',
-        #                                     'num_machines',
-        #                                     'conf',
-        #                                     'time_seq',
-        #                                     'time_parallel',
-        #                                     'price',
-        #                                     'min_failure_rate',
-        #                                     'max_failure_rate'
-        #                                     ]
-        #                            )
+        baseline_df = pd.DataFrame(None,
+                                   columns=['project',
+                                            'num_machines',
+                                            'conf',
+                                            'time_seq',
+                                            'time_parallel',
+                                            'price',
+                                            'min_failure_rate',
+                                            'max_failure_rate'
+                                            ]
+                                   )
         ext_dat_df['num_confs'] = ext_dat_df['num_confs'].astype(int)
-        # baseline_df_csv = f'{baseline_path}/{groups_map[group_ky][1]}/{proj_name}.csv'
-        # whe_reco_baseline = not os.path.exists(baseline_df_csv)
+        baseline_df_csv = f'{baseline_path}/{groups_map[group_ky][1]}/{proj_name}.csv'
+        whe_reco_baseline = not os.path.exists(baseline_df_csv)
 
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
@@ -573,7 +573,7 @@ if __name__ == '__main__':
         test_set, candidate_set, tup_list = org_info(preproc_proj_dict)
         tot_test_num += len(preproc_proj_dict.keys())
         for mach_num in num_of_machine:
-            # is_done = False
+            is_done = False
             for pct in pct_of_failure_rate:
                 t1 = time.time()
                 ga = GA(a=factor_a,
@@ -586,28 +586,28 @@ if __name__ == '__main__':
                         gene_length=mach_num,
                         max_iter=100)
                 ga.init_pop()
-                # if whe_reco_baseline and not is_done:
-                #     record_baseline(proj_name,
-                #                     baseline_df,
-                #                     ga)
-                #     is_done = True
-                ga.run()
+                if whe_reco_baseline and not is_done:
+                    record_baseline(proj_name,
+                                    baseline_df,
+                                    ga)
+                    is_done = True
+                # ga.run()
                 t2 = time.time()
                 tt = t2 - t1
                 category = f'{mach_num}-{pct}'
                 print(f'--------------------   {proj_name}-{category}   --------------------')
-                ga.print_best(tt)
-                ga.record_best(sub,
-                               proj_name,
-                               category,
-                               tt)
-        resu_sub_path = f'{resu_path}/{sub}'
-        if not os.path.exists(resu_sub_path):
-            os.mkdir(resu_sub_path)
-        ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
-        # if whe_reco_baseline:
-        #     if not os.path.exists(f'{baseline_path}/{groups_map[group_ky][1]}'):
-        #         os.mkdir(f'{baseline_path}/{groups_map[group_ky][1]}')
-        #     baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
+                # ga.print_best(tt)
+                # ga.record_best(sub,
+                #                proj_name,
+                #                category,
+                #                tt)
+        # resu_sub_path = f'{resu_path}/{sub}'
+        # if not os.path.exists(resu_sub_path):
+        #     os.mkdir(resu_sub_path)
+        # ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
+        if whe_reco_baseline:
+            if not os.path.exists(f'{baseline_path}/{groups_map[group_ky][1]}'):
+                os.mkdir(f'{baseline_path}/{groups_map[group_ky][1]}')
+            baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
     print(f'[Total time] {time.time()-prog_start} s')
     print(f'[Total test number] {tot_test_num}')

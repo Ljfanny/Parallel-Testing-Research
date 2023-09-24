@@ -22,6 +22,6 @@
  '26CPU2Mem4GB.sh:v3': [],
  '26CPU2Mem4GB.sh:v4': [],
  '26CPU2Mem4GB.sh:v5': [],
- '26CPU2Mem4GB.sh:v6': [],
- '26CPU2Mem4GB.sh:v7': [],
- '28CPU2Mem16GB.sh': []}
+ '27CPU2Mem8GB.sh': [],
+ '28CPU2Mem16GB.sh:v0': [],
+ '28CPU2Mem16GB.sh:v1': []}

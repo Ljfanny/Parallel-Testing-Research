@@ -1,4 +1,4 @@
-{'22CPU05Mem2GB.sh': ['com.espertech.esper.example.rfidassetzone.TestLRMovingSimMain#testSim'],
+{'24CPU1Mem4GB.sh': ['com.espertech.esper.example.rfidassetzone.TestLRMovingSimMain#testSim'],
  '26CPU2Mem4GB.sh:v0': [],
  '26CPU2Mem4GB.sh:v1': [],
  '26CPU2Mem4GB.sh:v2': [],
@@ -6,5 +6,5 @@
  '26CPU2Mem4GB.sh:v4': [],
  '26CPU2Mem4GB.sh:v5': [],
  '26CPU2Mem4GB.sh:v6': [],
- '26CPU2Mem4GB.sh:v7': [],
- '26CPU2Mem4GB.sh:v8': ['com.espertech.esper.example.rfidassetzone.TestAssetZoneMoveStmt#testStmt']}
+ '26CPU2Mem4GB.sh:v7': ['com.espertech.esper.example.rfidassetzone.TestAssetZoneMoveStmt#testStmt'],
+ '27CPU2Mem8GB.sh': []}

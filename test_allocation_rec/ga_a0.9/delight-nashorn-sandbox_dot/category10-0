@@ -75,12 +75,12 @@
                      'delight.nashornsandbox.TestLimitCPU#test_only_while',
                      'delight.nashornsandbox.TestLimitCPU#test_nice_script',
                      'delight.nashornsandbox.TestLimitCPU#test'],
+ '27CPU2Mem8GB.sh:v0': [],
+ '27CPU2Mem8GB.sh:v1': ['delight.nashornsandbox.TestGetFunction#test'],
  '29CPU4Mem8GB.sh:v0': [],
  '29CPU4Mem8GB.sh:v1': [],
  '29CPU4Mem8GB.sh:v2': [],
  '29CPU4Mem8GB.sh:v3': [],
  '29CPU4Mem8GB.sh:v4': [],
- '29CPU4Mem8GB.sh:v5': [],
- '29CPU4Mem8GB.sh:v6': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
-                        'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
- '29CPU4Mem8GB.sh:v7': ['delight.nashornsandbox.TestGetFunction#test']}
+ '29CPU4Mem8GB.sh:v5': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
+                        'delight.nashornsandbox.TestExit#testQuitWithScriptContext']}

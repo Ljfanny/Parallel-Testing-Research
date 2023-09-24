@@ -74,6 +74,6 @@
                      'delight.nashornsandbox.TestLimitCPU#test_only_while',
                      'delight.nashornsandbox.TestLimitCPU#test_nice_script',
                      'delight.nashornsandbox.TestLimitCPU#test'],
- '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test',
+ '29CPU4Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test',
                      'delight.nashornsandbox.TestBindingsInsert#testOverride',
                      'delight.nashornsandbox.TestExit#testQuitWithScriptContext']}

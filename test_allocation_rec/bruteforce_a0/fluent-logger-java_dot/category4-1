@@ -13,6 +13,6 @@
                        'org.fluentd.logger.sender.TestRawSocketSender#testReconnectAfterBufferFull',
                        'org.fluentd.logger.sender.TestRawSocketSender#testNormal03',
                        'org.fluentd.logger.sender.TestRawSocketSender#testTimeout'],
- '26CPU2Mem4GB.sh:v0': ['org.fluentd.logger.sender.TestRawSocketSender#testBufferOverflow'],
- '26CPU2Mem4GB.sh:v1': ['org.fluentd.logger.TestFluentLogFactory#testGetLogger'],
+ '26CPU2Mem4GB.sh:v0': ['org.fluentd.logger.TestFluentLogFactory#testGetLogger'],
+ '26CPU2Mem4GB.sh:v1': ['org.fluentd.logger.sender.TestRawSocketSender#testBufferOverflow'],
  '27CPU2Mem8GB.sh': ['org.fluentd.logger.sender.TestNullSender#testNormal']}

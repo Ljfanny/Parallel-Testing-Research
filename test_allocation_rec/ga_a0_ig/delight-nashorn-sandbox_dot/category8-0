@@ -1,10 +1,10 @@
-{'01noThrottling.sh': [],
- '24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
-                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext',
-                     'delight.nashornsandbox.TestLimitCPU#test_only_while_good_script',
+{'19CPU010Mem1GB.sh': [],
+ '20CPU010Mem2GB.sh': [],
+ '22CPU05Mem2GB.sh': [],
+ '23CPU05Mem4GB.sh': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
+                      'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
+ '24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestLimitCPU#test_only_while_good_script',
                      'delight.nashornsandbox.TestLimitCPU#test_while_plus_iteration_bad_script'],
- '25CPU1Mem8GB.sh:v0': [],
- '25CPU1Mem8GB.sh:v1': [],
  '26CPU2Mem4GB.sh': ['delight.nashornsandbox.TestInaccessible#test_file',
                      'delight.nashornsandbox.TestInaccessible#test_system_exit',
                      'delight.nashornsandbox.TestIssue57#testMapReduce',
@@ -80,5 +80,4 @@
                      'delight.nashornsandbox.TestLimitCPU#test_nice_script',
                      'delight.nashornsandbox.TestLimitCPU#test'],
  '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test'],
- '28CPU2Mem16GB.sh:v0': [],
- '28CPU2Mem16GB.sh:v1': []}
+ '29CPU4Mem8GB.sh': []}

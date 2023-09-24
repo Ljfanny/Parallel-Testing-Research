@@ -413,7 +413,7 @@ def consider_per_proj(subdir,
 
 
 if __name__ == '__main__':
-    ex_ab = True
+    ex_ab = False
     aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
            0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
     modus = [f'ga_a{a}' for a in aes]
@@ -435,17 +435,17 @@ if __name__ == '__main__':
     #             'ext_dat/bruteforce_a1',
     #             'non_ig',
     #             'bruteforce')
-    # consider_fr('ext_dat/ga_a0_ig',
-    #             'ext_dat/ga_a1_ig',
-    #             'ig',
-    #             'ga_ig')
+    consider_fr('ext_dat/ga_a0_ig',
+                'ext_dat/ga_a1_ig',
+                'ig',
+                'ga_ig')
     # for md in modus:
     #     consider_ab(f'ext_dat/{md}',
     #                 'non_ig',
     #                 md)
-    consider_per_proj('ga',
-                      'cheapest',
-                      'summary_per_project_lower_price_goal.csv')
-    consider_per_proj('ga',
-                      'fastest',
-                      'summary_per_project_lower_runtime_goal.csv')
+    # consider_per_proj('ga',
+    #                   'cheapest',
+    #                   'summary_per_project_lower_price_goal.csv')
+    # consider_per_proj('ga',
+    #                   'fastest',
+    #                   'summary_per_project_lower_runtime_goal.csv')
