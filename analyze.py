@@ -4,6 +4,7 @@ import random
 import json
 import time
 from pprint import pprint, pformat
+from operator import itemgetter
 
 import numpy as np
 import pandas as pd
@@ -134,7 +135,21 @@ def scheduled_algorithm(a,
     confs = set(machs)
     min_fr = 100
     max_fr = 0
+    cnt = 0
+    tests = []
+    confs_candidates = []
+    min_conf_candidate_runtime_idx_tup_list = []
     for key, val in avg_tm_dict.items():
+        tests.append(key)
+        confs_candidates.append(val)
+        min_runtime = min(np.array(val)[:,2].astype('float'))
+        min_conf_candidate_runtime_idx_tup_list.append((min_runtime, cnt))
+        cnt += 1
+    sorted_tup_list = sorted(min_conf_candidate_runtime_idx_tup_list, key=lambda x: x[0], reverse=True)
+    for tup in sorted_tup_list:
+        idx = tup[1]
+        key = tests[idx]
+        val = confs_candidates[idx]
         tst = f'{key[0]}#{key[1]}'
         min_para_time = float('inf')
         min_mach = None
