@@ -4,6 +4,7 @@
     <list default="true" id="f3eba4a7-1689-4bdf-986d-9c0fdabe3e99" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bruteforce.py" beforeDir="false" afterPath="$PROJECT_DIR$/bruteforce.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +182,7 @@
       <workItem from="1695377992693" duration="39230000" />
       <workItem from="1695536591023" duration="180000" />
       <workItem from="1695541732683" duration="145000" />
-      <workItem from="1695542143722" duration="315000" />
+      <workItem from="1695542143722" duration="1944000" />
     </task>
     <servers />
   </component>

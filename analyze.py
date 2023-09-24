@@ -126,7 +126,9 @@ def cal_gene_score(a,
 def scheduled_algorithm(a,
                         machs: list,
                         fr: float,
-                        avg_tm_dict: dict,
+                        tests,
+                        confs_candidates,
+                        min_conf_candidate_runtime_idx_tup_list,
                         setup_tm_dict: dict):
     mach_arr, mach_test_dict, mach_time_dict, _, _ = analysis_machs(machs,
                                                                     setup_tm_dict)
@@ -178,14 +180,19 @@ def scheduled_algorithm(a,
 def price_priority_algorithm(a,
                              machs: list,
                              fr: float,
-                             avg_tm_dict: dict,
+                             tests,
+                             confs_candidates,
+                             min_conf_candidate_runtime_idx_tup_list,
                              setup_tm_dict: dict):
     mach_arr, mach_test_dict, mach_time_dict, multi_dict, conf_machs_map = analysis_machs(machs,
                                                                                           setup_tm_dict)
     confs = set(machs)
     min_fr = 100
     max_fr = 0
-    for key, val in avg_tm_dict.items():
+    for tup in min_conf_candidate_runtime_idx_tup_list:
+        idx = tup[1]
+        key = tests[idx]
+        val = confs_candidates[idx]
         tst = f'{key[0]}#{key[1]}'
         mini = float('inf')
         mini_conf = -1
@@ -250,19 +257,25 @@ def price_priority_algorithm(a,
 def get_alloc(a,
               machs: list,
               fr: float,
-              avg_tm_dict: dict,
+              tests,
+              confs_candidates,
+              min_conf_candidate_runtime_idx_tup_list,
               setup_tm_dict: dict):
     if random.random() <= a:
         return scheduled_algorithm(a,
                                    machs,
                                    fr,
-                                   avg_tm_dict,
+                                   tests,
+                                   confs_candidates,
+                                   min_conf_candidate_runtime_idx_tup_list,
                                    setup_tm_dict)
     else:
         return price_priority_algorithm(a,
                                         machs,
                                         fr,
-                                        avg_tm_dict,
+                                        tests,
+                                        confs_candidates,
+                                        min_conf_candidate_runtime_idx_tup_list,
                                         setup_tm_dict)
 
 
@@ -361,14 +374,18 @@ class GA:
     def __init__(self,
                  a,
                  fr,
-                 avg_tm_dict,
+                 tests,
+                 conf_candidates,
+                 min_conf_candidate_runtime_idx_tup_list,
                  setup_tm_dict,
                  pop_size,
                  gene_length,
                  max_iter):
         self.a = a
         self.fr = fr
-        self.avg_tm_dict = avg_tm_dict
+        self.tests = tests
+        self.conf_candidates = conf_candidates
+        self.min_conf_candidate_runtime_idx_tup_list = min_conf_candidate_runtime_idx_tup_list
         self.setup_tm_dict = setup_tm_dict
         self.pop_size = pop_size
         self.gene_length = gene_length
@@ -461,7 +478,9 @@ class GA:
             score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict = get_alloc(self.a,
                                                                                           machs,
                                                                                           self.fr,
-                                                                                          self.avg_tm_dict,
+                                                                                          self.tests,
+                                                                                          self.conf_candidates,
+                                                                                          self.min_conf_candidate_runtime_idx_tup_list,
                                                                                           self.setup_tm_dict)
             new_ind = Individual(copy.deepcopy(machs),
                                  time_seq,
@@ -490,6 +509,20 @@ def record_baseline(proj: str,
             ind.price,
             ind.min_fr,
             ind.max_fr]
+
+
+def org_info(avg_tm_dict):
+    cnt = 0
+    tests = []
+    conf_candidates = []
+    min_conf_candidate_runtime_idx_tup_list = []
+    for t, info in avg_tm_dict.items():
+        tests.append(t)
+        conf_candidates.append(info)
+        min_runtime = min(np.array(info)[:, 2].astype('float'))
+        min_conf_candidate_runtime_idx_tup_list.append((min_runtime, cnt))
+        cnt += 1
+    return tests, conf_candidates, min_conf_candidate_runtime_idx_tup_list
 
 
 if __name__ == '__main__':
@@ -537,24 +570,17 @@ if __name__ == '__main__':
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
                                                groups_map[group_ky][2])
-        tst_cnt = 0
-        tests = []
-        confs_candidates = []
-        min_conf_candidate_runtime_idx_tup_list = []
-        for t, info in preproc_proj_dict.items():
-            tests.append(t)
-            confs_candidates.append(info)
-            min_runtime = min(np.array(info)[:, 2].astype('float'))
-            min_conf_candidate_runtime_idx_tup_list.append((min_runtime, tst_cnt))
-            tst_cnt += 1
-        tot_test_num += tst_cnt
+        test_set, candidate_set, tup_list = org_info(preproc_proj_dict)
+        tot_test_num += len(preproc_proj_dict.keys())
         for mach_num in num_of_machine:
             # is_done = False
             for pct in pct_of_failure_rate:
                 t1 = time.time()
                 ga = GA(a=factor_a,
                         fr=pct,
-                        avg_tm_dict=preproc_proj_dict,
+                        tests=test_set,
+                        conf_candidates=candidate_set,
+                        min_conf_candidate_runtime_idx_tup_list=tup_list,
                         setup_tm_dict=preproc_mvn_dict,
                         pop_size=100,
                         gene_length=mach_num,

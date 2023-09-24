@@ -4,38 +4,40 @@ from itertools import combinations
 
 import pandas as pd
 
-from analyze import get_alloc, load_setup_time_map, Individual, mapping, confs_num, avail_confs
+from analyze import get_alloc, load_setup_time_map, Individual, mapping, confs_num, avail_confs, org_info
 from preproc import preproc
 
 proj_names = [
-    # 'activiti_dot',
-    # 'assertj-core_dot',
-    # 'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
-    # 'commons-exec_dot',
-    # 'db-scheduler_dot',
-    # 'delight-nashorn-sandbox_dot',
-    # 'elastic-job-lite_dot',
-    # 'elastic-job-lite_elastic-job-lite-core',
-    # 'esper_examples.rfidassetzone',
-    # 'fastjson_dot'
-
-    # 'fluent-logger-java_dot',
-    # 'handlebars.java_dot',
-    # 'hbase_dot',
-    # 'http-request_dot',
-    # 'httpcore_dot',
-    # 'hutool_hutool-cron',
-    # 'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
-    # 'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
-    # 'logback_dot',
-    # 'luwak_luwak',
-    # 'ninja_dot'
-
+    'activiti_dot',
+    'assertj-core_dot',
+    'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
+    'commons-exec_dot',
+    'db-scheduler_dot',
+    'delight-nashorn-sandbox_dot'
+    
+    'elastic-job-lite_dot',
+    'elastic-job-lite_elastic-job-lite-core',
+    'esper_examples.rfidassetzone',
+    'fastjson_dot',
+    'fluent-logger-java_dot',
+    'handlebars.java_dot'
+    
+    'hbase_dot',
+    'http-request_dot',
+    'httpcore_dot',
+    'hutool_hutool-cron',
+    'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
+    'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
+    'logback_dot'
+    
+    'luwak_luwak',
+    'ninja_dot',
     'noxy_noxy-discovery-zookeeper',
     'okhttp_dot',
     'orbit_dot',
     'retrofit_retrofit-adapters.rxjava',
-    'retrofit_retrofit',
+    'retrofit_retrofit'
+    
     'rxjava2-extras_dot',
     'spring-boot_dot',
     'timely_server',
@@ -72,6 +74,7 @@ if __name__ == '__main__':
         avg_tm_dict = preproc(proj_name)
         setup_tm_dict = load_setup_time_map(proj_name,
                                             False)
+        test_set, candidate_set, tup_list = org_info(avg_tm_dict)
         for mach_num in num_of_machine:
             for pct in pct_of_failure_rate:
                 for index, modu in enumerate(modus):
@@ -90,7 +93,9 @@ if __name__ == '__main__':
                         score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict = get_alloc(modu[1],
                                                                                                       arr,
                                                                                                       pct,
-                                                                                                      avg_tm_dict,
+                                                                                                      test_set,
+                                                                                                      candidate_set,
+                                                                                                      tup_list,
                                                                                                       setup_tm_dict)
                         ind = Individual(copy.deepcopy(arr),
                                          time_seq,
