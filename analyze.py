@@ -4,7 +4,6 @@ import random
 import json
 import time
 from pprint import pprint, pformat
-from operator import itemgetter
 
 import numpy as np
 import pandas as pd
@@ -74,7 +73,6 @@ outer_round_idx = 1
 avg_time_idx = 2
 failure_rate_idx = 3
 price_idx = 4
-# whe_rec_baseline = False
 
 
 def load_setup_time_map(proj: str,
@@ -135,16 +133,6 @@ def scheduled_algorithm(a,
     confs = set(machs)
     min_fr = 100
     max_fr = 0
-    cnt = 0
-    tests = []
-    confs_candidates = []
-    min_conf_candidate_runtime_idx_tup_list = []
-    for key, val in avg_tm_dict.items():
-        tests.append(key)
-        confs_candidates.append(val)
-        min_runtime = min(np.array(val)[:,2].astype('float'))
-        min_conf_candidate_runtime_idx_tup_list.append((min_runtime, cnt))
-        cnt += 1
     sorted_tup_list = sorted(min_conf_candidate_runtime_idx_tup_list, key=lambda x: x[0], reverse=True)
     for tup in sorted_tup_list:
         idx = tup[1]
@@ -508,7 +496,7 @@ if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
     prog_start = time.time()
     factor_a = 0
-    group_ky = 'ig'
+    group_ky = 'non-ig'
     groups_map = {
         'non-ig': ['', 'non_ig', False],
         'ig': ['_ig', 'ig', True]
@@ -531,27 +519,37 @@ if __name__ == '__main__':
                                            'score',
                                            'period']
                                   )
-        baseline_df = pd.DataFrame(None,
-                                   columns=['project',
-                                            'num_machines',
-                                            'conf',
-                                            'time_seq',
-                                            'time_parallel',
-                                            'price',
-                                            'min_failure_rate',
-                                            'max_failure_rate'
-                                            ]
-                                   )
+        # baseline_df = pd.DataFrame(None,
+        #                            columns=['project',
+        #                                     'num_machines',
+        #                                     'conf',
+        #                                     'time_seq',
+        #                                     'time_parallel',
+        #                                     'price',
+        #                                     'min_failure_rate',
+        #                                     'max_failure_rate'
+        #                                     ]
+        #                            )
         ext_dat_df['num_confs'] = ext_dat_df['num_confs'].astype(int)
-        baseline_df_csv = f'{baseline_path}/{groups_map[group_ky][1]}/{proj_name}.csv'
-        whe_rec_baseline = not os.path.exists(baseline_df_csv)
+        # baseline_df_csv = f'{baseline_path}/{groups_map[group_ky][1]}/{proj_name}.csv'
+        # whe_reco_baseline = not os.path.exists(baseline_df_csv)
 
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
                                                groups_map[group_ky][2])
-        tot_test_num += len(preproc_proj_dict)
+        tst_cnt = 0
+        tests = []
+        confs_candidates = []
+        min_conf_candidate_runtime_idx_tup_list = []
+        for t, info in preproc_proj_dict.items():
+            tests.append(t)
+            confs_candidates.append(info)
+            min_runtime = min(np.array(info)[:, 2].astype('float'))
+            min_conf_candidate_runtime_idx_tup_list.append((min_runtime, tst_cnt))
+            tst_cnt += 1
+        tot_test_num += tst_cnt
         for mach_num in num_of_machine:
-            is_done = False
+            # is_done = False
             for pct in pct_of_failure_rate:
                 t1 = time.time()
                 ga = GA(a=factor_a,
@@ -562,11 +560,11 @@ if __name__ == '__main__':
                         gene_length=mach_num,
                         max_iter=100)
                 ga.init_pop()
-                if whe_rec_baseline and not is_done:
-                    record_baseline(proj_name,
-                                    baseline_df,
-                                    ga)
-                    is_done = True
+                # if whe_reco_baseline and not is_done:
+                #     record_baseline(proj_name,
+                #                     baseline_df,
+                #                     ga)
+                #     is_done = True
                 ga.run()
                 t2 = time.time()
                 tt = t2 - t1
@@ -581,9 +579,9 @@ if __name__ == '__main__':
         if not os.path.exists(resu_sub_path):
             os.mkdir(resu_sub_path)
         ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
-        if whe_rec_baseline:
-            if not os.path.exists(f'{baseline_path}/{groups_map[group_ky][1]}'):
-                os.mkdir(f'{baseline_path}/{groups_map[group_ky][1]}')
-            baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
+        # if whe_reco_baseline:
+        #     if not os.path.exists(f'{baseline_path}/{groups_map[group_ky][1]}'):
+        #         os.mkdir(f'{baseline_path}/{groups_map[group_ky][1]}')
+        #     baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
     print(f'[Total time] {time.time()-prog_start} s')
     print(f'[Total test number] {tot_test_num}')
