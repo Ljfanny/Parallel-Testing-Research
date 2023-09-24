@@ -238,6 +238,7 @@ def price_priority_algorithm(a,
         else:
             multi_dict[mini_conf].append([tst, mini_time])
     for key, val in multi_dict.items():
+        val = sorted(val, key=lambda x: x[1], reverse=True)
         for tup in val:
             tst = tup[0]
             tm = tup[1]
@@ -506,7 +507,7 @@ def record_baseline(proj: str,
 if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
     prog_start = time.time()
-    factor_a = 1
+    factor_a = 0
     group_ky = 'ig'
     groups_map = {
         'non-ig': ['', 'non_ig', False],
