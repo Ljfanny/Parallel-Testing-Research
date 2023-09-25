@@ -97,7 +97,7 @@ def draw_integ_scatter2d(code,
         plt.legend(handles=[plt.scatter([], [], c=c) for c in colors],
                    labels=labels,
                    fontsize=8)
-        plt.savefig(f'{subdir}/{proj_name}.svg')
+        plt.savefig(f'{subdir}/{proj_name}.pdf')
         plt.close()
 
 
@@ -236,7 +236,7 @@ def draw_integ_pareto3d(code):
                      f'Smart Baseline Normal: {len(smart_non)}')
         output_plot(ax,
                     proj_name)
-        plt.savefig(f'integ_fig/ga_pareto3d/{proj_name}.svg')
+        plt.savefig(f'integ_fig/ga_pareto3d/{proj_name}.pdf')
         plt.close()
     summary_df.to_csv(f'integ_fig/ga_pareto3d/summary_result.csv', sep=',', header=True, index=False)
 
@@ -310,7 +310,7 @@ def draw_tread_graph():
                      1,
                      ['Runtime', 'Price'])
         fig.suptitle(prog)
-        plt.savefig(f'integ_fig/ga_trend_graph/{prog}.svg')
+        plt.savefig(f'integ_fig/ga_trend_graph/{prog}.pdf')
         plt.close()
     avg_chp = np.nanmean(np.array(avg_chp), axis=0)
     avg_fst = np.nanmean(np.array(avg_fst), axis=0)
@@ -327,7 +327,7 @@ def draw_tread_graph():
                  1,
                  ['Average Runtime Ratio', 'Average Price Ratio'])
     norm_fig.suptitle('Average Trend', size=12, weight='bold')
-    plt.savefig(f'integ_fig/ga_trend_graph/unification.svg')
+    plt.savefig(f'integ_fig/ga_trend_graph/unification.pdf')
     plt.close()
 
 
@@ -424,7 +424,7 @@ def draw_integ_as_graph(is_bar=False):
         ax.set_xlabel('Runtime')
         ax.set_ylabel('Price')
         ax.legend(fontsize=8)
-        plt.savefig(f'integ_fig/ga_as_pareto2d/{prog}.svg')
+        plt.savefig(f'integ_fig/ga_as_pareto2d/{prog}.pdf')
         plt.close()
 
     def set_parameters(ax1,
@@ -458,7 +458,7 @@ def draw_integ_as_graph(is_bar=False):
                 'Smart Baseline')
         set_parameters(ax1, ax2)
         fig.suptitle(prog, size=16, weight='bold')
-        plt.savefig(f'integ_fig/ga_as_bi_bar/{prog}.svg')
+        plt.savefig(f'integ_fig/ga_as_bi_bar/{prog}.pdf')
         plt.close()
 
     def append_info(arr,
@@ -526,7 +526,7 @@ def draw_integ_as_graph(is_bar=False):
     pnl.spines['right'].set_color('none')
     pnl.yaxis.grid(True, linestyle='--', zorder=0)
     pnl.legend(fontsize=8)
-    plt.savefig(f'integ_fig/ga_as_bi_bar/tradeoff_trend_graph.svg')
+    plt.savefig(f'integ_fig/ga_as_bi_bar/tradeoff_trend_graph.pdf')
     plt.close()
     # --------------------------------------- mean bi bar ---------------------------------------
     fig, (pnl1, pnl2) = plt.subplots(2, 1, figsize=(10, 8), sharey=True, sharex=True)
@@ -542,7 +542,7 @@ def draw_integ_as_graph(is_bar=False):
             'Avg. vs Smart Baseline')
     set_parameters(pnl1, pnl2)
     fig.suptitle('Average Rate', size=16, weight='bold')
-    plt.savefig(f'integ_fig/ga_as_bi_bar/avg_rate_graph.svg')
+    plt.savefig(f'integ_fig/ga_as_bi_bar/avg_rate_graph.pdf')
     plt.close()
 
 
@@ -603,25 +603,25 @@ def draw_integ_proj_avg_rate_graph(goal_csv,
     ax2.set_xlabel(r'Project Id', size=12, weight='bold')
     legend.set_bbox_to_anchor((0.05, 1.2))
     fig.suptitle(sup_title, size=16, weight='bold')
-    plt.savefig(f'integ_fig/avg_rate_{goal_csv[8:-4]}_graph.svg')
+    plt.savefig(f'integ_fig/avg_rate_{goal_csv[8:-4]}_graph.pdf')
     plt.close()
 
 
 if __name__ == '__main__':
-    # draw_integ_scatter2d('ga', 1)
-    # draw_integ_scatter2d('ga', 0)
-    # draw_integ_pareto3d('ga')
-    # draw_tread_graph()
+    draw_integ_scatter2d('ga', 1)
+    draw_integ_scatter2d('ga', 0)
+    draw_integ_pareto3d('ga')
+    draw_tread_graph()
     draw_integ_as_graph(True)
-    # draw_integ_proj_avg_rate_graph('summary_per_project_lower_price_goal.csv',
-    #                                'Average Rate with Lower Price Goal',
-    #                                [7, 6, 5, 4, 3, 2, 1, 0, -1],
-    #                                [7, 6, 5, 4, 3, 2, 1, 0, 1],
-    #                                [4, 3, 2, 1, 0, -1],
-    #                                [4, 3, 2, 1, 0, 1])
-    # draw_integ_proj_avg_rate_graph('summary_per_project_lower_runtime_goal.csv',
-    #                                'Average Rate with Lower Runtime Goal',
-    #                                [1, 0, -1, -2],
-    #                                [1, 0, 1, 2],
-    #                                [1, 0, -2, -4, -6, -8, -12],
-    #                                [1, 0, 2, 4, 6, 8, 12])
+    draw_integ_proj_avg_rate_graph('summary_per_project_lower_price_goal.csv',
+                                   'Average Rate with Lower Price Goal',
+                                   [7, 6, 5, 4, 3, 2, 1, 0, -1],
+                                   [7, 6, 5, 4, 3, 2, 1, 0, 1],
+                                   [4, 3, 2, 1, 0, -1],
+                                   [4, 3, 2, 1, 0, 1])
+    draw_integ_proj_avg_rate_graph('summary_per_project_lower_runtime_goal.csv',
+                                   'Average Rate with Lower Runtime Goal',
+                                   [1, 0, -1, -2],
+                                   [1, 0, 1, 2],
+                                   [1, 0, -2, -4, -6, -8, -12],
+                                   [1, 0, 2, 4, 6, 8, 12])
