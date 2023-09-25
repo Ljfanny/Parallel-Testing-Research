@@ -331,25 +331,6 @@ def draw_tread_graph():
     plt.close()
 
 
-def sub_bar(ax,
-            x,
-            y1,
-            y2,
-            title,
-            up_color='#457b9d',
-            down_color='#cee5f2',
-            bl_color='#1d3557',
-            bar_width=0.035):
-    ax.yaxis.grid(True, linestyle='--', zorder=0)
-    ax.bar(x, y1, color=up_color, width=bar_width, edgecolor='#04080f', label='Runtime')
-    ax.bar(x, y2, color=down_color, width=bar_width, edgecolor='#04080f', label='Price')
-    ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
-    ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
-    ax.set_title(title, size=12, weight='bold')
-    ax.spines['top'].set_color('none')
-    ax.spines['right'].set_color('none')
-
-
 def draw_integ_as_graph(is_bar=False):
     csvs = [f for f in os.listdir('integ_dat') if os.path.isfile(os.path.join('integ_dat', f))]
     a = np.array([float(csv.replace('.csv', '')[csv.index('_a') + 2:]) for csv in csvs])
@@ -440,6 +421,24 @@ def draw_integ_as_graph(is_bar=False):
         leg = ax1.legend(edgecolor='none')
         ax2.set_xlabel(r'The Parameter a', size=12, weight='bold')
         leg.set_bbox_to_anchor((0.05, 1.2))
+
+    def sub_bar(ax,
+                x,
+                y1,
+                y2,
+                title,
+                up_color='#7c98b3',
+                down_color='#c0d6df',
+                bl_color='#1d2d44',
+                bar_width=0.035):
+        ax.yaxis.grid(True, linestyle='--', zorder=0)
+        ax.bar(x, y1, color=up_color, width=bar_width, edgecolor='#04080f', label='Runtime')
+        ax.bar(x, y2, color=down_color, width=bar_width, edgecolor='#04080f', label='Price')
+        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
+        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
+        ax.set_title(title, size=12, weight='bold')
+        ax.spines['top'].set_color('none')
+        ax.spines['right'].set_color('none')
 
     def bi_bar(prog,
                gh_rts,
@@ -546,49 +545,73 @@ def draw_integ_as_graph(is_bar=False):
     plt.close()
 
 
-def draw_integ_proj_avg_rate_graph(goal_csv,
+def draw_integ_proj_avg_rate_graph(goal_subdir,
                                    sup_title,
                                    y1s,
                                    y1_labels,
                                    y2s,
                                    y2_labels):
-    summary_per_proj_df = pd.read_csv(f'integ_dat/ga/{goal_csv}')
-    gh_runtime_rts = summary_per_proj_df['github_caliber_avg_runtime_rate']
-    gh_price_rts = summary_per_proj_df['github_caliber_avg_price_rate']
-    smt_runtime_rts = summary_per_proj_df['smart_baseline_avg_runtime_rate']
-    smt_price_rts = summary_per_proj_df['smart_baseline_avg_price_rate']
-    gh_avg_runtime = np.nanmean(gh_runtime_rts)
-    gh_avg_price = np.nanmean(gh_price_rts)
-    smt_avg_runtime = np.nanmean(smt_runtime_rts)
-    smt_avg_price = np.nanmean(smt_price_rts)
-    gh_runtime_rts.loc[len(gh_runtime_rts)] = gh_avg_runtime
-    gh_price_rts.loc[len(gh_price_rts)] = gh_avg_price
-    smt_runtime_rts.loc[len(smt_runtime_rts)] = smt_avg_runtime
-    smt_price_rts.loc[len(smt_price_rts)] = smt_avg_price
-    projs = summary_per_proj_df['project']
-    proj_id_map = {item['project'] + '_' + item['module']: item['id'] for _, item in
-                   pd.read_csv('proj_info.csv').iterrows()}
-    x = [proj_id_map[proj] for proj in projs]
+    def extract_dat(csv_name):
+        summary_per_proj_df = pd.read_csv(f'integ_dat/{goal_subdir}/{csv_name}')
+        gh_runtime_rts = summary_per_proj_df['github_caliber_avg_runtime_rate']
+        gh_price_rts = summary_per_proj_df['github_caliber_avg_price_rate']
+        smt_runtime_rts = summary_per_proj_df['smart_baseline_avg_runtime_rate']
+        smt_price_rts = summary_per_proj_df['smart_baseline_avg_price_rate']
+        gh_avg_runtime = np.nanmean(gh_runtime_rts)
+        gh_avg_price = np.nanmean(gh_price_rts)
+        smt_avg_runtime = np.nanmean(smt_runtime_rts)
+        smt_avg_price = np.nanmean(smt_price_rts)
+        gh_runtime_rts.loc[len(gh_runtime_rts)] = gh_avg_runtime
+        gh_price_rts.loc[len(gh_price_rts)] = gh_avg_price
+        smt_runtime_rts.loc[len(smt_runtime_rts)] = smt_avg_runtime
+        smt_price_rts.loc[len(smt_price_rts)] = smt_avg_price
+        return gh_runtime_rts, gh_price_rts, smt_runtime_rts, smt_price_rts
+
+    def sub_double_bar(ax,
+                       indexes,
+                       y1,
+                       y2,
+                       y3,
+                       y4,
+                       title):
+        bar_width = 0.55
+        indexes = np.array(indexes)
+        ax.bar(indexes - bar_width / 2 + 0.1, y1, color='#a594f9', width=bar_width, edgecolor='#04080f',
+               label='Runtime with Lowest Runtime')
+        ax.bar(indexes + bar_width / 2 - 0.1, y2, color='#e5d9f2', width=bar_width, edgecolor='#04080f',
+               label='Runtime with Lowest Price')
+        ax.bar(indexes - bar_width / 2 + 0.1, y3, color='#cdc1ff', width=bar_width, edgecolor='#04080f',
+               label='Price with Lowest Runtime')
+        ax.bar(indexes + bar_width / 2 - 0.1, y4, color='#f5efff', width=bar_width, edgecolor='#04080f',
+               label='Price with Lowest Price')
+        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#10002b', markersize=4)
+        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#10002b', markersize=4)
+        ax.yaxis.grid(True, linestyle='--', zorder=0)
+        ax.set_title(title, size=12, weight='bold')
+        ax.spines['top'].set_color('none')
+        ax.spines['right'].set_color('none')
+
+    gh_tm_runtime_rts, gh_tm_price_rts, smt_tm_runtime_rts, smt_tm_price_rts = extract_dat(
+        'summary_per_project_lower_runtime_goal.csv')
+    gh_pri_runtime_rts, gh_pri_price_rts, smt_pri_runtime_rts, smt_pri_price_rts = extract_dat(
+        'summary_per_project_lower_price_goal.csv')
+    x = list(pd.read_csv('proj_info.csv')['id'])
     x.append('Tot')
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 8), sharex=True)
-    sub_bar(ax1,
-            [i for i in range(len(x))],
-            gh_runtime_rts,
-            -gh_price_rts,
-            'Avg. vs GitHub Caliber',
-            '#80727b',
-            '#dbd2e0',
-            '#37123c',
-            0.75)
-    sub_bar(ax2,
-            [i for i in range(len(x))],
-            smt_runtime_rts,
-            -smt_price_rts,
-            'Avg. vs Smart Baseline',
-            '#80727b',
-            '#dbd2e0',
-            '#37123c',
-            0.75)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), sharex=True)
+    sub_double_bar(ax1,
+                   [i for i in range(len(x))],
+                   gh_tm_runtime_rts,
+                   gh_pri_runtime_rts,
+                   -gh_tm_price_rts,
+                   -gh_pri_price_rts,
+                   'Avg. vs GitHub Caliber')
+    sub_double_bar(ax2,
+                   [i for i in range(len(x))],
+                   smt_tm_runtime_rts,
+                   smt_pri_runtime_rts,
+                   -smt_tm_price_rts,
+                   -smt_pri_price_rts,
+                   'Avg. vs Smart Baseline')
     ax1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
     ax2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
     ax1.set_xticks([i for i in range(len(x))])
@@ -600,28 +623,28 @@ def draw_integ_proj_avg_rate_graph(goal_csv,
     ax1.set_xticklabels(x)
     ax2.set_xticklabels(x)
     legend = ax1.legend(edgecolor='none')
-    ax2.set_xlabel(r'Project Id', size=12, weight='bold')
-    legend.set_bbox_to_anchor((0.05, 1.2))
+    ax2.set_xlabel(r'Project ID', size=12, weight='bold')
+    legend.set_bbox_to_anchor((0.23, 1.22))
     fig.suptitle(sup_title, size=16, weight='bold')
-    plt.savefig(f'integ_fig/avg_rate_{goal_csv[8:-4]}_graph.pdf')
+    plt.savefig(f'integ_fig/avg_rate_{goal_subdir}_graph.pdf')
     plt.close()
 
 
 if __name__ == '__main__':
-    draw_integ_scatter2d('ga', 1)
-    draw_integ_scatter2d('ga', 0)
-    draw_integ_pareto3d('ga')
-    draw_tread_graph()
-    draw_integ_as_graph(True)
-    draw_integ_proj_avg_rate_graph('summary_per_project_lower_price_goal.csv',
-                                   'Average Rate with Lower Price Goal',
-                                   [7, 6, 5, 4, 3, 2, 1, 0, -1],
-                                   [7, 6, 5, 4, 3, 2, 1, 0, 1],
-                                   [4, 3, 2, 1, 0, -1],
-                                   [4, 3, 2, 1, 0, 1])
-    draw_integ_proj_avg_rate_graph('summary_per_project_lower_runtime_goal.csv',
-                                   'Average Rate with Lower Runtime Goal',
-                                   [1, 0, -1, -2],
-                                   [1, 0, 1, 2],
-                                   [1, 0, -2, -4, -6, -8, -12],
-                                   [1, 0, 2, 4, 6, 8, 12])
+    # draw_integ_scatter2d('ga', 1)
+    # draw_integ_scatter2d('ga', 0)
+    # draw_integ_pareto3d('ga')
+    # draw_tread_graph()
+    # draw_integ_as_graph(True)
+    draw_integ_proj_avg_rate_graph('ga',
+                                   'Average Rate for GA with setup cost',
+                                   [6, 4, 2, 0, -2],
+                                   [6, 4, 2, 0, 2],
+                                   [4, 2, 0, -2, -4, -6, -8, -10, -12],
+                                   [4, 2, 0, 2, 4, 6, 8, 10, 12])
+    draw_integ_proj_avg_rate_graph('ga_ig',
+                                   'Average Rate for GA without setup cost',
+                                   [10, 8, 6, 4, 2, 0, -2],
+                                   [10, 8, 6, 4, 2, 0, 2],
+                                   [10, 8, 6, 4, 2, 0, -2, -4],
+                                   [10, 8, 6, 4, 2, 0, 2, 4])

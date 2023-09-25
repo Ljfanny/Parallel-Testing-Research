@@ -435,10 +435,10 @@ if __name__ == '__main__':
     #             'ext_dat/bruteforce_a1',
     #             'non_ig',
     #             'bruteforce')
-    consider_fr('ext_dat/ga_a0_ig',
-                'ext_dat/ga_a1_ig',
-                'ig',
-                'ga_ig')
+    # consider_fr('ext_dat/ga_a0_ig',
+    #             'ext_dat/ga_a1_ig',
+    #             'ig',
+    #             'ga_ig')
     # for md in modus:
     #     consider_ab(f'ext_dat/{md}',
     #                 'non_ig',
@@ -449,3 +449,9 @@ if __name__ == '__main__':
     # consider_per_proj('ga',
     #                   'fastest',
     #                   'summary_per_project_lower_runtime_goal.csv')
+    consider_per_proj('ga_ig',
+                      'cheapest',
+                      'summary_per_project_lower_price_goal.csv')
+    consider_per_proj('ga_ig',
+                      'fastest',
+                      'summary_per_project_lower_runtime_goal.csv')

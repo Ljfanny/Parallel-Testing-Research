@@ -8,8 +8,7 @@ from preproc import preproc, conf_prc_map
 if __name__ == '__main__':
     info_df = pd.DataFrame(None,
                            columns=['id',
-                                    'project',
-                                    'module',
+                                    'project-module',
                                     'test_num',
                                     'min_max_failure_rate',
                                     'max_failure_rate'])
@@ -24,8 +23,7 @@ if __name__ == '__main__':
             if fr < min_fr: min_fr = fr
         info_df.loc[len(info_df.index)] = [
             f'P{i}',
-            proj_name.split('_')[0],
-            proj_name.split('_')[1],
+            proj_name,
             test_num,
             min_fr,
             max_fr
