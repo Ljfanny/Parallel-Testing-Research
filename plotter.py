@@ -412,8 +412,8 @@ def draw_integ_as_graph(is_bar=False):
                        ax2):
         ax1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
         ax2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
-        ax1.set_xticks([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
-        ax2.set_xticks([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+        ax1.set_xticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+        ax2.set_xticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
         ax1.set_yticks([2, 1, 0, -1, -2])
         ax1.set_yticklabels([2, 1, 0, 1, 2])
         ax2.set_yticks([2, 1, 0, -1, -2])
@@ -565,6 +565,11 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
         gh_price_rts.loc[len(gh_price_rts)] = gh_avg_price
         smt_runtime_rts.loc[len(smt_runtime_rts)] = smt_avg_runtime
         smt_price_rts.loc[len(smt_price_rts)] = smt_avg_price
+        print(f'------------------- {sup_title} Tot: {csv_name}-------------------')
+        print(f'GitHub avg. runtime: {gh_avg_runtime}')
+        print(f'GitHub avg. price: {gh_avg_price}')
+        print(f'Smart avg. runtime: {smt_avg_runtime}')
+        print(f'Smart avg. price: {smt_avg_price}')
         return gh_runtime_rts, gh_price_rts, smt_runtime_rts, smt_price_rts
 
     def sub_double_bar(ax,
@@ -576,13 +581,13 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
                        title):
         bar_width = 0.55
         indexes = np.array(indexes)
-        ax.bar(indexes - bar_width / 2 + 0.1, y1, color='#a594f9', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes - bar_width / 2 + 0.1, y1, color='#a594f9', width=bar_width,
                label='Runtime with Lowest Runtime')
-        ax.bar(indexes + bar_width / 2 - 0.1, y2, color='#e5d9f2', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes + bar_width / 2 - 0.1, y2, color='#e5d9f2', width=bar_width,
                label='Runtime with Lowest Price')
-        ax.bar(indexes - bar_width / 2 + 0.1, y3, color='#cdc1ff', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes - bar_width / 2 + 0.1, y3, color='#cdc1ff', width=bar_width,
                label='Price with Lowest Runtime')
-        ax.bar(indexes + bar_width / 2 - 0.1, y4, color='#f5efff', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes + bar_width / 2 - 0.1, y4, color='#f5efff', width=bar_width,
                label='Price with Lowest Price')
         ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#10002b', markersize=4)
         ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#10002b', markersize=4)
@@ -596,7 +601,7 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
     gh_pri_runtime_rts, gh_pri_price_rts, smt_pri_runtime_rts, smt_pri_price_rts = extract_dat(
         'summary_per_project_lower_price_goal.csv')
     x = list(pd.read_csv('proj_info.csv')['id'])
-    x.append('Tot')
+    x.append('Avg.')
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), sharex=True)
     sub_double_bar(ax1,
                    [i for i in range(len(x))],
@@ -622,6 +627,10 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
     ax2.set_yticklabels(y2_labels)
     ax1.set_xticklabels(x)
     ax2.set_xticklabels(x)
+    ax1.spines['bottom'].set_position('zero')
+    ax1.xaxis.set_ticks_position('bottom')
+    ax2.spines['bottom'].set_position('zero')
+    ax2.xaxis.set_ticks_position('bottom')
     legend = ax1.legend(edgecolor='none')
     ax2.set_xlabel(r'Project ID', size=12, weight='bold')
     legend.set_bbox_to_anchor((0.23, 1.22))
@@ -638,13 +647,13 @@ if __name__ == '__main__':
     # draw_integ_as_graph(True)
     draw_integ_proj_avg_rate_graph('ga',
                                    'Average Rate for GA with setup cost',
-                                   [6, 4, 2, 0, -2],
-                                   [6, 4, 2, 0, 2],
-                                   [4, 2, 0, -2, -4, -6, -8, -10, -12],
-                                   [4, 2, 0, 2, 4, 6, 8, 10, 12])
+                                   [4, 3, 2, 1, 0, -1, -2],
+                                   [4, 3, 2, 1, 0, 1, 2],
+                                   [4, 2, 0, -2, -4, -6, -8, -10],
+                                   [4, 2, 0, 2, 4, 6, 8, 10])
     draw_integ_proj_avg_rate_graph('ga_ig',
                                    'Average Rate for GA without setup cost',
-                                   [10, 8, 6, 4, 2, 0, -2],
-                                   [10, 8, 6, 4, 2, 0, 2],
-                                   [10, 8, 6, 4, 2, 0, -2, -4],
-                                   [10, 8, 6, 4, 2, 0, 2, 4])
+                                   [2, 1, 0, -1, -2],
+                                   [2, 1, 0, 1, 2],
+                                   [1, 0, -1, -2, -3, -4, -5, -6],
+                                   [1, 0, 1, 2, 3, 4, 5, 6])

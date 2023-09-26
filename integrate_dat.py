@@ -300,7 +300,7 @@ def consider_ab(dat_dir,
                                'runtime',
                                'price',
                                'max_failure_rate',
-                               'score',
+                               'fitness',
                                'github_caliber_conf',
                                'github_caliber_runtime',
                                'github_caliber_price',
@@ -327,7 +327,7 @@ def consider_ab(dat_dir,
         dat = dat.loc[dat['category'].str.endswith('-0')].iloc[:, 1:].dropna()
         if dat.size == 0:
             continue
-        dat.sort_values(by='score', inplace=True)
+        dat.sort_values(by='fitness', inplace=True)
         itm = dat.iloc[0, :]
         gh, smt = get_contrast(baseline_subdir,
                                proj_name,
@@ -340,10 +340,10 @@ def consider_ab(dat_dir,
         smt_rate = np.nan
         if is_gh:
             gh_score = a * beta * gh['time_parallel'] + b * gh['price']
-            gh_rate = itm['score'] / gh_score
+            gh_rate = itm['fitness'] / gh_score
         if is_smt:
             smt_score = a * beta * smt['time_parallel'] + b * smt['price']
-            smt_rate = itm['score'] / smt_score
+            smt_rate = itm['fitness'] / smt_score
         df.loc[len(df.index)] = [
             proj_name,
             itm['category'],
@@ -351,7 +351,7 @@ def consider_ab(dat_dir,
             itm['time_parallel'],
             itm['price'],
             itm['max_failure_rate'],
-            itm['score'],
+            itm['fitness'],
             gh['conf'] if is_gh else np.nan,
             gh['time_parallel'] if is_gh else np.nan,
             gh['price'] if is_gh else np.nan,
@@ -412,12 +412,44 @@ def consider_per_proj(subdir,
                             sep=',', header=True, index=False)
 
 
+def get_avg_min_max_failrate():
+    fr_tables = os.listdir(f'integ_dat/ga')
+    fr_dfs = [pd.read_csv(f'integ_dat/ga/{fr_tb}') for fr_tb in fr_tables if fr_tb.find('summary') == -1]
+    ga_min_max_frs = []
+    gh_min_max_frs = []
+    smt_min_max_frs = []
+    projs = fr_dfs[0].iloc[:, 0]
+    chp_pfx = 'cheapest'
+    fst_pfx = 'fastest'
+    gh_md = 'github_caliber'
+    smt_md = 'smart_baseline'
+    fr_col_nm = 'max_failure_rate'
+    for i, proj in enumerate(projs):
+        ga_frs = []
+        gh_frs = []
+        smt_frs = []
+        for df in fr_dfs:
+            item = df.iloc[i, :]
+            ga_frs.append(item[f'{chp_pfx}_{fr_col_nm}'])
+            ga_frs.append(item[f'{fst_pfx}_{fr_col_nm}'])
+            gh_frs.append(item[f'{chp_pfx}_{gh_md}_{fr_col_nm}'])
+            gh_frs.append(item[f'{fst_pfx}_{gh_md}_{fr_col_nm}'])
+            smt_frs.append(item[f'{chp_pfx}_{smt_md}_{fr_col_nm}'])
+            smt_frs.append(item[f'{fst_pfx}_{smt_md}_{fr_col_nm}'])
+        ga_min_max_frs.append(np.nanmin(np.array(ga_frs)))
+        gh_min_max_frs.append(np.nanmin(np.array(gh_frs)))
+        smt_min_max_frs.append(np.nanmin(np.array(smt_frs)))
+    print(f'GA avg. max failure rate: {np.nanmean(np.array(ga_min_max_frs))}')
+    print(f'GitHub caliber avg. max failure rate: {np.nanmean(np.array(gh_min_max_frs))}')
+    print(f'Smart baseline avg. max failure rate: {np.nanmean(np.array(smt_min_max_frs))}')
+
+
 if __name__ == '__main__':
-    ex_ab = False
+    is_ab = True
     aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
            0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
     modus = [f'ga_a{a}' for a in aes]
-    if not ex_ab:
+    if not is_ab:
         summary_arr = np.zeros((6, 12))
         idx_proj_num_map = {i: 0 for i in range(6)}
         idx_non_nan_baseline_num_map = {i: np.zeros(4) for i in range(6)}
@@ -449,9 +481,10 @@ if __name__ == '__main__':
     # consider_per_proj('ga',
     #                   'fastest',
     #                   'summary_per_project_lower_runtime_goal.csv')
-    consider_per_proj('ga_ig',
-                      'cheapest',
-                      'summary_per_project_lower_price_goal.csv')
-    consider_per_proj('ga_ig',
-                      'fastest',
-                      'summary_per_project_lower_runtime_goal.csv')
+    # consider_per_proj('ga_ig',
+    #                   'cheapest',
+    #                   'summary_per_project_lower_price_goal.csv')
+    # consider_per_proj('ga_ig',
+    #                   'fastest',
+    #                   'summary_per_project_lower_runtime_goal.csv')
+    get_avg_min_max_failrate()

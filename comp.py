@@ -11,7 +11,7 @@ def comp_ga_bf():
         0: ['ga_a0', 'bruteforce_a0'],
         1: ['ga_a1', 'bruteforce_a1']
     }
-    proj_id_map = {item['project']+'_'+item['module']: item['id'] for _, item in pd.read_csv('proj_info.csv').iterrows()}
+    proj_id_map = {item['project-module']: item['id'] for _, item in pd.read_csv('proj_info.csv').iterrows()}
     comp_dfs = [pd.DataFrame(None,
                              columns=['project',
                                       'category',
@@ -167,8 +167,8 @@ def comp_confs(a: str, b: str):
         if csv.find('summary') != -1:
             continue
         fr = csv.replace('.csv', '').split('_')[1]
-        a_df = pd.read_csv(f'{a_path}/{csv}').dropna()
-        b_df = pd.read_csv(f'{b_path}/{csv}').dropna()
+        a_df = pd.read_csv(f'{a_path}/{csv}').dropna(subset=['cheapest_category'])
+        b_df = pd.read_csv(f'{b_path}/{csv}').dropna(subset=['cheapest_category'])
         num = len(a_df)
         for j in range(num):
             a_itm = a_df.iloc[j, :]
@@ -189,6 +189,6 @@ def comp_confs(a: str, b: str):
 
 
 if __name__ == '__main__':
-    comp_ga_bf()
+    # comp_ga_bf()
     comp_confs('non_ig', 'ig')
     comp_confs('ga', 'bf')

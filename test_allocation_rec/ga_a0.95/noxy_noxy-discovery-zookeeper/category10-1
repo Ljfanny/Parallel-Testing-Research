@@ -6,5 +6,6 @@
  '29CPU4Mem8GB.sh:v4': [],
  '29CPU4Mem8GB.sh:v5': [],
  '29CPU4Mem8GB.sh:v6': [],
- '29CPU4Mem8GB.sh:v7': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testMembershipJoinAndLeave'],
- '29CPU4Mem8GB.sh:v8': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testDiscoveryListener']}
+ '29CPU4Mem8GB.sh:v7': [],
+ '29CPU4Mem8GB.sh:v8': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testDiscoveryListener',
+                        'com.spinn3r.noxy.discovery.zookeeper.ZKTest#testMembershipJoinAndLeave']}
