@@ -155,9 +155,8 @@ def get_alloc(a,
             mach_time_dict[mach] -= cur_avg_tm
         if min_mach is None:
             return float('inf'), np.nan, np.nan, np.nan, np.nan, np.nan, None
-        min_conf = min_mach[0]
         mach_test_dict[min_mach].append(tst)
-        mach_time_dict[min_mach] += val[conv_calc_map[min_conf]][avg_time_idx]
+        mach_time_dict[min_mach] += val[conv_calc_map[min_mach]][avg_time_idx]
         if cur_fr > max_fr:
             max_fr = cur_fr
         if cur_fr < min_fr:
