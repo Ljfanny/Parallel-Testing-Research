@@ -154,7 +154,7 @@ def get_alloc(a,
                 min_mach = mach
             mach_time_dict[mach] -= cur_avg_tm
         if min_mach is None:
-            continue
+            return float('inf'), np.nan, np.nan, np.nan, np.nan, np.nan, None
         min_conf = min_mach[0]
         mach_test_dict[min_mach].append(tst)
         mach_time_dict[min_mach] += val[conv_calc_map[min_conf]][avg_time_idx]
@@ -180,7 +180,7 @@ class Individual:
                  min_fr,
                  max_fr,
                  mach_test_dict,
-                 score):
+                 fitness):
         self.machs = machs
         self.time_seq = time_seq
         self.time_para = time_para
@@ -188,12 +188,12 @@ class Individual:
         self.min_fr = min_fr
         self.max_fr = max_fr
         self.mach_test_dict = mach_test_dict
-        self.score = score
+        self.fitness = fitness
 
     def print_ind(self,
                   period):
         print(f'Period: {period}')
-        if self.score == float('inf'):
+        if self.fitness == float('inf'):
             print(f'Maximum failure rate: {self.max_fr}')
             return
         print('Machine list: ')
@@ -203,7 +203,7 @@ class Individual:
         print(f'Price: {self.price}')
         print(f'Minimum failure rate: {self.min_fr}')
         print(f'Maximum failure rate: {self.max_fr}')
-        print(f'Score: {self.score}')
+        print(f'Score: {self.fitness}')
 
     def record_ind(self,
                    subdir,
@@ -214,7 +214,7 @@ class Individual:
         dis_folder = f'{tst_alloc_rec_path}/{subdir}/{proj}'
         if not os.path.exists(dis_folder):
             os.makedirs(dis_folder)
-        if self.score == float('inf'):
+        if self.fitness == float('inf'):
             df.loc[len(df.index)] = [
                 proj,
                 cg,
@@ -244,7 +244,7 @@ class Individual:
             self.price,
             self.min_fr,
             self.max_fr,
-            self.score,
+            self.fitness,
             period
         ]
         temp_dict = {idx_conf_map[k[0]] if k[1] == -1
@@ -295,7 +295,7 @@ class GA:
             self.maintain_memo(machs)
 
     def selection(self):
-        pop = sorted(self.population, key=lambda chd: self.memo[mapping(chd)].score)
+        pop = sorted(self.population, key=lambda chd: self.memo[mapping(chd)].fitness)
         return pop[:int(0.2 * len(pop))]
 
     def crossover(self,
@@ -344,7 +344,7 @@ class GA:
 
     def print_best(self,
                    period):
-        pop = sorted(self.population, key=lambda chd: self.memo[mapping(chd)].score)
+        pop = sorted(self.population, key=lambda chd: self.memo[mapping(chd)].fitness)
         ind = self.memo[mapping(pop[0])]
         ind.print_ind(period)
 
@@ -353,7 +353,7 @@ class GA:
                     proj,
                     cg,
                     period):
-        pop = sorted(self.population, key=lambda chd: self.memo[mapping(chd)].score)
+        pop = sorted(self.population, key=lambda chd: self.memo[mapping(chd)].fitness)
         ind = self.memo[mapping(pop[0])]
         ind.record_ind(subdir,
                        proj,
@@ -365,13 +365,13 @@ class GA:
                       machs: list):
         conf_tup = mapping(machs)
         if conf_tup not in self.memo.keys():
-            score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict = get_alloc(self.a,
-                                                                                          machs,
-                                                                                          self.fr,
-                                                                                          self.tests,
-                                                                                          self.conf_candidates,
-                                                                                          self.min_conf_candidate_runtime_idx_tup_list,
-                                                                                          self.setup_tm_dict)
+            fitness, time_seq, time_para, price, min_fr, max_fr, mach_test_dict = get_alloc(self.a,
+                                                                                            machs,
+                                                                                            self.fr,
+                                                                                            self.tests,
+                                                                                            self.conf_candidates,
+                                                                                            self.min_conf_candidate_runtime_idx_tup_list,
+                                                                                            self.setup_tm_dict)
             new_ind = Individual(copy.deepcopy(machs),
                                  time_seq,
                                  time_para,
@@ -379,9 +379,7 @@ class GA:
                                  min_fr,
                                  max_fr,
                                  mach_test_dict,
-                                 score)
-            if max_fr > self.fr:
-                new_ind.score = float('inf')
+                                 fitness)
             self.memo[conf_tup] = new_ind
 
 
@@ -439,7 +437,7 @@ if __name__ == '__main__':
                                            'price',
                                            'min_failure_rate',
                                            'max_failure_rate',
-                                           'score',
+                                           'fitness',
                                            'period']
                                   )
         # baseline_df = pd.DataFrame(None,
