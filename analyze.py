@@ -10,7 +10,7 @@ import pandas as pd
 
 from preproc import preproc, conf_prc_map
 
-beta = 25.993775/3600
+beta = 25.993775 / 3600
 random.seed(0)
 resu_path = 'ext_dat'
 setup_rec_path = 'setup_time_rec'
@@ -90,8 +90,6 @@ def analysis_machs(machs: list,
     mach_arr = []
     mach_test_dict = {}
     mach_time_dict = {}
-    multi_dict = {}
-    conf_machs_map = {k: [] for k in set(machs)}
     num_arr = list(mapping(machs))
     bool_arr = [False if num <= 1 else True for num in num_arr]
     for i, idx in enumerate(machs):
@@ -99,159 +97,25 @@ def analysis_machs(machs: list,
         setup_tm = setup_tm_dict[conf]
         if bool_arr[idx]:
             num_arr[idx] -= 1
-            if idx not in multi_dict.keys():
-                multi_dict[idx] = []
             cur = (idx, num_arr[idx])
             mach_arr.append(cur)
-            conf_machs_map[idx].append(num_arr[idx])
         else:
             cur = (idx, -1)
             mach_arr.append(cur)
         mach_test_dict[cur] = []
         mach_time_dict[cur] = setup_tm
-    return mach_arr, mach_test_dict, mach_time_dict, multi_dict, conf_machs_map
+    return mach_arr, mach_test_dict, mach_time_dict
 
 
-def cal_gene_score(a,
-                   mach_time_dict):
+def get_fitness(a,
+                mach_time_dict):
     price = 0
     b = 1 - a
     for mach, per_runtime in mach_time_dict.items():
         per_price = per_runtime * conf_prc_map[idx_conf_map[mach[0]]] / 3600
         price += per_price
-    score = a * beta * sum(mach_time_dict.values()) + b * price
-    return price, score
-
-
-def scheduled_algorithm(a,
-                        machs: list,
-                        fr: float,
-                        tests,
-                        confs_candidates,
-                        min_conf_candidate_runtime_idx_tup_list,
-                        setup_tm_dict: dict):
-    mach_arr, mach_test_dict, mach_time_dict, _, _ = analysis_machs(machs,
-                                                                    setup_tm_dict)
-    confs = set(machs)
-    min_fr = 100
-    max_fr = 0
-    sorted_tup_list = sorted(min_conf_candidate_runtime_idx_tup_list, key=lambda x: x[0], reverse=True)
-    for tup in sorted_tup_list:
-        idx = tup[1]
-        key = tests[idx]
-        val = confs_candidates[idx]
-        tst = f'{key[0]}#{key[1]}'
-        min_para_time = float('inf')
-        min_mach = None
-        cur_fr = 0
-        tmp_map = {}
-        for item in val:
-            thrott_conf = conf_idx_map[item[thrott_conf_idx]]
-            if thrott_conf not in confs:
-                continue
-            tmp_map[thrott_conf] = [item[avg_time_idx], item[failure_rate_idx]]
-        fr_arr = list(zip(*tmp_map.values()))[-1]
-        for m in mach_arr:
-            idx = m[0]
-            arr = tmp_map[idx]
-            if mach_time_dict[m] + arr[0] < min_para_time and arr[1] <= fr:
-                min_para_time = mach_time_dict[m] + arr[0]
-                min_mach = m
-                cur_fr = arr[1]
-        if min_mach is None:
-            min_idx = [k for k, v in tmp_map.items() if v[1] == min(fr_arr)][0]
-            cur_fr = tmp_map[min_idx][1]
-            filtered_dict = {k: v for k, v in mach_time_dict.items() if k[0] == min_idx}
-            min_mach = [k for k, v in mach_time_dict.items() if v == min(filtered_dict.values())][0]
-        min_conf = min_mach[0]
-        mach_test_dict[min_mach].append(tst)
-        mach_time_dict[min_mach] += tmp_map[min_conf][0]
-        if cur_fr > max_fr:
-            max_fr = cur_fr
-        if cur_fr < min_fr:
-            min_fr = cur_fr
-    time_para = max(mach_time_dict.values())
-    time_seq = sum(mach_time_dict.values())
-    price, score = cal_gene_score(a,
-                                  mach_time_dict)
-    return score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict
-
-
-def price_priority_algorithm(a,
-                             machs: list,
-                             fr: float,
-                             tests,
-                             confs_candidates,
-                             min_conf_candidate_runtime_idx_tup_list,
-                             setup_tm_dict: dict):
-    mach_arr, mach_test_dict, mach_time_dict, multi_dict, conf_machs_map = analysis_machs(machs,
-                                                                                          setup_tm_dict)
-    confs = set(machs)
-    min_fr = 100
-    max_fr = 0
-    for tup in min_conf_candidate_runtime_idx_tup_list:
-        idx = tup[1]
-        key = tests[idx]
-        val = confs_candidates[idx]
-        tst = f'{key[0]}#{key[1]}'
-        mini = float('inf')
-        mini_conf = -1
-        mini_time = 0
-        for item in val:
-            thrott_conf = conf_idx_map[item[thrott_conf_idx]]
-            cur_fr = item[failure_rate_idx]
-            if thrott_conf not in confs or cur_fr > fr:
-                continue
-            if item[price_idx] < mini:
-                mini = item[price_idx]
-                mini_conf = thrott_conf
-                mini_time = item[avg_time_idx]
-                if cur_fr > max_fr:
-                    max_fr = cur_fr
-                if cur_fr < min_fr:
-                    min_fr = cur_fr
-        if mini_conf == -1:
-            tmp_list = sorted(val, key=lambda x: x[failure_rate_idx])
-            i = 0
-            while True:
-                if conf_idx_map[tmp_list[i][thrott_conf_idx]] in confs:
-                    break
-                else:
-                    i += 1
-            item = tmp_list[i]
-            mini_conf = conf_idx_map[item[thrott_conf_idx]]
-            mini_time = item[avg_time_idx]
-            cur_fr = item[failure_rate_idx]
-            if cur_fr > max_fr:
-                max_fr = cur_fr
-            if cur_fr < min_fr:
-                min_fr = cur_fr
-        ky = (mini_conf, -1)
-        if ky in mach_test_dict.keys():
-            mach_test_dict[ky].append(tst)
-            mach_time_dict[ky] += mini_time
-        else:
-            multi_dict[mini_conf].append([tst, mini_time])
-    for key, val in multi_dict.items():
-        val = sorted(val, key=lambda x: x[1], reverse=True)
-        for tup in val:
-            tst = tup[0]
-            tm = tup[1]
-            min_para_time = float('inf')
-            min_ver = -1
-            for ver in conf_machs_map[key]:
-                ky = (key, ver)
-                if mach_time_dict[ky] + tm < min_para_time:
-                    min_para_time = mach_time_dict[ky] + tm
-                    min_ver = ver
-            min_mac = (key, min_ver)
-            mach_time_dict[min_mac] += tm
-            mach_test_dict[min_mac].append(tst)
-    time_para = max(mach_time_dict.values())
-    time_seq = sum(mach_time_dict.values())
-    price, score = cal_gene_score(a,
-                                  mach_time_dict)
-    return score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict
+    fitness = a * beta * sum(mach_time_dict.values()) + b * price
+    return fitness, price
 
 
 def get_alloc(a,
@@ -261,22 +125,48 @@ def get_alloc(a,
               confs_candidates,
               min_conf_candidate_runtime_idx_tup_list,
               setup_tm_dict: dict):
-    if random.random() <= a:
-        return scheduled_algorithm(a,
-                                   machs,
-                                   fr,
-                                   tests,
-                                   confs_candidates,
-                                   min_conf_candidate_runtime_idx_tup_list,
-                                   setup_tm_dict)
-    else:
-        return price_priority_algorithm(a,
-                                        machs,
-                                        fr,
-                                        tests,
-                                        confs_candidates,
-                                        min_conf_candidate_runtime_idx_tup_list,
-                                        setup_tm_dict)
+    mach_arr, mach_test_dict, mach_time_dict = analysis_machs(machs,
+                                                              setup_tm_dict)
+    min_fr = 100
+    max_fr = 0
+    sorted_tup_list = sorted(min_conf_candidate_runtime_idx_tup_list, key=lambda x: x[0], reverse=True)
+    for tup in sorted_tup_list:
+        idx = tup[1]
+        key = tests[idx]
+        val = confs_candidates[idx]
+        conf_inner_idx_map = {conf_idx_map[cand[thrott_conf_idx]]: i for i, cand in enumerate(val)}
+        conv_calc_map = {mach: conf_inner_idx_map[mach[0]] for mach in mach_arr}
+        tst = f'{key[0]}#{key[1]}'
+        min_fitness = float('inf')
+        min_mach = None
+        cur_fr = 0
+        for mach in mach_arr:
+            inner_idx = conv_calc_map[mach]
+            cur_fr = val[inner_idx][failure_rate_idx]
+            cur_avg_tm = val[inner_idx][avg_time_idx]
+            if cur_fr > fr:
+                continue
+            mach_time_dict[mach] += cur_avg_tm
+            fitness, _ = get_fitness(a,
+                                     mach_time_dict)
+            if fitness < min_fitness:
+                min_fitness = fitness
+                min_mach = mach
+            mach_time_dict[mach] -= cur_avg_tm
+        if min_mach is None:
+            continue
+        min_conf = min_mach[0]
+        mach_test_dict[min_mach].append(tst)
+        mach_time_dict[min_mach] += val[conv_calc_map[min_conf]][avg_time_idx]
+        if cur_fr > max_fr:
+            max_fr = cur_fr
+        if cur_fr < min_fr:
+            min_fr = cur_fr
+    time_para = max(mach_time_dict.values())
+    time_seq = sum(mach_time_dict.values())
+    fitness, price = get_fitness(a,
+                                 mach_time_dict)
+    return fitness, time_seq, time_para, price, min_fr, max_fr, mach_test_dict
 
 
 # ----------------------------------------- Genetic algorithm --------------------------------------------
@@ -528,8 +418,8 @@ def org_info(avg_tm_dict):
 if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
     prog_start = time.time()
-    factor_a = 1
-    group_ky = 'ig'
+    factor_a = 0
+    group_ky = 'non-ig'
     groups_map = {
         'non-ig': ['', 'non_ig', False],
         'ig': ['_ig', 'ig', True]
@@ -552,20 +442,20 @@ if __name__ == '__main__':
                                            'score',
                                            'period']
                                   )
-        baseline_df = pd.DataFrame(None,
-                                   columns=['project',
-                                            'num_machines',
-                                            'conf',
-                                            'time_seq',
-                                            'time_parallel',
-                                            'price',
-                                            'min_failure_rate',
-                                            'max_failure_rate'
-                                            ]
-                                   )
+        # baseline_df = pd.DataFrame(None,
+        #                            columns=['project',
+        #                                     'num_machines',
+        #                                     'conf',
+        #                                     'time_seq',
+        #                                     'time_parallel',
+        #                                     'price',
+        #                                     'min_failure_rate',
+        #                                     'max_failure_rate'
+        #                                     ]
+        #                            )
         ext_dat_df['num_confs'] = ext_dat_df['num_confs'].astype(int)
-        baseline_df_csv = f'{baseline_path}/{groups_map[group_ky][1]}/{proj_name}.csv'
-        whe_reco_baseline = not os.path.exists(baseline_df_csv)
+        # baseline_df_csv = f'{baseline_path}/{groups_map[group_ky][1]}/{proj_name}.csv'
+        # whe_reco_baseline = not os.path.exists(baseline_df_csv)
 
         preproc_proj_dict = preproc(proj_name)
         preproc_mvn_dict = load_setup_time_map(proj_name,
@@ -573,7 +463,7 @@ if __name__ == '__main__':
         test_set, candidate_set, tup_list = org_info(preproc_proj_dict)
         tot_test_num += len(preproc_proj_dict.keys())
         for mach_num in num_of_machine:
-            is_done = False
+            # is_done = False
             for pct in pct_of_failure_rate:
                 t1 = time.time()
                 ga = GA(a=factor_a,
@@ -586,28 +476,28 @@ if __name__ == '__main__':
                         gene_length=mach_num,
                         max_iter=100)
                 ga.init_pop()
-                if whe_reco_baseline and not is_done:
-                    record_baseline(proj_name,
-                                    baseline_df,
-                                    ga)
-                    is_done = True
-                # ga.run()
+                # if whe_reco_baseline and not is_done:
+                #     record_baseline(proj_name,
+                #                     baseline_df,
+                #                     ga)
+                #     is_done = True
+                ga.run()
                 t2 = time.time()
                 tt = t2 - t1
                 category = f'{mach_num}-{pct}'
                 print(f'--------------------   {proj_name}-{category}   --------------------')
-                # ga.print_best(tt)
-                # ga.record_best(sub,
-                #                proj_name,
-                #                category,
-                #                tt)
-        # resu_sub_path = f'{resu_path}/{sub}'
-        # if not os.path.exists(resu_sub_path):
-        #     os.mkdir(resu_sub_path)
-        # ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
-        if whe_reco_baseline:
-            if not os.path.exists(f'{baseline_path}/{groups_map[group_ky][1]}'):
-                os.mkdir(f'{baseline_path}/{groups_map[group_ky][1]}')
-            baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
-    print(f'[Total time] {time.time()-prog_start} s')
+                ga.print_best(tt)
+                ga.record_best(sub,
+                               proj_name,
+                               category,
+                               tt)
+        resu_sub_path = f'{resu_path}/{sub}'
+        if not os.path.exists(resu_sub_path):
+            os.mkdir(resu_sub_path)
+        ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
+        # if whe_reco_baseline:
+        #     if not os.path.exists(f'{baseline_path}/{groups_map[group_ky][1]}'):
+        #         os.mkdir(f'{baseline_path}/{groups_map[group_ky][1]}')
+        #     baseline_df.to_csv(baseline_df_csv, sep=',', header=True, index=False)
+    print(f'[Total time] {time.time() - prog_start} s')
     print(f'[Total test number] {tot_test_num}')
