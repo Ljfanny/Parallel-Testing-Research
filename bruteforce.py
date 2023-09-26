@@ -14,14 +14,14 @@ proj_names = [
     'commons-exec_dot',
     'db-scheduler_dot',
     'delight-nashorn-sandbox_dot'
-    
+
     'elastic-job-lite_dot',
     'elastic-job-lite_elastic-job-lite-core',
     'esper_examples.rfidassetzone',
     'fastjson_dot',
     'fluent-logger-java_dot',
     'handlebars.java_dot'
-    
+
     'hbase_dot',
     'http-request_dot',
     'httpcore_dot',
@@ -29,7 +29,7 @@ proj_names = [
     'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
     'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
     'logback_dot'
-    
+
     'luwak_luwak',
     'ninja_dot',
     'noxy_noxy-discovery-zookeeper',
@@ -37,7 +37,7 @@ proj_names = [
     'orbit_dot',
     'retrofit_retrofit-adapters.rxjava',
     'retrofit_retrofit'
-    
+
     'rxjava2-extras_dot',
     'spring-boot_dot',
     'timely_server',
@@ -69,7 +69,7 @@ if __name__ == '__main__':
                                      'price',
                                      'min_failure_rate',
                                      'max_failure_rate',
-                                     'score',
+                                     'fitness',
                                      'period']) for _ in range(2)]
         avg_tm_dict = preproc(proj_name)
         setup_tm_dict = load_setup_time_map(proj_name,
@@ -90,13 +90,13 @@ if __name__ == '__main__':
                         tup = mapping(arr)
                         if tup in temp_rec_dict.keys():
                             continue
-                        score, time_seq, time_para, price, min_fr, max_fr, mach_test_dict = get_alloc(modu[1],
-                                                                                                      arr,
-                                                                                                      pct,
-                                                                                                      test_set,
-                                                                                                      candidate_set,
-                                                                                                      tup_list,
-                                                                                                      setup_tm_dict)
+                        fitness, time_seq, time_para, price, min_fr, max_fr, mach_test_dict = get_alloc(modu[1],
+                                                                                                        arr,
+                                                                                                        pct,
+                                                                                                        test_set,
+                                                                                                        candidate_set,
+                                                                                                        tup_list,
+                                                                                                        setup_tm_dict)
                         ind = Individual(copy.deepcopy(arr),
                                          time_seq,
                                          time_para,
@@ -104,11 +104,9 @@ if __name__ == '__main__':
                                          min_fr,
                                          max_fr,
                                          mach_test_dict,
-                                         score)
-                        if ind.max_fr > pct:
-                            ind.score = float('inf')
-                        if ind.score <= mini:
-                            mini = ind.score
+                                         fitness)
+                        if ind.fitness < mini:
+                            mini = ind.fitness
                             mini_tup = tup
                         temp_rec_dict[tup] = ind
                     t2 = time.time()
