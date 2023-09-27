@@ -413,39 +413,35 @@ def consider_per_proj(subdir,
 
 
 def get_avg_min_max_failrate():
-    fr_tables = os.listdir(f'integ_dat/ga')
-    fr_dfs = [pd.read_csv(f'integ_dat/ga/{fr_tb}') for fr_tb in fr_tables if fr_tb.find('summary') == -1]
-    ga_min_max_frs = []
-    gh_min_max_frs = []
-    smt_min_max_frs = []
-    projs = fr_dfs[0].iloc[:, 0]
     chp_pfx = 'cheapest'
     fst_pfx = 'fastest'
     gh_md = 'github_caliber'
     smt_md = 'smart_baseline'
     fr_col_nm = 'max_failure_rate'
-    for i, proj in enumerate(projs):
-        ga_frs = []
-        gh_frs = []
-        smt_frs = []
-        for df in fr_dfs:
-            item = df.iloc[i, :]
-            ga_frs.append(item[f'{chp_pfx}_{fr_col_nm}'])
-            ga_frs.append(item[f'{fst_pfx}_{fr_col_nm}'])
-            gh_frs.append(item[f'{chp_pfx}_{gh_md}_{fr_col_nm}'])
-            gh_frs.append(item[f'{fst_pfx}_{gh_md}_{fr_col_nm}'])
-            smt_frs.append(item[f'{chp_pfx}_{smt_md}_{fr_col_nm}'])
-            smt_frs.append(item[f'{fst_pfx}_{smt_md}_{fr_col_nm}'])
-        ga_min_max_frs.append(np.nanmin(np.array(ga_frs)))
-        gh_min_max_frs.append(np.nanmin(np.array(gh_frs)))
-        smt_min_max_frs.append(np.nanmin(np.array(smt_frs)))
-    print(f'GA avg. max failure rate: {np.nanmean(np.array(ga_min_max_frs))}')
-    print(f'GitHub caliber avg. max failure rate: {np.nanmean(np.array(gh_min_max_frs))}')
-    print(f'Smart baseline avg. max failure rate: {np.nanmean(np.array(smt_min_max_frs))}')
+    fr0_df = pd.read_csv('integ_dat/ga/failrate_0.csv').dropna(subset=[f'{chp_pfx}_category'])
+    gh_frs = []
+    smt_frs = []
+    for index, low in fr0_df.iterrows():
+        chp_gh, chp_smt = get_contrast('non_ig',
+                              low['project'],
+                              sum(literal_eval(low[f'{chp_pfx}_confs']).values()))
+        fst_gh, fst_smt = get_contrast('non_ig',
+                                       low['project'],
+                                       sum(literal_eval(low[f'{fst_pfx}_confs']).values()))
+        if np.isnan(low[f'{chp_pfx}_{gh_md}_{fr_col_nm}']):
+            gh_frs.append(chp_gh[f'{fr_col_nm}'])
+        if np.isnan(low[f'{fst_pfx}_{gh_md}_{fr_col_nm}']):
+            gh_frs.append(fst_gh[f'{fr_col_nm}'])
+        if np.isnan(low[f'{chp_pfx}_{smt_md}_{fr_col_nm}']):
+            smt_frs.append(chp_smt[f'{fr_col_nm}'])
+        if np.isnan(low[f'{fst_pfx}_{smt_md}_{fr_col_nm}']):
+            smt_frs.append(fst_smt[f'{fr_col_nm}'])
+    print(f'GitHub caliber avg. max failure rate: {np.mean(np.array(gh_frs))}')
+    print(f'Smart baseline avg. max failure rate: {np.mean(np.array(smt_frs))}')
 
 
 if __name__ == '__main__':
-    is_ab = False
+    is_ab = True
     aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
            0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
     modus = [f'ga_a{a}' for a in aes]
@@ -454,10 +450,10 @@ if __name__ == '__main__':
         idx_proj_num_map = {i: 0 for i in range(6)}
         idx_non_nan_baseline_num_map = {i: np.zeros(4) for i in range(6)}
     # Note: a0 = cheap; a1 = fast
-    consider_fr('ext_dat/ga_a0',
-                'ext_dat/ga_a1',
-                'non_ig',
-                'ga')
+    # consider_fr('ext_dat/ga_a0',
+    #             'ext_dat/ga_a1',
+    #             'non_ig',
+    #             'ga')
     # consider_fr('ext_dat/ga_a0',
     #             'ext_dat/ga_a1',
     #             'non_ig',
@@ -487,4 +483,4 @@ if __name__ == '__main__':
     # consider_per_proj('ga_ig',
     #                   'fastest',
     #                   'summary_per_project_lower_runtime_goal.csv')
-    # get_avg_min_max_failrate()
+    get_avg_min_max_failrate()

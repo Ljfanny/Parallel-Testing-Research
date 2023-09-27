@@ -1,6 +1,5 @@
 {'01noThrottling.sh': ['org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testServerHeartbeat',
-                       'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testServerClose',
-                       'org.apache.dubbo.remoting.transport.netty.NettyStringTest#testHandler'],
+                       'org.apache.dubbo.remoting.transport.netty.NettyClientTest#testServerClose'],
  '24CPU1Mem4GB.sh': ['org.apache.dubbo.remoting.transport.netty.ClientsTest#testGetTransportEmpty'],
  '26CPU2Mem4GB.sh': ['org.apache.dubbo.remoting.transport.netty.ClientReconnectTest#testReconnectWarnLog'],
  '27CPU2Mem8GB.sh': ['org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testHeartbeat',
@@ -11,4 +10,5 @@
  '29CPU4Mem8GB.sh': ['org.apache.dubbo.remoting.transport.netty.ThreadNameTest#testThreadName',
                      'org.apache.dubbo.remoting.transport.netty.ClientReconnectTest#testReconnect',
                      'org.apache.dubbo.remoting.transport.netty.NettyClientToServerTest#testFuture',
+                     'org.apache.dubbo.remoting.transport.netty.NettyStringTest#testHandler',
                      'org.apache.dubbo.remoting.transport.netty.ClientsTest#testGetTransport3']}

@@ -105,7 +105,7 @@ if __name__ == '__main__':
                                          max_fr,
                                          mach_test_dict,
                                          fitness)
-                        if ind.fitness < mini:
+                        if ind.fitness <= mini:
                             mini = ind.fitness
                             mini_tup = tup
                         temp_rec_dict[tup] = ind

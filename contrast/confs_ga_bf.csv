@@ -48,7 +48,6 @@ incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo_0.4,1-0.4,{'19CPU010Mem1GB.sh': 1},1-0
 logback_dot_0.4,2-0.4,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2-0.4,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",4-0.4,"{'01noThrottling.sh': 2, '29CPU4Mem8GB.sh': 1, '22CPU05Mem2GB.sh': 1}",4-0.4,"{'01noThrottling.sh': 2, '29CPU4Mem8GB.sh': 1, '22CPU05Mem2GB.sh': 1}"
 luwak_luwak_0.4,1-0.4,{'22CPU05Mem2GB.sh': 1},1-0.4,{'22CPU05Mem2GB.sh': 1},6-0.4,"{'29CPU4Mem8GB.sh': 5, '01noThrottling.sh': 1}",2-0.4,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}"
 noxy_noxy-discovery-zookeeper_0.4,1-0.4,{'26CPU2Mem4GB.sh': 1},1-0.4,{'26CPU2Mem4GB.sh': 1},1-0.4,{'01noThrottling.sh': 1},1-0.4,{'01noThrottling.sh': 1}
-okhttp_dot_0.4,2-0.4,"{'23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1}",2-0.4,"{'23CPU05Mem4GB.sh': 1, '24CPU1Mem4GB.sh': 1}",6-0.4,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 4, '23CPU05Mem4GB.sh': 1}",4-0.4,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 2, '23CPU05Mem4GB.sh': 1}"
 orbit_dot_0.4,1-0.4,{'19CPU010Mem1GB.sh': 1},1-0.4,{'19CPU010Mem1GB.sh': 1},2-0.4,{'29CPU4Mem8GB.sh': 2},2-0.4,{'29CPU4Mem8GB.sh': 2}
 retrofit_retrofit-adapters.rxjava_0.4,1-0.4,{'22CPU05Mem2GB.sh': 1},1-0.4,{'22CPU05Mem2GB.sh': 1},4-0.4,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 1}",4-0.4,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 1}"
 retrofit_retrofit_0.4,1-0.4,{'26CPU2Mem4GB.sh': 1},1-0.4,{'26CPU2Mem4GB.sh': 1},6-0.4,{'01noThrottling.sh': 6},6-0.4,{'01noThrottling.sh': 6}
@@ -121,24 +120,17 @@ wro4j_wro4j-extensions_0.8,1-0.8,{'26CPU2Mem4GB.sh': 1},1-0.8,{'26CPU2Mem4GB.sh'
 yawp_yawp-testing.yawp-testing-appengine_0.8,1-0.8,{'22CPU05Mem2GB.sh': 1},1-0.8,{'22CPU05Mem2GB.sh': 1},1-0.8,{'29CPU4Mem8GB.sh': 1},1-0.8,{'29CPU4Mem8GB.sh': 1}
 zxing_dot_0.8,1-0.8,{'24CPU1Mem4GB.sh': 1},1-0.8,{'24CPU1Mem4GB.sh': 1},2-0.8,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",2-0.8,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}"
 carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension_0,1-0,{'22CPU05Mem2GB.sh': 1},1-0,{'22CPU05Mem2GB.sh': 1},1-0,{'29CPU4Mem8GB.sh': 1},1-0,{'29CPU4Mem8GB.sh': 1}
-commons-exec_dot_0,2-0,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2-0,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",6-0,{'01noThrottling.sh': 6},6-0,{'01noThrottling.sh': 6}
-delight-nashorn-sandbox_dot_0,2-0,"{'27CPU2Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2-0,"{'27CPU2Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1}",4-0,"{'29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 1, '26CPU2Mem4GB.sh': 1}",4-0,"{'29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 1, '26CPU2Mem4GB.sh': 1}"
 elastic-job-lite_dot_0,1-0,{'22CPU05Mem2GB.sh': 1},1-0,{'22CPU05Mem2GB.sh': 1},6-0,{'01noThrottling.sh': 6},6-0,{'01noThrottling.sh': 6}
 elastic-job-lite_elastic-job-lite-core_0,1-0,{'22CPU05Mem2GB.sh': 1},1-0,{'22CPU05Mem2GB.sh': 1},4-0,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}",4-0,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}"
-esper_examples.rfidassetzone_0,1-0,{'21CPU025Mem2GB.sh': 1},1-0,{'21CPU025Mem2GB.sh': 1},2-0,"{'21CPU025Mem2GB.sh': 1, '01noThrottling.sh': 1}",2-0,"{'21CPU025Mem2GB.sh': 1, '01noThrottling.sh': 1}"
 fastjson_dot_0,2-0,"{'22CPU05Mem2GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2-0,"{'22CPU05Mem2GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2-0,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",4-0,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 3}"
 fluent-logger-java_dot_0,2-0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",2-0,"{'19CPU010Mem1GB.sh': 1, '22CPU05Mem2GB.sh': 1}",6-0,"{'26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 2, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",6-0,"{'26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 2}"
 http-request_dot_0,1-0,{'26CPU2Mem4GB.sh': 1},1-0,{'26CPU2Mem4GB.sh': 1},6-0,{'29CPU4Mem8GB.sh': 6},6-0,{'29CPU4Mem8GB.sh': 6}
 hutool_hutool-cron_0,1-0,{'26CPU2Mem4GB.sh': 1},1-0,{'26CPU2Mem4GB.sh': 1},2-0,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",2-0,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}"
 incubator-dubbo_dubbo-remoting.dubbo-remoting-netty_0,1-0,{'27CPU2Mem8GB.sh': 1},1-0,{'27CPU2Mem8GB.sh': 1},2-0,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 1}",2-0,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 1}"
-incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo_0,1-0,{'21CPU025Mem2GB.sh': 1},1-0,{'21CPU025Mem2GB.sh': 1},4-0,"{'01noThrottling.sh': 3, '26CPU2Mem4GB.sh': 1}",4-0,"{'01noThrottling.sh': 3, '26CPU2Mem4GB.sh': 1}"
 luwak_luwak_0,1-0,{'24CPU1Mem4GB.sh': 1},1-0,{'24CPU1Mem4GB.sh': 1},2-0,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",2-0,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}"
 noxy_noxy-discovery-zookeeper_0,1-0,{'26CPU2Mem4GB.sh': 1},1-0,{'26CPU2Mem4GB.sh': 1},1-0,{'01noThrottling.sh': 1},1-0,{'01noThrottling.sh': 1}
 retrofit_retrofit-adapters.rxjava_0,1-0,{'22CPU05Mem2GB.sh': 1},1-0,{'22CPU05Mem2GB.sh': 1},6-0,"{'29CPU4Mem8GB.sh': 5, '01noThrottling.sh': 1}",4-0,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 1}"
-retrofit_retrofit_0,1-0,{'26CPU2Mem4GB.sh': 1},1-0,{'26CPU2Mem4GB.sh': 1},6-0,{'01noThrottling.sh': 6},6-0,{'01noThrottling.sh': 6}
-rxjava2-extras_dot_0,2-0,"{'28CPU2Mem16GB.sh': 1, '22CPU05Mem2GB.sh': 1}",2-0,"{'28CPU2Mem16GB.sh': 1, '22CPU05Mem2GB.sh': 1}",4-0,"{'28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 3}",4-0,"{'28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 3}"
 spring-boot_dot_0,2-0,"{'22CPU05Mem2GB.sh': 1, '26CPU2Mem4GB.sh': 1}",2-0,"{'22CPU05Mem2GB.sh': 1, '26CPU2Mem4GB.sh': 1}",6-0,"{'29CPU4Mem8GB.sh': 5, '26CPU2Mem4GB.sh': 1}",6-0,"{'29CPU4Mem8GB.sh': 5, '26CPU2Mem4GB.sh': 1}"
-wro4j_wro4j-extensions_0,1-0,{'26CPU2Mem4GB.sh': 1},1-0,{'26CPU2Mem4GB.sh': 1},4-0,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 1}",4-0,"{'29CPU4Mem8GB.sh': 3, '01noThrottling.sh': 1}"
 activiti_dot_1,1-1,{'22CPU05Mem2GB.sh': 1},1-1,{'22CPU05Mem2GB.sh': 1},6-1,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 5}",6-1,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 5}"
 assertj-core_dot_1,1-1,{'26CPU2Mem4GB.sh': 1},1-1,{'26CPU2Mem4GB.sh': 1},6-1,"{'29CPU4Mem8GB.sh': 5, '01noThrottling.sh': 1}",6-1,"{'29CPU4Mem8GB.sh': 5, '01noThrottling.sh': 1}"
 carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension_1,1-1,{'19CPU010Mem1GB.sh': 1},1-1,{'19CPU010Mem1GB.sh': 1},1-1,{'29CPU4Mem8GB.sh': 1},1-1,{'29CPU4Mem8GB.sh': 1}

@@ -6,7 +6,8 @@
                       'timely.api.response.timeseries.SuggestResponseTest#testSuggestResponse',
                       'timely.store.MetricAgeOffFilterTest#testAgeoffMixed',
                       'timely.api.model.MetricAdapterTest#testParse',
-                      'timely.sample.DownsampleTest#testCombineMissingReport'],
+                      'timely.sample.DownsampleTest#testCombineMissingReport',
+                      'timely.store.cache.TestWrappedGorillaCompressor#testHDFSWrite'],
  '24CPU1Mem4GB.sh': ['timely.store.iterators.TimeSeriesGroupingIteratorTest#testAdditionalTimeSeries',
                      'timely.netty.websocket.WebSocketRequestDecoderTest#testAggregrators',
                      'timely.sample.iterators.AggregationIteratorTest#simpleAggregatedSample',
@@ -140,5 +141,4 @@
                      'timely.api.response.timeseries.QueryResponseTest#testEmptyResponse',
                      'timely.api.model.MetaTest#testToKeys',
                      'timely.store.TagMatchingTest#testRegex3',
-                     'timely.store.TagMatchingTest#testRegex1',
-                     'timely.store.cache.TestWrappedGorillaCompressor#testHDFSWrite']}
+                     'timely.store.TagMatchingTest#testRegex1']}

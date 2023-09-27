@@ -44,10 +44,8 @@ def comp_ga_bf():
                                    'project_id',
                                    'period_ga_cheap',
                                    'period_bf_cheap',
-                                   'period_ratio_cheap',
                                    'period_ga_fast',
-                                   'period_bf_fast',
-                                   'period_ratio_fast'
+                                   'period_bf_fast'
                                ])
 
     def cmp(d1, d2):
@@ -123,23 +121,20 @@ def comp_ga_bf():
                     proj_id_map[proj_name],
                     ga_tot_period,
                     bf_tot_period,
-                    ga_tot_period / bf_tot_period,
-                    0,
                     0,
                     0
                 ]
             else:
                 comp_opt_df.loc[i, 'period_ga_fast'] = ga_tot_period
                 comp_opt_df.loc[i, 'period_bf_fast'] = bf_tot_period
-                comp_opt_df.loc[i, 'period_ratio_fast'] = ga_tot_period / bf_tot_period
     reco_info(0,
               True)
     reco_info(1,
               False)
-    # comp_dfs[0].to_csv(f'{comp_path}/ga_bf_a0.csv', sep=',', header=True, index=False)
-    # comp_dfs[1].to_csv(f'{comp_path}/ga_bf_a1.csv', sep=',', header=True, index=False)
-    # summary_dfs[0].to_csv(f'{comp_path}/ga_bf_a0_summary.csv', sep=',', header=True, index=False)
-    # summary_dfs[1].to_csv(f'{comp_path}/ga_bf_a1_summary.csv', sep=',', header=True, index=False)
+    comp_dfs[0].to_csv(f'{comp_path}/ga_bf_a0.csv', sep=',', header=True, index=False)
+    comp_dfs[1].to_csv(f'{comp_path}/ga_bf_a1.csv', sep=',', header=True, index=False)
+    summary_dfs[0].to_csv(f'{comp_path}/ga_bf_a0_summary.csv', sep=',', header=True, index=False)
+    summary_dfs[1].to_csv(f'{comp_path}/ga_bf_a1_summary.csv', sep=',', header=True, index=False)
     comp_opt_df.to_csv(f'{comp_path}/ga_bf_period_comp_per_proj.csv', sep=',', header=True, index=False,
                        float_format='%.2f')
 
@@ -189,6 +184,6 @@ def comp_confs(a: str, b: str):
 
 
 if __name__ == '__main__':
-    # comp_ga_bf()
-    comp_confs('non_ig', 'ig')
-    comp_confs('ga', 'bf')
+    comp_ga_bf()
+    # comp_confs('non_ig', 'ig')
+    # comp_confs('ga', 'bf')
