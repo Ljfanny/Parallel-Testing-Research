@@ -139,7 +139,7 @@ def get_alloc(a,
         tst = f'{key[0]}#{key[1]}'
         min_fitness = float('inf')
         min_mach = None
-        cur_fr = 0
+        min_mach_fr = 0
         for mach in mach_arr:
             inner_idx = conv_calc_map[mach]
             cur_fr = val[inner_idx][failure_rate_idx]
@@ -152,15 +152,17 @@ def get_alloc(a,
             if fitness < min_fitness:
                 min_fitness = fitness
                 min_mach = mach
+                min_mach_fr = cur_fr
             mach_time_dict[mach] -= cur_avg_tm
         if min_mach is None:
             return float('inf'), np.nan, np.nan, np.nan, np.nan, np.nan, None
         mach_test_dict[min_mach].append(tst)
         mach_time_dict[min_mach] += val[conv_calc_map[min_mach]][avg_time_idx]
-        if cur_fr > max_fr:
-            max_fr = cur_fr
-        if cur_fr < min_fr:
-            min_fr = cur_fr
+        if min_mach_fr > max_fr:
+            max_fr = min_mach_fr
+        if min_mach_fr < min_fr:
+            min_fr = min_mach_fr
+    print(machs, max_fr)
     time_para = max(mach_time_dict.values())
     time_seq = sum(mach_time_dict.values())
     fitness, price = get_fitness(a,
@@ -415,8 +417,8 @@ def org_info(avg_tm_dict):
 if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
     prog_start = time.time()
-    factor_a = 1
-    group_ky = 'ig'
+    factor_a = 0
+    group_ky = 'non-ig'
     groups_map = {
         'non-ig': ['', 'non_ig', False],
         'ig': ['_ig', 'ig', True]

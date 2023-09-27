@@ -167,8 +167,8 @@ def comp_confs(a: str, b: str):
         if csv.find('summary') != -1:
             continue
         fr = csv.replace('.csv', '').split('_')[1]
-        a_df = pd.read_csv(f'{a_path}/{csv}').dropna(subset=['cheapest_category'])
-        b_df = pd.read_csv(f'{b_path}/{csv}').dropna(subset=['cheapest_category'])
+        a_df = pd.read_csv(f'{a_path}/{csv}').dropna()
+        b_df = pd.read_csv(f'{b_path}/{csv}').dropna()
         num = len(a_df)
         for j in range(num):
             a_itm = a_df.iloc[j, :]

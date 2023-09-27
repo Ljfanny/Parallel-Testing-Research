@@ -445,7 +445,7 @@ def get_avg_min_max_failrate():
 
 
 if __name__ == '__main__':
-    is_ab = True
+    is_ab = False
     aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
            0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
     modus = [f'ga_a{a}' for a in aes]
@@ -454,10 +454,10 @@ if __name__ == '__main__':
         idx_proj_num_map = {i: 0 for i in range(6)}
         idx_non_nan_baseline_num_map = {i: np.zeros(4) for i in range(6)}
     # Note: a0 = cheap; a1 = fast
-    # consider_fr('ext_dat/ga_a0',
-    #             'ext_dat/ga_a1',
-    #             'non_ig',
-    #             'ga')
+    consider_fr('ext_dat/ga_a0',
+                'ext_dat/ga_a1',
+                'non_ig',
+                'ga')
     # consider_fr('ext_dat/ga_a0',
     #             'ext_dat/ga_a1',
     #             'non_ig',
@@ -487,4 +487,4 @@ if __name__ == '__main__':
     # consider_per_proj('ga_ig',
     #                   'fastest',
     #                   'summary_per_project_lower_runtime_goal.csv')
-    get_avg_min_max_failrate()
+    # get_avg_min_max_failrate()
