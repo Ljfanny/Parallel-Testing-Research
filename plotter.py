@@ -249,8 +249,8 @@ def draw_tread_graph():
                      chp_or_fst,
                      labels):
         title_map = {
-            0: 'For Cheapest',
-            1: 'For Fastest'
+            0: 'For Price',
+            1: 'For Runtime'
         }
         ax.plot(x, y1, 'o-', c='#84a98c', label=labels[0])
         ax.plot(x, y2, 'o-', c='#354f52', label=labels[1])
@@ -262,17 +262,16 @@ def draw_tread_graph():
         ax.spines['top'].set_color('none')
         ax.spines['right'].set_color('none')
         ax.yaxis.grid(True, linestyle='--', zorder=0)
-
     ig_path = 'integ_dat/ga'
     csvs = os.listdir(ig_path)
     dfs = [pd.read_csv(f'{ig_path}/{csv}')
-           for csv in csvs if csv.find('summary') == -1]
-    programs = dfs[0].iloc[:, 0]
-    norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4), sharex=True, sharey=True)
+           for csv in csvs
+           if csv.find('summary') == -1]
+    norm_fig, norm_axes = plt.subplots(2, 2, figsize=(10, 4), sharex=True, sharey=True)
     avg_chp = []
     avg_fst = []
-
-    for i, prog in enumerate(programs):
+    programs = dfs[4].dropna(subset=['cheapest_category']).iloc[:, 0]
+    for i in programs.index:
         fig, axes = plt.subplots(1, 2, figsize=(10, 4))
         chp_tup = []
         fst_tup = []
@@ -291,10 +290,10 @@ def draw_tread_graph():
             ))
         chp_tup = np.array(sorted(chp_tup, key=lambda x: x[2]))
         fst_tup = np.array(sorted(fst_tup, key=lambda x: x[2]))
-        chp_tup[:, 0] = chp_tup[:, 0] / np.nanmax(chp_tup[:, 0])
-        chp_tup[:, 1] = chp_tup[:, 1] / np.nanmax(chp_tup[:, 1])
-        fst_tup[:, 0] = fst_tup[:, 0] / np.nanmax(fst_tup[:, 0])
-        fst_tup[:, 1] = fst_tup[:, 1] / np.nanmax(fst_tup[:, 1])
+        chp_tup[:, 0] = chp_tup[:, 0] / dfs[4].iloc[i]['cheapest_runtime']
+        chp_tup[:, 1] = chp_tup[:, 1] / dfs[4].iloc[i]['cheapest_price']
+        fst_tup[:, 0] = fst_tup[:, 0] / dfs[4].iloc[i]['fastest_runtime']
+        fst_tup[:, 1] = fst_tup[:, 1] / dfs[4].iloc[i]['fastest_price']
         avg_chp.append(chp_tup)
         avg_fst.append(fst_tup)
         draw_subplot(axes[0],
@@ -309,8 +308,8 @@ def draw_tread_graph():
                      fst_tup[:, 1],
                      1,
                      ['Runtime', 'Price'])
-        fig.suptitle(prog)
-        plt.savefig(f'integ_fig/ga_trend_graph/{prog}.pdf')
+        fig.suptitle(programs[i])
+        plt.savefig(f'integ_fig/ga_trend_graph/{programs[i]}.pdf')
         plt.close()
     avg_chp = np.nanmean(np.array(avg_chp), axis=0)
     avg_fst = np.nanmean(np.array(avg_fst), axis=0)
@@ -326,6 +325,7 @@ def draw_tread_graph():
                  avg_fst[:, 1],
                  1,
                  ['Average Runtime Ratio', 'Average Price Ratio'])
+    print(avg_chp, avg_fst)
     norm_fig.suptitle('Average Trend', size=12, weight='bold')
     plt.savefig(f'integ_fig/ga_trend_graph/unification.pdf')
     plt.close()
@@ -517,6 +517,7 @@ def draw_integ_as_graph(is_bar=False):
     pnl.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Baseline', color='#b86f52', linewidth=2.5)
     pnl.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#f78764', linewidth=2.5)
     pnl.plot(a, [1 for _ in range(len(a))], '-.', color='#634133', linewidth=2)
+    print(rts[:, 0] * rts[:, 1], rts[:, 2] * rts[:, 3])
     pnl.set_xlabel(r'The Parameter a')
     pnl.set_ylabel(r'Performance Increase')
     pnl.set_xticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
@@ -540,6 +541,7 @@ def draw_integ_as_graph(is_bar=False):
             -rts[:, 3],
             'Avg. vs Smart Baseline')
     set_parameters(pnl1, pnl2)
+    print(rts)
     fig.suptitle('Average Rate', size=16, weight='bold')
     plt.savefig(f'integ_fig/ga_as_bi_bar/avg_rate_graph.pdf')
     plt.close()
@@ -601,6 +603,7 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
     gh_pri_runtime_rts, gh_pri_price_rts, smt_pri_runtime_rts, smt_pri_price_rts = extract_dat(
         'summary_per_project_lower_price_goal.csv')
     x = list(pd.read_csv('proj_info.csv')['id'])
+    x = x[:len(x)-1]
     x.append('Avg.')
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), sharex=True)
     sub_double_bar(ax1,
@@ -640,16 +643,16 @@ if __name__ == '__main__':
     # draw_integ_scatter2d('ga', 0)
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
-    # draw_integ_as_graph()
-    draw_integ_proj_avg_rate_graph('ga',
-                                   'Average Rate for GA with Setup Cost',
-                                   [4, 3, 2, 1, 0, -1, -2],
-                                   [4, 3, 2, 1, 0, 1, 2],
-                                   [4, 2, 0, -2, -4, -6, -8, -10],
-                                   [4, 2, 0, 2, 4, 6, 8, 10])
-    draw_integ_proj_avg_rate_graph('ga_ig',
-                                   'Average Rate for GA without Setup Cost',
-                                   [2, 1, 0, -1, -2],
-                                   [2, 1, 0, 1, 2],
-                                   [1, 0, -1, -2, -3, -4, -5, -6],
-                                   [1, 0, 1, 2, 3, 4, 5, 6])
+    draw_integ_as_graph(True)
+    # draw_integ_proj_avg_rate_graph('ga',
+    #                                'Average Rate for GA with Setup Cost',
+    #                                [4, 3, 2, 1, 0, -1, -2],
+    #                                [4, 3, 2, 1, 0, 1, 2],
+    #                                [4, 2, 0, -2, -4, -6, -8, -10],
+    #                                [4, 2, 0, 2, 4, 6, 8, 10])
+    # draw_integ_proj_avg_rate_graph('ga_ig',
+    #                                'Average Rate for GA without Setup Cost',
+    #                                [2, 1, 0, -1, -2],
+    #                                [2, 1, 0, 1, 2],
+    #                                [1, 0, -1, -2, -3, -4, -5, -6],
+    #                                [1, 0, 1, 2, 3, 4, 5, 6])

@@ -22,6 +22,8 @@ def record_df(df,
             return np.nan, np.nan, np.nan
         return ser.loc['time_parallel'], ser.loc['price'], ser.loc['max_failure_rate']
 
+    chp_nonnan_num = 0
+    fst_nonnan_num = 0
     if chp is None:
         df.loc[len(df.index)] = [
             proj_name,
@@ -50,6 +52,8 @@ def record_df(df,
     fst_gh_price_rate = fst_price / fst_gh_price
     fst_smt_runtime_rate = fst_runtime / fst_smt_runtime
     fst_smt_price_rate = fst_price / fst_smt_price
+    if len(literal_eval(chp['confs'])) == 1: chp_nonnan_num += 1
+    if len(literal_eval(fst['confs'])) == 1: fst_nonnan_num += 1
     df.loc[len(df.index)] = [
         proj_name,
         chp['category'],
@@ -108,6 +112,7 @@ def record_df(df,
         summary_arr[idx][9] += fst_smt_runtime_rate
         summary_arr[idx][10] += fst_smt_price_rate
         summary_arr[idx][11] += 0 if fst_smt_runtime_rate >= 1 else 1
+    return chp_nonnan_num, fst_nonnan_num
 
 
 def get_contrast(subdir,
@@ -199,6 +204,8 @@ def consider_fr(chp_dat_dir,
         os.mkdir(output_dir)
     chp_fs = os.listdir(chp_dat_dir)
     fst_fs = os.listdir(fst_dat_dir)
+    a0_sum_nonnan = 0
+    a1_sum_nonnan = 0
     for chp_f, fst_f in zip(chp_fs, fst_fs):
         if chp_f != fst_f:
             print(f'{chp_f} and {fst_f} are not matched!')
@@ -254,15 +261,17 @@ def consider_fr(chp_dat_dir,
             fst_gh, fst_smt = get_contrast(baseline_subdir,
                                            proj_name,
                                            sum(literal_eval(fst['confs']).values()))
-            record_df(dfs[i],
-                      i,
-                      proj_name,
-                      chp,
-                      chp_gh,
-                      chp_smt,
-                      fst,
-                      fst_gh,
-                      fst_smt)
+            a0_nonnan_num, a1_nonnan_num = record_df(dfs[i],
+                                                     i,
+                                                     proj_name,
+                                                     chp,
+                                                     chp_gh,
+                                                     chp_smt,
+                                                     fst,
+                                                     fst_gh,
+                                                     fst_smt)
+            a0_sum_nonnan += a0_nonnan_num
+            a1_sum_nonnan += a1_nonnan_num
     for i, df in enumerate(dfs):
         df.to_csv(f'{output_dir}/{tables[i]}.csv', sep=',', header=True, index=False)
         proj_num = idx_proj_num_map[i]
@@ -287,6 +296,7 @@ def consider_fr(chp_dat_dir,
             summary_arr[i][11]
         ]
     summary_df.to_csv(f'{output_dir}/summary.csv', sep=',', header=True, index=False)
+    return a0_sum_nonnan, a1_sum_nonnan
 
 
 def consider_ab(dat_dir,
@@ -423,8 +433,8 @@ def get_avg_min_max_failrate():
     smt_frs = []
     for index, low in fr0_df.iterrows():
         chp_gh, chp_smt = get_contrast('non_ig',
-                              low['project'],
-                              sum(literal_eval(low[f'{chp_pfx}_confs']).values()))
+                                       low['project'],
+                                       sum(literal_eval(low[f'{chp_pfx}_confs']).values()))
         fst_gh, fst_smt = get_contrast('non_ig',
                                        low['project'],
                                        sum(literal_eval(low[f'{fst_pfx}_confs']).values()))
@@ -458,7 +468,7 @@ def get_same_conf_num():
                 confs = literal_eval(item['confs'])
                 if len(confs) == 1:
                     reco_df.loc[len(reco_df.index)] = [proj,
-                                             category]
+                                                       category]
                     resu[i] += 1
     print(f'GA with setup cost for a=0: {resu[0]}/{tot[0]}')
     print(f'GA with setup cost for a=1: {resu[1]}/{tot[1]}')
@@ -468,7 +478,7 @@ def get_same_conf_num():
 
 
 if __name__ == '__main__':
-    is_ab = True
+    is_ab = False
     aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
            0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
     modus = [f'ga_a{a}' for a in aes]
@@ -477,10 +487,10 @@ if __name__ == '__main__':
         idx_proj_num_map = {i: 0 for i in range(6)}
         idx_non_nan_baseline_num_map = {i: np.zeros(4) for i in range(6)}
     # Note: a0 = cheap; a1 = fast
-    # consider_fr('ext_dat/ga_a0',
-    #             'ext_dat/ga_a1',
-    #             'non_ig',
-    #             'ga')
+    # print(consider_fr('ext_dat/ga_a0',
+    #                   'ext_dat/ga_a1',
+    #                   'non_ig',
+    #                   'ga'))
     # consider_fr('ext_dat/ga_a0',
     #             'ext_dat/ga_a1',
     #             'non_ig',
@@ -490,10 +500,10 @@ if __name__ == '__main__':
     #             'ext_dat/bruteforce_a1',
     #             'non_ig',
     #             'bruteforce')
-    # consider_fr('ext_dat/ga_a0_ig',
-    #             'ext_dat/ga_a1_ig',
-    #             'ig',
-    #             'ga_ig')
+    print(consider_fr('ext_dat/ga_a0_ig',
+                      'ext_dat/ga_a1_ig',
+                      'ig',
+                      'ga_ig'))
     # for md in modus:
     #     consider_ab(f'ext_dat/{md}',
     #                 'non_ig',
