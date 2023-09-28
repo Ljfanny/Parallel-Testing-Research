@@ -440,6 +440,33 @@ def get_avg_min_max_failrate():
     print(f'Smart baseline avg. max failure rate: {np.mean(np.array(smt_frs))}')
 
 
+def get_same_conf_num():
+    subdir = ['ga_a0', 'ga_a1', 'ga_a0_ig', 'ga_a1_ig']
+    resu = [0, 0, 0, 0]
+    tot = [0, 0, 0, 0]
+    reco_df = pd.DataFrame(None,
+                           columns=['project',
+                                    'category'])
+    for i, sub in enumerate(subdir):
+        proj_csvs = os.listdir(f'ext_dat/{sub}')
+        for csv in proj_csvs:
+            proj = csv.replace('.csv', '')
+            df = pd.read_csv(f'ext_dat/{sub}/{csv}').dropna()
+            tot[i] += len(df)
+            for _, item in df.iterrows():
+                category = item['category']
+                confs = literal_eval(item['confs'])
+                if len(confs) == 1:
+                    reco_df.loc[len(reco_df.index)] = [proj,
+                                             category]
+                    resu[i] += 1
+    print(f'GA with setup cost for a=0: {resu[0]}/{tot[0]}')
+    print(f'GA with setup cost for a=1: {resu[1]}/{tot[1]}')
+    print(f'GA without setup cost for a=0: {resu[2]}/{tot[2]}')
+    print(f'GA without setup cost for a=0: {resu[3]}/{tot[3]}')
+    reco_df.to_csv(f'same_confs_info.csv', sep=',', header=True, index=False)
+
+
 if __name__ == '__main__':
     is_ab = True
     aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
@@ -483,4 +510,5 @@ if __name__ == '__main__':
     # consider_per_proj('ga_ig',
     #                   'fastest',
     #                   'summary_per_project_lower_runtime_goal.csv')
-    get_avg_min_max_failrate()
+    # get_avg_min_max_failrate()
+    # get_same_conf_num()

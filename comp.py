@@ -44,8 +44,12 @@ def comp_ga_bf():
                                    'project_id',
                                    'period_ga_cheap',
                                    'period_bf_cheap',
+                                   'avg_runtime_rate_cheap',
+                                   'avg_price_rate_cheap',
                                    'period_ga_fast',
-                                   'period_bf_fast'
+                                   'period_bf_fast',
+                                   'avg_runtime_rate_fast',
+                                   'avg_price_rate_fast'
                                ])
 
     def cmp(d1, d2):
@@ -121,12 +125,18 @@ def comp_ga_bf():
                     proj_id_map[proj_name],
                     ga_tot_period,
                     bf_tot_period,
+                    tot_runtime_rate / tot_num,
+                    tot_price_rate / tot_num,
+                    0,
+                    0,
                     0,
                     0
                 ]
             else:
                 comp_opt_df.loc[i, 'period_ga_fast'] = ga_tot_period
                 comp_opt_df.loc[i, 'period_bf_fast'] = bf_tot_period
+                comp_opt_df.loc[i, 'avg_runtime_rate_fast'] = tot_runtime_rate / tot_num
+                comp_opt_df.loc[i, 'avg_price_rate_fast'] = tot_price_rate / tot_num
     reco_info(0,
               True)
     reco_info(1,

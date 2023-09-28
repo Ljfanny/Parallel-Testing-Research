@@ -215,13 +215,13 @@ def draw_integ_pareto3d(code):
                      github_frontiers[:, 1],
                      github_frontiers[:, 2],
                      'mediumseagreen',
-                     f'Github Caliber Pareto Front: {len(github_frontiers)}')
+                     f'Github Baseline Pareto Front: {len(github_frontiers)}')
         draw_scatter(ax,
                      github_non[:, 0],
                      github_non[:, 1],
                      github_non[:, 2],
                      'cyan',
-                     f'Github Caliber Normal: {len(github_non)}')
+                     f'Github Baseline Normal: {len(github_non)}')
         draw_scatter(ax,
                      smart_frontiers[:, 0],
                      smart_frontiers[:, 1],
@@ -385,12 +385,12 @@ def draw_integ_as_graph(is_bar=False):
                    gh_frontiers[:, 1],
                    alpha=0.5,
                    c='mediumseagreen',
-                   label=f'Github Caliber Pareto Front: {len(np.unique(gh_frontiers))}({len(gh_frontiers)})')
+                   label=f'Github Baseline Pareto Front: {len(np.unique(gh_frontiers))}({len(gh_frontiers)})')
         ax.scatter(gh[:, 0],
                    gh[:, 1],
                    alpha=0.5,
                    c='cyan',
-                   label=f'Github Caliber Normal: {len(np.unique(gh))}({len(gh)})')
+                   label=f'Github Baseline Normal: {len(np.unique(gh))}({len(gh)})')
         ax.scatter(smt_frontiers[:, 0],
                    smt_frontiers[:, 1],
                    alpha=0.5,
@@ -449,7 +449,7 @@ def draw_integ_as_graph(is_bar=False):
                 a,
                 gh_rts[:, 0],
                 -gh_rts[:, 1],
-                'GitHub Caliber Baseline')
+                'GitHub Baseline')
         sub_bar(ax2,
                 a,
                 smt_rts[:, 0],
@@ -514,7 +514,7 @@ def draw_integ_as_graph(is_bar=False):
     rts = np.array(rts)
     # -------------------------------- tradeoff trend graph --------------------------------
     fig, pnl = plt.subplots(figsize=(10, 4))
-    pnl.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Caliber', color='#b86f52', linewidth=2.5)
+    pnl.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Baseline', color='#b86f52', linewidth=2.5)
     pnl.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#f78764', linewidth=2.5)
     pnl.plot(a, [1 for _ in range(len(a))], '-.', color='#634133', linewidth=2)
     pnl.set_xlabel(r'The Parameter a')
@@ -533,7 +533,7 @@ def draw_integ_as_graph(is_bar=False):
             a,
             rts[:, 0],
             -rts[:, 1],
-            'Avg. vs GitHub Caliber')
+            'Avg. vs GitHub Baseline')
     sub_bar(pnl2,
             a,
             rts[:, 2],
@@ -609,7 +609,7 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
                    gh_pri_runtime_rts,
                    -gh_tm_price_rts,
                    -gh_pri_price_rts,
-                   'Avg. vs GitHub Caliber')
+                   'Avg. vs GitHub Baseline')
     sub_double_bar(ax2,
                    [i for i in range(len(x))],
                    smt_tm_runtime_rts,
@@ -627,7 +627,7 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
     ax2.set_yticklabels(y2_labels)
     ax1.set_xticklabels(x)
     ax2.set_xticklabels(x)
-    legend = ax1.legend(edgecolor='none')
+    # legend = ax1.legend(edgecolor='none')
     ax2.set_xlabel(r'Project ID', size=12, weight='bold')
     # legend.set_bbox_to_anchor((0.23, 1.22))
     fig.suptitle(sup_title, size=16, weight='bold')
@@ -640,16 +640,16 @@ if __name__ == '__main__':
     # draw_integ_scatter2d('ga', 0)
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
-    draw_integ_as_graph()
-    # draw_integ_proj_avg_rate_graph('ga',
-    #                                'Average Rate for GA with Setup Cost',
-    #                                [4, 3, 2, 1, 0, -1, -2],
-    #                                [4, 3, 2, 1, 0, 1, 2],
-    #                                [4, 2, 0, -2, -4, -6, -8, -10],
-    #                                [4, 2, 0, 2, 4, 6, 8, 10])
-    # draw_integ_proj_avg_rate_graph('ga_ig',
-    #                                'Average Rate for GA without Setup Cost',
-    #                                [2, 1, 0, -1, -2],
-    #                                [2, 1, 0, 1, 2],
-    #                                [1, 0, -1, -2, -3, -4, -5, -6],
-    #                                [1, 0, 1, 2, 3, 4, 5, 6])
+    # draw_integ_as_graph()
+    draw_integ_proj_avg_rate_graph('ga',
+                                   'Average Rate for GA with Setup Cost',
+                                   [4, 3, 2, 1, 0, -1, -2],
+                                   [4, 3, 2, 1, 0, 1, 2],
+                                   [4, 2, 0, -2, -4, -6, -8, -10],
+                                   [4, 2, 0, 2, 4, 6, 8, 10])
+    draw_integ_proj_avg_rate_graph('ga_ig',
+                                   'Average Rate for GA without Setup Cost',
+                                   [2, 1, 0, -1, -2],
+                                   [2, 1, 0, 1, 2],
+                                   [1, 0, -1, -2, -3, -4, -5, -6],
+                                   [1, 0, 1, 2, 3, 4, 5, 6])
