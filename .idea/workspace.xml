@@ -3,65 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="f3eba4a7-1689-4bdf-986d-9c0fdabe3e99" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/avg_rate_ga_graph.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/avg_rate_ga_graph.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/avg_rate_ga_ig_graph.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/avg_rate_ga_ig_graph.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/avg_rate_graph.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/avg_rate_graph.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/commons-exec_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/commons-exec_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/delight-nashorn-sandbox_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/delight-nashorn-sandbox_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_elastic-job-lite-core.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_elastic-job-lite-core.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/esper_examples.rfidassetzone.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/esper_examples.rfidassetzone.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/fastjson_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/fastjson_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/fluent-logger-java_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/fluent-logger-java_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/http-request_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/http-request_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/hutool_hutool-cron.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/hutool_hutool-cron.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/luwak_luwak.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/luwak_luwak.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/noxy_noxy-discovery-zookeeper.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/retrofit_retrofit-adapters.rxjava.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/retrofit_retrofit-adapters.rxjava.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/retrofit_retrofit.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/retrofit_retrofit.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/rxjava2-extras_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/rxjava2-extras_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/spring-boot_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/spring-boot_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/tradeoff_trend_graph.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/tradeoff_trend_graph.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/wro4j_wro4j-extensions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/wro4j_wro4j-extensions.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/activiti_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/assertj-core_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/commons-exec_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/commons-exec_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/db-scheduler_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/delight-nashorn-sandbox_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/delight-nashorn-sandbox_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/elastic-job-lite_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/elastic-job-lite_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/elastic-job-lite_elastic-job-lite-core.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/elastic-job-lite_elastic-job-lite-core.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/esper_examples.rfidassetzone.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/esper_examples.rfidassetzone.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/fastjson_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/fastjson_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/fluent-logger-java_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/fluent-logger-java_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/handlebars.java_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/hbase_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/http-request_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/http-request_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/httpcore_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/hutool_hutool-cron.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/hutool_hutool-cron.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/logback_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/luwak_luwak.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/luwak_luwak.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/ninja_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/noxy_noxy-discovery-zookeeper.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/okhttp_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/orbit_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/retrofit_retrofit-adapters.rxjava.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/retrofit_retrofit-adapters.rxjava.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/retrofit_retrofit.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/retrofit_retrofit.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/rxjava2-extras_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/rxjava2-extras_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/spring-boot_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/spring-boot_dot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/timely_server.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/unification.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/unification.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/wro4j_wro4j-extensions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/wro4j_wro4j-extensions.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/yawp_yawp-testing.yawp-testing-appengine.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/zxing_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integrate_dat.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrate_dat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj_info.csv" beforeDir="false" afterPath="$PROJECT_DIR$/proj_info.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.6" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.8" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-1" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category10-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category10-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category12-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category12-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.6" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.8" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-1" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category4-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category4-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category6-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category6-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category8-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category8-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.6" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.8" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-1" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.6" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.8" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-1" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category4-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category4-0.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category4-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category4-0.4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +81,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.plotter">
+  <component name="RunManager" selected="Python.analyze">
     <configuration name="analyze" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Parallel-Testing-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,28 +126,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="generate_proj_info" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Parallel-Testing-Research" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_proj_info.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="integrate_dat" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Parallel-Testing-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -193,6 +140,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/integrate_dat.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_deap" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Parallel-Testing-Research" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_deap.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -225,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.analyze" />
+        <item itemvalue="Python.my_deap" />
         <item itemvalue="Python.plotter" />
         <item itemvalue="Python.integrate_dat" />
         <item itemvalue="Python.comp" />
-        <item itemvalue="Python.analyze" />
-        <item itemvalue="Python.generate_proj_info" />
       </list>
     </recent_temporary>
   </component>
@@ -253,7 +222,8 @@
       <workItem from="1695627797430" duration="8032000" />
       <workItem from="1695697066312" duration="29084000" />
       <workItem from="1695896482814" duration="6220000" />
-      <workItem from="1695911092948" duration="16517000" />
+      <workItem from="1695911092948" duration="16659000" />
+      <workItem from="1696594202455" duration="29933000" />
     </task>
     <servers />
   </component>
@@ -272,6 +242,15 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="np.array(avg_fst)" language="Python" />
@@ -284,6 +263,7 @@
     <SUITE FILE_PATH="coverage/Parallel_Testing_Research$bruteforce.coverage" NAME="bruteforce Coverage Results" MODIFIED="1695308782565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parallel_Testing_Research$generate_proj_info.coverage" NAME="generate_proj_info Coverage Results" MODIFIED="1695826402950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parallel_Testing_Research$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1695933610183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$analyze.coverage" NAME="analyze Coverage Results" MODIFIED="1695826980119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$analyze.coverage" NAME="analyze Coverage Results" MODIFIED="1696690480141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$my_deap.coverage" NAME="my_deap Coverage Results" MODIFIED="1696673874698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
