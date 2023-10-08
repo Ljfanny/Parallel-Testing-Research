@@ -137,7 +137,7 @@ def get_fit(mach_time_dict):
     for mach, per_runtime in mach_time_dict.items():
         per_price = per_runtime * conf_prc_map[idx_conf_map[mach[0]]] / 3600
         price += per_price
-    fitness = a * beta * sum(mach_time_dict.values()) + b * price
+    fitness = a * beta * max(mach_time_dict.values()) + b * price
     return fitness, price
 
 

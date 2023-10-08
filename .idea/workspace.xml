@@ -3,34 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3eba4a7-1689-4bdf-986d-9c0fdabe3e99" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.6" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.8" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-0.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-1" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category1-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category10-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category10-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category12-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category12-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.6" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.8" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-0.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-1" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category2-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category4-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category4-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category6-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category6-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category8-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0/activiti_dot/category8-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.6" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.8" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-0.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-1" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category1-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.6" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.8" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-0.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-1" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category2-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category4-0.2" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category4-0.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category4-0.4" beforeDir="false" afterPath="$PROJECT_DIR$/test_allocation_rec/ga_a0_ig/activiti_dot/category4-0.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +196,8 @@
       <workItem from="1695697066312" duration="29084000" />
       <workItem from="1695896482814" duration="6220000" />
       <workItem from="1695911092948" duration="16659000" />
-      <workItem from="1696594202455" duration="29933000" />
+      <workItem from="1696594202455" duration="32418000" />
+      <workItem from="1696777281768" duration="1559000" />
     </task>
     <servers />
   </component>
