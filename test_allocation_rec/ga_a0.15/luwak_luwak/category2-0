@@ -6,8 +6,7 @@
                       'uk.co.flax.luwak.TestQueryDecomposer#testNestedDisjunctionMaxDecomposition',
                       'uk.co.flax.luwak.TestQueryDecomposer#testSingleValuedConjunctions',
                       'uk.co.flax.luwak.termextractor.TestQueryTermComparators#testAnyTokensAreNotPreferred',
-                      'uk.co.flax.luwak.termextractor.TestQueryTermComparators#testHigherWeightsArePreferred',
-                      'uk.co.flax.luwak.matchers.TestExplainingMatcher#testHashcodeAndEquals'],
+                      'uk.co.flax.luwak.termextractor.TestQueryTermComparators#testHigherWeightsArePreferred'],
  '26CPU2Mem4GB.sh': ['uk.co.flax.luwak.TestCachePurging#testConcurrentPurges',
                      'uk.co.flax.luwak.matchers.TestParallelMatcher#testParallelSlowLog',
                      'uk.co.flax.luwak.TestMonitor#testUpdateReporting',
@@ -199,4 +198,5 @@
                      'uk.co.flax.luwak.termextractor.TestQueryTermComparators#testTermWeights',
                      'uk.co.flax.luwak.TestQueryDecomposer#testFilterAndShouldClause',
                      'uk.co.flax.luwak.TestMonitorErrorHandling#testMonitorQueryNullValues',
-                     'uk.co.flax.luwak.TestQueryIndex#testHighConcurrency']}
+                     'uk.co.flax.luwak.TestQueryIndex#testHighConcurrency',
+                     'uk.co.flax.luwak.matchers.TestExplainingMatcher#testHashcodeAndEquals']}

@@ -44,9 +44,9 @@
                      'com.github.kevinsawicki.http.HttpRequestTest#appendArrayQueryParams',
                      'com.github.kevinsawicki.http.HttpRequestTest#appendWithNullVaragsQueryParamValues',
                      'com.github.kevinsawicki.http.HttpRequestTest#appendMultipleVarargsQueryParams'],
- '25CPU1Mem8GB.sh:v0': ['com.github.kevinsawicki.http.HttpRequestTest#sendErrorReadStream'],
- '25CPU1Mem8GB.sh:v1': ['com.github.kevinsawicki.http.HttpRequestTest#postFormAsEntries',
-                        'com.github.kevinsawicki.http.HttpRequestTest#appendMappedQueryParamsWithExistingParams'],
+ '25CPU1Mem8GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#postFormAsEntries',
+                     'com.github.kevinsawicki.http.HttpRequestTest#sendErrorReadStream',
+                     'com.github.kevinsawicki.http.HttpRequestTest#appendMappedQueryParamsWithExistingParams'],
  '26CPU2Mem4GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#httpsTrust',
                      'com.github.kevinsawicki.http.HttpRequestTest#getHeaders',
                      'com.github.kevinsawicki.http.HttpRequestTest#basicProxyAuthentication',
@@ -160,4 +160,5 @@
                      'com.github.kevinsawicki.http.HttpRequestTest#appendMappedQueryParamsWithPath'],
  '28CPU2Mem16GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#getUrlEncodedWithSpace',
                       'com.github.kevinsawicki.http.HttpRequestTest#httpTrust'],
- '29CPU4Mem8GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#singleVerifier']}
+ '29CPU4Mem8GB.sh:v0': [],
+ '29CPU4Mem8GB.sh:v1': ['com.github.kevinsawicki.http.HttpRequestTest#singleVerifier']}

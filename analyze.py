@@ -96,7 +96,8 @@ def load_setup_cost_file(proj: str,
     global setup_tm_dict
     setup_tm_dict.clear()
     if cond:
-        return {k: float(0) for k in avail_confs}
+        setup_tm_dict = {k: float(0) for k in avail_confs}
+        return
     file = f'{setup_rec_path}/{proj}'
     with open(file, 'r') as f:
         setup_tm_dict = json.load(f)
@@ -290,6 +291,21 @@ def ga(gene_len):
     return pop[0]
 
 
+def bruteforce(gene_len):
+    combs = combinations(range(gene_len * confs_num),
+                         gene_len)
+    mini = float('inf')
+    mini_ind = None
+    for comb in combs:
+        machs = [i % confs_num for i in comb]
+        ind = creator.Individual(machs)
+        eval_sche(ind)
+        if ind.fitness.values[0] <= mini:
+            mini = ind.fitness.values[0]
+            mini_ind = ind
+    return mini_ind
+
+
 def print_ind(ind,
               period):
     print(f'Period: {period}')
@@ -306,21 +322,6 @@ def print_ind(ind,
     print(f'Maximum failure rate: {ind.max_fr}')
     print(f'Score: {fit}')
     print(ind.mach_test_dict.keys())
-
-
-def bruteforce(gene_len):
-    combs = combinations(range(gene_len * confs_num),
-                         gene_len)
-    mini = float('inf')
-    mini_ind = None
-    for comb in combs:
-        machs = [i % confs_num for i in comb]
-        ind = creator.Individual(machs)
-        eval_sche(ind)
-        if ind.fitness.values[0] <= mini:
-            mini = ind.fitness.values[0]
-            mini_ind = ind
-    return mini_ind
 
 
 def record_ind(ind,

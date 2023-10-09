@@ -168,6 +168,7 @@
                       'io.elasticjob.lite.context.TaskContextTest#assertMetaInfoFromWithMetaInfoWithoutShardingItems',
                       'io.elasticjob.lite.executor.handler.JobPropertiesTest#assertGetWhenValueIsNotEmpty',
                       'io.elasticjob.lite.internal.config.RescheduleListenerManagerTest#assertCronSettingChangedJobListenerWhenIsCronPathButNotUpdate',
+                      'io.elasticjob.lite.util.config.ShardingItemsTest#assertToItemsStringWhenEmpty',
                       'io.elasticjob.lite.executor.JobExecutorFactoryTest#assertGetJobExecutorForSimpleJob',
                       'io.elasticjob.lite.internal.sharding.ShardingNodeTest#assertGetRunningNode',
                       'io.elasticjob.lite.api.strategy.JobShardingStrategyFactoryTest#assertGetStrategyFailureWhenNotStrategyClass',
@@ -195,6 +196,8 @@
                       'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetExecutionFailoverNode',
                       'io.elasticjob.lite.internal.election.LeaderNodeTest#assertIsNotLeaderInstancePath',
                       'io.elasticjob.lite.exception.JobSystemExceptionTest#assertGetCause',
+                      'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
+                      'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException',
                       'io.elasticjob.lite.exception.ExceptionUtilTest#assertTransformWithNull'],
  '24CPU1Mem4GB.sh': ['io.elasticjob.lite.lifecycle.internal.reg.RegistryCenterFactoryTest#assertCreateCoordinatorRegistryCenterWithDigest',
                      'io.elasticjob.lite.lifecycle.internal.statistics.ShardingStatisticsAPIImplTest#assertGetShardingInfo',
@@ -363,7 +366,6 @@
                      'io.elasticjob.lite.context.TaskContextTest#assertMetaInfoFromWithTaskIdWithoutShardingItems',
                      'io.elasticjob.lite.util.env.IpUtilsTest#assertGetIp',
                      'io.elasticjob.lite.util.config.ShardingItemParametersTest#assertGetMapWhenIsEmpty',
-                     'io.elasticjob.lite.util.config.ShardingItemsTest#assertToItemsStringWhenEmpty',
                      'io.elasticjob.lite.event.JobExecutionEventTest#assertNewJobExecutionEvent',
                      'io.elasticjob.lite.internal.storage.JobNodePathTest#assertGetServerNodePath',
                      'io.elasticjob.lite.util.json.GsonFactoryTest#assertGetGson',
@@ -555,6 +557,4 @@
                      'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsNotStartedRootNode',
                      'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertGetCompletedNode'],
  '28CPU2Mem16GB.sh': ['io.elasticjob.lite.util.env.IpUtilsTest#assertGetHostName',
-                      'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath',
-                      'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
-                      'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException']}
+                      'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath']}

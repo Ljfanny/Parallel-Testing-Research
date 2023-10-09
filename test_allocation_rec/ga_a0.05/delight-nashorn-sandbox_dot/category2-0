@@ -41,7 +41,6 @@
                      'delight.nashornsandbox.TestSetWriter#test',
                      'delight.nashornsandbox.TestEvalWithScriptContextWithVariables#testWithCPUAndMemory',
                      'delight.nashornsandbox.TestInaccessible#test_file',
-                     'delight.nashornsandbox.TestLimitCPU#test_only_while',
                      'delight.nashornsandbox.TestEvalWithScriptContext#testWithCPUAndMemory',
                      'delight.nashornsandbox.TestEvalWithScriptContextWithVariables#test',
                      'delight.nashornsandbox.TestEvalWithScriptBindings#testWithCPUAndMemory',
@@ -58,7 +57,6 @@
                      'delight.nashornsandbox.TestEvalWithScriptContextWithNewBindings#testWithExistingBindings',
                      'delight.nashornsandbox.TestEvalWithScriptContextWithNewBindings#testWithNewBindingsScriptContext',
                      'delight.nashornsandbox.TestExceptions#test_with_thread',
-                     'delight.nashornsandbox.TestAccessFunction#test_access_variable',
                      'delight.nashornsandbox.TestEvalWithScriptContextWithNewBindings#testWithNewSimpleBindings',
                      'delight.nashornsandbox.TestExit#testExit',
                      'delight.nashornsandbox.TestExceptions#test_with_catch',
@@ -76,4 +74,6 @@
                      'delight.nashornsandbox.TestRemoveComments#test',
                      'delight.nashornsandbox.TestBindingsInsert#testOverride',
                      'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
- '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test']}
+ '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestLimitCPU#test_only_while',
+                     'delight.nashornsandbox.TestGetFunction#test',
+                     'delight.nashornsandbox.TestAccessFunction#test_access_variable']}

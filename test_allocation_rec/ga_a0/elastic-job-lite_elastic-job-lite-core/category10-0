@@ -72,9 +72,7 @@
                        'io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsNotFailover',
                        'io.elasticjob.lite.exception.ExceptionUtilTest#assertTransformWithNull',
                        'io.elasticjob.lite.api.strategy.JobInstanceTest#assertGetJobInstanceId',
-                       'io.elasticjob.lite.internal.config.ConfigurationNodeTest#assertIsConfigPath',
-                       'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
-                       'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException'],
+                       'io.elasticjob.lite.internal.config.ConfigurationNodeTest#assertIsConfigPath'],
  '22CPU05Mem2GB.sh:v0': ['io.elasticjob.lite.internal.monitor.MonitorServiceEnableTest#assertMonitorWithCommand',
                          'io.elasticjob.lite.api.listener.DistributeOnceElasticJobListenerTest#assertAfterJobExecutedWhenIsAllCompleted',
                          'io.elasticjob.lite.internal.guarantee.GuaranteeListenerManagerTest#assertStartedNodeRemovedJobListenerWhenIsNotStartedNode',
@@ -499,4 +497,6 @@
                          'io.elasticjob.lite.exception.JobSystemExceptionTest#assertGetMessage',
                          'io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterMiscellaneousTest#assertGetZkConfig',
                          'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsCompletedRootNode',
-                         'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath']}
+                         'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath',
+                         'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
+                         'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException']}

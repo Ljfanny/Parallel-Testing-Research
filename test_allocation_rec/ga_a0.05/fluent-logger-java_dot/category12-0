@@ -1,5 +1,4 @@
-{'01noThrottling.sh': [],
- '19CPU010Mem1GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
+{'19CPU010Mem1GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
                        'org.fluentd.logger.sender.TestRawSocketSender#testNormal03',
                        'org.fluentd.logger.TestFluentLogger#testNormal02',
                        'org.fluentd.logger.sender.TestRawSocketSender#testNormal02',
@@ -19,10 +18,11 @@
                       'org.fluentd.logger.sender.TestNullSender#testNormal'],
  '26CPU2Mem4GB.sh:v0': [],
  '26CPU2Mem4GB.sh:v1': [],
- '26CPU2Mem4GB.sh:v2': [],
- '26CPU2Mem4GB.sh:v3': [],
- '26CPU2Mem4GB.sh:v4': [],
+ '27CPU2Mem8GB.sh:v0': [],
+ '27CPU2Mem8GB.sh:v1': [],
  '28CPU2Mem16GB.sh:v0': [],
  '28CPU2Mem16GB.sh:v1': [],
- '28CPU2Mem16GB.sh:v2': [],
- '29CPU4Mem8GB.sh': []}
+ '29CPU4Mem8GB.sh:v0': [],
+ '29CPU4Mem8GB.sh:v1': [],
+ '29CPU4Mem8GB.sh:v2': [],
+ '29CPU4Mem8GB.sh:v3': []}

@@ -157,7 +157,6 @@
                      'com.github.jknack.handlebars.cache.ConcurrentMapCacheTest#clear',
                      'com.github.jknack.handlebars.SafeStringTest#equals',
                      'com.github.jknack.handlebars.internal.TextTest#newTextSequence',
-                     'com.github.jknack.handlebars.SafeStringTest#hashcode',
                      'com.github.jknack.handlebars.io.FileLocatorTest#failLocate',
                      'com.github.jknack.handlebars.FalsyValueTest#falsy[3]',
                      'com.github.jknack.handlebars.FalsyValueTest#falsy[4]',
@@ -409,4 +408,5 @@
                      'com.github.jknack.handlebars.HandlebarsErrorTest#properties',
                      'com.github.jknack.handlebars.FalsyValueTest#falsy[0]',
                      'com.github.jknack.handlebars.EmptyTemplateTest#applyWithWriter',
+                     'com.github.jknack.handlebars.SafeStringTest#hashcode',
                      'handlebarsjs.spec.HelperHashTest#inCaseOsfConflictTheExplicitHashWins']}

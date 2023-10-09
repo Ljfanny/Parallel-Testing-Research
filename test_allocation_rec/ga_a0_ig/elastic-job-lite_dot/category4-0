@@ -355,8 +355,6 @@
                      'io.elasticjob.lite.exception.JobExecutionEnvironmentExceptionTest#assertGetMessage',
                      'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsStartedRootNode',
                      'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath',
-                     'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
-                     'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException',
                      'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertGetCompletedNode'],
  '26CPU2Mem4GB.sh': ['io.elasticjob.lite.lifecycle.restful.RestfulServerTest#assertCallSuccess',
                      'io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertExecuteInTransactionSuccess',
@@ -557,4 +555,6 @@
                      'io.elasticjob.lite.internal.config.ConfigurationNodeTest#assertIsConfigPath',
                      'io.elasticjob.lite.internal.election.LeaderNodeTest#assertIsNotLeaderInstancePath',
                      'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsCompletedRootNode',
-                     'io.elasticjob.lite.lifecycle.domain.ShardingStatusTest#assertGetShardingStatusWhenIsShardingError']}
+                     'io.elasticjob.lite.lifecycle.domain.ShardingStatusTest#assertGetShardingStatusWhenIsShardingError',
+                     'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
+                     'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException']}

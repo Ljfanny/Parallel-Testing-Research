@@ -132,7 +132,8 @@
                       'io.elasticjob.lite.internal.schedule.JobRegistryTest#assertGetCurrentShardingTotalCountIfNotNull',
                       'io.elasticjob.lite.exception.JobConfigurationExceptionTest#assertGetMessage',
                       'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetExecutionFailoverNode',
-                      'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsCompletedRootNode'],
+                      'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsCompletedRootNode',
+                      'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath'],
  '23CPU05Mem4GB.sh': ['io.elasticjob.lite.api.listener.DistributeOnceElasticJobListenerTest#assertBeforeJobExecutedWhenIsNotAllStartedAndTimeout',
                       'io.elasticjob.lite.internal.sharding.ShardingServiceTest#assertHasShardingInfoInOfflineServers',
                       'io.elasticjob.lite.event.JobEventBusTest#assertRegisterFailure',
@@ -497,6 +498,5 @@
                      'io.elasticjob.lite.internal.election.LeaderServiceTest#assertIsLeader',
                      'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsServerPath',
                      'io.elasticjob.lite.util.env.IpUtilsTest#assertGetIp',
-                     'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath',
                      'io.elasticjob.lite.internal.config.ConfigurationNodeTest#assertIsConfigPath'],
  '28CPU2Mem16GB.sh': ['io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsNotFailover']}

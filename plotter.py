@@ -1,6 +1,7 @@
 import os
 import matplotlib
 import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
 import pandas as pd
 import textwrap
 import numpy as np
@@ -242,6 +243,17 @@ def draw_integ_pareto3d(code):
 
 
 def draw_tread_graph():
+    # def func(x, a, b):
+    #     return a * np.log(x) + b
+    #
+    # def fitting(x, y):
+    #     popt, _ = curve_fit(func, x, y)
+    #     a = popt[0]
+    #     b = popt[1]
+    #     nvx = np.arange(0, 1, 0.01)
+    #     nvy = func(nvx, a, b)
+    #     return nvx, nvy
+
     def draw_subplot(ax,
                      x,
                      y1,
@@ -267,7 +279,8 @@ def draw_tread_graph():
     dfs = [pd.read_csv(f'{ig_path}/{csv}')
            for csv in csvs
            if csv.find('summary') == -1]
-    norm_fig, norm_axes = plt.subplots(2, 2, figsize=(10, 4), sharex=True, sharey=True)
+    norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4), sharex=True, sharey=True)
+    # ln_fig, ln_axes = plt.subplots(1, 2, figsize=(10, 4), sharex=True, sharey=True)
     avg_chp = []
     avg_fst = []
     programs = dfs[4].dropna(subset=['cheapest_category']).iloc[:, 0]
@@ -296,6 +309,10 @@ def draw_tread_graph():
         fst_tup[:, 1] = fst_tup[:, 1] / dfs[4].iloc[i]['fastest_price']
         avg_chp.append(chp_tup)
         avg_fst.append(fst_tup)
+        # chp_tm_x, chp_tm_y = fitting(chp_tup[:, 2], chp_tup[:, 0])
+        # chp_pr_x, chp_pr_y = fitting(chp_tup[:, 2], chp_tup[:, 1])
+        # fst_tm_x, fst_tm_y = fitting(fst_tup[:, 2], fst_tup[:, 0])
+        # fst_pr_x, fst_pr_y = fitting(fst_tup[:, 2], fst_tup[:, 1])
         draw_subplot(axes[0],
                      chp_tup[:, 2],
                      chp_tup[:, 0],
@@ -308,9 +325,20 @@ def draw_tread_graph():
                      fst_tup[:, 1],
                      1,
                      ['Runtime', 'Price'])
+        # ln_axes[0].scatter(chp_tup[:, 2], chp_tup[:, 0])
+        # ln_axes[0].plot(chp_tm_x, chp_tm_y)
+        # ln_axes[0].scatter(chp_tup[:, 2], chp_tup[:, 1])
+        # ln_axes[0].plot(chp_pr_x, chp_pr_y)
+        # ln_axes[1].scatter(fst_tup[:, 2], fst_tup[:, 0])
+        # ln_axes[1].plot(fst_tm_x, fst_tm_y)
+        # ln_axes[1].scatter(fst_tup[:, 2], fst_tup[:, 1])
+        # ln_axes[1].plot(fst_pr_x, fst_pr_y)
         fig.suptitle(programs[i])
         plt.savefig(f'integ_fig/ga_trend_graph/{programs[i]}.pdf')
         plt.close()
+    # ln_fig.suptitle('Fitting', size=12, weight='bold')
+    # plt.savefig('integ_fig/ga_trend_graph/fitting.svg')
+    # plt.close()
     avg_chp = np.nanmean(np.array(avg_chp), axis=0)
     avg_fst = np.nanmean(np.array(avg_fst), axis=0)
     draw_subplot(norm_axes[0],
@@ -585,10 +613,10 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
         indexes = np.array(indexes)
         ax.bar(indexes - bar_width / 2 + 0.1, y1, color='#a594f9', width=bar_width, edgecolor='#04080f',
                label='Runtime with Lowest Runtime')
-        ax.bar(indexes + bar_width / 2 - 0.1, y2, color='#e5d9f2', width=bar_width, edgecolor='#04080f',
-               label='Runtime with Lowest Price')
         ax.bar(indexes - bar_width / 2 + 0.1, y3, color='#cdc1ff', width=bar_width, edgecolor='#04080f',
                label='Price with Lowest Runtime')
+        ax.bar(indexes + bar_width / 2 - 0.1, y2, color='#e5d9f2', width=bar_width, edgecolor='#04080f',
+               label='Runtime with Lowest Price')
         ax.bar(indexes + bar_width / 2 - 0.1, y4, color='#f5efff', width=bar_width, edgecolor='#04080f',
                label='Price with Lowest Price')
         ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#10002b', markersize=4)
@@ -634,6 +662,7 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
     ax2.set_xlabel(r'Project ID', size=12, weight='bold')
     # legend.set_bbox_to_anchor((0.23, 1.22))
     fig.suptitle(sup_title, size=16, weight='bold')
+    ax1.legend()
     plt.savefig(f'integ_fig/avg_rate_{goal_subdir}_graph.pdf')
     plt.close()
 
@@ -648,11 +677,11 @@ if __name__ == '__main__':
     #                                'Average Rate for GA with Setup Cost',
     #                                [4, 3, 2, 1, 0, -1, -2],
     #                                [4, 3, 2, 1, 0, 1, 2],
-    #                                [4, 2, 0, -2, -4, -6, -8, -10],
-    #                                [4, 2, 0, 2, 4, 6, 8, 10])
+    #                                [4, 2, 0, -2, -4, -6],
+    #                                [4, 2, 0, 2, 4, 6])
     # draw_integ_proj_avg_rate_graph('ga_ig',
     #                                'Average Rate for GA without Setup Cost',
     #                                [2, 1, 0, -1, -2],
     #                                [2, 1, 0, 1, 2],
-    #                                [1, 0, -1, -2, -3, -4, -5, -6],
-    #                                [1, 0, 1, 2, 3, 4, 5, 6])
+    #                                [2, 1, 0, -1, -2, -3, -4],
+    #                                [2, 1, 0, 1, 2, 3, 4])
