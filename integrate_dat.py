@@ -1,7 +1,11 @@
 import os
-from ast import literal_eval
+import json
 import numpy as np
 import pandas as pd
+from ast import literal_eval
+from itertools import combinations
+from preproc import preproc, conf_prc_map
+from analyze import idx_conf_map
 
 beta = 25.993775 / 3600
 frs = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -387,7 +391,7 @@ def consider_per_proj(subdir,
                       goal_csv):
     fr_tables = os.listdir(f'integ_dat/{subdir}')
     fr_dfs = [pd.read_csv(f'integ_dat/{subdir}/{fr_tb}') for fr_tb in fr_tables if fr_tb.find('summary') == -1]
-    projs = fr_dfs[0].iloc[:, 0]
+    projs = fr_dfs[4].dropna(subset=['cheapest_category']).iloc[:, 0]
     summary_per_proj = pd.DataFrame(None,
                                     columns=[
                                         'project',
@@ -450,35 +454,94 @@ def get_avg_min_max_failrate():
     print(f'Smart baseline avg. max failure rate: {np.mean(np.array(smt_frs))}')
 
 
-def get_same_conf_num():
-    subdir = ['ga_a0', 'ga_a1', 'ga_a0_ig', 'ga_a1_ig']
-    resu = [0, 0, 0, 0]
-    tot = [0, 0, 0, 0]
+def iter_alloc(a,
+               subdir):
+    def cal_price(mach_tm_dict):
+        price = 0
+        for ky, per_runtime in mach_tm_dict.items():
+            per_price = per_runtime * conf_prc_map[mach_arr[ky]] / 3600
+            price += per_price
+        return price
+
+    proj_list = [
+        'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
+        'esper_examples.rfidassetzone',
+        'fluent-logger-java_dot',
+        'hutool_hutool-cron',
+        'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty'
+    ]
     reco_df = pd.DataFrame(None,
                            columns=['project',
-                                    'category'])
-    for i, sub in enumerate(subdir):
-        proj_csvs = os.listdir(f'ext_dat/{sub}')
-        for csv in proj_csvs:
-            proj = csv.replace('.csv', '')
-            df = pd.read_csv(f'ext_dat/{sub}/{csv}').dropna()
-            tot[i] += len(df)
-            for _, item in df.iterrows():
-                category = item['category']
-                confs = literal_eval(item['confs'])
-                if len(confs) == 1:
-                    reco_df.loc[len(reco_df.index)] = [proj,
-                                                       category]
-                    resu[i] += 1
-    print(f'GA with setup cost for a=0: {resu[0]}/{tot[0]}')
-    print(f'GA with setup cost for a=1: {resu[1]}/{tot[1]}')
-    print(f'GA without setup cost for a=0: {resu[2]}/{tot[2]}')
-    print(f'GA without setup cost for a=0: {resu[3]}/{tot[3]}')
-    reco_df.to_csv(f'same_confs_info.csv', sep=',', header=True, index=False)
+                                    'category',
+                                    'confs',
+                                    'time_seq',
+                                    'time_parallel',
+                                    'price',
+                                    'test_allocation_record']
+                           )
+    for proj in proj_list:
+        resu_path = f'ext_dat/{subdir}/{proj}.csv'
+        df = pd.read_csv(resu_path)
+        df = df.loc[df['category'] == '2-0']
+        avg_tm_dict = preproc(proj)
+        with open(f'setup_time_rec/{proj}', 'r') as f:
+            setup_tm_dict = json.load(f)
+        confs_dict = literal_eval(df.iloc[0]['confs'])
+        combs = combinations(range(2 * len(avg_tm_dict)),
+                             len(avg_tm_dict))
+        if len(confs_dict) == 1:
+            mach_arr = [list(confs_dict.keys())[0], list(confs_dict.keys())[0]]
+        else:
+            mach_arr = list(confs_dict.keys())
+        tmp_dict = {}
+        for ky, val in avg_tm_dict.items():
+            tmp_dict[ky] = {}
+            for itm in val:
+                if itm[0] == mach_arr[0]:
+                    if itm[3] == 0:
+                        tmp_dict[ky][0] = itm
+                    else:
+                        tmp_dict[ky][0] = None
+                elif itm[0] == mach_arr[1]:
+                    if itm[3] == 0:
+                        tmp_dict[ky][1] = itm
+                    else:
+                        tmp_dict[ky][1] = None
+        idx_tst_map = {i: tst for i, tst in enumerate(list(tmp_dict.keys()))}
+        mini = float('inf')
+        mini_mach_test_dict = {}
+        mini_mach_time_dict = {}
+        for comb in combs:
+            choices = [0 if i < len(avg_tm_dict) else 1 for i in comb]
+            is_match_fr = True
+            mach_test_dict = {0: [], 1: []}
+            mach_time_dict = {0: setup_tm_dict[mach_arr[0]], 1: setup_tm_dict[mach_arr[1]]}
+            for idx, mach_id in enumerate(choices):
+                tst = idx_tst_map[idx]
+                itm = tmp_dict[tst][mach_id]
+                if itm is None:
+                    is_match_fr = False
+                    break
+                mach_test_dict[mach_id].append(tst)
+                mach_time_dict[mach_id] += itm[2]
+            if is_match_fr and mini >= max(mach_time_dict.values()):
+                mini = max(mach_time_dict.values())
+                mini_mach_test_dict = mach_test_dict
+                mini_mach_time_dict = mach_time_dict
+        reco_df.loc[len(reco_df.index)] = [
+            proj,
+            '2-0',
+            confs_dict,
+            sum(mini_mach_time_dict),
+            max(mini_mach_time_dict),
+            cal_price(mini_mach_time_dict),
+            mini_mach_test_dict
+        ]
+    reco_df.to_csv(f'{subdir}.csv', sep=',', header=True, index=False)
 
 
 if __name__ == '__main__':
-    is_ab = False
+    is_ab = True
     aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
            0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
     modus = [f'ga_a{a}' for a in aes]
@@ -500,10 +563,10 @@ if __name__ == '__main__':
     #             'ext_dat/bruteforce_a1',
     #             'non_ig',
     #             'bruteforce')
-    print(consider_fr('ext_dat/ga_a0_ig',
-                      'ext_dat/ga_a1_ig',
-                      'ig',
-                      'ga_ig'))
+    # print(consider_fr('ext_dat/ga_a0_ig',
+    #                   'ext_dat/ga_a1_ig',
+    #                   'ig',
+    #                   'ga_ig'))
     # for md in modus:
     #     consider_ab(f'ext_dat/{md}',
     #                 'non_ig',
@@ -521,4 +584,5 @@ if __name__ == '__main__':
     #                   'fastest',
     #                   'summary_per_project_lower_runtime_goal.csv')
     # get_avg_min_max_failrate()
-    # get_same_conf_num()
+    iter_alloc(0,
+               'ga_a0')

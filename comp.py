@@ -1,7 +1,7 @@
 import os
 from ast import literal_eval
-import numpy as np
 import pandas as pd
+from plotter import fr0_satisfied_projs
 
 comp_path = 'contrast'
 
@@ -141,6 +141,9 @@ def comp_ga_bf():
               True)
     reco_info(1,
               False)
+    proj_info_df = pd.read_csv('proj_info.csv')[:-1]
+    proj_id = [int(itm['id'].replace('P', '')) for _, itm in proj_info_df.iterrows() if itm['project-module'] not in fr0_satisfied_projs]
+    comp_opt_df.drop(index=proj_id, inplace=True)
     comp_dfs[0].to_csv(f'{comp_path}/ga_bf_a0.csv', sep=',', header=True, index=False)
     comp_dfs[1].to_csv(f'{comp_path}/ga_bf_a1.csv', sep=',', header=True, index=False)
     summary_dfs[0].to_csv(f'{comp_path}/ga_bf_a0_summary.csv', sep=',', header=True, index=False)

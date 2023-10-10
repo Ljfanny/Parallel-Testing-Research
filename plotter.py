@@ -1,7 +1,6 @@
 import os
 import matplotlib
 import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
 import pandas as pd
 import textwrap
 import numpy as np
@@ -16,9 +15,27 @@ prefixes = {
     'fst_gh': 'fastest_github_caliber',
     'fst_smt': 'fastest_smart_baseline'
 }
-# plt.rc('font', family='Times New Roman', weight='bold')
 plt.rc('font', family='Georgia')
-
+fr0_satisfied_projs = [
+    'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
+    'commons-exec_dot',
+    'delight-nashorn-sandbox_dot',
+    'elastic-job-lite_dot',
+    'elastic-job-lite_elastic-job-lite-core',
+    'esper_examples.rfidassetzone',
+    'fastjson_dot',
+    'fluent-logger-java_dot',
+    'http-request_dot',
+    'hutool_hutool-cron',
+    'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
+    'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
+    'luwak_luwak',
+    'noxy_noxy-discovery-zookeeper',
+    'retrofit_retrofit-adapters.rxjava',
+    'retrofit_retrofit',
+    'rxjava2-extras_dot',
+    'spring-boot_dot',
+    'wro4j_wro4j-extensions']
 
 def draw_scatter(ax, x, y, z, c, label=None):
     ax.scatter(x, y, z, c=c, label=label)
@@ -243,17 +260,6 @@ def draw_integ_pareto3d(code):
 
 
 def draw_tread_graph():
-    # def func(x, a, b):
-    #     return a * np.log(x) + b
-    #
-    # def fitting(x, y):
-    #     popt, _ = curve_fit(func, x, y)
-    #     a = popt[0]
-    #     b = popt[1]
-    #     nvx = np.arange(0, 1, 0.01)
-    #     nvy = func(nvx, a, b)
-    #     return nvx, nvy
-
     def draw_subplot(ax,
                      x,
                      y1,
@@ -280,7 +286,6 @@ def draw_tread_graph():
            for csv in csvs
            if csv.find('summary') == -1]
     norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4), sharex=True, sharey=True)
-    # ln_fig, ln_axes = plt.subplots(1, 2, figsize=(10, 4), sharex=True, sharey=True)
     avg_chp = []
     avg_fst = []
     programs = dfs[4].dropna(subset=['cheapest_category']).iloc[:, 0]
@@ -309,10 +314,6 @@ def draw_tread_graph():
         fst_tup[:, 1] = fst_tup[:, 1] / dfs[4].iloc[i]['fastest_price']
         avg_chp.append(chp_tup)
         avg_fst.append(fst_tup)
-        # chp_tm_x, chp_tm_y = fitting(chp_tup[:, 2], chp_tup[:, 0])
-        # chp_pr_x, chp_pr_y = fitting(chp_tup[:, 2], chp_tup[:, 1])
-        # fst_tm_x, fst_tm_y = fitting(fst_tup[:, 2], fst_tup[:, 0])
-        # fst_pr_x, fst_pr_y = fitting(fst_tup[:, 2], fst_tup[:, 1])
         draw_subplot(axes[0],
                      chp_tup[:, 2],
                      chp_tup[:, 0],
@@ -325,20 +326,9 @@ def draw_tread_graph():
                      fst_tup[:, 1],
                      1,
                      ['Runtime', 'Price'])
-        # ln_axes[0].scatter(chp_tup[:, 2], chp_tup[:, 0])
-        # ln_axes[0].plot(chp_tm_x, chp_tm_y)
-        # ln_axes[0].scatter(chp_tup[:, 2], chp_tup[:, 1])
-        # ln_axes[0].plot(chp_pr_x, chp_pr_y)
-        # ln_axes[1].scatter(fst_tup[:, 2], fst_tup[:, 0])
-        # ln_axes[1].plot(fst_tm_x, fst_tm_y)
-        # ln_axes[1].scatter(fst_tup[:, 2], fst_tup[:, 1])
-        # ln_axes[1].plot(fst_pr_x, fst_pr_y)
         fig.suptitle(programs[i])
         plt.savefig(f'integ_fig/ga_trend_graph/{programs[i]}.pdf')
         plt.close()
-    # ln_fig.suptitle('Fitting', size=12, weight='bold')
-    # plt.savefig('integ_fig/ga_trend_graph/fitting.svg')
-    # plt.close()
     avg_chp = np.nanmean(np.array(avg_chp), axis=0)
     avg_fst = np.nanmean(np.array(avg_fst), axis=0)
     draw_subplot(norm_axes[0],
@@ -630,8 +620,9 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
         'summary_per_project_lower_runtime_goal.csv')
     gh_pri_runtime_rts, gh_pri_price_rts, smt_pri_runtime_rts, smt_pri_price_rts = extract_dat(
         'summary_per_project_lower_price_goal.csv')
-    x = list(pd.read_csv('proj_info.csv')['id'])
-    x = x[:len(x)-1]
+    proj_info_df = pd.read_csv('proj_info.csv')
+    proj_id_map = {itm['project-module']: itm['id'] for _, itm in proj_info_df.iterrows()}
+    x = [proj_id_map[proj] for proj in fr0_satisfied_projs]
     x.append('Avg.')
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), sharex=True)
     sub_double_bar(ax1,
@@ -672,16 +663,16 @@ if __name__ == '__main__':
     # draw_integ_scatter2d('ga', 0)
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
-    draw_integ_as_graph(True)
+    # draw_integ_as_graph(True)
     # draw_integ_proj_avg_rate_graph('ga',
     #                                'Average Rate for GA with Setup Cost',
     #                                [4, 3, 2, 1, 0, -1, -2],
     #                                [4, 3, 2, 1, 0, 1, 2],
     #                                [4, 2, 0, -2, -4, -6],
     #                                [4, 2, 0, 2, 4, 6])
-    # draw_integ_proj_avg_rate_graph('ga_ig',
-    #                                'Average Rate for GA without Setup Cost',
-    #                                [2, 1, 0, -1, -2],
-    #                                [2, 1, 0, 1, 2],
-    #                                [2, 1, 0, -1, -2, -3, -4],
-    #                                [2, 1, 0, 1, 2, 3, 4])
+    draw_integ_proj_avg_rate_graph('ga_ig',
+                                   'Average Rate for GA without Setup Cost',
+                                   [2, 1, 0, -1, -2],
+                                   [2, 1, 0, 1, 2],
+                                   [2, 1, 0, -1, -2, -3, -4],
+                                   [2, 1, 0, 1, 2, 3, 4])
