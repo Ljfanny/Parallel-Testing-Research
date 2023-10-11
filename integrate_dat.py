@@ -1,5 +1,7 @@
 import os
 import json
+import time
+
 import numpy as np
 import pandas as pd
 from ast import literal_eval
@@ -477,8 +479,8 @@ def iter_alloc(a,
                                     'time_seq',
                                     'time_parallel',
                                     'price',
-                                    'test_allocation_record']
-                           )
+                                    'test_allocation_record',
+                                    'period'])
     for proj in proj_list:
         resu_path = f'ext_dat/{subdir}/{proj}.csv'
         df = pd.read_csv(resu_path)
@@ -511,7 +513,9 @@ def iter_alloc(a,
         mini = float('inf')
         mini_mach_test_dict = {}
         mini_mach_time_dict = {}
+        t1 = time.time()
         for comb in combs:
+            print(comb)
             choices = [0 if i < len(avg_tm_dict) else 1 for i in comb]
             is_match_fr = True
             mach_test_dict = {0: [], 1: []}
@@ -528,6 +532,7 @@ def iter_alloc(a,
                 mini = max(mach_time_dict.values())
                 mini_mach_test_dict = mach_test_dict
                 mini_mach_time_dict = mach_time_dict
+        t2 = time.time()
         reco_df.loc[len(reco_df.index)] = [
             proj,
             '2-0',
@@ -535,7 +540,8 @@ def iter_alloc(a,
             sum(mini_mach_time_dict),
             max(mini_mach_time_dict),
             cal_price(mini_mach_time_dict),
-            mini_mach_test_dict
+            mini_mach_test_dict,
+            t2 - t1
         ]
     reco_df.to_csv(f'{subdir}.csv', sep=',', header=True, index=False)
 
@@ -584,5 +590,7 @@ if __name__ == '__main__':
     #                   'fastest',
     #                   'summary_per_project_lower_runtime_goal.csv')
     # get_avg_min_max_failrate()
-    iter_alloc(0,
-               'ga_a0')
+    # iter_alloc(0,
+    #            'ga_a0')
+    iter_alloc(1,
+               'ga_a1')
