@@ -460,7 +460,7 @@ def iter_alloc(a,
                subdir):
     def cal_price(mach_tm_dict):
         price = 0
-        for ky, per_runtime in mach_tm_dict.items():
+        for key, per_runtime in mach_tm_dict.items():
             per_price = per_runtime * conf_prc_map[mach_arr[ky]] / 3600
             price += per_price
         return price
@@ -504,7 +504,7 @@ def iter_alloc(a,
                         tmp_dict[ky][0] = itm
                     else:
                         tmp_dict[ky][0] = None
-                elif itm[0] == mach_arr[1]:
+                if itm[0] == mach_arr[1]:
                     if itm[3] == 0:
                         tmp_dict[ky][1] = itm
                     else:
@@ -528,10 +528,17 @@ def iter_alloc(a,
                     break
                 mach_test_dict[mach_id].append(tst)
                 mach_time_dict[mach_id] += itm[2]
-            if is_match_fr and mini >= max(mach_time_dict.values()):
-                mini = max(mach_time_dict.values())
-                mini_mach_test_dict = mach_test_dict
-                mini_mach_time_dict = mach_time_dict
+            if a == 1:
+                if is_match_fr and mini >= max(mach_time_dict.values()):
+                    mini = max(mach_time_dict.values())
+                    mini_mach_test_dict = mach_test_dict
+                    mini_mach_time_dict = mach_time_dict
+            else:
+                prc = cal_price(mach_time_dict)
+                if is_match_fr and mini >= prc:
+                    mini = prc
+                    mini_mach_test_dict = mach_test_dict
+                    mini_mach_time_dict = mach_time_dict
         t2 = time.time()
         reco_df.loc[len(reco_df.index)] = [
             proj,
@@ -590,7 +597,7 @@ if __name__ == '__main__':
     #                   'fastest',
     #                   'summary_per_project_lower_runtime_goal.csv')
     # get_avg_min_max_failrate()
-    # iter_alloc(0,
-    #            'ga_a0')
-    iter_alloc(1,
-               'ga_a1')
+    iter_alloc(0,
+               'ga_a0')
+    # iter_alloc(1,
+    #            'ga_a1')
