@@ -1,13 +1,7 @@
 import os
-import json
-import time
-
 import numpy as np
 import pandas as pd
 from ast import literal_eval
-from itertools import combinations
-from preproc import preproc, conf_prc_map
-from analyze import idx_conf_map
 
 beta = 25.993775 / 3600
 frs = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -262,7 +256,8 @@ def consider_fr(chp_dat_dir,
                 else:
                     break
             chp_gh, chp_smt = get_contrast(baseline_subdir,
-                                           proj_name,
+                                           'wro4j_wro4j-extensions',
+                                           # proj_name,
                                            sum(literal_eval(chp['confs']).values()))
             fst_gh, fst_smt = get_contrast(baseline_subdir,
                                            proj_name,
@@ -393,7 +388,10 @@ def consider_per_proj(subdir,
                       goal_csv):
     fr_tables = os.listdir(f'integ_dat/{subdir}')
     fr_dfs = [pd.read_csv(f'integ_dat/{subdir}/{fr_tb}') for fr_tb in fr_tables if fr_tb.find('summary') == -1]
-    projs = fr_dfs[4].dropna(subset=['cheapest_category']).iloc[:, 0]
+    projs = list(fr_dfs[4].dropna(subset=['cheapest_category']).iloc[:, 0])
+    proj_info_df = pd.read_csv('proj_info.csv')
+    proj_id_map = {itm['project-module']: itm['id'] for _, itm in proj_info_df.iterrows()}
+    i_arr = [int(proj_id_map[proj].replace('P', '')) for proj in projs]
     summary_per_proj = pd.DataFrame(None,
                                     columns=[
                                         'project',
@@ -402,7 +400,7 @@ def consider_per_proj(subdir,
                                         'smart_baseline_avg_runtime_rate',
                                         'smart_baseline_avg_price_rate'
                                     ])
-    for i, proj in enumerate(projs):
+    for i, proj in zip(i_arr, projs):
         gh_sum_runtime_rts = []
         smt_sum_runtime_rts = []
         gh_sum_price_rts = []
@@ -456,105 +454,8 @@ def get_avg_min_max_failrate():
     print(f'Smart baseline avg. max failure rate: {np.mean(np.array(smt_frs))}')
 
 
-def iter_alloc(a,
-               subdir):
-    def cal_price(mach_tm_dict):
-        price = 0
-        for key, per_runtime in mach_tm_dict.items():
-            per_price = per_runtime * conf_prc_map[mach_arr[ky]] / 3600
-            price += per_price
-        return price
-
-    proj_list = [
-        'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
-        'esper_examples.rfidassetzone',
-        'fluent-logger-java_dot',
-        'hutool_hutool-cron',
-        'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty'
-    ]
-    reco_df = pd.DataFrame(None,
-                           columns=['project',
-                                    'category',
-                                    'confs',
-                                    'time_seq',
-                                    'time_parallel',
-                                    'price',
-                                    'test_allocation_record',
-                                    'period'])
-    for proj in proj_list:
-        resu_path = f'ext_dat/{subdir}/{proj}.csv'
-        df = pd.read_csv(resu_path)
-        df = df.loc[df['category'] == '2-0']
-        avg_tm_dict = preproc(proj)
-        with open(f'setup_time_rec/{proj}', 'r') as f:
-            setup_tm_dict = json.load(f)
-        confs_dict = literal_eval(df.iloc[0]['confs'])
-        combs = combinations(range(2 * len(avg_tm_dict)),
-                             len(avg_tm_dict))
-        if len(confs_dict) == 1:
-            mach_arr = [list(confs_dict.keys())[0], list(confs_dict.keys())[0]]
-        else:
-            mach_arr = list(confs_dict.keys())
-        tmp_dict = {}
-        for ky, val in avg_tm_dict.items():
-            tmp_dict[ky] = {}
-            for itm in val:
-                if itm[0] == mach_arr[0]:
-                    if itm[3] == 0:
-                        tmp_dict[ky][0] = itm
-                    else:
-                        tmp_dict[ky][0] = None
-                if itm[0] == mach_arr[1]:
-                    if itm[3] == 0:
-                        tmp_dict[ky][1] = itm
-                    else:
-                        tmp_dict[ky][1] = None
-        idx_tst_map = {i: tst for i, tst in enumerate(list(tmp_dict.keys()))}
-        mini = float('inf')
-        mini_mach_test_dict = {}
-        mini_mach_time_dict = {}
-        t1 = time.time()
-        for comb in combs:
-            print(comb)
-            choices = [0 if i < len(avg_tm_dict) else 1 for i in comb]
-            is_match_fr = True
-            mach_test_dict = {0: [], 1: []}
-            mach_time_dict = {0: setup_tm_dict[mach_arr[0]], 1: setup_tm_dict[mach_arr[1]]}
-            for idx, mach_id in enumerate(choices):
-                tst = idx_tst_map[idx]
-                itm = tmp_dict[tst][mach_id]
-                if itm is None:
-                    is_match_fr = False
-                    break
-                mach_test_dict[mach_id].append(tst)
-                mach_time_dict[mach_id] += itm[2]
-            if a == 1:
-                if is_match_fr and mini >= max(mach_time_dict.values()):
-                    mini = max(mach_time_dict.values())
-                    mini_mach_test_dict = mach_test_dict
-                    mini_mach_time_dict = mach_time_dict
-            else:
-                prc = cal_price(mach_time_dict)
-                if is_match_fr and mini >= prc:
-                    mini = prc
-                    mini_mach_test_dict = mach_test_dict
-                    mini_mach_time_dict = mach_time_dict
-        t2 = time.time()
-        reco_df.loc[len(reco_df.index)] = [
-            proj,
-            '2-0',
-            confs_dict,
-            sum(mini_mach_time_dict),
-            max(mini_mach_time_dict),
-            cal_price(mini_mach_time_dict),
-            mini_mach_test_dict,
-            t2 - t1
-        ]
-    reco_df.to_csv(f'{subdir}.csv', sep=',', header=True, index=False)
-
-
 if __name__ == '__main__':
-    is_ab = True
+    is_ab = False
     aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
            0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
     modus = [f'ga_a{a}' for a in aes]
@@ -563,10 +464,10 @@ if __name__ == '__main__':
         idx_proj_num_map = {i: 0 for i in range(6)}
         idx_non_nan_baseline_num_map = {i: np.zeros(4) for i in range(6)}
     # Note: a0 = cheap; a1 = fast
-    # print(consider_fr('ext_dat/ga_a0',
-    #                   'ext_dat/ga_a1',
-    #                   'non_ig',
-    #                   'ga'))
+    print(consider_fr('ext_dat/ga_a0',
+                      'ext_dat/ga_a1',
+                      'non_ig',
+                      'ga'))
     # consider_fr('ext_dat/ga_a0',
     #             'ext_dat/ga_a1',
     #             'non_ig',
@@ -597,7 +498,7 @@ if __name__ == '__main__':
     #                   'fastest',
     #                   'summary_per_project_lower_runtime_goal.csv')
     # get_avg_min_max_failrate()
-    iter_alloc(0,
-               'ga_a0')
+    # iter_alloc(0,
+    #            'ga_a0')
     # iter_alloc(1,
     #            'ga_a1')

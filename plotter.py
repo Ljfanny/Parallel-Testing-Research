@@ -664,12 +664,12 @@ if __name__ == '__main__':
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
     # draw_integ_as_graph(True)
-    # draw_integ_proj_avg_rate_graph('ga',
-    #                                'Average Rate for GA with Setup Cost',
-    #                                [4, 3, 2, 1, 0, -1, -2],
-    #                                [4, 3, 2, 1, 0, 1, 2],
-    #                                [4, 2, 0, -2, -4, -6],
-    #                                [4, 2, 0, 2, 4, 6])
+    draw_integ_proj_avg_rate_graph('ga',
+                                   'Average Rate for GA with Setup Cost',
+                                   [4, 3, 2, 1, 0, -1, -2],
+                                   [4, 3, 2, 1, 0, 1, 2],
+                                   [4, 2, 0, -2, -4, -6],
+                                   [4, 2, 0, 2, 4, 6])
     draw_integ_proj_avg_rate_graph('ga_ig',
                                    'Average Rate for GA without Setup Cost',
                                    [2, 1, 0, -1, -2],
