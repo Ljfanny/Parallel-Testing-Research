@@ -190,8 +190,8 @@ def eval_sche(ind):
             inner_idx = conv_calc_map[mach]
             cur_fr = val[inner_idx][failure_rate_idx]
             cur_avg_tm = val[inner_idx][avg_time_idx]
-            # if cur_fr > fr:
-            #     continue
+            if cur_fr > fr:
+                continue
             mach_time_dict[mach] += cur_avg_tm
             fitness, _ = get_fit(mach_time_dict)
             if fitness < min_fitness:

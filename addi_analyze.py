@@ -10,7 +10,7 @@ def iter_alloc(a,
     def cal_price(mach_tm_dict):
         price = 0
         for key, per_runtime in mach_tm_dict.items():
-            per_price = per_runtime * conf_prc_map[mach_arr[ky]] / 3600
+            per_price = per_runtime * conf_prc_map[mach_arr[key]] / 3600
             price += per_price
         return price
 
