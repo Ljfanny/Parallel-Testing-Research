@@ -17,6 +17,7 @@ def iter_alloc(a,
 
     proj_list = [
         'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
+        'db-scheduler_dot',
         'esper_examples.rfidassetzone',
         'fluent-logger-java_dot',
         'hutool_hutool-cron',
