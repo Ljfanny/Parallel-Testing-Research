@@ -115,14 +115,16 @@ def record_df(df,
     return chp_nonnan_num, fst_nonnan_num
 
 
-def get_contrast(subdir,
+def get_contrast(a,
+                 subdir,
                  proj,
                  mach_num):
     df = pd.read_csv(f'baseline_dat/{subdir}/{proj}.csv')
     filter_dat = df.loc[df['num_machines'] == mach_num]
     filter_dat = (filter_dat.iloc[:, 1:]).reset_index(drop=True)
     github_caliber = filter_dat.loc[filter_dat['conf'] == alter_conf].iloc[0]
-    filter_dat.sort_values(by='max_failure_rate', inplace=True)
+    filter_dat['fitness'] = a * (25.993775 / 3600) * filter_dat['time_parallel'] + (1 - a) * filter_dat['price']
+    filter_dat.sort_values(by='fitness', inplace=True)
     return github_caliber, filter_dat.iloc[0, :]
 
 
@@ -255,11 +257,12 @@ def consider_fr(chp_dat_dir,
                         fst_price = itm['price']
                 else:
                     break
-            chp_gh, chp_smt = get_contrast(baseline_subdir,
-                                           'wro4j_wro4j-extensions',
-                                           # proj_name,
+            chp_gh, chp_smt = get_contrast(0,
+                                           baseline_subdir,
+                                           proj_name,
                                            sum(literal_eval(chp['confs']).values()))
-            fst_gh, fst_smt = get_contrast(baseline_subdir,
+            fst_gh, fst_smt = get_contrast(1,
+                                           baseline_subdir,
                                            proj_name,
                                            sum(literal_eval(fst['confs']).values()))
             a0_nonnan_num, a1_nonnan_num = record_df(dfs[i],
@@ -300,7 +303,8 @@ def consider_fr(chp_dat_dir,
     return a0_sum_nonnan, a1_sum_nonnan
 
 
-def consider_ab(dat_dir,
+def consider_ab(a,
+                dat_dir,
                 baseline_subdir,
                 modu):
     output = f'integ_dat/{modu}.csv'
@@ -340,7 +344,8 @@ def consider_ab(dat_dir,
             continue
         dat.sort_values(by='fitness', inplace=True)
         itm = dat.iloc[0, :]
-        gh, smt = get_contrast(baseline_subdir,
+        gh, smt = get_contrast(a,
+                               baseline_subdir,
                                proj_name,
                                sum(literal_eval(itm['confs']).values()))
         is_gh = False if gh['max_failure_rate'] > 0 else True
@@ -426,48 +431,38 @@ def consider_per_proj(subdir,
                             sep=',', header=True, index=False)
 
 
-def get_avg_min_max_failrate():
-    chp_pfx = 'cheapest'
-    fst_pfx = 'fastest'
-    gh_md = 'github_caliber'
-    smt_md = 'smart_baseline'
-    fr_col_nm = 'max_failure_rate'
-    fr0_df = pd.read_csv('integ_dat/ga/failrate_0.csv').dropna(subset=[f'{chp_pfx}_category'])
-    gh_frs = []
-    smt_frs = []
-    for index, low in fr0_df.iterrows():
-        chp_gh, chp_smt = get_contrast('non_ig',
-                                       low['project'],
-                                       sum(literal_eval(low[f'{chp_pfx}_confs']).values()))
-        fst_gh, fst_smt = get_contrast('non_ig',
-                                       low['project'],
-                                       sum(literal_eval(low[f'{fst_pfx}_confs']).values()))
-        if np.isnan(low[f'{chp_pfx}_{gh_md}_{fr_col_nm}']):
-            gh_frs.append(chp_gh[f'{fr_col_nm}'])
-        if np.isnan(low[f'{fst_pfx}_{gh_md}_{fr_col_nm}']):
-            gh_frs.append(fst_gh[f'{fr_col_nm}'])
-        if np.isnan(low[f'{chp_pfx}_{smt_md}_{fr_col_nm}']):
-            smt_frs.append(chp_smt[f'{fr_col_nm}'])
-        if np.isnan(low[f'{fst_pfx}_{smt_md}_{fr_col_nm}']):
-            smt_frs.append(fst_smt[f'{fr_col_nm}'])
-    print(f'GitHub caliber avg. max failure rate: {np.mean(np.array(gh_frs))}')
-    print(f'Smart baseline avg. max failure rate: {np.mean(np.array(smt_frs))}')
-
-
 if __name__ == '__main__':
-    is_ab = False
+    is_ab = True
     aes = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
            0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
-    modus = [f'ga_a{a}' for a in aes]
     if not is_ab:
         summary_arr = np.zeros((6, 12))
         idx_proj_num_map = {i: 0 for i in range(6)}
         idx_non_nan_baseline_num_map = {i: np.zeros(4) for i in range(6)}
     # Note: a0 = cheap; a1 = fast
-    print(consider_fr('ext_dat/ga_a0',
-                      'ext_dat/ga_a1',
-                      'non_ig',
-                      'ga'))
+
+    # print(consider_fr('ext_dat/ga_a0',
+    #                   'ext_dat/ga_a1',
+    #                   'non_ig',
+    #                   'ga'))
+    # consider_per_proj('ga',
+    #                   'cheapest',
+    #                   'summary_per_project_lower_price_goal.csv')
+    # consider_per_proj('ga',
+    #                   'fastest',
+    #                   'summary_per_project_lower_runtime_goal.csv')
+
+    # print(consider_fr('ext_dat/ga_a0_ig',
+    #                   'ext_dat/ga_a1_ig',
+    #                   'ig',
+    #                   'ga_ig'))
+    # consider_per_proj('ga_ig',
+    #                   'cheapest',
+    #                   'summary_per_project_lower_price_goal.csv')
+    # consider_per_proj('ga_ig',
+    #                   'fastest',
+    #                   'summary_per_project_lower_runtime_goal.csv')
+
     # consider_fr('ext_dat/ga_a0',
     #             'ext_dat/ga_a1',
     #             'non_ig',
@@ -477,28 +472,9 @@ if __name__ == '__main__':
     #             'ext_dat/bruteforce_a1',
     #             'non_ig',
     #             'bruteforce')
-    # print(consider_fr('ext_dat/ga_a0_ig',
-    #                   'ext_dat/ga_a1_ig',
-    #                   'ig',
-    #                   'ga_ig'))
-    # for md in modus:
-    #     consider_ab(f'ext_dat/{md}',
+
+    # for a in aes:
+    #     consider_ab(a,
+    #                 f'ext_dat/ga_a{a}',
     #                 'non_ig',
-    #                 md)
-    # consider_per_proj('ga',
-    #                   'cheapest',
-    #                   'summary_per_project_lower_price_goal.csv')
-    # consider_per_proj('ga',
-    #                   'fastest',
-    #                   'summary_per_project_lower_runtime_goal.csv')
-    # consider_per_proj('ga_ig',
-    #                   'cheapest',
-    #                   'summary_per_project_lower_price_goal.csv')
-    # consider_per_proj('ga_ig',
-    #                   'fastest',
-    #                   'summary_per_project_lower_runtime_goal.csv')
-    # get_avg_min_max_failrate()
-    # iter_alloc(0,
-    #            'ga_a0')
-    # iter_alloc(1,
-    #            'ga_a1')
+    #                 f'ga_a{a}')

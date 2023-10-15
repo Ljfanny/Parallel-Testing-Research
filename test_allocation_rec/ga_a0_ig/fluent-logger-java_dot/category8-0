@@ -16,5 +16,5 @@
                          'org.fluentd.logger.TestFluentLogger#testInMultiThreading',
                          'org.fluentd.logger.TestFluentLogger#testClose',
                          'org.fluentd.logger.TestFluentLogFactory#testGetLogger'],
- '23CPU05Mem4GB.sh': [],
- '26CPU2Mem4GB.sh': []}
+ '26CPU2Mem4GB.sh': [],
+ '28CPU2Mem16GB.sh': []}

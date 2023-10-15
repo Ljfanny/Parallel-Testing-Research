@@ -10,9 +10,9 @@
                           'org.fluentd.logger.sender.TestRawSocketSender#testTimeout',
                           'org.fluentd.logger.TestFluentLogFactory#testGetLogger',
                           'org.fluentd.logger.sender.TestNullSender#testNormal'],
- '28CPU2Mem16GB.sh:v0': ['org.fluentd.logger.TestFluentLogger#testNormal01',
-                         'org.fluentd.logger.sender.TestRawSocketSender#testNormal01',
-                         'org.fluentd.logger.TestFluentLogFactory#testItHoldsLoggersOverGC',
-                         'org.fluentd.logger.sender.TestRawSocketSender#testBufferingAndResending'],
- '28CPU2Mem16GB.sh:v1': ['org.fluentd.logger.TestFluentLogger#testReconnection',
-                         'org.fluentd.logger.sender.TestSenderFluentdDownOperation#testFluentdDownOperation01']}
+ '24CPU1Mem4GB.sh': ['org.fluentd.logger.TestFluentLogger#testNormal01',
+                     'org.fluentd.logger.sender.TestRawSocketSender#testNormal01',
+                     'org.fluentd.logger.TestFluentLogFactory#testItHoldsLoggersOverGC',
+                     'org.fluentd.logger.sender.TestRawSocketSender#testBufferingAndResending'],
+ '28CPU2Mem16GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
+                      'org.fluentd.logger.sender.TestSenderFluentdDownOperation#testFluentdDownOperation01']}

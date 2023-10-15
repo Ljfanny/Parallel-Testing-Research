@@ -1,6 +1,8 @@
-{'22CPU05Mem2GB.sh': ['delight.nashornsandbox.TestLimitCPU#test_only_while_good_script'],
+{'01noThrottling.sh': [],
+ '19CPU010Mem1GB.sh': ['delight.nashornsandbox.TestBindingsInsert#testOverride',
+                       'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
+ '22CPU05Mem2GB.sh': ['delight.nashornsandbox.TestLimitCPU#test_only_while_good_script'],
  '24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestLimitCPU#test_while_plus_iteration_bad_script'],
- '25CPU1Mem8GB.sh': [],
  '26CPU2Mem4GB.sh:v0': ['delight.nashornsandbox.internal.JsSanitizerTest#testSecureJs_simple',
                         'delight.nashornsandbox.TestManyEvalsAndInjections#test',
                         'delight.nashornsandbox.TestMemoryLimit#test_noexpectedbraces',
@@ -75,8 +77,5 @@
                         'delight.nashornsandbox.TestBindingsInsert#testInsertOptionsWithBinding',
                         'delight.nashornsandbox.TestCustomCache#testCustomCacheUsage',
                         'delight.nashornsandbox.internal.ThreadMonitorTest#when_run_and_threadToMonitor_set_then_do_not_wait',
-                        'delight.nashornsandbox.TestRemoveComments#test',
-                        'delight.nashornsandbox.TestBindingsInsert#testOverride',
-                        'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
- '27CPU2Mem8GB.sh': [],
- '28CPU2Mem16GB.sh': []}
+                        'delight.nashornsandbox.TestRemoveComments#test'],
+ '27CPU2Mem8GB.sh': []}

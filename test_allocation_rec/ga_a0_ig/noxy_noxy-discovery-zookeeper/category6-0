@@ -1,7 +1,7 @@
-{'19CPU010Mem1GB.sh': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testDiscoveryListener',
+{'01noThrottling.sh': [],
+ '19CPU010Mem1GB.sh': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testDiscoveryListener',
                        'com.spinn3r.noxy.discovery.zookeeper.ZKTest#testMembershipJoinAndLeave'],
- '23CPU05Mem4GB.sh': [],
- '26CPU2Mem4GB.sh:v0': [],
- '26CPU2Mem4GB.sh:v1': [],
- '26CPU2Mem4GB.sh:v2': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testBulkClusterJoining'],
- '28CPU2Mem16GB.sh': []}
+ '21CPU025Mem2GB.sh': [],
+ '22CPU05Mem2GB.sh': [],
+ '26CPU2Mem4GB.sh': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testBulkClusterJoining'],
+ '29CPU4Mem8GB.sh': []}

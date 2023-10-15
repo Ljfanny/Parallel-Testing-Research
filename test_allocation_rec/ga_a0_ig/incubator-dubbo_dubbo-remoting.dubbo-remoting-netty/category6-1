@@ -10,5 +10,6 @@
  '25CPU1Mem8GB.sh': ['org.apache.dubbo.remoting.transport.netty.ClientsTest#testGetTransportWrong',
                      'org.apache.dubbo.remoting.transport.netty.NettyStringTest#testHandler',
                      'org.apache.dubbo.remoting.transport.netty.ClientsTest#testGetTransportNull'],
- '26CPU2Mem4GB.sh:v0': ['org.apache.dubbo.remoting.transport.netty.NettyClientToServerTest#testFuture'],
- '26CPU2Mem4GB.sh:v1': ['org.apache.dubbo.remoting.transport.netty.NettyClientTest#testServerClose']}
+ '26CPU2Mem4GB.sh': ['org.apache.dubbo.remoting.transport.netty.NettyClientTest#testServerClose',
+                     'org.apache.dubbo.remoting.transport.netty.NettyClientToServerTest#testFuture'],
+ '29CPU4Mem8GB.sh': []}

@@ -184,7 +184,6 @@
                       'org.apache.hadoop.hbase.regionserver.TestStoreScanner#testDeleteColumn',
                       'org.apache.hadoop.hbase.util.TestBytes#testIncrementBytes',
                       'org.apache.hadoop.hbase.client.TestFromClientSide#testAddKeyValue',
-                      'org.apache.hadoop.hbase.util.TestBytes#testToLong',
                       'org.apache.hadoop.hbase.stargate.Test00MiniCluster#testDFSMiniCluster',
                       'org.apache.hadoop.hbase.stargate.model.TestStorageClusterStatusModel#testBuildModel',
                       'org.apache.hadoop.hbase.stargate.model.TestStorageClusterVersionModel#testBuildModel',
@@ -424,5 +423,6 @@
                      'org.apache.hadoop.hbase.stargate.model.TestVersionModel#testFromPB',
                      'org.apache.hadoop.hbase.filter.TestFilterList#testMPALL',
                      'org.apache.hadoop.hbase.regionserver.TestDeleteCompare#testDeleteCompare_Multiple',
+                     'org.apache.hadoop.hbase.util.TestBytes#testToLong',
                      'org.apache.hadoop.hbase.regionserver.TestMemStore#testGetWithDeleteColumn',
                      'org.apache.hadoop.hbase.stargate.auth.TestHBCAuthenticator#testGetUserUnknown']}

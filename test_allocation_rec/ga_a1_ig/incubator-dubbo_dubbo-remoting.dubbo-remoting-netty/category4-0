@@ -1,4 +1,4 @@
-{'26CPU2Mem4GB.sh': ['org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testServerHeartbeat'],
+{'01noThrottling.sh': ['org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testServerHeartbeat'],
  '27CPU2Mem8GB.sh:v0': ['org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testHeartbeat'],
  '27CPU2Mem8GB.sh:v1': ['org.apache.dubbo.remoting.exchange.support.header.HeartbeatHandlerTest#testClientHeartbeat',
                         'org.apache.dubbo.remoting.transport.netty.NettyClientToServerTest#testFuture',

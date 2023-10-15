@@ -37,7 +37,9 @@
                        'io.elasticjob.lite.util.env.HostExceptionTest#assertGetCause',
                        'io.elasticjob.lite.util.json.GsonFactoryTest#assertRegisterTypeAdapter',
                        'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertGetCompletedNode',
-                       'io.elasticjob.lite.internal.schedule.JobRegistryTest#assertIsShutdownForJobSchedulerNull'],
+                       'io.elasticjob.lite.internal.schedule.JobRegistryTest#assertIsShutdownForJobSchedulerNull',
+                       'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
+                       'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException'],
  '24CPU1Mem4GB.sh': ['io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertIsJobNodeExisted',
                      'io.elasticjob.lite.internal.listener.ListenerManagerTest#assertStartAllListeners',
                      'io.elasticjob.lite.statistics.rdb.StatisticRdbRepositoryTest#assertGetSummedTaskResultStatisticsWhenTableIsEmpty',
@@ -497,6 +499,4 @@
                      'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath',
                      'io.elasticjob.lite.exception.ExceptionUtilTest#assertTransformWithNull',
                      'io.elasticjob.lite.api.strategy.JobInstanceTest#assertGetJobInstanceId',
-                     'io.elasticjob.lite.internal.config.ConfigurationNodeTest#assertIsConfigPath',
-                     'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
-                     'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException']}
+                     'io.elasticjob.lite.internal.config.ConfigurationNodeTest#assertIsConfigPath']}

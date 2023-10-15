@@ -552,9 +552,9 @@
                         'io.elasticjob.lite.lifecycle.restful.RestfulExceptionTest#assertRestfulException',
                         'io.elasticjob.lite.internal.election.LeaderServiceTest#assertElectLeaderExecutionCallbackWithLeader',
                         'io.elasticjob.lite.internal.election.LeaderNodeTest#assertIsLeaderInstancePath',
-                        'io.elasticjob.lite.lifecycle.domain.ShardingStatusTest#assertGetShardingStatusWhenIsPending',
-                        'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
-                        'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException'],
+                        'io.elasticjob.lite.lifecycle.domain.ShardingStatusTest#assertGetShardingStatusWhenIsPending'],
  '26CPU2Mem4GB.sh': ['io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterInitFailureTest#assertInitFailure',
                      'io.elasticjob.lite.lifecycle.domain.ShardingStatusTest#assertGetShardingStatusWhenIsDisabled',
+                     'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
+                     'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException',
                      'io.elasticjob.lite.exception.ExceptionUtilTest#assertTransformWithNull']}

@@ -100,10 +100,7 @@
                          'org.activiti.engine.test.bpmn.callactivity.CallActivityAdvancedTest#testCallSequentialSubProcessWithExpressions',
                          'org.activiti.engine.test.bpmn.async.AsyncTaskTest#testMultiInstanceAsyncSequentialTask',
                          'org.activiti.engine.test.bpmn.event.signal.SignalEventTest#testNonInterruptingSignal',
-                         'org.activiti.standalone.testing.ActivitiRuleJunit4Test#ruleUsageExample',
-                         'org.activiti.examples.runtime.StandardAgendaFailingTest#org.activiti.examples.runtime.StandardAgendaFailingTest',
-                         'org.activiti.engine.test.jobexecutor.AsyncExecutorTest#testAsyncScriptExecutionOnTwoEngines',
-                         'org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest#org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest'],
+                         'org.activiti.standalone.testing.ActivitiRuleJunit4Test#ruleUsageExample'],
  '26CPU2Mem4GB.sh:v0': ['org.activiti.standalone.history.FullHistoryTest#testHistoricVariableQuery',
                         'org.activiti.engine.test.api.event.ErrorThrowingEventListenerTest#testThrowErrorWithErrorcodeDefinedInProcessDefinition',
                         'org.activiti.engine.test.api.runtime.ExecutionQueryTest#testQueryByInvalidProcessDefinitionKey',
@@ -2044,4 +2041,7 @@
                         'org.activiti.standalone.calendar.DurationHelperTest#daylightSavingFallSecondHour',
                         'org.activiti.standalone.calendar.CycleBusinessCalendarTest#testSimpleCron',
                         'org.activiti.editor.language.xml.CommaSplitterTest#testOManyComaInExpression',
-                        'org.activiti.editor.language.xml.CommaSplitterTest#testCommaAtEnd']}
+                        'org.activiti.editor.language.xml.CommaSplitterTest#testCommaAtEnd',
+                        'org.activiti.examples.runtime.StandardAgendaFailingTest#org.activiti.examples.runtime.StandardAgendaFailingTest',
+                        'org.activiti.engine.test.jobexecutor.AsyncExecutorTest#testAsyncScriptExecutionOnTwoEngines',
+                        'org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest#org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest']}

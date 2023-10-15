@@ -37,6 +37,7 @@ fr0_satisfied_projs = [
     'spring-boot_dot',
     'wro4j_wro4j-extensions']
 
+
 def draw_scatter(ax, x, y, z, c, label=None):
     ax.scatter(x, y, z, c=c, label=label)
 
@@ -436,9 +437,7 @@ def draw_integ_as_graph(is_bar=False):
         ax1.set_yticklabels([2, 1, 0, 1, 2])
         ax2.set_yticks([2, 1, 0, -1, -2])
         ax2.set_yticklabels([2, 1, 0, 1, 2])
-        leg = ax1.legend(edgecolor='none')
         ax2.set_xlabel(r'The Parameter a', size=12, weight='bold')
-        # leg.set_bbox_to_anchor((0.05, 1.2))
 
     def sub_bar(ax,
                 x,
@@ -489,6 +488,10 @@ def draw_integ_as_graph(is_bar=False):
         arr.append((runtime, price, code))
 
     dfs = [pd.read_csv(f'integ_dat/ga_a{i}.csv') for i in a]
+    tradeoff_per_proj_df = pd.DataFrame(None,
+                                        columns=['project',
+                                                 'github_baseline_tradeoff',
+                                                 'smart_baseline_tradeoff'])
     programs = dfs[0].iloc[:, 0]
     is_reco_rt = True
     rts = []
@@ -649,9 +652,7 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
     ax2.set_yticklabels(y2_labels)
     ax1.set_xticklabels(x)
     ax2.set_xticklabels(x)
-    # legend = ax1.legend(edgecolor='none')
     ax2.set_xlabel(r'Project ID', size=12, weight='bold')
-    # legend.set_bbox_to_anchor((0.23, 1.22))
     fig.suptitle(sup_title, size=16, weight='bold')
     ax1.legend()
     plt.savefig(f'integ_fig/avg_rate_{goal_subdir}_graph.pdf')
@@ -663,16 +664,16 @@ if __name__ == '__main__':
     # draw_integ_scatter2d('ga', 0)
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
-    # draw_integ_as_graph(True)
-    draw_integ_proj_avg_rate_graph('ga',
-                                   'Average Rate for GA with Setup Cost',
-                                   [4, 3, 2, 1, 0, -1, -2],
-                                   [4, 3, 2, 1, 0, 1, 2],
-                                   [4, 2, 0, -2, -4, -6],
-                                   [4, 2, 0, 2, 4, 6])
-    draw_integ_proj_avg_rate_graph('ga_ig',
-                                   'Average Rate for GA without Setup Cost',
-                                   [2, 1, 0, -1, -2],
-                                   [2, 1, 0, 1, 2],
-                                   [2, 1, 0, -1, -2, -3, -4],
-                                   [2, 1, 0, 1, 2, 3, 4])
+    draw_integ_as_graph(True)
+    # draw_integ_proj_avg_rate_graph('ga',
+    #                                'Average Rate for GA with Setup Cost',
+    #                                [8, 6, 4, 2, 0, -2],
+    #                                [8, 6, 4, 2, 0, 2],
+    #                                [8, 6, 4, 2, 0],
+    #                                [8, 6, 4, 2, 0])
+    # draw_integ_proj_avg_rate_graph('ga_ig',
+    #                                'Average Rate for GA without Setup Cost',
+    #                                [6, 4, 2, 0, -2],
+    #                                [6, 4, 2, 0, 2],
+    #                                [6, 4, 2, 0, -2],
+    #                                [6, 4, 2, 0, 2])

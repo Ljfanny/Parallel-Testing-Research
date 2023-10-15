@@ -18,4 +18,4 @@
                          'org.fluentd.logger.sender.TestSenderFluentdDownOperation#testFluentdDownOperation01'],
  '27CPU2Mem8GB.sh:v0': [],
  '27CPU2Mem8GB.sh:v1': [],
- '28CPU2Mem16GB.sh': []}
+ '27CPU2Mem8GB.sh:v2': []}

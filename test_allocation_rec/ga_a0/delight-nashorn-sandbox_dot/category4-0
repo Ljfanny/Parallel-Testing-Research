@@ -73,7 +73,7 @@
                         'delight.nashornsandbox.TestIssue34#testIssue34_Scenario4',
                         'delight.nashornsandbox.TestIssue57#testMapReduce',
                         'delight.nashornsandbox.internal.ThreadMonitorTest#when_run_and_threadToMonitor_set_then_do_not_wait',
-                        'delight.nashornsandbox.TestRemoveComments#test'],
- '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test',
-                     'delight.nashornsandbox.TestBindingsInsert#testOverride',
-                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext']}
+                        'delight.nashornsandbox.TestRemoveComments#test',
+                        'delight.nashornsandbox.TestBindingsInsert#testOverride',
+                        'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
+ '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test']}

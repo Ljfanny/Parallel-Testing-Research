@@ -1,7 +1,8 @@
 import json, time
 import pandas as pd
+import numpy as np
 from ast import literal_eval
-from itertools import combinations
+from itertools import product
 from preproc import preproc, conf_prc_map
 
 
@@ -38,8 +39,9 @@ def iter_alloc(a,
         with open(f'setup_time_rec/{proj}', 'r') as f:
             setup_tm_dict = json.load(f)
         confs_dict = literal_eval(df.iloc[0]['confs'])
-        combs = combinations(range(2 * len(avg_tm_dict)),
-                             len(avg_tm_dict))
+        n = len(avg_tm_dict.keys())
+        arr = np.array([0, 1])
+        prods = np.array(list(product(arr, repeat=n)))
         if len(confs_dict) == 1:
             mach_arr = [list(confs_dict.keys())[0], list(confs_dict.keys())[0]]
         else:
@@ -63,13 +65,11 @@ def iter_alloc(a,
         mini_mach_test_dict = {}
         mini_mach_time_dict = {}
         t1 = time.time()
-        for comb in combs:
-            print(comb)
-            choices = [0 if i < len(avg_tm_dict) else 1 for i in comb]
+        for prod in prods:
             is_match_fr = True
             mach_test_dict = {0: [], 1: []}
             mach_time_dict = {0: setup_tm_dict[mach_arr[0]], 1: setup_tm_dict[mach_arr[1]]}
-            for idx, mach_id in enumerate(choices):
+            for idx, mach_id in enumerate(prod):
                 tst = idx_tst_map[idx]
                 itm = tmp_dict[tst][mach_id]
                 if itm is None:
@@ -78,8 +78,9 @@ def iter_alloc(a,
                 mach_test_dict[mach_id].append(tst)
                 mach_time_dict[mach_id] += itm[2]
             if a == 1:
-                if is_match_fr and mini >= max(mach_time_dict.values()):
-                    mini = max(mach_time_dict.values())
+                runtm = max(mach_time_dict.values())
+                if is_match_fr and mini >= runtm:
+                    mini = runtm
                     mini_mach_test_dict = mach_test_dict
                     mini_mach_time_dict = mach_time_dict
             else:
@@ -93,8 +94,8 @@ def iter_alloc(a,
             proj,
             '2-0',
             confs_dict,
-            sum(mini_mach_time_dict),
-            max(mini_mach_time_dict),
+            sum(mini_mach_time_dict.values()),
+            max(mini_mach_time_dict.values()),
             cal_price(mini_mach_time_dict),
             mini_mach_test_dict,
             t2 - t1
@@ -103,7 +104,7 @@ def iter_alloc(a,
 
 
 if __name__ == '__main__':
-    iter_alloc(0,
-               'ga_a0')
-    # iter_alloc(1,
-    #            'ga_a1')
+    # iter_alloc(0,
+    #            'ga_a0')
+    iter_alloc(1,
+               'ga_a1')

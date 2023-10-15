@@ -345,7 +345,7 @@ if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
     prog_start = time.time()
     is_reco_base = False
-    a = 0
+    a = 1
     group_ky = 'non_ig'
     groups_map = {
         'non_ig': ['', False],
@@ -353,8 +353,6 @@ if __name__ == '__main__':
     }
     num_of_machine = [1, 2, 4, 6, 8, 10, 12]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
-    # num_of_machine = [1, 2, 4, 6]
-    # pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
     sub = f'ga_a{a}{groups_map[group_ky][0]}'
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
@@ -391,6 +389,7 @@ if __name__ == '__main__':
             toolbox.register("population", tools.initRepeat, list, toolbox.individual)
             toolbox.register("mutate", tools.mutUniformInt, low=0, up=11, indpb=1 / mach_num)
             # if is_reco_base:
+            #     hist.clear()
             #     reco_base(proj_name,
             #               base_df,
             #               mach_num)
@@ -411,17 +410,10 @@ if __name__ == '__main__':
                            category,
                            ext_dat_df,
                            tt)
-                # record_ind(best_ind,
-                #            'bruteforce_a0',
-                #            proj_name,
-                #            category,
-                #            ext_dat_df,
-                #            tt)
         resu_sub_path = f'{resu_path}/{sub}'
         if not os.path.exists(resu_sub_path):
             os.mkdir(resu_sub_path)
         ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
-        # ext_dat_df.to_csv(f'{resu_path}/bruteforce_a0/{proj_name}.csv', sep=',', header=True, index=False)
         # if is_reco_base:
         #     base_df.to_csv(f'{base_path}/{group_ky}/{proj_name}.csv', sep=',', header=True, index=False)
     print(f'[Total time] {time.time() - prog_start} s')

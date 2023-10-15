@@ -1,8 +1,6 @@
 {'19CPU010Mem1GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#appendMappedQueryParamsWithExistingQueryStart',
                        'com.github.kevinsawicki.http.HttpRequestTest#appendWithNullMappedQueryParamValues',
                        'com.github.kevinsawicki.http.HttpRequestTest#appendWithVarargsQueryParamsWithExistingParams'],
- '21CPU025Mem2GB.sh': ['com.github.kevinsawicki.http.EncodeTest#encode',
-                       'com.github.kevinsawicki.http.EncodeTest#encodeMalformedUri'],
  '22CPU05Mem2GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#basicAuthentication',
                       'com.github.kevinsawicki.http.HttpRequestTest#chunkPost',
                       'com.github.kevinsawicki.http.HttpRequestTest#uploadProgressSendInputStream',
@@ -21,7 +19,9 @@
                       'com.github.kevinsawicki.http.HttpRequestTest#appendOddNumberOfParams',
                       'com.github.kevinsawicki.http.HttpRequestTest#appendVarargsQueryParamsWithPath',
                       'com.github.kevinsawicki.http.HttpRequestTest#appendEmptyMappedQueryParams',
-                      'com.github.kevinsawicki.http.HttpRequestTest#appendNullVaragsQueryParams'],
+                      'com.github.kevinsawicki.http.HttpRequestTest#appendNullVaragsQueryParams',
+                      'com.github.kevinsawicki.http.EncodeTest#encode',
+                      'com.github.kevinsawicki.http.EncodeTest#encodeMalformedUri'],
  '23CPU05Mem4GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#malformedStringUrl',
                       'com.github.kevinsawicki.http.HttpRequestTest#malformedStringUrlCause',
                       'com.github.kevinsawicki.http.HttpRequestTest#appendVarargsQueryParamsWithExistingQueryStart',
@@ -160,4 +160,5 @@
                      'com.github.kevinsawicki.http.HttpRequestTest#appendMappedQueryParamsWithPath'],
  '28CPU2Mem16GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#getUrlEncodedWithSpace',
                       'com.github.kevinsawicki.http.HttpRequestTest#httpTrust'],
- '29CPU4Mem8GB.sh': ['com.github.kevinsawicki.http.HttpRequestTest#singleVerifier']}
+ '29CPU4Mem8GB.sh:v0': [],
+ '29CPU4Mem8GB.sh:v1': ['com.github.kevinsawicki.http.HttpRequestTest#singleVerifier']}

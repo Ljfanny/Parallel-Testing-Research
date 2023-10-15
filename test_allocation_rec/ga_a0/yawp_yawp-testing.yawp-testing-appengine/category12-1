@@ -1,6 +1,7 @@
 {'22CPU05Mem2GB.sh:v0': [],
  '22CPU05Mem2GB.sh:v1': [],
  '22CPU05Mem2GB.sh:v10': [],
+ '22CPU05Mem2GB.sh:v11': ['io.yawp.testing.appengine.pipes.flow.FlowDropsTest#testFlowDropsToSameSink'],
  '22CPU05Mem2GB.sh:v2': [],
  '22CPU05Mem2GB.sh:v3': [],
  '22CPU05Mem2GB.sh:v4': [],
@@ -8,5 +9,4 @@
  '22CPU05Mem2GB.sh:v6': [],
  '22CPU05Mem2GB.sh:v7': [],
  '22CPU05Mem2GB.sh:v8': [],
- '22CPU05Mem2GB.sh:v9': [],
- '24CPU1Mem4GB.sh': ['io.yawp.testing.appengine.pipes.flow.FlowDropsTest#testFlowDropsToSameSink']}
+ '22CPU05Mem2GB.sh:v9': []}

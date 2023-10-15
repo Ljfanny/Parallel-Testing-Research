@@ -1,6 +1,6 @@
 {'24CPU1Mem4GB.sh': ['com.github.kagkarlsson.scheduler.compatibility.HsqlCompatibilityTest#test_compatibility'],
- '26CPU2Mem4GB.sh:v0': ['com.github.kagkarlsson.scheduler.SchedulerClientTest#client_should_be_able_to_fetch_executions_for_task'],
- '26CPU2Mem4GB.sh:v1': [],
+ '26CPU2Mem4GB.sh:v0': [],
+ '26CPU2Mem4GB.sh:v1': ['com.github.kagkarlsson.scheduler.SchedulerClientTest#client_should_be_able_to_fetch_executions_for_task'],
  '26CPU2Mem4GB.sh:v2': [],
  '26CPU2Mem4GB.sh:v3': [],
  '26CPU2Mem4GB.sh:v4': [],

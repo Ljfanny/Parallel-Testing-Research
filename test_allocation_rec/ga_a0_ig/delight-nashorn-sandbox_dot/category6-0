@@ -1,7 +1,6 @@
-{'24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestLimitCPU#test_only_while_good_script',
-                     'delight.nashornsandbox.TestLimitCPU#test_while_plus_iteration_bad_script',
-                     'delight.nashornsandbox.TestBindingsInsert#testOverride',
-                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
+{'23CPU05Mem4GB.sh': [],
+ '24CPU1Mem4GB.sh': ['delight.nashornsandbox.TestLimitCPU#test_only_while_good_script',
+                     'delight.nashornsandbox.TestLimitCPU#test_while_plus_iteration_bad_script'],
  '26CPU2Mem4GB.sh:v0': ['delight.nashornsandbox.TestIssue34#testIssue34_Scenario1'],
  '26CPU2Mem4GB.sh:v1': ['delight.nashornsandbox.TestIssue54#test_valid',
                         'delight.nashornsandbox.TestIssue34#testIssue34_Scenario5',
@@ -76,5 +75,6 @@
                         'delight.nashornsandbox.TestIssue34#testIssue34_Scenario4',
                         'delight.nashornsandbox.internal.ThreadMonitorTest#when_run_and_threadToMonitor_set_then_do_not_wait',
                         'delight.nashornsandbox.TestRemoveComments#test'],
- '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test'],
- '29CPU4Mem8GB.sh': []}
+ '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test',
+                     'delight.nashornsandbox.TestBindingsInsert#testOverride',
+                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext']}
