@@ -172,7 +172,7 @@ def comp_confs(a: str, b: str):
     b_path = f'integ_dat/{id_subdir_map[b]}'
     csvs = os.listdir(a_path)
     for csv in csvs:
-        if csv.find('summary') != -1:
+        if csv.find('failrate') == -1:
             continue
         fr = csv.replace('.csv', '').split('_')[1]
         a_df = pd.read_csv(f'{a_path}/{csv}').dropna()

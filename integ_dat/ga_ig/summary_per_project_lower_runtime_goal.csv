@@ -1,4 +1,4 @@
-project,github_caliber_avg_runtime_rate,github_caliber_avg_price_rate,smart_baseline_avg_runtime_rate,smart_baseline_avg_price_rate
+project,github_baseline_avg_runtime_rate,github_baseline_avg_price_rate,smart_baseline_avg_runtime_rate,smart_baseline_avg_price_rate
 carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,0.9943866302763703,1.0224233484201386,1.0,0.6051287281391545
 commons-exec_dot,1.0,0.5557192011043066,1.0,0.5557192011043066
 delight-nashorn-sandbox_dot,0.9739381508959232,1.2212861905833232,1.0,0.7919442177470057

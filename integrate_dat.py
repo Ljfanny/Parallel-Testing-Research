@@ -122,10 +122,10 @@ def get_contrast(a,
     df = pd.read_csv(f'baseline_dat/{subdir}/{proj}.csv')
     filter_dat = df.loc[df['num_machines'] == mach_num]
     filter_dat = (filter_dat.iloc[:, 1:]).reset_index(drop=True)
-    github_caliber = filter_dat.loc[filter_dat['conf'] == alter_conf].iloc[0]
+    github = filter_dat.loc[filter_dat['conf'] == alter_conf].iloc[0]
     filter_dat['fitness'] = a * (25.993775 / 3600) * filter_dat['time_parallel'] + (1 - a) * filter_dat['price']
     filter_dat.sort_values(by='fitness', inplace=True)
-    return github_caliber, filter_dat.iloc[0, :]
+    return github, filter_dat.iloc[0, :]
 
 
 def consider_fr(chp_dat_dir,
@@ -147,18 +147,18 @@ def consider_fr(chp_dat_dir,
                               columns=[
                                   'table_category',
                                   'non_nan_project_num',
-                                  'cheapest_non_nan_github_caliber_num',
-                                  'cheapest_avg_ga_vs_github_caliber_runtime_rate',
-                                  'cheapest_avg_ga_vs_github_caliber_price_rate',
-                                  'cheapest_ga_vs_github_caliber_better_num',
+                                  'cheapest_non_nan_github_baseline_num',
+                                  'cheapest_avg_ga_vs_github_baseline_runtime_rate',
+                                  'cheapest_avg_ga_vs_github_baseline_price_rate',
+                                  'cheapest_ga_vs_github_baseline_better_num',
                                   'cheapest_non_nan_smart_baseline_num',
                                   'cheapest_avg_ga_vs_smart_baseline_runtime_rate',
                                   'cheapest_avg_ga_vs_smart_baseline_price_rate',
                                   'cheapest_ga_vs_smart_baseline_better_num',
-                                  'fastest_non_nan_github_caliber_num',
-                                  'fastest_avg_ga_vs_github_caliber_runtime_rate',
-                                  'fastest_avg_ga_vs_github_caliber_price_rate',
-                                  'fastest_ga_vs_github_caliber_better_num',
+                                  'fastest_non_nan_github_baseline_num',
+                                  'fastest_avg_ga_vs_github_baseline_runtime_rate',
+                                  'fastest_avg_ga_vs_github_baseline_price_rate',
+                                  'fastest_ga_vs_github_baseline_better_num',
                                   'fastest_non_nan_smart_baseline_num',
                                   'fastest_avg_ga_vs_smart_baseline_runtime_rate',
                                   'fastest_avg_ga_vs_smart_baseline_price_rate',
@@ -171,12 +171,12 @@ def consider_fr(chp_dat_dir,
                                  'cheapest_runtime',
                                  'cheapest_price',
                                  'cheapest_max_failure_rate',
-                                 'cheapest_github_caliber_conf',
-                                 'cheapest_github_caliber_runtime',
-                                 'cheapest_github_caliber_price',
-                                 'cheapest_github_caliber_max_failure_rate',
-                                 'cheapest_github_caliber_runtime_rate',
-                                 'cheapest_github_caliber_price_rate',
+                                 'cheapest_github_baseline_conf',
+                                 'cheapest_github_baseline_runtime',
+                                 'cheapest_github_baseline_price',
+                                 'cheapest_github_baseline_max_failure_rate',
+                                 'cheapest_github_baseline_runtime_rate',
+                                 'cheapest_github_baseline_price_rate',
                                  'cheapest_smart_baseline_conf',
                                  'cheapest_smart_baseline_runtime',
                                  'cheapest_smart_baseline_price',
@@ -188,12 +188,12 @@ def consider_fr(chp_dat_dir,
                                  'fastest_runtime',
                                  'fastest_price',
                                  'fastest_max_failure_rate',
-                                 'fastest_github_caliber_conf',
-                                 'fastest_github_caliber_runtime',
-                                 'fastest_github_caliber_price',
-                                 'fastest_github_caliber_max_failure_rate',
-                                 'fastest_github_caliber_runtime_rate',
-                                 'fastest_github_caliber_price_rate',
+                                 'fastest_github_baseline_conf',
+                                 'fastest_github_baseline_runtime',
+                                 'fastest_github_baseline_price',
+                                 'fastest_github_baseline_max_failure_rate',
+                                 'fastest_github_baseline_runtime_rate',
+                                 'fastest_github_baseline_price_rate',
                                  'fastest_smart_baseline_conf',
                                  'fastest_smart_baseline_runtime',
                                  'fastest_smart_baseline_price',
@@ -316,14 +316,14 @@ def consider_ab(a,
                                'price',
                                'max_failure_rate',
                                'fitness',
-                               'github_caliber_conf',
-                               'github_caliber_runtime',
-                               'github_caliber_price',
-                               'github_caliber_max_failure_rate',
-                               'github_caliber_score',
-                               'github_caliber_runtime_rate',
-                               'github_caliber_price_rate',
-                               'github_caliber_score_rate',
+                               'github_baseline_conf',
+                               'github_baseline_runtime',
+                               'github_baseline_price',
+                               'github_baseline_max_failure_rate',
+                               'github_baseline_score',
+                               'github_baseline_runtime_rate',
+                               'github_baseline_price_rate',
+                               'github_baseline_score_rate',
                                'smart_baseline_conf',
                                'smart_baseline_runtime',
                                'smart_baseline_price',
@@ -390,9 +390,10 @@ def consider_ab(a,
 
 def consider_per_proj(subdir,
                       prefix,
-                      goal_csv):
+                      goal_csv,
+                      tradeoff_csv):
     fr_tables = os.listdir(f'integ_dat/{subdir}')
-    fr_dfs = [pd.read_csv(f'integ_dat/{subdir}/{fr_tb}') for fr_tb in fr_tables if fr_tb.find('summary') == -1]
+    fr_dfs = [pd.read_csv(f'integ_dat/{subdir}/{fr_tb}') for fr_tb in fr_tables if fr_tb.find('failrate') != -1]
     projs = list(fr_dfs[4].dropna(subset=['cheapest_category']).iloc[:, 0])
     proj_info_df = pd.read_csv('proj_info.csv')
     proj_id_map = {itm['project-module']: itm['id'] for _, itm in proj_info_df.iterrows()}
@@ -400,11 +401,15 @@ def consider_per_proj(subdir,
     summary_per_proj = pd.DataFrame(None,
                                     columns=[
                                         'project',
-                                        'github_caliber_avg_runtime_rate',
-                                        'github_caliber_avg_price_rate',
+                                        'github_baseline_avg_runtime_rate',
+                                        'github_baseline_avg_price_rate',
                                         'smart_baseline_avg_runtime_rate',
                                         'smart_baseline_avg_price_rate'
                                     ])
+    tradeoff_per_proj_df = pd.DataFrame(None,
+                                        columns=['project',
+                                                 'github_baseline_tradeoff',
+                                                 'smart_baseline_tradeoff'])
     for i, proj in zip(i_arr, projs):
         gh_sum_runtime_rts = []
         smt_sum_runtime_rts = []
@@ -412,9 +417,9 @@ def consider_per_proj(subdir,
         smt_sum_price_rts = []
         for fr_df in fr_dfs:
             itm = fr_df.iloc[i, :]
-            gh_sum_runtime_rts.append(itm[f'{prefix}_github_caliber_runtime_rate'])
+            gh_sum_runtime_rts.append(itm[f'{prefix}_github_baseline_runtime_rate'])
             smt_sum_runtime_rts.append(itm[f'{prefix}_smart_baseline_runtime_rate'])
-            gh_sum_price_rts.append(itm[f'{prefix}_github_caliber_price_rate'])
+            gh_sum_price_rts.append(itm[f'{prefix}_github_baseline_price_rate'])
             smt_sum_price_rts.append(itm[f'{prefix}_smart_baseline_price_rate'])
         gh_avg_runtime_rate = np.nanmean(np.array(gh_sum_runtime_rts))
         smt_avg_runtime_rate = np.nanmean(np.array(smt_sum_runtime_rts))
@@ -427,8 +432,15 @@ def consider_per_proj(subdir,
             smt_avg_runtime_rate,
             smt_avg_price_rate
         ]
+        tradeoff_per_proj_df.loc[len(tradeoff_per_proj_df.index)] = [
+            proj,
+            gh_avg_runtime_rate * gh_avg_price_rate,
+            smt_avg_runtime_rate * smt_avg_price_rate
+        ]
     summary_per_proj.to_csv(f'integ_dat/{subdir}/{goal_csv}',
                             sep=',', header=True, index=False)
+    tradeoff_per_proj_df.to_csv(f'integ_dat/{subdir}/{tradeoff_csv}',
+                                sep=',', header=True, index=False)
 
 
 if __name__ == '__main__':
@@ -447,10 +459,12 @@ if __name__ == '__main__':
     #                   'ga'))
     # consider_per_proj('ga',
     #                   'cheapest',
-    #                   'summary_per_project_lower_price_goal.csv')
+    #                   'summary_per_project_lower_price_goal.csv',
+    #                   'tradeoff_per_project_lower_price.csv')
     # consider_per_proj('ga',
     #                   'fastest',
-    #                   'summary_per_project_lower_runtime_goal.csv')
+    #                   'summary_per_project_lower_runtime_goal.csv',
+    #                   'tradeoff_per_project_lower_runtime.csv')
 
     # print(consider_fr('ext_dat/ga_a0_ig',
     #                   'ext_dat/ga_a1_ig',
@@ -458,10 +472,12 @@ if __name__ == '__main__':
     #                   'ga_ig'))
     # consider_per_proj('ga_ig',
     #                   'cheapest',
-    #                   'summary_per_project_lower_price_goal.csv')
+    #                   'summary_per_project_lower_price_goal.csv',
+    #                   'tradeoff_per_project_lower_price.csv')
     # consider_per_proj('ga_ig',
     #                   'fastest',
-    #                   'summary_per_project_lower_runtime_goal.csv')
+    #                   'summary_per_project_lower_runtime_goal.csv',
+    #                   'tradeoff_per_project_lower_runtime.csv')
 
     # consider_fr('ext_dat/ga_a0',
     #             'ext_dat/ga_a1',
@@ -473,8 +489,8 @@ if __name__ == '__main__':
     #             'non_ig',
     #             'bruteforce')
 
-    # for a in aes:
-    #     consider_ab(a,
-    #                 f'ext_dat/ga_a{a}',
-    #                 'non_ig',
-    #                 f'ga_a{a}')
+    for a in aes:
+        consider_ab(a,
+                    f'ext_dat/ga_a{a}',
+                    'non_ig',
+                    f'ga_a{a}')

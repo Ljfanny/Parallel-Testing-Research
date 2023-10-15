@@ -17,7 +17,6 @@ def iter_alloc(a,
 
     proj_list = [
         'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
-        'db-scheduler_dot',
         'esper_examples.rfidassetzone',
         'fluent-logger-java_dot',
         'hutool_hutool-cron',
@@ -35,41 +34,38 @@ def iter_alloc(a,
     for proj in proj_list:
         resu_path = f'ext_dat/{subdir}/{proj}.csv'
         df = pd.read_csv(resu_path)
-        df = df.loc[df['category'] == '2-0']
+        df = df.loc[df['category'] == '4-0']
         avg_tm_dict = preproc(proj)
         with open(f'setup_time_rec/{proj}', 'r') as f:
             setup_tm_dict = json.load(f)
         confs_dict = literal_eval(df.iloc[0]['confs'])
         n = len(avg_tm_dict.keys())
-        arr = np.array([0, 1])
+        arr = np.array([0, 1, 2, 3])
         prods = np.array(list(product(arr, repeat=n)))
-        if len(confs_dict) == 1:
-            mach_arr = [list(confs_dict.keys())[0], list(confs_dict.keys())[0]]
-        else:
-            mach_arr = list(confs_dict.keys())
+        mach_arr = []
+        for ky, val in confs_dict.items():
+            for _ in range(val):
+                mach_arr.append(ky)
         tmp_dict = {}
         for ky, val in avg_tm_dict.items():
             tmp_dict[ky] = {}
             for itm in val:
-                if itm[0] == mach_arr[0]:
-                    if itm[3] == 0:
-                        tmp_dict[ky][0] = itm
-                    else:
-                        tmp_dict[ky][0] = None
-                if itm[0] == mach_arr[1]:
-                    if itm[3] == 0:
-                        tmp_dict[ky][1] = itm
-                    else:
-                        tmp_dict[ky][1] = None
+                for i in range(4):
+                    if itm[0] == mach_arr[i]:
+                        if itm[3] == 0:
+                            tmp_dict[ky][i] = itm
+                        else:
+                            tmp_dict[ky][i] = None
         idx_tst_map = {i: tst for i, tst in enumerate(list(tmp_dict.keys()))}
         mini = float('inf')
         mini_mach_test_dict = {}
         mini_mach_time_dict = {}
         t1 = time.time()
         for prod in prods:
+            print(prod)
             is_match_fr = True
-            mach_test_dict = {0: [], 1: []}
-            mach_time_dict = {0: setup_tm_dict[mach_arr[0]], 1: setup_tm_dict[mach_arr[1]]}
+            mach_test_dict = {i: [] for i in range(4)}
+            mach_time_dict = {i: setup_tm_dict[mach_arr[i]] for i in range(4)}
             for idx, mach_id in enumerate(prod):
                 tst = idx_tst_map[idx]
                 itm = tmp_dict[tst][mach_id]
@@ -93,7 +89,7 @@ def iter_alloc(a,
         t2 = time.time()
         reco_df.loc[len(reco_df.index)] = [
             proj,
-            '2-0',
+            '4-0',
             confs_dict,
             sum(mini_mach_time_dict.values()),
             max(mini_mach_time_dict.values()),
@@ -105,7 +101,7 @@ def iter_alloc(a,
 
 
 if __name__ == '__main__':
-    # iter_alloc(0,
-    #            'ga_a0')
-    iter_alloc(1,
-               'ga_a1')
+    iter_alloc(0,
+               'ga_a0')
+    # iter_alloc(1,
+    #            'ga_a1')

@@ -9,10 +9,10 @@ matplotlib.use('TkAgg')
 
 prefixes = {
     'chp': 'cheapest',
-    'chp_gh': 'cheapest_github_caliber',
+    'chp_gh': 'cheapest_github_baseline',
     'chp_smt': 'cheapest_smart_baseline',
     'fst': 'fastest',
-    'fst_gh': 'fastest_github_caliber',
+    'fst_gh': 'fastest_github_baseline',
     'fst_smt': 'fastest_smart_baseline'
 }
 plt.rc('font', family='Georgia')
@@ -81,10 +81,10 @@ def draw_integ_scatter2d(code,
     colors = ['mediumpurple', 'thistle', 'mediumseagreen', 'cyan', 'steelblue', 'darkkhaki']
     nodes = {
         'chp': 'Cheapest',
-        'chp_gh': 'Cheapest Github Caliber',
+        'chp_gh': 'Cheapest Github Baseline',
         'chp_smt': 'Cheapest Smart Baseline',
         'fst': 'Fastest',
-        'fst_gh': 'Fastest Github Caliber',
+        'fst_gh': 'Fastest Github Baseline',
         'fst_smt': 'Fastest Smart Baseline'
     }
     dat = pd.read_csv(f'integ_dat/{modu}/failrate_{fr}.csv').dropna()
@@ -148,18 +148,18 @@ def draw_integ_pareto3d(code):
                                   'project',
                                   'normal_ga',
                                   'pareto_front_ga',
-                                  'normal_github_caliber',
-                                  'pareto_front_github_caliber',
+                                  'normal_github_baseline',
+                                  'pareto_front_github_baseline',
                                   'normal_smart_baseline',
                                   'pareto_front_smart_baseline',
                                   'pareto_front_num',
                                   'ga_rate',
-                                  'github_caliber_rate',
+                                  'github_baseline_rate',
                                   'smart_baseline_rate'
                               ])
     csvs = os.listdir(subdir)
     dfs = [pd.read_csv(f'{subdir}/{csv}')
-           for csv in csvs if csv.find('summary') == -1]
+           for csv in csvs if csv.find('failrate') != -1]
     proj_num = len(dfs[0])
     for i in range(proj_num):
         fig = plt.figure()
@@ -285,7 +285,7 @@ def draw_tread_graph():
     csvs = os.listdir(ig_path)
     dfs = [pd.read_csv(f'{ig_path}/{csv}')
            for csv in csvs
-           if csv.find('summary') == -1]
+           if csv.find('failrate') != -1]
     norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4), sharex=True, sharey=True)
     avg_chp = []
     avg_fst = []
@@ -488,10 +488,6 @@ def draw_integ_as_graph(is_bar=False):
         arr.append((runtime, price, code))
 
     dfs = [pd.read_csv(f'integ_dat/ga_a{i}.csv') for i in a]
-    tradeoff_per_proj_df = pd.DataFrame(None,
-                                        columns=['project',
-                                                 'github_baseline_tradeoff',
-                                                 'smart_baseline_tradeoff'])
     programs = dfs[0].iloc[:, 0]
     is_reco_rt = True
     rts = []
@@ -507,17 +503,17 @@ def draw_integ_as_graph(is_bar=False):
             gene.append((itm['runtime'],
                          itm['price'],
                          0))
-            append_info(github, itm, 'github_caliber', 1)
+            append_info(github, itm, 'github_baseline', 1)
             append_info(smart, itm, 'smart_baseline', 2)
-            gh_runtime_rt = itm['github_caliber_runtime_rate']
-            gh_price_rt = itm['github_caliber_price_rate']
+            gh_runtime_rt = itm['github_baseline_runtime_rate']
+            gh_price_rt = itm['github_baseline_price_rate']
             smt_runtime_rt = itm['smart_baseline_runtime_rate']
             smt_price_rt = itm['smart_baseline_price_rate']
             github_rts.append((gh_runtime_rt, gh_price_rt))
             smart_rts.append((smt_runtime_rt, smt_price_rt))
             if is_reco_rt:
-                rts.append((df['github_caliber_runtime_rate'].dropna().mean(),
-                            df['github_caliber_price_rate'].dropna().mean(),
+                rts.append((df['github_baseline_runtime_rate'].dropna().mean(),
+                            df['github_baseline_price_rate'].dropna().mean(),
                             df['smart_baseline_runtime_rate'].dropna().mean(),
                             df['smart_baseline_price_rate'].dropna().mean()))
         is_reco_rt = False
@@ -576,8 +572,8 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
                                    y2_labels):
     def extract_dat(csv_name):
         summary_per_proj_df = pd.read_csv(f'integ_dat/{goal_subdir}/{csv_name}')
-        gh_runtime_rts = summary_per_proj_df['github_caliber_avg_runtime_rate']
-        gh_price_rts = summary_per_proj_df['github_caliber_avg_price_rate']
+        gh_runtime_rts = summary_per_proj_df['github_baseline_avg_runtime_rate']
+        gh_price_rts = summary_per_proj_df['github_baseline_avg_price_rate']
         smt_runtime_rts = summary_per_proj_df['smart_baseline_avg_runtime_rate']
         smt_price_rts = summary_per_proj_df['smart_baseline_avg_price_rate']
         gh_avg_runtime = np.nanmean(gh_runtime_rts)

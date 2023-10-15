@@ -1,4 +1,4 @@
-project,normal_ga,pareto_front_ga,normal_github_caliber,pareto_front_github_caliber,normal_smart_baseline,pareto_front_smart_baseline,pareto_front_num,ga_rate,github_caliber_rate,smart_baseline_rate
+project,normal_ga,pareto_front_ga,normal_github_baseline,pareto_front_github_baseline,normal_smart_baseline,pareto_front_smart_baseline,pareto_front_num,ga_rate,github_baseline_rate,smart_baseline_rate
 activiti_dot,10/12,10,10/12,10,9/12,4,24,0.4166666666666667,0.4166666666666667,0.16666666666666666
 assertj-core_dot,10/12,10,10/12,10,10/12,10,30,0.3333333333333333,0.3333333333333333,0.3333333333333333
 carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12/12,8,12/12,12,11/12,5,25,0.32,0.48,0.2
