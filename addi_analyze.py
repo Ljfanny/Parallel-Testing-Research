@@ -16,8 +16,8 @@ def iter_alloc(a,
         return price
 
     proj_list = [
-        'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
-        'esper_examples.rfidassetzone',
+        # 'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
+        # 'esper_examples.rfidassetzone',
         'fluent-logger-java_dot',
         'hutool_hutool-cron',
         'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty'
@@ -41,7 +41,7 @@ def iter_alloc(a,
         confs_dict = literal_eval(df.iloc[0]['confs'])
         n = len(avg_tm_dict.keys())
         arr = np.array([0, 1, 2, 3])
-        prods = np.array(list(product(arr, repeat=n)))
+        prods = product(arr, repeat=n)
         mach_arr = []
         for ky, val in confs_dict.items():
             for _ in range(val):
@@ -62,7 +62,6 @@ def iter_alloc(a,
         mini_mach_time_dict = {}
         t1 = time.time()
         for prod in prods:
-            print(prod)
             is_match_fr = True
             mach_test_dict = {i: [] for i in range(4)}
             mach_time_dict = {i: setup_tm_dict[mach_arr[i]] for i in range(4)}

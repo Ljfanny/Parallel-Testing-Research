@@ -32,13 +32,11 @@ proj_names = [
     'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
     'commons-exec_dot',
     'db-scheduler_dot',
-
     'delight-nashorn-sandbox_dot',
     'elastic-job-lite_dot',
     'elastic-job-lite_elastic-job-lite-core',
     'esper_examples.rfidassetzone',
     'fastjson_dot',
-
     'fluent-logger-java_dot',
     'handlebars.java_dot',
     'hbase_dot',
@@ -46,7 +44,6 @@ proj_names = [
     'httpcore_dot',
     'hutool_hutool-cron',
     'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
-
     'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
     'logback_dot',
     'luwak_luwak',
@@ -55,7 +52,6 @@ proj_names = [
     'okhttp_dot',
     'orbit_dot',
     'retrofit_retrofit-adapters.rxjava',
-
     'retrofit_retrofit',
     'rxjava2-extras_dot',
     'spring-boot_dot',
@@ -227,7 +223,7 @@ def ga(gene_len):
     pop = sorted(pop, key=lambda x: x.fitness.values[0])
     if gene_len == 1:
         return pop[0]
-    for g in range(25):
+    for g in range(50):
         pop = sorted(pop, key=lambda x: x.fitness.values[0])
         offspring = list(map(toolbox.clone, pop[:35]))
         for chd1, chd2 in zip(pop[::2], pop[1::2]):

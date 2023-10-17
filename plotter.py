@@ -660,7 +660,7 @@ if __name__ == '__main__':
     # draw_integ_scatter2d('ga', 0)
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
-    # draw_integ_as_graph(True)
+    draw_integ_as_graph(True)
     draw_integ_proj_avg_rate_graph('ga',
                                    'Average Rate for GA with Setup Cost',
                                    [8, 6, 4, 2, 0, -2],
