@@ -51,6 +51,10 @@ def comp_ga_bf():
                                    'avg_runtime_rate_fast',
                                    'avg_price_rate_fast'
                                ])
+    comp_opt_df['period_ga_fast'] = comp_opt_df['period_ga_fast'].astype('float')
+    comp_opt_df['period_bf_fast'] = comp_opt_df['period_bf_fast'].astype('float')
+    comp_opt_df['avg_runtime_rate_fast'] = comp_opt_df['avg_runtime_rate_fast'].astype('float')
+    comp_opt_df['avg_price_rate_fast'] = comp_opt_df['avg_price_rate_fast'].astype('float')
 
     def cmp(d1, d2):
         if len(d1) != len(d2):
@@ -70,6 +74,7 @@ def comp_ga_bf():
         subdir1 = idx_modu_map[idx][0]
         subdir2 = idx_modu_map[idx][1]
         csvs = os.listdir(f'ext_dat/{subdir1}')
+        csvs = [csv for csv in csvs if csv.find('esper_examples.rfidassetzone') == -1]
         for i, csv in enumerate(csvs):
             proj_name = csv.replace('.csv', '')
             ga = pd.read_csv(f'ext_dat/{subdir1}/{csv}').iloc[:24, :].dropna()
@@ -139,13 +144,14 @@ def comp_ga_bf():
                 comp_opt_df.loc[i, 'period_bf_fast'] = bf_tot_period
                 comp_opt_df.loc[i, 'avg_runtime_rate_fast'] = tot_runtime_rate / tot_num
                 comp_opt_df.loc[i, 'avg_price_rate_fast'] = tot_price_rate / tot_num
+
     reco_info(0,
               True)
     reco_info(1,
               False)
-    proj_info_df = pd.read_csv('proj_info.csv')[:-1]
-    proj_id = [int(itm['id'].replace('P', '')) for _, itm in proj_info_df.iterrows() if itm['project-module'] not in fr0_satisfied_projs]
-    comp_opt_df.drop(index=proj_id, inplace=True)
+    # proj_info_df = pd.read_csv('proj_info.csv')[:-1]
+    # proj_id = [int(itm['id'].replace('P', '')) for _, itm in proj_info_df.iterrows() if itm['project-module'] not in fr0_satisfied_projs]
+    # comp_opt_df.drop(index=proj_id, inplace=True)
     comp_dfs[0].to_csv(f'{comp_path}/ga_bf_a0.csv', sep=',', header=True, index=False)
     comp_dfs[1].to_csv(f'{comp_path}/ga_bf_a1.csv', sep=',', header=True, index=False)
     summary_dfs[0].to_csv(f'{comp_path}/ga_bf_a0_summary.csv', sep=',', header=True, index=False)
@@ -198,7 +204,58 @@ def comp_confs(a: str, b: str):
     comp_df.to_csv(f'{comp_path}/confs_{a}_{b}.csv', sep=',', header=True, index=False)
 
 
+def comp_ga_nor_gre():
+    satis_proj_arr = [
+        'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
+        'fluent-logger-java_dot',
+        'hutool_hutool-cron',
+        'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty'
+    ]
+    comp_df = pd.DataFrame(None,
+                           columns=['project_id',
+                                    'runtime_cheap',
+                                    'price_cheap',
+                                    'greedy_runtime_cheap',
+                                    'greedy_price_cheap',
+                                    'runtime_fast',
+                                    'price_fast',
+                                    'greedy_runtime_fast',
+                                    'greedy_price_fast'])
+    comp_df['runtime_fast'] = comp_df['runtime_fast'].astype('float')
+    comp_df['price_fast'] = comp_df['price_fast'].astype('float')
+    comp_df['greedy_runtime_fast'] = comp_df['greedy_runtime_fast'].astype('float')
+    comp_df['greedy_price_fast'] = comp_df['greedy_price_fast'].astype('float')
+
+    def extract_dat(a):
+        ga_gre_df = pd.read_csv(f'ga_a{a}.csv')
+        for i, proj in enumerate(satis_proj_arr):
+            ga_df = pd.read_csv(f'ext_dat/ga_a{a}/{proj}.csv')
+            ga = ga_df.loc[ga_df['category'] == '2-0']
+            ga_gre = ga_gre_df.loc[ga_gre_df['project'] == proj]
+            if a == 0:
+                comp_df.loc[len(comp_df.index)] = [
+                    proj,
+                    ga.iloc[0]['time_parallel'],
+                    ga.iloc[0]['price'],
+                    ga_gre.iloc[0]['time_parallel'],
+                    ga_gre.iloc[0]['price'],
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            else:
+                comp_df.loc[i, 'runtime_fast'] = ga.iloc[0]['time_parallel']
+                comp_df.loc[i, 'price_fast'] = ga.iloc[0]['price']
+                comp_df.loc[i, 'greedy_runtime_fast'] = ga_gre.iloc[0]['time_parallel']
+                comp_df.loc[i, 'greedy_price_fast'] = ga_gre.iloc[0]['price']
+    extract_dat(0)
+    extract_dat(1)
+    comp_df.to_csv('ga_vs_greedy.csv', sep=',', header=True, index=False)
+
+
 if __name__ == '__main__':
     comp_ga_bf()
     comp_confs('non_ig', 'ig')
     comp_confs('ga', 'bf')
+    comp_ga_nor_gre()

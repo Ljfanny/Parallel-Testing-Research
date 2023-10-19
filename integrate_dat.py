@@ -165,6 +165,8 @@ def consider_fr(chp_dat_dir,
         os.mkdir(output_dir)
     chp_fs = os.listdir(chp_dat_dir)
     fst_fs = os.listdir(fst_dat_dir)
+    chp_fs.remove('esper_examples.rfidassetzone.csv')
+    fst_fs.remove('esper_examples.rfidassetzone.csv')
     a0_sum_single_conf = 0
     a1_sum_single_conf = 0
     for chp_f, fst_f in zip(chp_fs, fst_fs):
@@ -272,6 +274,7 @@ def consider_ab(dat_dir,
                                'smart_baseline_score_rate'
                                ])
     fs = os.listdir(dat_dir)
+    fs.remove('esper_examples.rfidassetzone.csv')
     a = float(modu[modu.index('_') + 2:])
     b = 1 - a
     for f in fs:

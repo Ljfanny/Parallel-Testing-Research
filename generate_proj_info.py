@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from analyze import proj_names
-from preproc import preproc, conf_prc_map
+from preproc import preproc
 
 
 if __name__ == '__main__':

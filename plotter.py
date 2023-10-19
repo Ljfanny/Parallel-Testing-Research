@@ -444,9 +444,9 @@ def draw_integ_as_graph(is_bar=False):
                 y1,
                 y2,
                 title,
-                up_color='#7c98b3',
-                down_color='#c0d6df',
-                bl_color='#1d2d44',
+                up_color='#8d99ae',
+                down_color='#e1e5f2',
+                bl_color='#051923',
                 bar_width=0.035):
         ax.yaxis.grid(True, linestyle='--', zorder=0)
         ax.bar(x, y1, color=up_color, width=bar_width, edgecolor='#04080f', label='Runtime')
@@ -488,10 +488,9 @@ def draw_integ_as_graph(is_bar=False):
         arr.append((runtime, price, code))
 
     dfs = [pd.read_csv(f'integ_dat/ga_a{i}.csv') for i in a]
-    programs = dfs[0].iloc[:, 0]
     is_reco_rt = True
     rts = []
-    for i, proj in enumerate(programs):
+    for i, proj in enumerate(fr0_satisfied_projs):
         gene = []
         github = []
         smart = []
@@ -531,9 +530,9 @@ def draw_integ_as_graph(is_bar=False):
     rts = np.array(rts)
     # -------------------------------- tradeoff trend graph --------------------------------
     fig, pnl = plt.subplots(figsize=(10, 4))
-    pnl.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Baseline', color='#b86f52', linewidth=2.5)
-    pnl.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#f78764', linewidth=2.5)
-    pnl.plot(a, [1 for _ in range(len(a))], '-.', color='#634133', linewidth=2)
+    # pnl.plot(a, [1 for _ in range(len(a))], '-.', color='#bcb8b1', linewidth=2.25)
+    pnl.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Baseline', color='#c89f9c', linewidth=2.5)
+    pnl.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#9d8189', linewidth=2.5)
     print(rts[:, 0] * rts[:, 1], rts[:, 2] * rts[:, 3])
     pnl.set_xlabel(r'The Parameter a')
     pnl.set_ylabel(r'Performance Increase')
@@ -587,18 +586,18 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
                        y3,
                        y4,
                        title):
-        bar_width = 0.55
+        bar_width = 0.53
         indexes = np.array(indexes)
-        ax.bar(indexes - bar_width / 2 + 0.1, y1, color='#a594f9', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes - bar_width / 2 + 0.1, y1, color='#cdb4db', width=bar_width, edgecolor='#04080f',
                label='Runtime with Lowest Runtime', hatch='//')
-        ax.bar(indexes - bar_width / 2 + 0.1, y3, color='#cdc1ff', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes - bar_width / 2 + 0.1, y3, color='#feeafa', width=bar_width, edgecolor='#04080f',
                label='Price with Lowest Runtime', hatch='//')
-        ax.bar(indexes + bar_width / 2 - 0.1, y2, color='#e5d9f2', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes + bar_width / 2 - 0.1, y2, color='#feeafa', width=bar_width, edgecolor='#04080f',
                label='Runtime with Lowest Price')
-        ax.bar(indexes + bar_width / 2 - 0.1, y4, color='#f5efff', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes + bar_width / 2 - 0.1, y4, color='#cdb4db', width=bar_width, edgecolor='#04080f',
                label='Price with Lowest Price')
-        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#10002b', markersize=4)
-        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#10002b', markersize=4)
+        ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#22223b', markersize=4)
+        ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#22223b', markersize=4)
         ax.yaxis.grid(True, linestyle='--', zorder=0)
         ax.set_title(title, size=12, weight='bold')
         ax.spines['top'].set_color('none')
@@ -609,7 +608,7 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
         'fastest')
     gh_pri_runtime_rts, gh_pri_price_rts, smt_pri_runtime_rts, smt_pri_price_rts = extract_dat(
         'cheapest')
-    avg_idx = len(gh_pri_runtime_rts) + 1
+    avg_idx = len(gh_pri_runtime_rts)
     proj_info_df = pd.read_csv('proj_info.csv')
     proj_id_map = {itm['project-module']: itm['id'] for _, itm in proj_info_df.iterrows()}
     x = [proj_id_map[proj] for proj in fr0_satisfied_projs]
@@ -660,20 +659,20 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
 
 
 if __name__ == '__main__':
-    draw_integ_scatter2d('ga', 1)
-    draw_integ_scatter2d('ga', 0)
-    draw_integ_pareto3d('ga')
-    draw_tread_graph()
+    # draw_integ_scatter2d('ga', 1)
+    # draw_integ_scatter2d('ga', 0)
+    # draw_integ_pareto3d('ga')
+    # draw_tread_graph()
     draw_integ_as_graph(True)
-    # draw_integ_proj_avg_rate_graph('ga',
-    #                                'Average Rate for GA with Setup Cost',
-    #                                [8, 6, 4, 2, 0, -2],
-    #                                [8, 6, 4, 2, 0, 2],
-    #                                [8, 6, 4, 2, 0],
-    #                                [8, 6, 4, 2, 0])
-    # draw_integ_proj_avg_rate_graph('ga_ig',
-    #                                'Average Rate for GA without Setup Cost',
-    #                                [6, 4, 2, 0, -2],
-    #                                [6, 4, 2, 0, 2],
-    #                                [6, 4, 2, 0, -2],
-    #                                [6, 4, 2, 0, 2])
+    draw_integ_proj_avg_rate_graph('ga_ig',
+                                   'Average Rate for GA without Setup Cost',
+                                   [8, 6, 4, 2, 0, -2],
+                                   [8, 6, 4, 2, 0, 2],
+                                   [8, 6, 4, 2, 0, -2, -4],
+                                   [8, 6, 4, 2, 0, 2, 4])
+    draw_integ_proj_avg_rate_graph('ga',
+                                   'Average Rate for GA with Setup Cost',
+                                   [4, 3, 2, 1, 0, -1, -2],
+                                   [4, 3, 2, 1, 0, 1, 2],
+                                   [4, 3, 2, 1, 0, -1, -2],
+                                   [4, 3, 2, 1, 0, 1, 2])

@@ -35,7 +35,7 @@ proj_names = [
     'delight-nashorn-sandbox_dot',
     'elastic-job-lite_dot',
     'elastic-job-lite_elastic-job-lite-core',
-    'esper_examples.rfidassetzone',
+    # 'esper_examples.rfidassetzone',
     'fastjson_dot',
     'fluent-logger-java_dot',
     'handlebars.java_dot',
