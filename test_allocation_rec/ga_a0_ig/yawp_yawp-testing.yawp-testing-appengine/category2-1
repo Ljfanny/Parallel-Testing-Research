@@ -1,2 +1,2 @@
-{'20CPU010Mem2GB.sh': [],
+{'19CPU010Mem1GB.sh': [],
  '26CPU2Mem4GB.sh': ['io.yawp.testing.appengine.pipes.flow.FlowDropsTest#testFlowDropsToSameSink']}

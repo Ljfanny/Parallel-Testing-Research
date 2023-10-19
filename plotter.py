@@ -22,7 +22,7 @@ fr0_satisfied_projs = [
     'delight-nashorn-sandbox_dot',
     'elastic-job-lite_dot',
     'elastic-job-lite_elastic-job-lite-core',
-    'esper_examples.rfidassetzone',
+    # 'esper_examples.rfidassetzone',
     'fastjson_dot',
     'fluent-logger-java_dot',
     'http-request_dot',
@@ -570,25 +570,14 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
                                    y1_labels,
                                    y2s,
                                    y2_labels):
-    def extract_dat(csv_name):
-        summary_per_proj_df = pd.read_csv(f'integ_dat/{goal_subdir}/{csv_name}')
-        gh_runtime_rts = summary_per_proj_df['github_baseline_avg_runtime_rate']
-        gh_price_rts = summary_per_proj_df['github_baseline_avg_price_rate']
-        smt_runtime_rts = summary_per_proj_df['smart_baseline_avg_runtime_rate']
-        smt_price_rts = summary_per_proj_df['smart_baseline_avg_price_rate']
-        gh_avg_runtime = np.nanmean(gh_runtime_rts)
-        gh_avg_price = np.nanmean(gh_price_rts)
-        smt_avg_runtime = np.nanmean(smt_runtime_rts)
-        smt_avg_price = np.nanmean(smt_price_rts)
-        gh_runtime_rts.loc[len(gh_runtime_rts)] = gh_avg_runtime
-        gh_price_rts.loc[len(gh_price_rts)] = gh_avg_price
-        smt_runtime_rts.loc[len(smt_runtime_rts)] = smt_avg_runtime
-        smt_price_rts.loc[len(smt_price_rts)] = smt_avg_price
-        print(f'------------------- {sup_title} Tot: {csv_name}-------------------')
-        print(f'GitHub avg. runtime: {gh_avg_runtime}')
-        print(f'GitHub avg. price: {gh_avg_price}')
-        print(f'Smart avg. runtime: {smt_avg_runtime}')
-        print(f'Smart avg. price: {smt_avg_price}')
+    def extract_dat(prefix):
+        failrate0_df = pd.read_csv(f'integ_dat/{goal_subdir}/failrate_0.csv').dropna()
+        failrate0_df = failrate0_df[failrate0_df['project'] != 'esper_examples.rfidassetzone']
+        failrate0_df = failrate0_df.reset_index(drop=True)
+        gh_runtime_rts = failrate0_df[f'{prefix}_github_baseline_runtime_rate']
+        gh_price_rts = failrate0_df[f'{prefix}_github_baseline_price_rate']
+        smt_runtime_rts = failrate0_df[f'{prefix}_smart_baseline_runtime_rate']
+        smt_price_rts = failrate0_df[f'{prefix}_smart_baseline_price_rate']
         return gh_runtime_rts, gh_price_rts, smt_runtime_rts, smt_price_rts
 
     def sub_double_bar(ax,
@@ -615,13 +604,28 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
         ax.spines['top'].set_color('none')
         ax.spines['right'].set_color('none')
 
+    tradeoff_per_proj_df = pd.DataFrame()
     gh_tm_runtime_rts, gh_tm_price_rts, smt_tm_runtime_rts, smt_tm_price_rts = extract_dat(
-        'summary_per_project_lower_runtime_goal.csv')
+        'fastest')
     gh_pri_runtime_rts, gh_pri_price_rts, smt_pri_runtime_rts, smt_pri_price_rts = extract_dat(
-        'summary_per_project_lower_price_goal.csv')
+        'cheapest')
+    avg_idx = len(gh_pri_runtime_rts) + 1
     proj_info_df = pd.read_csv('proj_info.csv')
     proj_id_map = {itm['project-module']: itm['id'] for _, itm in proj_info_df.iterrows()}
     x = [proj_id_map[proj] for proj in fr0_satisfied_projs]
+    tradeoff_per_proj_df['project'] = x
+    tradeoff_per_proj_df['github_baseline_tradeoff_with_lowest_price'] = gh_pri_runtime_rts * gh_pri_price_rts
+    tradeoff_per_proj_df['github_baseline_tradeoff_with_lowest_runtime'] = gh_tm_runtime_rts * gh_tm_price_rts
+    tradeoff_per_proj_df['smart_baseline_tradeoff_with_lowest_price'] = smt_pri_runtime_rts * smt_pri_price_rts
+    tradeoff_per_proj_df['smart_baseline_tradeoff_with_lowest_runtime'] = smt_tm_runtime_rts * smt_tm_price_rts
+    gh_tm_runtime_rts[avg_idx] = np.mean(gh_tm_runtime_rts)
+    gh_tm_price_rts[avg_idx] = np.mean(gh_tm_price_rts)
+    gh_pri_runtime_rts[avg_idx] = np.mean(gh_pri_runtime_rts)
+    gh_pri_price_rts[avg_idx] = np.mean(gh_pri_price_rts)
+    smt_tm_runtime_rts[avg_idx] = np.mean(smt_tm_runtime_rts)
+    smt_tm_price_rts[avg_idx] = np.mean(smt_tm_price_rts)
+    smt_pri_runtime_rts[avg_idx] = np.mean(smt_pri_runtime_rts)
+    smt_pri_price_rts[avg_idx] = np.mean(smt_pri_price_rts)
     x.append('Avg.')
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), sharex=True)
     sub_double_bar(ax1,
@@ -656,20 +660,20 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
 
 
 if __name__ == '__main__':
-    # draw_integ_scatter2d('ga', 1)
-    # draw_integ_scatter2d('ga', 0)
-    # draw_integ_pareto3d('ga')
-    # draw_tread_graph()
+    draw_integ_scatter2d('ga', 1)
+    draw_integ_scatter2d('ga', 0)
+    draw_integ_pareto3d('ga')
+    draw_tread_graph()
     draw_integ_as_graph(True)
-    draw_integ_proj_avg_rate_graph('ga',
-                                   'Average Rate for GA with Setup Cost',
-                                   [8, 6, 4, 2, 0, -2],
-                                   [8, 6, 4, 2, 0, 2],
-                                   [8, 6, 4, 2, 0],
-                                   [8, 6, 4, 2, 0])
-    draw_integ_proj_avg_rate_graph('ga_ig',
-                                   'Average Rate for GA without Setup Cost',
-                                   [6, 4, 2, 0, -2],
-                                   [6, 4, 2, 0, 2],
-                                   [6, 4, 2, 0, -2],
-                                   [6, 4, 2, 0, 2])
+    # draw_integ_proj_avg_rate_graph('ga',
+    #                                'Average Rate for GA with Setup Cost',
+    #                                [8, 6, 4, 2, 0, -2],
+    #                                [8, 6, 4, 2, 0, 2],
+    #                                [8, 6, 4, 2, 0],
+    #                                [8, 6, 4, 2, 0])
+    # draw_integ_proj_avg_rate_graph('ga_ig',
+    #                                'Average Rate for GA without Setup Cost',
+    #                                [6, 4, 2, 0, -2],
+    #                                [6, 4, 2, 0, 2],
+    #                                [6, 4, 2, 0, -2],
+    #                                [6, 4, 2, 0, 2])

@@ -59,9 +59,7 @@
                      'delight.nashornsandbox.TestBindingsInsert#testInsertOptionsWithBinding',
                      'delight.nashornsandbox.TestCustomCache#testCustomCacheUsage',
                      'delight.nashornsandbox.TestIssue34#testIssue34_Scenario4',
-                     'delight.nashornsandbox.TestRemoveComments#test',
-                     'delight.nashornsandbox.TestBindingsInsert#testOverride',
-                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
+                     'delight.nashornsandbox.TestRemoveComments#test'],
  '27CPU2Mem8GB.sh': ['delight.nashornsandbox.internal.JsSanitizerTest#test_issue_66_case1',
                      'delight.nashornsandbox.TestLimitCPU#test_only_while_good_script',
                      'delight.nashornsandbox.TestClassForName#test_access_denied',
@@ -76,4 +74,6 @@
                      'delight.nashornsandbox.TestBuiltInObjectsAccess#test_block_access',
                      'delight.nashornsandbox.TestBindingsInsert#testInsertOptionsWithBinding2',
                      'delight.nashornsandbox.TestIssue57#testMapReduce',
-                     'delight.nashornsandbox.internal.ThreadMonitorTest#when_run_and_threadToMonitor_set_then_do_not_wait']}
+                     'delight.nashornsandbox.internal.ThreadMonitorTest#when_run_and_threadToMonitor_set_then_do_not_wait',
+                     'delight.nashornsandbox.TestBindingsInsert#testOverride',
+                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext']}

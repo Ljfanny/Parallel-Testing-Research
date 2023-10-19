@@ -3,7 +3,7 @@
  '19CPU010Mem1GB.sh:v2': [],
  '19CPU010Mem1GB.sh:v3': [],
  '19CPU010Mem1GB.sh:v4': [],
- '19CPU010Mem1GB.sh:v5': [],
+ '19CPU010Mem1GB.sh:v5': ['org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#startProvider'],
  '21CPU025Mem2GB.sh:v0': ['org.apache.dubbo.rpc.protocol.dubbo.ImplicitCallBackTest#test_Async_Future_Multi',
                           'org.apache.dubbo.rpc.protocol.dubbo.ImplicitCallBackTest#test_CloseCallback',
                           'org.apache.dubbo.rpc.protocol.dubbo.ImplicitCallBackTest#test_Async_Future',
@@ -68,5 +68,4 @@
                           'org.apache.dubbo.rpc.protocol.dubbo.telnet.ListTelnetHandlerTest#testListDetail',
                           'org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky2',
                           'org.apache.dubbo.rpc.protocol.dubbo.FutureFilterTest#testSyncCallbackHasException',
-                          'org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandlerTest#testChangeCancel',
-                          'org.apache.dubbo.rpc.protocol.dubbo.ExplicitCallbackTest#startProvider']}
+                          'org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandlerTest#testChangeCancel']}

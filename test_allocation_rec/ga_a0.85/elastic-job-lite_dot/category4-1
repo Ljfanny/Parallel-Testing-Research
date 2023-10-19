@@ -10,9 +10,7 @@
                         'io.elasticjob.lite.spring.job.JobSpringNamespaceWithoutListenerTest#assertSpringJobBean',
                         'io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterModifyTest#assertPersistEphemeralSequential',
                         'io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterModifyTest#assertRemove',
-                        'io.elasticjob.lite.lifecycle.api.JobAPIFactoryTest#assertCreateJobSettingsAPI',
-                        'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
-                        'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException'],
+                        'io.elasticjob.lite.lifecycle.api.JobAPIFactoryTest#assertCreateJobSettingsAPI'],
  '26CPU2Mem4GB.sh:v0': ['io.elasticjob.lite.lifecycle.restful.RestfulServerTest#assertCallSuccess',
                         'io.elasticjob.lite.spring.job.JobSpringNamespaceWithListenerAndJdkDynamicProxyTest#assertSpringJobBean',
                         'io.elasticjob.lite.internal.listener.ListenerManagerTest#assertStartAllListeners',
@@ -557,4 +555,6 @@
  '26CPU2Mem4GB.sh:v1': ['io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterInitFailureTest#assertInitFailure',
                         'io.elasticjob.lite.internal.sharding.ExecutionServiceTest#assertRegisterJobBeginWithMonitorExecution',
                         'io.elasticjob.lite.exception.ExceptionUtilTest#assertTransformWithException',
-                        'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsCompletedRootNode']}
+                        'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsCompletedRootNode',
+                        'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
+                        'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException']}

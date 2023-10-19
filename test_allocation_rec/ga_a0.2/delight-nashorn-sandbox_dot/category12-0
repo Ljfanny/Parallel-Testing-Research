@@ -1,7 +1,9 @@
 {'26CPU2Mem4GB.sh:v0': ['delight.nashornsandbox.TestIssue36#test',
                         'delight.nashornsandbox.TestExit#testQuitWithBindings'],
  '26CPU2Mem4GB.sh:v1': ['delight.nashornsandbox.TestEvalWithScriptContextWithNewBindings#testWithExistingBindings'],
- '26CPU2Mem4GB.sh:v10': ['delight.nashornsandbox.TestLimitCPU#testIsMatchCpuAbuseDirect'],
+ '26CPU2Mem4GB.sh:v10': ['delight.nashornsandbox.TestLimitCPU#testIsMatchCpuAbuseDirect',
+                         'delight.nashornsandbox.TestBindingsInsert#testOverride',
+                         'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
  '26CPU2Mem4GB.sh:v2': ['delight.nashornsandbox.TestInvocable#testInvokeFunction'],
  '26CPU2Mem4GB.sh:v3': ['delight.nashornsandbox.TestIssue34#testIssue34_Scenario3'],
  '26CPU2Mem4GB.sh:v4': ['delight.nashornsandbox.TestEvalWithScriptContextWithNewBindings#testWithNewBindings',
@@ -76,6 +78,4 @@
                         'delight.nashornsandbox.TestIssue47#test_valid',
                         'delight.nashornsandbox.internal.ThreadMonitorTest#when_run_and_threadToMonitor_set_then_do_not_wait',
                         'delight.nashornsandbox.TestRemoveComments#test'],
- '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test',
-                     'delight.nashornsandbox.TestBindingsInsert#testOverride',
-                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext']}
+ '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test']}

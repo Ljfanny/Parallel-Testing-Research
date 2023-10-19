@@ -73,7 +73,9 @@ def comp_ga_bf():
         for i, csv in enumerate(csvs):
             proj_name = csv.replace('.csv', '')
             ga = pd.read_csv(f'ext_dat/{subdir1}/{csv}').iloc[:24, :].dropna()
+            ga = ga.reset_index(drop=True)
             bf = pd.read_csv(f'ext_dat/{subdir2}/{csv}').dropna()
+            bf = bf.reset_index(drop=True)
             diff_cnt = 0
             tot_num = len(bf)
             tot_runtime_rate = 0
@@ -198,5 +200,5 @@ def comp_confs(a: str, b: str):
 
 if __name__ == '__main__':
     comp_ga_bf()
-    # comp_confs('non_ig', 'ig')
-    # comp_confs('ga', 'bf')
+    comp_confs('non_ig', 'ig')
+    comp_confs('ga', 'bf')

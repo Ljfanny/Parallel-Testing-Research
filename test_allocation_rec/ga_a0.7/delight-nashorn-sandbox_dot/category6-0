@@ -73,7 +73,7 @@
                         'delight.nashornsandbox.internal.JsSanitizerTest#test_issue_66_case2',
                         'delight.nashornsandbox.internal.ThreadMonitorTest#when_run_and_threadToMonitor_set_then_do_not_wait',
                         'delight.nashornsandbox.TestRemoveComments#test'],
- '26CPU2Mem4GB.sh:v4': ['delight.nashornsandbox.TestLimitCPU#testIsMatchCpuAbuseDirect'],
- '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test',
-                     'delight.nashornsandbox.TestBindingsInsert#testOverride',
-                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext']}
+ '26CPU2Mem4GB.sh:v4': ['delight.nashornsandbox.TestLimitCPU#testIsMatchCpuAbuseDirect',
+                        'delight.nashornsandbox.TestBindingsInsert#testOverride',
+                        'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
+ '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestGetFunction#test']}

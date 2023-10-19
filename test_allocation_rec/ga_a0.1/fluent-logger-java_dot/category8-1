@@ -1,6 +1,7 @@
 {'01noThrottling.sh:v0': [],
  '01noThrottling.sh:v1': [],
  '01noThrottling.sh:v2': [],
+ '01noThrottling.sh:v3': [],
  '21CPU025Mem2GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
                        'org.fluentd.logger.sender.TestRawSocketSender#testNormal03',
                        'org.fluentd.logger.sender.TestRawSocketSender#testNormal02',
@@ -20,5 +21,4 @@
                       'org.fluentd.logger.TestFluentLogFactory#testGetLogger',
                       'org.fluentd.logger.sender.TestNullSender#testNormal'],
  '26CPU2Mem4GB.sh': [],
- '27CPU2Mem8GB.sh': [],
  '29CPU4Mem8GB.sh': []}

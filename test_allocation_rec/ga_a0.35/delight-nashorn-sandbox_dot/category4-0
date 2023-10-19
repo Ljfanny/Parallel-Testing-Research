@@ -62,9 +62,7 @@
                         'delight.nashornsandbox.TestExit#testQuit',
                         'delight.nashornsandbox.TestBindingsInsert#testInsertOptions',
                         'delight.nashornsandbox.TestIssue34#testIssue34_Scenario4',
-                        'delight.nashornsandbox.TestRemoveComments#test',
-                        'delight.nashornsandbox.TestBindingsInsert#testOverride',
-                        'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
+                        'delight.nashornsandbox.TestRemoveComments#test'],
  '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestLimitCPU#test_only_while',
                      'delight.nashornsandbox.TestGetFunction#test',
                      'delight.nashornsandbox.TestEvalWithScriptContext#test',
@@ -76,4 +74,6 @@
                      'delight.nashornsandbox.TestEvalWithScriptContextWithNewBindings#testWithNewSimpleBindings',
                      'delight.nashornsandbox.TestBuiltInObjectsAccess#test_block_access',
                      'delight.nashornsandbox.TestBindingsInsert#testInsertOptionsWithBinding2',
-                     'delight.nashornsandbox.TestBindingsInsert#testInsertOptionsWithBinding']}
+                     'delight.nashornsandbox.TestBindingsInsert#testInsertOptionsWithBinding',
+                     'delight.nashornsandbox.TestBindingsInsert#testOverride',
+                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext']}

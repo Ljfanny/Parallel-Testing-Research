@@ -1,7 +1,10 @@
-{'01noThrottling.sh': ['org.apache.commons.exec.DefaultExecutorTest#testExecuteWatchdog'],
- '23CPU05Mem4GB.sh:v0': ['org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithError',
-                         'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithNonExistingApplication'],
- '23CPU05Mem4GB.sh:v1': ['org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithProcessDestroyer',
+{'01noThrottling.sh:v0': ['org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithTooLateUserTermination',
+                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsync',
+                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithError'],
+ '01noThrottling.sh:v1': ['org.apache.commons.exec.DefaultExecutorTest#testExecuteWatchdog'],
+ '22CPU05Mem2GB.sh:v0': ['org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithNonExistingApplication',
+                         'org.apache.commons.exec.DefaultExecutorTest#testExecuteStability'],
+ '22CPU05Mem2GB.sh:v1': ['org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithProcessDestroyer',
                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithTimelyUserTermination',
                          'org.apache.commons.exec.DefaultExecutorTest#testExecute',
                          'org.apache.commons.exec.DefaultExecutorTest#testExecuteWithWorkingDirectory',
@@ -49,7 +52,4 @@
                          'org.apache.commons.exec.CommandLineTest#testParseWithOnlyWhitespace',
                          'org.apache.commons.exec.TestUtilTest#testAssertArrayEqualsNullNull',
                          'org.apache.commons.exec.TestUtilTest#testAssertArrayEqualsOrderNotSignificant',
-                         'org.apache.commons.exec.TestUtilTest#testAssertArrayEqualsActualNull'],
- '27CPU2Mem8GB.sh': ['org.apache.commons.exec.DefaultExecutorTest#testExecuteAsyncWithTooLateUserTermination',
-                     'org.apache.commons.exec.DefaultExecutorTest#testExecuteAsync',
-                     'org.apache.commons.exec.DefaultExecutorTest#testExecuteStability']}
+                         'org.apache.commons.exec.TestUtilTest#testAssertArrayEqualsActualNull']}

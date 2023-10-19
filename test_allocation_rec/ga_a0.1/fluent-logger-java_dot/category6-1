@@ -19,4 +19,4 @@
                       'org.fluentd.logger.sender.TestNullSender#testNormal'],
  '27CPU2Mem8GB.sh:v0': [],
  '27CPU2Mem8GB.sh:v1': [],
- '28CPU2Mem16GB.sh': []}
+ '29CPU4Mem8GB.sh': []}

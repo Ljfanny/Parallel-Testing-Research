@@ -1,4 +1,5 @@
-{'21CPU025Mem2GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
+{'01noThrottling.sh': [],
+ '21CPU025Mem2GB.sh': ['org.fluentd.logger.TestFluentLogger#testReconnection',
                        'org.fluentd.logger.sender.TestRawSocketSender#testNormal03',
                        'org.fluentd.logger.sender.TestRawSocketSender#testNormal02',
                        'org.fluentd.logger.sender.TestRawSocketSender#testNormal01',
@@ -16,5 +17,4 @@
                       'org.fluentd.logger.sender.TestRawSocketSender#testTimeout',
                       'org.fluentd.logger.TestFluentLogFactory#testGetLogger',
                       'org.fluentd.logger.sender.TestNullSender#testNormal'],
- '27CPU2Mem8GB.sh:v0': [],
- '27CPU2Mem8GB.sh:v1': []}
+ '28CPU2Mem16GB.sh': []}

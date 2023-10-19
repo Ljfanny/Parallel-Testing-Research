@@ -517,6 +517,7 @@
                           'com.squareup.okhttp.internal.http.ResponseCacheAdapterTest#put_accessibleRequestInfo_POST',
                           'com.squareup.okhttp.internal.http.HttpResponseCacheTest#requestMethodPostIsNotCached',
                           'com.squareup.okhttp.internal.http.URLConnectionTest#fullyBufferedPostIsTooShort',
+                          'com.squareup.okhttp.internal.http.HeadersTest#toNameValueBlockDropsForbiddenHeadersHttp2',
                           'com.squareup.okhttp.internal.tls.HostnameVerifierTest#verifySubjectAlt',
                           'com.squareup.okhttp.internal.http.URLConnectionTest#cannotSetFixedLengthStreamingModeAfterChunkedStreamingMode',
                           'com.squareup.okhttp.internal.spdy.SpdyConnectionTest#serverSendsEmptyDataClientDoesntSendWindowUpdate',
@@ -572,7 +573,6 @@
                           'okio.InflaterSourceTest#inflate',
                           'com.squareup.okhttp.RequestTest#stringWithDefaultCharsetAdded',
                           'okio.OkBufferTest#writeSplitSourceBufferLeft',
-                          'okio.OkBufferTest#writeIntegerDoesntQuiteFitInSegment',
                           'com.squareup.okhttp.RequestTest#string',
                           'okio.RealBufferedSinkTest#operationsAfterClose',
                           'com.squareup.okhttp.internal.spdy.Http20Draft09Test#goAwayWithoutDebugDataRoundTrip',
@@ -708,8 +708,7 @@
  '22CPU05Mem2GB.sh:v2': ['com.squareup.okhttp.curl.MainTest#simple',
                          'com.squareup.okhttp.internal.http.URLConnectionTest#disconnectBeforeConnect',
                          'com.squareup.okhttp.internal.http.URLConnectionTest#contentDisagreesWithChunkedHeader'],
- '22CPU05Mem2GB.sh:v3': ['com.squareup.okhttp.internal.spdy.SpdyConnectionTest#serverClosesClientInputStream',
-                         'com.squareup.okhttp.internal.http.HeadersTest#toNameValueBlockDropsForbiddenHeadersHttp2'],
+ '22CPU05Mem2GB.sh:v3': ['com.squareup.okhttp.internal.spdy.SpdyConnectionTest#serverClosesClientInputStream'],
  '22CPU05Mem2GB.sh:v4': ['com.squareup.okhttp.internal.http.URLConnectionTest#setChunkedStreamingMode'],
  '22CPU05Mem2GB.sh:v5': ['com.squareup.okhttp.internal.http.URLConnectionTest#getResponseCodeNoResponseBody',
                          'com.squareup.okhttp.internal.http.URLConnectionTest#response307WithGet',
@@ -721,4 +720,5 @@
  '22CPU05Mem2GB.sh:v7': ['com.squareup.okhttp.AsyncApiTest#redirect'],
  '22CPU05Mem2GB.sh:v8': ['com.squareup.okhttp.internal.http.HttpResponseCacheTest#useCachesFalseDoesNotWriteToCache'],
  '22CPU05Mem2GB.sh:v9': ['com.squareup.okhttp.internal.spdy.SpdyConnectionTest#headersOnlyStreamIsClosedAfterReplyHeaders',
-                         'com.squareup.okhttp.internal.http.ResponseCacheAdapterTest#put_responseChangesForbidden']}
+                         'com.squareup.okhttp.internal.http.ResponseCacheAdapterTest#put_responseChangesForbidden',
+                         'okio.OkBufferTest#writeIntegerDoesntQuiteFitInSegment']}

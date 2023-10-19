@@ -301,7 +301,10 @@
                       'org.activiti.standalone.calendar.AdvancedCycleBusinessCalendarTest#testLegacyIsoString',
                       'org.activiti.standalone.calendar.DurationHelperTest#daylightSavingFallFirstHour',
                       'org.activiti.editor.language.xml.CommaSplitterTest#testOneComaInExpression',
-                      'org.activiti.engine.test.impl.calendar.MapBusinessCalendarManagerTest#testMapConstructor'],
+                      'org.activiti.engine.test.impl.calendar.MapBusinessCalendarManagerTest#testMapConstructor',
+                      'org.activiti.examples.runtime.StandardAgendaFailingTest#org.activiti.examples.runtime.StandardAgendaFailingTest',
+                      'org.activiti.engine.test.jobexecutor.AsyncExecutorTest#testAsyncScriptExecutionOnTwoEngines',
+                      'org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest#org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest'],
  '26CPU2Mem4GB.sh:v0': ['org.activiti.spring.test.transaction.SpringTransactionIntegrationTest#testRollbackTransactionOnActivitiException',
                         'org.activiti.engine.test.api.event.ActivityEventsTest#testActivityErrorEventsFromBPMNError',
                         'org.activiti.engine.test.api.history.HistoryServiceTest#testQueryDateVariable',
@@ -2041,7 +2044,4 @@
                         'org.activiti.editor.language.xml.CommaSplitterTest#testOneComa',
                         'org.activiti.editor.language.xml.CommaSplitterTest#testCommaAtStartAndEnd',
                         'org.activiti.engine.test.impl.calendar.MapBusinessCalendarManagerTest#testInvalidCalendarNameRequest',
-                        'org.activiti.engine.test.impl.calendar.MapBusinessCalendarManagerTest#testNullCalendars',
-                        'org.activiti.examples.runtime.StandardAgendaFailingTest#org.activiti.examples.runtime.StandardAgendaFailingTest',
-                        'org.activiti.engine.test.jobexecutor.AsyncExecutorTest#testAsyncScriptExecutionOnTwoEngines',
-                        'org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest#org.activiti.spring.test.components.scope.XmlNamespaceProcessScopeTest']}
+                        'org.activiti.engine.test.impl.calendar.MapBusinessCalendarManagerTest#testNullCalendars']}

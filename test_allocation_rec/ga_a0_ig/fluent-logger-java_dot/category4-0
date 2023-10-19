@@ -16,4 +16,4 @@
                       'org.fluentd.logger.TestFluentLogger#testClose',
                       'org.fluentd.logger.sender.TestRawSocketSender#testTimeout',
                       'org.fluentd.logger.TestFluentLogFactory#testGetLogger'],
- '26CPU2Mem4GB.sh': []}
+ '24CPU1Mem4GB.sh': []}

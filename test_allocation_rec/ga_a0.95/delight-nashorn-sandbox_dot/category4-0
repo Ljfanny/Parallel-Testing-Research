@@ -43,7 +43,9 @@
                         'delight.nashornsandbox.internal.JsSanitizerTest#test_issue_66_case2',
                         'delight.nashornsandbox.TestIssue57#testMapReduce',
                         'delight.nashornsandbox.TestRemoveComments#test'],
- '26CPU2Mem4GB.sh:v2': ['delight.nashornsandbox.TestLimitCPU#testIsMatchCpuAbuseDirect'],
+ '26CPU2Mem4GB.sh:v2': ['delight.nashornsandbox.TestLimitCPU#testIsMatchCpuAbuseDirect',
+                        'delight.nashornsandbox.TestBindingsInsert#testOverride',
+                        'delight.nashornsandbox.TestExit#testQuitWithScriptContext'],
  '27CPU2Mem8GB.sh': ['delight.nashornsandbox.TestLimitCPU#test_only_while',
                      'delight.nashornsandbox.TestEvalWithScriptContext#testWithCPUAndMemory',
                      'delight.nashornsandbox.TestEvalWithScriptContextWithVariables#test',
@@ -74,6 +76,4 @@
                      'delight.nashornsandbox.TestBindingsInsert#testInsertOptions',
                      'delight.nashornsandbox.TestBindingsInsert#testInsertOptionsWithBinding',
                      'delight.nashornsandbox.TestCustomCache#testCustomCacheUsage',
-                     'delight.nashornsandbox.internal.ThreadMonitorTest#when_run_and_threadToMonitor_set_then_do_not_wait',
-                     'delight.nashornsandbox.TestBindingsInsert#testOverride',
-                     'delight.nashornsandbox.TestExit#testQuitWithScriptContext']}
+                     'delight.nashornsandbox.internal.ThreadMonitorTest#when_run_and_threadToMonitor_set_then_do_not_wait']}

@@ -8,7 +8,9 @@
                        'io.elasticjob.lite.internal.election.LeaderServiceTest#assertIsLeaderUntilBlockWhenHasLeader',
                        'io.elasticjob.lite.util.config.ShardingItemsTest#assertToItemListWhenEmpty',
                        'io.elasticjob.lite.api.strategy.JobShardingStrategyFactoryTest#assertGetStrategyFailureWhenClassNotFound',
-                       'io.elasticjob.lite.util.env.HostExceptionTest#assertGetCause'],
+                       'io.elasticjob.lite.util.env.HostExceptionTest#assertGetCause',
+                       'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
+                       'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException'],
  '22CPU05Mem2GB.sh': ['io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertIsJobNodeExisted',
                       'io.elasticjob.lite.internal.listener.ListenerManagerTest#assertStartAllListeners',
                       'io.elasticjob.lite.internal.schedule.LiteJobFacadeTest#assertNotEligibleForJobRunningWhenNeedSharding',
@@ -497,6 +499,4 @@
                      'io.elasticjob.lite.config.LiteJobConfigurationTest#assertBuildRequiredProperties',
                      'io.elasticjob.lite.api.strategy.JobShardingStrategyFactoryTest#assertGetDefaultStrategy',
                      'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertGetCompletedNode',
-                     'io.elasticjob.lite.api.strategy.JobInstanceTest#assertGetJobInstanceId',
-                     'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
-                     'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException']}
+                     'io.elasticjob.lite.api.strategy.JobInstanceTest#assertGetJobInstanceId']}

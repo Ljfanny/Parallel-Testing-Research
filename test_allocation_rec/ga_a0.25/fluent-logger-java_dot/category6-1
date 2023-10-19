@@ -16,5 +16,5 @@
                          'org.fluentd.logger.sender.TestNullSender#testNormal'],
  '22CPU05Mem2GB.sh:v3': ['org.fluentd.logger.TestFluentLogger#testReconnection',
                          'org.fluentd.logger.TestFluentLogFactory#testItHoldsLoggersOverGC'],
- '26CPU2Mem4GB.sh:v0': [],
- '26CPU2Mem4GB.sh:v1': []}
+ '26CPU2Mem4GB.sh': [],
+ '28CPU2Mem16GB.sh': []}
