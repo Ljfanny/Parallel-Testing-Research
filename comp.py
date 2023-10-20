@@ -73,13 +73,11 @@ def comp_ga_bf():
                   is_fir):
         subdir1 = idx_modu_map[idx][0]
         subdir2 = idx_modu_map[idx][1]
-        csvs = os.listdir(f'ext_dat/{subdir1}')
-        csvs = [csv for csv in csvs if csv.find('esper_examples.rfidassetzone') == -1]
-        for i, csv in enumerate(csvs):
-            proj_name = csv.replace('.csv', '')
-            ga = pd.read_csv(f'ext_dat/{subdir1}/{csv}').iloc[:24, :].dropna()
+        for i, csv in enumerate(fr0_satisfied_projs):
+            proj_name = csv
+            ga = pd.read_csv(f'ext_dat/{subdir1}/{csv}.csv').iloc[:24, :].dropna()
             ga = ga.reset_index(drop=True)
-            bf = pd.read_csv(f'ext_dat/{subdir2}/{csv}').dropna()
+            bf = pd.read_csv(f'ext_dat/{subdir2}/{csv}.csv').dropna()
             bf = bf.reset_index(drop=True)
             diff_cnt = 0
             tot_num = len(bf)
@@ -149,9 +147,6 @@ def comp_ga_bf():
               True)
     reco_info(1,
               False)
-    # proj_info_df = pd.read_csv('proj_info.csv')[:-1]
-    # proj_id = [int(itm['id'].replace('P', '')) for _, itm in proj_info_df.iterrows() if itm['project-module'] not in fr0_satisfied_projs]
-    # comp_opt_df.drop(index=proj_id, inplace=True)
     comp_dfs[0].to_csv(f'{comp_path}/ga_bf_a0.csv', sep=',', header=True, index=False)
     comp_dfs[1].to_csv(f'{comp_path}/ga_bf_a1.csv', sep=',', header=True, index=False)
     summary_dfs[0].to_csv(f'{comp_path}/ga_bf_a0_summary.csv', sep=',', header=True, index=False)
@@ -180,8 +175,6 @@ def comp_confs(a: str, b: str):
     b_path = f'integ_dat/{id_subdir_map[b]}'
     csvs = os.listdir(a_path)
     for csv in csvs:
-        if csv.find('failrate') == -1:
-            continue
         fr = csv.replace('.csv', '').split('_')[1]
         a_df = pd.read_csv(f'{a_path}/{csv}').dropna()
         b_df = pd.read_csv(f'{b_path}/{csv}').dropna()

@@ -2,6 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 from ast import literal_eval
+from plotter import fr0_satisfied_projs
 
 beta = 25.993775 / 3600
 frs = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -163,20 +164,12 @@ def consider_fr(chp_dat_dir,
     output_dir = f'integ_dat/{output_subdir}'
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
-    chp_fs = os.listdir(chp_dat_dir)
-    fst_fs = os.listdir(fst_dat_dir)
-    chp_fs.remove('esper_examples.rfidassetzone.csv')
-    fst_fs.remove('esper_examples.rfidassetzone.csv')
     a0_sum_single_conf = 0
     a1_sum_single_conf = 0
-    for chp_f, fst_f in zip(chp_fs, fst_fs):
-        if chp_f != fst_f:
-            print(f'{chp_f} and {fst_f} are not matched!')
-            break
-        f = chp_f
-        proj_name = f.replace('.csv', '')
-        chp_df = pd.read_csv(f'{chp_dat_dir}/{f}')
-        fst_df = pd.read_csv(f'{fst_dat_dir}/{f}')
+    for f in fr0_satisfied_projs:
+        proj_name = f
+        chp_df = pd.read_csv(f'{chp_dat_dir}/{f}.csv')
+        fst_df = pd.read_csv(f'{fst_dat_dir}/{f}.csv')
         if whe_mach6:
             chp_arr = chp_df.iloc[0:24, 1:].dropna()
             fst_arr = fst_df.iloc[0:24, 1:].dropna()
@@ -273,13 +266,11 @@ def consider_ab(dat_dir,
                                'smart_baseline_price_rate',
                                'smart_baseline_score_rate'
                                ])
-    fs = os.listdir(dat_dir)
-    fs.remove('esper_examples.rfidassetzone.csv')
     a = float(modu[modu.index('_') + 2:])
     b = 1 - a
-    for f in fs:
-        proj_name = f.replace('.csv', '')
-        dat = pd.read_csv(f'{dat_dir}/{f}')
+    for f in fr0_satisfied_projs:
+        proj_name = f
+        dat = pd.read_csv(f'{dat_dir}/{f}.csv')
         dat = dat.loc[dat['category'].str.endswith('-0')].iloc[:, 1:].dropna()
         if dat.size == 0:
             continue

@@ -557,6 +557,7 @@ def draw_integ_as_graph(is_bar=False):
             -rts[:, 3],
             'Avg. vs Smart Baseline')
     set_parameters(pnl1, pnl2)
+    pnl1.legend()
     print(rts)
     fig.suptitle('Average Rate', size=16, weight='bold')
     plt.savefig(f'integ_fig/ga_as_bi_bar/avg_rate_graph.pdf')
@@ -589,13 +590,13 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
         bar_width = 0.53
         indexes = np.array(indexes)
         ax.bar(indexes - bar_width / 2 + 0.1, y1, color='#cdb4db', width=bar_width, edgecolor='#04080f',
-               label='Runtime with Lowest Runtime', hatch='//')
+               label='Runtime Ratio with Runtime Optimization', hatch='//')
         ax.bar(indexes - bar_width / 2 + 0.1, y3, color='#feeafa', width=bar_width, edgecolor='#04080f',
-               label='Price with Lowest Runtime', hatch='//')
+               label='Price Ratio with Runtime Optimization', hatch='//')
         ax.bar(indexes + bar_width / 2 - 0.1, y2, color='#feeafa', width=bar_width, edgecolor='#04080f',
-               label='Runtime with Lowest Price')
+               label='Runtime Ratio with Price Optimization')
         ax.bar(indexes + bar_width / 2 - 0.1, y4, color='#cdb4db', width=bar_width, edgecolor='#04080f',
-               label='Price with Lowest Price')
+               label='Price Ratio with Price Optimization')
         ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#22223b', markersize=4)
         ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#22223b', markersize=4)
         ax.yaxis.grid(True, linestyle='--', zorder=0)
@@ -633,14 +634,14 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
                    gh_pri_runtime_rts,
                    -gh_tm_price_rts,
                    -gh_pri_price_rts,
-                   'Avg. vs GitHub Baseline')
+                   'vs GitHub Baseline')
     sub_double_bar(ax2,
                    [i for i in range(len(x))],
                    smt_tm_runtime_rts,
                    smt_pri_runtime_rts,
                    -smt_tm_price_rts,
                    -smt_pri_price_rts,
-                   'Avg. vs Smart Baseline')
+                   'vs Smart Baseline')
     ax1.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
     ax2.set_ylabel('The Ratio Compared to Baseline', size=12, weight='bold')
     ax1.set_xticks([i for i in range(len(x))])
@@ -663,15 +664,15 @@ if __name__ == '__main__':
     # draw_integ_scatter2d('ga', 0)
     # draw_integ_pareto3d('ga')
     # draw_tread_graph()
-    draw_integ_as_graph(True)
+    # draw_integ_as_graph(True)
     draw_integ_proj_avg_rate_graph('ga_ig',
-                                   'Average Rate for GA without Setup Cost',
+                                   'Avg. Ratio for GASearch without Set-up Time',
                                    [8, 6, 4, 2, 0, -2],
                                    [8, 6, 4, 2, 0, 2],
                                    [8, 6, 4, 2, 0, -2, -4],
                                    [8, 6, 4, 2, 0, 2, 4])
     draw_integ_proj_avg_rate_graph('ga',
-                                   'Average Rate for GA with Setup Cost',
+                                   'Avg. Ratio for GASearch with Set-up Time',
                                    [4, 3, 2, 1, 0, -1, -2],
                                    [4, 3, 2, 1, 0, 1, 2],
                                    [4, 3, 2, 1, 0, -1, -2],

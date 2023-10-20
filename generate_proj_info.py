@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from analyze import proj_names
+from plotter import fr0_satisfied_projs
 from preproc import preproc
 
 
@@ -13,7 +13,7 @@ if __name__ == '__main__':
                                     'max_failure_rate',
                                     'avg_failure_rate',
                                     'avg_test_runtime'])
-    for i, proj_name in enumerate(proj_names):
+    for i, proj_name in enumerate(fr0_satisfied_projs):
         preproc_proj_dict = preproc(proj_name)
         test_num = len(preproc_proj_dict.keys())
         min_fr = 100
@@ -29,7 +29,7 @@ if __name__ == '__main__':
             if fr > max_fr: max_fr = fr
             if fr < min_fr: min_fr = fr
         info_df.loc[len(info_df.index)] = [
-            f'P{i}',
+            f'P{i+1}',
             proj_name,
             test_num,
             min_fr,

@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f3eba4a7-1689-4bdf-986d-9c0fdabe3e99" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contrast/confs_ga_bf.csv" beforeDir="false" afterPath="$PROJECT_DIR$/contrast/confs_ga_bf.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contrast/confs_non_ig_ig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/contrast/confs_non_ig_ig.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contrast/ga_bf_a0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/contrast/ga_bf_a0.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contrast/ga_bf_a0_summary.csv" beforeDir="false" afterPath="$PROJECT_DIR$/contrast/ga_bf_a0_summary.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contrast/ga_bf_a1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/contrast/ga_bf_a1.csv" afterDir="false" />
@@ -23,27 +24,6 @@
       <change beforePath="$PROJECT_DIR$/integ_dat/ga/failrate_0.8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga/failrate_0.8.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_dat/ga/failrate_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga/failrate_0.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_dat/ga/failrate_1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga/failrate_1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.05.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.05.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.15.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.15.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.25.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.25.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.35.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.35.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.45.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.45.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.5.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.55.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.55.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.6.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.65.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.65.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.7.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.75.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.75.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.8.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.85.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.85.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.9.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.95.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.95.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a0.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_dat/ga_a1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_a1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_dat/ga_ig/failrate_0.2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_ig/failrate_0.2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_dat/ga_ig/failrate_0.4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_ig/failrate_0.4.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_dat/ga_ig/failrate_0.6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/ga_ig/failrate_0.6.csv" afterDir="false" />
@@ -64,7 +44,6 @@
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/delight-nashorn-sandbox_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/delight-nashorn-sandbox_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_elastic-job-lite-core.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_elastic-job-lite-core.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/esper_examples.rfidassetzone.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/fastjson_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/fastjson_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/fluent-logger-java_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/fluent-logger-java_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/http-request_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/http-request_dot.pdf" afterDir="false" />
@@ -79,11 +58,6 @@
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/spring-boot_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/spring-boot_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/tradeoff_trend_graph.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/tradeoff_trend_graph.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/wro4j_wro4j-extensions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/wro4j_wro4j-extensions.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_pareto2d/esper_examples.rfidassetzone.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/esper_examples.rfidassetzone.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/esper_examples.rfidassetzone.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/esper_examples.rfidassetzone.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/esper_examples.rfidassetzone.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/integrate_dat.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrate_dat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj_info.csv" beforeDir="false" afterPath="$PROJECT_DIR$/proj_info.csv" afterDir="false" />
@@ -251,8 +225,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.plotter" />
-        <item itemvalue="Python.integrate_dat" />
         <item itemvalue="Python.comp" />
+        <item itemvalue="Python.integrate_dat" />
         <item itemvalue="Python.generate_proj_info" />
         <item itemvalue="Python.addi_analyze" />
       </list>
@@ -295,6 +269,7 @@
       <workItem from="1697703667981" duration="4319000" />
       <workItem from="1697708043668" duration="10119000" />
       <workItem from="1697728811792" duration="1537000" />
+      <workItem from="1697730374313" duration="7668000" />
     </task>
     <servers />
   </component>
@@ -314,13 +289,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/integrate_dat.py</url>
-          <line>165</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -336,11 +304,11 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$comp.coverage" NAME="comp Coverage Results" MODIFIED="1697729505021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$integrate_dat.coverage" NAME="integrate_dat Coverage Results" MODIFIED="1697730036914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$integrate_dat.coverage" NAME="integrate_dat Coverage Results" MODIFIED="1697814072511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$comp.coverage" NAME="comp Coverage Results" MODIFIED="1697814541273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parallel_Testing_Research$bruteforce.coverage" NAME="bruteforce Coverage Results" MODIFIED="1695308782565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$generate_proj_info.coverage" NAME="generate_proj_info Coverage Results" MODIFIED="1697729013475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1697730301547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$generate_proj_info.coverage" NAME="generate_proj_info Coverage Results" MODIFIED="1697813695448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1697808930708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parallel_Testing_Research$analyze.coverage" NAME="analyze Coverage Results" MODIFIED="1697287121669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parallel_Testing_Research$addi_analyze.coverage" NAME="addi_analyze Coverage Results" MODIFIED="1697691123762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parallel_Testing_Research$my_deap.coverage" NAME="my_deap Coverage Results" MODIFIED="1696673874698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
