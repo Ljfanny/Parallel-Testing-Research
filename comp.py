@@ -2,6 +2,7 @@ import os
 from ast import literal_eval
 import pandas as pd
 from plotter import fr0_satisfied_projs
+from addi_analyze import proj_list
 
 comp_path = 'contrast'
 
@@ -198,12 +199,6 @@ def comp_confs(a: str, b: str):
 
 
 def comp_ga_nor_gre():
-    satis_proj_arr = [
-        'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
-        'fluent-logger-java_dot',
-        'hutool_hutool-cron',
-        'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty'
-    ]
     comp_df = pd.DataFrame(None,
                            columns=['project_id',
                                     'runtime_cheap',
@@ -221,7 +216,7 @@ def comp_ga_nor_gre():
 
     def extract_dat(a):
         ga_gre_df = pd.read_csv(f'ga_a{a}.csv')
-        for i, proj in enumerate(satis_proj_arr):
+        for i, proj in enumerate(proj_list):
             ga_df = pd.read_csv(f'ext_dat/ga_a{a}/{proj}.csv')
             ga = ga_df.loc[ga_df['category'] == '2-0']
             ga_gre = ga_gre_df.loc[ga_gre_df['project'] == proj]
@@ -251,4 +246,4 @@ if __name__ == '__main__':
     comp_ga_bf()
     comp_confs('non_ig', 'ig')
     comp_confs('ga', 'bf')
-    comp_ga_nor_gre()
+    # comp_ga_nor_gre()

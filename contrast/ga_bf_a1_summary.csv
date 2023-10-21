@@ -1,5 +1,4 @@
 project,total_num,avg_runtime_rate,avg_price_rate,sum_period_rate,different_confs_num,difference_rate
-carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,24,1.0,0.9939237289141823,0.0005993390624797123,17,0.7083333333333334
 commons-exec_dot,24,1.0,0.9254329508255773,0.0022342851249047145,18,0.75
 delight-nashorn-sandbox_dot,24,1.0,1.0069136761568551,0.0030027683112311145,12,0.5
 elastic-job-lite_dot,24,1.0,1.0207051558078446,0.013874786880237097,9,0.375

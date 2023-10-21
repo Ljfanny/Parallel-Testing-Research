@@ -7,6 +7,8 @@ import numpy as np
 
 matplotlib.use('TkAgg')
 
+gh_max_fr = []
+smt_max_fr = []
 prefixes = {
     'chp': 'cheapest',
     'chp_gh': 'cheapest_github_baseline',
@@ -17,12 +19,10 @@ prefixes = {
 }
 plt.rc('font', family='Georgia')
 fr0_satisfied_projs = [
-    'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
     'commons-exec_dot',
     'delight-nashorn-sandbox_dot',
     'elastic-job-lite_dot',
     'elastic-job-lite_elastic-job-lite-core',
-    # 'esper_examples.rfidassetzone',
     'fastjson_dot',
     'fluent-logger-java_dot',
     'http-request_dot',
@@ -277,7 +277,6 @@ def draw_tread_graph():
         ax.set_xlabel('Failure Rate', size=12)
         ax.set_ylabel('Normalization Ratio', size=12)
         ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
-        ax.legend(fontsize=8)
         ax.spines['top'].set_color('none')
         ax.spines['right'].set_color('none')
         ax.yaxis.grid(True, linestyle='--', zorder=0)
@@ -327,25 +326,27 @@ def draw_tread_graph():
                      fst_tup[:, 1],
                      1,
                      ['Runtime', 'Price'])
+        axes[1].legend(fontsize=8)
         fig.suptitle(programs[i])
         plt.savefig(f'integ_fig/ga_trend_graph/{programs[i]}.pdf')
         plt.close()
     avg_chp = np.nanmean(np.array(avg_chp), axis=0)
     avg_fst = np.nanmean(np.array(avg_fst), axis=0)
     draw_subplot(norm_axes[0],
-                 avg_chp[:, 2],
-                 avg_chp[:, 0],
-                 avg_chp[:, 1],
-                 0,
-                 ['Average Runtime Ratio', 'Average Price Ratio'])
-    draw_subplot(norm_axes[1],
                  avg_fst[:, 2],
                  avg_fst[:, 0],
                  avg_fst[:, 1],
                  1,
-                 ['Average Runtime Ratio', 'Average Price Ratio'])
+                 ['Avg. Runtime Ratio', 'Avg. Price Ratio'])
+    draw_subplot(norm_axes[1],
+                 avg_chp[:, 2],
+                 avg_chp[:, 0],
+                 avg_chp[:, 1],
+                 0,
+                 ['Avg. Runtime Ratio', 'Avg. Price Ratio'])
+    norm_axes[1].legend(fontsize=8)
     print(avg_chp, avg_fst)
-    norm_fig.suptitle('Average Trend', size=12, weight='bold')
+    norm_fig.suptitle('Avg. Metric Ratio Trend of Acceptable Flaky-Failure Rate', size=12, weight='bold')
     plt.savefig(f'integ_fig/ga_trend_graph/unification.pdf')
     plt.close()
 
@@ -421,8 +422,8 @@ def draw_integ_as_graph(is_bar=False):
                    c='darkkhaki',
                    label=f'Smart Baseline Normal: {len(np.unique(smt))}({len(smt)})')
         ax.set_title(textwrap.fill(prog))
-        ax.set_xlabel('Runtime')
-        ax.set_ylabel('Price')
+        ax.set_xlabel('Runtime Ratio')
+        ax.set_ylabel('Price Ratio')
         ax.legend(fontsize=8)
         plt.savefig(f'integ_fig/ga_as_pareto2d/{prog}.pdf')
         plt.close()
@@ -449,8 +450,8 @@ def draw_integ_as_graph(is_bar=False):
                 bl_color='#051923',
                 bar_width=0.035):
         ax.yaxis.grid(True, linestyle='--', zorder=0)
-        ax.bar(x, y1, color=up_color, width=bar_width, edgecolor='#04080f', label='Runtime')
-        ax.bar(x, y2, color=down_color, width=bar_width, edgecolor='#04080f', label='Price')
+        ax.bar(x, y1, color=up_color, width=bar_width, edgecolor='#04080f', label='Runtime Ratio')
+        ax.bar(x, y2, color=down_color, width=bar_width, edgecolor='#04080f', label='Price Ratio')
         ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
         ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
         ax.set_title(title, size=12, weight='bold')
@@ -537,7 +538,7 @@ def draw_integ_as_graph(is_bar=False):
     pnl.set_xlabel(r'The Parameter a')
     pnl.set_ylabel(r'Performance Increase')
     pnl.set_xticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
-    pnl.set_title('Average Tradeoff', size=16, weight='bold')
+    pnl.set_title('Avg. Tradeoff Value over all Projects', size=16, weight='bold')
     pnl.spines['top'].set_color('none')
     pnl.spines['right'].set_color('none')
     pnl.yaxis.grid(True, linestyle='--', zorder=0)
@@ -550,12 +551,12 @@ def draw_integ_as_graph(is_bar=False):
             a,
             rts[:, 0],
             -rts[:, 1],
-            'Avg. vs GitHub Baseline')
+            'vs GitHub Baseline')
     sub_bar(pnl2,
             a,
             rts[:, 2],
             -rts[:, 3],
-            'Avg. vs Smart Baseline')
+            'vs Smart Baseline')
     set_parameters(pnl1, pnl2)
     pnl1.legend()
     print(rts)
@@ -572,12 +573,12 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
                                    y2_labels):
     def extract_dat(prefix):
         failrate0_df = pd.read_csv(f'integ_dat/{goal_subdir}/failrate_0.csv').dropna()
-        failrate0_df = failrate0_df[failrate0_df['project'] != 'esper_examples.rfidassetzone']
-        failrate0_df = failrate0_df.reset_index(drop=True)
         gh_runtime_rts = failrate0_df[f'{prefix}_github_baseline_runtime_rate']
         gh_price_rts = failrate0_df[f'{prefix}_github_baseline_price_rate']
         smt_runtime_rts = failrate0_df[f'{prefix}_smart_baseline_runtime_rate']
         smt_price_rts = failrate0_df[f'{prefix}_smart_baseline_price_rate']
+        gh_max_fr.append(np.mean(failrate0_df[f'{prefix}_github_baseline_max_failure_rate']))
+        smt_max_fr.append(np.mean(failrate0_df[f'{prefix}_smart_baseline_max_failure_rate']))
         return gh_runtime_rts, gh_price_rts, smt_runtime_rts, smt_price_rts
 
     def sub_double_bar(ax,
@@ -660,11 +661,11 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
 
 
 if __name__ == '__main__':
-    # draw_integ_scatter2d('ga', 1)
-    # draw_integ_scatter2d('ga', 0)
-    # draw_integ_pareto3d('ga')
-    # draw_tread_graph()
-    # draw_integ_as_graph(True)
+    draw_integ_scatter2d('ga', 1)
+    draw_integ_scatter2d('ga', 0)
+    draw_integ_pareto3d('ga')
+    draw_tread_graph()
+    draw_integ_as_graph(True)
     draw_integ_proj_avg_rate_graph('ga_ig',
                                    'Avg. Ratio for GASearch without Set-up Time',
                                    [8, 6, 4, 2, 0, -2],
@@ -677,3 +678,5 @@ if __name__ == '__main__':
                                    [4, 3, 2, 1, 0, 1, 2],
                                    [4, 3, 2, 1, 0, -1, -2],
                                    [4, 3, 2, 1, 0, 1, 2])
+    print(np.mean(gh_max_fr),
+          np.mean(smt_max_fr))

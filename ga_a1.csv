@@ -1,6 +1,3 @@
 project,category,confs,time_seq,time_parallel,price,period
-carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,2-0,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 1}",30.829179999999972,16.578153333333333,0.41119861228888854,0.0
-esper_examples.rfidassetzone,2-0,"{'21CPU025Mem2GB.sh': 1, '22CPU05Mem2GB.sh': 1}",35.3132365771812,22.86405999999999,0.06644085785777405,0.0
-fluent-logger-java_dot,2-0,"{'01noThrottling.sh': 1, '26CPU2Mem4GB.sh': 1}",35.369033333333334,17.68700333333334,0.4889752415833335,1.8907291889190674
-hutool_hutool-cron,2-0,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",3.129404437012262,1.6124644370122616,0.056277835300111455,0.0
-incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,2-0,"{'27CPU2Mem8GB.sh': 1, '29CPU4Mem8GB.sh': 1}",2141.6410562008464,1071.1213079249846,28.021833079844114,0.09085893630981445
+hutool_hutool-cron,6-0,"{'29CPU4Mem8GB.sh': 5, '01noThrottling.sh': 1}",9.177137770345595,1.6124644370122616,0.15580336685566704,1.133495569229126
+noxy_noxy-discovery-zookeeper,6-0,"{'22CPU05Mem2GB.sh': 2, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 2, '23CPU05Mem4GB.sh': 1}",41.72941666666671,14.965653333333332,0.41731734108888907,0.0

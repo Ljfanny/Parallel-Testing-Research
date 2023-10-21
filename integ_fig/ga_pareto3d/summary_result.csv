@@ -1,5 +1,4 @@
 project,normal_ga,pareto_front_ga,normal_github_baseline,pareto_front_github_baseline,normal_smart_baseline,pareto_front_smart_baseline,pareto_front_num,ga_rate,github_baseline_rate,smart_baseline_rate
-carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12/12,7,12/12,12,12/12,6,25,0.28,0.48,0.24
 commons-exec_dot,12/12,7,12/12,11,12/12,6,24,0.2916666666666667,0.4583333333333333,0.25
 delight-nashorn-sandbox_dot,12/12,7,12/12,6,12/12,5,18,0.3888888888888889,0.3333333333333333,0.2777777777777778
 elastic-job-lite_dot,12/12,7,12/12,12,12/12,6,25,0.28,0.48,0.24
