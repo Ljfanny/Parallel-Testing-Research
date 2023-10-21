@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 
 from preproc import preproc, conf_prc_map
+from plotter import fr0_satisfied_projs
 
 creator.create("FitnessMin", base.Fitness, weights=(1.0,))
 creator.create("Individual", list,
@@ -35,7 +36,7 @@ proj_names = [
     'delight-nashorn-sandbox_dot',
     'elastic-job-lite_dot',
     'elastic-job-lite_elastic-job-lite-core',
-    # 'esper_examples.rfidassetzone',
+    'esper_examples.rfidassetzone',
     'fastjson_dot',
     'fluent-logger-java_dot',
     'handlebars.java_dot',
@@ -350,7 +351,8 @@ if __name__ == '__main__':
     num_of_machine = [1, 2, 4, 6, 8, 10, 12]
     pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
     sub = f'ga_a{a}{groups_map[group_ky][0]}'
-    for proj_name in proj_names:
+    tot_test_num = 0
+    for proj_name in fr0_satisfied_projs:
         ext_dat_df = pd.DataFrame(None,
                                   columns=['project',
                                            'category',
@@ -376,40 +378,42 @@ if __name__ == '__main__':
         org_info(preproc(proj_name))
         load_setup_cost_file(proj_name,
                              groups_map[group_ky][1])
+        tot_test_num += len(tests)
         toolbox = base.Toolbox()
         toolbox.register("attr_int", random.randint, 0, 11)
         toolbox.register("mate", tools.cxUniform)
         toolbox.register("evaluate", eval_sche)
-        for mach_num in num_of_machine:
-            toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.attr_int, mach_num)
-            toolbox.register("population", tools.initRepeat, list, toolbox.individual)
-            toolbox.register("mutate", tools.mutUniformInt, low=0, up=11, indpb=1 / mach_num)
+        # for mach_num in num_of_machine:
+            # toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.attr_int, mach_num)
+            # toolbox.register("population", tools.initRepeat, list, toolbox.individual)
+            # toolbox.register("mutate", tools.mutUniformInt, low=0, up=11, indpb=1 / mach_num)
             # if is_reco_base:
             #     hist.clear()
             #     reco_base(proj_name,
             #               base_df,
             #               mach_num)
-            for fr in pct_of_failure_rate:
-                hist.clear()
-                t1 = time.time()
-                # best_ind = bruteforce(mach_num)
-                best_ind = ga(mach_num)
-                t2 = time.time()
-                tt = t2 - t1
-                category = f'{mach_num}-{fr}'
-                print(f'-------------------- {proj_name}-{category} --------------------')
-                print_ind(best_ind,
-                          tt)
-                record_ind(best_ind,
-                           sub,
-                           proj_name,
-                           category,
-                           ext_dat_df,
-                           tt)
-        resu_sub_path = f'{resu_path}/{sub}'
-        if not os.path.exists(resu_sub_path):
-            os.mkdir(resu_sub_path)
-        ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
+        #     for fr in pct_of_failure_rate:
+        #         hist.clear()
+        #         t1 = time.time()
+        #         # best_ind = bruteforce(mach_num)
+        #         best_ind = ga(mach_num)
+        #         t2 = time.time()
+        #         tt = t2 - t1
+        #         category = f'{mach_num}-{fr}'
+        #         print(f'-------------------- {proj_name}-{category} --------------------')
+        #         print_ind(best_ind,
+        #                   tt)
+        #         record_ind(best_ind,
+        #                    sub,
+        #                    proj_name,
+        #                    category,
+        #                    ext_dat_df,
+        #                    tt)
+        # resu_sub_path = f'{resu_path}/{sub}'
+        # if not os.path.exists(resu_sub_path):
+        #     os.mkdir(resu_sub_path)
+        # ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
         # if is_reco_base:
         #     base_df.to_csv(f'{base_path}/{group_ky}/{proj_name}.csv', sep=',', header=True, index=False)
     print(f'[Total time] {time.time() - prog_start} s')
+    print(f'[Test num] {tot_test_num}')

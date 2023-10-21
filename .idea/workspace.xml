@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f3eba4a7-1689-4bdf-986d-9c0fdabe3e99" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Detailed GA.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/addi_analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/addi_analyze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contrast/confs_ga_bf.csv" beforeDir="false" afterPath="$PROJECT_DIR$/contrast/confs_ga_bf.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contrast/confs_non_ig_ig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/contrast/confs_non_ig_ig.csv" afterDir="false" />
@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/contrast/ga_bf_period_comp_per_proj.csv" beforeDir="false" afterPath="$PROJECT_DIR$/contrast/ga_bf_period_comp_per_proj.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ga_a0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ga_a0.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ga_a1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ga_a1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga_vs_greedy.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ga_vs_greedy.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_dat/bruteforce/failrate_0.2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/bruteforce/failrate_0.2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_dat/bruteforce/failrate_0.4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/bruteforce/failrate_0.4.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_dat/bruteforce/failrate_0.6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_dat/bruteforce/failrate_0.6.csv" afterDir="false" />
@@ -63,7 +64,6 @@
       <change beforePath="$PROJECT_DIR$/integ_fig/avg_rate_ga_graph.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/avg_rate_ga_graph.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/avg_rate_ga_ig_graph.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/avg_rate_ga_ig_graph.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/avg_rate_graph.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/avg_rate_graph.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/commons-exec_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/commons-exec_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/delight-nashorn-sandbox_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/delight-nashorn-sandbox_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/elastic-job-lite_dot.pdf" afterDir="false" />
@@ -75,79 +75,66 @@
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/luwak_luwak.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/luwak_luwak.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/noxy_noxy-discovery-zookeeper.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/retrofit_retrofit-adapters.rxjava.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/retrofit_retrofit-adapters.rxjava.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/retrofit_retrofit.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/retrofit_retrofit.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/rxjava2-extras_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/rxjava2-extras_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/spring-boot_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/spring-boot_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/tradeoff_trend_graph.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/tradeoff_trend_graph.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/wro4j_wro4j-extensions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_as_bi_bar/wro4j_wro4j-extensions.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_pareto2d/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/activiti_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/assertj-core_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/commons-exec_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/db-scheduler_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/delight-nashorn-sandbox_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/elastic-job-lite_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/elastic-job-lite_elastic-job-lite-core.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/fastjson_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/fluent-logger-java_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/handlebars.java_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/hbase_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/http-request_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/httpcore_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/hutool_hutool-cron.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/logback_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/luwak_luwak.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/ninja_dot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_as_pareto2d/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/commons-exec_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/commons-exec_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/delight-nashorn-sandbox_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/delight-nashorn-sandbox_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/elastic-job-lite_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/elastic-job-lite_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/elastic-job-lite_elastic-job-lite-core.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/elastic-job-lite_elastic-job-lite-core.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/fastjson_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/fastjson_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/fluent-logger-java_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/fluent-logger-java_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/http-request_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/http-request_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/hutool_hutool-cron.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/hutool_hutool-cron.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/luwak_luwak.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/luwak_luwak.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/okhttp_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/orbit_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/retrofit_retrofit-adapters.rxjava.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/retrofit_retrofit.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/rxjava2-extras_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/spring-boot_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/summary_result.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/timely_server.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/wro4j_wro4j-extensions.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/yawp_yawp-testing.yawp-testing-appengine.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/zxing_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/activiti_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/assertj-core_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/commons-exec_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/db-scheduler_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/delight-nashorn-sandbox_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/elastic-job-lite_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/elastic-job-lite_elastic-job-lite-core.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/fastjson_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/fluent-logger-java_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/handlebars.java_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/hbase_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/http-request_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/httpcore_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/hutool_hutool-cron.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/logback_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/luwak_luwak.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/ninja_dot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/retrofit_retrofit-adapters.rxjava.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/retrofit_retrofit-adapters.rxjava.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/retrofit_retrofit.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/retrofit_retrofit.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/rxjava2-extras_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/rxjava2-extras_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/spring-boot_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/spring-boot_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/summary_result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/summary_result.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_pareto3d/wro4j_wro4j-extensions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_pareto3d/wro4j_wro4j-extensions.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/commons-exec_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/commons-exec_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/delight-nashorn-sandbox_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/delight-nashorn-sandbox_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/elastic-job-lite_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/elastic-job-lite_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/elastic-job-lite_elastic-job-lite-core.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/elastic-job-lite_elastic-job-lite-core.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/fastjson_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/fastjson_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/fluent-logger-java_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/fluent-logger-java_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/http-request_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/http-request_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/hutool_hutool-cron.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/hutool_hutool-cron.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/luwak_luwak.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/luwak_luwak.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/retrofit_retrofit-adapters.rxjava.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/retrofit_retrofit-adapters.rxjava.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/retrofit_retrofit.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/retrofit_retrofit.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/rxjava2-extras_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/rxjava2-extras_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/spring-boot_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/spring-boot_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/wro4j_wro4j-extensions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_0/wro4j_wro4j-extensions.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/commons-exec_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/commons-exec_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/delight-nashorn-sandbox_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/delight-nashorn-sandbox_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/elastic-job-lite_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/elastic-job-lite_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/elastic-job-lite_elastic-job-lite-core.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/elastic-job-lite_elastic-job-lite-core.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/fastjson_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/fastjson_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/fluent-logger-java_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/fluent-logger-java_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/http-request_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/http-request_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/hutool_hutool-cron.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/hutool_hutool-cron.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/luwak_luwak.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/luwak_luwak.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/okhttp_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/orbit_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/retrofit_retrofit-adapters.rxjava.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/retrofit_retrofit.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/rxjava2-extras_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/spring-boot_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/timely_server.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/wro4j_wro4j-extensions.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/yawp_yawp-testing.yawp-testing-appengine.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/zxing_dot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/retrofit_retrofit-adapters.rxjava.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/retrofit_retrofit-adapters.rxjava.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/retrofit_retrofit.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/retrofit_retrofit.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/rxjava2-extras_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/rxjava2-extras_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/spring-boot_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/spring-boot_dot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/wro4j_wro4j-extensions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_scatter2d/failrate_1/wro4j_wro4j-extensions.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/commons-exec_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/commons-exec_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/delight-nashorn-sandbox_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/delight-nashorn-sandbox_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/elastic-job-lite_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/elastic-job-lite_dot.pdf" afterDir="false" />
@@ -159,16 +146,16 @@
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/luwak_luwak.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/luwak_luwak.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/noxy_noxy-discovery-zookeeper.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/noxy_noxy-discovery-zookeeper.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/retrofit_retrofit-adapters.rxjava.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/retrofit_retrofit-adapters.rxjava.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/retrofit_retrofit.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/retrofit_retrofit.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/rxjava2-extras_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/rxjava2-extras_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/spring-boot_dot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/spring-boot_dot.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/unification.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/unification.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integ_fig/ga_trend_graph/wro4j_wro4j-extensions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/integ_fig/ga_trend_graph/wro4j_wro4j-extensions.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integrate_dat.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrate_dat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj_info.csv" beforeDir="false" afterPath="$PROJECT_DIR$/proj_info.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z3_optimizer.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,6 +229,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="analyze" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Parallel-Testing-Research" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyze.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="comp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Parallel-Testing-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -256,28 +265,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/comp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="generate_proj_info" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Parallel-Testing-Research" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_proj_info.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -335,7 +322,7 @@
         <item itemvalue="Python.plotter" />
         <item itemvalue="Python.comp" />
         <item itemvalue="Python.integrate_dat" />
-        <item itemvalue="Python.generate_proj_info" />
+        <item itemvalue="Python.analyze" />
         <item itemvalue="Python.addi_analyze" />
       </list>
     </recent_temporary>
@@ -378,7 +365,7 @@
       <workItem from="1697708043668" duration="10119000" />
       <workItem from="1697728811792" duration="1537000" />
       <workItem from="1697730374313" duration="8465000" />
-      <workItem from="1697815519525" duration="11232000" />
+      <workItem from="1697815519525" duration="23225000" />
     </task>
     <servers />
   </component>
@@ -398,13 +385,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/plotter.py</url>
-          <line>630</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -420,13 +400,13 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$integrate_dat.coverage" NAME="integrate_dat Coverage Results" MODIFIED="1697863669528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$comp.coverage" NAME="comp Coverage Results" MODIFIED="1697863949621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$integrate_dat.coverage" NAME="integrate_dat Coverage Results" MODIFIED="1697882162849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$comp.coverage" NAME="comp Coverage Results" MODIFIED="1697882269745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parallel_Testing_Research$bruteforce.coverage" NAME="bruteforce Coverage Results" MODIFIED="1695308782565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$generate_proj_info.coverage" NAME="generate_proj_info Coverage Results" MODIFIED="1697863255406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1697864281508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$analyze.coverage" NAME="analyze Coverage Results" MODIFIED="1697287121669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$addi_analyze.coverage" NAME="addi_analyze Coverage Results" MODIFIED="1697862796217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$generate_proj_info.coverage" NAME="generate_proj_info Coverage Results" MODIFIED="1697866567863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1697882306853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$addi_analyze.coverage" NAME="addi_analyze Coverage Results" MODIFIED="1697867647759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parallel_Testing_Research$analyze.coverage" NAME="analyze Coverage Results" MODIFIED="1697874023847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parallel_Testing_Research$my_deap.coverage" NAME="my_deap Coverage Results" MODIFIED="1696673874698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

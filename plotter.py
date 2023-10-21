@@ -19,22 +19,21 @@ prefixes = {
 }
 plt.rc('font', family='Georgia')
 fr0_satisfied_projs = [
-    'commons-exec_dot',
-    'delight-nashorn-sandbox_dot',
-    'elastic-job-lite_dot',
-    'elastic-job-lite_elastic-job-lite-core',
     'fastjson_dot',
-    'fluent-logger-java_dot',
-    'http-request_dot',
-    'hutool_hutool-cron',
+    'commons-exec_dot',
     'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
     'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
-    'luwak_luwak',
-    'noxy_noxy-discovery-zookeeper',
-    'retrofit_retrofit-adapters.rxjava',
-    'retrofit_retrofit',
     'rxjava2-extras_dot',
+    'hutool_hutool-cron',
+    'elastic-job-lite_dot',
+    'elastic-job-lite_elastic-job-lite-core',
+    'luwak_luwak',
+    'fluent-logger-java_dot',
+    'delight-nashorn-sandbox_dot',
+    'http-request_dot',
     'spring-boot_dot',
+    'retrofit_retrofit',
+    'retrofit_retrofit-adapters.rxjava',
     'wro4j_wro4j-extensions']
 
 
@@ -47,7 +46,7 @@ def output_plot(ax,
     ax.set_title(textwrap.fill(proj_name))
     ax.set_xlabel('Runtime')
     ax.set_ylabel('Price')
-    ax.set_zlabel('Max Failure Rate')
+    ax.set_zlabel('Max Flaky-Failure Rate')
     ax.legend(fontsize=8)
 
 
@@ -268,13 +267,13 @@ def draw_tread_graph():
                      chp_or_fst,
                      labels):
         title_map = {
-            0: 'For Price',
-            1: 'For Runtime'
+            0: 'For Price Optimization',
+            1: 'For Runtime Optimization'
         }
         ax.plot(x, y1, 'o-', c='#84a98c', label=labels[0])
         ax.plot(x, y2, 'o-', c='#354f52', label=labels[1])
         ax.set_title(title_map[chp_or_fst], size=12)
-        ax.set_xlabel('Failure Rate', size=12)
+        ax.set_xlabel('Flaky-Failure Rate', size=12)
         ax.set_ylabel('Normalization Ratio', size=12)
         ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
         ax.spines['top'].set_color('none')
@@ -285,12 +284,12 @@ def draw_tread_graph():
     dfs = [pd.read_csv(f'{ig_path}/{csv}')
            for csv in csvs
            if csv.find('failrate') != -1]
-    norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4), sharex=True, sharey=True)
+    norm_fig, norm_axes = plt.subplots(1, 2, figsize=(10, 4.25), sharex=True, sharey=True)
     avg_chp = []
     avg_fst = []
     programs = dfs[4].dropna(subset=['cheapest_category']).iloc[:, 0]
     for i in programs.index:
-        fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+        fig, axes = plt.subplots(1, 2, figsize=(10, 4.25))
         chp_tup = []
         fst_tup = []
         for j, df in enumerate(dfs):
@@ -326,7 +325,7 @@ def draw_tread_graph():
                      fst_tup[:, 1],
                      1,
                      ['Runtime', 'Price'])
-        axes[1].legend(fontsize=8)
+        axes[0].legend(fontsize=8)
         fig.suptitle(programs[i])
         plt.savefig(f'integ_fig/ga_trend_graph/{programs[i]}.pdf')
         plt.close()
@@ -344,7 +343,7 @@ def draw_tread_graph():
                  avg_chp[:, 1],
                  0,
                  ['Avg. Runtime Ratio', 'Avg. Price Ratio'])
-    norm_axes[1].legend(fontsize=8)
+    norm_axes[0].legend(fontsize=8)
     print(avg_chp, avg_fst)
     norm_fig.suptitle('Avg. Metric Ratio Trend of Acceptable Flaky-Failure Rate', size=12, weight='bold')
     plt.savefig(f'integ_fig/ga_trend_graph/unification.pdf')
@@ -590,13 +589,13 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
                        title):
         bar_width = 0.53
         indexes = np.array(indexes)
-        ax.bar(indexes - bar_width / 2 + 0.1, y1, color='#cdb4db', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes - bar_width / 2 + 0.1, y1, color='sandybrown', width=bar_width, edgecolor='#04080f',
                label='Runtime Ratio with Runtime Optimization', hatch='//')
-        ax.bar(indexes - bar_width / 2 + 0.1, y3, color='#feeafa', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes - bar_width / 2 + 0.1, y3, color='lavender', width=bar_width, edgecolor='#04080f',
                label='Price Ratio with Runtime Optimization', hatch='//')
-        ax.bar(indexes + bar_width / 2 - 0.1, y2, color='#feeafa', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes + bar_width / 2 - 0.1, y2, color='lavender', width=bar_width, edgecolor='#04080f',
                label='Runtime Ratio with Price Optimization')
-        ax.bar(indexes + bar_width / 2 - 0.1, y4, color='#cdb4db', width=bar_width, edgecolor='#04080f',
+        ax.bar(indexes + bar_width / 2 - 0.1, y4, color='sandybrown', width=bar_width, edgecolor='#04080f',
                label='Price Ratio with Price Optimization')
         ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#22223b', markersize=4)
         ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color='#22223b', markersize=4)
@@ -612,7 +611,7 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
         'cheapest')
     avg_idx = len(gh_pri_runtime_rts)
     proj_info_df = pd.read_csv('proj_info.csv')
-    proj_id_map = {itm['project-module']: itm['id'] for _, itm in proj_info_df.iterrows()}
+    proj_id_map = {itm['project-module']: itm['id'].replace('P', 'M') for _, itm in proj_info_df.iterrows()}
     x = [proj_id_map[proj] for proj in fr0_satisfied_projs]
     tradeoff_per_proj_df['project'] = x
     tradeoff_per_proj_df['github_baseline_tradeoff_with_lowest_price'] = gh_pri_runtime_rts * gh_pri_price_rts
@@ -653,7 +652,7 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
     ax2.set_yticklabels(y2_labels)
     ax1.set_xticklabels(x)
     ax2.set_xticklabels(x)
-    ax2.set_xlabel(r'Project ID', size=12, weight='bold')
+    ax2.set_xlabel(r'ID', size=12, weight='bold')
     fig.suptitle(sup_title, size=16, weight='bold')
     ax1.legend()
     plt.savefig(f'integ_fig/avg_rate_{goal_subdir}_graph.pdf')

@@ -6,9 +6,9 @@ from itertools import product
 from preproc import preproc, conf_prc_map
 
 proj_list = [
-        'hutool_hutool-cron',
-        'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
-        'noxy_noxy-discovery-zookeeper']
+    'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
+    'hutool_hutool-cron'
+]
 
 
 def iter_alloc(a,
@@ -94,7 +94,7 @@ def iter_alloc(a,
 
 
 if __name__ == '__main__':
-    # iter_alloc(0,
-    #            'ga_a0')
+    iter_alloc(0,
+               'ga_a0')
     iter_alloc(1,
                'ga_a1')

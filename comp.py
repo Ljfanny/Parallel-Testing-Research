@@ -4,6 +4,9 @@ import pandas as pd
 from plotter import fr0_satisfied_projs
 from addi_analyze import proj_list
 
+import warnings
+warnings.filterwarnings("ignore")
+
 comp_path = 'contrast'
 
 
@@ -201,42 +204,37 @@ def comp_confs(a: str, b: str):
 def comp_ga_nor_gre():
     comp_df = pd.DataFrame(None,
                            columns=['project_id',
-                                    'runtime_cheap',
-                                    'price_cheap',
-                                    'greedy_runtime_cheap',
-                                    'greedy_price_cheap',
-                                    'runtime_fast',
-                                    'price_fast',
-                                    'greedy_runtime_fast',
-                                    'greedy_price_fast'])
-    comp_df['runtime_fast'] = comp_df['runtime_fast'].astype('float')
-    comp_df['price_fast'] = comp_df['price_fast'].astype('float')
-    comp_df['greedy_runtime_fast'] = comp_df['greedy_runtime_fast'].astype('float')
-    comp_df['greedy_price_fast'] = comp_df['greedy_price_fast'].astype('float')
+                                    'period_ga_cheap',
+                                    'period_bf_cheap',
+                                    'runtime_rate_cheap',
+                                    'price_rate_cheap',
+                                    'period_ga_fast',
+                                    'period_bf_fast',
+                                    'runtime_rate_fast',
+                                    'price_rate_fast'])
 
     def extract_dat(a):
         ga_gre_df = pd.read_csv(f'ga_a{a}.csv')
         for i, proj in enumerate(proj_list):
             ga_df = pd.read_csv(f'ext_dat/ga_a{a}/{proj}.csv')
-            ga = ga_df.loc[ga_df['category'] == '2-0']
+            ga = ga_df.loc[ga_df['category'] == '4-0']
             ga_gre = ga_gre_df.loc[ga_gre_df['project'] == proj]
             if a == 0:
                 comp_df.loc[len(comp_df.index)] = [
                     proj,
-                    ga.iloc[0]['time_parallel'],
-                    ga.iloc[0]['price'],
-                    ga_gre.iloc[0]['time_parallel'],
-                    ga_gre.iloc[0]['price'],
-                    0,
+                    '<1ms',
+                    ga_gre.iloc[0]['period'],
+                    ga.iloc[0]['time_parallel'] / ga_gre.iloc[0]['time_parallel'],
+                    ga.iloc[0]['price'] / ga_gre.iloc[0]['price'],
+                    '<1ms',
                     0,
                     0,
                     0
                 ]
             else:
-                comp_df.loc[i, 'runtime_fast'] = ga.iloc[0]['time_parallel']
-                comp_df.loc[i, 'price_fast'] = ga.iloc[0]['price']
-                comp_df.loc[i, 'greedy_runtime_fast'] = ga_gre.iloc[0]['time_parallel']
-                comp_df.loc[i, 'greedy_price_fast'] = ga_gre.iloc[0]['price']
+                comp_df.loc[i, 'period_bf_fast'] = ga_gre.iloc[0]['period']
+                comp_df.loc[i, 'runtime_rate_fast'] = ga.iloc[0]['time_parallel'] / ga_gre.iloc[0]['time_parallel']
+                comp_df.loc[i, 'price_rate_fast'] = ga.iloc[0]['price'] / ga_gre.iloc[0]['price']
     extract_dat(0)
     extract_dat(1)
     comp_df.to_csv('ga_vs_greedy.csv', sep=',', header=True, index=False)
