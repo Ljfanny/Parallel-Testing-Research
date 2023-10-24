@@ -1,0 +1,4 @@
+project_id,period_ga_cheap,period_bf_cheap,runtime_rate_cheap,price_rate_cheap,period_ga_fast,period_bf_fast,runtime_rate_fast,price_rate_fast
+P3,<1ms,2275.64243388176,1.0072170964792466,0.9999999999999999,<1ms,2048.161336660385,1,1.0001020563616276
+P6,<1ms,0.0661039352416992,1.002032727266232,1.0,<1ms,0.0706589221954345,1,0.9998832843845746
+P10,<1ms,>48h,1,1,<1ms,>48h,1,1

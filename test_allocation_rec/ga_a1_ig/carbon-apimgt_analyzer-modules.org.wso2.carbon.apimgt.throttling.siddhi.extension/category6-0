@@ -1,0 +1,6 @@
+{'22CPU05Mem2GB.sh': [],
+ '24CPU1Mem4GB.sh': [],
+ '26CPU2Mem4GB.sh': [],
+ '27CPU2Mem8GB.sh': [],
+ '28CPU2Mem16GB.sh': ['org.wso2.carbon.apimgt.throttling.siddhi.extension.ThrottleTimeBatchWindowTestCase#throttleTimeWindowBatchTest2'],
+ '29CPU4Mem8GB.sh': ['org.wso2.carbon.apimgt.throttling.siddhi.extension.ThrottleTimeBatchWindowTestCase#throttleTimeWindowBatchTest1']}
