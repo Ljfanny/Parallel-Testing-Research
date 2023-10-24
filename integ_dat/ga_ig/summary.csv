@@ -1,8 +1,0 @@
-table_category,non_nan_project_num,cheapest_non_nan_github_caliber_num,cheapest_avg_ga_vs_github_caliber_runtime_rate,cheapest_avg_ga_vs_github_caliber_price_rate,cheapest_ga_vs_github_caliber_better_num,cheapest_non_nan_smart_baseline_num,cheapest_avg_ga_vs_smart_baseline_runtime_rate,cheapest_avg_ga_vs_smart_baseline_price_rate,cheapest_ga_vs_smart_baseline_better_num,fastest_non_nan_github_caliber_num,fastest_avg_ga_vs_github_caliber_runtime_rate,fastest_avg_ga_vs_github_caliber_price_rate,fastest_ga_vs_github_caliber_better_num,fastest_non_nan_smart_baseline_num,fastest_avg_ga_vs_smart_baseline_runtime_rate,fastest_avg_ga_vs_smart_baseline_price_rate,fastest_ga_vs_smart_baseline_better_num
-failrate_0,19,12,1.502943955,0.290956779,12,18,1.218545338,0.527966984,17,12,0.608589485,0.845493572,12,18,0.562652431,1.911002699,16
-failrate_0.2,29,29,2.510095335,0.458202689,29,29,1.700387753,0.522870997,27,29,0.918196504,1.365149427,29,29,0.650725603,2.063812364,28
-failrate_0.4,30,29,2.535035308,0.442908334,29,29,1.686913676,0.505402608,27,29,0.887459725,1.302586145,29,29,0.628930587,1.914801621,28
-failrate_0.6,31,31,2.955049528,0.441147585,31,31,2.117132802,0.506359631,29,31,0.914385991,1.329664275,31,31,0.654080486,1.990228613,30
-failrate_0.8,31,31,2.902306527,0.441147263,31,31,2.074725772,0.50635944,29,31,0.914814607,1.321879111,31,31,0.654564146,1.982470392,30
-failrate_1,32,32,2.890233122,0.45019373,32,32,2.004461113,0.507175509,30,32,0.917864677,1.324515303,32,32,0.636824675,1.931548418,31
-,,,2.549277296,0.420759397,,,1.800361076,0.512689195,,,0.860218498,1.248214639,,,0.631296321,1.965644018,
