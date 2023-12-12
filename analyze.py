@@ -224,7 +224,7 @@ def ga(gene_len):
     pop = sorted(pop, key=lambda x: x.fitness.values[0])
     if gene_len == 1:
         return pop[0]
-    for g in range(50):
+    for g in range(100):
         pop = sorted(pop, key=lambda x: x.fitness.values[0])
         offspring = list(map(toolbox.clone, pop[:35]))
         for chd1, chd2 in zip(pop[::2], pop[1::2]):
@@ -383,36 +383,36 @@ if __name__ == '__main__':
         toolbox.register("attr_int", random.randint, 0, 11)
         toolbox.register("mate", tools.cxUniform)
         toolbox.register("evaluate", eval_sche)
-        # for mach_num in num_of_machine:
-            # toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.attr_int, mach_num)
-            # toolbox.register("population", tools.initRepeat, list, toolbox.individual)
-            # toolbox.register("mutate", tools.mutUniformInt, low=0, up=11, indpb=1 / mach_num)
+        for mach_num in num_of_machine:
+            toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.attr_int, mach_num)
+            toolbox.register("population", tools.initRepeat, list, toolbox.individual)
+            toolbox.register("mutate", tools.mutUniformInt, low=0, up=11, indpb=1 / mach_num)
             # if is_reco_base:
             #     hist.clear()
             #     reco_base(proj_name,
             #               base_df,
             #               mach_num)
-        #     for fr in pct_of_failure_rate:
-        #         hist.clear()
-        #         t1 = time.time()
-        #         # best_ind = bruteforce(mach_num)
-        #         best_ind = ga(mach_num)
-        #         t2 = time.time()
-        #         tt = t2 - t1
-        #         category = f'{mach_num}-{fr}'
-        #         print(f'-------------------- {proj_name}-{category} --------------------')
-        #         print_ind(best_ind,
-        #                   tt)
-        #         record_ind(best_ind,
-        #                    sub,
-        #                    proj_name,
-        #                    category,
-        #                    ext_dat_df,
-        #                    tt)
-        # resu_sub_path = f'{resu_path}/{sub}'
-        # if not os.path.exists(resu_sub_path):
-        #     os.mkdir(resu_sub_path)
-        # ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
+            for fr in pct_of_failure_rate:
+                hist.clear()
+                t1 = time.time()
+                # best_ind = bruteforce(mach_num)
+                best_ind = ga(mach_num)
+                t2 = time.time()
+                tt = t2 - t1
+                category = f'{mach_num}-{fr}'
+                print(f'-------------------- {proj_name}-{category} --------------------')
+                print_ind(best_ind,
+                          tt)
+                record_ind(best_ind,
+                           sub,
+                           proj_name,
+                           category,
+                           ext_dat_df,
+                           tt)
+        resu_sub_path = f'{resu_path}/{sub}'
+        if not os.path.exists(resu_sub_path):
+            os.mkdir(resu_sub_path)
+        ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
         # if is_reco_base:
         #     base_df.to_csv(f'{base_path}/{group_ky}/{proj_name}.csv', sep=',', header=True, index=False)
     print(f'[Total time] {time.time() - prog_start} s')
