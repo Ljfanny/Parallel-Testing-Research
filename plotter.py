@@ -44,9 +44,9 @@ def draw_scatter(ax, x, y, z, c, label=None):
 def output_plot(ax,
                 proj_name):
     ax.set_title(textwrap.fill(proj_name))
-    ax.set_xlabel('Runtime')
-    ax.set_ylabel('Price')
-    ax.set_zlabel('Max Flaky-Failure Rate')
+    ax.set_xlabel('Running Time', size=12, weight='bold')
+    ax.set_ylabel('Price', size=12, weight='bold')
+    ax.set_zlabel('Max Flaky-Failure Rate', size=12, weight='bold')
     ax.legend(fontsize=8)
 
 
@@ -110,12 +110,12 @@ def draw_integ_scatter2d(code,
         plt.scatter(x_runtime,
                     y_price,
                     c=colors)
-        plt.xlabel('Runtime')
+        plt.xlabel('Running Time')
         plt.ylabel('Price')
         plt.legend(handles=[plt.scatter([], [], c=c) for c in colors],
                    labels=labels,
                    fontsize=8)
-        plt.savefig(f'{subdir}/{proj_name}.pdf')
+        plt.savefig(f'{subdir}/{proj_name}.pdf', bbox_inches='tight')
         plt.close()
 
 
@@ -254,7 +254,7 @@ def draw_integ_pareto3d(code):
                      f'Smart Baseline Normal: {len(smart_non)}')
         output_plot(ax,
                     proj_name)
-        plt.savefig(f'integ_fig/ga_pareto3d/{proj_name}.pdf')
+        plt.savefig(f'integ_fig/ga_pareto3d/{proj_name}.pdf', bbox_inches='tight')
         plt.close()
     summary_df.to_csv(f'integ_fig/ga_pareto3d/summary_result.csv', sep=',', header=True, index=False)
 
@@ -268,13 +268,13 @@ def draw_tread_graph():
                      labels):
         title_map = {
             0: 'For Price Optimization',
-            1: 'For Runtime Optimization'
+            1: 'For Running Time Optimization'
         }
         ax.plot(x, y1, 'o-', c='#84a98c', label=labels[0])
         ax.plot(x, y2, 'o-', c='#354f52', label=labels[1])
-        ax.set_title(title_map[chp_or_fst], size=12)
-        ax.set_xlabel('Flaky-Failure Rate', size=12)
-        ax.set_ylabel('Normalization Ratio', size=12)
+        ax.set_title(title_map[chp_or_fst], size=14, weight='bold')
+        ax.set_xlabel('Flaky-Failure Rate', size=12, weight='bold')
+        ax.set_ylabel('Normalization Ratio', size=12, weight='bold')
         ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
         ax.spines['top'].set_color('none')
         ax.spines['right'].set_color('none')
@@ -318,16 +318,16 @@ def draw_tread_graph():
                      chp_tup[:, 0],
                      chp_tup[:, 1],
                      0,
-                     ['Runtime', 'Price'])
+                     ['Running Time', 'Price'])
         draw_subplot(axes[1],
                      fst_tup[:, 2],
                      fst_tup[:, 0],
                      fst_tup[:, 1],
                      1,
-                     ['Runtime', 'Price'])
+                     ['Running Time', 'Price'])
         axes[0].legend(fontsize=8)
         fig.suptitle(programs[i])
-        plt.savefig(f'integ_fig/ga_trend_graph/{programs[i]}.pdf')
+        plt.savefig(f'integ_fig/ga_trend_graph/{programs[i]}.pdf', bbox_inches='tight')
         plt.close()
     avg_chp = np.nanmean(np.array(avg_chp), axis=0)
     avg_fst = np.nanmean(np.array(avg_fst), axis=0)
@@ -336,17 +336,17 @@ def draw_tread_graph():
                  avg_fst[:, 0],
                  avg_fst[:, 1],
                  1,
-                 ['Avg. Runtime Ratio', 'Avg. Price Ratio'])
+                 ['Avg. Running Time Ratio', 'Avg. Price Ratio'])
     draw_subplot(norm_axes[1],
                  avg_chp[:, 2],
                  avg_chp[:, 0],
                  avg_chp[:, 1],
                  0,
-                 ['Avg. Runtime Ratio', 'Avg. Price Ratio'])
+                 ['Avg. Running Time Ratio', 'Avg. Price Ratio'])
     norm_axes[0].legend(fontsize=8)
     print(avg_chp, avg_fst)
-    norm_fig.suptitle('Avg. Metric Ratio Trend of Acceptable Flaky-Failure Rate', size=12, weight='bold')
-    plt.savefig(f'integ_fig/ga_trend_graph/unification.pdf')
+    # norm_fig.suptitle('Avg. Metric Ratio Trend of Acceptable Flaky-Failure Rate', size=12, weight='bold')
+    plt.savefig(f'integ_fig/ga_trend_graph/unification.pdf', bbox_inches='tight')
     plt.close()
 
 
@@ -420,11 +420,11 @@ def draw_integ_as_graph(is_bar=False):
                    alpha=0.5,
                    c='darkkhaki',
                    label=f'Smart Baseline Normal: {len(np.unique(smt))}({len(smt)})')
-        ax.set_title(textwrap.fill(prog))
-        ax.set_xlabel('Runtime Ratio')
-        ax.set_ylabel('Price Ratio')
+        ax.set_title(textwrap.fill(prog), size=14, weight='bold')
+        ax.set_xlabel('Running Time Ratio', size=12, weight='bold')
+        ax.set_ylabel('Price Ratio', size=12, weight='bold')
         ax.legend(fontsize=8)
-        plt.savefig(f'integ_fig/ga_as_pareto2d/{prog}.pdf')
+        plt.savefig(f'integ_fig/ga_as_pareto2d/{prog}.pdf', bbox_inches='tight')
         plt.close()
 
     def set_parameters(ax1,
@@ -449,7 +449,7 @@ def draw_integ_as_graph(is_bar=False):
                 bl_color='#051923',
                 bar_width=0.035):
         ax.yaxis.grid(True, linestyle='--', zorder=0)
-        ax.bar(x, y1, color=up_color, width=bar_width, edgecolor='#04080f', label='Runtime Ratio')
+        ax.bar(x, y1, color=up_color, width=bar_width, edgecolor='#04080f', label='Running Time Ratio')
         ax.bar(x, y2, color=down_color, width=bar_width, edgecolor='#04080f', label='Price Ratio')
         ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
         ax.plot(x, np.array([-1 for _ in range(len(x))]), 'o-', color=bl_color, markersize=4)
@@ -473,8 +473,8 @@ def draw_integ_as_graph(is_bar=False):
                 -smt_rts[:, 1],
                 'Smart Baseline')
         set_parameters(ax1, ax2)
-        fig.suptitle(prog, size=16, weight='bold')
-        plt.savefig(f'integ_fig/ga_as_bi_bar/{prog}.pdf')
+        # fig.suptitle(prog, size=16, weight='bold')
+        plt.savefig(f'integ_fig/ga_as_bi_bar/{prog}.pdf', bbox_inches='tight')
         plt.close()
 
     def append_info(arr,
@@ -534,15 +534,15 @@ def draw_integ_as_graph(is_bar=False):
     pnl.plot(a, rts[:, 0] * rts[:, 1], 'o-', label='vs GitHub Baseline', color='#c89f9c', linewidth=2.5)
     pnl.plot(a, rts[:, 2] * rts[:, 3], 'o-', label='vs Smart Baseline', color='#9d8189', linewidth=2.5)
     print(rts[:, 0] * rts[:, 1], rts[:, 2] * rts[:, 3])
-    pnl.set_xlabel(r'The Parameter a')
-    pnl.set_ylabel(r'Performance Increase')
+    pnl.set_xlabel(r'The Parameter a', size=12, weight='bold')
+    pnl.set_ylabel(r'Performance Increase', size=12, weight='bold')
     pnl.set_xticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
-    pnl.set_title('Avg. Tradeoff Value over all Projects', size=16, weight='bold')
+    # pnl.set_title('Avg. Tradeoff Value over all Projects', size=16, weight='bold')
     pnl.spines['top'].set_color('none')
     pnl.spines['right'].set_color('none')
     pnl.yaxis.grid(True, linestyle='--', zorder=0)
     pnl.legend(fontsize=8)
-    plt.savefig(f'integ_fig/ga_as_bi_bar/tradeoff_trend_graph.pdf')
+    plt.savefig(f'integ_fig/ga_as_bi_bar/tradeoff_trend_graph.pdf', bbox_inches='tight')
     plt.close()
     # --------------------------------------- mean bi bar ---------------------------------------
     fig, (pnl1, pnl2) = plt.subplots(2, 1, figsize=(10, 8), sharey=True, sharex=True)
@@ -559,13 +559,13 @@ def draw_integ_as_graph(is_bar=False):
     set_parameters(pnl1, pnl2)
     pnl1.legend()
     print(rts)
-    fig.suptitle('Average Rate', size=16, weight='bold')
-    plt.savefig(f'integ_fig/ga_as_bi_bar/avg_rate_graph.pdf')
+    # fig.suptitle('Average Rate', size=16, weight='bold')
+    plt.savefig(f'integ_fig/ga_as_bi_bar/avg_rate_graph.pdf', bbox_inches='tight')
     plt.close()
 
 
 def draw_integ_proj_avg_rate_graph(goal_subdir,
-                                   sup_title,
+                                   # sup_title,
                                    y1s,
                                    y1_labels,
                                    y2s,
@@ -590,11 +590,11 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
         bar_width = 0.53
         indexes = np.array(indexes)
         ax.bar(indexes - bar_width / 2 + 0.1, y1, color='sandybrown', width=bar_width, edgecolor='#04080f',
-               label='Runtime Ratio with Runtime Optimization', hatch='//')
+               label='Running Time Ratio with Running Time Optimization', hatch='//')
         ax.bar(indexes - bar_width / 2 + 0.1, y3, color='lavender', width=bar_width, edgecolor='#04080f',
-               label='Price Ratio with Runtime Optimization', hatch='//')
+               label='Price Ratio with Running Time Optimization', hatch='//')
         ax.bar(indexes + bar_width / 2 - 0.1, y2, color='lavender', width=bar_width, edgecolor='#04080f',
-               label='Runtime Ratio with Price Optimization')
+               label='Running Time Ratio with Price Optimization')
         ax.bar(indexes + bar_width / 2 - 0.1, y4, color='sandybrown', width=bar_width, edgecolor='#04080f',
                label='Price Ratio with Price Optimization')
         ax.plot(x, np.array([1 for _ in range(len(x))]), 'o-', color='#22223b', markersize=4)
@@ -653,9 +653,9 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
     ax1.set_xticklabels(x)
     ax2.set_xticklabels(x)
     ax2.set_xlabel(r'ID', size=12, weight='bold')
-    fig.suptitle(sup_title, size=16, weight='bold')
+    # fig.suptitle(sup_title, size=16, weight='bold')
     ax1.legend()
-    plt.savefig(f'integ_fig/avg_rate_{goal_subdir}_graph.pdf')
+    plt.savefig(f'integ_fig/avg_rate_{goal_subdir}_graph.pdf', bbox_inches='tight')
     plt.close()
 
 
@@ -666,13 +666,13 @@ if __name__ == '__main__':
     draw_tread_graph()
     draw_integ_as_graph(True)
     draw_integ_proj_avg_rate_graph('ga_ig',
-                                   'Avg. Ratio for GASearch without Set-up Time',
+                                   # 'Avg. Ratio for GASearch without Set-up Time',
                                    [8, 6, 4, 2, 0, -2],
                                    [8, 6, 4, 2, 0, 2],
                                    [8, 6, 4, 2, 0, -2, -4],
                                    [8, 6, 4, 2, 0, 2, 4])
     draw_integ_proj_avg_rate_graph('ga',
-                                   'Avg. Ratio for GASearch with Set-up Time',
+                                   # 'Avg. Ratio for GASearch with Set-up Time',
                                    [4, 3, 2, 1, 0, -1, -2],
                                    [4, 3, 2, 1, 0, 1, 2],
                                    [4, 3, 2, 1, 0, -1, -2],

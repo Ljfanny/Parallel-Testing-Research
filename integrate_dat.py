@@ -95,10 +95,27 @@ def get_contrast(a,
                  subdir,
                  proj,
                  mach_num,
-                 fr):
+                 fr,
+                 comp_itm):
     df = pd.read_csv(f'baseline_dat/{subdir}/{proj}.csv')
     filter_dat = df.loc[df['num_machines'] == mach_num]
     filter_dat = (filter_dat.iloc[:, 1:]).reset_index(drop=True)
+    comp_resu = comp_itm
+    for _, row in filter_dat.iterrows():
+        fitness = a * (25.993775 / 3600) * row['time_parallel'] + (1 - a) * row['price']
+        if fitness == comp_itm['fitness']:
+            comp_resu = pd.Series({
+                'category': comp_itm['category'],
+                'num_confs': comp_itm['num_confs'],
+                'confs': str({row['conf']: row['num_machines']}),
+                'time_seq': row['time_seq'],
+                'time_parallel': row['time_parallel'],
+                'price': row['price'],
+                'min_failure_rate': row['min_failure_rate'],
+                'max_failure_rate': row['max_failure_rate'],
+                'fitness': comp_itm['fitness'],
+                'period': comp_itm['period']
+            })
     github = filter_dat.loc[filter_dat['conf'] == alter_conf].iloc[0]
     filter_dat['fitness'] = a * (25.993775 / 3600) * filter_dat['time_parallel'] + (1 - a) * filter_dat['price']
     filter_dat.sort_values(by='fitness', inplace=True)
@@ -106,7 +123,7 @@ def get_contrast(a,
     if smart['max_failure_rate'] > fr:
         filter_dat.sort_values(by='max_failure_rate', inplace=True)
         smart = filter_dat.iloc[0, :]
-    return github, smart
+    return github, smart, comp_resu
 
 
 def consider_fr(chp_dat_dir,
@@ -114,6 +131,11 @@ def consider_fr(chp_dat_dir,
                 baseline_subdir,
                 output_subdir,
                 whe_mach6=False):
+    def exchange(a, ori, rep):
+        tmp = pd.Series({
+
+        })
+
     df_num = 6
     tables = [
         'failrate_0',
@@ -211,16 +233,18 @@ def consider_fr(chp_dat_dir,
                         fst_price = itm['price']
                 else:
                     break
-            chp_gh, chp_smt = get_contrast(0,
-                                           baseline_subdir,
-                                           proj_name,
-                                           sum(literal_eval(chp['confs']).values()),
-                                           0.2 * i)
-            fst_gh, fst_smt = get_contrast(1,
-                                           baseline_subdir,
-                                           proj_name,
-                                           sum(literal_eval(fst['confs']).values()),
-                                           0.2 * i)
+            chp_gh, chp_smt, chp = get_contrast(0,
+                                                baseline_subdir,
+                                                proj_name,
+                                                sum(literal_eval(chp['confs']).values()),
+                                                0.2 * i,
+                                                chp)
+            fst_gh, fst_smt, fst = get_contrast(1,
+                                                baseline_subdir,
+                                                proj_name,
+                                                sum(literal_eval(fst['confs']).values()),
+                                                0.2 * i,
+                                                fst)
             chp_single_conf_num, fst_single_conf_num = record_df(dfs[i],
                                                                  i,
                                                                  proj_name,
@@ -276,11 +300,12 @@ def consider_ab(dat_dir,
             continue
         dat.sort_values(by='fitness', inplace=True)
         itm = dat.iloc[0, :]
-        gh, smt = get_contrast(a,
-                               baseline_subdir,
-                               proj_name,
-                               sum(literal_eval(itm['confs']).values()),
-                               0)
+        gh, smt, itm = get_contrast(a,
+                                    baseline_subdir,
+                                    proj_name,
+                                    sum(literal_eval(itm['confs']).values()),
+                                    0,
+                                    itm)
         gh_fit = a * beta * gh['time_parallel'] + b * gh['price']
         gh_fit_rate = itm['fitness'] / gh_fit
         smt_fit = a * beta * smt['time_parallel'] + b * smt['price']
