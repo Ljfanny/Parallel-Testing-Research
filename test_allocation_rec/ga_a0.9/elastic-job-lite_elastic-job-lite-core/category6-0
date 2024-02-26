@@ -49,9 +49,7 @@
                          'io.elasticjob.lite.internal.election.ElectionListenerManagerTest#assertLeaderElectionWhenRemoveLeaderInstancePathWithAvailableServer',
                          'io.elasticjob.lite.executor.JobExecutorFactoryTest#assertGetJobExecutorForSimpleJob',
                          'io.elasticjob.lite.internal.server.ServerNodeTest#assertIsNotLocalServerPath',
-                         'io.elasticjob.lite.internal.schedule.JobRegistryTest#assertIsJobRunningIfNull',
-                         'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
-                         'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException'],
+                         'io.elasticjob.lite.internal.schedule.JobRegistryTest#assertIsJobRunningIfNull'],
  '24CPU1Mem4GB.sh': ['io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertIsJobNodeExisted',
                      'io.elasticjob.lite.statistics.rdb.StatisticRdbRepositoryTest#assertGetSummedTaskResultStatisticsWhenTableIsEmpty',
                      'io.elasticjob.lite.internal.storage.JobNodeStorageTest#assertExecuteInTransactionSuccess',
@@ -499,4 +497,6 @@
  '26CPU2Mem4GB.sh': ['io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterInitFailureTest#assertInitFailure',
                      'io.elasticjob.lite.internal.server.ServerNodeTest#assertGetServerNode',
                      'io.elasticjob.lite.exception.JobExecutionEnvironmentExceptionTest#assertGetMessage',
-                     'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsCompletedRootNode']}
+                     'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsCompletedRootNode',
+                     'io.elasticjob.lite.reg.zookeeper.ZookeeperElectionServiceTest#assertContend',
+                     'io.elasticjob.lite.reg.exception.RegExceptionHandlerTest#assertHandleExceptionWithInterruptedException']}

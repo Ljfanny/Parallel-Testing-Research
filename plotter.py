@@ -5,7 +5,7 @@ import pandas as pd
 import textwrap
 import numpy as np
 
-matplotlib.use('TkAgg')
+# matplotlib.use('TkAgg')
 
 gh_max_fr = []
 smt_max_fr = []

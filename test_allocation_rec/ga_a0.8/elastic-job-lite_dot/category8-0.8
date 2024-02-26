@@ -1,5 +1,5 @@
 {'22CPU05Mem2GB.sh:v0': ['io.elasticjob.lite.lifecycle.api.JobAPIFactoryTest#assertCreateJobOperateAPI',
-                         'io.elasticjob.lite.util.env.TimeServiceTest#assertGetCurrentMillis',
+                         'io.elasticjob.lite.internal.schedule.JobRegistryTest#assertIsJobRunningIfNull',
                          'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertGetStartedNode',
                          'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsNotStartedRootNode'],
  '22CPU05Mem2GB.sh:v1': ['io.elasticjob.lite.executor.JobExecutorFactoryTest#assertGetJobExecutorForScriptJob',
@@ -10,7 +10,7 @@
  '22CPU05Mem2GB.sh:v3': ['io.elasticjob.lite.context.TaskContextTest#assertNewWithoutSlaveId',
                          'io.elasticjob.lite.api.strategy.impl.OdevitySortByNameJobShardingStrategyTest#assertShardingByAsc'],
  '22CPU05Mem2GB.sh:v4': ['io.elasticjob.lite.context.TaskContextTest#assertGetExecutorId',
-                         'io.elasticjob.lite.internal.schedule.JobRegistryTest#assertIsJobRunningIfNull',
+                         'io.elasticjob.lite.util.env.TimeServiceTest#assertGetCurrentMillis',
                          'io.elasticjob.lite.exception.ExceptionUtilTest#assertTransformWithNull'],
  '22CPU05Mem2GB.sh:v5': ['io.elasticjob.lite.lifecycle.api.JobAPIFactoryTest#assertCreateJobStatisticsAPI',
                          'io.elasticjob.lite.event.rdb.JobEventRdbIdentityTest#assertGetIdentity',
@@ -541,6 +541,7 @@
                         'io.elasticjob.lite.internal.election.LeaderNodeTest#assertIsNotLeaderInstancePath',
                         'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsStartedRootNode',
                         'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertIsCompletedRootNode',
+                        'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath',
                         'io.elasticjob.lite.lifecycle.domain.ShardingStatusTest#assertGetShardingStatusWhenIsShardingError',
                         'io.elasticjob.lite.internal.guarantee.GuaranteeNodeTest#assertGetCompletedNode'],
  '24CPU1Mem4GB.sh:v1': ['io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterInitFailureTest#assertInitFailure',
@@ -556,5 +557,4 @@
                         'io.elasticjob.lite.internal.config.ConfigurationServiceTest#assertPersistJobConfigurationForJobConflict',
                         'io.elasticjob.lite.lifecycle.api.JobAPIFactoryTest#assertCreateJobSettingsAPI',
                         'io.elasticjob.lite.executor.handler.JobPropertiesTest#assertGetWhenValueIsNotEmpty',
-                        'io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsFailover',
-                        'io.elasticjob.lite.internal.failover.FailoverNodeTest#assertGetItemWhenNotExecutionFailoverPath']}
+                        'io.elasticjob.lite.config.LiteJobConfigurationTest#assertIsFailover']}

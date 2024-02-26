@@ -12,6 +12,7 @@ import pandas as pd
 from preproc import preproc, conf_prc_map
 from plotter import fr0_satisfied_projs
 
+iters = 50
 creator.create("FitnessMin", base.Fitness, weights=(1.0,))
 creator.create("Individual", list,
                fitness=creator.FitnessMin,
@@ -224,7 +225,7 @@ def ga(gene_len):
     pop = sorted(pop, key=lambda x: x.fitness.values[0])
     if gene_len == 1:
         return pop[0]
-    for g in range(100):
+    for g in range(iters):
         pop = sorted(pop, key=lambda x: x.fitness.values[0])
         offspring = list(map(toolbox.clone, pop[:35]))
         for chd1, chd2 in zip(pop[::2], pop[1::2]):
