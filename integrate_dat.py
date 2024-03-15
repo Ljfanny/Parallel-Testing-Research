@@ -131,11 +131,6 @@ def consider_fr(chp_dat_dir,
                 baseline_subdir,
                 output_subdir,
                 whe_mach6=False):
-    def exchange(a, ori, rep):
-        tmp = pd.Series({
-
-        })
-
     df_num = 6
     tables = [
         'failrate_0',

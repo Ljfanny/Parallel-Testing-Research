@@ -5,7 +5,8 @@ import pandas as pd
 import textwrap
 import numpy as np
 
-# matplotlib.use('TkAgg')
+matplotlib.use('TkAgg')
+beta = 25.993775 / 3600
 
 gh_max_fr = []
 smt_max_fr = []
@@ -279,6 +280,7 @@ def draw_tread_graph():
         ax.spines['top'].set_color('none')
         ax.spines['right'].set_color('none')
         ax.yaxis.grid(True, linestyle='--', zorder=0)
+
     ig_path = 'integ_dat/ga'
     csvs = os.listdir(ig_path)
     dfs = [pd.read_csv(f'{ig_path}/{csv}')
@@ -659,23 +661,162 @@ def draw_integ_proj_avg_rate_graph(goal_subdir,
     plt.close()
 
 
+def comp_ga_iter():
+    x = [100, 150, 200]
+    avg_arr = []
+    tim_arr = []
+    for itr in x:
+        # if i == 0 or 10 < i < 15 or 15 < i < 20:
+        #     avg_arr.append(0.0)
+        #     tim_arr.append(0.0)
+        #     continue
+        # elif i == 5:
+        #     pref = f'ext_dat/ga_a1'
+        # else:
+        #     pref = f'ext_dat/ga{i * 10}_a1'
+        pref = f'ext_data/ga{itr}_a0.5'
+        # proj_arr = os.listdir(pref)
+        dfs = [pd.read_csv(f'{pref}/{proj}.csv') for proj in fr0_satisfied_projs ]
+        mean_arr = [np.mean(df['fitness']) for df in dfs]
+        sum_arr = [np.sum(df['period']) for df in dfs]
+        avg_arr.append(np.mean(mean_arr))
+        tim_arr.append(np.mean(sum_arr))
+    # x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 150, 200]
+    plt.plot(x, avg_arr, label='Average Fitness')
+    plt.legend()
+    # plt.plot(x, tim_arr[1:])
+    plt.show()
+
+
+def draw_x_mach():
+    bs_path = 'baseline_dat/non_ig'
+    mach_num = [2, 4, 6, 8, 10, 12]
+    tmp_map = {
+        0: 'price',
+        1: 'time_parallel'
+    }
+
+    def get_comp_obj(p, n, cd):
+        df = pd.read_csv(f'{bs_path}/{p}.csv')
+        df = df.loc[df['num_machines'] == n]
+        gthb = [np.array(df.loc[df['conf'] == '27CPU2Mem8GB.sh'][f'{tmp_map[cd]}'])[0],
+                np.array(df.loc[df['conf'] == '27CPU2Mem8GB.sh'][f'{tmp_map[1 - cd]}'])[0]]
+        df.sort_values(by=f'{tmp_map[cd]}', inplace=True)
+        smrt = [df.iloc[0, :][f'{tmp_map[cd]}'],
+                df.iloc[0, :][f'{tmp_map[1 - cd]}']]
+        if df.iloc[0, :]['max_failure_rate'] != 0:
+            df.sort_values(by='max_failure_rate', inplace=True)
+            smrt = [df.iloc[0, :][f'{tmp_map[cd]}'],
+                    df.iloc[0, :][f'{tmp_map[1 - cd]}']]
+        return gthb, smrt
+
+    def tradeoff(thg, bl):
+        return (thg[0] / bl[0]) * (thg[1] / bl[1])
+
+    chp_path = 'ext_dat/ga_a0'
+    fst_path = 'ext_dat/ga_a1'
+    chp_rt_arr = [[0.0 for _ in range(6)] for _ in range(2)]
+    fst_rt_arr = [[0.0 for _ in range(6)] for _ in range(2)]
+    for proj in fr0_satisfied_projs:
+        a0 = pd.read_csv(f'{chp_path}/{proj}.csv')
+        a1 = pd.read_csv(f'{fst_path}/{proj}.csv')
+        for idx, num in enumerate(mach_num):
+            chp = [np.array(a0.loc[a0['category'] == f'{num}-0']['price'])[0],
+                   np.array(a0.loc[a0['category'] == f'{num}-0']['time_parallel'])[0]]
+            fst = [np.array(a1.loc[a1['category'] == f'{num}-0']['time_parallel'])[0],
+                   np.array(a1.loc[a1['category'] == f'{num}-0']['price'])[0]]
+            gt, sm = get_comp_obj(proj, num, 0)
+            chp_rt_arr[0][idx] += tradeoff(chp, gt)
+            chp_rt_arr[1][idx] += tradeoff(chp, sm)
+            gt, sm = get_comp_obj(proj, num, 1)
+            fst_rt_arr[0][idx] += tradeoff(fst, gt)
+            fst_rt_arr[1][idx] += tradeoff(fst, sm)
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.25))
+    axes[0].plot(mach_num, np.array(chp_rt_arr[0]) / 16, label='vs GitHub')
+    axes[0].plot(mach_num, np.array(chp_rt_arr[1]) / 16, label='vs Smart')
+    axes[0].set_title('Price Optimization')
+    axes[0].legend()
+    axes[1].plot(mach_num, np.array(fst_rt_arr[0]) / 16, label='vs GitHub')
+    axes[1].plot(mach_num, np.array(fst_rt_arr[1]) / 16, label='vs Smart')
+    axes[1].set_title('Runtime Optimization')
+    axes[1].legend()
+    plt.show()
+
+
+def get_comp_obj(bs_path,
+                 proj,
+                 mach_num,
+                 a):
+    df = pd.read_csv(f'{bs_path}/{proj}.csv')
+    df = df.loc[df['num_machines'] == mach_num]
+    df['fitness'] = a * beta * df['time_parallel'] + (1 - a) * df['price']
+    gthb = np.array(df.loc[df['conf'] == '27CPU2Mem8GB.sh']['fitness'])[0]
+    df.sort_values(by='fitness', inplace=True)
+    smrt = df.iloc[0, :]['fitness']
+    return gthb, smrt
+
+
+def comp():
+    bs_path = 'baseline_dat/non_ig'
+    chp_path = 'ext_dat/ga_a0'
+    fst_path = 'ext_dat/ga_a1'
+    chp_arr = [[], []]
+    fst_arr = [[], []]
+    x = [i for i in range(16)]
+    for proj in fr0_satisfied_projs:
+        a0 = pd.read_csv(f'{chp_path}/{proj}.csv')
+        a1 = pd.read_csv(f'{fst_path}/{proj}.csv')
+        a0 = a0.loc[a0['category'].str.endswith('-1')]
+        a1 = a1.loc[a1['category'].str.endswith('-1')]
+        a0.sort_values(by='fitness', inplace=True)
+        a1.sort_values(by='fitness', inplace=True)
+        gthb0, smrt0 = get_comp_obj(bs_path,
+                                    proj,
+                                    int(a0.iloc[0, :]['category'].split('-')[1]),
+                                    0)
+        gthb1, smrt1 = get_comp_obj(bs_path,
+                                    proj,
+                                    int(a1.iloc[0, :]['category'].split('-')[1]),
+                                    1)
+        a0_ft = a0.iloc[0, :]['fitness']
+        a1_ft = a1.iloc[0, :]['fitness']
+        chp_arr[0].append(a0_ft / gthb0)
+        chp_arr[1].append(a0_ft / smrt0)
+        fst_arr[0].append(a1_ft / gthb1)
+        fst_arr[1].append(a1_ft / smrt1)
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.25))
+    axes[0].plot(x, chp_arr[0], label='vs GitHub')
+    axes[0].plot(x, chp_arr[1], label='vs Smart')
+    axes[0].set_title('Price Optimization')
+    axes[0].legend()
+    axes[1].plot(x, fst_arr[0], label='vs GitHub')
+    axes[1].plot(x, fst_arr[1], label='vs Smart')
+    axes[1].set_title('Runtime Optimization')
+    axes[1].legend()
+    plt.show()
+
+
 if __name__ == '__main__':
-    draw_integ_scatter2d('ga', 1)
-    draw_integ_scatter2d('ga', 0)
-    draw_integ_pareto3d('ga')
-    draw_tread_graph()
-    draw_integ_as_graph(True)
-    draw_integ_proj_avg_rate_graph('ga_ig',
-                                   # 'Avg. Ratio for GASearch without Set-up Time',
-                                   [8, 6, 4, 2, 0, -2],
-                                   [8, 6, 4, 2, 0, 2],
-                                   [8, 6, 4, 2, 0, -2, -4],
-                                   [8, 6, 4, 2, 0, 2, 4])
-    draw_integ_proj_avg_rate_graph('ga',
-                                   # 'Avg. Ratio for GASearch with Set-up Time',
-                                   [4, 3, 2, 1, 0, -1, -2],
-                                   [4, 3, 2, 1, 0, 1, 2],
-                                   [4, 3, 2, 1, 0, -1, -2],
-                                   [4, 3, 2, 1, 0, 1, 2])
-    print(np.mean(gh_max_fr),
-          np.mean(smt_max_fr))
+    # draw_integ_scatter2d('ga', 1)
+    # draw_integ_scatter2d('ga', 0)
+    # draw_integ_pareto3d('ga')
+    # draw_tread_graph()
+    # draw_integ_as_graph(True)
+    # draw_integ_proj_avg_rate_graph('ga_ig',
+    #                                # 'Avg. Ratio for GASearch without Set-up Time',
+    #                                [8, 6, 4, 2, 0, -2],
+    #                                [8, 6, 4, 2, 0, 2],
+    #                                [8, 6, 4, 2, 0, -2, -4],
+    #                                [8, 6, 4, 2, 0, 2, 4])
+    # draw_integ_proj_avg_rate_graph('ga',
+    #                                # 'Avg. Ratio for GASearch with Set-up Time',
+    #                                [4, 3, 2, 1, 0, -1, -2],
+    #                                [4, 3, 2, 1, 0, 1, 2],
+    #                                [4, 3, 2, 1, 0, -1, -2],
+    #                                [4, 3, 2, 1, 0, 1, 2])
+    # print(np.mean(gh_max_fr),
+    #       np.mean(smt_max_fr))
+
+    # comp_ga_iter()
+    # draw_x_mach()
+    comp()

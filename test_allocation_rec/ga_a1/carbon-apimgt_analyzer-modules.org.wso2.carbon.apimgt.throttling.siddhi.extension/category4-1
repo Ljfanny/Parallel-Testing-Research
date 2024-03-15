@@ -1,4 +1,0 @@
-{'01noThrottling.sh': ['org.wso2.carbon.apimgt.throttling.siddhi.extension.ThrottleTimeBatchWindowTestCase#throttleTimeWindowBatchTest2'],
- '25CPU1Mem8GB.sh:v0': [],
- '25CPU1Mem8GB.sh:v1': [],
- '29CPU4Mem8GB.sh': ['org.wso2.carbon.apimgt.throttling.siddhi.extension.ThrottleTimeBatchWindowTestCase#throttleTimeWindowBatchTest1']}

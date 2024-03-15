@@ -10,7 +10,6 @@ import numpy as np
 import pandas as pd
 
 from preproc import preproc, conf_prc_map
-from plotter import fr0_satisfied_projs
 
 iters = 50
 creator.create("FitnessMin", base.Fitness, weights=(1.0,))
@@ -21,13 +20,14 @@ creator.create("Individual", list,
                price=np.nan,
                min_fr=np.nan,
                max_fr=np.nan,
+               pro_fr=np.nan,
                mach_test_dict={})
 
 random.seed(0)
 resu_path = 'ext_dat'
 base_path = 'baseline_dat'
-setup_rec_path = 'setup_time_rec'
-tst_alloc_rec_path = 'test_allocation_rec'
+setup_rec_path = 'setup_time_reco'
+tst_alloc_rec_path = 'test_allocation_reco'
 proj_names = [
     'activiti_dot',
     'assertj-core_dot',
@@ -86,7 +86,6 @@ failure_rate_idx = 3
 price_idx = 4
 
 a = 0
-fr = 0
 hist = {}
 tests = []
 conf_candidates = []
@@ -141,7 +140,8 @@ def get_fit(mach_time_dict):
     for mach, per_runtime in mach_time_dict.items():
         per_price = per_runtime * conf_prc_map[idx_conf_map[mach[0]]] / 3600
         price += per_price
-    fitness = a * beta * max(mach_time_dict.values()) + b * price
+    runtime = max(mach_time_dict.values())
+    fitness = a * beta * runtime + b * price
     return fitness, price
 
 
@@ -173,6 +173,7 @@ def eval_sche(ind):
     mach_arr, mach_test_dict, mach_time_dict = anal_machs(ind[:])
     min_fr = 100
     max_fr = 0
+    multi_ps = 1
     sorted_tup_list = sorted(min_conf_candidate_runtime_idx_tup_list, key=lambda x: x[0], reverse=True)
     for tup in sorted_tup_list:
         idx = tup[1]
@@ -188,8 +189,6 @@ def eval_sche(ind):
             inner_idx = conv_calc_map[mach]
             cur_fr = val[inner_idx][failure_rate_idx]
             cur_avg_tm = val[inner_idx][avg_time_idx]
-            if cur_fr > fr:
-                continue
             mach_time_dict[mach] += cur_avg_tm
             fitness, _ = get_fit(mach_time_dict)
             if fitness < min_fitness:
@@ -197,18 +196,16 @@ def eval_sche(ind):
                 min_mach = mach
                 min_mach_fr = cur_fr
             mach_time_dict[mach] -= cur_avg_tm
-        if min_mach is None:
-            ind.fitness.values = (float('inf'),)
-            hist[mach_ky] = ind
-            return
         mach_test_dict[min_mach].append(tst)
         mach_time_dict[min_mach] += val[conv_calc_map[min_mach]][avg_time_idx]
+        multi_ps = multi_ps * (1 - min_mach_fr)
         if min_mach_fr > max_fr:
             max_fr = min_mach_fr
         if min_mach_fr < min_fr:
             min_fr = min_mach_fr
     ind.max_fr = max_fr
     ind.min_fr = min_fr
+    ind.pro_fr = 1 - multi_ps
     ind.time_para = max(mach_time_dict.values())
     ind.time_seq = sum(mach_time_dict.values())
     ind.mach_test_dict = mach_test_dict
@@ -225,16 +222,16 @@ def ga(gene_len):
     pop = sorted(pop, key=lambda x: x.fitness.values[0])
     if gene_len == 1:
         return pop[0]
-    for g in range(iters):
-        pop = sorted(pop, key=lambda x: x.fitness.values[0])
+    for _ in range(iters):
         offspring = list(map(toolbox.clone, pop[:35]))
         for chd1, chd2 in zip(pop[::2], pop[1::2]):
             toolbox.mate(chd1, chd2, 0.5)
         for gen in pop:
             toolbox.mutate(gen)
+        list(map(toolbox.evaluate, pop))
         pop = sorted(pop, key=lambda x: x.fitness.values[0])
         pop[:] = offspring + list(map(toolbox.clone, pop[:65]))
-        list(map(toolbox.evaluate, pop))
+        pop = sorted(pop, key=lambda x: x.fitness.values[0])
     return pop[0]
 
 
@@ -269,7 +266,8 @@ def reco_base(proj,
             ind.time_para,
             ind.price,
             ind.min_fr,
-            ind.max_fr]
+            ind.max_fr,
+            ind.pro_fr]
 
 
 def print_ind(ind,
@@ -286,7 +284,8 @@ def print_ind(ind,
     print(f'Price: {ind.price}')
     print(f'Minimum failure rate: {ind.min_fr}')
     print(f'Maximum failure rate: {ind.max_fr}')
-    print(f'Score: {fit}')
+    print(f'Probability failure rate: {ind.pro_fr}')
+    print(f'Fitness: {fit}')
     print(ind.mach_test_dict.keys())
 
 
@@ -304,6 +303,7 @@ def record_ind(ind,
         df.loc[len(df.index)] = [
             proj,
             cg,
+            np.nan,
             np.nan,
             np.nan,
             np.nan,
@@ -330,6 +330,7 @@ def record_ind(ind,
         ind.price,
         ind.min_fr,
         ind.max_fr,
+        ind.pro_fr,
         fit,
         period
     ]
@@ -350,32 +351,32 @@ if __name__ == '__main__':
         'ig': ['_ig', True]
     }
     num_of_machine = [1, 2, 4, 6, 8, 10, 12]
-    pct_of_failure_rate = [0, 0.2, 0.4, 0.6, 0.8, 1]
     sub = f'ga_a{a}{groups_map[group_ky][0]}'
     tot_test_num = 0
-    for proj_name in fr0_satisfied_projs:
+    for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
                                   columns=['project',
-                                           'category',
-                                           'num_confs',
+                                           'machines_num',
+                                           'confs_num',
                                            'confs',
                                            'time_seq',
                                            'time_parallel',
                                            'price',
                                            'min_failure_rate',
                                            'max_failure_rate',
+                                           'probability_failure_rate',
                                            'fitness',
                                            'period'])
-        ext_dat_df['num_confs'] = ext_dat_df['num_confs'].astype(int)
         base_df = pd.DataFrame(None,
                                columns=['project',
-                                        'num_machines',
+                                        'machines_num',
                                         'conf',
                                         'time_seq',
                                         'time_parallel',
                                         'price',
                                         'min_failure_rate',
-                                        'max_failure_rate'])
+                                        'max_failure_rate',
+                                        'probability_failure_rate'])
         org_info(preproc(proj_name))
         load_setup_cost_file(proj_name,
                              groups_map[group_ky][1])
@@ -393,23 +394,22 @@ if __name__ == '__main__':
             #     reco_base(proj_name,
             #               base_df,
             #               mach_num)
-            for fr in pct_of_failure_rate:
-                hist.clear()
-                t1 = time.time()
-                # best_ind = bruteforce(mach_num)
-                best_ind = ga(mach_num)
-                t2 = time.time()
-                tt = t2 - t1
-                category = f'{mach_num}-{fr}'
-                print(f'-------------------- {proj_name}-{category} --------------------')
-                print_ind(best_ind,
-                          tt)
-                record_ind(best_ind,
-                           sub,
-                           proj_name,
-                           category,
-                           ext_dat_df,
-                           tt)
+            hist.clear()
+            t1 = time.time()
+            # best_ind = bruteforce(mach_num)
+            best_ind = ga(mach_num)
+            t2 = time.time()
+            tt = t2 - t1
+            category = mach_num
+            print(f'-------------------- {proj_name}-{mach_num} --------------------')
+            print_ind(best_ind,
+                      tt)
+            record_ind(best_ind,
+                       sub,
+                       proj_name,
+                       category,
+                       ext_dat_df,
+                       tt)
         resu_sub_path = f'{resu_path}/{sub}'
         if not os.path.exists(resu_sub_path):
             os.mkdir(resu_sub_path)

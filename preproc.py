@@ -1,7 +1,9 @@
 import os
 import json
 import pandas as pd
+import numpy as np
 
+confs_num = 12
 dir_path = '../raft-csvs/'
 res_path = 'preproc_csvs/'
 err_dat = 'error_tests.csv'
@@ -86,4 +88,11 @@ def preproc(proj_name):
         tmp_dict = {str(k): v for k, v in avg_tm_dict.items()}
         with open(preproc_file_name, 'w') as f:
             json.dump(tmp_dict, f)
+    for t, info in avg_tm_dict.items():
+        for i in range(confs_num):
+            fr = info[i][3]
+            if fr == 0:
+                continue
+            runtime = info[i][2]
+            info[i][2] = runtime * sum([fr ** p for p in range(10)])
     return avg_tm_dict
