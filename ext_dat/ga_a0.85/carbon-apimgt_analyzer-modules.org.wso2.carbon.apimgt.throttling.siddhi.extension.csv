@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,1,1,{'26CPU2Mem4GB.sh': 1},27.26556,27.26556,0.22435011619999998,0.0,0,0.0,0.20099268607045834,0.0029153823852539062
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,2,1,{'26CPU2Mem4GB.sh': 2},31.498406666666675,17.253256666666672,0.2591793895222223,0.0,0,0.0,0.14476737538361,0.2831094264984131
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,4,1,{'26CPU2Mem4GB.sh': 4},39.96410000000002,17.253256666666672,0.3288379361666669,0.0,0,0.0,0.1552161573802767,0.5071425437927246
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,6,1,{'26CPU2Mem4GB.sh': 6},48.42979333333337,17.253256666666672,0.3984964828111115,0.0,0,0.0,0.16566493937694338,0.5373702049255371
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,8,1,{'26CPU2Mem4GB.sh': 8},56.89548666666672,17.253256666666672,0.4681550294555561,0.0,0,0.0,0.1761137213736101,0.6454534530639648
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,10,1,{'26CPU2Mem4GB.sh': 10},65.36118000000008,17.253256666666672,0.5378135761000007,0.0,0,0.0,0.18656250337027677,0.8165202140808105
+carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension,12,1,{'26CPU2Mem4GB.sh': 12},73.82687333333342,17.253256666666672,0.6074721227444453,0.0,0,0.0,0.19701128536694346,0.9937772750854492

@@ -1,0 +1,5 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+fluent-logger-java_dot,1,1,{'28CPU2Mem16GB.sh': 1},35.27175666666665,35.27175666666665,0.4470107294888887,0.0,0,0.0,0.2546794740689119,0.0015208721160888672
+fluent-logger-java_dot,2,2,"{'01noThrottling.sh': 1, '26CPU2Mem4GB.sh': 1}",35.46298333333333,17.785026666666663,0.4896470462222222,0.0,0,,0.128416661539537,0.011410713195800781
+fluent-logger-java_dot,4,2,"{'28CPU2Mem16GB.sh': 2, '01noThrottling.sh': 2}",35.12368333333333,9.019916666666665,0.5625193326444445,0.0,0,,0.06512824565335647,1.8690848350524902
+fluent-logger-java_dot,6,6,"{'25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",36.10876999999998,8.125366666666668,0.38162260888888877,0.0,0,,0.05866915359050927,1326.2607955932617

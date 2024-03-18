@@ -1,0 +1,9 @@
+{'01noThrottling.sh': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testBulkClusterJoining'],
+ '23CPU05Mem4GB.sh': [],
+ '24CPU1Mem4GB.sh:v0': [],
+ '24CPU1Mem4GB.sh:v1': [],
+ '24CPU1Mem4GB.sh:v2': [],
+ '27CPU2Mem8GB.sh:v0': [],
+ '27CPU2Mem8GB.sh:v1': ['com.spinn3r.noxy.discovery.zookeeper.ZKTest#testDiscoveryListener',
+                        'com.spinn3r.noxy.discovery.zookeeper.ZKTest#testMembershipJoinAndLeave'],
+ '28CPU2Mem16GB.sh': []}
