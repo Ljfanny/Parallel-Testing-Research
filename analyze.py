@@ -284,13 +284,11 @@ def print_ind(ind,
 
 
 def recalculate_ind(ind):
-    mach_tm_dict = {}
+    _, _, mach_tm_dict = anal_machs(ind[:])
     min_fr = 100
     max_fr = 0
     mul_rt = 1
     for mach, test_set in ind.mach_ts_dict.items():
-        if mach not in mach_tm_dict.keys():
-            mach_tm_dict[mach] = 0
         conf = idx_conf_map[mach[0]]
         for test in test_set:
             temp = test.split('#')
