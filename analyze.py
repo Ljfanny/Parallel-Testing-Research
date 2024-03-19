@@ -21,7 +21,7 @@ creator.create("Individual", list,
                min_fr=np.nan,
                max_fr=np.nan,
                pro_fr=np.nan,
-               mach_test_dict={})
+               mach_ts_dict={})
 
 random.seed(0)
 resu_path = 'ext_dat'
@@ -91,10 +91,12 @@ tests = []
 conf_candidates = []
 min_conf_candidate_runtime_idx_tup_list = []
 setup_tm_dict = {}
+tri_tm_dict = {}
+tri_fr_dict = {}
 
 
-def load_setup_cost_file(proj: str,
-                         cond: bool):
+def load_setup(proj: str,
+               cond: bool):
     global setup_tm_dict
     setup_tm_dict.clear()
     if cond:
@@ -114,8 +116,8 @@ def mapping(machs):
 
 def anal_machs(machs):
     mach_arr = []
-    mach_test_dict = {}
-    mach_time_dict = {}
+    mach_ts_dict = {}
+    mach_tm_dict = {}
     num_arr = list(mapping(machs))
     bool_arr = [False if num <= 1 else True for num in num_arr]
     for i, idx in enumerate(machs):
@@ -128,24 +130,24 @@ def anal_machs(machs):
         else:
             cur = (idx, -1)
             mach_arr.append(cur)
-        mach_test_dict[cur] = []
-        mach_time_dict[cur] = setup_tm
-    return mach_arr, mach_test_dict, mach_time_dict
+        mach_ts_dict[cur] = []
+        mach_tm_dict[cur] = setup_tm
+    return mach_arr, mach_ts_dict, mach_tm_dict
 
 
-def get_fit(mach_time_dict):
+def get_fit(mach_tm_dict):
     price = 0
     b = 1 - a
     beta = 25.993775 / 3600
-    for mach, per_runtime in mach_time_dict.items():
+    for mach, per_runtime in mach_tm_dict.items():
         per_price = per_runtime * conf_prc_map[idx_conf_map[mach[0]]] / 3600
         price += per_price
-    runtime = max(mach_time_dict.values())
+    runtime = max(mach_tm_dict.values())
     fitness = a * beta * runtime + b * price
     return fitness, price
 
 
-def org_info(avg_tm_dict):
+def organize_info(avg_tm_dict):
     global tests, conf_candidates, min_conf_candidate_runtime_idx_tup_list
     tests.clear()
     conf_candidates.clear()
@@ -159,21 +161,24 @@ def org_info(avg_tm_dict):
         cnt += 1
 
 
-def eval_sche(ind):
+def fill_tri_info(avg_tm_dict):
+    global tri_tm_dict, tri_fr_dict
+    tri_tm_dict.clear()
+    tri_fr_dict.clear()
+    for t, info in avg_tm_dict.items():
+        tri_tm_dict[t] = {itm[0]: itm[2] for itm in info}
+        tri_fr_dict[t] = {itm[0]: itm[3] for itm in info}
+
+
+def eva_schedule(ind):
     mach_ky = mapping(ind[:])
     if mach_ky in hist.keys():
-        ind.min_fr = hist[mach_ky].min_fr
-        ind.max_fr = hist[mach_ky].max_fr
         ind.price = hist[mach_ky].price
         ind.time_para = hist[mach_ky].time_para
-        ind.time_seq = hist[mach_ky].time_seq
-        ind.mach_test_dict = hist[mach_ky].mach_test_dict
+        ind.mach_ts_dict = hist[mach_ky].mach_ts_dict
         ind.fitness.values = hist[mach_ky].fitness.values
         return
-    mach_arr, mach_test_dict, mach_time_dict = anal_machs(ind[:])
-    min_fr = 100
-    max_fr = 0
-    multi_ps = 1
+    mach_arr, mach_ts_dict, mach_tm_dict = anal_machs(ind[:])
     sorted_tup_list = sorted(min_conf_candidate_runtime_idx_tup_list, key=lambda x: x[0], reverse=True)
     for tup in sorted_tup_list:
         idx = tup[1]
@@ -184,32 +189,20 @@ def eval_sche(ind):
         tst = f'{key[0]}#{key[1]}'
         min_fitness = float('inf')
         min_mach = None
-        min_mach_fr = 0
         for mach in mach_arr:
             inner_idx = conv_calc_map[mach]
-            cur_fr = val[inner_idx][failure_rate_idx]
             cur_avg_tm = val[inner_idx][avg_time_idx]
-            mach_time_dict[mach] += cur_avg_tm
-            fitness, _ = get_fit(mach_time_dict)
+            mach_tm_dict[mach] += cur_avg_tm
+            fitness, _ = get_fit(mach_tm_dict)
             if fitness < min_fitness:
                 min_fitness = fitness
                 min_mach = mach
-                min_mach_fr = cur_fr
-            mach_time_dict[mach] -= cur_avg_tm
-        mach_test_dict[min_mach].append(tst)
-        mach_time_dict[min_mach] += val[conv_calc_map[min_mach]][avg_time_idx]
-        multi_ps = multi_ps * (1 - min_mach_fr)
-        if min_mach_fr > max_fr:
-            max_fr = min_mach_fr
-        if min_mach_fr < min_fr:
-            min_fr = min_mach_fr
-    ind.max_fr = max_fr
-    ind.min_fr = min_fr
-    ind.pro_fr = 1 - multi_ps
-    ind.time_para = max(mach_time_dict.values())
-    ind.time_seq = sum(mach_time_dict.values())
-    ind.mach_test_dict = mach_test_dict
-    fit, ind.price = get_fit(mach_time_dict)
+            mach_tm_dict[mach] -= cur_avg_tm
+        mach_tm_dict[min_mach] += val[conv_calc_map[min_mach]][avg_time_idx]
+        mach_ts_dict[min_mach].append(tst)
+    ind.time_para = max(mach_tm_dict.values())
+    ind.mach_ts_dict = mach_ts_dict
+    fit, ind.price = get_fit(mach_tm_dict)
     ind.fitness.values = (fit,)
     hist[mach_ky] = ind
 
@@ -243,7 +236,8 @@ def bruteforce(gene_len):
     for comb in combs:
         machs = [i % confs_num for i in comb]
         ind = creator.Individual(machs)
-        eval_sche(ind)
+        eva_schedule(ind)
+        recalculate_ind(ind)
         if ind.fitness.values[0] <= mini:
             mini = ind.fitness.values[0]
             mini_ind = ind
@@ -286,7 +280,35 @@ def print_ind(ind,
     print(f'Maximum failure rate: {ind.max_fr}')
     print(f'Probability failure rate: {ind.pro_fr}')
     print(f'Fitness: {fit}')
-    print(ind.mach_test_dict.keys())
+    print(ind.mach_ts_dict.keys())
+
+
+def recalculate_ind(ind):
+    mach_tm_dict = {}
+    min_fr = 100
+    max_fr = 0
+    mul_rt = 1
+    for mach, test_set in ind.mach_ts_dict.items():
+        if mach not in mach_tm_dict.keys():
+            mach_tm_dict[mach] = 0
+        conf = idx_conf_map[mach[0]]
+        for test in test_set:
+            temp = test.split('#')
+            key = (temp[0], temp[1])
+            mach_tm_dict[mach] += tri_tm_dict[key][conf]
+            cur_fr = tri_fr_dict[key][conf]
+            mul_rt *= 1 - cur_fr
+            if min_fr > cur_fr:
+                min_fr = cur_fr
+            if max_fr < cur_fr:
+                max_fr = cur_fr
+    ind.min_fr = min_fr
+    ind.max_fr = max_fr
+    ind.pro_fr = 1 - mul_rt
+    ind.time_para = max(mach_tm_dict.values())
+    ind.time_seq = sum(mach_tm_dict.values())
+    fit, ind.price = get_fit(mach_tm_dict)
+    ind.fitness.values = (fit,)
 
 
 def record_ind(ind,
@@ -303,18 +325,12 @@ def record_ind(ind,
         df.loc[len(df.index)] = [
             proj,
             cg,
-            np.nan,
-            np.nan,
-            np.nan,
-            np.nan,
-            np.nan,
-            np.nan,
-            np.nan,
-            np.nan,
-            np.nan,
+            np.nan, np.nan, np.nan,
+            np.nan, np.nan, np.nan,
+            np.nan, np.nan, np.nan,
             period
         ]
-        with open(f'{dis_folder}/category{cg}', 'w'):
+        with open(f'{dis_folder}/{cg}', 'w'):
             pass
         return
     num_tup = mapping(ind[:])
@@ -335,7 +351,7 @@ def record_ind(ind,
         period
     ]
     temp_dict = {idx_conf_map[k[0]] if k[1] == -1
-                 else f'{idx_conf_map[k[0]]}:{versions[k[1]]}': v for k, v in ind.mach_test_dict.items()}
+                 else f'{idx_conf_map[k[0]]}:{versions[k[1]]}': v for k, v in ind.mach_ts_dict.items()}
     with open(f'{dis_folder}/category{cg}', 'w') as f:
         f.write(pformat(temp_dict))
 
@@ -343,9 +359,9 @@ def record_ind(ind,
 if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25,
     #     0.3, 0.35, 0.4, 0.45, 0.5, 0.55,
-    #     0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
+    #     0.6, 0.65, 0.7, 0.75, 0.8, 0.85,
+    #     0.9, 0.95, 1
     prog_start = time.time()
-    is_reco_base = False
     a = 0
     group_ky = 'non_ig'
     groups_map = {
@@ -357,49 +373,47 @@ if __name__ == '__main__':
     tot_test_num = 0
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
-                                  columns=['project',
-                                           'machines_num',
-                                           'confs_num',
-                                           'confs',
-                                           'time_seq',
-                                           'time_parallel',
+                                  columns=['project', 'machines_num',
+                                           'confs_num', 'confs',
+                                           'time_seq', 'time_parallel',
                                            'price',
                                            'min_failure_rate',
                                            'max_failure_rate',
                                            'probability_failure_rate',
-                                           'fitness',
-                                           'period'])
+                                           'fitness', 'period'])
         base_df = pd.DataFrame(None,
-                               columns=['project',
-                                        'machines_num',
-                                        'conf',
-                                        'time_seq',
-                                        'time_parallel',
-                                        'price',
+                               columns=['project', 'machines_num',
+                                        'conf', 'time_seq',
+                                        'time_parallel', 'price',
                                         'min_failure_rate',
                                         'max_failure_rate',
                                         'probability_failure_rate'])
-        org_info(preproc(proj_name))
-        load_setup_cost_file(proj_name,
-                             groups_map[group_ky][1])
+        organize_info(preproc('preproc_10_csvs',
+                              proj_name))
+        fill_tri_info(preproc('preproc_300_csvs',
+                              proj_name))
+        load_setup(proj_name,
+                   groups_map[group_ky][1])
         tot_test_num += len(tests)
         toolbox = base.Toolbox()
         toolbox.register("attr_int", random.randint, 0, 11)
         toolbox.register("mate", tools.cxUniform)
-        toolbox.register("evaluate", eval_sche)
+        toolbox.register("evaluate", eva_schedule)
         for mach_num in num_of_machine:
             toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.attr_int, mach_num)
             toolbox.register("population", tools.initRepeat, list, toolbox.individual)
             toolbox.register("mutate", tools.mutUniformInt, low=0, up=11, indpb=1 / mach_num)
-            # if is_reco_base:
-            #     hist.clear()
-            #     reco_base(proj_name,
-            #               base_df,
-            #               mach_num)
+            # ---------------- Calculate Baseline ----------------
+            # hist.clear()
+            # reco_base(proj_name,
+            #           base_df,
+            #           mach_num)
+            # ------------------------ End -----------------------
             hist.clear()
             t1 = time.time()
             # best_ind = bruteforce(mach_num)
             best_ind = ga(mach_num)
+            recalculate_ind(best_ind)
             t2 = time.time()
             tt = t2 - t1
             category = mach_num
@@ -416,7 +430,6 @@ if __name__ == '__main__':
         if not os.path.exists(resu_sub_path):
             os.mkdir(resu_sub_path)
         ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
-        # if is_reco_base:
-        #     base_df.to_csv(f'{base_path}/{group_ky}/{proj_name}.csv', sep=',', header=True, index=False)
+        # base_df.to_csv(f'{base_path}/{group_ky}/{proj_name}.csv', sep=',', header=True, index=False)
     print(f'[Total time] {time.time() - prog_start} s')
     print(f'[Test num] {tot_test_num}')

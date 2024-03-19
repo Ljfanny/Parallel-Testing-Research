@@ -1,11 +1,9 @@
 import os
 import json
 import pandas as pd
-import numpy as np
 
 confs_num = 12
-dir_path = '../raft-csvs/'
-res_path = 'preproc_csvs/'
+dir_path = '...raft-csvs...'
 err_dat = 'error_tests.csv'
 conf_prc_map = {}
 
@@ -18,8 +16,10 @@ def get_conf_prc_map():
 
 
 # rec_dict: key=(classname, methodname, throttConf); value=[outerRound, numOfPassing, timeOfSum]
-def ext_dat(csv_dir: str, proj_name: str, rec_dict: dict):
-    dat = pd.read_csv(csv_dir + proj_name + '.csv', low_memory=False)
+def ext_dat(csv_dir: str,
+            proj_name: str,
+            rec_dict: dict):
+    dat = pd.read_csv(f'{csv_dir}/{proj_name}.csv', low_memory=False)
     conf_lst = conf_prc_map.keys()
     for _, row in dat.iterrows():
         throttConf = row['throttConf']
@@ -43,7 +43,8 @@ def ext_dat(csv_dir: str, proj_name: str, rec_dict: dict):
 
 
 # avg_tm_dict: key=(classname, methodname); value=[throttConf, outerRound, avgTime, failureRate, price]
-def cal_dat(proj_name: str, rec_dict: dict):
+def cal_dat(proj_name: str,
+            rec_dict: dict):
     avg_tm_dict = {}
     idx = 0
     errs = []
@@ -68,8 +69,9 @@ def cal_dat(proj_name: str, rec_dict: dict):
     return avg_tm_dict
 
 
-def preproc(proj_name):
-    preproc_file_name = f'{res_path}{proj_name}'
+def preproc(prep_dir,
+            proj_name):
+    preproc_file_name = f'{prep_dir}/{proj_name}'
     get_conf_prc_map()
     cnt = 1
     if os.path.exists(preproc_file_name):
@@ -81,7 +83,7 @@ def preproc(proj_name):
         rec_dict = {}
         filenames = os.listdir(dir_path)
         for f in filenames:
-            ext_dat(csv_dir=f'{dir_path}{f}/', proj_name=proj_name, rec_dict=rec_dict)
+            ext_dat(csv_dir=f'{dir_path}/{f}', proj_name=proj_name, rec_dict=rec_dict)
             print(f'{proj_name}#{cnt}... ...')
             cnt += 1
         avg_tm_dict = cal_dat(proj_name=proj_name, rec_dict=rec_dict)
