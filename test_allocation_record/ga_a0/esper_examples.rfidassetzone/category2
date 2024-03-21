@@ -1,0 +1,3 @@
+{'22CPU05Mem2GB.sh': ['com.espertech.esper.example.rfidassetzone.TestLRMovingSimMain#testSim',
+                      'com.espertech.esper.example.rfidassetzone.TestAssetZoneMoveStmt#testStmt'],
+ '26CPU2Mem4GB.sh': []}

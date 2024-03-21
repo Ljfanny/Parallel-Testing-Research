@@ -24,10 +24,10 @@ creator.create("Individual", list,
                mach_ts_dict={})
 
 random.seed(0)
-resu_path = 'ext_dat'
-base_path = 'baseline_dat'
-setup_rec_path = 'setup_time_reco'
-tst_alloc_rec_path = 'test_allocation_reco'
+resu_path = 'run300_data'
+base_path = 'baseline'
+setup_rec_path = 'setup_time_record'
+tst_alloc_rec_path = 'test_allocation_record'
 proj_names = [
     'activiti_dot',
     'assertj-core_dot',
@@ -237,10 +237,10 @@ def bruteforce(gene_len):
         machs = [i % confs_num for i in comb]
         ind = creator.Individual(machs)
         eva_schedule(ind)
-        recalculate_ind(ind)
         if ind.fitness.values[0] <= mini:
             mini = ind.fitness.values[0]
             mini_ind = ind
+    recalculate_ind(mini_ind)
     return mini_ind
 
 
@@ -252,6 +252,7 @@ def reco_base(proj,
         base_pop.append(creator.Individual([i for _ in range(gene_len)]))
     list(map(toolbox.evaluate, base_pop))
     for ind in base_pop:
+        recalculate_ind(ind)
         df.loc[len(df.index)] = [
             proj,
             gene_len,
@@ -315,10 +316,7 @@ def record_ind(ind,
                cg,
                df,
                period):
-    dis_folder = f'{tst_alloc_rec_path}/{subdir}/{proj}'
     fit = ind.fitness.values[0]
-    if not os.path.exists(dis_folder):
-        os.makedirs(dis_folder)
     if fit == float('inf'):
         df.loc[len(df.index)] = [
             proj,
@@ -328,8 +326,6 @@ def record_ind(ind,
             np.nan, np.nan, np.nan,
             period
         ]
-        with open(f'{dis_folder}/{cg}', 'w'):
-            pass
         return
     num_tup = mapping(ind[:])
     confs = set(ind[:])
@@ -350,8 +346,6 @@ def record_ind(ind,
     ]
     temp_dict = {idx_conf_map[k[0]] if k[1] == -1
                  else f'{idx_conf_map[k[0]]}:{versions[k[1]]}': v for k, v in ind.mach_ts_dict.items()}
-    with open(f'{dis_folder}/category{cg}', 'w') as f:
-        f.write(pformat(temp_dict))
 
 
 if __name__ == '__main__':
@@ -360,14 +354,14 @@ if __name__ == '__main__':
     #     0.6, 0.65, 0.7, 0.75, 0.8, 0.85,
     #     0.9, 0.95, 1
     prog_start = time.time()
-    a = 0
+    a = 1
     group_ky = 'non_ig'
     groups_map = {
         'non_ig': ['', False],
         'ig': ['_ig', True]
     }
-    num_of_machine = [1, 2, 4, 6, 8, 10, 12]
-    sub = f'ga_a{a}{groups_map[group_ky][0]}'
+    num_of_machine = [1, 2, 4, 6]
+    sub = f'bf_a{a}{groups_map[group_ky][0]}'
     tot_test_num = 0
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
@@ -386,7 +380,7 @@ if __name__ == '__main__':
                                         'min_failure_rate',
                                         'max_failure_rate',
                                         'probability_failure_rate'])
-        organize_info(preproc('preproc_10_csvs',
+        organize_info(preproc('preproc_300_csvs',
                               proj_name))
         fill_tri_info(preproc('preproc_300_csvs',
                               proj_name))
@@ -409,8 +403,8 @@ if __name__ == '__main__':
             # ------------------------ End -----------------------
             hist.clear()
             t1 = time.time()
-            # best_ind = bruteforce(mach_num)
-            best_ind = ga(mach_num)
+            best_ind = bruteforce(mach_num)
+            # best_ind = ga(mach_num)
             recalculate_ind(best_ind)
             t2 = time.time()
             tt = t2 - t1
