@@ -27,7 +27,6 @@ random.seed(0)
 resu_path = 'run300_data'
 base_path = 'baseline'
 setup_rec_path = 'setup_time_record'
-tst_alloc_rec_path = 'test_allocation_record'
 proj_names = [
     'activiti_dot',
     'assertj-core_dot',
@@ -191,13 +190,20 @@ def eva_schedule(ind):
         min_mach = None
         for mach in mach_arr:
             inner_idx = conv_calc_map[mach]
+            # cur_fr = val[inner_idx][failure_rate_idx]
             cur_avg_tm = val[inner_idx][avg_time_idx]
+            # if cur_fr > 0:
+            #     continue
             mach_tm_dict[mach] += cur_avg_tm
             fitness, _ = get_fit(mach_tm_dict)
             if fitness < min_fitness:
                 min_fitness = fitness
                 min_mach = mach
             mach_tm_dict[mach] -= cur_avg_tm
+        # if min_mach is None:
+        #     ind.fitness.values = (float('inf'),)
+        #     hist[mach_ky] = ind
+        #     return
         mach_tm_dict[min_mach] += val[conv_calc_map[min_mach]][avg_time_idx]
         mach_ts_dict[min_mach].append(tst)
     ind.time_para = max(mach_tm_dict.values())
@@ -205,6 +211,34 @@ def eva_schedule(ind):
     fit, ind.price = get_fit(mach_tm_dict)
     ind.fitness.values = (fit,)
     hist[mach_ky] = ind
+
+
+def recalculate_ind(ind):
+    _, _, mach_tm_dict = anal_machs(ind[:])
+    min_fr = 100
+    max_fr = 0
+    mul_rt = 1
+    if ind.fitness.values[0] == float('inf'):
+        return
+    for mach, test_set in ind.mach_ts_dict.items():
+        conf = idx_conf_map[mach[0]]
+        for test in test_set:
+            temp = test.split('#')
+            key = (temp[0], temp[1])
+            mach_tm_dict[mach] += tri_tm_dict[key][conf]
+            cur_fr = tri_fr_dict[key][conf]
+            mul_rt *= 1 - cur_fr
+            if min_fr > cur_fr:
+                min_fr = cur_fr
+            if max_fr < cur_fr:
+                max_fr = cur_fr
+    ind.min_fr = min_fr
+    ind.max_fr = max_fr
+    ind.pro_fr = 1 - mul_rt
+    ind.time_para = max(mach_tm_dict.values())
+    ind.time_seq = sum(mach_tm_dict.values())
+    fit, ind.price = get_fit(mach_tm_dict)
+    ind.fitness.values = (fit,)
 
 
 def ga(gene_len):
@@ -284,34 +318,7 @@ def print_ind(ind,
     print(ind.mach_ts_dict.keys())
 
 
-def recalculate_ind(ind):
-    _, _, mach_tm_dict = anal_machs(ind[:])
-    min_fr = 100
-    max_fr = 0
-    mul_rt = 1
-    for mach, test_set in ind.mach_ts_dict.items():
-        conf = idx_conf_map[mach[0]]
-        for test in test_set:
-            temp = test.split('#')
-            key = (temp[0], temp[1])
-            mach_tm_dict[mach] += tri_tm_dict[key][conf]
-            cur_fr = tri_fr_dict[key][conf]
-            mul_rt *= 1 - cur_fr
-            if min_fr > cur_fr:
-                min_fr = cur_fr
-            if max_fr < cur_fr:
-                max_fr = cur_fr
-    ind.min_fr = min_fr
-    ind.max_fr = max_fr
-    ind.pro_fr = 1 - mul_rt
-    ind.time_para = max(mach_tm_dict.values())
-    ind.time_seq = sum(mach_tm_dict.values())
-    fit, ind.price = get_fit(mach_tm_dict)
-    ind.fitness.values = (fit,)
-
-
 def record_ind(ind,
-               subdir,
                proj,
                cg,
                df,
@@ -344,8 +351,6 @@ def record_ind(ind,
         fit,
         period
     ]
-    temp_dict = {idx_conf_map[k[0]] if k[1] == -1
-                 else f'{idx_conf_map[k[0]]}:{versions[k[1]]}': v for k, v in ind.mach_ts_dict.items()}
 
 
 if __name__ == '__main__':
@@ -354,14 +359,14 @@ if __name__ == '__main__':
     #     0.6, 0.65, 0.7, 0.75, 0.8, 0.85,
     #     0.9, 0.95, 1
     prog_start = time.time()
-    a = 1
-    group_ky = 'non_ig'
+    a = 0.05
+    group_ky = 'ig'
     groups_map = {
         'non_ig': ['', False],
         'ig': ['_ig', True]
     }
-    num_of_machine = [1, 2, 4, 6]
-    sub = f'bf_a{a}{groups_map[group_ky][0]}'
+    num_of_machine = [1, 2, 4, 6, 8, 10, 12]
+    sub = f'ga_a{a}{groups_map[group_ky][0]}'
     tot_test_num = 0
     for proj_name in proj_names:
         ext_dat_df = pd.DataFrame(None,
@@ -403,8 +408,8 @@ if __name__ == '__main__':
             # ------------------------ End -----------------------
             hist.clear()
             t1 = time.time()
-            best_ind = bruteforce(mach_num)
-            # best_ind = ga(mach_num)
+            # best_ind = bruteforce(mach_num)
+            best_ind = ga(mach_num)
             recalculate_ind(best_ind)
             t2 = time.time()
             tt = t2 - t1
@@ -413,7 +418,6 @@ if __name__ == '__main__':
             print_ind(best_ind,
                       tt)
             record_ind(best_ind,
-                       sub,
                        proj_name,
                        category,
                        ext_dat_df,

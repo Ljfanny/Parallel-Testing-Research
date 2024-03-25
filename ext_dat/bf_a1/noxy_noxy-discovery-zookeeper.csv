@@ -1,5 +1,0 @@
-project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
-noxy_noxy-discovery-zookeeper,1,1,{'01noThrottling.sh': 1},17.135453333333334,17.135453333333334,0.3327705037333334,0.0,0,0.0,0.12372642179712963,0.0004980564117431641
-noxy_noxy-discovery-zookeeper,2,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",18.879269999999998,14.965653333333332,0.3550380726777778,0.0,0,,0.10805939596518517,0.004433870315551758
-noxy_noxy-discovery-zookeeper,4,4,"{'27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",22.82676333333333,14.965653333333332,0.38465020581111115,0.0,0,,0.10805939596518517,1.6832027435302734
-noxy_noxy-discovery-zookeeper,6,6,"{'25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",28.555983333333316,14.965653333333332,0.4175077849833333,0.0,0,,0.10805939596518517,1340.1515138149261
