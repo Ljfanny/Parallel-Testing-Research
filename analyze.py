@@ -24,7 +24,7 @@ creator.create("Individual", list,
                mach_ts_dict={})
 
 random.seed(0)
-resu_path = 'run300_data'
+resu_path = 'sensitivity_data'
 base_path = 'baseline'
 setup_rec_path = 'setup_time_record'
 proj_names = [
@@ -137,7 +137,8 @@ def anal_machs(machs):
 def get_fit(mach_tm_dict):
     price = 0
     b = 1 - a
-    beta = 25.993775 / 3600
+    # beta = 25.993775 / 3600
+    beta = (25.993775 / 3600) / 10
     for mach, per_runtime in mach_tm_dict.items():
         per_price = per_runtime * conf_prc_map[idx_conf_map[mach[0]]] / 3600
         price += per_price
@@ -187,23 +188,18 @@ def eva_schedule(ind):
         conv_calc_map = {mach: conf_inner_idx_map[mach[0]] for mach in mach_arr}
         tst = f'{key[0]}#{key[1]}'
         min_fitness = float('inf')
+        min_time_para = float('inf')
         min_mach = None
         for mach in mach_arr:
             inner_idx = conv_calc_map[mach]
-            # cur_fr = val[inner_idx][failure_rate_idx]
             cur_avg_tm = val[inner_idx][avg_time_idx]
-            # if cur_fr > 0:
-            #     continue
             mach_tm_dict[mach] += cur_avg_tm
             fitness, _ = get_fit(mach_tm_dict)
-            if fitness < min_fitness:
+            if (fitness < min_fitness) or (fitness == min_fitness and max(mach_tm_dict.values()) < min_time_para):
                 min_fitness = fitness
+                min_time_para = max(mach_tm_dict.values())
                 min_mach = mach
             mach_tm_dict[mach] -= cur_avg_tm
-        # if min_mach is None:
-        #     ind.fitness.values = (float('inf'),)
-        #     hist[mach_ky] = ind
-        #     return
         mach_tm_dict[min_mach] += val[conv_calc_map[min_mach]][avg_time_idx]
         mach_ts_dict[min_mach].append(tst)
     ind.time_para = max(mach_tm_dict.values())
@@ -246,7 +242,7 @@ def ga(gene_len):
     for i in range(confs_num):
         pop.append(creator.Individual([i for _ in range(gene_len)]))
     list(map(toolbox.evaluate, pop))
-    pop = sorted(pop, key=lambda x: x.fitness.values[0])
+    pop = sorted(pop, key=lambda x: (x.fitness.values[0], x.time_para))
     if gene_len == 1:
         return pop[0]
     for _ in range(iters):
@@ -256,9 +252,9 @@ def ga(gene_len):
         for gen in pop:
             toolbox.mutate(gen)
         list(map(toolbox.evaluate, pop))
-        pop = sorted(pop, key=lambda x: x.fitness.values[0])
+        pop = sorted(pop, key=lambda x: (x.fitness.values[0], x.time_para))
         pop[:] = offspring + list(map(toolbox.clone, pop[:65]))
-        pop = sorted(pop, key=lambda x: x.fitness.values[0])
+        pop = sorted(pop, key=lambda x: (x.fitness.values[0], x.time_para))
     return pop[0]
 
 
@@ -296,7 +292,8 @@ def reco_base(proj,
             ind.price,
             ind.min_fr,
             ind.max_fr,
-            ind.pro_fr]
+            ind.pro_fr,
+            ind.fitness.values[0]]
 
 
 def print_ind(ind,
@@ -359,8 +356,8 @@ if __name__ == '__main__':
     #     0.6, 0.65, 0.7, 0.75, 0.8, 0.85,
     #     0.9, 0.95, 1
     prog_start = time.time()
-    a = 0.05
-    group_ky = 'ig'
+    a = 0.75
+    group_ky = 'non_ig'
     groups_map = {
         'non_ig': ['', False],
         'ig': ['_ig', True]
@@ -384,7 +381,8 @@ if __name__ == '__main__':
                                         'time_parallel', 'price',
                                         'min_failure_rate',
                                         'max_failure_rate',
-                                        'probability_failure_rate'])
+                                        'probability_failure_rate',
+                                        'fitness'])
         organize_info(preproc('preproc_300_csvs',
                               proj_name))
         fill_tri_info(preproc('preproc_300_csvs',
@@ -426,6 +424,10 @@ if __name__ == '__main__':
         if not os.path.exists(resu_sub_path):
             os.mkdir(resu_sub_path)
         ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
-        # base_df.to_csv(f'{base_path}/{group_ky}/{proj_name}.csv', sep=',', header=True, index=False)
+        # base_sub_path = f'{base_path}/{group_ky}/a{a}'
+        # if not os.path.exists(base_sub_path):
+        #     os.mkdir(base_sub_path)
+        # base_df.to_csv(f'{base_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
     print(f'[Total time] {time.time() - prog_start} s')
     print(f'[Test num] {tot_test_num}')
+    
