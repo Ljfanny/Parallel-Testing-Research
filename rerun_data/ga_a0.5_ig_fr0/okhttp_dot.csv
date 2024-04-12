@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+okhttp_dot,1,,,,,,,,,,0.0026416778564453125
+okhttp_dot,2,,,,,,,,,,0.06448054313659668
+okhttp_dot,4,,,,,,,,,,0.3920919895172119
+okhttp_dot,6,,,,,,,,,,1.4005942344665527
+okhttp_dot,8,,,,,,,,,,2.319768190383911
+okhttp_dot,10,,,,,,,,,,3.1340794563293457
+okhttp_dot,12,,,,,,,,,,3.9782066345214844

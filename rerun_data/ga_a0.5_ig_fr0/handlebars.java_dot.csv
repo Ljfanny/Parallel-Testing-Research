@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+handlebars.java_dot,1,,,,,,,,,,0.001161813735961914
+handlebars.java_dot,2,,,,,,,,,,0.05391263961791992
+handlebars.java_dot,4,,,,,,,,,,0.12611103057861328
+handlebars.java_dot,6,,,,,,,,,,0.2760813236236572
+handlebars.java_dot,8,,,,,,,,,,0.33657336235046387
+handlebars.java_dot,10,,,,,,,,,,0.3613464832305908
+handlebars.java_dot,12,,,,,,,,,,0.3921668529510498

@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+timely_server,1,,,,,,,,,,0.0009198188781738281
+timely_server,2,,,,,,,,,,0.04114580154418945
+timely_server,4,,,,,,,,,,0.09696221351623535
+timely_server,6,,,,,,,,,,0.2547190189361572
+timely_server,8,,,,,,,,,,0.390444278717041
+timely_server,10,,,,,,,,,,0.5179119110107422
+timely_server,12,,,,,,,,,,0.6481444835662842

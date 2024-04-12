@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+hbase_dot,1,,,,,,,,,,0.001194000244140625
+hbase_dot,2,,,,,,,,,,0.053316354751586914
+hbase_dot,4,,,,,,,,,,0.12999701499938965
+hbase_dot,6,,,,,,,,,,0.2738478183746338
+hbase_dot,8,,,,,,,,,,0.34030985832214355
+hbase_dot,10,,,,,,,,,,0.38100194931030273
+hbase_dot,12,,,,,,,,,,0.3901195526123047

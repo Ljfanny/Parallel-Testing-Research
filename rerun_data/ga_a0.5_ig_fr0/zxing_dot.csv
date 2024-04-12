@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+zxing_dot,1,,,,,,,,,,0.002655506134033203
+zxing_dot,2,,,,,,,,,,0.05832386016845703
+zxing_dot,4,,,,,,,,,,0.5201406478881836
+zxing_dot,6,,,,,,,,,,2.1110291481018066
+zxing_dot,8,,,,,,,,,,3.8113434314727783
+zxing_dot,10,,,,,,,,,,5.539169549942017
+zxing_dot,12,,,,,,,,,,7.1893322467803955

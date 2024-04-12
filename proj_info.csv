@@ -1,17 +1,26 @@
-id,project-module,test_num,min_max_failure_rate,max_failure_rate,avg_failure_rate,avg_test_runtime
-P1,fastjson_dot,4459,0.00 ,0.09 ,0.00 ,0.02 
-P2,commons-exec_dot,55,0.00 ,0.03 ,0.00 ,0.54 
-P3,incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,14,0.00 ,0.11 ,0.00 ,3.44 
-P4,incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo,66,0.00 ,0.06 ,0.00 ,2.24 
-P5,rxjava2-extras_dot,390,0.00 ,0.01 ,0.00 ,0.22 
-P6,hutool_hutool-cron,7,0.00 ,0.01 ,0.00 ,0.10 
-P7,elastic-job-lite_dot,560,0.00 ,0.00 ,0.00 ,0.09 
-P8,elastic-job-lite_elastic-job-lite-core,502,0.00 ,0.00 ,0.00 ,0.07 
-P9,luwak_luwak,202,0.00 ,0.04 ,0.00 ,0.16 
-P10,fluent-logger-java_dot,18,0.00 ,0.41 ,0.00 ,2.61 
-P11,delight-nashorn-sandbox_dot,79,0.00 ,0.64 ,0.01 ,1.53 
-P12,http-request_dot,163,0.00 ,0.01 ,0.00 ,0.02 
-P13,spring-boot_dot,1689,0.00 ,0.01 ,0.00 ,0.21 
-P14,retrofit_retrofit,297,0.00 ,0.00 ,0.00 ,0.04 
-P15,retrofit_retrofit-adapters.rxjava,80,0.00 ,0.00 ,0.00 ,0.07 
-P16,wro4j_wro4j-extensions,308,0.00 ,0.01 ,0.00 ,0.81 
+id,project-module,test_num,min_failure_rate,max_failure_rate,avg_test_runtime
+M1,activiti/activiti_dot,2047,0.0,0.9111111111111111,0.44271977281809666
+M2,alibaba/fastjson_dot,4459,0.0,0.08999999999999997,0.023141792126831488
+M3,apache/commons-exec_dot,55,0.0,0.030000000000000027,0.5372149980427219
+M4,apache/httpcore_dot,713,0.0,0.12758620689655176,0.038867216874819165
+M5,apache/incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,14,0.0,0.10689655172413792,3.446439141283883
+M6,apache/incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo,66,0.0,0.05862068965517242,2.2405538336926516
+M7,davidmoten/rxjava2-extras_dot,390,0.0,0.010000000000000009,0.2228318226894363
+M8,elasticjob/elastic-job-lite_dot,560,0.0,0.0,0.08845834359605913
+M9,elasticjob/elastic-job-lite_elastic-job-lite-core,502,0.0,0.0033333333333332993,0.066705806600093
+M10,flaxsearch/luwak_luwak,202,0.0,0.040000000000000036,0.16078200904515813
+M11,fluent/fluent-logger-java_dot,18,0.0,0.41000000000000003,2.7081083171744154
+M12,javadelight/delight-nashorn-sandbox_dot,79,0.0,0.6366666666666667,1.5670811906864615
+M13,jknack/handlebars.java_dot,412,0.0034482758620689724,0.03448275862068961,0.030680877820568806
+M14,joel-costigliola/assertj-core_dot,6267,0.0,0.8034482758620689,0.00357389926524047
+M15,kagkarlsson/db-scheduler_dot,25,0.0,0.29000000000000004,0.6108002278772674
+M16,kevinsawicki/http-request_dot,163,0.0,0.010000000000000009,0.016102843406647478
+M17,nationalsecurityagency/timely_server,144,0.0033333333333332993,0.036666666666666625,0.31044184294634775
+M18,ninjaframework/ninja_dot,305,0.013333333333333308,0.9,0.3000280504424583
+M19,orbit/orbit_dot,83,0.0,0.3466666666666667,0.5255084229910728
+M20,qos-ch/logback_dot,863,0.0,0.8448275862068966,0.24737633286671906
+M21,spring-projects/spring-boot_dot,1689,0.0,0.00666666666666671,0.20525518486641645
+M22,square/retrofit_retrofit,297,0.0,0.0033333333333332993,0.03904341745200848
+M23,square/retrofit_retrofit-adapters.rxjava,80,0.0,0.0,0.06702940277777773
+M24,wro4j/wro4j_wro4j-extensions,308,0.0,0.006896551724137945,0.8133599957712349
+M25,zxing/zxing_dot,345,0.020689655172413834,0.05517241379310345,0.6082241516855338

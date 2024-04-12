@@ -1,5 +1,0 @@
-project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
-retrofit_retrofit-adapters.rxjava,1,1,{'01noThrottling.sh': 1},4.0496766666666675,4.0496766666666675,0.0786447208666667,0.0,0,0.0,0.029240662248912044,0.0046231746673583984
-retrofit_retrofit-adapters.rxjava,2,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",5.594440000000001,2.797230000000001,0.1003549591666667,0.0,0,0.0,0.020197379789791674,0.03748297691345215
-retrofit_retrofit-adapters.rxjava,4,3,"{'28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 1}",8.902660000000004,2.562073333333334,0.14272069148888897,0.0,0,0.0,0.018499432711157414,2.5295064449310303
-retrofit_retrofit-adapters.rxjava,6,5,"{'26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 2, '01noThrottling.sh': 1}",12.360053333333342,2.562073333333334,0.17149815691111125,0.0,0,0.0,0.018499432711157414,1191.8081674575806

@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+orbit_dot,1,,,,,,,,,,0.0006349086761474609
+orbit_dot,2,,,,,,,,,,0.05001997947692871
+orbit_dot,4,,,,,,,,,,0.08885574340820312
+orbit_dot,6,,,,,,,,,,0.19373416900634766
+orbit_dot,8,,,,,,,,,,0.28708481788635254
+orbit_dot,10,,,,,,,,,,0.37865781784057617
+orbit_dot,12,,,,,,,,,,0.45818591117858887

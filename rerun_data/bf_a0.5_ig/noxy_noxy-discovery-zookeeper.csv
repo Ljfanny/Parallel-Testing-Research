@@ -1,0 +1,5 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+noxy_noxy-discovery-zookeeper,1,1,{'26CPU2Mem4GB.sh': 1},17.215490000000006,17.215490000000006,0.14165479021666671,0.0,0,0.0,0.13297955810482642,0.0002865791320800781
+noxy_noxy-discovery-zookeeper,2,2,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1}",22.044693333333335,15.06441666666667,0.1288953326163889,0.0,0,0.0,0.11883392427202549,0.0017075538635253906
+noxy_noxy-discovery-zookeeper,4,4,"{'19CPU010Mem1GB.sh': 1, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1, '26CPU2Mem4GB.sh': 1}",22.044693333333335,15.06441666666667,0.1288953326163889,0.0,0,0.0,0.11883392427202549,0.5918257236480713
+noxy_noxy-discovery-zookeeper,6,6,"{'19CPU010Mem1GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",22.044693333333335,15.06441666666667,0.1288953326163889,0.0,0,0.0,0.11883392427202549,471.56041741371155

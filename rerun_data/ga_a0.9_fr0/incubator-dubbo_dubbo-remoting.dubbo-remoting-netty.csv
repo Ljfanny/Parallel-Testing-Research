@@ -1,8 +1,0 @@
-project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
-incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,1,1,{'27CPU2Mem8GB.sh': 1},1091.7620689655168,1091.7620689655168,10.60100968965517,0.0,0,0.0,8.154855362521548,0.0012373924255371094
-incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,2,2,"{'27CPU2Mem8GB.sh': 1, '21CPU025Mem2GB.sh': 1}",2173.976191838682,1087.004193103448,12.276755523030882,0.0,0,0.0,8.291511157199983,0.1679821014404297
-incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,4,2,"{'27CPU2Mem8GB.sh': 1, '21CPU025Mem2GB.sh': 3}",4329.7390513781165,1086.8953034482756,15.690958367161613,0.0,0,0.0,8.632223828313961,0.30225086212158203
-incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,6,2,"{'27CPU2Mem8GB.sh': 1, '19CPU010Mem1GB.sh': 5}",6757.7347073429955,1133.1945276754955,14.611101824466832,0.0,0,0.0,8.825111078353709,0.5576117038726807
-incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,8,2,"{'27CPU2Mem8GB.sh': 1, '19CPU010Mem1GB.sh': 7}",9024.123762693987,1133.1945276754955,16.215138678391497,0.0,0,0.0,8.985514763746176,0.9129807949066162
-incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,10,2,"{'19CPU010Mem1GB.sh': 9, '27CPU2Mem8GB.sh': 1}",11290.51281804498,1133.1945276754955,17.819175532316155,0.0,0,0.0,9.145918449138641,1.4685654640197754
-incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,12,2,"{'19CPU010Mem1GB.sh': 11, '27CPU2Mem8GB.sh': 1}",13556.901873395971,1133.1945276754955,19.423212386240817,0.0,0,0.0,9.306322134531108,1.94643235206604

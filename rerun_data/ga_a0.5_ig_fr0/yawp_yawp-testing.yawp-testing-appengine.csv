@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+yawp_yawp-testing.yawp-testing-appengine,1,,,,,,,,,,0.0004858970642089844
+yawp_yawp-testing.yawp-testing-appengine,2,,,,,,,,,,0.04005694389343262
+yawp_yawp-testing.yawp-testing-appengine,4,,,,,,,,,,0.04843926429748535
+yawp_yawp-testing.yawp-testing-appengine,6,,,,,,,,,,0.05975508689880371
+yawp_yawp-testing.yawp-testing-appengine,8,,,,,,,,,,0.06746268272399902
+yawp_yawp-testing.yawp-testing-appengine,10,,,,,,,,,,0.08162832260131836
+yawp_yawp-testing.yawp-testing-appengine,12,,,,,,,,,,0.08232593536376953

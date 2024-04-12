@@ -1,0 +1,2 @@
+project_id,opt-cost_period_ga,opt-cost_period_bf,opt-cost_runtime_rate,opt-cost_price_rate,opt-time_period_ga,opt-time_period_bf,opt-time_runtime_rate,opt-time_price_rate,opt-time_avg_runtime_rate,opt-time_avg_price_rate
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,0.20,3321.54,1.00,1.00,0.20,8489.67,0,0,1.00,1.00

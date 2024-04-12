@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+httpcore_dot,1,,,,,,,,,,0.0029244422912597656
+httpcore_dot,2,,,,,,,,,,0.07665896415710449
+httpcore_dot,4,,,,,,,,,,0.7687504291534424
+httpcore_dot,6,,,,,,,,,,3.012108325958252
+httpcore_dot,8,,,,,,,,,,5.338361978530884
+httpcore_dot,10,,,,,,,,,,7.352381706237793
+httpcore_dot,12,,,,,,,,,,9.510933876037598

@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+logback_dot,1,,,,,,,,,,0.003483295440673828
+logback_dot,2,,,,,,,,,,0.07796239852905273
+logback_dot,4,,,,,,,,,,0.9476537704467773
+logback_dot,6,,,,,,,,,,4.703006982803345
+logback_dot,8,,,,,,,,,,10.105926275253296
+logback_dot,10,,,,,,,,,,16.008357524871826
+logback_dot,12,,,,,,,,,,22.00645136833191

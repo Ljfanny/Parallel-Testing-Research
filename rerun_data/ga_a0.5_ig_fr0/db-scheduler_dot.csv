@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+db-scheduler_dot,1,,,,,,,,,,0.0005331039428710938
+db-scheduler_dot,2,,,,,,,,,,0.0499873161315918
+db-scheduler_dot,4,,,,,,,,,,0.06165504455566406
+db-scheduler_dot,6,,,,,,,,,,0.08123779296875
+db-scheduler_dot,8,,,,,,,,,,0.09370946884155273
+db-scheduler_dot,10,,,,,,,,,,0.10295748710632324
+db-scheduler_dot,12,,,,,,,,,,0.12297725677490234

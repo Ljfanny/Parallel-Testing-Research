@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+ninja_dot,1,,,,,,,,,,0.000965118408203125
+ninja_dot,2,,,,,,,,,,0.051464080810546875
+ninja_dot,4,,,,,,,,,,0.10924959182739258
+ninja_dot,6,,,,,,,,,,0.1982417106628418
+ninja_dot,8,,,,,,,,,,0.24440240859985352
+ninja_dot,10,,,,,,,,,,0.27205944061279297
+ninja_dot,12,,,,,,,,,,0.2901763916015625

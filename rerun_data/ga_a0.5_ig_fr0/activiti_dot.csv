@@ -1,0 +1,8 @@
+project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
+activiti_dot,1,,,,,,,,,,0.005541801452636719
+activiti_dot,2,,,,,,,,,,0.10293459892272949
+activiti_dot,4,,,,,,,,,,3.4263219833374023
+activiti_dot,6,,,,,,,,,,24.227482318878174
+activiti_dot,8,,,,,,,,,,51.59544825553894
+activiti_dot,10,,,,,,,,,,75.62591767311096
+activiti_dot,12,,,,,,,,,,112.3446044921875

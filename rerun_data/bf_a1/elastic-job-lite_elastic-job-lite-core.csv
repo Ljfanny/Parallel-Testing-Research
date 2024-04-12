@@ -1,5 +1,0 @@
-project,machines_num,confs_num,confs,time_seq,time_parallel,price,min_failure_rate,max_failure_rate,probability_failure_rate,fitness,period
-elastic-job-lite_elastic-job-lite-core,1,1,{'01noThrottling.sh': 1},22.574176666666677,22.574176666666677,0.4383905108666669,0.0,0,0.0,0.162996685856551,0.02772235870361328
-elastic-job-lite_elastic-job-lite-core,2,2,"{'29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",29.83892000000005,17.149936666666676,0.5418701391222231,0.0,0,0.0,0.12383099860488432,0.23325634002685547
-elastic-job-lite_elastic-job-lite-core,4,4,"{'27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",44.81056000000006,17.149936666666676,0.6718931744777786,0.0,0,0.0,0.12383099860488432,8.592525720596313
-elastic-job-lite_elastic-job-lite-core,6,6,"{'25CPU1Mem8GB.sh': 1, '26CPU2Mem4GB.sh': 1, '27CPU2Mem8GB.sh': 1, '28CPU2Mem16GB.sh': 1, '29CPU4Mem8GB.sh': 1, '01noThrottling.sh': 1}",64.55283666666674,17.149936666666676,0.7935495220388898,0.0,0,0.0,0.12383099860488432,1329.6701171398163
