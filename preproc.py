@@ -3,8 +3,37 @@ import json
 import pandas as pd
 
 confs_num = 12
-dir_path = '...raft-csvs...'
+dir_path = '../../Raft/raft-csvs'
 err_dat = 'error_tests.csv'
+tst_num_list = [
+    2047,
+    4459,
+    55,
+    713,
+    14,
+    66,
+    390,
+    560,
+    502,
+    202,
+    18,
+    79,
+    412,
+    6267,
+    25,
+    163,
+    144,
+    305,
+    83,
+    863,
+    1689,
+    297,
+    80,
+    308,
+    345
+]
+proj_idx = 0
+proj_num = 0
 conf_prc_map = {}
 
 
@@ -71,6 +100,7 @@ def cal_dat(proj_name: str,
 
 def preproc(prep_dir,
             proj_name):
+    global proj_idx, proj_num
     preproc_file_name = f'{prep_dir}/{proj_name}'
     get_conf_prc_map()
     cnt = 1
@@ -81,20 +111,25 @@ def preproc(prep_dir,
         avg_tm_dict = {tuple(eval(k)): v for k, v in tmp_dict.items()}
     else:
         rec_dict = {}
-        filenames = os.listdir(dir_path)
+        # filenames = os.listdir(dir_path)
+        filenames = ['csvs-30']
         for f in filenames:
             ext_dat(csv_dir=f'{dir_path}/{f}', proj_name=proj_name, rec_dict=rec_dict)
             print(f'{proj_name}#{cnt}... ...')
             cnt += 1
         avg_tm_dict = cal_dat(proj_name=proj_name, rec_dict=rec_dict)
-        tmp_dict = {str(k): v for k, v in avg_tm_dict.items()}
-        with open(preproc_file_name, 'w') as f:
-            json.dump(tmp_dict, f)
-    for t, info in avg_tm_dict.items():
-        for i in range(confs_num):
-            fr = info[i][3]
-            if fr == 0:
-                continue
-            runtime = info[i][2]
-            info[i][2] = runtime * sum([fr ** p for p in range(10)])
+        if len(avg_tm_dict) == tst_num_list[proj_idx]:
+            proj_num += 1
+            tmp_dict = {str(k): v for k, v in avg_tm_dict.items()}
+            with open(preproc_file_name, 'w') as f:
+                json.dump(tmp_dict, f)
+    proj_idx += 1
+    print(len(avg_tm_dict), proj_num, proj_idx)
+    # for t, info in avg_tm_dict.items():
+    #     for i in range(confs_num):
+    #         fr = info[i][3]
+    #         if fr == 0:
+    #             continue
+    #         runtime = info[i][2]
+    #         info[i][2] = runtime * sum([fr ** p for p in range(10)])
     return avg_tm_dict

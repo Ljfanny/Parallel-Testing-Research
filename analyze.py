@@ -29,36 +29,29 @@ base_path = 'baseline'
 setup_rec_path = 'setup_time_record'
 proj_names = [
     'activiti_dot',
-    'assertj-core_dot',
-    'carbon-apimgt_analyzer-modules.org.wso2.carbon.apimgt.throttling.siddhi.extension',
-    'commons-exec_dot',
-    'db-scheduler_dot',
-    'delight-nashorn-sandbox_dot',
-    'elastic-job-lite_dot',
-    'elastic-job-lite_elastic-job-lite-core',
-    'esper_examples.rfidassetzone',
     'fastjson_dot',
-    'fluent-logger-java_dot',
-    'handlebars.java_dot',
-    'hbase_dot',
-    'http-request_dot',
+    'commons-exec_dot',
     'httpcore_dot',
-    'hutool_hutool-cron',
     'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
     'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
-    'logback_dot',
-    'luwak_luwak',
-    'ninja_dot',
-    'noxy_noxy-discovery-zookeeper',
-    'okhttp_dot',
-    'orbit_dot',
-    'retrofit_retrofit-adapters.rxjava',
-    'retrofit_retrofit',
     'rxjava2-extras_dot',
-    'spring-boot_dot',
+    'elastic-job-lite_dot',
+    'elastic-job-lite_elastic-job-lite-core',
+    'luwak_luwak',
+    'fluent-logger-java_dot',
+    'delight-nashorn-sandbox_dot',
+    'handlebars.java_dot',
+    'assertj-core_dot',
+    'db-scheduler_dot',
+    'http-request_dot',
     'timely_server',
+    'ninja_dot',
+    'orbit_dot',
+    'logback_dot',
+    'spring-boot_dot',
+    'retrofit_retrofit',
+    'retrofit_retrofit-adapters.rxjava',
     'wro4j_wro4j-extensions',
-    'yawp_yawp-testing.yawp-testing-appengine',
     'zxing_dot'
 ]
 confs_num = 12
@@ -357,6 +350,7 @@ if __name__ == '__main__':
     #     0.9, 0.95, 1
     prog_start = time.time()
     a = 0.75
+    round_cnt = 30
     group_ky = 'non_ig'
     groups_map = {
         'non_ig': ['', False],
@@ -383,51 +377,50 @@ if __name__ == '__main__':
                                         'max_failure_rate',
                                         'probability_failure_rate',
                                         'fitness'])
-        organize_info(preproc('preproc_300_csvs',
+        organize_info(preproc(f'preproc_10/{round_cnt}',
                               proj_name))
-        fill_tri_info(preproc('preproc_300_csvs',
-                              proj_name))
-        load_setup(proj_name,
-                   groups_map[group_ky][1])
-        tot_test_num += len(tests)
-        toolbox = base.Toolbox()
-        toolbox.register("attr_int", random.randint, 0, 11)
-        toolbox.register("mate", tools.cxUniform)
-        toolbox.register("evaluate", eva_schedule)
-        for mach_num in num_of_machine:
-            toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.attr_int, mach_num)
-            toolbox.register("population", tools.initRepeat, list, toolbox.individual)
-            toolbox.register("mutate", tools.mutUniformInt, low=0, up=11, indpb=1 / mach_num)
+        # fill_tri_info(preproc('preproc_300',
+        #                       proj_name))
+        # load_setup(proj_name,
+        #            groups_map[group_ky][1])
+        # tot_test_num += len(tests)
+        # toolbox = base.Toolbox()
+        # toolbox.register("attr_int", random.randint, 0, 11)
+        # toolbox.register("mate", tools.cxUniform)
+        # toolbox.register("evaluate", eva_schedule)
+        # for mach_num in num_of_machine:
+            # toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.attr_int, mach_num)
+            # toolbox.register("population", tools.initRepeat, list, toolbox.individual)
+            # toolbox.register("mutate", tools.mutUniformInt, low=0, up=11, indpb=1 / mach_num)
             # ---------------- Calculate Baseline ----------------
             # hist.clear()
             # reco_base(proj_name,
             #           base_df,
             #           mach_num)
             # ------------------------ End -----------------------
-            hist.clear()
-            t1 = time.time()
-            # best_ind = bruteforce(mach_num)
-            best_ind = ga(mach_num)
-            recalculate_ind(best_ind)
-            t2 = time.time()
-            tt = t2 - t1
-            category = mach_num
-            print(f'-------------------- {proj_name}-{mach_num} --------------------')
-            print_ind(best_ind,
-                      tt)
-            record_ind(best_ind,
-                       proj_name,
-                       category,
-                       ext_dat_df,
-                       tt)
-        resu_sub_path = f'{resu_path}/{sub}'
-        if not os.path.exists(resu_sub_path):
-            os.mkdir(resu_sub_path)
-        ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
+            # hist.clear()
+            # t1 = time.time()
+            # # best_ind = bruteforce(mach_num)
+            # best_ind = ga(mach_num)
+            # recalculate_ind(best_ind)
+            # t2 = time.time()
+            # tt = t2 - t1
+            # category = mach_num
+            # print(f'-------------------- {proj_name}-{mach_num} --------------------')
+            # print_ind(best_ind,
+            #           tt)
+            # record_ind(best_ind,
+            #            proj_name,
+            #            category,
+            #            ext_dat_df,
+            #            tt)
+        # resu_sub_path = f'{resu_path}/{sub}'
+        # if not os.path.exists(resu_sub_path):
+        #     os.mkdir(resu_sub_path)
+        # ext_dat_df.to_csv(f'{resu_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
         # base_sub_path = f'{base_path}/{group_ky}/a{a}'
         # if not os.path.exists(base_sub_path):
         #     os.mkdir(base_sub_path)
         # base_df.to_csv(f'{base_sub_path}/{proj_name}.csv', sep=',', header=True, index=False)
     print(f'[Total time] {time.time() - prog_start} s')
     print(f'[Test num] {tot_test_num}')
-    
