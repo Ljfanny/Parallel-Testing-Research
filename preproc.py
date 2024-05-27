@@ -33,6 +33,10 @@ tst_num_list = [
     345
 ]
 conf_prc_map = {}
+recal_dec_map = {
+    'yes': True,
+    'no': False
+}
 
 
 def get_conf_prc_map():
@@ -97,7 +101,8 @@ def cal_dat(proj_name: str,
 
 
 def preproc(prep_dir,
-            proj_name):
+            proj_name,
+            jud):
     preproc_file_name = f'{prep_dir}/{proj_name}'
     get_conf_prc_map()
     cnt = 1
@@ -119,12 +124,13 @@ def preproc(prep_dir,
             with open(preproc_file_name, 'w') as f:
                 json.dump(tmp_dict, f)
     try:
-        for t, info in avg_tm_dict.items():
-            for i in range(confs_num):
-                fr = info[i][3]
-                if fr == 0: continue
-                runtime = info[i][2]
-                info[i][2] = runtime * sum([fr ** p for p in range(10)])
+        if recal_dec_map[jud]:
+            for t, info in avg_tm_dict.items():
+                for i in range(confs_num):
+                    fr = info[i][3]
+                    if fr == 0: continue
+                    runtime = info[i][2]
+                    info[i][2] = runtime * sum([fr ** p for p in range(10)])
     except IndexError:
         return None
     return avg_tm_dict
