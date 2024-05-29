@@ -1,0 +1,26 @@
+project,GASearch/7,GitHub Baseline/7,Smart Baseline/7
+activiti_dot,4,6,0
+fastjson_dot,7,7,2
+commons-exec_dot,7,7,7
+httpcore_dot,2,2,0
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,4,7,6
+incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo,5,6,5
+rxjava2-extras_dot,4,4,6
+elastic-job-lite_dot,7,7,7
+elastic-job-lite_elastic-job-lite-core,7,7,7
+luwak_luwak,7,7,7
+fluent-logger-java_dot,7,7,7
+delight-nashorn-sandbox_dot,7,7,7
+handlebars.java_dot,6,0,4
+assertj-core_dot,4,7,3
+db-scheduler_dot,7,7,7
+http-request_dot,7,7,7
+timely_server,4,7,4
+ninja_dot,7,0,7
+orbit_dot,7,7,7
+logback_dot,5,7,0
+spring-boot_dot,7,7,7
+retrofit_retrofit,7,6,7
+retrofit_retrofit-adapters.rxjava,7,7,7
+wro4j_wro4j-extensions,7,0,7
+zxing_dot,7,7,7
