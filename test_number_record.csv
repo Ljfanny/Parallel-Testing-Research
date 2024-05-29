@@ -1,0 +1,26 @@
+project,different number,total test number,consistency ratio
+activiti_dot,2044,2047,0.0014655593551539114
+fastjson_dot,4457,4459,0.0004485310607759141
+commons-exec_dot,55,55,0.0
+httpcore_dot,713,713,0.0
+incubator-dubbo_dubbo-remoting.dubbo-remoting-netty,14,14,0.0
+incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo,65,66,0.015151515151515138
+rxjava2-extras_dot,385,390,0.012820512820512775
+elastic-job-lite_dot,558,560,0.0035714285714285587
+elastic-job-lite_elastic-job-lite-core,500,502,0.003984063745019917
+luwak_luwak,200,202,0.00990099009900991
+fluent-logger-java_dot,18,18,0.0
+delight-nashorn-sandbox_dot,67,79,0.15189873417721522
+handlebars.java_dot,412,412,0.0
+assertj-core_dot,6203,6267,0.010212222754108824
+db-scheduler_dot,25,25,0.0
+http-request_dot,163,163,0.0
+timely_server,142,144,0.01388888888888884
+ninja_dot,305,305,0.0
+orbit_dot,83,83,0.0
+logback_dot,843,863,0.023174971031286185
+spring-boot_dot,1661,1689,0.0165778567199526
+retrofit_retrofit,297,297,0.0
+retrofit_retrofit-adapters.rxjava,80,80,0.0
+wro4j_wro4j-extensions,281,308,0.08766233766233766
+zxing_dot,345,345,0.0
