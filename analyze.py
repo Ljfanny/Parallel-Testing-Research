@@ -24,24 +24,24 @@ creator.create("Individual", list,
                mach_ts_dict={})
 
 random.seed(0)
-resu_path = 'rich_RQ5'
+resu_path = 'random_creation_data'
 base_path = 'baseline'
 setup_rec_path = 'setup_time_record'
 proj_names = [
-    # 'activiti_dot',
-    # 'fastjson_dot',
-    # 'commons-exec_dot',
-    # 'httpcore_dot',
-    # 'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
-    # 'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
-    # 'rxjava2-extras_dot',
-    # 'elastic-job-lite_dot',
-    # 'elastic-job-lite_elastic-job-lite-core',
-    # 'luwak_luwak',
-    # 'fluent-logger-java_dot',
-    # 'delight-nashorn-sandbox_dot',
-    # 'handlebars.java_dot',
-    # 'assertj-core_dot',
+    'activiti_dot',
+    'fastjson_dot',
+    'commons-exec_dot',
+    'httpcore_dot',
+    'incubator-dubbo_dubbo-remoting.dubbo-remoting-netty',
+    'incubator-dubbo_dubbo-rpc.dubbo-rpc-dubbo',
+    'rxjava2-extras_dot',
+    'elastic-job-lite_dot',
+    'elastic-job-lite_elastic-job-lite-core',
+    'luwak_luwak',
+    'fluent-logger-java_dot',
+    'delight-nashorn-sandbox_dot',
+    'handlebars.java_dot',
+    'assertj-core_dot',
     'db-scheduler_dot',
     'http-request_dot',
     'timely_server',
@@ -262,7 +262,6 @@ def bruteforce(gene_len):
         if ind.fitness.values[0] <= mini:
             mini = ind.fitness.values[0]
             mini_ind = ind
-    recalculate_ind(mini_ind)
     return mini_ind
 
 
@@ -342,6 +341,13 @@ def record_ind(ind,
     ]
 
 
+def random_creator(gene_len):
+    machs = [random.randint(0, 11) for _ in range(gene_len)]
+    ind = creator.Individual(machs)
+    eva_schedule(ind)
+    return ind
+
+
 if __name__ == '__main__':
     # a = 0, 0.05, 0.1, 0.15, 0.2, 0.25,
     #     0.3, 0.35, 0.4, 0.45, 0.5, 0.55,
@@ -376,10 +382,15 @@ if __name__ == '__main__':
                                         'max_failure_rate',
                                         'probability_failure_rate',
                                         'fitness'])
-        avg_tm_dict = preproc(f'preproc_10/{round_cnt}', proj_name)
-        if avg_tm_dict is None: continue
+        avg_tm_dict = preproc(f'preproc_300',
+                              proj_name,
+                              'yes')
+        if avg_tm_dict is None:
+            continue
         organize_info(avg_tm_dict)
-        fill_tri_info(preproc('preproc_300', proj_name))
+        fill_tri_info(preproc('preproc_300',
+                              proj_name,
+                              'yes'))
         load_setup(proj_name,
                    groups_map[group_ky][1])
         tot_test_num += len(tests)
@@ -399,8 +410,9 @@ if __name__ == '__main__':
             # ------------------------ End -----------------------
             hist.clear()
             t1 = time.time()
+            # best_ind = ga(mach_num)
             # best_ind = bruteforce(mach_num)
-            best_ind = ga(mach_num)
+            best_ind = random_creator(mach_num)
             recalculate_ind(best_ind)
             t2 = time.time()
             tt = t2 - t1
